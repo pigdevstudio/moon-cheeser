@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=1]
+[gd_scene load_steps=10 format=1]
 
 [ext_resource path="res://Actors/Moon/Moon.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Actors/Astromouse/AstromouseRigid.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Objects/Spawner/Spawner.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Actors/Star/Star.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Actors/Comet/CometInverse.tscn" type="PackedScene" id=5]
 
 [sub_resource type="GDScript" id=1]
 
@@ -27,9 +28,8 @@ custom_solver_bias = 0.0
 normal = Vector2( 0, -1 )
 d = 138.454
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=4]
 
-resource/name = "animation"
 length = 4.0
 loop = true
 step = 0.1
@@ -42,6 +42,23 @@ tracks/0/keys = {
 "transitions": FloatArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 0, 80.9373 ), Vector2( 0, 561.254 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+
+resource/name = "comet_spawn_anim"
+length = 4.0
+loop = true
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:transform/pos")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = {
+"times": FloatArray( 0, 2 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1280.89, 473.828 ), Vector2( 1280.89, 0.523697 ) ]
 }
 
 [node name="Level_0-0" type="Node2D"]
@@ -95,16 +112,38 @@ shape = SubResource( 2 )
 trigger = false
 _update_shape_index = 0
 
-[node name="Spawner" parent="." instance=ExtResource( 3 )]
+[node name="StarSpawn" parent="." instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 0, 561.254 )
+transform/pos = Vector2( 0, 244.893 )
 spawn_scene = ExtResource( 4 )
 min_spawn_time = 4.0
 max_spawn_time = 10.0
 
-[node name="Animator" parent="Spawner"]
+[node name="Animator" parent="StarSpawn"]
 
-anims/animation = SubResource( 3 )
+anims/animation = SubResource( 4 )
+autoplay = "animation"
+
+[node name="Label" parent="StarSpawn"]
+
+text = "StarSpawn"
+
+[node name="CometSpawn" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 1280.89, 270.162 )
+spawn_scene = ExtResource( 5 )
+min_spawn_time = 3.0
+max_spawn_time = 5.0
+
+[node name="Animator" parent="CometSpawn"]
+
+anims/comet_spawn_anim = SubResource( 3 )
+autoplay = "comet_spawn_anim"
+
+[node name="Label" parent="CometSpawn"]
+
+text = "CometSpawn"
 
 
-[editable path="Spawner"]
+[editable path="StarSpawn"]
+[editable path="CometSpawn"]

@@ -1,0 +1,53 @@
+[gd_scene load_steps=4 format=1]
+
+[ext_resource path="res://Actors/Astromouse/StarMouse.gd" type="Script" id=1]
+[ext_resource path="res://Screens/Title_Screen/achievements.png" type="Texture" id=2]
+
+[sub_resource type="CircleShape2D" id=1]
+
+custom_solver_bias = 0.0
+radius = 22.3741
+
+[node name="StarMouse" type="KinematicBody2D"]
+
+input/pickable = false
+collision/layers = 1
+collision/mask = 1
+collision/margin = 0.08
+script/script = ExtResource( 1 )
+max_speed = 600
+max_force = 0.02
+mode = 0
+
+[node name="Sprite" type="Sprite" parent="."]
+
+transform/scale = Vector2( 0.149694, 0.149694 )
+texture = ExtResource( 2 )
+
+[node name="Area" type="Area2D" parent="."]
+
+input/pickable = true
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+
+[node name="Shape" type="CollisionShape2D" parent="Area"]
+
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = 0
+
+[node name="Timer" type="Timer" parent="."]
+
+process_mode = 1
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timeout"]
+
+

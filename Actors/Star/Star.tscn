@@ -3,7 +3,7 @@
 [ext_resource path="res://Actors/Star/star.gd" type="Script" id=1]
 [ext_resource path="res://Actors/Star/star.png" type="Texture" id=2]
 
-[sub_resource type="CircleShape2D" id=1]
+[sub_resource type="CircleShape2D" id=3]
 
 custom_solver_bias = 0.0
 radius = 35.902
@@ -28,10 +28,16 @@ transform/scale = Vector2( 0.49736, 0.49736 )
 texture = ExtResource( 2 )
 flip_h = true
 
+[node name="Visibility" type="VisibilityNotifier2D" parent="Sprite"]
+
+transform/pos = Vector2( 26.9212, 0.1528 )
+transform/scale = Vector2( 15.2063, 7.20297 )
+rect = Rect2( -10, -10, 20, 20 )
+
 [node name="Area" type="Area2D" parent="."]
 
 input/pickable = true
-shapes/0/shape = SubResource( 1 )
+shapes/0/shape = SubResource( 3 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 gravity_vec = Vector2( 0, 1 )
@@ -41,7 +47,7 @@ angular_damp = 1.0
 
 [node name="Shape" type="CollisionShape2D" parent="Area"]
 
-shape = SubResource( 1 )
+shape = SubResource( 3 )
 trigger = false
 _update_shape_index = 0
 

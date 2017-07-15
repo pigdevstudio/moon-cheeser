@@ -7,6 +7,3 @@ func _on_area_enter( area ):
 		get_parent().add_child(i)
 		area.get_parent().get_parent().remove_child(area.get_parent())
 		queue_free()
-
-func _exit_screen():
-	queue_free()

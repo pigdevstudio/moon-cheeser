@@ -1,6 +1,6 @@
 extends RigidBody2D
 export (float) var jump_force = 300
-var can_jump = true setget _body_enter
+var can_jump = true
 
 func jump():
 	if can_jump:
@@ -12,6 +12,8 @@ func _body_enter( body ):
 	if "moon" in g:
 		can_jump = true
 	elif "enemy" in g:
-		get_tree().change_scene("res://Screens/Score_Screen/ScoreScreen.tscn")
+#		get_tree().change_scene("res://Screens/Score_Screen/ScoreScreen.tscn")
+		pass
 	elif "cheese" in g:
+		body.queue_free()
 		print("scored +1")

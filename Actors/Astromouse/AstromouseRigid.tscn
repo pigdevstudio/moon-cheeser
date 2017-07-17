@@ -6,19 +6,20 @@
 [sub_resource type="CapsuleShape2D" id=1]
 
 custom_solver_bias = 0.0
-radius = 29.1757
-height = 65.0726
+radius = 24.0546
+height = 56.2099
 
 [sub_resource type="CapsuleShape2D" id=2]
 
 custom_solver_bias = 0.0
 radius = 30.3114
-height = 71.5259
+height = 53.9239
 
 [node name="Astromouse" type="RigidBody2D" groups=[
 "player",
 ]]
 
+z/z = 2
 input/pickable = false
 shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( -4.37114e-08, -1, 1, -4.37114e-08, 15.9417, 3.7417 )
@@ -41,7 +42,7 @@ velocity/angular = 0.0
 damp_override/linear = -1.0
 damp_override/angular = -1.0
 script/script = ExtResource( 1 )
-jump_force = 300.0
+jump_force = 500.0
 
 [node name="Sprite" type="Sprite" parent="."]
 

@@ -16,7 +16,11 @@ func _ready():
 	emit_signal("resolution_changed", size, self)
 	
 func _process(delta):
-	winsize = OS.get_window_size()
+	
+	if not get_tree().is_editor_hint():
+		winsize = OS.get_window_size()
+	else:
+		winsize = get_rect().size
 	if get_rect().size != winsize:
 		var size = get_rect().size
 		edit_set_rect(Rect2(Vector2(), winsize))

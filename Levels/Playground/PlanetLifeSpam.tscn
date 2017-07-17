@@ -1,0 +1,58 @@
+[gd_scene load_steps=2 format=1]
+
+[sub_resource type="GDScript" id=1]
+
+script/source = "extends CenterContainer
+
+onready var progress = get_node(\"ProgressBar\")
+onready var timer = get_node(\"LifeSpam\")
+func _ready():
+	set_size(get_viewport().get_rect().size)
+	progress.set_max(timer.get_wait_time())
+	set_process(true)
+	
+func _process(delta):
+	progress.set_value(timer.get_time_left())
+"
+
+[node name="PlanetLifeSpam" type="CenterContainer"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 522.0
+margin/bottom = 16.0
+use_top_left = false
+script/script = SubResource( 1 )
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+
+rect/min_size = Vector2( 509, 16 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 6.0
+margin/top = 0.0
+margin/right = 515.0
+margin/bottom = 16.0
+range/min = 0.0
+range/max = 100.0
+range/step = 1.0
+range/page = 0.0
+range/value = 1.0
+range/exp_edit = false
+range/rounded = false
+percent/visible = true
+
+[node name="LifeSpam" type="Timer" parent="."]
+
+process_mode = 1
+wait_time = 15.0
+one_shot = true
+autostart = true
+
+

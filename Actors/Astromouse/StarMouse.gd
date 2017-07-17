@@ -30,3 +30,9 @@ func _on_timeout():
 	i.set_pos(get_pos())
 	get_parent().add_child(i)
 	queue_free()
+
+
+func _on_body_enter( body ):
+	if body.is_in_group("cheese"):
+		print("score +1")
+		body.queue_free()

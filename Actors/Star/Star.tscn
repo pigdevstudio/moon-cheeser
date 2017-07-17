@@ -3,15 +3,15 @@
 [ext_resource path="res://Actors/Star/star.gd" type="Script" id=1]
 [ext_resource path="res://Actors/Star/star.png" type="Texture" id=2]
 
-[sub_resource type="CircleShape2D" id=3]
-
-custom_solver_bias = 0.0
-radius = 35.902
-
 [sub_resource type="CircleShape2D" id=2]
 
 custom_solver_bias = 0.0
 radius = 54.2766
+
+[sub_resource type="CircleShape2D" id=3]
+
+custom_solver_bias = 0.0
+radius = 37.1808
 
 [node name="Star" type="KinematicBody2D"]
 
@@ -37,41 +37,33 @@ rect = Rect2( -10, -10, 20, 20 )
 [node name="Area" type="Area2D" parent="."]
 
 input/pickable = true
-shapes/0/shape = SubResource( 3 )
-shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
-shapes/0/trigger = false
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
-
-[node name="Shape" type="CollisionShape2D" parent="Area"]
-
-shape = SubResource( 3 )
-trigger = false
-_update_shape_index = 0
-
-[node name="AreaInput" type="Area2D" parent="."]
-
-input/pickable = true
 shapes/0/shape = SubResource( 2 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
+shapes/1/shape = SubResource( 3 )
+shapes/1/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/1/trigger = false
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
 linear_damp = 0.1
 angular_damp = 1.0
 
-[node name="Shape" type="CollisionShape2D" parent="AreaInput"]
+[node name="ShapeInput" type="CollisionShape2D" parent="Area"]
 
 shape = SubResource( 2 )
 trigger = false
 _update_shape_index = 0
 
-[connection signal="area_enter" from="Area" to="." method="_on_area_enter"]
+[node name="ShapeCollision" type="CollisionShape2D" parent="Area"]
 
-[connection signal="mouse_enter" from="AreaInput" to="." method="_set_mouse_on" binds= [ true ]]
+shape = SubResource( 3 )
+trigger = false
+_update_shape_index = 1
 
-[connection signal="mouse_exit" from="AreaInput" to="." method="_set_mouse_on" binds= [ false ]]
+[connection signal="area_enter_shape" from="Area" to="." method="_on_area_enter_shape"]
+
+[connection signal="mouse_enter" from="Area" to="." method="_set_mouse_on" binds= [ true ]]
+
+[connection signal="mouse_exit" from="Area" to="." method="_set_mouse_on" binds= [ false ]]
 
 

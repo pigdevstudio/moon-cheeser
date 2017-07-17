@@ -13,7 +13,9 @@ radius = 33.38
 custom_solver_bias = 0.0
 radius = 57.4448
 
-[node name="Comet" type="KinematicBody2D"]
+[node name="Comet" type="KinematicBody2D" groups=[
+"enemy",
+]]
 
 input/pickable = false
 shapes/0/shape = SubResource( 1 )
@@ -43,10 +45,7 @@ texture = ExtResource( 2 )
 transform/scale = Vector2( 22.4176, 6.33021 )
 rect = Rect2( -10, -10, 20, 20 )
 
-[node name="Area" type="Area2D" parent="." groups=[
-"comet",
-"enemy",
-]]
+[node name="AreaInput" type="Area2D" parent="."]
 
 transform/pos = Vector2( -0.814545, 0 )
 input/pickable = true
@@ -58,7 +57,7 @@ gravity = 98.0
 linear_damp = 0.1
 angular_damp = 1.0
 
-[node name="Shape" type="CollisionShape2D" parent="Area"]
+[node name="Shape" type="CollisionShape2D" parent="AreaInput"]
 
 shape = SubResource( 2 )
 trigger = false
@@ -66,8 +65,8 @@ _update_shape_index = 0
 
 [connection signal="exit_screen" from="Sprite/Visibility" to="." method="_exit_screen"]
 
-[connection signal="mouse_enter" from="Area" to="." method="_set_mouse_on" binds= [ true ]]
+[connection signal="mouse_enter" from="AreaInput" to="." method="_set_mouse_on" binds= [ true ]]
 
-[connection signal="mouse_exit" from="Area" to="." method="_set_mouse_on" binds= [ false ]]
+[connection signal="mouse_exit" from="AreaInput" to="." method="_set_mouse_on" binds= [ false ]]
 
 

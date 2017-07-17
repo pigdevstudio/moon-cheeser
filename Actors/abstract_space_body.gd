@@ -11,10 +11,9 @@ onready var velocity = Vector2()
 
 func apply_route():
 	if Input.is_mouse_button_pressed(1) and not already_pressed and is_mouse_on:
-		var n = get_global_pos().rotated(get_global_pos().angle_to_point(get_global_mouse_pos())).normalized()
-		velocity = n.slide(velocity) * 3
+		var n = clamp((get_global_pos() - get_global_mouse_pos()).y, -1, 1)
+		velocity = Vector2(MAX_SPEED * direction, n * MAX_SPEED * 2)
 		already_pressed = true
-		velocity = Vector2(MAX_SPEED * direction,velocity.y)
 	return(velocity)
 
 func _ready():

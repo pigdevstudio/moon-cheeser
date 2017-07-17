@@ -23,10 +23,10 @@ size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 0.0
 margin/top = 0.0
-margin/right = 1858.0
-margin/bottom = 1057.0
+margin/right = 1280.0
+margin/bottom = 720.0
 script/script = ExtResource( 2 )
-resolution = null
+resolution = 2
 
 [node name="ScreenPortions" type="VBoxContainer" parent="ScreenMargin"]
 
@@ -36,8 +36,8 @@ size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 8.0
 margin/top = 0.0
-margin/right = 1858.0
-margin/bottom = 1057.0
+margin/right = 1280.0
+margin/bottom = 720.0
 alignment = 0
 
 [node name="TopPortion" type="ReferenceFrame" parent="ScreenMargin/ScreenPortions"]
@@ -48,8 +48,8 @@ size_flags/horizontal = 3
 size_flags/vertical = 3
 margin/left = 0.0
 margin/top = 0.0
-margin/right = 1850.0
-margin/bottom = 349.0
+margin/right = 1272.0
+margin/bottom = 237.0
 
 [node name="CenterPortion" type="ReferenceFrame" parent="ScreenMargin/ScreenPortions"]
 
@@ -58,9 +58,9 @@ focus/stop_mouse = true
 size_flags/horizontal = 3
 size_flags/vertical = 3
 margin/left = 0.0
-margin/top = 353.0
-margin/right = 1850.0
-margin/bottom = 702.0
+margin/top = 241.0
+margin/right = 1272.0
+margin/bottom = 478.0
 
 [node name="BottomPortion" type="HBoxContainer" parent="ScreenMargin/ScreenPortions"]
 
@@ -69,9 +69,9 @@ focus/stop_mouse = false
 size_flags/horizontal = 3
 size_flags/vertical = 3
 margin/left = 0.0
-margin/top = 706.0
-margin/right = 1850.0
-margin/bottom = 1057.0
+margin/top = 482.0
+margin/right = 1272.0
+margin/bottom = 720.0
 alignment = 0
 
 [node name="LeftPortion" type="ReferenceFrame" parent="ScreenMargin/ScreenPortions/BottomPortion"]
@@ -82,8 +82,8 @@ size_flags/horizontal = 3
 size_flags/vertical = 3
 margin/left = 0.0
 margin/top = 0.0
-margin/right = 614.0
-margin/bottom = 351.0
+margin/right = 421.0
+margin/bottom = 238.0
 
 [node name="CenterPortion" type="VBoxContainer" parent="ScreenMargin/ScreenPortions/BottomPortion"]
 
@@ -91,10 +91,10 @@ focus/ignore_mouse = false
 focus/stop_mouse = false
 size_flags/horizontal = 3
 size_flags/vertical = 3
-margin/left = 618.0
+margin/left = 425.0
 margin/top = 0.0
-margin/right = 1232.0
-margin/bottom = 351.0
+margin/right = 846.0
+margin/bottom = 238.0
 custom_constants/separation = 55
 alignment = 0
 
@@ -106,8 +106,8 @@ size_flags/horizontal = 2
 size_flags/vertical = 3
 margin/left = 0.0
 margin/top = 0.0
-margin/right = 614.0
-margin/bottom = 148.0
+margin/right = 421.0
+margin/bottom = 91.0
 toggle_mode = false
 click_on_press = true
 enabled_focus_mode = 2
@@ -122,9 +122,9 @@ focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 3
 margin/left = 0.0
-margin/top = 203.0
-margin/right = 614.0
-margin/bottom = 351.0
+margin/top = 146.0
+margin/right = 421.0
+margin/bottom = 238.0
 toggle_mode = false
 click_on_press = true
 enabled_focus_mode = 2
@@ -138,10 +138,10 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 3
 size_flags/vertical = 3
-margin/left = 1236.0
+margin/left = 850.0
 margin/top = 0.0
-margin/right = 1850.0
-margin/bottom = 351.0
+margin/right = 1272.0
+margin/bottom = 238.0
 
 [connection signal="released" from="ScreenMargin/ScreenPortions/BottomPortion/CenterPortion/Retry" to="." method="change_to_next_scene" binds= [ "res://Screens/Play_Screen/PlayScreen.tscn" ]]
 

@@ -1,0 +1,29 @@
+[gd_scene format=1]
+
+[node name="PlanetLifeSpam" type="ProgressBar"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 367.0
+margin/top = 362.0
+margin/right = 889.0
+margin/bottom = 378.0
+range/min = 0.0
+range/max = 1.0
+range/step = 1.0
+range/page = 0.0
+range/value = 0.0
+range/exp_edit = false
+range/rounded = false
+percent/visible = true
+
+[node name="LifeSpam" type="Timer" parent="."]
+
+process_mode = 1
+wait_time = 15.0
+one_shot = true
+autostart = false
+
+

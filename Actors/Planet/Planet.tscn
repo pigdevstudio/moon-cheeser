@@ -64,21 +64,16 @@ playback/active = false
 playback/repeat = false
 playback/speed = 1.0
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="GUILayer" type="CanvasLayer" parent="."]
 
 layer = 1
 offset = Vector2( 0, 0 )
 rotation = 0.0
 scale = Vector2( 1, 1 )
 
-[node name="PlanetLifeSpam" parent="CanvasLayer" instance=ExtResource( 3 )]
+[node name="PlanetLifeSpam" parent="GUILayer" instance=ExtResource( 3 )]
 
-margin/left = 716.0
-margin/top = 257.0
-margin/right = 1238.0
-margin/bottom = 273.0
-
-[connection signal="timeout" from="CanvasLayer/PlanetLifeSpam/LifeSpam" to="." method="_on_LifeSpam"]
+[connection signal="timeout" from="GUILayer/PlanetLifeSpam/LifeSpam" to="." method="_on_LifeSpam"]
 
 
-[editable path="CanvasLayer/PlanetLifeSpam"]
+[editable path="GUILayer/PlanetLifeSpam"]

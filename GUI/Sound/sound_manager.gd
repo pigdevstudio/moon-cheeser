@@ -4,7 +4,7 @@ onready var slider = get_node(slider_path)
 func _ready():
 	slider.set_value(bgm.get_volume())
 	
-func _input(event):
+func _input_event(event):
 	if Input.is_key_pressed(KEY_VOLUMEUP):
 		print("increase volume")
 		slider.set_value(slider.get_volume() + 4)

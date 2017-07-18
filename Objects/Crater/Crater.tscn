@@ -12,6 +12,7 @@ extents = Vector2( 30.1245, 9.7197 )
 "enemy",
 ]]
 
+transform/pos = Vector2( 651.417, 396.032 )
 input/pickable = true
 shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 1.19165, 7.14986 )
@@ -40,8 +41,8 @@ _update_shape_index = 0
 process_mode = 1
 wait_time = 1.0
 one_shot = true
-autostart = false
+autostart = true
 
-[connection signal="timeout" from="Timer" to="." method="_on_timeout"]
+[connection signal="timeout" from="Timer" to="." method="queue_free"]
 
 

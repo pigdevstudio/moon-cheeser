@@ -26,7 +26,7 @@ func steer(target):
 	return(target_velocity)
 
 func _on_timeout():
-	var i = load("res://Actors/Astromouse/AstromouseRigid.tscn").instance()
+	var i = load("res://Actors/Astromouse/Astromouse.tscn").instance()
 	i.set_pos(get_pos())
 	get_parent().add_child(i)
 	queue_free()

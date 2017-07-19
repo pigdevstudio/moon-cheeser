@@ -1,8 +1,8 @@
 extends Position2D
 
 export (PackedScene) var spawn_scene
-export (float, 0, 60, 0.1) var min_spawn_time = 1.0
-export (float, 0, 120 ,0.1) var max_spawn_time = 2.0
+export (float) var min_spawn_time = 1.0
+export (float) var max_spawn_time = 2.0
 
 func _ready():
 	randomize()

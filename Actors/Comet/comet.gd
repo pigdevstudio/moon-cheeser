@@ -14,3 +14,8 @@ func _spawn_crater(p):
 		get_collider().get_node("Sprite").add_child(c)
 		c.set_global_pos(p)
 		c.set_rot(c.get_angle_to(get_collider().get_pos()))
+		
+		c = load("res://Objects/Crater/CraterPlaceholder.tscn").instance()
+		get_collider().get_node("Sprite").add_child(c)
+		c.set_global_pos(p)
+		c.set_rot(c.get_angle_to(get_collider().get_pos()))

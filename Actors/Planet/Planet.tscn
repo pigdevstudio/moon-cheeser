@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Actors/Planet/planet.gd" type="Script" id=1]
 [ext_resource path="res://Actors/Planet/planet.png" type="Texture" id=2]
-[ext_resource path="res://Levels/Playground/PlanetLifeSpam.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Actors/Planet/PlanetLifeSpam.tscn" type="PackedScene" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
 
@@ -73,7 +73,11 @@ scale = Vector2( 1, 1 )
 
 [node name="PlanetLifeSpam" parent="GUILayer" instance=ExtResource( 3 )]
 
-[connection signal="timeout" from="GUILayer/PlanetLifeSpam/LifeSpam" to="." method="_on_LifeSpam"]
+[node name="Timer" parent="GUILayer/PlanetLifeSpam"]
+
+wait_time = 10.0
+
+[connection signal="timeout" from="GUILayer/PlanetLifeSpam/Timer" to="." method="_on_life_spam"]
 
 
 [editable path="GUILayer/PlanetLifeSpam"]

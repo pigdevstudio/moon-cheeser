@@ -8,7 +8,7 @@ var pulse_interval = 2.0
 signal arrived
 
 func _ready():
-	if get_parent().has_meta("game_state"):
+	if get_parent().has_method("set_game_state"):
 		get_parent().set_game_state(1)
 	var moon = get_parent().find_node("Moon")
 	if moon != null:
@@ -50,8 +50,11 @@ func _move_away(from, to):
 	yield(tween, "tween_complete")
 	emit_signal("arrived")
 
-func _on_LifeSpam():
+
+func _on_life_spam():
 	var moon = get_parent().find_node("Moon")
 	_move_away(self, moon)
 	yield(tween, "tween_complete")
+	if get_parent().has_method("set_game_state"):
+		get_parent().set_game_state(0)
 	queue_free()

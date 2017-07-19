@@ -74,6 +74,7 @@ alignment = 1
 
 [node name="LeftPortion" type="VBoxContainer" parent="ScreenMargin/ScreenPortions"]
 
+editor/display_folded = true
 focus/ignore_mouse = false
 focus/stop_mouse = false
 size_flags/horizontal = 3
@@ -130,6 +131,7 @@ margin/bottom = 982.0
 
 [node name="CenterPortion" type="VBoxContainer" parent="ScreenMargin/ScreenPortions"]
 
+editor/display_folded = true
 focus/ignore_mouse = false
 focus/stop_mouse = false
 size_flags/horizontal = 3
@@ -268,6 +270,7 @@ flat = false
 
 [node name="RightPortion" type="VBoxContainer" parent="ScreenMargin/ScreenPortions"]
 
+editor/display_folded = true
 focus/ignore_mouse = false
 focus/stop_mouse = false
 size_flags/horizontal = 3

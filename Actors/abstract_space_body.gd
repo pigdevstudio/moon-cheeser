@@ -17,6 +17,7 @@ func apply_route():
 	return(velocity)
 
 func _ready():
+	get_node("Sprite").set_scale(get_node("Sprite").get_scale() * -direction)
 	velocity = Vector2(direction,0) * MAX_SPEED
 
 func _fixed_process(delta):

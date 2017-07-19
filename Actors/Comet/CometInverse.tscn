@@ -31,13 +31,15 @@ _update_shape_index = 0
 
 [node name="Sprite" type="Sprite" parent="."]
 
-transform/pos = Vector2( 92.9454, 0 )
+transform/pos = Vector2( -0.30127, -1.29376 )
 transform/scale = Vector2( 0.6, 0.6 )
 z/z = -1
 texture = ExtResource( 2 )
+offset = Vector2( 155.411, 2.15627 )
 
 [node name="Visibility" type="VisibilityNotifier2D" parent="Sprite"]
 
+transform/pos = Vector2( 155.411, 2.15627 )
 transform/scale = Vector2( 22.4176, 6.33021 )
 rect = Rect2( -10, -10, 20, 20 )
 

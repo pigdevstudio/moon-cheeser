@@ -14,6 +14,7 @@ func apply_route():
 		var n = clamp((get_global_pos() - get_global_mouse_pos()).y, -1, 1)
 		velocity = Vector2(MAX_SPEED * direction, n * MAX_SPEED * 2)
 		already_pressed = true
+
 	return(velocity)
 
 func _ready():

@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 export (float) var max_speed = 600
-export (float) var  max_force = 0.02
+export (float) var  max_force = 0.06
 var velocity = Vector2()
 onready var target = get_pos()
 
@@ -30,7 +30,6 @@ func _on_timeout():
 	i.set_pos(get_pos())
 	get_parent().add_child(i)
 	queue_free()
-
 
 func _on_body_enter( body ):
 	if body.is_in_group("cheese"):

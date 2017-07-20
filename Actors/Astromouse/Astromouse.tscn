@@ -1,7 +1,8 @@
 [gd_scene load_steps=5 format=1]
 
-[ext_resource path="res://Actors/Astromouse/astromouse_rigid.gd" type="Script" id=1]
+[ext_resource path="res://Actors/Astromouse/astromouse.gd" type="Script" id=1]
 [ext_resource path="res://Actors/Astromouse/astromouse_new.png" type="Texture" id=2]
+
 
 [sub_resource type="CapsuleShape2D" id=1]
 

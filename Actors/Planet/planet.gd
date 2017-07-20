@@ -57,4 +57,6 @@ func _on_life_spam():
 	yield(tween, "tween_complete")
 	if get_parent().has_method("set_game_state"):
 		get_parent().set_game_state(0)
+	var player = _find_player()
+	player.finish_gravity()
 	queue_free()

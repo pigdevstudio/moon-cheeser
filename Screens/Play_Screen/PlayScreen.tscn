@@ -1,7 +1,22 @@
-[gd_scene load_steps=3 format=1]
+[gd_scene load_steps=4 format=1]
 
 [ext_resource path="res://Screens/Screen Abstract.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Levels/Playground/Playground.tscn" type="PackedScene" id=2]
+
+[sub_resource type="GDScript" id=1]
+
+script/source = "extends Label
+
+# class member variables go here, for example:
+# var a = 2
+# var b = \"textvar\"
+
+func _ready():
+	set_process(true)
+	
+func _process(delta):
+	set_text(\"FPS: %s\" %OS.get_frames_per_second())
+"
 
 [node name="PlayScreen" instance=ExtResource( 1 )]
 
@@ -20,6 +35,23 @@ text = "Score: XXXX"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
+
+[node name="FPS" type="Label" parent="."]
+
+rect/scale = Vector2( 3, 3 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 505.0
+margin/top = -1.0
+margin/right = 580.0
+margin/bottom = 13.0
+text = "Score: XXXX"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+script/script = SubResource( 1 )
 
 [node name="Level_0-0" parent="." instance=ExtResource( 2 )]
 

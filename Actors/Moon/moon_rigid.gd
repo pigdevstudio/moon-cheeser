@@ -17,7 +17,7 @@ func _fixed_process(delta):
 			elif get_parent().game_state ==1:
 				player.battle_gravity(self, gravity_strength)
 	already_pressed = Input.is_action_pressed("jump")
-	
+
 func _body_enter( body ):
 	if body.is_in_group("player"):
 		player = body
@@ -31,3 +31,8 @@ func _find_player():
 
 func _mouse_enter(value):
 	is_mouse_on = value
+	
+func prepare_for_gravity():
+	for c in get_node("Sprite").get_children():
+		if c.is_in_group("enemy"):
+			c.queue_free()

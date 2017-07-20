@@ -819,11 +819,11 @@ params/stretch_mode = 6
 
 [connection signal="resolution_changed" from="ScreenMargin" to="ScreenMargin/ScreenPortions/LeftPortion" method="_on_ScreenMargin_resolution_changed"]
 
-[connection signal="resolution_changed" from="ScreenMargin" to="ScreenMargin/ScreenPortions/RightPortion" method="_on_ScreenMargin_resolution_changed"]
+[connection signal="resolution_changed" from="ScreenMargin" to="ScreenMargin/ScreenPortions/CenterPortion" method="_on_ScreenMargin_resolution_changed"]
 
 [connection signal="resolution_changed" from="ScreenMargin" to="ScreenMargin/ScreenPortions/RightPortion/SoundOption" method="_on_ScreenMargin_resolution_changed"]
 
-[connection signal="resolution_changed" from="ScreenMargin" to="ScreenMargin/ScreenPortions/CenterPortion" method="_on_ScreenMargin_resolution_changed"]
+[connection signal="resolution_changed" from="ScreenMargin" to="ScreenMargin/ScreenPortions/RightPortion" method="_on_ScreenMargin_resolution_changed"]
 
 [connection signal="resolution_changed" from="ScreenMargin" to="ScreenMargin/ScreenPortions/LowRes" method="_on_ScreenMargin_resolution_changed"]
 

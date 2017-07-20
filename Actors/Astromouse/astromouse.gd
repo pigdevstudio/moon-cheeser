@@ -1,7 +1,11 @@
 extends RigidBody2D
+
+signal died
 export (float) var jump_force = 300
 var can_jump = true
 
+func _ready():
+	connect("died", get_parent().get_parent(), "change_to_next_scene", ["res://Screens/Score_Screen/ScoreScreen.tscn"])
 func jump():
 	if can_jump:
 		var direction = Vector2(0, -1)
@@ -13,7 +17,7 @@ func _body_enter( body ):
 		can_jump = true
 		
 	elif body.is_in_group("enemy"):
-		get_tree().change_scene("res://Screens/Score_Screen/ScoreScreen.tscn")
+		emit_signal("died")
 		
 	elif body.is_in_group("cheese"):
 		body.queue_free()

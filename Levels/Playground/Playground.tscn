@@ -1,8 +1,8 @@
 [gd_scene load_steps=19 format=1]
 
 [ext_resource path="res://Levels/Playground/playground.gd" type="Script" id=1]
-[ext_resource path="res://Actors/Moon/Moon.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Actors/Astromouse/Astromouse.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Actors/Astromouse/Astromouse.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Actors/Moon/Moon.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Objects/Spawner/spawner.gd" type="Script" id=4]
 [ext_resource path="res://Actors/Planet/Planet.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Actors/Star/Star.tscn" type="PackedScene" id=6]
@@ -170,14 +170,14 @@ func _renamed():
 script/script = ExtResource( 1 )
 game_state = 0
 
-[node name="Moon" parent="." instance=ExtResource( 2 )]
+[node name="Astromouse" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 616.648, 389.279 )
+
+[node name="Moon" parent="." instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 625.92, 750.496 )
 z/z = 1
-
-[node name="Astromouse" parent="." instance=ExtResource( 3 )]
-
-transform/pos = Vector2( 624.999, 380.929 )
 
 [node name="Void" type="Area2D" parent="." groups=[
 "enemy",

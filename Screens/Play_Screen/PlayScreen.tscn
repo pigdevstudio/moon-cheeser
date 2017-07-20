@@ -57,5 +57,9 @@ script/script = SubResource( 1 )
 
 transform/pos = Vector2( 0, -1.85062 )
 
+[node name="Comet" parent="Level_0-0"]
+
+transform/pos = Vector2( 162.981, 630.639 )
+
 
 [editable path="Level_0-0"]

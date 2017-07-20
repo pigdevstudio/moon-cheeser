@@ -10,12 +10,13 @@ func _fixed_process(delta):
 		queue_free()
 
 func _spawn_crater(p):
-		var c = load("res://Objects/Crater/Crater.tscn").instance()
-		get_collider().get_node("Sprite").add_child(c)
-		c.set_global_pos(p)
-		c.set_rot(c.get_angle_to(get_collider().get_pos()))
-		
-		c = load("res://Objects/Crater/CraterPlaceholder.tscn").instance()
-		get_collider().get_node("Sprite").add_child(c)
-		c.set_global_pos(p)
-		c.set_rot(c.get_angle_to(get_collider().get_pos()))
+		if get_parent().get_game_state() == 0:
+			var c = load("res://Objects/Crater/Crater.tscn").instance()
+			get_collider().get_node("Sprite").add_child(c)
+			c.set_global_pos(p)
+			c.set_rot(c.get_angle_to(get_collider().get_pos()))
+			
+			c = load("res://Objects/Crater/CraterPlaceholder.tscn").instance()
+			get_collider().get_node("Sprite").add_child(c)
+			c.set_global_pos(p)
+			c.set_rot(c.get_angle_to(get_collider().get_pos()))

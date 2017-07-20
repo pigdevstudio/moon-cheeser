@@ -420,6 +420,14 @@ wait_time = 0.5
 one_shot = false
 autostart = true
 
+[node name="Comet" parent="." instance=ExtResource( 7 )]
+
+transform/pos = Vector2( 155.225, 652.396 )
+
+[node name="Planet" parent="." instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 1222.42, 58.5042 )
+
 [connection signal="renamed" from="PlanetSpawner" to="PlanetSpawner/Label" method="_renamed"]
 
 [connection signal="timeout" from="PlanetSpawner/Timer" to="PlanetSpawner" method="_spawn"]

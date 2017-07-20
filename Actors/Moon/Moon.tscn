@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=1]
 
-[ext_resource path="res://Actors/Moon/moon_rigid.gd" type="Script" id=1]
+[ext_resource path="res://Actors/Moon/moon.gd" type="Script" id=1]
 [ext_resource path="res://Actors/Moon/moon.png" type="Texture" id=2]
 
 [sub_resource type="CircleShape2D" id=1]

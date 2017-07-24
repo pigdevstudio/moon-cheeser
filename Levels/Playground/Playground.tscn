@@ -172,12 +172,13 @@ game_state = 0
 
 [node name="Astromouse" parent="." instance=ExtResource( 2 )]
 
-transform/pos = Vector2( 616.648, 389.279 )
+transform/pos = Vector2( 622.731, 417.692 )
 
 [node name="Moon" parent="." instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 625.92, 750.496 )
+transform/pos = Vector2( 627.427, 702.086 )
 z/z = 1
+speed_multiplier = 0.5
 
 [node name="Void" type="Area2D" parent="." groups=[
 "enemy",
@@ -202,7 +203,6 @@ _update_shape_index = 0
 
 [node name="PlanetSpawner" type="Position2D" parent="."]
 
-editor/display_folded = true
 transform/pos = Vector2( 991.207, -90.6803 )
 script/script = ExtResource( 4 )
 spawn_scene = ExtResource( 5 )
@@ -416,17 +416,9 @@ script/script = SubResource( 11 )
 [node name="Timer" type="Timer" parent="RightCometSpawner"]
 
 process_mode = 1
-wait_time = 0.5
+wait_time = 12.0
 one_shot = false
 autostart = true
-
-[node name="Comet" parent="." instance=ExtResource( 7 )]
-
-transform/pos = Vector2( 155.225, 652.396 )
-
-[node name="Planet" parent="." instance=ExtResource( 5 )]
-
-transform/pos = Vector2( 1222.42, 58.5042 )
 
 [connection signal="renamed" from="PlanetSpawner" to="PlanetSpawner/Label" method="_renamed"]
 

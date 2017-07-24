@@ -21,15 +21,8 @@ func _body_enter( body ):
 		can_jump = true
 		
 	elif body.is_in_group("enemy"):
+		print(body.get_name())
 		emit_signal("died")
 		
 	elif body.is_in_group("cheese"):
 		body.queue_free()
-		
-func battle_gravity(object, gravity):
-	set_gravity_scale(1)
-	var direction = (object.get_global_pos() - get_global_pos()).normalized()
-	apply_impulse(get_pos(), gravity * direction)
-	
-func finish_gravity():
-	set_gravity_scale(default_gravity_scale)

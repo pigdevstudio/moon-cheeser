@@ -3,13 +3,14 @@
 [ext_resource path="res://Actors/Astromouse/star_mouse.gd" type="Script" id=1]
 [ext_resource path="res://Actors/Astromouse/star_mouse_new.png" type="Texture" id=2]
 
-
 [sub_resource type="CircleShape2D" id=1]
 
 custom_solver_bias = 0.0
 radius = 35.4751
 
-[node name="StarMouse" type="KinematicBody2D"]
+[node name="StarMouse" type="KinematicBody2D" groups=[
+"starmouse",
+]]
 
 input/pickable = false
 collision/layers = 1
@@ -18,7 +19,7 @@ collision/margin = 0.08
 script/script = ExtResource( 1 )
 max_speed = 600
 max_force = 0.07
-mode = 0
+slowing_radius = 200.0
 
 [node name="Sprite" type="Sprite" parent="."]
 
@@ -40,7 +41,6 @@ angular_damp = 1.0
 
 [node name="Shape" type="CollisionShape2D" parent="Area"]
 
-visibility/visible = false
 shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0

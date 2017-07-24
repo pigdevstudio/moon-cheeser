@@ -6,14 +6,14 @@
 [sub_resource type="CapsuleShape2D" id=1]
 
 custom_solver_bias = 0.0
-radius = 24.0546
-height = 56.2099
+radius = 27.9712
+height = 64.3341
 
 [sub_resource type="CapsuleShape2D" id=2]
 
 custom_solver_bias = 0.0
-radius = 30.3114
-height = 53.9239
+radius = 30.455
+height = 61.6187
 
 [node name="Astromouse" type="RigidBody2D" groups=[
 "player",
@@ -22,7 +22,7 @@ height = 53.9239
 z/z = 2
 input/pickable = false
 shapes/0/shape = SubResource( 1 )
-shapes/0/transform = Matrix32( -4.37114e-08, -1, 1, -4.37114e-08, 15.9417, 3.7417 )
+shapes/0/transform = Matrix32( -4.37114e-08, -1, 1, -4.37114e-08, 14.9934, 1.0399 )
 shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
@@ -47,12 +47,12 @@ jump_force = 600.0
 [node name="Sprite" type="Sprite" parent="."]
 
 transform/pos = Vector2( 0, 0.341618 )
-transform/scale = Vector2( 0.316765, 0.316765 )
+transform/scale = Vector2( 0.3, 0.3 )
 texture = ExtResource( 2 )
 
 [node name="Shape" type="CollisionShape2D" parent="."]
 
-transform/pos = Vector2( 15.9417, 3.7417 )
+transform/pos = Vector2( 14.9934, 1.0399 )
 transform/rot = 90.0
 shape = SubResource( 1 )
 trigger = false
@@ -64,7 +64,7 @@ _update_shape_index = 0
 
 input/pickable = true
 shapes/0/shape = SubResource( 2 )
-shapes/0/transform = Matrix32( -4.37114e-08, -1, 1, -4.37114e-08, 15.9344, 1.90262 )
+shapes/0/transform = Matrix32( -4.37114e-08, -1, 1, -4.37114e-08, 15.1441, 0.821901 )
 shapes/0/trigger = false
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -73,7 +73,7 @@ angular_damp = 1.0
 
 [node name="Shape" type="CollisionShape2D" parent="Area"]
 
-transform/pos = Vector2( 15.9344, 1.90262 )
+transform/pos = Vector2( 15.1441, 0.821901 )
 transform/rot = 90.0
 shape = SubResource( 2 )
 trigger = false

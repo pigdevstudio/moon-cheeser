@@ -6,7 +6,7 @@
 [sub_resource type="CircleShape2D" id=1]
 
 custom_solver_bias = 0.0
-radius = 251.592
+radius = 198.277
 
 [sub_resource type="Animation" id=2]
 
@@ -27,7 +27,7 @@ tracks/0/keys = {
 [sub_resource type="CircleShape2D" id=3]
 
 custom_solver_bias = 0.0
-radius = 265.648
+radius = 209.051
 
 [node name="Moon" type="StaticBody2D" groups=[
 "moon",
@@ -45,6 +45,8 @@ constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
 script/script = ExtResource( 1 )
+gravity_strength = 200
+pulse_interval = 2.0
 
 [node name="Surface" type="Position2D" parent="."]
 
@@ -52,6 +54,7 @@ transform/pos = Vector2( 0, -274.585 )
 
 [node name="Sprite" type="Sprite" parent="."]
 
+transform/scale = Vector2( 0.8, 0.8 )
 texture = ExtResource( 2 )
 
 [node name="Shape" type="CollisionShape2D" parent="."]
@@ -90,6 +93,13 @@ priority = 1.0
 shape = SubResource( 3 )
 trigger = false
 _update_shape_index = 0
+
+[node name="Tween" type="Tween" parent="."]
+
+playback/process_mode = 1
+playback/active = false
+playback/repeat = false
+playback/speed = 1.0
 
 [connection signal="body_enter" from="Area" to="." method="_body_enter"]
 

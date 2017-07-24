@@ -1,36 +1,28 @@
-extends StaticBody2D
+extends "res://Actors/abstract_gravity_body.gd"
 
-var player = null
 var is_mouse_on = false setget _mouse_enter
 var already_pressed = false
-var gravity_strength = 200
-onready var s = get_node("Surface")
+
+export (float, 5.0, 0.5) var speed_multiplier
 onready var fixed_process = set_fixed_process(true)
 
 func _fixed_process(delta):
-	get_node("Sprite").rotate( deg2rad(45) * delta)
+	get_node("Sprite").rotate( deg2rad(45) * delta * speed_multiplier)
 	_astromouse_interact()
 
 func _astromouse_interact():
 	if Input.is_action_pressed("jump") and is_mouse_on and not already_pressed:
-		player = find_player()
-		if not player == null:
+		var player = _find_player()
+		if player != null and player.has_method("jump"):
 			if get_parent().get_game_state() == 0:
 				player.jump()
 			elif get_parent().get_game_state() == 1:
-				player.battle_gravity(self, gravity_strength)
+				_apply_gravity(player)
 	already_pressed = Input.is_action_pressed("jump")
 
 func _body_enter( body ):
 	if body.is_in_group("player"):
-		player = body
-	elif body.is_in_group("cheese"):
-		body.queue_free()
-
-func find_player():
-	for c in get_parent().get_children():
-		if c.is_in_group("player"):
-			return(c)
+		pass
 
 func _mouse_enter(value):
 	is_mouse_on = value

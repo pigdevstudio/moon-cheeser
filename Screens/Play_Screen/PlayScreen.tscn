@@ -7,16 +7,11 @@
 
 script/source = "extends Label
 
-# class member variables go here, for example:
-# var a = 2
-# var b = \"textvar\"
-
 func _ready():
 	set_process(true)
 	
 func _process(delta):
-	set_text(\"FPS: %s\" %OS.get_frames_per_second())
-"
+	set_text(\"FPS: %s\" %OS.get_frames_per_second())"
 
 [node name="PlayScreen" instance=ExtResource( 1 )]
 
@@ -57,9 +52,10 @@ script/script = SubResource( 1 )
 
 transform/pos = Vector2( 0, -1.85062 )
 
-[node name="Comet" parent="Level_0-0"]
+[node name="StarMouse" parent="Level_0-0"]
 
-transform/pos = Vector2( 162.981, 630.639 )
+slowing_radius = 100
 
 
 [editable path="Level_0-0"]
+[editable path="Level_0-0/Moon"]

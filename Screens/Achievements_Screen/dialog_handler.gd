@@ -2,6 +2,7 @@ extends "res://GUI/ScreenMargin/screen_margin.gd"
 
 func _ready():
 	acheesements.read_achievements()
+	skins.read_skins()
 
 func _call_popup(achievement):
 	var title = acheesements.dict[achievement].name

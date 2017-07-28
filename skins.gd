@@ -20,3 +20,9 @@ func read_skins():
 		text = file.get_as_text()
 		dict.parse_json(text)
 		file.close()
+
+func write_skins():
+	if file.file_exists("res://Screens/Achievements_Screen/skins.json"):
+		file.open("res://Screens/Achievements_Screen/skins.json", file.WRITE)
+		file.store_string(dict.to_json())
+		file.close()

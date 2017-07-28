@@ -24,15 +24,17 @@ func write_achievements():
 		file.store_string(dict.to_json())
 		file.close()
 		print("done")
+	skins.write_skins()
 
 func modify_achievement(achievement, value):
-	dict[achievement].accomplished += value
-	if dict[achievement].accomplished >= dict[achievement].total:
-		if achievement == "achievementthree":
-			skins.dict["cheese_star"] = true
-			popup.set_title("Acheesement unlocked!")
-			popup.set_text(dict[achievement].name)
-			_show_popup()
+	if dict[achievement].accomplished < dict[achievement].total: 
+		dict[achievement].accomplished += value
+		if dict[achievement].accomplished >= dict[achievement].total: 
+			if achievement == "achievementthree":
+				skins.dict["cheese_star"] = true
+				popup.set_title("Acheesement unlocked!")
+				popup.set_text(dict[achievement].name)
+				_show_popup()
 
 func _on_timeout():
 	_hide_popup()

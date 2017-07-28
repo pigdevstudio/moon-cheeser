@@ -8,4 +8,4 @@ func change_skin(skin, new):
 func unlock_skins():
 	for key in skins.dict:
 		if key == "cheese_star" and skins.dict[key] == true:
-			get_node("GridContainer/Skin#1").show()
+			get_node("Skin#1").show()

@@ -110,17 +110,16 @@ tabs_visible = true
 
 [node name="Achievements" type="GridContainer" parent="ScreenMargin/VerticalPortions/TabContainer"]
 
-visibility/visible = false
 anchor/right = 1
 anchor/bottom = 1
 focus/ignore_mouse = false
 focus/stop_mouse = false
 size_flags/horizontal = 3
 size_flags/vertical = 3
-margin/left = 10.0
-margin/top = 39.0
-margin/right = -2.0
-margin/bottom = 5.0
+margin/left = 4.0
+margin/top = 40.0
+margin/right = 4.0
+margin/bottom = 4.0
 columns = 8
 
 [node name="Achievement#1" type="TextureButton" parent="ScreenMargin/VerticalPortions/TabContainer/Achievements"]
@@ -146,6 +145,7 @@ params/stretch_mode = 6
 
 [node name="Skins" type="GridContainer" parent="ScreenMargin/VerticalPortions/TabContainer"]
 
+visibility/visible = false
 anchor/right = 1
 anchor/bottom = 1
 focus/ignore_mouse = false
@@ -153,7 +153,7 @@ focus/stop_mouse = false
 size_flags/horizontal = 3
 size_flags/vertical = 3
 margin/left = 4.0
-margin/top = 40.0
+margin/top = 32.0
 margin/right = 4.0
 margin/bottom = 4.0
 columns = 8
@@ -161,6 +161,7 @@ script/script = ExtResource( 6 )
 
 [node name="Skin#1" type="TextureButton" parent="ScreenMargin/VerticalPortions/TabContainer/Skins"]
 
+visibility/visible = false
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 3
@@ -197,6 +198,8 @@ dialog/hide_on_ok = true
 
 [connection signal="released" from="ScreenMargin/VerticalPortions/HorizontalPortion/Back" to="." method="change_to_next_scene"]
 
-[connection signal="released" from="ScreenMargin/VerticalPortions/TabContainer/Achievements/Achievement#1" to="ScreenMargin" method="_call_popup" binds= [ "achievementone" ]]
+[connection signal="released" from="ScreenMargin/VerticalPortions/TabContainer/Achievements/Achievement#1" to="ScreenMargin" method="_call_popup" binds= [ "achievementthree" ]]
+
+[connection signal="released" from="ScreenMargin/VerticalPortions/TabContainer/Skins/Skin#1" to="ScreenMargin/VerticalPortions/TabContainer/Skins" method="change_skin" binds= [ "star_skin", "res://Actors/Star/cheese_star.png" ]]
 
 

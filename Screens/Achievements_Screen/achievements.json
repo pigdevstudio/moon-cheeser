@@ -1,1 +1,4 @@
-{"achievementone":{"total":100, "description":"Make two stars collide 100 times", "accomplished":0, "name":"Supernova"}, "achievementtwo":{"total":1000, "description":"Gather 1000 cheeses or more", "accomplished":11, "name":"Moon Cheeser"}, "achievementthree":{"total":1, "description":"Make one comet collide with the Moon", "accomplished":4, "name":"The least you can do"}}
+{
+  "achievementone":{"accomplished":0, "description":"Make two stars collide 100 times", "total":100, "name":"Supernova"},
+  "achievementtwo":{"accomplished":0, "description":"Gather 1000 cheeses or more", "total":1000, "name":"Moon Cheeser"},
+  "achievementthree":{"accomplished":0, "description":"Make one comet collide with the Moon", "total":1, "name":"The least you can do"}}

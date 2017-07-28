@@ -172,37 +172,38 @@ game_state = 0
 
 [node name="Astromouse" parent="." instance=ExtResource( 2 )]
 
-transform/pos = Vector2( 622.731, 417.692 )
+transform/pos = Vector2( 621.219, 313.685 )
 
 [node name="Moon" parent="." instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 627.427, 702.086 )
 z/z = 1
-speed_multiplier = 0.5
 
-[node name="Void" type="Area2D" parent="." groups=[
+[node name="Void" type="StaticBody2D" parent="." groups=[
 "enemy",
 ]]
 
-editor/display_folded = true
 input/pickable = true
 shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 616, 958.84 )
-shapes/0/trigger = false
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
+shapes/0/trigger = true
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
 
 [node name="Shape" type="CollisionShape2D" parent="Void"]
 
 transform/pos = Vector2( 616, 958.84 )
 shape = SubResource( 1 )
-trigger = false
+trigger = true
 _update_shape_index = 0
 
 [node name="PlanetSpawner" type="Position2D" parent="."]
 
+editor/display_folded = true
 transform/pos = Vector2( 991.207, -90.6803 )
 script/script = ExtResource( 4 )
 spawn_scene = ExtResource( 5 )
@@ -284,7 +285,7 @@ script/script = SubResource( 5 )
 [node name="Timer" type="Timer" parent="LeftStarSpawner"]
 
 process_mode = 1
-wait_time = 30.0
+wait_time = 25.0
 one_shot = false
 autostart = true
 
@@ -334,7 +335,6 @@ autostart = true
 
 [node name="RightStarSpawner" type="Position2D" parent="."]
 
-editor/display_folded = true
 transform/pos = Vector2( 1278.78, 116.589 )
 script/script = ExtResource( 4 )
 spawn_scene = ExtResource( 6 )

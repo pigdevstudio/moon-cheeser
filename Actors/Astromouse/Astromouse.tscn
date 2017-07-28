@@ -1,19 +1,13 @@
-[gd_scene load_steps=5 format=1]
+[gd_scene load_steps=4 format=1]
 
 [ext_resource path="res://Actors/Astromouse/astromouse.gd" type="Script" id=1]
-[ext_resource path="res://Actors/Astromouse/astromouse_new.png" type="Texture" id=2]
+[ext_resource path="res://Actors/Astromouse/mouse_mesh.scn" type="PackedScene" id=2]
 
 [sub_resource type="CapsuleShape2D" id=1]
 
 custom_solver_bias = 0.0
 radius = 27.9712
 height = 64.3341
-
-[sub_resource type="CapsuleShape2D" id=2]
-
-custom_solver_bias = 0.0
-radius = 30.455
-height = 61.6187
 
 [node name="Astromouse" type="RigidBody2D" groups=[
 "player",
@@ -22,7 +16,7 @@ height = 61.6187
 z/z = 2
 input/pickable = false
 shapes/0/shape = SubResource( 1 )
-shapes/0/transform = Matrix32( -4.37114e-08, -1, 1, -4.37114e-08, 14.9934, 1.0399 )
+shapes/0/transform = Matrix32( -4.37114e-08, -1, 1, -4.37114e-08, 14.9934, -8.22591 )
 shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
@@ -44,45 +38,45 @@ damp_override/angular = -1.0
 script/script = ExtResource( 1 )
 jump_force = 600.0
 
-[node name="Sprite" type="Sprite" parent="."]
+[node name="Sprite" type="ViewportSprite" parent="."]
 
-transform/pos = Vector2( 0, 0.341618 )
-transform/scale = Vector2( 0.3, 0.3 )
-texture = ExtResource( 2 )
+transform/pos = Vector2( 0, -18.2996 )
+transform/scale = Vector2( 0.204817, 0.204817 )
+viewport = NodePath("Viewport")
+
+[node name="Viewport" type="Viewport" parent="Sprite"]
+
+editor/display_folded = true
+rect = Rect2( 0, 0, 1024, 512 )
+own_world = true
+world = null
+transparent_bg = false
+render_target/enabled = true
+render_target/v_flip = false
+render_target/clear_on_new_frame = true
+render_target/filter = true
+render_target/gen_mipmaps = false
+render_target/update_mode = 2
+audio_listener/enable_2d = false
+audio_listener/enable_3d = false
+physics/object_picking = false
+gui/disable_input = false
+
+[node name="mouse_mesh" parent="Sprite/Viewport" instance=ExtResource( 2 )]
+
+[node name="AnimationPlayer" parent="Sprite/Viewport/mouse_mesh"]
+
+autoplay = "default"
 
 [node name="Shape" type="CollisionShape2D" parent="."]
 
-transform/pos = Vector2( 14.9934, 1.0399 )
+transform/pos = Vector2( 14.9934, -8.22591 )
 transform/rot = 90.0
 shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
 
-[node name="Area" type="Area2D" parent="." groups=[
-"player",
-]]
-
-input/pickable = true
-shapes/0/shape = SubResource( 2 )
-shapes/0/transform = Matrix32( -4.37114e-08, -1, 1, -4.37114e-08, 15.1441, 0.821901 )
-shapes/0/trigger = false
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
-
-[node name="Shape" type="CollisionShape2D" parent="Area"]
-
-transform/pos = Vector2( 15.1441, 0.821901 )
-transform/rot = 90.0
-shape = SubResource( 2 )
-trigger = false
-_update_shape_index = 0
-
 [connection signal="body_enter" from="." to="." method="_body_enter"]
 
-[connection signal="area_enter" from="Area" to="." method="_body_enter"]
 
-[connection signal="body_enter" from="Area" to="." method="_body_enter"]
-
-
+[editable path="Sprite/Viewport/mouse_mesh"]

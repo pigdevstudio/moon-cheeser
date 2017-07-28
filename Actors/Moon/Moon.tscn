@@ -6,7 +6,7 @@
 [sub_resource type="CircleShape2D" id=1]
 
 custom_solver_bias = 0.0
-radius = 198.277
+radius = 252.646
 
 [sub_resource type="Animation" id=2]
 
@@ -27,7 +27,7 @@ tracks/0/keys = {
 [sub_resource type="CircleShape2D" id=3]
 
 custom_solver_bias = 0.0
-radius = 209.051
+radius = 275.827
 
 [node name="Moon" type="StaticBody2D" groups=[
 "moon",
@@ -46,7 +46,6 @@ friction = 1.0
 bounce = 0.0
 script/script = ExtResource( 1 )
 gravity_strength = 200
-pulse_interval = 2.0
 
 [node name="Surface" type="Position2D" parent="."]
 
@@ -54,7 +53,7 @@ transform/pos = Vector2( 0, -274.585 )
 
 [node name="Sprite" type="Sprite" parent="."]
 
-transform/scale = Vector2( 0.8, 0.8 )
+transform/scale = Vector2( 1.00537, 1.00537 )
 texture = ExtResource( 2 )
 
 [node name="Shape" type="CollisionShape2D" parent="."]

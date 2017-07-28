@@ -1,5 +1,8 @@
 extends "res://Actors/abstract_gravity_body.gd"
 
+onready var tween = get_node("Tween")
+onready var original_scale = get_scale()
+export (float) var pulse_interval = 2.0
 func _ready():
 	if get_parent().has_method("set_game_state"):
 		get_parent().set_game_state(1)

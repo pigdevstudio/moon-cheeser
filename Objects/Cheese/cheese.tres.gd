@@ -1,7 +1,8 @@
-extends Area2D
+extends StaticBody2D
 
 func _ready():
 	connect("exit_tree", get_parent(), "count_cheeses")
+
 func float_around():
 	randomize()
 	var offset = Vector2(rand_range(-50, 50), rand_range(100, 300)) * -1

@@ -1,7 +1,8 @@
 extends "res://Actors/abstract_space_body.gd"
 
 func _ready():
-	get_node("Sprite").set_texture(load(skins.star_skin))
+	#get_node("Sprite").set_texture(load(skins.star_skin))
+	pass
 func _instance_starmouse(collider):
 	var i = load("res://Actors/Astromouse/StarMouse.tscn").instance()
 	i.set_pos(get_pos())

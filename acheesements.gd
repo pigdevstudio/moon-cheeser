@@ -23,7 +23,6 @@ func write_achievements():
 		file.open("res://Screens/Achievements_Screen/achievements.json", file.WRITE)
 		file.store_string(dict.to_json())
 		file.close()
-		print("done")
 	skins.write_skins()
 
 func modify_achievement(achievement, value):

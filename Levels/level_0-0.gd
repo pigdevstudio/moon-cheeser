@@ -1,4 +1,4 @@
-extends Node2D
+extends Node
 
 export (int, "NORMAL", "GRAVITATIONAL_BATTLE") var game_state setget set_game_state, get_game_state
 

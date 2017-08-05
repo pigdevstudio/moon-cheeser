@@ -1,13 +1,12 @@
-[gd_scene load_steps=6 format=1]
+[gd_scene load_steps=5 format=1]
 
 [ext_resource path="res://Objects/Crater/crater.gd" type="Script" id=1]
-[ext_resource path="res://Objects/outline_material.tres" type="CanvasItemMaterial" id=2]
-[ext_resource path="res://Objects/Crater/crater.png" type="Texture" id=3]
+[ext_resource path="res://Objects/Crater/crater.tex" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 30.1245, 9.7197 )
+extents = Vector2( 33.3517, 12.2314 )
 
 [sub_resource type="Animation" id=2]
 
@@ -28,14 +27,14 @@ tracks/0/keys = {
 
 [node name="Crater" type="StaticBody2D" groups=[
 "crater",
-"enemy",
 "notplanet",
+"enemy",
 ]]
 
 transform/pos = Vector2( 609.948, 298.859 )
 input/pickable = true
 shapes/0/shape = SubResource( 1 )
-shapes/0/transform = Matrix32( 1, 0, 0, 1, 1.19165, 7.14986 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 3.84613 )
 shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
@@ -47,14 +46,13 @@ script/script = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
 
-material/material = ExtResource( 2 )
-transform/pos = Vector2( 0, 3.17772 )
-transform/scale = Vector2( 0.300516, 0.371334 )
-texture = ExtResource( 3 )
+transform/scale = Vector2( 0.349339, 0.431663 )
+texture = ExtResource( 2 )
 
 [node name="Shape" type="CollisionShape2D" parent="."]
 
-transform/pos = Vector2( 1.19165, 7.14986 )
+transform/pos = Vector2( 0, 3.84613 )
+z/z = 2
 shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
@@ -75,7 +73,7 @@ anims/shine = SubResource( 2 )
 playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
-autoplay = "shine"
+autoplay = ""
 
 [node name="Tween" type="Tween" parent="."]
 

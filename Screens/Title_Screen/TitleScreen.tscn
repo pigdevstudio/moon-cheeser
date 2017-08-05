@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=1]
+[gd_scene load_steps=29 format=1]
 
 [ext_resource path="res://Screens/Abstract Screen.tscn" type="PackedScene" id=1]
 [ext_resource path="res://GUI/ScreenMargin/screen_margin.gd" type="Script" id=2]
@@ -8,7 +8,7 @@
 [ext_resource path="res://Screens/Title_Screen/pig_hover.png" type="Texture" id=6]
 [ext_resource path="res://GUI/DifficultySettings/DifficultySettings.tscn" type="PackedScene" id=7]
 [ext_resource path="res://GUI/ScreenPortions/Center/center_portion.gd" type="Script" id=8]
-[ext_resource path="res://Actors/Moon/moon.png" type="Texture" id=9]
+[ext_resource path="res://Actors/Moon/moon_blury.png" type="Texture" id=9]
 [ext_resource path="res://Screens/Title_Screen/achievement_star.png" type="Texture" id=10]
 [ext_resource path="res://Screens/Title_Screen/achievement_star_pressed.png" type="Texture" id=11]
 [ext_resource path="res://Screens/Title_Screen/achievement_star_hover.png" type="Texture" id=12]
@@ -26,6 +26,7 @@
 [ext_resource path="res://Screens/Title_Screen/jp_pressed.png" type="Texture" id=24]
 [ext_resource path="res://Screens/Title_Screen/jp_hover.png" type="Texture" id=25]
 [ext_resource path="res://GUI/ScreenPortions/LowRes/low_res.gd" type="Script" id=26]
+[ext_resource path="res://Actors/Moon/moon.png" type="Texture" id=27]
 
 [sub_resource type="GDScript" id=1]
 
@@ -646,7 +647,7 @@ margin/left = 195.0
 margin/top = 0.0
 margin/right = 578.0
 margin/bottom = 260.0
-texture = ExtResource( 9 )
+texture = ExtResource( 27 )
 expand = true
 stretch_mode = 6
 
@@ -836,15 +837,15 @@ textures/hover = ExtResource( 25 )
 params/resize_mode = 1
 params/stretch_mode = 6
 
-[connection signal="resolution_changed" from="ScreenMargin" to="ScreenMargin/ScreenPortions/RightPortion/SoundOption" method="_on_ScreenMargin_resolution_changed"]
-
-[connection signal="resolution_changed" from="ScreenMargin" to="ScreenMargin/ScreenPortions/RightPortion" method="_on_ScreenMargin_resolution_changed"]
+[connection signal="resolution_changed" from="ScreenMargin" to="ScreenMargin/ScreenPortions/LeftPortion" method="_on_ScreenMargin_resolution_changed"]
 
 [connection signal="resolution_changed" from="ScreenMargin" to="ScreenMargin/ScreenPortions/LowRes" method="_on_ScreenMargin_resolution_changed"]
 
-[connection signal="resolution_changed" from="ScreenMargin" to="ScreenMargin/ScreenPortions/LeftPortion" method="_on_ScreenMargin_resolution_changed"]
+[connection signal="resolution_changed" from="ScreenMargin" to="ScreenMargin/ScreenPortions/RightPortion/SoundOption" method="_on_ScreenMargin_resolution_changed"]
 
 [connection signal="resolution_changed" from="ScreenMargin" to="ScreenMargin/ScreenPortions/CenterPortion" method="_on_ScreenMargin_resolution_changed"]
+
+[connection signal="resolution_changed" from="ScreenMargin" to="ScreenMargin/ScreenPortions/RightPortion" method="_on_ScreenMargin_resolution_changed"]
 
 [connection signal="released" from="ScreenMargin/ScreenPortions/LeftPortion/AdButton" to="ScreenMargin/ScreenPortions/LeftPortion/AdButton" method="_on_AdButton_released"]
 

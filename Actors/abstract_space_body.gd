@@ -17,9 +17,10 @@ func _ready():
 	velocity = Vector2(direction,0) * MAX_SPEED
 
 func _fixed_process(delta):
+	if is_colliding():
+		_handle_collision(get_collider())
 	move(apply_route() * delta)
 	already_pressed = Input.is_mouse_button_pressed(BUTTON_LEFT)
-	_handle_collision()
 
 func _set_mouse_on(is_on):
 	is_mouse_on = is_on
@@ -35,8 +36,12 @@ func apply_route():
 			route_already_changed = true
 			var point = get_pos() + (Vector2(-velocity.normalized().x, velocity.normalized().y) * (100 * normal))
 			rotate(get_angle_to(point))
+			var angle = get_angle_to(get_pos() - velocity)
+			if is_in_group("comet"):
+				get_node("Sprite/Outer").set_param(Particles2D.PARAM_INITIAL_ANGLE, rad2deg(angle) + 90)
+				get_node("Sprite/Inner").set_param(Particles2D.PARAM_INITIAL_ANGLE, rad2deg(angle) + 90)
 	return(velocity)
-	
+
 func _spawn_crater(position):
 		if get_parent().get_game_state() == 0:
 			var instance = load("res://Objects/Crater/Crater.tscn").instance()
@@ -49,9 +54,8 @@ func _spawn_crater(position):
 			instance.set_global_pos(position)
 			instance.set_rot(instance.get_angle_to(get_collider().get_pos()))
 			
-func _handle_collision():
-	if is_colliding():
-		var collider = get_collider()
+func _handle_collision(collider):
+	if collider != null:
 		if collider.is_in_group("moon"):
 			acheesements.modify_achievement("achievementthree", 1)
 			var pos = get_collision_pos()
@@ -61,5 +65,5 @@ func _handle_collision():
 				_instance_starmouse(collider)
 			elif has_method("_kill_player"):
 				_kill_player(collider)
-		if not collider.is_in_group("cheese") and not collider.is_in_group("crater"):
+		if not collider.is_in_group("cheese"):
 			queue_free()

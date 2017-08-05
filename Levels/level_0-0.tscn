@@ -1,12 +1,13 @@
-[gd_scene load_steps=19 format=1]
+[gd_scene load_steps=20 format=1]
 
-[ext_resource path="res://Levels/Playground/playground.gd" type="Script" id=1]
+[ext_resource path="res://Levels/level_0-0.gd" type="Script" id=1]
 [ext_resource path="res://Actors/Astromouse/Astromouse.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Actors/Moon/Moon.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Objects/Spawner/spawner.gd" type="Script" id=4]
 [ext_resource path="res://Actors/Planet/Planet.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Actors/Star/Star.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Actors/Comet/Comet.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Levels/background.tscn" type="PackedScene" id=8]
 
 [sub_resource type="LineShape2D" id=1]
 
@@ -172,17 +173,19 @@ game_state = 0
 
 [node name="Astromouse" parent="." instance=ExtResource( 2 )]
 
-transform/pos = Vector2( 621.219, 313.685 )
+transform/pos = Vector2( 621.219, 407.985 )
 
 [node name="Moon" parent="." instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 627.427, 702.086 )
-z/z = 1
+editor/display_folded = true
+transform/pos = Vector2( 627.427, 615.963 )
+z/z = 0
 
 [node name="Void" type="StaticBody2D" parent="." groups=[
 "enemy",
 ]]
 
+editor/display_folded = true
 input/pickable = true
 shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 616, 958.84 )
@@ -223,6 +226,7 @@ autoplay = "PlanetAnim"
 
 [node name="Label" type="Label" parent="PlanetSpawner"]
 
+visibility/visible = false
 rect/scale = Vector2( 2, 2 )
 focus/ignore_mouse = true
 focus/stop_mouse = true
@@ -267,6 +271,7 @@ autoplay = "LeftStarSpawn"
 
 [node name="Label" type="Label" parent="LeftStarSpawner"]
 
+visibility/visible = false
 rect/scale = Vector2( 2, 2 )
 focus/ignore_mouse = true
 focus/stop_mouse = true
@@ -311,6 +316,7 @@ autoplay = "LeftCometSpawner"
 
 [node name="Label" type="Label" parent="LeftCometSpawner"]
 
+visibility/visible = false
 rect/scale = Vector2( 2, 2 )
 focus/ignore_mouse = true
 focus/stop_mouse = true
@@ -335,6 +341,7 @@ autostart = true
 
 [node name="RightStarSpawner" type="Position2D" parent="."]
 
+editor/display_folded = true
 transform/pos = Vector2( 1278.78, 116.589 )
 script/script = ExtResource( 4 )
 spawn_scene = ExtResource( 6 )
@@ -354,6 +361,7 @@ autoplay = "RightStarSpawner"
 
 [node name="Label" type="Label" parent="RightStarSpawner"]
 
+visibility/visible = false
 rect/scale = Vector2( 2, 2 )
 focus/ignore_mouse = true
 focus/stop_mouse = true
@@ -398,6 +406,7 @@ autoplay = "RightCometSpawner"
 
 [node name="Label" type="Label" parent="RightCometSpawner"]
 
+visibility/visible = false
 rect/scale = Vector2( 2, 2 )
 focus/ignore_mouse = true
 focus/stop_mouse = true
@@ -420,6 +429,8 @@ wait_time = 12.0
 one_shot = false
 autostart = true
 
+[node name="Background" parent="." instance=ExtResource( 8 )]
+
 [connection signal="renamed" from="PlanetSpawner" to="PlanetSpawner/Label" method="_renamed"]
 
 [connection signal="timeout" from="PlanetSpawner/Timer" to="PlanetSpawner" method="_spawn"]
@@ -441,3 +452,4 @@ autostart = true
 [connection signal="timeout" from="RightCometSpawner/Timer" to="RightCometSpawner" method="_spawn"]
 
 
+[editable path="Moon"]

@@ -1,17 +1,24 @@
-[gd_scene load_steps=4 format=1]
+[gd_scene load_steps=6 format=1]
 
 [ext_resource path="res://Actors/Astromouse/star_mouse.gd" type="Script" id=1]
-[ext_resource path="res://Actors/Astromouse/star_mouse_new.png" type="Texture" id=2]
+[ext_resource path="res://Actors/Astromouse/starmouse.png" type="Texture" id=2]
+[ext_resource path="res://Actors/particle.tex" type="Texture" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
 
 custom_solver_bias = 0.0
 radius = 35.4751
 
+[sub_resource type="ColorRamp" id=2]
+
+offsets = FloatArray( 0, 1 )
+colors = ColorArray( 0.666667, 0.666667, 1, 1, 0.666667, 0.666667, 1, 0 )
+
 [node name="StarMouse" type="KinematicBody2D" groups=[
 "starmouse",
 ]]
 
+z/z = 2
 input/pickable = false
 collision/layers = 1
 collision/mask = 1
@@ -58,6 +65,35 @@ playback/process_mode = 1
 playback/active = false
 playback/repeat = false
 playback/speed = 1.0
+
+[node name="Particles" type="Particles2D" parent="."]
+
+visibility/visible = false
+visibility/behind_parent = true
+config/amount = 16
+config/lifetime = 2.0
+config/process_mode = 1
+config/offset = Vector2( 0, 60 )
+config/half_extents = Vector2( 30, 30 )
+config/local_space = false
+config/texture = ExtResource( 3 )
+params/direction = 0.0
+params/spread = 0.0
+params/linear_velocity = 25.0
+params/spin_velocity = 0.0
+params/orbit_velocity = 0.0
+params/gravity_direction = 0.0
+params/gravity_strength = 9.8
+params/radial_accel = 0.0
+params/tangential_accel = 0.0
+params/damping = 0.0
+params/initial_angle = 0.0
+params/initial_size = 0.5
+params/final_size = 0.7
+params/hue_variation = 0.0
+params/anim_speed_scale = 1.0
+params/anim_initial_pos = 0.0
+color/color_ramp = SubResource( 2 )
 
 [connection signal="area_enter" from="Area" to="." method="_on_body_enter"]
 

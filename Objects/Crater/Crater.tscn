@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=1]
+[gd_scene load_steps=7 format=1]
 
 [ext_resource path="res://Objects/Crater/crater.gd" type="Script" id=1]
 [ext_resource path="res://Objects/Crater/crater.tex" type="Texture" id=2]
+[ext_resource path="res://Actors/particle.tex" type="Texture" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -24,6 +25,11 @@ tracks/0/keys = {
 "update": 0,
 "values": [ Color( 1, 0.296875, 0.296875, 1 ), Color( 1, 0.296875, 0.296875, 0.224039 ) ]
 }
+
+[sub_resource type="ColorRamp" id=3]
+
+offsets = FloatArray( 0.379167, 1 )
+colors = ColorArray( 1, 0.713135, 0.21875, 1, 1, 0.0664063, 0.285217, 0.463843 )
 
 [node name="Crater" type="StaticBody2D" groups=[
 "crater",
@@ -81,6 +87,35 @@ playback/process_mode = 1
 playback/active = false
 playback/repeat = false
 playback/speed = 1.0
+
+[node name="Particles" type="Particles2D" parent="."]
+
+config/amount = 10
+config/lifetime = 0.7
+config/emit_timeout = 0.7
+config/emitting = false
+config/process_mode = 1
+config/offset = Vector2( 0, -20 )
+config/half_extents = Vector2( 30, 0 )
+config/explosiveness = 0.6
+config/texture = ExtResource( 3 )
+params/direction = 180.0
+params/spread = 40.0
+params/linear_velocity = 200.0
+params/spin_velocity = 0.0
+params/orbit_velocity = 0.0
+params/gravity_direction = 0.0
+params/gravity_strength = 9.8
+params/radial_accel = 0.0
+params/tangential_accel = 0.0
+params/damping = 0.0
+params/initial_angle = 90.0
+params/initial_size = 1.0
+params/final_size = 2.0
+params/hue_variation = 0.0
+params/anim_speed_scale = 1.0
+params/anim_initial_pos = 0.0
+color/color_ramp = SubResource( 3 )
 
 [connection signal="timeout" from="Timer" to="." method="_on_timeout"]
 

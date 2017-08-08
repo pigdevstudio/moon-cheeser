@@ -52,7 +52,7 @@ transform/rot = 0.129821
 transform/scale = Vector2( 0.454877, 0.454877 )
 frames = SubResource( 2 )
 animation = "flying"
-frame = 3
+frame = 2
 playing = true
 offset = Vector2( 160.398, 0.0223724 )
 

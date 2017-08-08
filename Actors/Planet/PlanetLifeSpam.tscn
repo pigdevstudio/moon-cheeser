@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=1]
+[gd_scene load_steps=3 format=1]
 
-[ext_resource path="res://Actors/Planet/life_spam.gd" type="Script" id=1]
+[ext_resource path="res://Screens/main_theme.tres" type="Theme" id=1]
+[ext_resource path="res://Actors/Planet/life_spam.gd" type="Script" id=2]
 
 [node name="PlanetLifeSpam" type="CenterContainer"]
 
@@ -8,12 +9,13 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
+theme/theme = ExtResource( 1 )
 margin/left = 367.0
 margin/top = 362.0
 margin/right = 889.0
 margin/bottom = 378.0
 use_top_left = false
-script/script = ExtResource( 1 )
+script/script = ExtResource( 2 )
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
 
@@ -33,7 +35,7 @@ range/page = 0.0
 range/value = 1.0
 range/exp_edit = false
 range/rounded = false
-percent/visible = true
+percent/visible = false
 
 [node name="Timer" type="Timer" parent="."]
 
@@ -41,5 +43,23 @@ process_mode = 1
 wait_time = 15.0
 one_shot = true
 autostart = true
+
+[node name="Label" type="Label" parent="."]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 253.0
+margin/top = 7.0
+margin/right = 269.0
+margin/bottom = 9.0
+text = "GRAVITY BATTLE!!"
+align = 3
+valign = 3
+uppercase = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
 
 

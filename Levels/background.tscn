@@ -47,6 +47,7 @@ scale = Vector2( 1, 1 )
 
 [node name="Stars" type="CanvasLayer" parent="."]
 
+editor/display_folded = true
 layer = -3
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -700,6 +701,7 @@ autoplay = "shine"
 
 [node name="Planets" type="CanvasLayer" parent="."]
 
+editor/display_folded = true
 layer = -3
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -715,6 +717,10 @@ transform/rot = 20.7617
 
 transform/pos = Vector2( 1068.06, 494.138 )
 z/z = 0
+
+[node name="sky" parent="Planets/Plinthon"]
+
+editor/display_folded = true
 
 
 [editable path="Planets/Plinthon"]

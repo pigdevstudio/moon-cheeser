@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=1]
 
 [ext_resource path="res://Actors/Planet/planet.gd" type="Script" id=1]
-[ext_resource path="res://Actors/Planet/planet.png" type="Texture" id=2]
+[ext_resource path="res://Actors/Planet/satheri.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Actors/Planet/PlanetLifeSpam.tscn" type="PackedScene" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
@@ -32,9 +32,18 @@ script/script = ExtResource( 1 )
 gravity_strength = 200
 pulse_interval = 2.0
 
-[node name="Sprite" type="Sprite" parent="."]
+[node name="Sprite" type="Node2D" parent="."]
 
-texture = ExtResource( 2 )
+editor/display_folded = true
+
+[node name="satheri" parent="Sprite" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 0.508568, -3.93056 )
+transform/scale = Vector2( 4.58245, 4.58245 )
+
+[node name="ring_front" parent="Sprite/satheri"]
+
+transform/pos = Vector2( 3.59111, 2.70122 )
 
 [node name="Shape" type="CollisionShape2D" parent="."]
 
@@ -75,11 +84,24 @@ scale = Vector2( 1, 1 )
 
 [node name="PlanetLifeSpam" parent="GUILayer" instance=ExtResource( 3 )]
 
+[node name="ProgressBar" parent="GUILayer/PlanetLifeSpam"]
+
+margin/top = 0.0
+margin/bottom = 16.0
+
 [node name="Timer" parent="GUILayer/PlanetLifeSpam"]
 
 wait_time = 10.0
 
+[node name="Label" parent="GUILayer/PlanetLifeSpam"]
+
+margin/left = 205.0
+margin/top = 1.0
+margin/right = 317.0
+margin/bottom = 15.0
+
 [connection signal="timeout" from="GUILayer/PlanetLifeSpam/Timer" to="." method="_on_life_spam"]
 
 
+[editable path="Sprite/satheri"]
 [editable path="GUILayer/PlanetLifeSpam"]

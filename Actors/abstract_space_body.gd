@@ -57,7 +57,7 @@ func _spawn_crater(position):
 func _handle_collision(collider):
 	if collider != null:
 		if collider.is_in_group("moon"):
-			acheesements.modify_achievement("achievementthree", 1)
+#			acheesements.modify_achievement("achievementthree", 1)
 			var pos = get_collision_pos()
 			_spawn_crater(pos)
 		elif collider.is_in_group("player"):

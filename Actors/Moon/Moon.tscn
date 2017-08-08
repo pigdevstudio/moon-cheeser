@@ -103,7 +103,7 @@ tracks/1/keys = {
 [sub_resource type="CircleShape2D" id=5]
 
 custom_solver_bias = 0.0
-radius = 194.927
+radius = 252.968
 
 [node name="Moon" type="StaticBody2D" groups=[
 "moon",
@@ -135,6 +135,7 @@ texture = ExtResource( 2 )
 [node name="Sprite1" type="Sprite" parent="."]
 
 visibility/visible = false
+visibility/opacity = 0.0
 transform/scale = Vector2( 0.953836, 0.953836 )
 texture = ExtResource( 3 )
 
@@ -165,9 +166,8 @@ shapes/0/shape = SubResource( 5 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 gravity_point = true
-gravity_distance_scale = -24.0
-gravity_vec = Vector2( 0, 1 )
-gravity = 1024.0
+gravity_vec = Vector2( 0, 0 )
+gravity = 50.0
 linear_damp = 0.1
 angular_damp = 1.0
 priority = 1.0
@@ -189,6 +189,7 @@ playback/speed = 1.0
 [node name="Phase" type="Light2D" parent="."]
 
 visibility/visible = false
+transform/pos = Vector2( 518.304, 1.36038 )
 transform/rot = 12.8146
 transform/scale = Vector2( 1.20685, 1.20685 )
 enabled = true
@@ -214,13 +215,14 @@ shadow/item_mask = 1
 [node name="Eclipse" type="Light2D" parent="."]
 
 visibility/visible = false
+transform/pos = Vector2( 268.622, 293.229 )
 transform/scale = Vector2( 0.91002, 0.91002 )
 enabled = true
 editor_only = false
 texture = ExtResource( 4 )
 offset = Vector2( 0, 0 )
 scale = 1.0
-color = Color( 1, 1, 1, 1 )
+color = Color( 0.964844, 0.964844, 0.964844, 1 )
 energy = 1.0
 mode = 1
 range/height = 0.0

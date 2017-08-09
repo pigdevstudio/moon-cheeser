@@ -4,8 +4,6 @@
 [ext_resource path="res://Screens/abstract_screen.gd" type="Script" id=2]
 [ext_resource path="res://GUI/ScreenMargin/screen_margin.gd" type="Script" id=3]
 
-
-
 [node name="Score Screen" type="Control"]
 
 focus/ignore_mouse = false

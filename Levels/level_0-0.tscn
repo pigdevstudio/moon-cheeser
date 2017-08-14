@@ -96,14 +96,16 @@ tracks/0/keys = {
 "values": [ Vector2( 1278.78, 629.21 ), Vector2( 1278.78, 75.8753 ) ]
 }
 
-[node name="Level_0-0" type="Node2D"]
+[node name="Level_0-0" type="Node2D" groups=[
+"level",
+]]
 
 script/script = ExtResource( 1 )
 game_state = 0
 
 [node name="Astromouse" parent="." instance=ExtResource( 2 )]
 
-transform/pos = Vector2( 621.044, 380.485 )
+transform/pos = Vector2( 621.044, 343.741 )
 jump_force = 500.0
 
 [node name="Moon" parent="." instance=ExtResource( 3 )]
@@ -113,6 +115,7 @@ z/z = 0
 
 [node name="Void" type="StaticBody2D" parent="." groups=[
 "enemy",
+"void",
 ]]
 
 editor/display_folded = true

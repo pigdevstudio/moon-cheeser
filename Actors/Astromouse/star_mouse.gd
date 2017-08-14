@@ -5,8 +5,9 @@ export (float) var  max_force = 0.06
 export (float) var slowing_radius = 100
 var velocity = Vector2()
 onready var target = get_pos()
-onready var particles = get_node("Particles")
+
 func _ready():
+	acheesements.modify_achievement("starmouse", 1)
 	get_node("Sprite").set_texture(load(skins.starmouse_skin))
 	set_fixed_process(true)
 	
@@ -16,12 +17,7 @@ func _fixed_process(delta):
 	var angle = get_angle_to(get_pos() - velocity)
 	if Input.is_mouse_button_pressed(1):
 		target = get_viewport().get_mouse_pos()
-#		particles.set_param(particles.PARAM_INITIAL_ANGLE, rad2deg(angle) + 90)
-#		particles.set_rot(angle)
-#	else:
-#		particles.set_param(particles.PARAM_INITIAL_ANGLE, 90)
-#		particles.set_rot(0)
-		
+
 func steer(target_pos):
 	var desired_velocity = target_pos - get_pos()
 	var distance = desired_velocity.length()
@@ -42,5 +38,4 @@ func _on_timeout():
 
 func _on_body_enter( body ):
 	if body.is_in_group("cheese"):
-		print("score +1")
-		body.queue_free()
+		body.increase_score()

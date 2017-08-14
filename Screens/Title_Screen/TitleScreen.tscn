@@ -1,25 +1,17 @@
-[gd_scene load_steps=14 format=1]
+[gd_scene load_steps=10 format=1]
 
 [ext_resource path="res://Screens/Abstract Screen.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Levels/background.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Screens/Title_Screen/achievement_button.png" type="Texture" id=3]
-[ext_resource path="res://Screens/Title_Screen/achievement_pressed.png" type="Texture" id=4]
-[ext_resource path="res://Screens/Title_Screen/achievement_hover.png" type="Texture" id=5]
+[ext_resource path="res://Screens/Title_Screen/title_screen.gd" type="Script" id=2]
+[ext_resource path="res://Levels/background.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Screens/ShaderButton.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Screens/Title_Screen/achievement_button.png" type="Texture" id=5]
 [ext_resource path="res://Screens/Title_Screen/tittle.png" type="Texture" id=6]
-[ext_resource path="res://Screens/Title_Screen/moon_blury.png" type="Texture" id=7]
-[ext_resource path="res://Screens/Title_Screen/moon_pressed.png" type="Texture" id=8]
-[ext_resource path="res://Screens/Title_Screen/moon_hover.png" type="Texture" id=9]
-[ext_resource path="res://Screens/Title_Screen/play_button.png" type="Texture" id=10]
-[ext_resource path="res://Screens/Title_Screen/play_pressed.png" type="Texture" id=11]
-[ext_resource path="res://Screens/Title_Screen/play_hover.png" type="Texture" id=12]
+[ext_resource path="res://Screens/Title_Screen/moon.png" type="Texture" id=7]
+[ext_resource path="res://Screens/Title_Screen/play_button.png" type="Texture" id=8]
 
 [sub_resource type="GDScript" id=1]
 
 script/source = "extends MarginContainer
-
-# class member variables go here, for example:
-# var a = 2
-# var b = \"textvar\"
 
 func _ready():
 	set_process(true)
@@ -32,8 +24,21 @@ func _process(delta):
 size_flags/vertical = 3
 margin/right = 1280.0
 margin/bottom = 720.0
+script/script = ExtResource( 2 )
 
-[node name="Background" parent="." instance=ExtResource( 2 )]
+[node name="Background" parent="." instance=ExtResource( 3 )]
+
+[node name="Stars" parent="Background"]
+
+editor/display_folded = false
+
+[node name="Star#1" parent="Background/Stars"]
+
+transform/pos = Vector2( 321.956, 431.275 )
+
+[node name="Star#2" parent="Background/Stars"]
+
+transform/pos = Vector2( 341.242, 353.322 )
 
 [node name="Star#3" parent="Background/Stars"]
 
@@ -59,6 +64,10 @@ transform/pos = Vector2( 252.748, 105.344 )
 
 transform/pos = Vector2( 329.576, 81.9609 )
 
+[node name="Star#20" parent="Background/Stars"]
+
+transform/pos = Vector2( 377.284, 585.095 )
+
 [node name="Star#28" parent="Background/Stars"]
 
 transform/pos = Vector2( 996.639, 126.204 )
@@ -70,10 +79,6 @@ transform/pos = Vector2( 767.824, 111.172 )
 [node name="Star#30" parent="Background/Stars"]
 
 transform/pos = Vector2( 893.088, 44.3649 )
-
-[node name="Planets" parent="Background"]
-
-editor/display_folded = false
 
 [node name="Earth" parent="Background/Planets"]
 
@@ -98,10 +103,6 @@ custom_constants/margin_top = 25
 custom_constants/margin_left = 25
 custom_constants/margin_bottom = 25
 script/script = SubResource( 1 )
-__meta__ = {
-"_edit_group_": true,
-"_edit_lock_": true
-}
 
 [node name="ScreenPortions" type="HBoxContainer" parent="ScreenMargin"]
 
@@ -123,7 +124,7 @@ size_flags/horizontal = 3
 size_flags/vertical = 3
 margin/left = 0.0
 margin/top = 0.0
-margin/right = 359.0
+margin/right = 355.0
 margin/bottom = 670.0
 alignment = 0
 
@@ -135,28 +136,15 @@ size_flags/horizontal = 2
 size_flags/vertical = 3
 margin/left = 0.0
 margin/top = 0.0
-margin/right = 359.0
-margin/bottom = 223.0
+margin/right = 355.0
+margin/bottom = 220.0
 
-[node name="Achievements" type="TextureButton" parent="ScreenMargin/ScreenPortions/LeftPortion"]
+[node name="Achievements" parent="ScreenMargin/ScreenPortions/LeftPortion" instance=ExtResource( 4 )]
 
-focus/ignore_mouse = false
-focus/stop_mouse = true
-size_flags/horizontal = 3
-size_flags/vertical = 3
-margin/left = 0.0
-margin/top = 223.0
-margin/right = 359.0
-margin/bottom = 446.0
-toggle_mode = false
-click_on_press = true
-enabled_focus_mode = 2
-shortcut = null
-textures/normal = ExtResource( 3 )
-textures/pressed = ExtResource( 4 )
-textures/hover = ExtResource( 5 )
-params/resize_mode = 1
-params/stretch_mode = 4
+margin/top = 224.0
+margin/right = 355.0
+margin/bottom = 444.0
+textures/normal = ExtResource( 5 )
 
 [node name="BotConstraint" type="Control" parent="ScreenMargin/ScreenPortions/LeftPortion"]
 
@@ -165,8 +153,8 @@ focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 3
 margin/left = 0.0
-margin/top = 446.0
-margin/right = 359.0
+margin/top = 448.0
+margin/right = 355.0
 margin/bottom = 670.0
 
 [node name="CenterPortion" type="VBoxContainer" parent="ScreenMargin/ScreenPortions"]
@@ -179,6 +167,7 @@ margin/left = 359.0
 margin/top = 0.0
 margin/right = 871.0
 margin/bottom = 670.0
+custom_constants/separation = 19
 alignment = 0
 
 [node name="Tittle" type="TextureFrame" parent="ScreenMargin/ScreenPortions/CenterPortion"]
@@ -194,25 +183,12 @@ margin/bottom = 269.0
 texture = ExtResource( 6 )
 stretch_mode = 5
 
-[node name="Credits" type="TextureButton" parent="ScreenMargin/ScreenPortions/CenterPortion"]
+[node name="Credits" parent="ScreenMargin/ScreenPortions/CenterPortion" instance=ExtResource( 4 )]
 
-focus/ignore_mouse = false
-focus/stop_mouse = true
-size_flags/horizontal = 3
-size_flags/vertical = 3
-margin/left = 0.0
-margin/top = 269.0
+margin/top = 288.0
 margin/right = 512.0
 margin/bottom = 670.0
-toggle_mode = false
-click_on_press = true
-enabled_focus_mode = 2
-shortcut = null
 textures/normal = ExtResource( 7 )
-textures/pressed = ExtResource( 8 )
-textures/hover = ExtResource( 9 )
-params/resize_mode = 1
-params/stretch_mode = 6
 
 [node name="RightPortion" type="VBoxContainer" parent="ScreenMargin/ScreenPortions"]
 
@@ -220,7 +196,7 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 3
 size_flags/vertical = 2
-margin/left = 871.0
+margin/left = 875.0
 margin/top = 0.0
 margin/right = 1230.0
 margin/bottom = 670.0
@@ -234,28 +210,15 @@ size_flags/horizontal = 2
 size_flags/vertical = 3
 margin/left = 0.0
 margin/top = 0.0
-margin/right = 359.0
-margin/bottom = 223.0
+margin/right = 355.0
+margin/bottom = 220.0
 
-[node name="TextureButton" type="TextureButton" parent="ScreenMargin/ScreenPortions/RightPortion"]
+[node name="Play" parent="ScreenMargin/ScreenPortions/RightPortion" instance=ExtResource( 4 )]
 
-focus/ignore_mouse = false
-focus/stop_mouse = true
-size_flags/horizontal = 3
-size_flags/vertical = 3
-margin/left = 0.0
-margin/top = 223.0
-margin/right = 359.0
-margin/bottom = 446.0
-toggle_mode = false
-click_on_press = true
-enabled_focus_mode = 2
-shortcut = null
-textures/normal = ExtResource( 10 )
-textures/pressed = ExtResource( 11 )
-textures/hover = ExtResource( 12 )
-params/resize_mode = 1
-params/stretch_mode = 4
+margin/top = 224.0
+margin/right = 355.0
+margin/bottom = 444.0
+textures/normal = ExtResource( 8 )
 
 [node name="BotConstraint" type="Control" parent="ScreenMargin/ScreenPortions/RightPortion"]
 
@@ -264,15 +227,15 @@ focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 3
 margin/left = 0.0
-margin/top = 446.0
-margin/right = 359.0
+margin/top = 448.0
+margin/right = 355.0
 margin/bottom = 670.0
 
 [connection signal="released" from="ScreenMargin/ScreenPortions/LeftPortion/Achievements" to="." method="change_to_next_scene" binds= [ "res://Screens/Achievements_Screen/AchievementsScreen.tscn" ]]
 
 [connection signal="released" from="ScreenMargin/ScreenPortions/CenterPortion/Credits" to="." method="change_to_next_scene" binds= [ "res://Screens/Credits_Screen/CreditsScreen.tscn" ]]
 
-[connection signal="released" from="ScreenMargin/ScreenPortions/RightPortion/TextureButton" to="." method="change_to_next_scene" binds= [ "res://Screens/Play_Screen/PlayScreen.tscn" ]]
+[connection signal="released" from="ScreenMargin/ScreenPortions/RightPortion/Play" to="." method="change_to_next_scene" binds= [ "res://Screens/Play_Screen/PlayScreen.tscn" ]]
 
 
 [editable path="Background"]

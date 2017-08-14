@@ -4,6 +4,8 @@ onready var tween = get_node("Tween")
 onready var timer = get_node("Timer")
 
 func _ready():
+	if get_tree().get_nodes_in_group("crater").size() >= 5:
+		acheesements.modify_achievement("madness", 1)
 	get_node("Particles").set_emitting(true)
 	tween.interpolate_property(self, "transform/scale", Vector2(0, 0), get_scale(), 
 	0.5, Tween.TRANS_BACK, Tween.EASE_OUT)

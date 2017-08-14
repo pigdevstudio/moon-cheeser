@@ -12,28 +12,36 @@ func _ready():
 	read_achievements()
 
 func read_achievements():
-	if file.file_exists("res://Screens/Achievements_Screen/achievements.json"):
+	if file.file_exists("user://achievements.json"):
+		file.open("user://achievements.json", file.READ)
+		text = file.get_as_text()
+		dict.parse_json(text)
+		file.close()
+	else:
 		file.open("res://Screens/Achievements_Screen/achievements.json", file.READ)
 		text = file.get_as_text()
 		dict.parse_json(text)
 		file.close()
+		file.open("user://achievements.json", file.WRITE)
+		write_achievements()
+		file.close()
 
 func write_achievements():
-	if file.file_exists("res://Screens/Achievements_Screen/achievements.json"):
-		file.open("res://Screens/Achievements_Screen/achievements.json", file.WRITE)
+	if file.file_exists("user://achievements.json"):
+		file.open("user://achievements.json", file.WRITE)
 		file.store_string(dict.to_json())
 		file.close()
 	skins.write_skins()
 
 func modify_achievement(achievement, value):
+	if value == 0:
+		dict[achievement].accomplished = 0
 	if dict[achievement].accomplished < dict[achievement].total: 
 		dict[achievement].accomplished += value
 		if dict[achievement].accomplished >= dict[achievement].total: 
-			if achievement == "achievementthree":
-				skins.dict["cheese_star"] = true
-				popup.set_title("Acheesement unlocked!")
-				popup.set_text(dict[achievement].name)
-				_show_popup()
+			popup.set_title("Acheesement unlocked!")
+			popup.set_text(dict[achievement].name)
+			_show_popup()
 
 func _on_timeout():
 	_hide_popup()

@@ -20,6 +20,7 @@ func _astromouse_interact():
 				elif get_parent().get_game_state() == 1:
 					_apply_gravity(player)
 		already_pressed = Input.is_mouse_button_pressed(BUTTON_LEFT)
+		
 	else:
 		if Input.is_action_pressed("jump") and not already_pressed:
 			var player = _find_player()
@@ -36,3 +37,4 @@ func _body_enter( body ):
 
 func _mouse_enter(value):
 	is_mouse_on = value
+	

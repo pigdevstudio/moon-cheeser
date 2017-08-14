@@ -20,18 +20,19 @@ animations = [ {
 "speed": 8.0
 } ]
 
-[sub_resource type="ColorRamp" id=4]
+[sub_resource type="ColorRamp" id=3]
 
 offsets = FloatArray( 0.3625, 1 )
 colors = ColorArray( 0.352941, 0.172549, 0.627451, 1, 0.352941, 0.172549, 0.627451, 0 )
 
-[sub_resource type="CircleShape2D" id=3]
+[sub_resource type="CircleShape2D" id=4]
 
 custom_solver_bias = 0.0
 radius = 54.2766
 
 [node name="Star" type="KinematicBody2D" groups=[
 "notplanet",
+"star",
 ]]
 
 z/z = 2
@@ -43,6 +44,7 @@ collision/layers = 1
 collision/mask = 1
 collision/margin = 0.08
 script/script = ExtResource( 1 )
+direction = 1
 
 [node name="Shape" type="CollisionShape2D" parent="."]
 
@@ -56,7 +58,7 @@ transform/pos = Vector2( 0.0384254, 0.0807762 )
 transform/scale = Vector2( 0.412247, 0.412247 )
 frames = SubResource( 2 )
 animation = "default"
-frame = 1
+frame = 2
 playing = true
 offset = Vector2( 161.029, 1.93696 )
 
@@ -94,12 +96,12 @@ params/anim_initial_pos = 0.0
 randomness/spread = 0.4
 randomness/linear_velocity = 0.46
 randomness/gravity_direction = 0.2
-color/color_ramp = SubResource( 4 )
+color/color_ramp = SubResource( 3 )
 
 [node name="Area" type="Area2D" parent="."]
 
 input/pickable = true
-shapes/0/shape = SubResource( 3 )
+shapes/0/shape = SubResource( 4 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 gravity_vec = Vector2( 0, 1 )
@@ -109,7 +111,7 @@ angular_damp = 1.0
 
 [node name="Shape" type="CollisionShape2D" parent="Area"]
 
-shape = SubResource( 3 )
+shape = SubResource( 4 )
 trigger = false
 _update_shape_index = 0
 

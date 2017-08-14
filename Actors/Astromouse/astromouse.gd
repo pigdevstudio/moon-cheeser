@@ -8,9 +8,7 @@ onready var default_gravity_scale = get_gravity_scale()
 
 func _ready():
 	set_fixed_process(true)
-#	if get_parent().get_parent().has_method("change_to_next_scene"):
 	connect("died", get_parent().get_parent(), "change_to_next_scene", ["res://Screens/Score_Screen/ScoreScreen.tscn"])
-	connect("died", score_handler, "player_died")
 		
 func _fixed_process(delta):
 	if get_linear_velocity().y > 0 and not can_jump:
@@ -31,10 +29,9 @@ func _body_enter( body ):
 		can_jump = true
 		
 	elif body.is_in_group("enemy"):
-		print(body.get_name())
+		if body.is_in_group("void"):
+			acheesements.modify_achievement("void", 1)
 		emit_signal("died")
 		
 	elif body.is_in_group("cheese"):
-		get_parent().emit_signal("scored", 1 * (settings.get_difficulty() + 1))
-		acheesements.modify_achievement("achievementtwo", 1)
-		body.queue_free()
+		body.increase_score()

@@ -9,3 +9,8 @@ func float_around():
 	var t = get_node("Tween")
 	t.interpolate_method(self, "set_pos", get_pos(), get_pos() + offset, 4, t.TRANS_ELASTIC, t.EASE_OUT)
 	t.start()
+	
+func increase_score():
+	get_tree().get_nodes_in_group("level")[0].emit_signal("scored", 1 * (settings.get_difficulty() + 1))
+	acheesements.modify_achievement("mooncheeser", 1)
+	queue_free()

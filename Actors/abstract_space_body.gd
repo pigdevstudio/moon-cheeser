@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 const MAX_SPEED = 300
 
-var direction = 1
+export var direction = 1
 var is_mouse_on = false setget _set_mouse_on
 var already_pressed = false
 var route_already_changed = false
@@ -31,6 +31,7 @@ func _exit_screen():
 func apply_route():
 	if Input.is_mouse_button_pressed(BUTTON_LEFT) and not already_pressed and is_mouse_on:
 		if not route_already_changed:
+			var moon = get_tree().get_nodes_in_group("moon")[0]
 			var normal = clamp((get_global_pos() - get_global_mouse_pos()).y, -1, 1)
 			velocity = Vector2(MAX_SPEED * direction, normal * MAX_SPEED * 2)
 			route_already_changed = true
@@ -57,13 +58,18 @@ func _spawn_crater(position):
 func _handle_collision(collider):
 	if collider != null:
 		if collider.is_in_group("moon"):
-#			acheesements.modify_achievement("achievementthree", 1)
-			var pos = get_collision_pos()
-			_spawn_crater(pos)
+			if self.is_in_group("comet") and route_already_changed:
+				acheesements.modify_achievement("firststep", 1)
+			_spawn_crater(get_collision_pos())
 		elif collider.is_in_group("player"):
 			if has_method("_instance_starmouse"):
 				_instance_starmouse(collider)
 			elif has_method("_kill_player"):
 				_kill_player(collider)
+		elif collider.is_in_group("star") and self.is_in_group("star"):
+			collider.queue_free()
+			if route_already_changed:
+				acheesements.modify_achievement("supernova", 1)
+		
 		if not collider.is_in_group("cheese"):
 			queue_free()

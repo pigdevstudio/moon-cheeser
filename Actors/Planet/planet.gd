@@ -38,6 +38,7 @@ func _move_away(from, to):
 		tween.start()
 
 func _on_life_spam():
+	acheesements.modify_achievement("gravity", 1)
 	if get_parent().has_method("set_game_state"):
 		get_parent().set_game_state(0)
 	var moon = get_parent().find_node("Moon")

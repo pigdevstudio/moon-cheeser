@@ -5,7 +5,7 @@
 [node name="BackgroundMusic" type="StreamPlayer"]
 
 stream/stream = ExtResource( 1 )
-stream/play = true
+stream/play = false
 stream/loop = true
 stream/volume_db = 8.0
 stream/autoplay = true

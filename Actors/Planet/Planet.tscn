@@ -1,6 +1,8 @@
-[gd_scene load_steps=4 format=1]
+[gd_scene load_steps=6 format=1]
 
-[ext_resource path="res://Actors/Planet/planet.png" type="Texture" id=1]
+[ext_resource path="res://Actors/Planet/planet.gd" type="Script" id=1]
+[ext_resource path="res://Actors/Planet/satheri.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Actors/Planet/PlanetLifeSpam.tscn" type="PackedScene" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
 
@@ -12,7 +14,9 @@ radius = 202.394
 custom_solver_bias = 0.0
 radius = 255.506
 
-[node name="Planet" type="StaticBody2D"]
+[node name="Planet" type="StaticBody2D" groups=[
+"enemy",
+]]
 
 input/pickable = false
 shapes/0/shape = SubResource( 1 )
@@ -24,10 +28,22 @@ constant_linear_velocity = Vector2( 0, 0 )
 constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
+script/script = ExtResource( 1 )
+gravity_strength = 200
+pulse_interval = 2.0
 
-[node name="Sprite" type="Sprite" parent="."]
+[node name="Sprite" type="Node2D" parent="."]
 
-texture = ExtResource( 1 )
+editor/display_folded = true
+
+[node name="satheri" parent="Sprite" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 0.508568, -3.93056 )
+transform/scale = Vector2( 4.58245, 4.58245 )
+
+[node name="ring_front" parent="Sprite/satheri"]
+
+transform/pos = Vector2( 3.59111, 2.70122 )
 
 [node name="Shape" type="CollisionShape2D" parent="."]
 
@@ -52,4 +68,35 @@ shape = SubResource( 2 )
 trigger = false
 _update_shape_index = 0
 
+[node name="Tween" type="Tween" parent="."]
 
+playback/process_mode = 1
+playback/active = false
+playback/repeat = false
+playback/speed = 1.0
+
+[node name="GUILayer" type="CanvasLayer" parent="."]
+
+layer = 1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+
+[node name="PlanetLifeSpam" parent="GUILayer" instance=ExtResource( 3 )]
+
+[node name="Timer" parent="GUILayer/PlanetLifeSpam"]
+
+wait_time = 10.0
+
+[node name="Label" parent="GUILayer/PlanetLifeSpam"]
+
+margin/left = 195.0
+margin/top = 0.0
+margin/right = 326.0
+margin/bottom = 16.0
+
+[connection signal="timeout" from="GUILayer/PlanetLifeSpam/Timer" to="." method="_on_life_spam"]
+
+
+[editable path="Sprite/satheri"]
+[editable path="GUILayer/PlanetLifeSpam"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=1]
 
-[ext_resource path="res://Actors/Astromouse/StarMouse.gd" type="Script" id=1]
+[ext_resource path="res://Actors/Astromouse/star_mouse.gd" type="Script" id=1]
 [ext_resource path="res://Actors/Astromouse/starmouse.png" type="Texture" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
@@ -8,23 +8,28 @@
 custom_solver_bias = 0.0
 radius = 35.4751
 
-[node name="StarMouse" type="KinematicBody2D"]
+[node name="StarMouse" type="KinematicBody2D" groups=[
+"starmouse",
+]]
 
+z/z = 2
 input/pickable = false
 collision/layers = 1
 collision/mask = 1
 collision/margin = 0.08
 script/script = ExtResource( 1 )
 max_speed = 600
-max_force = 0.02
-mode = 0
+max_force = 0.07
+slowing_radius = 200.0
 
 [node name="Sprite" type="Sprite" parent="."]
 
 transform/scale = Vector2( 0.4, 0.4 )
 texture = ExtResource( 2 )
 
-[node name="Area" type="Area2D" parent="."]
+[node name="Area" type="Area2D" parent="." groups=[
+"player",
+]]
 
 input/pickable = true
 shapes/0/shape = SubResource( 1 )
@@ -47,6 +52,17 @@ process_mode = 1
 wait_time = 5.0
 one_shot = true
 autostart = true
+
+[node name="Tween" type="Tween" parent="."]
+
+playback/process_mode = 1
+playback/active = false
+playback/repeat = false
+playback/speed = 1.0
+
+[connection signal="area_enter" from="Area" to="." method="_on_body_enter"]
+
+[connection signal="body_enter" from="Area" to="." method="_on_body_enter"]
 
 [connection signal="timeout" from="Timer" to="." method="_on_timeout"]
 

@@ -1,37 +1,107 @@
-[gd_scene load_steps=5 format=1]
+[gd_scene load_steps=10 format=1]
 
 [ext_resource path="res://Actors/Star/star.gd" type="Script" id=1]
-[ext_resource path="res://Actors/Star/star.png" type="Texture" id=2]
+[ext_resource path="res://Actors/Star/star_001.png" type="Texture" id=2]
+[ext_resource path="res://Actors/Star/star_002.png" type="Texture" id=3]
+[ext_resource path="res://Actors/Star/star_003.png" type="Texture" id=4]
+[ext_resource path="res://Actors/particle.tex" type="Texture" id=5]
 
 [sub_resource type="CircleShape2D" id=1]
 
 custom_solver_bias = 0.0
-radius = 35.902
+radius = 37.1808
 
-[sub_resource type="CircleShape2D" id=2]
+[sub_resource type="SpriteFrames" id=2]
+
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "default",
+"speed": 8.0
+} ]
+
+[sub_resource type="ColorRamp" id=3]
+
+offsets = FloatArray( 0.3625, 1 )
+colors = ColorArray( 0.352941, 0.172549, 0.627451, 1, 0.352941, 0.172549, 0.627451, 0 )
+
+[sub_resource type="CircleShape2D" id=4]
 
 custom_solver_bias = 0.0
 radius = 54.2766
 
-[node name="Star" type="KinematicBody2D"]
+[node name="Star" type="KinematicBody2D" groups=[
+"notplanet",
+"star",
+]]
 
+z/z = 2
 input/pickable = false
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
 collision/margin = 0.08
 script/script = ExtResource( 1 )
+direction = 1
 
-[node name="Sprite" type="Sprite" parent="."]
+[node name="Shape" type="CollisionShape2D" parent="."]
 
-transform/pos = Vector2( -89.8756, 0 )
-transform/scale = Vector2( 0.49736, 0.49736 )
-texture = ExtResource( 2 )
-flip_h = true
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = 0
+
+[node name="Sprite" type="AnimatedSprite" parent="."]
+
+transform/pos = Vector2( 0.0384254, 0.0807762 )
+transform/scale = Vector2( 0.412247, 0.412247 )
+frames = SubResource( 2 )
+animation = "default"
+frame = 2
+playing = true
+offset = Vector2( 161.029, 1.93696 )
+
+[node name="Visibility" type="VisibilityNotifier2D" parent="Sprite"]
+
+transform/pos = Vector2( 187.95, 2.08976 )
+rect = Rect2( -256, -64, 256, 128 )
+
+[node name="Outer" type="Particles2D" parent="Sprite"]
+
+visibility/behind_parent = true
+transform/pos = Vector2( 390.705, 0.885263 )
+config/amount = 5
+config/lifetime = 1.0
+config/process_mode = 1
+config/half_extents = Vector2( 50, 60 )
+config/local_space = false
+config/texture = ExtResource( 5 )
+params/direction = 90.0
+params/spread = 50.0
+params/linear_velocity = 30.0
+params/spin_velocity = 0.0
+params/orbit_velocity = 0.0
+params/gravity_direction = 0.0
+params/gravity_strength = 0.0
+params/radial_accel = 0.0
+params/tangential_accel = 0.0
+params/damping = 0.0
+params/initial_angle = 0.0
+params/initial_size = 0.7
+params/final_size = 1.0
+params/hue_variation = 0.0
+params/anim_speed_scale = 1.0
+params/anim_initial_pos = 0.0
+randomness/spread = 0.4
+randomness/linear_velocity = 0.46
+randomness/gravity_direction = 0.2
+color/color_ramp = SubResource( 3 )
 
 [node name="Area" type="Area2D" parent="."]
 
 input/pickable = true
-shapes/0/shape = SubResource( 1 )
+shapes/0/shape = SubResource( 4 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 gravity_vec = Vector2( 0, 1 )
@@ -41,31 +111,12 @@ angular_damp = 1.0
 
 [node name="Shape" type="CollisionShape2D" parent="Area"]
 
-shape = SubResource( 1 )
+shape = SubResource( 4 )
 trigger = false
 _update_shape_index = 0
 
-[node name="AreaInput" type="Area2D" parent="."]
+[connection signal="mouse_enter" from="Area" to="." method="_set_mouse_on" binds= [ true ]]
 
-input/pickable = true
-shapes/0/shape = SubResource( 2 )
-shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
-shapes/0/trigger = false
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
-
-[node name="Shape" type="CollisionShape2D" parent="AreaInput"]
-
-shape = SubResource( 2 )
-trigger = false
-_update_shape_index = 0
-
-[connection signal="area_enter" from="Area" to="." method="_on_area_enter"]
-
-[connection signal="mouse_enter" from="AreaInput" to="." method="_set_mouse_on" binds= [ true ]]
-
-[connection signal="mouse_exit" from="AreaInput" to="." method="_set_mouse_on" binds= [ false ]]
+[connection signal="mouse_exit" from="Area" to="." method="_set_mouse_on" binds= [ false ]]
 
 

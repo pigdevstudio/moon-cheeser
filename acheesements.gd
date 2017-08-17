@@ -1,6 +1,7 @@
 extends Node
 
 var dict = {}
+export (String, FILE) var file_path
 var file = File.new()
 var text
 
@@ -9,6 +10,9 @@ onready var timer = get_node("Timer")
 onready var tween = get_node("Tween")
 
 func _ready():
+	var t = Translation.new()
+	t.set_locale("pt_BR")
+	print(file_path)
 	read_achievements()
 
 func read_achievements():
@@ -18,7 +22,7 @@ func read_achievements():
 		dict.parse_json(text)
 		file.close()
 	else:
-		file.open("res://Screens/Achievements_Screen/achievements.json", file.READ)
+		file.open(file_path, file.READ)
 		text = file.get_as_text()
 		dict.parse_json(text)
 		file.close()

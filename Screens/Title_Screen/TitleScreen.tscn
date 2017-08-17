@@ -28,9 +28,7 @@ script/script = ExtResource( 2 )
 
 [node name="Background" parent="." instance=ExtResource( 3 )]
 
-[node name="Stars" parent="Background"]
-
-editor/display_folded = false
+editor/display_folded = true
 
 [node name="Star#1" parent="Background/Stars"]
 

@@ -2,32 +2,19 @@
 
 [ext_resource path="res://Screens/Abstract Screen.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Screens/Play_Screen/play_screen.gd" type="Script" id=2]
-[ext_resource path="res://Levels/level_0-0.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Screens/GaroaHackerClubeBold.otf" type="DynamicFontData" id=4]
+[ext_resource path="res://Screens/GaroaHackerClubeBold.otf" type="DynamicFontData" id=3]
+[ext_resource path="res://Levels/level_0-0.tscn" type="PackedScene" id=4]
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=1]
 
 font/size = 40
 font/use_mipmaps = true
 font/use_filter = true
-font/font = ExtResource( 4 )
+font/font = ExtResource( 3 )
 
 [node name="PlayScreen" instance=ExtResource( 1 )]
 
 script/script = ExtResource( 2 )
-
-[node name="Level_0-0" parent="." instance=ExtResource( 3 )]
-
-editor/display_folded = true
-transform/pos = Vector2( 0, -1.85062 )
-
-[node name="RightCometSpawner" parent="Level_0-0"]
-
-transform/pos = Vector2( 1278.78, 629.21 )
-
-[node name="Timer" parent="Level_0-0/RightCometSpawner"]
-
-wait_time = 3.0
 
 [node name="Score" type="Label" parent="."]
 
@@ -39,7 +26,7 @@ margin/left = 25.0
 margin/top = 25.0
 margin/right = 1255.0
 margin/bottom = 695.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 1, 0.901961, 0.501961, 1 )
 text = "Score: 0"
 align = 1
@@ -47,7 +34,11 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[connection signal="scored" from="Level_0-0" to="." method="_on_scored"]
+[node name="Level_0-0" parent="." instance=ExtResource( 4 )]
+
+[node name="RightCometSpawner" parent="Level_0-0"]
+
+editor/display_folded = false
 
 
 [editable path="Level_0-0"]

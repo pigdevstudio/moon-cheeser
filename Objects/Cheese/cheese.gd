@@ -11,6 +11,7 @@ func float_around():
 	t.start()
 	
 func increase_score():
-	get_tree().get_nodes_in_group("level")[0].emit_signal("scored", 1 * (settings.get_difficulty() + 1))
+	print("score +1")
+	score_handler.set_score(1)
 	acheesements.modify_achievement("mooncheeser", 1)
 	queue_free()

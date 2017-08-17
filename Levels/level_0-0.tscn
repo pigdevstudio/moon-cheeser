@@ -105,7 +105,7 @@ game_state = 0
 
 [node name="Astromouse" parent="." instance=ExtResource( 2 )]
 
-transform/pos = Vector2( 621.044, 343.741 )
+transform/pos = Vector2( 621.044, 332.583 )
 jump_force = 500.0
 
 [node name="Moon" parent="." instance=ExtResource( 3 )]

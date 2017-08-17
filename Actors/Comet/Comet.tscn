@@ -32,6 +32,7 @@ offsets = FloatArray( 0.495833, 0.970833, 1 )
 colors = ColorArray( 1, 0.4, 0.333333, 1, 1, 0.4, 0.333333, 0.0578512, 1, 0.4, 0.333333, 0 )
 
 [node name="Comet" type="KinematicBody2D" groups=[
+"enemy",
 "comet",
 "notplanet",
 ]]
@@ -45,9 +46,11 @@ collision/layers = 1
 collision/mask = 1
 collision/margin = 0.08
 script/script = ExtResource( 1 )
+direction = 1
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
 
+editor/display_folded = true
 transform/rot = 0.129821
 transform/scale = Vector2( 0.454877, 0.454877 )
 frames = SubResource( 2 )
@@ -128,6 +131,7 @@ _update_shape_index = 0
 
 [node name="AreaInput" type="Area2D" parent="."]
 
+editor/display_folded = true
 input/pickable = true
 shapes/0/shape = ExtResource( 6 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )

@@ -53,13 +53,6 @@ wait_time = 5.0
 one_shot = true
 autostart = true
 
-[node name="Tween" type="Tween" parent="."]
-
-playback/process_mode = 1
-playback/active = false
-playback/repeat = false
-playback/speed = 1.0
-
 [connection signal="area_enter" from="Area" to="." method="_on_body_enter"]
 
 [connection signal="body_enter" from="Area" to="." method="_on_body_enter"]

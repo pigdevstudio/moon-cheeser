@@ -11,7 +11,6 @@ func float_around():
 	t.start()
 	
 func increase_score():
-	print("score +1")
 	score_handler.set_score(1)
 	acheesements.modify_achievement("mooncheeser", 1)
 	queue_free()

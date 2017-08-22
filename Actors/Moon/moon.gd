@@ -2,12 +2,10 @@ extends "res://Actors/abstract_gravity_body.gd"
 
 var is_mouse_on = false setget _mouse_enter
 var already_pressed = false
-
-onready var speed_multiplier = settings.get_difficulty() + 1
 onready var fixed_process = set_fixed_process(true)
 
 func _fixed_process(delta):
-	get_node("Sprite").rotate( deg2rad(90) * delta * speed_multiplier)
+	get_node("Sprite").rotate( deg2rad(90) * delta)
 	_astromouse_interact()
 
 func _astromouse_interact():

@@ -6,7 +6,6 @@ export var direction = 1
 var is_mouse_on = false setget _set_mouse_on
 var already_pressed = false
 var route_already_changed = false
-onready var speed_multiplier = settings.get_difficulty() + 1
 
 onready var fixed_process = set_fixed_process(true)
 onready var velocity = Vector2()

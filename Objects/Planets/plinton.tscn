@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=1]
+[gd_scene load_steps=4 format=1]
 
-[ext_resource path="res://Objects/Planets/planet_two.tex" type="Texture" id=1]
+[ext_resource path="res://Objects/Planets/planet_two.png" type="Texture" id=1]
+[ext_resource path="res://Objects/Planets/planet_two.tex" type="Texture" id=2]
 
 [sub_resource type="Animation" id=1]
 
@@ -424,7 +425,6 @@ region_rect = Rect2( 22, 488, 506, 504 )
 
 [node name="craters" type="Node2D" parent="."]
 
-editor/display_folded = true
 z/z = -1
 
 [node name="crater 7" type="Sprite" parent="craters"]
@@ -432,7 +432,7 @@ z/z = -1
 transform/pos = Vector2( -2.20065, 32.5696 )
 transform/scale = Vector2( 0.0610069, 0.0610069 )
 z/z = 1
-texture = ExtResource( 1 )
+texture = ExtResource( 2 )
 region = true
 region_rect = Rect2( 778, 604, 172, 174 )
 
@@ -441,7 +441,7 @@ region_rect = Rect2( 778, 604, 172, 174 )
 transform/pos = Vector2( 12.7638, 23.3269 )
 transform/scale = Vector2( 0.0812678, 0.0812678 )
 z/z = 1
-texture = ExtResource( 1 )
+texture = ExtResource( 2 )
 region = true
 region_rect = Rect2( 778, 604, 172, 174 )
 
@@ -450,7 +450,7 @@ region_rect = Rect2( 778, 604, 172, 174 )
 transform/pos = Vector2( -4.3372, 4.4013 )
 transform/scale = Vector2( 0.0661061, 0.0661061 )
 z/z = 1
-texture = ExtResource( 1 )
+texture = ExtResource( 2 )
 region = true
 region_rect = Rect2( 778, 604, 172, 174 )
 
@@ -459,7 +459,7 @@ region_rect = Rect2( 778, 604, 172, 174 )
 transform/pos = Vector2( -6.16182, -29.9289 )
 transform/scale = Vector2( 0.0415066, 0.0415066 )
 z/z = 1
-texture = ExtResource( 1 )
+texture = ExtResource( 2 )
 region = true
 region_rect = Rect2( 778, 604, 172, 174 )
 
@@ -468,7 +468,7 @@ region_rect = Rect2( 778, 604, 172, 174 )
 transform/pos = Vector2( 11.2241, -32.2899 )
 transform/scale = Vector2( 0.0590086, 0.0590085 )
 z/z = 1
-texture = ExtResource( 1 )
+texture = ExtResource( 2 )
 region = true
 region_rect = Rect2( 778, 604, 172, 174 )
 
@@ -477,7 +477,7 @@ region_rect = Rect2( 778, 604, 172, 174 )
 transform/pos = Vector2( 24.5545, 3.95675 )
 transform/scale = Vector2( 0.109679, 0.109679 )
 z/z = 1
-texture = ExtResource( 1 )
+texture = ExtResource( 2 )
 region = true
 region_rect = Rect2( 600, 818, 174, 174 )
 
@@ -486,7 +486,7 @@ region_rect = Rect2( 600, 818, 174, 174 )
 transform/pos = Vector2( -27.2113, 7.19211 )
 transform/scale = Vector2( 0.0976989, 0.0976989 )
 z/z = 1
-texture = ExtResource( 1 )
+texture = ExtResource( 2 )
 region = true
 region_rect = Rect2( 600, 818, 174, 174 )
 
@@ -498,7 +498,7 @@ z/z = 1
 [node name="cloud" type="Sprite" parent="sky"]
 
 transform/pos = Vector2( -397.808, 61.8145 )
-texture = ExtResource( 1 )
+texture = ExtResource( 2 )
 region = true
 region_rect = Rect2( 128, 196, 220, 124 )
 
@@ -506,14 +506,14 @@ region_rect = Rect2( 128, 196, 220, 124 )
 
 transform/pos = Vector2( 373.758, -97.7551 )
 z/z = -2
-texture = ExtResource( 1 )
+texture = ExtResource( 2 )
 region = true
 region_rect = Rect2( 128, 196, 220, 124 )
 
 [node name="cloud1" type="Sprite" parent="sky"]
 
 transform/pos = Vector2( -433.669, 11.8667 )
-texture = ExtResource( 1 )
+texture = ExtResource( 2 )
 region = true
 region_rect = Rect2( 8, 32, 476, 74 )
 
@@ -521,7 +521,7 @@ region_rect = Rect2( 8, 32, 476, 74 )
 
 transform/pos = Vector2( 357.207, -147.703 )
 z/z = -2
-texture = ExtResource( 1 )
+texture = ExtResource( 2 )
 region = true
 region_rect = Rect2( 8, 32, 476, 74 )
 
@@ -529,7 +529,7 @@ region_rect = Rect2( 8, 32, 476, 74 )
 
 transform/pos = Vector2( -348.457, 115.689 )
 transform/scale = Vector2( 0.841466, 1 )
-texture = ExtResource( 1 )
+texture = ExtResource( 2 )
 region = true
 region_rect = Rect2( 8, 32, 476, 74 )
 
@@ -538,14 +538,14 @@ region_rect = Rect2( 8, 32, 476, 74 )
 transform/pos = Vector2( 409.31, -43.8805 )
 transform/scale = Vector2( 0.841466, 1 )
 z/z = -2
-texture = ExtResource( 1 )
+texture = ExtResource( 2 )
 region = true
 region_rect = Rect2( 8, 32, 476, 74 )
 
 [node name="cloud3" type="Sprite" parent="sky"]
 
 transform/pos = Vector2( -444.828, -35.7828 )
-texture = ExtResource( 1 )
+texture = ExtResource( 2 )
 region = true
 region_rect = Rect2( 128, 196, 220, 124 )
 
@@ -553,7 +553,7 @@ region_rect = Rect2( 128, 196, 220, 124 )
 
 transform/pos = Vector2( 314.101, -195.52 )
 z/z = -2
-texture = ExtResource( 1 )
+texture = ExtResource( 2 )
 region = true
 region_rect = Rect2( 128, 196, 220, 124 )
 
@@ -561,7 +561,7 @@ region_rect = Rect2( 128, 196, 220, 124 )
 
 transform/pos = Vector2( -428.778, -83.3036 )
 transform/scale = Vector2( 0.857241, 1 )
-texture = ExtResource( 1 )
+texture = ExtResource( 2 )
 region = true
 region_rect = Rect2( 8, 32, 476, 74 )
 
@@ -570,7 +570,7 @@ region_rect = Rect2( 8, 32, 476, 74 )
 transform/pos = Vector2( 342.715, -242.873 )
 transform/scale = Vector2( 0.857241, 1 )
 z/z = -2
-texture = ExtResource( 1 )
+texture = ExtResource( 2 )
 region = true
 region_rect = Rect2( 8, 32, 476, 74 )
 

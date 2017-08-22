@@ -1,0 +1,10 @@
+{
+  "mooncheeser":{"total":1000, "description":"Pegar 1000 queijos", "accomplished":0, "name":"Astrorato"},
+  "supernova":{"total":100, "description":"Fazer duas estrelas colidirem uma com a outra", "accomplished":0, "name":"Supernova"},
+  "firststep":{"total":100, "description":"Fazer cometas colidirem com a lua 100 vezes", "accomplished":0, "name":"Chuva de Queijo"},
+  "madness":{"total":1, "description":"Ter 5 ou mais crateras na lua simultaneamente", "accomplished":0, "name":"Loucura pura"},
+  "gravity":{"total":5, "description":"Sobreviver a 5 batalhas gravitacionais", "accomplished":0, "name":"Teoria da Relatividade"},
+  "starmouse":{"total":100, "description":"Ahh ahh ahh ahh ahh, ahh ahh ahh ahh ahh", "accomplished":0, "name":"Sou um rato estrela"},
+  "void":{"total":10, "description":"Cair no vácuo 10 vezes", "accomplished":0, "name":"Ao infinito e além"},
+  "fullmoon":{"total":1, "description":"Jogar Moon Cheeser num dia de lua cheia", "accomplished":0, "name":"Queijo inteiro"}
+}

@@ -6,7 +6,6 @@ export var direction = 1
 var is_mouse_on = false setget _set_mouse_on
 var already_pressed = false
 var route_already_changed = false
-onready var speed_multiplier = settings.get_difficulty() + 1
 
 onready var fixed_process = set_fixed_process(true)
 onready var velocity = Vector2()
@@ -55,6 +54,8 @@ func _spawn_crater(position):
 			instance.set_global_pos(position)
 			instance.set_rot(instance.get_angle_to(get_collider().get_pos()))
 			
+			instance = load("res://Actors/SFX.tscn").instance()
+			get_collider().get_node("Sprite").add_child(instance)
 func _handle_collision(collider):
 	if collider != null:
 		if collider.is_in_group("moon"):
@@ -66,6 +67,7 @@ func _handle_collision(collider):
 				_instance_starmouse(collider)
 			elif has_method("_kill_player"):
 				_kill_player(collider)
+				
 		elif collider.is_in_group("star") and self.is_in_group("star"):
 			collider.queue_free()
 			if route_already_changed:

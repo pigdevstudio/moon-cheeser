@@ -6,7 +6,7 @@ export (float) var max_spawn_time = 2.0
 
 func _ready():
 	randomize()
-	get_node("Timer").start()
+#	get_node("Timer").start()
 	get_node("Timer").set_wait_time(rand_range(min_spawn_time, max_spawn_time))
 func _spawn():
 	if get_parent().game_state == 0:

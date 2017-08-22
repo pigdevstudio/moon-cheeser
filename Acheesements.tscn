@@ -10,6 +10,7 @@ offset = Vector2( 0, 0 )
 rotation = 0.0
 scale = Vector2( 1, 1 )
 script/script = ExtResource( 1 )
+file_path = "res://Screens/Achievements_Screen/achievements.json"
 
 [node name="Popup" type="AcceptDialog" parent="."]
 

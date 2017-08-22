@@ -33,7 +33,7 @@ func _on_timeout():
 	var i = load("res://Actors/Astromouse/Astromouse.tscn").instance()
 	i.set_pos(get_pos())
 	get_parent().add_child(i)
-	i.get_child(0).play("jumping")
+	i.get_node("Sprite").set_frame(3)
 	queue_free()
 
 func _on_body_enter( body ):

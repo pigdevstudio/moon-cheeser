@@ -2,7 +2,6 @@
 
 [ext_resource path="res://Objects/Planets/planet_one.tex" type="Texture" id=1]
 
-
 [sub_resource type="Animation" id=1]
 
 resource/name = "idle"
@@ -57,7 +56,7 @@ tracks/4/keys = {
 "times": FloatArray( 0, 2 ),
 "transitions": FloatArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( -96.4573, 121.459 ), Vector2( -207.455, 121.459 ) ]
+"values": [ Vector2( -96.4573, 121.459 ), Vector2( -174.032, 127.06 ) ]
 }
 tracks/5/type = "value"
 tracks/5/path = NodePath("Sky/sprite:transform/pos")
@@ -77,7 +76,7 @@ tracks/6/keys = {
 "times": FloatArray( 0, 2 ),
 "transitions": FloatArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( -93.7353, 232.452 ), Vector2( -13.3578, 232.452 ) ]
+"values": [ Vector2( -77.8549, 229.959 ), Vector2( -13.3578, 232.452 ) ]
 }
 tracks/7/type = "value"
 tracks/7/path = NodePath("Sky/sprite1:transform/pos")
@@ -107,7 +106,7 @@ tracks/9/keys = {
 "times": FloatArray( 0, 2 ),
 "transitions": FloatArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 163.459, -85.5338 ), Vector2( 40.979, -85.5338 ) ]
+"values": [ Vector2( 140.105, -88.126 ), Vector2( 40.979, -85.5338 ) ]
 }
 tracks/10/type = "value"
 tracks/10/path = NodePath("Sky/sprite6:transform/pos")
@@ -186,19 +185,18 @@ region_rect = Rect2( 550, 40, 458, 468 )
 
 [node name="Land" type="Node2D" parent="."]
 
-editor/display_folded = true
 transform/scale = Vector2( 0.101222, 0.101222 )
 
 [node name="sprite" type="Sprite" parent="Land"]
 
-transform/pos = Vector2( -153.734, 121.459 )
+transform/pos = Vector2( -105.979, 122.146 )
 texture = ExtResource( 1 )
 region = true
 region_rect = Rect2( 38, 558, 418, 62 )
 
 [node name="sprite3" type="Sprite" parent="Land"]
 
-transform/pos = Vector2( 60.1623, -196.526 )
+transform/pos = Vector2( 18.0156, -196.526 )
 texture = ExtResource( 1 )
 region = true
 region_rect = Rect2( 38, 558, 418, 62 )
@@ -219,14 +217,14 @@ region_rect = Rect2( 122, 672, 234, 124 )
 
 [node name="sprite2" type="Sprite" parent="Land"]
 
-transform/pos = Vector2( -52.2595, 232.452 )
+transform/pos = Vector2( -69.9385, 230.265 )
 texture = ExtResource( 1 )
 region = true
 region_rect = Rect2( 12, 860, 502, 68 )
 
 [node name="sprite3 2" type="Sprite" parent="Land"]
 
-transform/pos = Vector2( 100.258, -85.5338 )
+transform/pos = Vector2( 127.938, -87.8078 )
 texture = ExtResource( 1 )
 region = true
 region_rect = Rect2( 12, 860, 502, 68 )
@@ -237,14 +235,14 @@ transform/scale = Vector2( 0.0799001, 0.0799001 )
 
 [node name="sprite" type="Sprite" parent="Sky"]
 
-transform/pos = Vector2( -31.0626, -147.46 )
+transform/pos = Vector2( 29.3268, -147.46 )
 texture = ExtResource( 1 )
 region = true
 region_rect = Rect2( 524, 556, 308, 134 )
 
 [node name="sprite5" type="Sprite" parent="Sky"]
 
-transform/pos = Vector2( 9.94298, -446.938 )
+transform/pos = Vector2( -7.41912, -465.953 )
 transform/scale = Vector2( 1.3614, 1 )
 texture = ExtResource( 1 )
 region = true
@@ -252,7 +250,7 @@ region_rect = Rect2( 524, 556, 308, 134 )
 
 [node name="sprite6" type="Sprite" parent="Sky"]
 
-transform/pos = Vector2( -9.59798, 445.141 )
+transform/pos = Vector2( -7.41912, 462.738 )
 transform/scale = Vector2( 1.3614, 1 )
 texture = ExtResource( 1 )
 region = true
@@ -260,14 +258,14 @@ region_rect = Rect2( 524, 556, 308, 134 )
 
 [node name="sprite1" type="Sprite" parent="Sky"]
 
-transform/pos = Vector2( 176.895, 268.777 )
+transform/pos = Vector2( 203.819, 268.777 )
 texture = ExtResource( 1 )
 region = true
 region_rect = Rect2( 524, 556, 308, 134 )
 
 [node name="sprite2" type="Sprite" parent="Sky"]
 
-transform/pos = Vector2( -135.171, 112.827 )
+transform/pos = Vector2( -185.705, 112.827 )
 transform/scale = Vector2( 1.51845, 1.51845 )
 texture = ExtResource( 1 )
 region = true
@@ -275,7 +273,7 @@ region_rect = Rect2( 524, 556, 308, 134 )
 
 [node name="sprite3" type="Sprite" parent="Sky"]
 
-transform/pos = Vector2( 231.211, -306.9 )
+transform/pos = Vector2( 213.694, -306.9 )
 transform/scale = Vector2( 0.576476, 0.576476 )
 texture = ExtResource( 1 )
 region = true
@@ -283,7 +281,7 @@ region_rect = Rect2( 524, 556, 308, 134 )
 
 [node name="sprite4" type="Sprite" parent="Sky"]
 
-transform/pos = Vector2( -183.974, -357.07 )
+transform/pos = Vector2( -198.306, -357.07 )
 transform/scale = Vector2( 0.576476, 0.576476 )
 texture = ExtResource( 1 )
 region = true

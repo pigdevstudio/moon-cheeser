@@ -8,10 +8,10 @@
 custom_solver_bias = 0.0
 radius = 185.805
 
-[sub_resource type="CircleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
-radius = 250.514
+extents = Vector2( 656.224, 216.681 )
 
 [node name="Moon" type="StaticBody2D" groups=[
 "moon",
@@ -42,13 +42,13 @@ texture = ExtResource( 2 )
 
 [node name="Shape" type="CollisionShape2D" parent="."]
 
-visibility/visible = false
 shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
 
 [node name="Area" type="Area2D" parent="."]
 
+z/z = -1
 input/pickable = true
 shapes/0/shape = SubResource( 2 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )

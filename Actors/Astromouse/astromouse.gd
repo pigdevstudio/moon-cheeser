@@ -36,6 +36,7 @@ func _body_enter( body ):
 		can_jump = true
 		
 	elif body.is_in_group("enemy"):
+		get_node("Sprite").hide()
 		if body.is_in_group("void"):
 			acheesements.modify_achievement("void", 1)
 			get_node("SFX").play("falling")

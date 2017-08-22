@@ -9,7 +9,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 22.526, 53.6311 )
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=2]
 
 resource/name = "walking"
 length = 0.4
@@ -95,7 +95,7 @@ default/chorus_send = 0.0
 playback/process_mode = 1
 playback/default_blend_time = 0.0
 root/root = NodePath("..")
-anims/walking = SubResource( 3 )
+anims/walking = SubResource( 2 )
 playback/active = true
 playback/speed = 0.9
 blend_times = [  ]

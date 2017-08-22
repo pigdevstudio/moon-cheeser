@@ -9,7 +9,7 @@ func _fixed_process(delta):
 	_astromouse_interact()
 
 func _astromouse_interact():
-	if not OS.get_name() == "Android":
+	if OS.get_name() == "Android":
 		if Input.is_mouse_button_pressed(BUTTON_LEFT) and is_mouse_on and not already_pressed:
 			var player = _find_player()
 			if player != null and player.has_method("jump"):

@@ -4,6 +4,7 @@ export (float) var max_speed = 600
 export (float) var  max_force = 0.06
 export (float) var slowing_radius = 100
 var velocity = Vector2()
+var already_pressed = false
 onready var target = get_pos()
 
 func _ready():
@@ -15,8 +16,11 @@ func _fixed_process(delta):
 	velocity = steer(target)
 	move(velocity * delta)
 	var angle = get_angle_to(get_pos() - velocity)
-	if Input.is_mouse_button_pressed(1):
+	if Input.is_mouse_button_pressed(BUTTON_LEFT):
 		target = get_viewport().get_mouse_pos()
+	elif not Input.is_mouse_button_pressed(BUTTON_LEFT) and already_pressed:
+		target = get_pos()
+	already_pressed = Input.is_mouse_button_pressed(BUTTON_LEFT)
 
 func steer(target_pos):
 	var desired_velocity = target_pos - get_pos()

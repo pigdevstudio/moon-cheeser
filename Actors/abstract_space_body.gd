@@ -6,8 +6,11 @@ export var direction = 1
 var is_mouse_on = false setget _set_mouse_on
 var already_pressed = false
 var route_already_changed = false
+var already_slide = false
+var is_sliding = false
 onready var initial_pos = get_pos()
 var current_pos = Vector2(0,0)
+onready var moon = get_tree().get_nodes_in_group("moon")[0]
 onready var fixed_process = set_fixed_process(true)
 onready var velocity = Vector2()
 
@@ -23,33 +26,21 @@ func _fixed_process(delta):
 	already_pressed = Input.is_mouse_button_pressed(BUTTON_LEFT)
 
 func _set_mouse_on(is_on):
-	if is_on:
-		get_tree().get_nodes_in_group("moon")[0].is_mouse_on = false
-	else:
-		get_tree().get_nodes_in_group("moon")[0].is_mouse_on = true
+	moon.is_mouse_on = !is_on
 	is_mouse_on = is_on
 	
 func _exit_screen():
 	queue_free()
 
 func apply_route():
-
 	if Input.is_mouse_button_pressed(BUTTON_LEFT) and not already_pressed and is_mouse_on:
 		initial_pos = get_global_mouse_pos()
 		route_already_changed = true
+		is_sliding = true
 
 	elif not Input.is_mouse_button_pressed(BUTTON_LEFT) and already_pressed:
-		if route_already_changed:
-			current_pos = get_global_mouse_pos()
-			var normal =  -1 * sign(initial_pos.y - current_pos.y)
-			velocity = Vector2(MAX_SPEED * direction,  normal * MAX_SPEED * 2)
-			var point = get_pos() + (Vector2(-velocity.normalized().x, velocity.normalized().y) * (100 * normal))
-			rotate(get_angle_to(point))
-			var angle = get_angle_to(get_pos() - velocity)
-			get_node("Sprite/Outer").set_param(Particles2D.PARAM_INITIAL_ANGLE, rad2deg(angle) + 90)
-			if is_in_group("comet"):
-				get_node("Sprite/Inner").set_param(Particles2D.PARAM_INITIAL_ANGLE, rad2deg(angle) + 90)
-			
+		if not already_slide and is_sliding:
+			_slide()
 	return(velocity)
 
 func _spawn_crater(position):
@@ -85,3 +76,15 @@ func _handle_collision(collider):
 		
 		if not collider.is_in_group("cheese"):
 			queue_free()
+			
+func _slide():
+	current_pos = get_global_mouse_pos()
+	var normal =  -1 * sign(initial_pos.y - current_pos.y)
+	velocity = Vector2(MAX_SPEED * direction,  normal * MAX_SPEED * 2)
+	var point = get_pos() + (Vector2(-velocity.normalized().x, velocity.normalized().y) * (100 * normal))
+	rotate(get_angle_to(point))
+	var angle = get_angle_to(get_pos() - velocity)
+	get_node("Sprite/Outer").set_param(Particles2D.PARAM_INITIAL_ANGLE, rad2deg(angle) + 90)
+	if is_in_group("comet"):
+		get_node("Sprite/Inner").set_param(Particles2D.PARAM_INITIAL_ANGLE, rad2deg(angle) + 90)
+	already_slide = true

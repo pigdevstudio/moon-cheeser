@@ -47,6 +47,7 @@ script/script = ExtResource( 3 )
 
 [node name="ScreenPortions" type="VBoxContainer" parent="ScreenMargin"]
 
+editor/display_folded = true
 focus/ignore_mouse = false
 focus/stop_mouse = false
 size_flags/horizontal = 2
@@ -59,6 +60,7 @@ alignment = 0
 
 [node name="TopPortion" type="VBoxContainer" parent="ScreenMargin/ScreenPortions"]
 
+editor/display_folded = true
 focus/ignore_mouse = false
 focus/stop_mouse = false
 size_flags/horizontal = 2
@@ -136,6 +138,7 @@ textures/normal = ExtResource( 7 )
 [node name="Background" parent="." instance=ExtResource( 8 )]
 
 editor/display_folded = true
+layer = -2
 
 [connection signal="released" from="ScreenMargin/ScreenPortions/BottomPortion/Retry" to="." method="_on_Retry_released"]
 

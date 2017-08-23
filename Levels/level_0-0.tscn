@@ -105,22 +105,22 @@ game_state = 0
 
 [node name="Astromouse" parent="." instance=ExtResource( 2 )]
 
-transform/pos = Vector2( 621.044, 332.583 )
+transform/pos = Vector2( 640, 332.583 )
 
 [node name="Moon" parent="." instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 627.427, 615.963 )
+transform/pos = Vector2( 640, 615.963 )
 z/z = 0
 
 [node name="Void" type="StaticBody2D" parent="." groups=[
-"enemy",
 "void",
+"enemy",
 ]]
 
 editor/display_folded = true
 input/pickable = true
 shapes/0/shape = SubResource( 1 )
-shapes/0/transform = Matrix32( 1, 0, 0, 1, 616, 978.882 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 640, 978.882 )
 shapes/0/trigger = true
 collision/layers = 1
 collision/mask = 1
@@ -131,7 +131,7 @@ bounce = 0.0
 
 [node name="Shape" type="CollisionShape2D" parent="Void"]
 
-transform/pos = Vector2( 616, 978.882 )
+transform/pos = Vector2( 640, 978.882 )
 shape = SubResource( 1 )
 trigger = true
 _update_shape_index = 0
@@ -166,7 +166,7 @@ autostart = true
 [node name="LeftStarSpawner" type="Position2D" parent="."]
 
 editor/display_folded = true
-transform/pos = Vector2( 0, 116.589 )
+transform/pos = Vector2( 0, 391.868 )
 script/script = ExtResource( 4 )
 spawn_scene = ExtResource( 6 )
 min_spawn_time = 12.0
@@ -186,7 +186,7 @@ autoplay = "LeftStarSpawn"
 [node name="Timer" type="Timer" parent="LeftStarSpawner"]
 
 process_mode = 1
-wait_time = 25.0
+wait_time = 13.0
 one_shot = false
 autostart = true
 
@@ -213,7 +213,7 @@ autoplay = "LeftCometSpawner"
 [node name="Timer" type="Timer" parent="LeftCometSpawner"]
 
 process_mode = 1
-wait_time = 20.0
+wait_time = 6.0
 one_shot = false
 autostart = true
 
@@ -247,7 +247,7 @@ autostart = true
 [node name="RightCometSpawner" type="Position2D" parent="."]
 
 editor/display_folded = true
-transform/pos = Vector2( 1278.78, 75.8753 )
+transform/pos = Vector2( 1278.78, 629.21 )
 script/script = ExtResource( 4 )
 spawn_scene = ExtResource( 7 )
 min_spawn_time = 5.0
@@ -267,11 +267,13 @@ autoplay = "RightCometSpawner"
 [node name="Timer" type="Timer" parent="RightCometSpawner"]
 
 process_mode = 1
-wait_time = 6.0
+wait_time = 3.1
 one_shot = false
 autostart = true
 
 [node name="Background" parent="." instance=ExtResource( 8 )]
+
+layer = -2
 
 [connection signal="timeout" from="PlanetSpawner/Timer" to="PlanetSpawner" method="_spawn"]
 

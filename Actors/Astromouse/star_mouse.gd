@@ -30,12 +30,16 @@ func steer(target_pos):
 	return(target_velocity)
 
 func _on_timeout():
+	get_node("Sprite/Animator").play("blink")
+
+func _on_body_enter( body ):
+	if body.is_in_group("cheese"):
+		body.increase_score()
+
+
+func _on_animator_finished():
 	var i = load("res://Actors/Astromouse/Astromouse.tscn").instance()
 	i.set_pos(get_pos())
 	get_parent().add_child(i)
 	i.get_node("Sprite").set_frame(3)
 	queue_free()
-
-func _on_body_enter( body ):
-	if body.is_in_group("cheese"):
-		body.increase_score()

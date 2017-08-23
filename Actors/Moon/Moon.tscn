@@ -11,7 +11,7 @@ radius = 185.805
 [sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
-extents = Vector2( 656.224, 216.681 )
+extents = Vector2( 639.82, 216.681 )
 
 [node name="Moon" type="StaticBody2D" groups=[
 "moon",

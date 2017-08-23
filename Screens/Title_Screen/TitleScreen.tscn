@@ -1,15 +1,34 @@
-[gd_scene load_steps=10 format=1]
+[gd_scene load_steps=13 format=1]
 
 [ext_resource path="res://Screens/Abstract Screen.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Screens/Title_Screen/title_screen.gd" type="Script" id=2]
 [ext_resource path="res://Levels/background.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Screens/ShaderButton.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Screens/Title_Screen/achievement_button.png" type="Texture" id=5]
-[ext_resource path="res://Screens/Title_Screen/tittle.png" type="Texture" id=6]
-[ext_resource path="res://Screens/Title_Screen/moon.png" type="Texture" id=7]
-[ext_resource path="res://Screens/Title_Screen/play_button.png" type="Texture" id=8]
+[ext_resource path="res://Objects/Spawner/Spawner.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Screens/background_comet.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Screens/ShaderButton.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Screens/Title_Screen/achievement_button.png" type="Texture" id=7]
+[ext_resource path="res://Screens/Title_Screen/tittle.png" type="Texture" id=8]
+[ext_resource path="res://Screens/Title_Screen/moon.png" type="Texture" id=9]
+[ext_resource path="res://Screens/Title_Screen/play_button.png" type="Texture" id=10]
 
-[sub_resource type="GDScript" id=1]
+[sub_resource type="Animation" id=1]
+
+resource/name = "title_anim"
+length = 8.0
+loop = true
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:transform/pos")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = {
+"times": FloatArray( 0, 4 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1281.89, 43.8904 ), Vector2( 1281.89, 575.09 ) ]
+}
+
+[sub_resource type="GDScript" id=2]
 
 script/source = "extends MarginContainer
 
@@ -27,6 +46,10 @@ margin/bottom = 720.0
 script/script = ExtResource( 2 )
 
 [node name="Background" parent="." instance=ExtResource( 3 )]
+
+layer = -1
+
+[node name="Stars" parent="Background"]
 
 editor/display_folded = true
 
@@ -78,6 +101,10 @@ transform/pos = Vector2( 767.824, 111.172 )
 
 transform/pos = Vector2( 893.088, 44.3649 )
 
+[node name="Planets" parent="Background"]
+
+editor/display_folded = false
+
 [node name="Earth" parent="Background/Planets"]
 
 visibility/visible = false
@@ -86,8 +113,25 @@ visibility/visible = false
 
 visibility/visible = false
 
+[node name="Spawner" parent="Background" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 1281.89, 43.8904 )
+spawn_scene = ExtResource( 5 )
+min_spawn_time = 15.0
+max_spawn_time = 30.0
+
+[node name="Animator" parent="Background/Spawner"]
+
+anims/title_anim = SubResource( 1 )
+autoplay = "title_anim"
+
+[node name="Timer" parent="Background/Spawner"]
+
+wait_time = 15.0
+
 [node name="ScreenMargin" type="MarginContainer" parent="."]
 
+editor/display_folded = true
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
@@ -100,7 +144,7 @@ custom_constants/margin_right = 25
 custom_constants/margin_top = 25
 custom_constants/margin_left = 25
 custom_constants/margin_bottom = 25
-script/script = SubResource( 1 )
+script/script = SubResource( 2 )
 
 [node name="ScreenPortions" type="HBoxContainer" parent="ScreenMargin"]
 
@@ -139,12 +183,12 @@ margin/top = 0.0
 margin/right = 407.0
 margin/bottom = 138.0
 
-[node name="Achievements" parent="ScreenMargin/ScreenPortions/LeftPortion" instance=ExtResource( 4 )]
+[node name="Achievements" parent="ScreenMargin/ScreenPortions/LeftPortion" instance=ExtResource( 6 )]
 
 margin/top = 266.0
 margin/right = 407.0
 margin/bottom = 404.0
-textures/normal = ExtResource( 5 )
+textures/normal = ExtResource( 7 )
 
 [node name="BotConstraint" type="Control" parent="ScreenMargin/ScreenPortions/LeftPortion"]
 
@@ -170,11 +214,11 @@ margin/bottom = 670.0
 custom_constants/separation = 19
 alignment = 0
 
-[node name="Credits" parent="ScreenMargin/ScreenPortions/CenterPortion" instance=ExtResource( 4 )]
+[node name="Credits" parent="ScreenMargin/ScreenPortions/CenterPortion" instance=ExtResource( 6 )]
 
 margin/right = 407.0
 margin/bottom = 325.0
-textures/normal = ExtResource( 6 )
+textures/normal = ExtResource( 8 )
 hover = Color( 1.1, 1.1, 1.1, 1 )
 
 [node name="Moon" type="TextureButton" parent="ScreenMargin/ScreenPortions/CenterPortion"]
@@ -190,7 +234,7 @@ margin/bottom = 670.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/normal = ExtResource( 7 )
+textures/normal = ExtResource( 9 )
 params/resize_mode = 1
 params/stretch_mode = 6
 
@@ -219,12 +263,12 @@ margin/top = 0.0
 margin/right = 408.0
 margin/bottom = 138.0
 
-[node name="Play" parent="ScreenMargin/ScreenPortions/RightPortion" instance=ExtResource( 4 )]
+[node name="Play" parent="ScreenMargin/ScreenPortions/RightPortion" instance=ExtResource( 6 )]
 
 margin/top = 266.0
 margin/right = 408.0
 margin/bottom = 404.0
-textures/normal = ExtResource( 8 )
+textures/normal = ExtResource( 10 )
 
 [node name="BotConstraint" type="Control" parent="ScreenMargin/ScreenPortions/RightPortion"]
 
@@ -245,3 +289,4 @@ margin/bottom = 670.0
 
 
 [editable path="Background"]
+[editable path="Background/Spawner"]

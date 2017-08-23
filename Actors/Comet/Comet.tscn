@@ -32,9 +32,9 @@ offsets = FloatArray( 0.495833, 0.970833, 1 )
 colors = ColorArray( 1, 0.4, 0.333333, 1, 1, 0.4, 0.333333, 0.0578512, 1, 0.4, 0.333333, 0 )
 
 [node name="Comet" type="KinematicBody2D" groups=[
-"enemy",
 "comet",
 "notplanet",
+"enemy",
 ]]
 
 z/z = 2
@@ -51,11 +51,10 @@ direction = 1
 [node name="Sprite" type="AnimatedSprite" parent="."]
 
 editor/display_folded = true
-transform/rot = 0.129821
 transform/scale = Vector2( 0.454877, 0.454877 )
 frames = SubResource( 2 )
 animation = "flying"
-frame = 2
+frame = 3
 playing = true
 offset = Vector2( 160.398, 0.0223724 )
 

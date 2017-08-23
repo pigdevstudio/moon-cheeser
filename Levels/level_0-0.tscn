@@ -106,7 +106,6 @@ game_state = 0
 [node name="Astromouse" parent="." instance=ExtResource( 2 )]
 
 transform/pos = Vector2( 621.044, 332.583 )
-jump_force = 500.0
 
 [node name="Moon" parent="." instance=ExtResource( 3 )]
 
@@ -273,11 +272,6 @@ one_shot = false
 autostart = true
 
 [node name="Background" parent="." instance=ExtResource( 8 )]
-
-[node name="Comet" parent="." instance=ExtResource( 7 )]
-
-transform/pos = Vector2( 1620.91, 578.724 )
-direction = -1
 
 [connection signal="timeout" from="PlanetSpawner/Timer" to="PlanetSpawner" method="_spawn"]
 

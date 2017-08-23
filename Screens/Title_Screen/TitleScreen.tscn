@@ -116,14 +116,16 @@ alignment = 0
 
 [node name="LeftPortion" type="VBoxContainer" parent="ScreenMargin/ScreenPortions"]
 
+editor/display_folded = true
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 3
 size_flags/vertical = 3
 margin/left = 0.0
 margin/top = 0.0
-margin/right = 355.0
+margin/right = 407.0
 margin/bottom = 670.0
+custom_constants/separation = 128
 alignment = 0
 
 [node name="TopConstraint" type="Control" parent="ScreenMargin/ScreenPortions/LeftPortion"]
@@ -134,14 +136,14 @@ size_flags/horizontal = 2
 size_flags/vertical = 3
 margin/left = 0.0
 margin/top = 0.0
-margin/right = 355.0
-margin/bottom = 220.0
+margin/right = 407.0
+margin/bottom = 138.0
 
 [node name="Achievements" parent="ScreenMargin/ScreenPortions/LeftPortion" instance=ExtResource( 4 )]
 
-margin/top = 224.0
-margin/right = 355.0
-margin/bottom = 444.0
+margin/top = 266.0
+margin/right = 407.0
+margin/bottom = 404.0
 textures/normal = ExtResource( 5 )
 
 [node name="BotConstraint" type="Control" parent="ScreenMargin/ScreenPortions/LeftPortion"]
@@ -151,8 +153,8 @@ focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 3
 margin/left = 0.0
-margin/top = 448.0
-margin/right = 355.0
+margin/top = 532.0
+margin/right = 407.0
 margin/bottom = 670.0
 
 [node name="CenterPortion" type="VBoxContainer" parent="ScreenMargin/ScreenPortions"]
@@ -161,43 +163,49 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 3
 size_flags/vertical = 3
-margin/left = 359.0
+margin/left = 411.0
 margin/top = 0.0
-margin/right = 871.0
+margin/right = 818.0
 margin/bottom = 670.0
 custom_constants/separation = 19
 alignment = 0
 
-[node name="Tittle" type="TextureFrame" parent="ScreenMargin/ScreenPortions/CenterPortion"]
+[node name="Credits" parent="ScreenMargin/ScreenPortions/CenterPortion" instance=ExtResource( 4 )]
+
+margin/right = 407.0
+margin/bottom = 325.0
+textures/normal = ExtResource( 6 )
+hover = Color( 1.1, 1.1, 1.1, 1 )
+
+[node name="Moon" type="TextureButton" parent="ScreenMargin/ScreenPortions/CenterPortion"]
 
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 3
-size_flags/vertical = 2
+size_flags/vertical = 3
 margin/left = 0.0
-margin/top = 0.0
-margin/right = 512.0
-margin/bottom = 269.0
-texture = ExtResource( 6 )
-stretch_mode = 5
-
-[node name="Credits" parent="ScreenMargin/ScreenPortions/CenterPortion" instance=ExtResource( 4 )]
-
-margin/top = 288.0
-margin/right = 512.0
+margin/top = 344.0
+margin/right = 407.0
 margin/bottom = 670.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
 textures/normal = ExtResource( 7 )
+params/resize_mode = 1
+params/stretch_mode = 6
 
 [node name="RightPortion" type="VBoxContainer" parent="ScreenMargin/ScreenPortions"]
 
+editor/display_folded = true
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 3
 size_flags/vertical = 2
-margin/left = 875.0
+margin/left = 822.0
 margin/top = 0.0
 margin/right = 1230.0
 margin/bottom = 670.0
+custom_constants/separation = 128
 alignment = 0
 
 [node name="TopConstraint" type="Control" parent="ScreenMargin/ScreenPortions/RightPortion"]
@@ -208,14 +216,14 @@ size_flags/horizontal = 2
 size_flags/vertical = 3
 margin/left = 0.0
 margin/top = 0.0
-margin/right = 355.0
-margin/bottom = 220.0
+margin/right = 408.0
+margin/bottom = 138.0
 
 [node name="Play" parent="ScreenMargin/ScreenPortions/RightPortion" instance=ExtResource( 4 )]
 
-margin/top = 224.0
-margin/right = 355.0
-margin/bottom = 444.0
+margin/top = 266.0
+margin/right = 408.0
+margin/bottom = 404.0
 textures/normal = ExtResource( 8 )
 
 [node name="BotConstraint" type="Control" parent="ScreenMargin/ScreenPortions/RightPortion"]
@@ -225,8 +233,8 @@ focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 3
 margin/left = 0.0
-margin/top = 448.0
-margin/right = 355.0
+margin/top = 532.0
+margin/right = 408.0
 margin/bottom = 670.0
 
 [connection signal="released" from="ScreenMargin/ScreenPortions/LeftPortion/Achievements" to="." method="change_to_next_scene" binds= [ "res://Screens/Achievements_Screen/AchievementsScreen.tscn" ]]

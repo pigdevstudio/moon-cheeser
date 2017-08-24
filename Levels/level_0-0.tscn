@@ -113,8 +113,8 @@ transform/pos = Vector2( 640, 615.963 )
 z/z = 0
 
 [node name="Void" type="StaticBody2D" parent="." groups=[
-"void",
 "enemy",
+"void",
 ]]
 
 editor/display_folded = true

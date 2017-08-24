@@ -1,9 +1,9 @@
 {
   "mooncheeser":{"total":1000, "description":"Gather 1000 cheeses", "accomplished":0, "name":"Astromouse"},
-  "supernova":{"total":100, "description":"Make two stars collide 100 times", "accomplished":0, "name":"Supernova"},
+  "supernova":{"total":1, "description":"Make two stars collide 100 times", "accomplished":0, "name":"Supernova"},
   "firststep":{"total":100, "description":"Make comets collide with the Moon", "accomplished":0, "name":"Cheese Rain"},
   "madness":{"total":1, "description":"Have 5 or more craters on the Moon", "accomplished":0, "name":"Minesweeper"},
-  "gravity":{"total":5, "description":"Survive 5 gravitational battle in a roll", "accomplished":0, "name":"Theory of Relativity"},
+  "gravity":{"total":10, "description":"Survive 10 gravitational battles", "accomplished":0, "name":"Smash that rat"},
   "starmouse":{"total":100, "description":"Ahh ahh ahh ahh ahh, ahh ahh ahh ahh ahh", "accomplished":0, "name":"Imma mtf Starmouse"},
   "void":{"total":10, "description":"Fall into the void 10 times", "accomplished":0, "name":"Rolling in the deep"},
   "fullmoon":{"total":1, "description":"Play Moon Cheeser on a Fullmoon day", "accomplished":0, "name":"Full Cheese"}

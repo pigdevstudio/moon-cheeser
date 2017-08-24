@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=1]
+[gd_scene load_steps=10 format=1]
 
 [ext_resource path="res://Screens/Abstract Screen.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Screens/Credits_Screen/screen_rect.gd" type="Script" id=2]
@@ -6,23 +6,18 @@
 [ext_resource path="res://Screens/ShaderButton.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Screens/Credits_Screen/pig_normal.png" type="Texture" id=5]
 [ext_resource path="res://Levels/background.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Screens/Score_Screen/back_normal.png" type="Texture" id=7]
 
 [sub_resource type="GDScript" id=1]
 
 script/source = "extends \"res://Screens/abstract_screen.gd\"
-var mouse_on setget _set_mouse_on
-func _ready():
-	set_process(true)
-	
-func _process(delta):
-	if Input.is_action_pressed(\"jump\") or (Input.is_action_pressed(\"click\") and not mouse_on):
-		change_to_next_scene()
 
 func _on_button_released():
 	OS.shell_open(\"https://pigdev.itch.io\")
 
-func _set_mouse_on(value):
-	mouse_on = value"
+func _on_Back_released():
+	change_to_next_scene(\"res://Screens/Title_Screen/TitleScreen.tscn\")
+	score_handler.set_score(0)"
 
 [sub_resource type="DynamicFont" id=2]
 
@@ -103,17 +98,29 @@ hover = Color( 1.1, 1.1, 1.1, 1 )
 
 [node name="Background" parent="." instance=ExtResource( 6 )]
 
+[node name="Stars" parent="Background"]
+
 editor/display_folded = true
 
 [node name="Planets" parent="Background"]
 
-editor/display_folded = false
+visibility/visible = false
+
+[node name="Back" parent="." instance=ExtResource( 4 )]
+
+margin/left = 25.0
+margin/top = 25.0
+margin/right = 157.0
+margin/bottom = 97.0
+textures/normal = ExtResource( 7 )
 
 [connection signal="mouse_enter" from="ScreenMargin/VBoxContainer/Pigdev" to="." method="_set_mouse_on" binds= [ true ]]
 
 [connection signal="mouse_exit" from="ScreenMargin/VBoxContainer/Pigdev" to="." method="_set_mouse_on" binds= [ false ]]
 
 [connection signal="released" from="ScreenMargin/VBoxContainer/Pigdev" to="." method="_on_button_released"]
+
+[connection signal="released" from="Back" to="." method="_on_Back_released"]
 
 
 [editable path="Background"]

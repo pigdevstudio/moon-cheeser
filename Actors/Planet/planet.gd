@@ -38,6 +38,8 @@ func _move_away(from, to):
 		tween.start()
 
 func _on_life_spam():
+	get_node("GUILayer/Warning/Animator").stop()
+	get_node("GUILayer/Warning").hide()
 	acheesements.modify_achievement("gravity", 1)
 	if get_parent().has_method("set_game_state"):
 		get_parent().set_game_state(0)
@@ -47,7 +49,6 @@ func _on_life_spam():
 	add_child(t)
 	t.set_wait_time(3.0)
 	t.start()
-	get_node("GUILayer/Warning").hide()
 	yield(t, "timeout")
 	queue_free()
 	

@@ -4,24 +4,25 @@
 [ext_resource path="res://Objects/Planets/earth.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Objects/Planets/plinton.tscn" type="PackedScene" id=3]
 
-[sub_resource type="GDScript" id=3]
+[sub_resource type="GDScript" id=1]
 
 script/source = "extends ParallaxLayer
 
 func _ready():
-	set_process(true)
+#	set_process(true)
+	pass
 	
 func _process(delta):
 	set_motion_offset(get_motion_offset() + Vector2(5,0) * delta)"
 
-[sub_resource type="GDScript" id=4]
+[sub_resource type="GDScript" id=2]
 
 script/source = "extends Node
 
 func _ready():
 	get_node(\"Animator\").set_speed(rand_range(0.5,2.0))"
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=3]
 
 resource/name = "shine"
 length = 3.0
@@ -66,7 +67,7 @@ scroll/ignore_camera_zoom = false
 motion/scale = Vector2( 1, 1 )
 motion/offset = Vector2( 0, 0 )
 motion/mirroring = Vector2( 1280, 0 )
-script/script = SubResource( 3 )
+script/script = SubResource( 1 )
 
 [node name="Star" type="Sprite" parent="Stars"]
 
@@ -74,14 +75,14 @@ editor/display_folded = true
 transform/pos = Vector2( 383.626, 378.185 )
 transform/scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 1 )
-script/script = SubResource( 4 )
+script/script = SubResource( 2 )
 
 [node name="Animator" type="AnimationPlayer" parent="Stars/Star"]
 
 playback/process_mode = 1
 playback/default_blend_time = 0.0
 root/root = NodePath("..")
-anims/shine = SubResource( 5 )
+anims/shine = SubResource( 3 )
 playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
@@ -93,14 +94,14 @@ editor/display_folded = true
 transform/pos = Vector2( 321.956, 430.275 )
 transform/scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 1 )
-script/script = SubResource( 4 )
+script/script = SubResource( 2 )
 
 [node name="Animator" type="AnimationPlayer" parent="Stars/Star#1"]
 
 playback/process_mode = 1
 playback/default_blend_time = 0.0
 root/root = NodePath("..")
-anims/shine = SubResource( 5 )
+anims/shine = SubResource( 3 )
 playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
@@ -112,14 +113,14 @@ editor/display_folded = true
 transform/pos = Vector2( 311.179, 365.013 )
 transform/scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 1 )
-script/script = SubResource( 4 )
+script/script = SubResource( 2 )
 
 [node name="Animator" type="AnimationPlayer" parent="Stars/Star#2"]
 
 playback/process_mode = 1
 playback/default_blend_time = 0.0
 root/root = NodePath("..")
-anims/shine = SubResource( 5 )
+anims/shine = SubResource( 3 )
 playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
@@ -131,14 +132,14 @@ editor/display_folded = true
 transform/pos = Vector2( 779.577, 390.283 )
 transform/scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 1 )
-script/script = SubResource( 4 )
+script/script = SubResource( 2 )
 
 [node name="Animator" type="AnimationPlayer" parent="Stars/Star#3"]
 
 playback/process_mode = 1
 playback/default_blend_time = 0.0
 root/root = NodePath("..")
-anims/shine = SubResource( 5 )
+anims/shine = SubResource( 3 )
 playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
@@ -150,14 +151,14 @@ editor/display_folded = true
 transform/pos = Vector2( 722.72, 292.812 )
 transform/scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 1 )
-script/script = SubResource( 4 )
+script/script = SubResource( 2 )
 
 [node name="Animator" type="AnimationPlayer" parent="Stars/Star#4"]
 
 playback/process_mode = 1
 playback/default_blend_time = 0.0
 root/root = NodePath("..")
-anims/shine = SubResource( 5 )
+anims/shine = SubResource( 3 )
 playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
@@ -169,14 +170,14 @@ editor/display_folded = true
 transform/pos = Vector2( 830.117, 289.202 )
 transform/scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 1 )
-script/script = SubResource( 4 )
+script/script = SubResource( 2 )
 
 [node name="Animator" type="AnimationPlayer" parent="Stars/Star#5"]
 
 playback/process_mode = 1
 playback/default_blend_time = 0.0
 root/root = NodePath("..")
-anims/shine = SubResource( 5 )
+anims/shine = SubResource( 3 )
 playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
@@ -188,14 +189,14 @@ editor/display_folded = true
 transform/pos = Vector2( 986.25, 371.33 )
 transform/scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 1 )
-script/script = SubResource( 4 )
+script/script = SubResource( 2 )
 
 [node name="Animator" type="AnimationPlayer" parent="Stars/Star#6"]
 
 playback/process_mode = 1
 playback/default_blend_time = 0.0
 root/root = NodePath("..")
-anims/shine = SubResource( 5 )
+anims/shine = SubResource( 3 )
 playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
@@ -207,14 +208,14 @@ editor/display_folded = true
 transform/pos = Vector2( 1062.06, 494.07 )
 transform/scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 1 )
-script/script = SubResource( 4 )
+script/script = SubResource( 2 )
 
 [node name="Animator" type="AnimationPlayer" parent="Stars/Star#7"]
 
 playback/process_mode = 1
 playback/default_blend_time = 0.0
 root/root = NodePath("..")
-anims/shine = SubResource( 5 )
+anims/shine = SubResource( 3 )
 playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
@@ -226,14 +227,14 @@ editor/display_folded = true
 transform/pos = Vector2( 791.31, 587.028 )
 transform/scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 1 )
-script/script = SubResource( 4 )
+script/script = SubResource( 2 )
 
 [node name="Animator" type="AnimationPlayer" parent="Stars/Star#8"]
 
 playback/process_mode = 1
 playback/default_blend_time = 0.0
 root/root = NodePath("..")
-anims/shine = SubResource( 5 )
+anims/shine = SubResource( 3 )
 playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
@@ -245,14 +246,14 @@ editor/display_folded = true
 transform/pos = Vector2( 320.204, 706.158 )
 transform/scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 1 )
-script/script = SubResource( 4 )
+script/script = SubResource( 2 )
 
 [node name="Animator" type="AnimationPlayer" parent="Stars/Star#9"]
 
 playback/process_mode = 1
 playback/default_blend_time = 0.0
 root/root = NodePath("..")
-anims/shine = SubResource( 5 )
+anims/shine = SubResource( 3 )
 playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
@@ -264,14 +265,14 @@ editor/display_folded = true
 transform/pos = Vector2( 1062.06, 695.328 )
 transform/scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 1 )
-script/script = SubResource( 4 )
+script/script = SubResource( 2 )
 
 [node name="Animator" type="AnimationPlayer" parent="Stars/Star#10"]
 
 playback/process_mode = 1
 playback/default_blend_time = 0.0
 root/root = NodePath("..")
-anims/shine = SubResource( 5 )
+anims/shine = SubResource( 3 )
 playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
@@ -283,14 +284,14 @@ editor/display_folded = true
 transform/pos = Vector2( 1165.61, 89.0507 )
 transform/scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 1 )
-script/script = SubResource( 4 )
+script/script = SubResource( 2 )
 
 [node name="Animator" type="AnimationPlayer" parent="Stars/Star#11"]
 
 playback/process_mode = 1
 playback/default_blend_time = 0.0
 root/root = NodePath("..")
-anims/shine = SubResource( 5 )
+anims/shine = SubResource( 3 )
 playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
@@ -302,14 +303,14 @@ editor/display_folded = true
 transform/pos = Vector2( 1199.02, 134.146 )
 transform/scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 1 )
-script/script = SubResource( 4 )
+script/script = SubResource( 2 )
 
 [node name="Animator" type="AnimationPlayer" parent="Stars/Star#12"]
 
 playback/process_mode = 1
 playback/default_blend_time = 0.0
 root/root = NodePath("..")
-anims/shine = SubResource( 5 )
+anims/shine = SubResource( 3 )
 playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
@@ -321,14 +322,14 @@ editor/display_folded = true
 transform/pos = Vector2( 1120.52, 129.135 )
 transform/scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 1 )
-script/script = SubResource( 4 )
+script/script = SubResource( 2 )
 
 [node name="Animator" type="AnimationPlayer" parent="Stars/Star#13"]
 
 playback/process_mode = 1
 playback/default_blend_time = 0.0
 root/root = NodePath("..")
-anims/shine = SubResource( 5 )
+anims/shine = SubResource( 3 )
 playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
@@ -340,14 +341,14 @@ editor/display_folded = true
 transform/pos = Vector2( 1162.27, 152.518 )
 transform/scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 1 )
-script/script = SubResource( 4 )
+script/script = SubResource( 2 )
 
 [node name="Animator" type="AnimationPlayer" parent="Stars/Star#14"]
 
 playback/process_mode = 1
 playback/default_blend_time = 0.0
 root/root = NodePath("..")
-anims/shine = SubResource( 5 )
+anims/shine = SubResource( 3 )
 playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
@@ -359,14 +360,14 @@ editor/display_folded = true
 transform/pos = Vector2( 1142.23, 212.644 )
 transform/scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 1 )
-script/script = SubResource( 4 )
+script/script = SubResource( 2 )
 
 [node name="Animator" type="AnimationPlayer" parent="Stars/Star#15"]
 
 playback/process_mode = 1
 playback/default_blend_time = 0.0
 root/root = NodePath("..")
-anims/shine = SubResource( 5 )
+anims/shine = SubResource( 3 )
 playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
@@ -378,14 +379,14 @@ editor/display_folded = true
 transform/pos = Vector2( 280.414, 152.518 )
 transform/scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 1 )
-script/script = SubResource( 4 )
+script/script = SubResource( 2 )
 
 [node name="Animator" type="AnimationPlayer" parent="Stars/Star#16"]
 
 playback/process_mode = 1
 playback/default_blend_time = 0.0
 root/root = NodePath("..")
-anims/shine = SubResource( 5 )
+anims/shine = SubResource( 3 )
 playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
@@ -397,14 +398,14 @@ editor/display_folded = true
 transform/pos = Vector2( 352.232, 132.476 )
 transform/scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 1 )
-script/script = SubResource( 4 )
+script/script = SubResource( 2 )
 
 [node name="Animator" type="AnimationPlayer" parent="Stars/Star#17"]
 
 playback/process_mode = 1
 playback/default_blend_time = 0.0
 root/root = NodePath("..")
-anims/shine = SubResource( 5 )
+anims/shine = SubResource( 3 )
 playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
@@ -416,14 +417,14 @@ editor/display_folded = true
 transform/pos = Vector2( 429.06, 109.093 )
 transform/scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 1 )
-script/script = SubResource( 4 )
+script/script = SubResource( 2 )
 
 [node name="Animator" type="AnimationPlayer" parent="Stars/Star#18"]
 
 playback/process_mode = 1
 playback/default_blend_time = 0.0
 root/root = NodePath("..")
-anims/shine = SubResource( 5 )
+anims/shine = SubResource( 3 )
 playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
@@ -435,14 +436,14 @@ editor/display_folded = true
 transform/pos = Vector2( 100.034, 483.215 )
 transform/scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 1 )
-script/script = SubResource( 4 )
+script/script = SubResource( 2 )
 
 [node name="Animator" type="AnimationPlayer" parent="Stars/Star#19"]
 
 playback/process_mode = 1
 playback/default_blend_time = 0.0
 root/root = NodePath("..")
-anims/shine = SubResource( 5 )
+anims/shine = SubResource( 3 )
 playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
@@ -454,14 +455,14 @@ editor/display_folded = true
 transform/pos = Vector2( 171.852, 473.193 )
 transform/scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 1 )
-script/script = SubResource( 4 )
+script/script = SubResource( 2 )
 
 [node name="Animator" type="AnimationPlayer" parent="Stars/Star#20"]
 
 playback/process_mode = 1
 playback/default_blend_time = 0.0
 root/root = NodePath("..")
-anims/shine = SubResource( 5 )
+anims/shine = SubResource( 3 )
 playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
@@ -473,14 +474,14 @@ editor/display_folded = true
 transform/pos = Vector2( 213.606, 524.969 )
 transform/scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 1 )
-script/script = SubResource( 4 )
+script/script = SubResource( 2 )
 
 [node name="Animator" type="AnimationPlayer" parent="Stars/Star#21"]
 
 playback/process_mode = 1
 playback/default_blend_time = 0.0
 root/root = NodePath("..")
-anims/shine = SubResource( 5 )
+anims/shine = SubResource( 3 )
 playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
@@ -492,14 +493,14 @@ editor/display_folded = true
 transform/pos = Vector2( 158.49, 588.436 )
 transform/scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 1 )
-script/script = SubResource( 4 )
+script/script = SubResource( 2 )
 
 [node name="Animator" type="AnimationPlayer" parent="Stars/Star#22"]
 
 playback/process_mode = 1
 playback/default_blend_time = 0.0
 root/root = NodePath("..")
-anims/shine = SubResource( 5 )
+anims/shine = SubResource( 3 )
 playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
@@ -511,14 +512,14 @@ editor/display_folded = true
 transform/pos = Vector2( 69.9703, 563.383 )
 transform/scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 1 )
-script/script = SubResource( 4 )
+script/script = SubResource( 2 )
 
 [node name="Animator" type="AnimationPlayer" parent="Stars/Star#23"]
 
 playback/process_mode = 1
 playback/default_blend_time = 0.0
 root/root = NodePath("..")
-anims/shine = SubResource( 5 )
+anims/shine = SubResource( 3 )
 playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
@@ -530,14 +531,14 @@ editor/display_folded = true
 transform/pos = Vector2( 86.6721, 683.637 )
 transform/scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 1 )
-script/script = SubResource( 4 )
+script/script = SubResource( 2 )
 
 [node name="Animator" type="AnimationPlayer" parent="Stars/Star#24"]
 
 playback/process_mode = 1
 playback/default_blend_time = 0.0
 root/root = NodePath("..")
-anims/shine = SubResource( 5 )
+anims/shine = SubResource( 3 )
 playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
@@ -549,14 +550,14 @@ editor/display_folded = true
 transform/pos = Vector2( 93.3528, 817.252 )
 transform/scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 1 )
-script/script = SubResource( 4 )
+script/script = SubResource( 2 )
 
 [node name="Animator" type="AnimationPlayer" parent="Stars/Star#25"]
 
 playback/process_mode = 1
 playback/default_blend_time = 0.0
 root/root = NodePath("..")
-anims/shine = SubResource( 5 )
+anims/shine = SubResource( 3 )
 playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
@@ -568,14 +569,14 @@ editor/display_folded = true
 transform/pos = Vector2( 248.68, 954.207 )
 transform/scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 1 )
-script/script = SubResource( 4 )
+script/script = SubResource( 2 )
 
 [node name="Animator" type="AnimationPlayer" parent="Stars/Star#26"]
 
 playback/process_mode = 1
 playback/default_blend_time = 0.0
 root/root = NodePath("..")
-anims/shine = SubResource( 5 )
+anims/shine = SubResource( 3 )
 playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
@@ -587,14 +588,14 @@ editor/display_folded = true
 transform/pos = Vector2( 88.3423, 247.718 )
 transform/scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 1 )
-script/script = SubResource( 4 )
+script/script = SubResource( 2 )
 
 [node name="Animator" type="AnimationPlayer" parent="Stars/Star#27"]
 
 playback/process_mode = 1
 playback/default_blend_time = 0.0
 root/root = NodePath("..")
-anims/shine = SubResource( 5 )
+anims/shine = SubResource( 3 )
 playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
@@ -606,14 +607,14 @@ editor/display_folded = true
 transform/pos = Vector2( 978.551, 99.0719 )
 transform/scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 1 )
-script/script = SubResource( 4 )
+script/script = SubResource( 2 )
 
 [node name="Animator" type="AnimationPlayer" parent="Stars/Star#28"]
 
 playback/process_mode = 1
 playback/default_blend_time = 0.0
 root/root = NodePath("..")
-anims/shine = SubResource( 5 )
+anims/shine = SubResource( 3 )
 playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
@@ -625,14 +626,14 @@ editor/display_folded = true
 transform/pos = Vector2( 749.736, 84.0402 )
 transform/scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 1 )
-script/script = SubResource( 4 )
+script/script = SubResource( 2 )
 
 [node name="Animator" type="AnimationPlayer" parent="Stars/Star#29"]
 
 playback/process_mode = 1
 playback/default_blend_time = 0.0
 root/root = NodePath("..")
-anims/shine = SubResource( 5 )
+anims/shine = SubResource( 3 )
 playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
@@ -644,14 +645,14 @@ editor/display_folded = true
 transform/pos = Vector2( 875, 17.2328 )
 transform/scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 1 )
-script/script = SubResource( 4 )
+script/script = SubResource( 2 )
 
 [node name="Animator" type="AnimationPlayer" parent="Stars/Star#30"]
 
 playback/process_mode = 1
 playback/default_blend_time = 0.0
 root/root = NodePath("..")
-anims/shine = SubResource( 5 )
+anims/shine = SubResource( 3 )
 playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
@@ -663,14 +664,14 @@ editor/display_folded = true
 transform/pos = Vector2( 1138.56, 614.789 )
 transform/scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 1 )
-script/script = SubResource( 4 )
+script/script = SubResource( 2 )
 
 [node name="Animator" type="AnimationPlayer" parent="Stars/Star#31"]
 
 playback/process_mode = 1
 playback/default_blend_time = 0.0
 root/root = NodePath("..")
-anims/shine = SubResource( 5 )
+anims/shine = SubResource( 3 )
 playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
@@ -682,14 +683,14 @@ editor/display_folded = true
 transform/pos = Vector2( 1220.36, 578.436 )
 transform/scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 1 )
-script/script = SubResource( 4 )
+script/script = SubResource( 2 )
 
 [node name="Animator" type="AnimationPlayer" parent="Stars/Star#32"]
 
 playback/process_mode = 1
 playback/default_blend_time = 0.0
 root/root = NodePath("..")
-anims/shine = SubResource( 5 )
+anims/shine = SubResource( 3 )
 playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
@@ -701,14 +702,14 @@ editor/display_folded = true
 transform/pos = Vector2( 1222.63, 321.691 )
 transform/scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 1 )
-script/script = SubResource( 4 )
+script/script = SubResource( 2 )
 
 [node name="Animator" type="AnimationPlayer" parent="Stars/Star#33"]
 
 playback/process_mode = 1
 playback/default_blend_time = 0.0
 root/root = NodePath("..")
-anims/shine = SubResource( 5 )
+anims/shine = SubResource( 3 )
 playback/active = true
 playback/speed = 1.0
 blend_times = [  ]

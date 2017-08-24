@@ -26,6 +26,9 @@ func _fixed_process(delta):
 	already_pressed = Input.is_mouse_button_pressed(BUTTON_LEFT)
 
 func _set_mouse_on(is_on):
+	get_node("Label").set_hidden(!is_on)
+	get_node("Animator").seek(0.0, true)
+	get_node("Animator").play("slide")
 	moon.is_mouse_on = !is_on
 	is_mouse_on = is_on
 	
@@ -37,12 +40,13 @@ func apply_route():
 		initial_pos = get_global_mouse_pos()
 		route_already_changed = true
 		is_sliding = true
-		get_node("Animator").stop(true)
+		get_node("Label").show()
+		get_node("Animator").play("slide")
 
 	elif not Input.is_mouse_button_pressed(BUTTON_LEFT) and already_pressed:
 		if not already_slide and is_sliding:
 			_slide()
-			get_node("Animator").seek(0.5, true)
+			get_node("Label").hide()
 	return(velocity)
 
 func _spawn_crater(position):
@@ -56,12 +60,12 @@ func _spawn_crater(position):
 			get_collider().get_node("Sprite").add_child(instance)
 			instance.set_global_pos(position)
 			instance.set_rot(instance.get_angle_to(get_collider().get_pos()))
-			
+			var instance = load("res://Actors/SFX.tscn").instance()
+			get_collider().get_node("Sprite").add_child(instance)
 
 func _handle_collision(collider):
 	if collider != null:
-		var instance = load("res://Actors/SFX.tscn").instance()
-		get_collider().get_node("Sprite").add_child(instance)
+		
 		if collider.is_in_group("moon"):
 			if self.is_in_group("comet") and route_already_changed:
 				acheesements.modify_achievement("firststep", 1)

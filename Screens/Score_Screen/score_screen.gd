@@ -1,7 +1,6 @@
 extends "res://Screens/abstract_screen.gd"
 
 func _ready():
-	acheesements.modify_achievement("gravity", 0)
 	get_node("ScreenMargin/ScreenPortions/TopPortion/Score").set_text("Score: %s" %score_handler.get_score())
 	get_node("ScreenMargin/ScreenPortions/TopPortion/Highscore").set_text("Highscore: %s" %score_handler.read_highscore())
 

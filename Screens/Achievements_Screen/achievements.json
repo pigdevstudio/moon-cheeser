@@ -1,6 +1,6 @@
 {
   "mooncheeser":{"total":1000, "description":"Gather 1000 cheeses", "accomplished":0, "name":"Astromouse"},
-  "supernova":{"total":1, "description":"Make two stars collide 100 times", "accomplished":0, "name":"Supernova"},
+  "supernova":{"total":1, "description":"Collide two stars creating an amazing astronomical event", "accomplished":0, "name":"Supernova"},
   "firststep":{"total":100, "description":"Make comets collide with the Moon", "accomplished":0, "name":"Cheese Rain"},
   "madness":{"total":1, "description":"Have 5 or more craters on the Moon", "accomplished":0, "name":"Minesweeper"},
   "gravity":{"total":10, "description":"Survive 10 gravitational battles", "accomplished":0, "name":"Smash that rat"},

@@ -113,8 +113,8 @@ transform/pos = Vector2( 640, 615.963 )
 z/z = 0
 
 [node name="Void" type="StaticBody2D" parent="." groups=[
-"enemy",
 "void",
+"enemy",
 ]]
 
 editor/display_folded = true
@@ -274,6 +274,10 @@ autostart = true
 [node name="Background" parent="." instance=ExtResource( 8 )]
 
 layer = -2
+
+[node name="Planet" parent="." instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 904.893, -123.91 )
 
 [connection signal="timeout" from="PlanetSpawner/Timer" to="PlanetSpawner" method="_spawn"]
 

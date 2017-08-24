@@ -37,10 +37,12 @@ func apply_route():
 		initial_pos = get_global_mouse_pos()
 		route_already_changed = true
 		is_sliding = true
+		get_node("Animator").stop(true)
 
 	elif not Input.is_mouse_button_pressed(BUTTON_LEFT) and already_pressed:
 		if not already_slide and is_sliding:
 			_slide()
+			get_node("Animator").seek(0.5, true)
 	return(velocity)
 
 func _spawn_crater(position):
@@ -57,6 +59,7 @@ func _spawn_crater(position):
 			
 			instance = load("res://Actors/SFX.tscn").instance()
 			get_collider().get_node("Sprite").add_child(instance)
+
 func _handle_collision(collider):
 	if collider != null:
 		if collider.is_in_group("moon"):
@@ -76,7 +79,7 @@ func _handle_collision(collider):
 		
 		if not collider.is_in_group("cheese"):
 			queue_free()
-			
+
 func _slide():
 	current_pos = get_global_mouse_pos()
 	var normal =  -1 * sign(initial_pos.y - current_pos.y)

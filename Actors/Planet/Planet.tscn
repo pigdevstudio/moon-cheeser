@@ -1,25 +1,58 @@
-[gd_scene load_steps=6 format=1]
+[gd_scene load_steps=9 format=1]
 
 [ext_resource path="res://Actors/Planet/planet.gd" type="Script" id=1]
 [ext_resource path="res://Actors/Planet/satheri.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Actors/Planet/PlanetLifeSpam.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Screens/GaroaHackerClubeBold.otf" type="DynamicFontData" id=3]
 
-[sub_resource type="CircleShape2D" id=1]
+[sub_resource type="CircleShape2D" id=4]
 
 custom_solver_bias = 0.0
 radius = 202.394
 
-[sub_resource type="CircleShape2D" id=2]
+[sub_resource type="CircleShape2D" id=5]
 
 custom_solver_bias = 0.0
 radius = 255.506
+
+[sub_resource type="DynamicFont" id=3]
+
+font/size = 50
+font/use_mipmaps = false
+font/use_filter = false
+font/font = ExtResource( 3 )
+
+[sub_resource type="GDScript" id=6]
+
+script/source = "extends Label
+
+func _ready():
+	if OS.get_name() == \"Android\":
+		set_text(\"TAP THE MOON!!\")
+	else:
+		set_text(\"SMASH THE SPACEBAR!!\")"
+
+[sub_resource type="Animation" id=7]
+
+length = 1.0
+loop = true
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:visibility/visible")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = {
+"times": FloatArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1 ),
+"transitions": FloatArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ true, false, true, false, true, false, true, false, true, false, true ]
+}
 
 [node name="Planet" type="StaticBody2D" groups=[
 "enemy",
 ]]
 
 input/pickable = false
-shapes/0/shape = SubResource( 1 )
+shapes/0/shape = SubResource( 4 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 1
@@ -47,14 +80,14 @@ transform/pos = Vector2( 3.59111, 2.70122 )
 
 [node name="Shape" type="CollisionShape2D" parent="."]
 
-shape = SubResource( 1 )
+shape = SubResource( 4 )
 trigger = false
 _update_shape_index = 0
 
 [node name="Area" type="Area2D" parent="."]
 
 input/pickable = true
-shapes/0/shape = SubResource( 2 )
+shapes/0/shape = SubResource( 5 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 gravity_vec = Vector2( 0, 1 )
@@ -64,7 +97,7 @@ angular_damp = 1.0
 
 [node name="Shape" type="CollisionShape2D" parent="Area"]
 
-shape = SubResource( 2 )
+shape = SubResource( 5 )
 trigger = false
 _update_shape_index = 0
 
@@ -82,21 +115,35 @@ offset = Vector2( 0, 0 )
 rotation = 0.0
 scale = Vector2( 1, 1 )
 
-[node name="PlanetLifeSpam" parent="GUILayer" instance=ExtResource( 3 )]
+[node name="Warning" type="Label" parent="GUILayer"]
 
-[node name="Timer" parent="GUILayer/PlanetLifeSpam"]
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 291.0
+margin/top = 259.0
+margin/right = 976.0
+margin/bottom = 401.0
+custom_fonts/font = SubResource( 3 )
+text = "TAP THE MOON!!"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+script/script = SubResource( 6 )
 
-wait_time = 10.0
+[node name="Animator" type="AnimationPlayer" parent="GUILayer/Warning"]
 
-[node name="Label" parent="GUILayer/PlanetLifeSpam"]
-
-margin/left = 195.0
-margin/top = 0.0
-margin/right = 326.0
-margin/bottom = 16.0
-
-[connection signal="timeout" from="GUILayer/PlanetLifeSpam/Timer" to="." method="_on_life_spam"]
+playback/process_mode = 1
+playback/default_blend_time = 0.0
+root/root = NodePath("..")
+anims/blink = SubResource( 7 )
+playback/active = true
+playback/speed = 0.3
+blend_times = [  ]
+autoplay = "blink"
 
 
 [editable path="Sprite/satheri"]
-[editable path="GUILayer/PlanetLifeSpam"]

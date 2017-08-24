@@ -57,11 +57,11 @@ func _spawn_crater(position):
 			instance.set_global_pos(position)
 			instance.set_rot(instance.get_angle_to(get_collider().get_pos()))
 			
-			instance = load("res://Actors/SFX.tscn").instance()
-			get_collider().get_node("Sprite").add_child(instance)
 
 func _handle_collision(collider):
 	if collider != null:
+		var instance = load("res://Actors/SFX.tscn").instance()
+		get_collider().get_node("Sprite").add_child(instance)
 		if collider.is_in_group("moon"):
 			if self.is_in_group("comet") and route_already_changed:
 				acheesements.modify_achievement("firststep", 1)

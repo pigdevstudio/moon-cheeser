@@ -6,8 +6,8 @@
 [ext_resource path="res://Screens/GaroaHackerClubeBold.otf" type="DynamicFontData" id=4]
 [ext_resource path="res://Screens/ShaderButton.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Screens/Score_Screen/retry_normal.png" type="Texture" id=6]
-[ext_resource path="res://Screens/Score_Screen/back_normal.png" type="Texture" id=7]
-[ext_resource path="res://Levels/background.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Levels/background.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Screens/Score_Screen/back_normal.png" type="Texture" id=8]
 
 [sub_resource type="DynamicFont" id=1]
 
@@ -47,7 +47,6 @@ script/script = ExtResource( 3 )
 
 [node name="ScreenPortions" type="VBoxContainer" parent="ScreenMargin"]
 
-editor/display_folded = true
 focus/ignore_mouse = false
 focus/stop_mouse = false
 size_flags/horizontal = 2
@@ -119,29 +118,59 @@ margin/left = 0.0
 margin/top = 337.0
 margin/right = 1230.0
 margin/bottom = 670.0
-custom_constants/separation = 62
 alignment = 0
+
+[node name="ReferenceFrame" type="ReferenceFrame" parent="ScreenMargin/ScreenPortions/BottomPortion"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 3
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 1230.0
+margin/bottom = 108.0
 
 [node name="Retry" parent="ScreenMargin/ScreenPortions/BottomPortion" instance=ExtResource( 5 )]
 
+margin/top = 112.0
 margin/right = 1230.0
-margin/bottom = 135.0
+margin/bottom = 220.0
 textures/normal = ExtResource( 6 )
 
-[node name="Back" parent="ScreenMargin/ScreenPortions/BottomPortion" instance=ExtResource( 5 )]
+[node name="ReferenceFrame1" type="ReferenceFrame" parent="ScreenMargin/ScreenPortions/BottomPortion"]
 
-margin/top = 197.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 3
+margin/left = 0.0
+margin/top = 224.0
 margin/right = 1230.0
 margin/bottom = 333.0
-textures/normal = ExtResource( 7 )
 
-[node name="Background" parent="." instance=ExtResource( 8 )]
+[node name="Background" parent="." instance=ExtResource( 7 )]
 
 editor/display_folded = true
 layer = -2
 
+[node name="Planets" parent="Background"]
+
+visibility/visible = false
+
+[node name="Back" parent="." instance=ExtResource( 5 )]
+
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 25.0
+margin/top = 25.0
+margin/right = 157.0
+margin/bottom = 97.0
+textures/normal = ExtResource( 8 )
+
 [connection signal="released" from="ScreenMargin/ScreenPortions/BottomPortion/Retry" to="." method="_on_Retry_released"]
 
-[connection signal="released" from="ScreenMargin/ScreenPortions/BottomPortion/Back" to="." method="_on_Back_released"]
+[connection signal="released" from="Back" to="." method="_on_Back_released"]
 
 
+[editable path="Background"]

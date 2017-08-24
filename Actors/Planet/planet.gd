@@ -47,6 +47,7 @@ func _on_life_spam():
 	add_child(t)
 	t.set_wait_time(3.0)
 	t.start()
+	get_node("GUILayer/Warning").hide()
 	yield(t, "timeout")
 	queue_free()
 	

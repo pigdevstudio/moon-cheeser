@@ -11,9 +11,9 @@ export(int, "LOW", "MEDIUM", "HIGH", "HD") var resolution setget set_resolution
 onready var winsize = OS.get_window_size()
 func _ready():
 	edit_set_rect(Rect2(Vector2(), winsize))
-	set_process(true)
-	var size = get_rect().size
-	emit_signal("resolution_changed", size, self)
+	set_process(false)
+#	var size = get_rect().size
+#	emit_signal("resolution_changed", size, self)
 	
 func _process(delta):
 	

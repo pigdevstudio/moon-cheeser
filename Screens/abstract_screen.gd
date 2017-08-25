@@ -12,4 +12,4 @@ func change_to_next_scene(scene = s):
 		get_tree().change_scene(scene.get_path())
 
 func set_aspect():
-	get_tree().set_screen_stretch(SceneTree.STRETCH_MODE_DISABLED, SceneTree.STRETCH_ASPECT_IGNORE, Vector2())
+	get_tree().set_screen_stretch(SceneTree.STRETCH_MODE_VIEWPORT, SceneTree.STRETCH_ASPECT_KEEP, Vector2(1280,720))

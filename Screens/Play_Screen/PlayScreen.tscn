@@ -36,6 +36,8 @@ max_lines_visible = -1
 
 [node name="Level_0-0" parent="." instance=ExtResource( 4 )]
 
+editor/display_folded = true
+
 [node name="RightCometSpawner" parent="Level_0-0"]
 
 editor/display_folded = false

@@ -113,8 +113,8 @@ transform/pos = Vector2( 640, 615.963 )
 z/z = 0
 
 [node name="Void" type="StaticBody2D" parent="." groups=[
-"void",
 "enemy",
+"void",
 ]]
 
 editor/display_folded = true
@@ -138,12 +138,11 @@ _update_shape_index = 0
 
 [node name="PlanetSpawner" type="Position2D" parent="."]
 
-editor/display_folded = true
 transform/pos = Vector2( 991.207, -42.245 )
 script/script = ExtResource( 4 )
 spawn_scene = ExtResource( 5 )
-min_spawn_time = 60.0
-max_spawn_time = 90.0
+min_spawn_time = 30.0
+max_spawn_time = 45.0
 
 [node name="Animator" type="AnimationPlayer" parent="PlanetSpawner"]
 
@@ -159,7 +158,7 @@ autoplay = "PlanetAnim"
 [node name="Timer" type="Timer" parent="PlanetSpawner"]
 
 process_mode = 1
-wait_time = 60.0
+wait_time = 30.0
 one_shot = false
 autostart = true
 
@@ -274,10 +273,6 @@ autostart = true
 [node name="Background" parent="." instance=ExtResource( 8 )]
 
 layer = -2
-
-[node name="Planet" parent="." instance=ExtResource( 5 )]
-
-transform/pos = Vector2( 904.893, -123.91 )
 
 [connection signal="timeout" from="PlanetSpawner/Timer" to="PlanetSpawner" method="_spawn"]
 

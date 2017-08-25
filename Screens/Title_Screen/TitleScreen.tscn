@@ -33,20 +33,28 @@ tracks/0/keys = {
 script/source = "extends MarginContainer
 
 func _ready():
-	set_process(true)
+	set_process(false)
 	
 func _process(delta):
-	set_size(OS.get_window_size())"
+#	set_size(OS.get_window_size())
+	pass"
 
 [node name="TitleScreen" instance=ExtResource( 1 )]
 
+anchor/left = 3
+anchor/top = 3
+anchor/right = 3
+anchor/bottom = 3
 size_flags/vertical = 3
-margin/right = 1280.0
-margin/bottom = 720.0
+margin/left = 640.0
+margin/top = 360.0
+margin/right = -640.0
+margin/bottom = -360.0
 script/script = ExtResource( 2 )
 
 [node name="Background" parent="." instance=ExtResource( 3 )]
 
+editor/display_folded = true
 layer = -1
 
 [node name="Stars" parent="Background"]
@@ -101,10 +109,6 @@ transform/pos = Vector2( 767.824, 111.172 )
 
 transform/pos = Vector2( 893.088, 44.3649 )
 
-[node name="Planets" parent="Background"]
-
-editor/display_folded = false
-
 [node name="Earth" parent="Background/Planets"]
 
 visibility/visible = false
@@ -131,15 +135,18 @@ wait_time = 15.0
 
 [node name="ScreenMargin" type="MarginContainer" parent="."]
 
-editor/display_folded = true
+anchor/left = 3
+anchor/top = 3
+anchor/right = 3
+anchor/bottom = 3
 focus/ignore_mouse = false
 focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 2
-margin/left = 0.0
-margin/top = 0.0
-margin/right = 1280.0
-margin/bottom = 720.0
+size_flags/horizontal = 3
+size_flags/vertical = 3
+margin/left = 640.0
+margin/top = 360.0
+margin/right = -640.0
+margin/bottom = -360.0
 custom_constants/margin_right = 25
 custom_constants/margin_top = 25
 custom_constants/margin_left = 25

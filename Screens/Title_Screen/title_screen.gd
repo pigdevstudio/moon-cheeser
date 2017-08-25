@@ -8,3 +8,4 @@ func _ready():
 	dif = dif / ceil(dif / 30)
 	if  dif >= 29.0 and dif <= 30.0:
 		acheesements.modify_achievement("fullmoon", 1)
+		acheesements.write_achievements()

@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=1]
+[gd_scene load_steps=8 format=1]
 
 [ext_resource path="res://Levels/star_back.png" type="Texture" id=1]
 [ext_resource path="res://Objects/Planets/earth.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Objects/Planets/plinton.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Actors/Planet/satheri.tscn" type="PackedScene" id=4]
 
 [sub_resource type="GDScript" id=1]
 
@@ -64,6 +65,7 @@ scroll/ignore_camera_zoom = false
 
 [node name="Stars" type="ParallaxLayer" parent="."]
 
+editor/display_folded = true
 motion/scale = Vector2( 1, 1 )
 motion/offset = Vector2( 0, 0 )
 motion/mirroring = Vector2( 1280, 0 )
@@ -717,7 +719,6 @@ autoplay = "shine"
 
 [node name="Planets" type="ParallaxLayer" parent="."]
 
-editor/display_folded = true
 motion/scale = Vector2( 1, 1 )
 motion/offset = Vector2( 0, 0 )
 motion/mirroring = Vector2( 0, 0 )
@@ -725,17 +726,24 @@ motion/mirroring = Vector2( 0, 0 )
 [node name="Earth" parent="Planets" instance=ExtResource( 2 )]
 
 editor/display_folded = true
+visibility/visible = false
 transform/pos = Vector2( 142.115, 130.886 )
 transform/rot = 20.7617
 
 [node name="Plinthon" parent="Planets" instance=ExtResource( 3 )]
 
+editor/display_folded = true
 transform/pos = Vector2( 1068.06, 494.138 )
 z/z = 0
 
 [node name="sky" parent="Planets/Plinthon"]
 
 editor/display_folded = true
+
+[node name="satheri" parent="Planets" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 159.748, 99.7531 )
+transform/scale = Vector2( 2.51148, 2.51148 )
 
 
 [editable path="Planets/Plinthon"]

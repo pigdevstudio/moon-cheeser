@@ -14,7 +14,6 @@ func _ready():
 func _fixed_process(delta):
 	if not get_node("SFX").is_active():
 		emit_signal("finished_sfx")
-
 func jump():
 	if can_jump:
 		apply_impulse(Vector2(0,0), jump_force * jump_normal)

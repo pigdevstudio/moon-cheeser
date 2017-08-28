@@ -58,32 +58,35 @@ func _spawn_crater(position):
 			instance.set_global_pos(position)
 			instance.set_rot(instance.get_angle_to(get_collider().get_pos()))
 			
-			instance = load("res://Objects/Crater/CraterPlaceholder.tscn").instance()
-			get_collider().get_node("Sprite").add_child(instance)
-			instance.set_global_pos(position)
-			instance.set_rot(instance.get_angle_to(get_collider().get_pos()))
-			var instance = load("res://Actors/SFX.tscn").instance()
-			get_collider().get_node("Sprite").add_child(instance)
+			spawn_placeholder(0, position)
 
 func _handle_collision(collider):
 	if collider != null:
-		
 		if collider.is_in_group("moon"):
 			if self.is_in_group("comet") and route_already_changed:
 				acheesements.modify_achievement("firststep", 1)
 			_spawn_crater(get_collision_pos())
+			queue_free()
 		elif collider.is_in_group("player"):
 			if has_method("_instance_starmouse"):
 				_instance_starmouse(collider)
 			elif has_method("_kill_player"):
 				_kill_player(collider)
-				
+			queue_free()
 		elif collider.is_in_group("star") and self.is_in_group("star"):
-			collider.queue_free()
+			collider.free()
 			if route_already_changed:
 				acheesements.modify_achievement("supernova", 1)
-		
-		if not collider.is_in_group("cheese"):
+			queue_free()
+		elif collider.is_in_group("comet"):
+			collider.free()
+			if self.is_in_group("comet"):
+				spawn_placeholder(2, get_collision_pos())
+			else:
+				spawn_placeholder(1, get_collision_pos())
+			queue_free()
+			
+		elif not collider.is_in_group("cheese"):
 			queue_free()
 
 func _slide():
@@ -97,3 +100,27 @@ func _slide():
 	if is_in_group("comet"):
 		get_node("Sprite/Inner").set_param(Particles2D.PARAM_INITIAL_ANGLE, rad2deg(angle) + 90)
 	already_slide = true
+	
+func spawn_placeholder(type, position):
+	var instance = load("res://Objects/Crater/CraterPlaceholder.tscn").instance()
+	if type == 0:
+		get_collider().get_node("Sprite").add_child(instance)
+		instance.set_global_pos(position)
+		instance.set_rot(instance.get_angle_to(get_collider().get_pos()))
+		instance.spawn_cheeses(type)
+		instance = load("res://Actors/SFX.tscn").instance()
+		get_collider().get_node("Sprite").add_child(instance)
+	elif type == 1:
+		get_parent().add_child(instance)
+		instance.set_global_pos(position)
+		instance.set_scale(moon.get_node("Sprite").get_scale())
+		instance.spawn_cheeses(type)
+		instance = load("res://Actors/SFX.tscn").instance()
+		get_parent().add_child(instance)
+	elif type == 2:
+		get_parent().add_child(instance)
+		instance.set_global_pos(position)
+		instance.set_scale(moon.get_node("Sprite").get_scale())
+		instance.spawn_cheeses(type)
+		instance = load("res://Actors/SFX.tscn").instance()
+		get_parent().add_child(instance)

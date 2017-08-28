@@ -105,12 +105,16 @@ game_state = 0
 
 [node name="Astromouse" parent="." instance=ExtResource( 2 )]
 
-transform/pos = Vector2( 340.62, 613.508 )
+transform/pos = Vector2( 629.747, 348.988 )
 
 [node name="Moon" parent="." instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 640, 615.963 )
 z/z = 0
+
+[node name="Shape" parent="Moon/Input"]
+
+transform/pos = Vector2( 0, -262.724 )
 
 [node name="Void" type="StaticBody2D" parent="." groups=[
 "enemy",
@@ -285,3 +289,4 @@ layer = -2
 [connection signal="timeout" from="RightCometSpawner/Timer" to="RightCometSpawner" method="_spawn"]
 
 
+[editable path="Moon"]

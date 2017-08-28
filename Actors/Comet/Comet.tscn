@@ -94,8 +94,8 @@ font/use_filter = false
 font/font = ExtResource( 8 )
 
 [node name="Comet" type="KinematicBody2D" groups=[
-"notplanet",
 "comet",
+"notplanet",
 "enemy",
 ]]
 
@@ -116,7 +116,6 @@ material/material = SubResource( 3 )
 transform/scale = Vector2( 0.454877, 0.454877 )
 frames = SubResource( 4 )
 animation = "flying"
-frame = 2
 playing = true
 offset = Vector2( 160.398, 0.0223724 )
 

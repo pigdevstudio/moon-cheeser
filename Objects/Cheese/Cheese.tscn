@@ -40,6 +40,7 @@ constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
 script/script = ExtResource( 1 )
+score = 1
 
 [node name="Sprite" type="Sprite" parent="."]
 
@@ -48,7 +49,6 @@ texture = ExtResource( 2 )
 
 [node name="Shape" type="CollisionShape2D" parent="."]
 
-visibility/visible = false
 shape = SubResource( 1 )
 trigger = true
 _update_shape_index = 0

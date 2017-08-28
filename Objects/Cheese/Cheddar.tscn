@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=1]
+
+[ext_resource path="res://Objects/Cheese/Cheese.tscn" type="PackedScene" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 40.8853, 39.8686 )
+
+[node name="Cheddar" instance=ExtResource( 1 )]
+
+score = 5
+
+[node name="Sprite" parent="."]
+
+transform/scale = Vector2( 0.563261, 0.563261 )
+modulate = Color( 0.921875, 0.534253, 0.324097, 1 )
+
+[node name="Shape" parent="."]
+
+shape = SubResource( 1 )
+
+

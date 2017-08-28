@@ -11,7 +11,7 @@ radius = 185.805
 [sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
-extents = Vector2( 639.82, 216.681 )
+extents = Vector2( 639.82, 373.145 )
 
 [sub_resource type="CircleShape2D" id=3]
 
@@ -51,7 +51,7 @@ shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
 
-[node name="Area" type="Area2D" parent="."]
+[node name="Input" type="Area2D" parent="."]
 
 z/z = -1
 input/pickable = true
@@ -65,7 +65,7 @@ linear_damp = 0.1
 angular_damp = 1.0
 priority = 1.0
 
-[node name="Shape" type="CollisionShape2D" parent="Area"]
+[node name="Shape" type="CollisionShape2D" parent="Input"]
 
 shape = SubResource( 2 )
 trigger = false
@@ -99,10 +99,10 @@ shape = SubResource( 3 )
 trigger = false
 _update_shape_index = 0
 
-[connection signal="body_enter" from="Area" to="." method="_body_enter"]
+[connection signal="body_enter" from="Input" to="." method="_body_enter"]
 
-[connection signal="mouse_enter" from="Area" to="." method="_mouse_enter" binds= [ true ]]
+[connection signal="mouse_enter" from="Input" to="." method="_mouse_enter" binds= [ true ]]
 
-[connection signal="mouse_exit" from="Area" to="." method="_mouse_enter" binds= [ false ]]
+[connection signal="mouse_exit" from="Input" to="." method="_mouse_enter" binds= [ false ]]
 
 

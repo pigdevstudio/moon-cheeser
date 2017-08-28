@@ -33,6 +33,7 @@ func _set_mouse_on(is_on):
 	is_mouse_on = is_on
 	
 func _exit_screen():
+	get_node("Animator").stop()
 	queue_free()
 
 func apply_route():
@@ -45,6 +46,7 @@ func apply_route():
 
 	elif not Input.is_mouse_button_pressed(BUTTON_LEFT) and already_pressed:
 		if not already_slide and is_sliding:
+			get_node("Animator").seek(0.5, true)
 			_slide()
 			get_node("Label").hide()
 	return(velocity)

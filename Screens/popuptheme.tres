@@ -2,14 +2,14 @@
 
 [ext_resource path="res://Screens/GaroaHackerClubeBold.otf" type="DynamicFontData" id=1]
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=1]
 
 font/size = 22
 font/use_mipmaps = true
 font/use_filter = true
 font/font = ExtResource( 1 )
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="DynamicFont" id=2]
 
 font/size = 20
 font/use_mipmaps = true
@@ -24,13 +24,13 @@ Label/constants/line_spacing = 3
 Label/constants/shadow_as_outline = 0
 Label/constants/shadow_offset_x = 1
 Label/constants/shadow_offset_y = 1
-Label/fonts/font = SubResource( 3 )
+Label/fonts/font = SubResource( 1 )
 WindowDialog/colors/title_color = Color( 0, 0, 0, 1 )
 WindowDialog/constants/close_h_ofs = 22
 WindowDialog/constants/close_v_ofs = 20
 WindowDialog/constants/title_height = 20
 WindowDialog/constants/titlebar_height = 18
-WindowDialog/fonts/title_font = SubResource( 1 )
+WindowDialog/fonts/title_font = SubResource( 2 )
 WindowDialog/icons/close = null
 WindowDialog/icons/close_hilite = null
 WindowDialog/styles/panel = null

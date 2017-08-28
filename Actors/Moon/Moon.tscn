@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=1]
+[gd_scene load_steps=6 format=1]
 
 [ext_resource path="res://Actors/Moon/moon.gd" type="Script" id=1]
 [ext_resource path="res://Screens/Title_Screen/moon.png" type="Texture" id=2]
@@ -12,6 +12,11 @@ radius = 185.805
 
 custom_solver_bias = 0.0
 extents = Vector2( 639.82, 216.681 )
+
+[sub_resource type="CircleShape2D" id=3]
+
+custom_solver_bias = 0.0
+radius = 298.343
 
 [node name="Moon" type="StaticBody2D" groups=[
 "moon",
@@ -72,6 +77,27 @@ playback/process_mode = 1
 playback/active = false
 playback/repeat = false
 playback/speed = 1.0
+
+[node name="Gravity" type="Area2D" parent="."]
+
+input/pickable = true
+shapes/0/shape = SubResource( 3 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+space_override = 3
+gravity_point = true
+gravity_vec = Vector2( 0, 0 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+monitoring = false
+monitorable = false
+
+[node name="Shape" type="CollisionShape2D" parent="Gravity"]
+
+shape = SubResource( 3 )
+trigger = false
+_update_shape_index = 0
 
 [connection signal="body_enter" from="Area" to="." method="_body_enter"]
 

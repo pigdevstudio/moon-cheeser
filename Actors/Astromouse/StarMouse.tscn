@@ -36,7 +36,7 @@ collision/layers = 1
 collision/mask = 1
 collision/margin = 0.08
 script/script = ExtResource( 1 )
-max_speed = 600
+max_speed = 800.0
 max_force = 0.07
 slowing_radius = 200.0
 

@@ -50,14 +50,14 @@ tracks/1/keys = {
 "values": [ 0.0, 360.0 ]
 }
 
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="DynamicFont" id=3]
 
 font/size = 16
 font/use_mipmaps = true
 font/use_filter = true
 font/font = ExtResource( 15 )
 
-[sub_resource type="StyleBoxFlat" id=10]
+[sub_resource type="StyleBoxFlat" id=4]
 
 content_margin/left = -1.0
 content_margin/right = -1.0
@@ -70,7 +70,7 @@ border_size = 0
 border_blend = true
 draw_bg = true
 
-[sub_resource type="StyleBoxFlat" id=11]
+[sub_resource type="StyleBoxFlat" id=5]
 
 content_margin/left = -1.0
 content_margin/right = -1.0
@@ -83,6 +83,13 @@ border_size = 0
 border_blend = true
 draw_bg = true
 
+[sub_resource type="StyleBoxEmpty" id=6]
+
+content_margin/left = -1.0
+content_margin/right = -1.0
+content_margin/top = -1.0
+content_margin/bottom = -1.0
+
 [sub_resource type="StyleBoxEmpty" id=7]
 
 content_margin/left = -1.0
@@ -91,13 +98,6 @@ content_margin/top = -1.0
 content_margin/bottom = -1.0
 
 [sub_resource type="StyleBoxEmpty" id=8]
-
-content_margin/left = -1.0
-content_margin/right = -1.0
-content_margin/top = -1.0
-content_margin/bottom = -1.0
-
-[sub_resource type="StyleBoxEmpty" id=9]
 
 content_margin/left = -1.0
 content_margin/right = -1.0
@@ -935,7 +935,7 @@ margin/left = -2.0
 margin/top = 12.0
 margin/right = 674.0
 margin/bottom = 35.0
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "ACHIEVEMENT UNLOCKED"
 align = 1
@@ -975,11 +975,11 @@ margin/left = 253.0
 margin/top = 200.0
 margin/right = 427.0
 margin/bottom = 251.0
-custom_styles/hover = SubResource( 10 )
-custom_styles/pressed = SubResource( 11 )
-custom_styles/focus = SubResource( 7 )
-custom_styles/disabled = SubResource( 8 )
-custom_styles/normal = SubResource( 9 )
+custom_styles/hover = SubResource( 4 )
+custom_styles/pressed = SubResource( 5 )
+custom_styles/focus = SubResource( 6 )
+custom_styles/disabled = SubResource( 7 )
+custom_styles/normal = SubResource( 8 )
 toggle_mode = false
 click_on_press = true
 enabled_focus_mode = 2

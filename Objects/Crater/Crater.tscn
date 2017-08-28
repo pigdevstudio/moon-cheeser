@@ -37,7 +37,6 @@ colors = ColorArray( 1, 0.713135, 0.21875, 1, 1, 0.0664063, 0.285217, 0.463843 )
 "notplanet",
 ]]
 
-transform/pos = Vector2( 609.948, 298.859 )
 input/pickable = true
 shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 3.84613 )

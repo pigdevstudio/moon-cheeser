@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=1]
+[gd_scene load_steps=18 format=1]
 
 [ext_resource path="res://Actors/Star/star.gd" type="Script" id=1]
 [ext_resource path="res://Actors/Star/star_001.png" type="Texture" id=2]
@@ -7,12 +7,51 @@
 [ext_resource path="res://Actors/particle.tex" type="Texture" id=5]
 [ext_resource path="res://Screens/GaroaHackerClubeBold.otf" type="DynamicFontData" id=6]
 
-[sub_resource type="CircleShape2D" id=1]
+[sub_resource type="CanvasItemShader" id=1]
+
+_code = {
+"fragment": "uniform float outline_width=2.0;
+uniform color outline_color=vec4(0,0,0,1);
+
+vec4 col = tex(TEXTURE,UV);
+vec2 ps = TEXTURE_PIXEL_SIZE;
+float a;
+float maxa=col.a;
+float mina=col.a;
+a=tex(TEXTURE,UV+vec2(0,-outline_width)*ps).a;
+maxa=max(a,maxa); 
+mina=min(a,mina);
+a=tex(TEXTURE,UV+vec2(0,outline_width)*ps).a;
+maxa=max(a,maxa); 
+mina=min(a,mina);
+a=tex(TEXTURE,UV+vec2(-outline_width,0)*ps).a;
+maxa=max(a,maxa); 
+mina=min(a,mina);
+a=tex(TEXTURE,UV+vec2(outline_width,0)*ps).a;
+maxa=max(a,maxa); 
+mina=min(a,mina);
+
+COLOR=mix(col,outline_color,maxa-mina);",
+"fragment_ofs": 0,
+"light": "",
+"light_ofs": 0,
+"vertex": "",
+"vertex_ofs": 0
+}
+
+[sub_resource type="CanvasItemMaterial" id=2]
+
+shader/shader = SubResource( 1 )
+shader/shading_mode = 0
+shader_param/outline_width = 2.0
+shader_param/outline_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="CircleShape2D" id=3]
 
 custom_solver_bias = 0.0
 radius = 37.1808
 
-[sub_resource type="CanvasItemShader" id=2]
+[sub_resource type="CanvasItemShader" id=4]
 
 _code = {
 "fragment": "uniform float outline_width=2.0;
@@ -42,14 +81,14 @@ COLOR=mix(col,outline_color,maxa-mina);",
 "vertex_ofs": 0
 }
 
-[sub_resource type="CanvasItemMaterial" id=3]
+[sub_resource type="CanvasItemMaterial" id=5]
 
-shader/shader = SubResource( 2 )
+shader/shader = SubResource( 4 )
 shader/shading_mode = 0
 shader_param/outline_width = 4.0
 shader_param/outline_color = Color( 0.265625, 0.432007, 1, 1 )
 
-[sub_resource type="SpriteFrames" id=4]
+[sub_resource type="SpriteFrames" id=6]
 
 animations = [ {
 "frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ) ],
@@ -58,26 +97,25 @@ animations = [ {
 "speed": 8.0
 } ]
 
-[sub_resource type="ColorRamp" id=5]
+[sub_resource type="ColorRamp" id=7]
 
 offsets = FloatArray( 0.3625, 1 )
 colors = ColorArray( 0.352941, 0.172549, 0.627451, 1, 0.352941, 0.172549, 0.627451, 0 )
 
-[sub_resource type="CircleShape2D" id=6]
+[sub_resource type="CircleShape2D" id=8]
 
 custom_solver_bias = 0.0
 radius = 54.2766
 
-[sub_resource type="DynamicFont" id=7]
+[sub_resource type="DynamicFont" id=9]
 
 font/size = 19
 font/use_mipmaps = false
 font/use_filter = false
 font/font = ExtResource( 6 )
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=10]
 
-resource/name = "glowing"
 length = 1.0
 loop = true
 step = 0.1
@@ -92,9 +130,8 @@ tracks/0/keys = {
 "values": [ Color( 0.265625, 0.432007, 1, 1 ), Color( 0.265625, 0.432007, 1, 0 ) ]
 }
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=11]
 
-resource/name = "slide"
 length = 1.0
 loop = true
 step = 0.1
@@ -110,13 +147,14 @@ tracks/0/keys = {
 }
 
 [node name="Star" type="KinematicBody2D" groups=[
-"notplanet",
 "star",
+"notplanet",
 ]]
 
+material/material = SubResource( 2 )
 z/z = 2
 input/pickable = false
-shapes/0/shape = SubResource( 1 )
+shapes/0/shape = SubResource( 3 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 1
@@ -127,18 +165,18 @@ direction = 1
 
 [node name="Shape" type="CollisionShape2D" parent="."]
 
-shape = SubResource( 1 )
+shape = SubResource( 3 )
 trigger = false
 _update_shape_index = 0
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
 
-material/material = SubResource( 3 )
+material/material = SubResource( 5 )
 transform/pos = Vector2( 0.0384254, 0.0807762 )
 transform/scale = Vector2( 0.412247, 0.412247 )
-frames = SubResource( 4 )
+frames = SubResource( 6 )
 animation = "default"
-frame = 2
+frame = 1
 playing = true
 offset = Vector2( 161.029, 1.93696 )
 
@@ -176,12 +214,12 @@ params/anim_initial_pos = 0.0
 randomness/spread = 0.4
 randomness/linear_velocity = 0.46
 randomness/gravity_direction = 0.2
-color/color_ramp = SubResource( 5 )
+color/color_ramp = SubResource( 7 )
 
 [node name="Area" type="Area2D" parent="."]
 
 input/pickable = true
-shapes/0/shape = SubResource( 6 )
+shapes/0/shape = SubResource( 8 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 gravity_vec = Vector2( 0, 1 )
@@ -191,7 +229,7 @@ angular_damp = 1.0
 
 [node name="Shape" type="CollisionShape2D" parent="Area"]
 
-shape = SubResource( 6 )
+shape = SubResource( 8 )
 trigger = false
 _update_shape_index = 0
 
@@ -210,7 +248,7 @@ margin/left = 69.0
 margin/top = -9.0
 margin/right = -8.0
 margin/bottom = -29.0
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 9 )
 text = "Slide it!!"
 align = 1
 percent_visible = 1.0
@@ -222,8 +260,8 @@ max_lines_visible = -1
 playback/process_mode = 1
 playback/default_blend_time = 0.0
 root/root = NodePath("..")
-anims/glowing = SubResource( 8 )
-anims/slide = SubResource( 9 )
+anims/glowing = SubResource( 10 )
+anims/slide = SubResource( 11 )
 playback/active = true
 playback/speed = 1.0
 blend_times = [  ]

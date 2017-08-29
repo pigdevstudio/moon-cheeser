@@ -35,12 +35,7 @@ script/script = ExtResource( 2 )
 
 [node name="Background" parent="." instance=ExtResource( 3 )]
 
-editor/display_folded = true
 layer = -1
-
-[node name="Stars" parent="Background"]
-
-editor/display_folded = true
 
 [node name="Star#1" parent="Background/Stars"]
 
@@ -90,11 +85,7 @@ transform/pos = Vector2( 767.824, 111.172 )
 
 transform/pos = Vector2( 893.088, 44.3649 )
 
-[node name="Earth" parent="Background/Planets"]
-
-visibility/visible = false
-
-[node name="Plinthon" parent="Background/Planets"]
+[node name="Planets" parent="Background"]
 
 visibility/visible = false
 

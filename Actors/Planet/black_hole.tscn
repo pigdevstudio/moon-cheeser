@@ -1,13 +1,14 @@
-[gd_scene load_steps=8 format=1]
+[gd_scene load_steps=10 format=1]
 
 [ext_resource path="res://Actors/Planet/planet.gd" type="Script" id=1]
-[ext_resource path="res://Actors/Planet/satheri.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Actors/Planet/black_hole.png" type="Texture" id=2]
 [ext_resource path="res://Screens/GaroaHackerClubeBold.otf" type="DynamicFontData" id=3]
+[ext_resource path="res://Levels/star_back.png" type="Texture" id=4]
 
 [sub_resource type="CircleShape2D" id=1]
 
 custom_solver_bias = 0.0
-radius = 202.394
+radius = 45.151
 
 [sub_resource type="DynamicFont" id=2]
 
@@ -22,7 +23,7 @@ script/source = "extends Label
 
 func _ready():
 	if OS.get_name() == \"Android\":
-		set_text(\"TAP THE MOON!!\")
+		set_text(\"TAP THE SCREEN!!\")
 	else:
 		set_text(\"SMASH THE SPACEBAR!!\")"
 
@@ -42,10 +43,30 @@ tracks/0/keys = {
 "values": [ true, false, true, false, true, false, true, false, true, false, true ]
 }
 
-[node name="Planet" type="StaticBody2D" groups=[
+[sub_resource type="Animation" id=5]
+
+resource/name = "spin"
+length = 1.0
+loop = true
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:transform/rot")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = {
+"times": FloatArray( 0, 1 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 360.0 ]
+}
+
+[node name="BlackHole" type="StaticBody2D" groups=[
 "enemy",
+"black_hole",
+"void",
 ]]
 
+z/z = -1
 input/pickable = false
 shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
@@ -57,65 +78,20 @@ constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
 script/script = ExtResource( 1 )
-gravity_strength = 150.0
+gravity_strength = 300.0
 pulse_interval = 2.0
 
 [node name="Sprite" type="Node2D" parent="."]
 
-[node name="satheri" parent="Sprite" instance=ExtResource( 2 )]
+editor/display_folded = true
+transform/rot = 231.706
 
-transform/pos = Vector2( 0.508568, -3.93056 )
-transform/scale = Vector2( 4.58245, 4.58245 )
+[node name="Sprite" type="Sprite" parent="Sprite"]
 
-[node name="ring_front" parent="Sprite/satheri"]
-
-transform/pos = Vector2( 4.16344, 2.67102 )
-transform/rot = 20.0
-
-[node name="ring_back" parent="Sprite/satheri"]
-
-transform/pos = Vector2( 1.66504, -1.871 )
-transform/rot = 20.0
-
-[node name="crater" parent="Sprite/satheri/craters"]
-
-transform/pos = Vector2( 136.804, -95.3475 )
-
-[node name="crater1" parent="Sprite/satheri/craters"]
-
-transform/pos = Vector2( -153.06, -90.8789 )
-
-[node name="crater2" parent="Sprite/satheri/craters"]
-
-transform/pos = Vector2( 91.6569, 93.6917 )
-
-[node name="crater4" parent="Sprite/satheri/craters"]
-
-transform/pos = Vector2( -1.54901, 154.284 )
-
-[node name="crater3" parent="Sprite/satheri/craters"]
-
-transform/pos = Vector2( -135.893, 98.2411 )
-
-[node name="hole" parent="Sprite/satheri/holes"]
-
-transform/scale = Vector2( 0.148881, 0.148881 )
-
-[node name="hole1" parent="Sprite/satheri/holes"]
-
-transform/scale = Vector2( 0.682113, 0.682113 )
-
-[node name="hole2" parent="Sprite/satheri/holes"]
-
-transform/scale = Vector2( 0.387734, 0.387734 )
-
-[node name="hole3" parent="Sprite/satheri/holes"]
-
-transform/scale = Vector2( 0.463037, 0.463036 )
+texture = ExtResource( 2 )
 
 [node name="Shape" type="CollisionShape2D" parent="."]
 
-visibility/visible = false
 shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
@@ -172,7 +148,51 @@ wait_time = 10.0
 one_shot = true
 autostart = true
 
+[node name="Animator" type="AnimationPlayer" parent="."]
+
+playback/process_mode = 1
+playback/default_blend_time = 0.0
+root/root = NodePath("..")
+anims/spin = SubResource( 5 )
+playback/active = true
+playback/speed = 1.0
+blend_times = [  ]
+autoplay = "spin"
+
+[node name="Particles" type="Particles2D" parent="."]
+
+config/amount = 3
+config/lifetime = 1.0
+config/process_mode = 1
+config/half_extents = Vector2( 128, 128 )
+config/texture = ExtResource( 4 )
+params/direction = 0.0
+params/spread = 10.0
+params/linear_velocity = 20.0
+params/spin_velocity = 0.0
+params/orbit_velocity = 0.0
+params/gravity_direction = 0.0
+params/gravity_strength = 9.8
+params/radial_accel = 0.0
+params/tangential_accel = 0.0
+params/damping = 0.0
+params/initial_angle = 0.0
+params/initial_size = 0.7
+params/final_size = 0.0
+params/hue_variation = 0.0
+params/anim_speed_scale = 1.0
+params/anim_initial_pos = 0.0
+
+[node name="Attractor" type="ParticleAttractor2D" parent="Particles"]
+
+visibility/visible = false
+enabled = true
+radius = 180.0
+disable_radius = 15.0
+gravity = 5.0
+absorption = 0.0
+particles_path = NodePath("..")
+
 [connection signal="timeout" from="Timer" to="." method="_on_life_spam"]
 
 
-[editable path="Sprite/satheri"]

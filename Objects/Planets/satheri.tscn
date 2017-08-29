@@ -1,6 +1,7 @@
 [gd_scene load_steps=3 format=1]
 
-[ext_resource path="res://Actors/Planet/planet_four.tex" type="Texture" id=1]
+[ext_resource path="res://Objects/Planets/planet_four.tex" type="Texture" id=1]
+
 
 [sub_resource type="Animation" id=1]
 

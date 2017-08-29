@@ -47,7 +47,8 @@ func apply_route():
 	elif not Input.is_mouse_button_pressed(BUTTON_LEFT) and already_pressed:
 		if not already_slide and is_sliding:
 			get_node("Animator").seek(0.5, true)
-			_slide()
+			current_pos = get_global_mouse_pos()
+			slide( -1 * sign((initial_pos - current_pos).y))
 			get_node("Label").hide()
 	return(velocity)
 
@@ -57,7 +58,6 @@ func _spawn_crater(position):
 			get_collider().get_node("Sprite").add_child(instance)
 			instance.set_global_pos(position)
 			instance.set_rot(instance.get_angle_to(get_collider().get_pos()))
-			
 			spawn_placeholder(0, position)
 
 func _handle_collision(collider):
@@ -74,13 +74,15 @@ func _handle_collision(collider):
 				_kill_player(collider)
 			queue_free()
 		elif collider.is_in_group("star") and self.is_in_group("star"):
-			collider.free()
 			if route_already_changed:
 				acheesements.modify_achievement("supernova", 1)
-			queue_free()
-		elif collider.is_in_group("comet"):
 			collider.free()
-			if self.is_in_group("comet"):
+			spawn_placeholder(3, get_collision_pos())
+			queue_free()
+		elif collider.is_in_group("space_body"):
+			var collgroup = collider.is_in_group("comet")
+			collider.free()
+			if self.is_in_group("comet") and collgroup:
 				spawn_placeholder(2, get_collision_pos())
 			else:
 				spawn_placeholder(1, get_collision_pos())
@@ -89,9 +91,7 @@ func _handle_collision(collider):
 		elif not collider.is_in_group("cheese"):
 			queue_free()
 
-func _slide():
-	current_pos = get_global_mouse_pos()
-	var normal =  -1 * sign(initial_pos.y - current_pos.y)
+func slide(normal):
 	velocity = Vector2(MAX_SPEED * direction,  normal * MAX_SPEED * 2)
 	var point = get_pos() + (Vector2(-velocity.normalized().x, velocity.normalized().y) * (100 * normal))
 	rotate(get_angle_to(point))
@@ -102,8 +102,9 @@ func _slide():
 	already_slide = true
 	
 func spawn_placeholder(type, position):
-	var instance = load("res://Objects/Crater/CraterPlaceholder.tscn").instance()
+	var instance
 	if type == 0:
+		instance = load("res://Objects/Crater/CraterPlaceholder.tscn").instance()
 		get_collider().get_node("Sprite").add_child(instance)
 		instance.set_global_pos(position)
 		instance.set_rot(instance.get_angle_to(get_collider().get_pos()))
@@ -111,6 +112,7 @@ func spawn_placeholder(type, position):
 		instance = load("res://Actors/SFX.tscn").instance()
 		get_collider().get_node("Sprite").add_child(instance)
 	elif type == 1:
+		instance = load("res://Objects/Crater/CraterPlaceholder.tscn").instance()
 		get_parent().add_child(instance)
 		instance.set_global_pos(position)
 		instance.set_scale(moon.get_node("Sprite").get_scale())
@@ -118,9 +120,16 @@ func spawn_placeholder(type, position):
 		instance = load("res://Actors/SFX.tscn").instance()
 		get_parent().add_child(instance)
 	elif type == 2:
-		get_parent().add_child(instance)
+		instance = load("res://Objects/Crater/CraterPlaceholder.tscn").instance()
 		instance.set_global_pos(position)
 		instance.set_scale(moon.get_node("Sprite").get_scale())
+		get_parent().add_child(instance)
 		instance.spawn_cheeses(type)
+		instance = load("res://Actors/SFX.tscn").instance()
+		get_parent().add_child(instance)
+	elif type == 3:
+		instance = load("res://Actors/Star/super_nova.tscn").instance()
+		instance.set_global_pos(position)
+		get_parent().add_child(instance)
 		instance = load("res://Actors/SFX.tscn").instance()
 		get_parent().add_child(instance)

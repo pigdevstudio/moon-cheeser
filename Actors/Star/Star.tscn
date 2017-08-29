@@ -105,7 +105,7 @@ colors = ColorArray( 0.352941, 0.172549, 0.627451, 1, 0.352941, 0.172549, 0.6274
 [sub_resource type="CircleShape2D" id=8]
 
 custom_solver_bias = 0.0
-radius = 54.2766
+radius = 72.3749
 
 [sub_resource type="DynamicFont" id=9]
 
@@ -147,8 +147,8 @@ tracks/0/keys = {
 }
 
 [node name="Star" type="KinematicBody2D" groups=[
+"space_body",
 "star",
-"notplanet",
 ]]
 
 material/material = SubResource( 2 )

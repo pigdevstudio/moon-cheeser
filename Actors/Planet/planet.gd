@@ -15,7 +15,7 @@ func _ready():
 func pulse():
 	if get_parent().get_game_state() == 1:
 		if get_scale() <= original_scale:
-			tween.interpolate_property(self, "transform/scale", get_scale(), get_scale() * 1.07,
+			tween.interpolate_property(self, "transform/scale", get_scale(), get_scale() * 1.5,
 			pulse_interval / 2, tween.TRANS_BACK, tween.EASE_OUT)
 			_apply_gravity(_find_player())
 			_increase_gravity()
@@ -38,6 +38,9 @@ func _move_away(from, to):
 		tween.start()
 
 func _on_life_spam():
+	tween.interpolate_property(self, "transform/scale", get_scale(), original_scale,
+	pulse_interval / 2, tween.TRANS_BACK, tween.EASE_OUT)
+	tween.start()
 	get_node("GUILayer/Warning/Animator").stop()
 	get_node("GUILayer/Warning").hide()
 	acheesements.modify_achievement("gravity", 1)
@@ -56,3 +59,6 @@ func _increase_gravity():
 	if gravity_strength <= MAX_GRAVITY:
 		gravity_strength *= 1.2
 
+func _on_collision_enter( coll ):
+	if coll.is_in_group("cheese"):
+		coll.queue_free()

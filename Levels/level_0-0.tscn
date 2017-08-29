@@ -4,7 +4,7 @@
 [ext_resource path="res://Actors/Astromouse/Astromouse.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Actors/Moon/Moon.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Objects/Spawner/spawner.gd" type="Script" id=4]
-[ext_resource path="res://Actors/Planet/Planet.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Actors/Planet/black_hole.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Actors/Star/Star.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Actors/Comet/Comet.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Levels/background.tscn" type="PackedScene" id=8]
@@ -109,12 +109,22 @@ transform/pos = Vector2( 629.747, 348.988 )
 
 [node name="Moon" parent="." instance=ExtResource( 3 )]
 
+editor/display_folded = true
 transform/pos = Vector2( 640, 615.963 )
 z/z = 0
 
+[node name="Shape" parent="Moon"]
+
+visibility/visible = false
+
 [node name="Shape" parent="Moon/Input"]
 
+visibility/visible = false
 transform/pos = Vector2( 0, -262.724 )
+
+[node name="Shape" parent="Moon/Gravity"]
+
+visibility/visible = false
 
 [node name="Void" type="StaticBody2D" parent="." groups=[
 "enemy",
@@ -140,7 +150,7 @@ shape = SubResource( 1 )
 trigger = true
 _update_shape_index = 0
 
-[node name="PlanetSpawner" type="Position2D" parent="."]
+[node name="BlackholeSpawner" type="Position2D" parent="."]
 
 transform/pos = Vector2( 991.207, -42.245 )
 script/script = ExtResource( 4 )
@@ -148,7 +158,7 @@ spawn_scene = ExtResource( 5 )
 min_spawn_time = 30.0
 max_spawn_time = 45.0
 
-[node name="Animator" type="AnimationPlayer" parent="PlanetSpawner"]
+[node name="Animator" type="AnimationPlayer" parent="BlackholeSpawner"]
 
 playback/process_mode = 1
 playback/default_blend_time = 0.0
@@ -159,7 +169,7 @@ playback/speed = 1.0
 blend_times = [  ]
 autoplay = "PlanetAnim"
 
-[node name="Timer" type="Timer" parent="PlanetSpawner"]
+[node name="Timer" type="Timer" parent="BlackholeSpawner"]
 
 process_mode = 1
 wait_time = 30.0
@@ -278,7 +288,7 @@ autostart = true
 
 layer = -2
 
-[connection signal="timeout" from="PlanetSpawner/Timer" to="PlanetSpawner" method="_spawn"]
+[connection signal="timeout" from="BlackholeSpawner/Timer" to="BlackholeSpawner" method="_spawn"]
 
 [connection signal="timeout" from="LeftStarSpawner/Timer" to="LeftStarSpawner" method="_spawn"]
 

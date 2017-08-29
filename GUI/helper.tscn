@@ -1,0 +1,103 @@
+[gd_scene load_steps=5 format=1]
+
+[ext_resource path="res://GUI/helper.gd" type="Script" id=1]
+[ext_resource path="res://GUI/helper.tex" type="Texture" id=2]
+[ext_resource path="res://GUI/slide_help.png" type="Texture" id=3]
+
+[sub_resource type="SegmentShape2D" id=2]
+
+custom_solver_bias = 0.0
+a = Vector2( 0, 0 )
+b = Vector2( -206.097, -0.0301276 )
+
+[node name="Helper" type="Node2D"]
+
+transform/rot = 37.8882
+transform/scale = Vector2( 0.849606, 0.849606 )
+script/script = ExtResource( 1 )
+
+[node name="Hand" type="Sprite" parent="."]
+
+transform/pos = Vector2( 80.6485, 229.082 )
+texture = ExtResource( 2 )
+centered = false
+offset = Vector2( -94.4919, -244.655 )
+region = true
+region_rect = Rect2( 0, 12, 192, 247 )
+
+[node name="Particles" type="Particles2D" parent="Hand"]
+
+visibility/behind_parent = true
+transform/pos = Vector2( -75.6918, -224.453 )
+transform/rot = -8.80921e-06
+transform/scale = Vector2( 2.32604, 2.32604 )
+z/z = -2
+config/amount = 64
+config/lifetime = 2.0
+config/emitting = false
+config/process_mode = 1
+config/local_space = false
+config/texture = ExtResource( 3 )
+params/direction = 300.0
+params/spread = 0.0
+params/linear_velocity = 20.0
+params/spin_velocity = 0.0
+params/orbit_velocity = 0.0
+params/gravity_direction = 0.0
+params/gravity_strength = 9.8
+params/radial_accel = 0.0
+params/tangential_accel = 0.0
+params/damping = 0.0
+params/initial_angle = 0.0
+params/initial_size = 1.94
+params/final_size = 1.94
+params/hue_variation = 0.0
+params/anim_speed_scale = 1.0
+params/anim_initial_pos = 0.0
+color/color = Color( 39.02, 29.42, 39.02, 1 )
+
+[node name="Button" type="Sprite" parent="Hand"]
+
+visibility/visible = false
+visibility/behind_parent = true
+transform/pos = Vector2( -75.6918, -224.453 )
+transform/rot = -8.80921e-06
+transform/scale = Vector2( 2.32604, 2.32604 )
+texture = ExtResource( 3 )
+
+[node name="Arm" type="Sprite" parent="."]
+
+transform/pos = Vector2( 80.2844, 161.292 )
+texture = ExtResource( 2 )
+centered = false
+region = true
+region_rect = Rect2( 203, 0, 53, 356 )
+
+[node name="Tween" type="Tween" parent="."]
+
+playback/process_mode = 1
+playback/active = false
+playback/repeat = false
+playback/speed = 1.0
+
+[node name="Trigger" type="Area2D" parent="."]
+
+input/pickable = true
+shapes/0/shape = SubResource( 2 )
+shapes/0/transform = Matrix32( -4.37114e-08, 1, -1, -4.37114e-08, 0, 0 )
+shapes/0/trigger = false
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+
+[node name="Shape" type="CollisionShape2D" parent="Trigger"]
+
+transform/rot = -90.0
+shape = SubResource( 2 )
+trigger = false
+_update_shape_index = 0
+
+[connection signal="body_enter" from="Trigger" to="." method="_on_collision_enter"]
+
+

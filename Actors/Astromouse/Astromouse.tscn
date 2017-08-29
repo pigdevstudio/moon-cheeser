@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=1]
+[gd_scene load_steps=8 format=1]
 
 [ext_resource path="res://Actors/Astromouse/astromouse.gd" type="Script" id=1]
 [ext_resource path="res://Actors/Astromouse/astromouse_spritesheet.png" type="Texture" id=2]
@@ -9,7 +9,34 @@
 custom_solver_bias = 0.0
 extents = Vector2( 22.526, 53.6311 )
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=4]
+
+resource/name = "death"
+length = 1.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:transform/rot")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = {
+"times": FloatArray( 0, 0.5 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ 360.0, 0.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:transform/scale")
+tracks/1/interp = 1
+tracks/1/imported = false
+tracks/1/keys = {
+"times": FloatArray( 0, 0.5 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.7, 0.7 ), Vector2( 1e-05, 1e-05 ) ]
+}
+
+[sub_resource type="Animation" id=2]
 
 resource/name = "jumping"
 length = 0.5
@@ -26,9 +53,8 @@ tracks/0/keys = {
 "values": [ 2, 4, 3 ]
 }
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=3]
 
-resource/name = "walking"
 length = 0.4
 loop = true
 step = 0.1
@@ -75,6 +101,7 @@ jump_force = 500.0
 [node name="Sprite" type="Sprite" parent="."]
 
 transform/pos = Vector2( 0.0850449, 0.155186 )
+transform/rot = 360.0
 transform/scale = Vector2( 0.7, 0.7 )
 texture = ExtResource( 2 )
 offset = Vector2( 6.51268, -9.69908 )
@@ -84,7 +111,6 @@ frame = 3
 
 [node name="Shape" type="CollisionShape2D" parent="."]
 
-visibility/visible = false
 transform/pos = Vector2( 22.1631, -5.71652 )
 transform/rot = 90.0
 shape = SubResource( 1 )
@@ -113,8 +139,9 @@ default/chorus_send = 0.0
 playback/process_mode = 1
 playback/default_blend_time = 0.0
 root/root = NodePath("..")
-anims/jumping = SubResource( 3 )
-anims/walking = SubResource( 2 )
+anims/death = SubResource( 4 )
+anims/jumping = SubResource( 2 )
+anims/walking = SubResource( 3 )
 playback/active = true
 playback/speed = 0.9
 blend_times = [  ]

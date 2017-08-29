@@ -1,20 +1,9 @@
-[gd_scene load_steps=8 format=1]
+[gd_scene load_steps=7 format=1]
 
 [ext_resource path="res://Levels/star_back.png" type="Texture" id=1]
 [ext_resource path="res://Objects/Planets/earth.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Objects/Planets/plinton.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Actors/Planet/satheri.tscn" type="PackedScene" id=4]
-
-[sub_resource type="GDScript" id=1]
-
-script/source = "extends ParallaxLayer
-
-func _ready():
-#	set_process(true)
-	pass
-	
-func _process(delta):
-	set_motion_offset(get_motion_offset() + Vector2(5,0) * delta)"
+[ext_resource path="res://Objects/Planets/satheri.tscn" type="PackedScene" id=4]
 
 [sub_resource type="GDScript" id=2]
 
@@ -63,13 +52,13 @@ scroll/limit_begin = Vector2( 0, 0 )
 scroll/limit_end = Vector2( 0, 0 )
 scroll/ignore_camera_zoom = false
 
-[node name="Stars" type="ParallaxLayer" parent="."]
+[node name="Stars" type="CanvasLayer" parent="."]
 
 editor/display_folded = true
-motion/scale = Vector2( 1, 1 )
-motion/offset = Vector2( 0, 0 )
-motion/mirroring = Vector2( 1280, 0 )
-script/script = SubResource( 1 )
+layer = -5
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
 
 [node name="Star" type="Sprite" parent="Stars"]
 
@@ -719,6 +708,7 @@ autoplay = "shine"
 
 [node name="Planets" type="ParallaxLayer" parent="."]
 
+transform/rot = -0.136007
 motion/scale = Vector2( 1, 1 )
 motion/offset = Vector2( 0, 0 )
 motion/mirroring = Vector2( 0, 0 )
@@ -726,7 +716,6 @@ motion/mirroring = Vector2( 0, 0 )
 [node name="Earth" parent="Planets" instance=ExtResource( 2 )]
 
 editor/display_folded = true
-visibility/visible = false
 transform/pos = Vector2( 142.115, 130.886 )
 transform/rot = 20.7617
 
@@ -742,6 +731,7 @@ editor/display_folded = true
 
 [node name="satheri" parent="Planets" instance=ExtResource( 4 )]
 
+visibility/visible = false
 transform/pos = Vector2( 159.748, 99.7531 )
 transform/scale = Vector2( 2.51148, 2.51148 )
 

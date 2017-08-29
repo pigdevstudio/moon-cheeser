@@ -94,9 +94,9 @@ font/use_filter = false
 font/font = ExtResource( 8 )
 
 [node name="Comet" type="KinematicBody2D" groups=[
-"comet",
-"notplanet",
 "enemy",
+"comet",
+"space_body",
 ]]
 
 z/z = 2
@@ -116,6 +116,7 @@ material/material = SubResource( 3 )
 transform/scale = Vector2( 0.454877, 0.454877 )
 frames = SubResource( 4 )
 animation = "flying"
+frame = 3
 playing = true
 offset = Vector2( 160.398, 0.0223724 )
 
@@ -191,7 +192,6 @@ _update_shape_index = 0
 
 [node name="AreaInput" type="Area2D" parent="."]
 
-editor/display_folded = true
 input/pickable = true
 shapes/0/shape = ExtResource( 6 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )

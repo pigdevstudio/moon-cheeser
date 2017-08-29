@@ -7,7 +7,7 @@ func _ready():
 func float_around(offset):
 	randomize()
 	var t = get_node("Tween")
-	t.interpolate_method(self, "set_pos", get_pos(), get_pos() + offset, 4, t.TRANS_ELASTIC, t.EASE_OUT)
+	t.interpolate_method(self, "set_pos", get_pos(), offset, 4, t.TRANS_ELASTIC, t.EASE_OUT)
 	t.start()
 	
 func increase_score():

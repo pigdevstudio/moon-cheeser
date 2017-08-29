@@ -1,4 +1,4 @@
-extends StaticBody2D
+extends Node2D
 
 export (float) var gravity_strength = 200
 const MAX_GRAVITY = 600

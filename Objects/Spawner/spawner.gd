@@ -17,7 +17,7 @@ func _spawn():
 			if get_pos().x > pos_direction and spawn.has_method("apply_route"):
 				spawn.direction = -1
 			get_parent().add_child(spawn)
-			get_node("Timer").set_wait_time(floor(rand_range(min_spawn_time, max_spawn_time)))
+			get_node("Timer").set_wait_time(rand_range(min_spawn_time, max_spawn_time))
 			get_node("Timer").start()
 	else:
 		var spawn = spawn_scene.instance()

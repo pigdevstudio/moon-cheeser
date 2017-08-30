@@ -38,6 +38,7 @@ func _move_away(from, to):
 		tween.start()
 
 func _on_life_spam():
+	_find_player().can_jump = false
 	tween.interpolate_property(self, "transform/scale", get_scale(), original_scale,
 	pulse_interval / 2, tween.TRANS_BACK, tween.EASE_OUT)
 	tween.start()
@@ -53,6 +54,7 @@ func _on_life_spam():
 	t.set_wait_time(3.0)
 	t.start()
 	yield(t, "timeout")
+	_find_player().can_jump = true
 	queue_free()
 	
 func _increase_gravity():

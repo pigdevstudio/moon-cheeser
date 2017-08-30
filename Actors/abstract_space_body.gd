@@ -26,9 +26,6 @@ func _fixed_process(delta):
 	already_pressed = Input.is_mouse_button_pressed(BUTTON_LEFT)
 
 func _set_mouse_on(is_on):
-	get_node("Label").set_hidden(!is_on)
-	get_node("Animator").seek(0.0, true)
-	get_node("Animator").play("slide")
 	moon.is_mouse_on = !is_on
 	is_mouse_on = is_on
 	
@@ -41,15 +38,12 @@ func apply_route():
 		initial_pos = get_global_mouse_pos()
 		route_already_changed = true
 		is_sliding = true
-		get_node("Label").show()
-		get_node("Animator").play("slide")
 
 	elif not Input.is_mouse_button_pressed(BUTTON_LEFT) and already_pressed:
 		if not already_slide and is_sliding:
 			get_node("Animator").seek(0.5, true)
 			current_pos = get_global_mouse_pos()
 			slide( -1 * sign((initial_pos - current_pos).y))
-			get_node("Label").hide()
 	return(velocity)
 
 func _spawn_crater(position):

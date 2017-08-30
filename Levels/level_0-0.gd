@@ -11,7 +11,7 @@ func set_game_state(state):
 			get_tree().get_nodes_in_group("player")[0].set_gravity_scale(12)
 		elif state == 1:
 			get_tree().call_group(SceneTree.GROUP_CALL_DEFAULT, "crater", "queue_free")
-			pass
+			get_tree().call_group(SceneTree.GROUP_CALL_DEFAULT, "space_body", "queue_free")
 	game_state = state
 
 func get_game_state():

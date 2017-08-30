@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=1]
 
-[ext_resource path="res://Actors/Planet/planet.gd" type="Script" id=1]
-[ext_resource path="res://Actors/Planet/black_hole.png" type="Texture" id=2]
+[ext_resource path="res://Actors/Blackhole/blackhole.gd" type="Script" id=1]
+[ext_resource path="res://Actors/Blackhole/black_hole.png" type="Texture" id=2]
 [ext_resource path="res://Screens/GaroaHackerClubeBold.otf" type="DynamicFontData" id=3]
 [ext_resource path="res://Levels/star_back.png" type="Texture" id=4]
 
@@ -61,8 +61,8 @@ tracks/0/keys = {
 }
 
 [node name="BlackHole" type="StaticBody2D" groups=[
-"enemy",
 "black_hole",
+"enemy",
 "void",
 ]]
 
@@ -105,7 +105,6 @@ playback/speed = 1.0
 
 [node name="GUILayer" type="CanvasLayer" parent="."]
 
-editor/display_folded = true
 layer = 1
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -144,7 +143,7 @@ autoplay = "blink"
 [node name="Timer" type="Timer" parent="."]
 
 process_mode = 1
-wait_time = 10.0
+wait_time = 15.0
 one_shot = true
 autostart = true
 
@@ -185,7 +184,6 @@ params/anim_initial_pos = 0.0
 
 [node name="Attractor" type="ParticleAttractor2D" parent="Particles"]
 
-visibility/visible = false
 enabled = true
 radius = 180.0
 disable_radius = 15.0

@@ -27,6 +27,7 @@ region_rect = Rect2( 0, 12, 192, 247 )
 
 [node name="Particles" type="Particles2D" parent="Hand"]
 
+visibility/visible = false
 visibility/behind_parent = true
 transform/pos = Vector2( -75.6918, -224.453 )
 transform/rot = -8.80921e-06

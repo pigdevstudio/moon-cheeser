@@ -203,7 +203,6 @@ params/stretch_mode = 6
 
 [node name="RightPortion" type="VBoxContainer" parent="ScreenMargin/ScreenPortions"]
 
-editor/display_folded = true
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 3

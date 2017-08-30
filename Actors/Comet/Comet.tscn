@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=1]
+[gd_scene load_steps=15 format=1]
 
 [ext_resource path="res://Actors/Comet/comet.gd" type="Script" id=1]
 [ext_resource path="res://Actors/Comet/comet_01.png" type="Texture" id=2]
@@ -7,7 +7,6 @@
 [ext_resource path="res://Actors/particle.tex" type="Texture" id=5]
 [ext_resource path="res://Actors/Comet/comet_shape.tres" type="Shape2D" id=6]
 [ext_resource path="res://Actors/slide.anm" type="Animation" id=7]
-[ext_resource path="res://Screens/GaroaHackerClubeBold.otf" type="DynamicFontData" id=8]
 
 [sub_resource type="CircleShape2D" id=1]
 
@@ -86,17 +85,10 @@ tracks/0/keys = {
 "values": [ Color( 1, 0.265625, 0.265625, 1 ), Color( 1, 0.265625, 0.265625, 0 ) ]
 }
 
-[sub_resource type="DynamicFont" id=8]
-
-font/size = 19
-font/use_mipmaps = false
-font/use_filter = false
-font/font = ExtResource( 8 )
-
 [node name="Comet" type="KinematicBody2D" groups=[
+"space_body",
 "enemy",
 "comet",
-"space_body",
 ]]
 
 z/z = 2
@@ -218,28 +210,6 @@ playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
 autoplay = "glowing"
-
-[node name="Label" type="Label" parent="."]
-
-visibility/visible = false
-anchor/left = 3
-anchor/top = 3
-anchor/right = 3
-anchor/bottom = 3
-focus/ignore_mouse = true
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 0
-margin/left = 69.0
-margin/top = -17.0
-margin/right = -8.0
-margin/bottom = -37.0
-custom_fonts/font = SubResource( 8 )
-text = "Slide it!!"
-align = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
 
 [connection signal="exit_screen" from="Sprite/Visibility" to="." method="_exit_screen"]
 

@@ -4,10 +4,11 @@
 [ext_resource path="res://Actors/Astromouse/Astromouse.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Actors/Moon/Moon.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Objects/Spawner/spawner.gd" type="Script" id=4]
-[ext_resource path="res://Actors/Planet/black_hole.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Actors/Blackhole/black_hole.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Actors/Star/Star.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Actors/Comet/Comet.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Levels/background.tscn" type="PackedScene" id=8]
+
 
 [sub_resource type="LineShape2D" id=1]
 

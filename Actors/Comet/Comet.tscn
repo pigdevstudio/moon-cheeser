@@ -87,8 +87,8 @@ tracks/0/keys = {
 
 [node name="Comet" type="KinematicBody2D" groups=[
 "space_body",
-"enemy",
 "comet",
+"enemy",
 ]]
 
 z/z = 2
@@ -108,7 +108,6 @@ material/material = SubResource( 3 )
 transform/scale = Vector2( 0.454877, 0.454877 )
 frames = SubResource( 4 )
 animation = "flying"
-frame = 3
 playing = true
 offset = Vector2( 160.398, 0.0223724 )
 

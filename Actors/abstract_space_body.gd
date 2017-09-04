@@ -40,6 +40,7 @@ func apply_route():
 		is_sliding = true
 
 	elif not Input.is_mouse_button_pressed(BUTTON_LEFT) and already_pressed:
+		moon.is_mouse_on = true
 		if not already_slide and is_sliding:
 			get_node("Animator").seek(0.5, true)
 			current_pos = get_global_mouse_pos()

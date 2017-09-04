@@ -4,7 +4,7 @@ var dict = {}
 export (String, FILE) var file_path
 var file = File.new()
 var text
-
+var already_played = false
 onready var popup = get_node("Panel")
 onready var timer = get_node("Timer")
 onready var tween = get_node("Tween")

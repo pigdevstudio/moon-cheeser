@@ -4,14 +4,18 @@ signal died
 signal finished_sfx
 export (float) var jump_force = 300
 var can_jump = true
+var invulnerable = false
 var jump_normal = Vector2(0, -1)
 onready var default_gravity_scale = get_gravity_scale()
 
 func _ready():
+	invulnerable = true
+	get_node("Invulnerability").start()
 	set_fixed_process(true)
 	connect("died", get_parent().get_parent(), "change_to_next_scene", ["res://Screens/Score_Screen/ScoreScreen.tscn"])
 		
 func _fixed_process(delta):
+	is_falling()
 	if not get_node("SFX").is_active():
 		emit_signal("finished_sfx")
 func jump():
@@ -30,17 +34,36 @@ func _body_enter( body ):
 		can_jump = true
 		
 	elif body.is_in_group("enemy"):
-		if body.is_in_group("void"):
-			acheesements.modify_achievement("void", 1)
-			get_node("SFX").play("falling")
-			get_node("Animator").play("death")
-			yield(self, "finished_sfx")
-			emit_signal("died")
-		else:
-			get_node("Sprite").hide()
-			get_node("SFX").play("damage")
-			yield(self, "finished_sfx")
-			emit_signal("died")
+		if not invulnerable:
+			if body.is_in_group("void"):
+				acheesements.modify_achievement("void", 1)
+				get_node("SFX").play("falling")
+				get_node("Animator").play("death")
+				yield(self, "finished_sfx")
+				emit_signal("died")
+			else:
+				get_node("Sprite").hide()
+				get_node("SFX").play("damage")
+				yield(self, "finished_sfx")
+				emit_signal("died")
 		
 	elif body.is_in_group("cheese"):
 		body.increase_score()
+		
+func is_falling():
+	if get_parent().get_game_state() == 0:
+		var normal = (get_node("../Moon").get_pos() - get_pos()).normalized()
+		var falling_speed = normal.dot(get_linear_velocity())
+		if falling_speed > 5 and falling_speed < 60:
+			get_node("Sprite").set_frame(1)
+			rotate(get_angle_to(get_node("../Moon").get_pos()))
+			return(true)
+		elif falling_speed > 100:
+			get_node("Sprite").set_frame(3)
+			return(true)
+		else:
+			return(false)
+
+func _on_invulnerability_timeout():
+	invulnerable = false
+	print("ended")

@@ -36,19 +36,45 @@ script/script = ExtResource( 2 )
 
 [node name="Level_0-0" parent="." instance=ExtResource( 3 )]
 
-editor/display_folded = true
+transform/pos = Vector2( 0, 1.36035 )
 
 [node name="Astromouse" parent="Level_0-0"]
 
+transform/pos = Vector2( 625.203, 309.149 )
 z/z = 1
 
+[node name="LeftStarSpawner" parent="Level_0-0"]
+
+editor/display_folded = true
+min_spawn_time = 6.0
+max_spawn_time = 10.0
+
+[node name="LeftCometSpawner" parent="Level_0-0"]
+
+editor/display_folded = true
+
+[node name="RightStarSpawner" parent="Level_0-0"]
+
+min_spawn_time = 6.0
+max_spawn_time = 12.0
+
 [node name="RightCometSpawner" parent="Level_0-0"]
+
+editor/display_folded = true
+max_spawn_time = 8.0
+
+[node name="Background" parent="Level_0-0"]
+
+editor/display_folded = true
+
+[node name="Stars" parent="Level_0-0/Background"]
 
 editor/display_folded = false
 
 [node name="Fade" type="ColorFrame" parent="."]
 
 process/pause_mode = 2
+editor/display_folded = true
 visibility/blend_mode = 3
 focus/ignore_mouse = false
 focus/stop_mouse = true
@@ -91,17 +117,44 @@ max_lines_visible = -1
 
 [node name="Helper" parent="." instance=ExtResource( 5 )]
 
-process/pause_mode = 2
-transform/pos = Vector2( 1042.01, 805.555 )
-transform/rot = 37.9
-z/z = 5
+editor/display_folded = true
+transform/pos = Vector2( 1501.87, 422.457 )
+transform/rot = 60.0
+group = "comet"
+achievement = "firststep"
 
 [node name="Trigger" parent="Helper"]
 
-transform/pos = Vector2( 56.8937, -416.943 )
-transform/rot = -37.9
+transform/pos = Vector2( -361.025, -625.314 )
+transform/rot = -60.0
+
+[node name="Helper1" parent="." instance=ExtResource( 5 )]
+
+editor/display_folded = true
+transform/pos = Vector2( -163.56, 422.457 )
+transform/rot = -60.0
+group = "star"
+achievement = "starmouse"
+
+[node name="Hand" parent="Helper1"]
+
+transform/pos = Vector2( -82.1008, 210.439 )
+transform/scale = Vector2( -1, 1 )
+
+[node name="Arm" parent="Helper1"]
+
+transform/pos = Vector2( -82.1008, 157.473 )
+transform/scale = Vector2( -1, 1 )
+
+[node name="Trigger" parent="Helper1"]
+
+transform/pos = Vector2( 437.242, -757.325 )
+transform/rot = 60.0
 
 
 [editable path="Level_0-0"]
+[editable path="Level_0-0/Astromouse"]
 [editable path="Level_0-0/Moon"]
+[editable path="Level_0-0/Background"]
 [editable path="Helper"]
+[editable path="Helper1"]

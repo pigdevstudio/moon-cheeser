@@ -7,9 +7,9 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 22.526, 53.6311 )
+extents = Vector2( 23.2227, 44.481 )
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=2]
 
 resource/name = "death"
 length = 1.0
@@ -36,9 +36,8 @@ tracks/1/keys = {
 "values": [ Vector2( 0.7, 0.7 ), Vector2( 1e-05, 1e-05 ) ]
 }
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=3]
 
-resource/name = "jumping"
 length = 0.5
 loop = false
 step = 0.1
@@ -53,7 +52,7 @@ tracks/0/keys = {
 "values": [ 2, 4, 3 ]
 }
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=4]
 
 length = 0.4
 loop = true
@@ -76,7 +75,7 @@ tracks/0/keys = {
 z/z = 3
 input/pickable = false
 shapes/0/shape = SubResource( 1 )
-shapes/0/transform = Matrix32( -4.37114e-08, -1, 1, -4.37114e-08, 22.1631, -5.71652 )
+shapes/0/transform = Matrix32( -4.37114e-08, -1, 1, -4.37114e-08, 24.0077, -6.50709 )
 shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
@@ -100,18 +99,18 @@ jump_force = 500.0
 
 [node name="Sprite" type="Sprite" parent="."]
 
-transform/pos = Vector2( 0.0850449, 0.155186 )
+transform/pos = Vector2( 0.880484, -1.02943 )
 transform/rot = 360.0
-transform/scale = Vector2( 0.7, 0.7 )
+transform/scale = Vector2( 0.577862, 0.577862 )
 texture = ExtResource( 2 )
 offset = Vector2( 6.51268, -9.69908 )
 vframes = 4
 hframes = 2
-frame = 3
+frame = 1
 
 [node name="Shape" type="CollisionShape2D" parent="."]
 
-transform/pos = Vector2( 22.1631, -5.71652 )
+transform/pos = Vector2( 24.0077, -6.50709 )
 transform/rot = 90.0
 shape = SubResource( 1 )
 trigger = false
@@ -139,14 +138,23 @@ default/chorus_send = 0.0
 playback/process_mode = 1
 playback/default_blend_time = 0.0
 root/root = NodePath("..")
-anims/death = SubResource( 4 )
-anims/jumping = SubResource( 2 )
-anims/walking = SubResource( 3 )
+anims/death = SubResource( 2 )
+anims/jumping = SubResource( 3 )
+anims/walking = SubResource( 4 )
 playback/active = true
 playback/speed = 0.9
 blend_times = [  ]
 autoplay = ""
 
+[node name="Invulnerability" type="Timer" parent="."]
+
+process_mode = 1
+wait_time = 2.0
+one_shot = true
+autostart = false
+
 [connection signal="body_enter" from="." to="." method="_body_enter"]
+
+[connection signal="timeout" from="Invulnerability" to="." method="_on_invulnerability_timeout"]
 
 

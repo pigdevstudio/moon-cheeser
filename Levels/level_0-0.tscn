@@ -9,7 +9,6 @@
 [ext_resource path="res://Actors/Comet/Comet.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Levels/background.tscn" type="PackedScene" id=8]
 
-
 [sub_resource type="LineShape2D" id=1]
 
 custom_solver_bias = 0.0
@@ -106,26 +105,11 @@ game_state = 0
 
 [node name="Astromouse" parent="." instance=ExtResource( 2 )]
 
-transform/pos = Vector2( 629.747, 348.988 )
+transform/pos = Vector2( 625.203, 212.563 )
 
 [node name="Moon" parent="." instance=ExtResource( 3 )]
 
-editor/display_folded = true
-transform/pos = Vector2( 640, 615.963 )
-z/z = 0
-
-[node name="Shape" parent="Moon"]
-
-visibility/visible = false
-
-[node name="Shape" parent="Moon/Input"]
-
-visibility/visible = false
-transform/pos = Vector2( 0, -262.724 )
-
-[node name="Shape" parent="Moon/Gravity"]
-
-visibility/visible = false
+transform/pos = Vector2( 640.154, 508.41 )
 
 [node name="Void" type="StaticBody2D" parent="." groups=[
 "enemy",
@@ -153,6 +137,7 @@ _update_shape_index = 0
 
 [node name="BlackholeSpawner" type="Position2D" parent="."]
 
+editor/display_folded = true
 transform/pos = Vector2( 991.207, -42.245 )
 script/script = ExtResource( 4 )
 spawn_scene = ExtResource( 5 )
@@ -179,8 +164,7 @@ autostart = true
 
 [node name="LeftStarSpawner" type="Position2D" parent="."]
 
-editor/display_folded = true
-transform/pos = Vector2( 0, 391.868 )
+transform/pos = Vector2( 0, 116.589 )
 script/script = ExtResource( 4 )
 spawn_scene = ExtResource( 6 )
 min_spawn_time = 12.0
@@ -200,13 +184,12 @@ autoplay = "LeftStarSpawn"
 [node name="Timer" type="Timer" parent="LeftStarSpawner"]
 
 process_mode = 1
-wait_time = 13.0
+wait_time = 8.0
 one_shot = false
 autostart = true
 
 [node name="LeftCometSpawner" type="Position2D" parent="."]
 
-editor/display_folded = true
 transform/pos = Vector2( 0, 90.6803 )
 script/script = ExtResource( 4 )
 spawn_scene = ExtResource( 7 )
@@ -227,7 +210,7 @@ autoplay = "LeftCometSpawner"
 [node name="Timer" type="Timer" parent="LeftCometSpawner"]
 
 process_mode = 1
-wait_time = 6.0
+wait_time = 10.0
 one_shot = false
 autostart = true
 
@@ -254,13 +237,12 @@ autoplay = "RightStarSpawner"
 [node name="Timer" type="Timer" parent="RightStarSpawner"]
 
 process_mode = 1
-wait_time = 35.0
+wait_time = 12.0
 one_shot = false
 autostart = true
 
 [node name="RightCometSpawner" type="Position2D" parent="."]
 
-editor/display_folded = true
 transform/pos = Vector2( 1278.78, 629.21 )
 script/script = ExtResource( 4 )
 spawn_scene = ExtResource( 7 )
@@ -300,4 +282,3 @@ layer = -2
 [connection signal="timeout" from="RightCometSpawner/Timer" to="RightCometSpawner" method="_spawn"]
 
 
-[editable path="Moon"]

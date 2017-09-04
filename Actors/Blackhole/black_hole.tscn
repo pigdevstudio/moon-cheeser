@@ -8,7 +8,7 @@
 [sub_resource type="CircleShape2D" id=1]
 
 custom_solver_bias = 0.0
-radius = 45.151
+radius = 38.3962
 
 [sub_resource type="DynamicFont" id=2]
 
@@ -61,9 +61,9 @@ tracks/0/keys = {
 }
 
 [node name="BlackHole" type="StaticBody2D" groups=[
-"black_hole",
 "enemy",
 "void",
+"black_hole",
 ]]
 
 z/z = -1
@@ -81,13 +81,9 @@ script/script = ExtResource( 1 )
 gravity_strength = 300.0
 pulse_interval = 2.0
 
-[node name="Sprite" type="Node2D" parent="."]
+[node name="Sprite" type="Sprite" parent="."]
 
-editor/display_folded = true
-transform/rot = 231.706
-
-[node name="Sprite" type="Sprite" parent="Sprite"]
-
+transform/scale = Vector2( 0.968888, 0.968888 )
 texture = ExtResource( 2 )
 
 [node name="Shape" type="CollisionShape2D" parent="."]
@@ -112,6 +108,7 @@ scale = Vector2( 1, 1 )
 
 [node name="Warning" type="Label" parent="GUILayer"]
 
+visibility/visible = false
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
@@ -138,12 +135,12 @@ anims/blink = SubResource( 4 )
 playback/active = true
 playback/speed = 0.3
 blend_times = [  ]
-autoplay = "blink"
+autoplay = ""
 
 [node name="Timer" type="Timer" parent="."]
 
 process_mode = 1
-wait_time = 15.0
+wait_time = 10.0
 one_shot = true
 autostart = true
 

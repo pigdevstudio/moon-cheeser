@@ -29,6 +29,7 @@ tracks/0/keys = {
 "cheese",
 ]]
 
+z/z = 3
 input/pickable = true
 shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
@@ -40,7 +41,7 @@ constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
 script/script = ExtResource( 1 )
-score = 1
+score = 150
 
 [node name="Sprite" type="Sprite" parent="."]
 

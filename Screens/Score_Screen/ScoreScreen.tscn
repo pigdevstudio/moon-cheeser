@@ -162,7 +162,10 @@ margin/bottom = 333.0
 [node name="Background" parent="." instance=ExtResource( 7 )]
 
 editor/display_folded = true
-layer = -2
+
+[node name="Stars" parent="Background"]
+
+editor/display_folded = true
 
 [node name="Planets" parent="Background"]
 
@@ -177,6 +180,8 @@ margin/top = 25.0
 margin/right = 157.0
 margin/bottom = 97.0
 textures/normal = ExtResource( 8 )
+
+[connection signal="pressed" from="ScreenMargin/ScreenPortions/BottomPortion/Retry" to="." method="_on_Retry_pressed"]
 
 [connection signal="released" from="ScreenMargin/ScreenPortions/BottomPortion/Retry" to="." method="_on_Retry_released"]
 

@@ -9,3 +9,15 @@ func _ready():
 	if  dif >= 29.0 and dif <= 30.0:
 		acheesements.modify_achievement("fullmoon", 1)
 		acheesements.write_achievements()
+
+func _on_Credits_pressed():
+	if OS.get_name() == "Android":
+		change_to_next_scene("res://Screens/Credits_Screen/CreditsScreen.tscn")
+
+func _on_Play_pressed():
+	if OS.get_name() == "Android":
+		change_to_next_scene("res://Screens/Play_Screen/PlayScreen.tscn")
+
+func _on_Achievements_pressed():
+	if OS.get_name() == "Android":
+		change_to_next_scene("res://Screens/Achievements_Screen/AchievementsScreen.tscn")

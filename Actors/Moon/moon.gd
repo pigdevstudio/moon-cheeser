@@ -36,6 +36,7 @@ func _astromouse_interact():
 				elif get_parent().get_game_state() == 1:
 					_apply_gravity(player)
 					_pulse()
+					
 		elif not Input.is_action_pressed("jump") and already_pressed:
 			var player = _find_player()
 			if player != null and not player.is_falling():
@@ -47,6 +48,7 @@ func _mouse_enter(value):
 
 func _pulse():
 	var t = get_node("Tween")
+	show_gravity()
 	if not t.is_active() and get_parent().get_game_state() == 1:
 		t.interpolate_property(gravity, "transform/scale", scale, scale * 1.2, 0.5, t.TRANS_BACK, t.EASE_OUT)
 		t.start()
@@ -57,8 +59,8 @@ func _pulse():
 		t.set_active(false)
 		
 func show_gravity():
-	if is_field_on == false:
-		var t = get_node("Tween")
+	var t = get_node("Tween")
+	if is_field_on == false and not t.is_active():
 		is_field_on = true
 		t.interpolate_property(gravity, "visibility/opacity", 0.0, 1.0, 1.0, t.TRANS_EXPO, t.EASE_OUT)
 		t.start()
@@ -66,9 +68,9 @@ func show_gravity():
 		t.set_active(false)
 	
 func hide_gravity():
-	if is_field_on == true:
+	var t = get_node("Tween")
+	if is_field_on == true and not t.is_active():
 		is_field_on = false
-		var t = get_node("Tween")
 		t.interpolate_property(gravity, "visibility/opacity", 1.0, 0.0, 1.0, t.TRANS_EXPO, t.EASE_OUT)
 		t.start()
 		yield(t, "tween_complete")

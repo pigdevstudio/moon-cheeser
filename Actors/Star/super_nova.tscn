@@ -3,7 +3,6 @@
 [ext_resource path="res://Actors/Blackhole/black_hole.png" type="Texture" id=1]
 [ext_resource path="res://Levels/star_back.png" type="Texture" id=2]
 
-
 [sub_resource type="GDScript" id=1]
 
 script/source = "extends Sprite
@@ -12,6 +11,7 @@ onready var t = get_node(\"Tween\")
 func _ready():
 	t.interpolate_property(self, \"transform/scale\", get_scale(), get_scale() * 1.5, 0.5, t.TRANS_BACK, t.EASE_OUT)
 	t.start()
+	get_tree().call_group(0, \"cheese\", \"move_towards\", get_global_pos())
 	yield(t, \"tween_complete\")
 	t.interpolate_property(self, \"transform/scale\", get_scale(), Vector2(0,0), 0.5, t.TRANS_QUINT, t.EASE_IN)
 	t.start()

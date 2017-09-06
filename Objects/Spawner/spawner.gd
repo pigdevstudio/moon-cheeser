@@ -22,9 +22,11 @@ func _spawn():
 			get_parent().add_child(spawn)
 			get_node("Timer").set_wait_time(rand_range(min_spawn_time, max_spawn_time))
 			get_node("Timer").start()
+		else:
+			get_node("Timer").start()
 	else:
 		var spawn = spawn_scene.instance()
 		spawn.set_transform(get_transform())
 		get_parent().add_child(spawn)
-		get_node("Timer").set_wait_time(floor(rand_range(min_spawn_time, max_spawn_time)))
+		get_node("Timer").set_wait_time(rand_range(min_spawn_time, max_spawn_time))
 		get_node("Timer").start()

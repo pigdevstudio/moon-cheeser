@@ -33,62 +33,6 @@ margin/right = -640.0
 margin/bottom = -360.0
 script/script = ExtResource( 2 )
 
-[node name="Background" parent="." instance=ExtResource( 3 )]
-
-layer = -1
-
-[node name="Star#1" parent="Background/Stars"]
-
-transform/pos = Vector2( 321.956, 431.275 )
-
-[node name="Star#2" parent="Background/Stars"]
-
-transform/pos = Vector2( 341.242, 353.322 )
-
-[node name="Star#3" parent="Background/Stars"]
-
-transform/pos = Vector2( 838.363, 393.298 )
-
-[node name="Star#4" parent="Background/Stars"]
-
-transform/pos = Vector2( 948.821, 538.508 )
-
-[node name="Star#8" parent="Background/Stars"]
-
-transform/pos = Vector2( 845.574, 653.351 )
-
-[node name="Star#16" parent="Background/Stars"]
-
-transform/pos = Vector2( 180.93, 125.386 )
-
-[node name="Star#17" parent="Background/Stars"]
-
-transform/pos = Vector2( 252.748, 105.344 )
-
-[node name="Star#18" parent="Background/Stars"]
-
-transform/pos = Vector2( 329.576, 81.9609 )
-
-[node name="Star#20" parent="Background/Stars"]
-
-transform/pos = Vector2( 377.284, 585.095 )
-
-[node name="Star#28" parent="Background/Stars"]
-
-transform/pos = Vector2( 996.639, 126.204 )
-
-[node name="Star#29" parent="Background/Stars"]
-
-transform/pos = Vector2( 767.824, 111.172 )
-
-[node name="Star#30" parent="Background/Stars"]
-
-transform/pos = Vector2( 893.088, 44.3649 )
-
-[node name="Planets" parent="Background"]
-
-visibility/visible = false
-
 [node name="ScreenMargin" type="MarginContainer" parent="."]
 
 anchor/left = 3
@@ -109,6 +53,16 @@ custom_constants/margin_left = 25
 custom_constants/margin_bottom = 25
 script/script = SubResource( 1 )
 
+[node name="Background" parent="ScreenMargin" instance=ExtResource( 3 )]
+
+[node name="Stars" parent="ScreenMargin/Background"]
+
+editor/display_folded = true
+
+[node name="Planets" parent="ScreenMargin/Background"]
+
+visibility/visible = false
+
 [node name="ScreenPortions" type="HBoxContainer" parent="ScreenMargin"]
 
 focus/ignore_mouse = false
@@ -123,7 +77,6 @@ alignment = 0
 
 [node name="LeftPortion" type="VBoxContainer" parent="ScreenMargin/ScreenPortions"]
 
-editor/display_folded = true
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 3
@@ -166,6 +119,7 @@ margin/bottom = 670.0
 
 [node name="CenterPortion" type="VBoxContainer" parent="ScreenMargin/ScreenPortions"]
 
+editor/display_folded = true
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 3
@@ -243,11 +197,17 @@ margin/top = 488.0
 margin/right = 408.0
 margin/bottom = 670.0
 
+[connection signal="pressed" from="ScreenMargin/ScreenPortions/LeftPortion/Achievements" to="." method="_on_Achievements_pressed"]
+
 [connection signal="released" from="ScreenMargin/ScreenPortions/LeftPortion/Achievements" to="." method="change_to_next_scene" binds= [ "res://Screens/Achievements_Screen/AchievementsScreen.tscn" ]]
 
+[connection signal="pressed" from="ScreenMargin/ScreenPortions/CenterPortion/Credits" to="." method="_on_Credits_pressed"]
+
 [connection signal="released" from="ScreenMargin/ScreenPortions/CenterPortion/Credits" to="." method="change_to_next_scene" binds= [ "res://Screens/Credits_Screen/CreditsScreen.tscn" ]]
+
+[connection signal="pressed" from="ScreenMargin/ScreenPortions/RightPortion/Play" to="." method="_on_Play_pressed"]
 
 [connection signal="released" from="ScreenMargin/ScreenPortions/RightPortion/Play" to="." method="change_to_next_scene" binds= [ "res://Screens/Play_Screen/PlayScreen.tscn" ]]
 
 
-[editable path="Background"]
+[editable path="ScreenMargin/Background"]

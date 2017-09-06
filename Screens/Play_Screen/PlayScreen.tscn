@@ -45,13 +45,8 @@ z/z = 1
 
 [node name="LeftStarSpawner" parent="Level_0-0"]
 
-editor/display_folded = true
 min_spawn_time = 6.0
 max_spawn_time = 10.0
-
-[node name="LeftCometSpawner" parent="Level_0-0"]
-
-editor/display_folded = true
 
 [node name="RightStarSpawner" parent="Level_0-0"]
 
@@ -60,16 +55,11 @@ max_spawn_time = 12.0
 
 [node name="RightCometSpawner" parent="Level_0-0"]
 
-editor/display_folded = true
 max_spawn_time = 8.0
 
 [node name="Background" parent="Level_0-0"]
 
 editor/display_folded = true
-
-[node name="Stars" parent="Level_0-0/Background"]
-
-editor/display_folded = false
 
 [node name="Fade" type="ColorFrame" parent="."]
 

@@ -5,12 +5,10 @@ onready var initial_pos = get_global_pos()
 export (String) var group
 export (String) var achievement
 func _ready():
-
 	if acheesements.dict[achievement].accomplished >= 3 or acheesements.already_played == true:
 		queue_free()
 
 func _on_collision_enter( collider ):
-	print(get_node("Trigger").get_shape_transform(0))
 	if collider.is_in_group(group):
 		if collider.route_already_changed:
 			queue_free()

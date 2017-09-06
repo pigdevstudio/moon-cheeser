@@ -61,12 +61,12 @@ tracks/0/keys = {
 }
 
 [node name="BlackHole" type="StaticBody2D" groups=[
-"enemy",
 "void",
 "black_hole",
+"enemy",
 ]]
 
-z/z = -1
+z/z = -3
 input/pickable = false
 shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
@@ -83,7 +83,7 @@ pulse_interval = 2.0
 
 [node name="Sprite" type="Sprite" parent="."]
 
-transform/scale = Vector2( 0.968888, 0.968888 )
+transform/scale = Vector2( 1.22229, 1.22229 )
 texture = ExtResource( 2 )
 
 [node name="Shape" type="CollisionShape2D" parent="."]

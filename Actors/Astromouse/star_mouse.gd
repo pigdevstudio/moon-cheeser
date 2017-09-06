@@ -8,6 +8,7 @@ var already_pressed = false
 onready var target = get_viewport().get_mouse_pos()
 onready var moon = get_tree().get_nodes_in_group("moon")[0]
 func _ready():
+	get_node("Sax").play(bgm.get_pos())
 	moon.show_gravity()
 	acheesements.modify_achievement("starmouse", 1)
 	get_node("Sprite").set_texture(load(skins.starmouse_skin))
@@ -44,6 +45,8 @@ func _on_body_enter( body ):
 func _on_animator_finished():
 	if get_parent().get_game_state() == 0:
 		moon.hide_gravity()
+	else:
+		moon.get_node("Tween").set_active(false)
 	var i = load("res://Actors/Astromouse/Astromouse.tscn").instance()
 	i.set_pos(get_pos())
 	get_parent().add_child(i)

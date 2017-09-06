@@ -15,9 +15,9 @@ func _ready():
 	connect("died", get_parent().get_parent(), "change_to_next_scene", ["res://Screens/Score_Screen/ScoreScreen.tscn"])
 		
 func _fixed_process(delta):
-	is_falling()
 	if not get_node("SFX").is_active():
 		emit_signal("finished_sfx")
+	is_falling()
 func jump():
 	if can_jump:
 		apply_impulse(Vector2(0,0), jump_force * jump_normal)
@@ -34,18 +34,17 @@ func _body_enter( body ):
 		can_jump = true
 		
 	elif body.is_in_group("enemy"):
-		if not invulnerable:
-			if body.is_in_group("void"):
-				acheesements.modify_achievement("void", 1)
-				get_node("SFX").play("falling")
-				get_node("Animator").play("death")
-				yield(self, "finished_sfx")
-				emit_signal("died")
-			else:
-				get_node("Sprite").hide()
-				get_node("SFX").play("damage")
-				yield(self, "finished_sfx")
-				emit_signal("died")
+		if body.is_in_group("void"):
+			acheesements.modify_achievement("void", 1)
+			get_node("SFX").play("falling")
+			get_node("Animator").play("death")
+			yield(self, "finished_sfx")
+			emit_signal("died")
+		elif not invulnerable:
+			get_node("Sprite").hide()
+			get_node("SFX").play("damage")
+			yield(self, "finished_sfx")
+			emit_signal("died")
 		
 	elif body.is_in_group("cheese"):
 		body.increase_score()
@@ -66,4 +65,3 @@ func is_falling():
 
 func _on_invulnerability_timeout():
 	invulnerable = false
-	print("ended")

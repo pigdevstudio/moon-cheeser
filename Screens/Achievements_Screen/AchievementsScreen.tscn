@@ -108,6 +108,7 @@ content_margin/bottom = -1.0
 
 [node name="ScreenMargin" type="MarginContainer" parent="."]
 
+editor/display_folded = true
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
@@ -178,7 +179,7 @@ margin/bottom = 670.0
 tab_align = 1
 tabs_visible = true
 
-[node name="Achievements" type="GridContainer" parent="ScreenMargin/ScreenPortions/CenterPortion"]
+[node name="Acheesements" type="GridContainer" parent="ScreenMargin/ScreenPortions/CenterPortion"]
 
 anchor/right = 1
 anchor/bottom = 1
@@ -193,41 +194,41 @@ margin/bottom = 0.0
 custom_constants/vseparation = 45
 columns = 4
 
-[node name="FirstStep" parent="ScreenMargin/ScreenPortions/CenterPortion/Achievements" instance=ExtResource( 3 )]
+[node name="FirstStep" parent="ScreenMargin/ScreenPortions/CenterPortion/Acheesements" instance=ExtResource( 3 )]
 
 margin/right = 304.0
 margin/bottom = 255.0
 textures/normal = ExtResource( 5 )
 
-[node name="Astromouse" parent="ScreenMargin/ScreenPortions/CenterPortion/Achievements" instance=ExtResource( 3 )]
+[node name="Astromouse" parent="ScreenMargin/ScreenPortions/CenterPortion/Acheesements" instance=ExtResource( 3 )]
 
 margin/left = 308.0
 margin/right = 612.0
 margin/bottom = 255.0
 textures/normal = ExtResource( 6 )
 
-[node name="Fullmoon" parent="ScreenMargin/ScreenPortions/CenterPortion/Achievements" instance=ExtResource( 3 )]
+[node name="Fullmoon" parent="ScreenMargin/ScreenPortions/CenterPortion/Acheesements" instance=ExtResource( 3 )]
 
 margin/left = 616.0
 margin/right = 920.0
 margin/bottom = 255.0
 textures/normal = ExtResource( 7 )
 
-[node name="Void" parent="ScreenMargin/ScreenPortions/CenterPortion/Achievements" instance=ExtResource( 3 )]
+[node name="Void" parent="ScreenMargin/ScreenPortions/CenterPortion/Acheesements" instance=ExtResource( 3 )]
 
 margin/left = 924.0
 margin/right = 1228.0
 margin/bottom = 255.0
 textures/normal = ExtResource( 8 )
 
-[node name="Supernova" parent="ScreenMargin/ScreenPortions/CenterPortion/Achievements" instance=ExtResource( 3 )]
+[node name="Supernova" parent="ScreenMargin/ScreenPortions/CenterPortion/Acheesements" instance=ExtResource( 3 )]
 
 margin/top = 300.0
 margin/right = 304.0
 margin/bottom = 555.0
 textures/normal = ExtResource( 9 )
 
-[node name="Madness" parent="ScreenMargin/ScreenPortions/CenterPortion/Achievements" instance=ExtResource( 3 )]
+[node name="Madness" parent="ScreenMargin/ScreenPortions/CenterPortion/Acheesements" instance=ExtResource( 3 )]
 
 margin/left = 308.0
 margin/top = 300.0
@@ -235,7 +236,7 @@ margin/right = 612.0
 margin/bottom = 555.0
 textures/normal = ExtResource( 10 )
 
-[node name="Starmouse" parent="ScreenMargin/ScreenPortions/CenterPortion/Achievements" instance=ExtResource( 3 )]
+[node name="Starmouse" parent="ScreenMargin/ScreenPortions/CenterPortion/Acheesements" instance=ExtResource( 3 )]
 
 margin/left = 616.0
 margin/top = 300.0
@@ -243,7 +244,7 @@ margin/right = 920.0
 margin/bottom = 555.0
 textures/normal = ExtResource( 11 )
 
-[node name="GravityMaster" parent="ScreenMargin/ScreenPortions/CenterPortion/Achievements" instance=ExtResource( 3 )]
+[node name="GravityMaster" parent="ScreenMargin/ScreenPortions/CenterPortion/Acheesements" instance=ExtResource( 3 )]
 
 margin/left = 924.0
 margin/top = 300.0
@@ -989,21 +990,21 @@ flat = true
 
 [connection signal="released" from="ScreenMargin/ScreenPortions/TopPortion/Back" to="." method="change_to_next_scene"]
 
-[connection signal="released" from="ScreenMargin/ScreenPortions/CenterPortion/Achievements/FirstStep" to="ScreenMargin" method="call_popup" binds= [ "firststep" ]]
+[connection signal="released" from="ScreenMargin/ScreenPortions/CenterPortion/Acheesements/FirstStep" to="ScreenMargin" method="call_popup" binds= [ "firststep" ]]
 
-[connection signal="released" from="ScreenMargin/ScreenPortions/CenterPortion/Achievements/Astromouse" to="ScreenMargin" method="call_popup" binds= [ "mooncheeser" ]]
+[connection signal="released" from="ScreenMargin/ScreenPortions/CenterPortion/Acheesements/Astromouse" to="ScreenMargin" method="call_popup" binds= [ "mooncheeser" ]]
 
-[connection signal="released" from="ScreenMargin/ScreenPortions/CenterPortion/Achievements/Fullmoon" to="ScreenMargin" method="call_popup" binds= [ "fullmoon" ]]
+[connection signal="released" from="ScreenMargin/ScreenPortions/CenterPortion/Acheesements/Fullmoon" to="ScreenMargin" method="call_popup" binds= [ "fullmoon" ]]
 
-[connection signal="released" from="ScreenMargin/ScreenPortions/CenterPortion/Achievements/Void" to="ScreenMargin" method="call_popup" binds= [ "void" ]]
+[connection signal="released" from="ScreenMargin/ScreenPortions/CenterPortion/Acheesements/Void" to="ScreenMargin" method="call_popup" binds= [ "void" ]]
 
-[connection signal="released" from="ScreenMargin/ScreenPortions/CenterPortion/Achievements/Supernova" to="ScreenMargin" method="call_popup" binds= [ "supernova" ]]
+[connection signal="released" from="ScreenMargin/ScreenPortions/CenterPortion/Acheesements/Supernova" to="ScreenMargin" method="call_popup" binds= [ "supernova" ]]
 
-[connection signal="released" from="ScreenMargin/ScreenPortions/CenterPortion/Achievements/Madness" to="ScreenMargin" method="call_popup" binds= [ "madness" ]]
+[connection signal="released" from="ScreenMargin/ScreenPortions/CenterPortion/Acheesements/Madness" to="ScreenMargin" method="call_popup" binds= [ "madness" ]]
 
-[connection signal="released" from="ScreenMargin/ScreenPortions/CenterPortion/Achievements/Starmouse" to="ScreenMargin" method="call_popup" binds= [ "starmouse" ]]
+[connection signal="released" from="ScreenMargin/ScreenPortions/CenterPortion/Acheesements/Starmouse" to="ScreenMargin" method="call_popup" binds= [ "starmouse" ]]
 
-[connection signal="released" from="ScreenMargin/ScreenPortions/CenterPortion/Achievements/GravityMaster" to="ScreenMargin" method="call_popup" binds= [ "gravity" ]]
+[connection signal="released" from="ScreenMargin/ScreenPortions/CenterPortion/Acheesements/GravityMaster" to="ScreenMargin" method="call_popup" binds= [ "gravity" ]]
 
 [connection signal="released" from="Panel/Button" to="Panel" method="hide"]
 

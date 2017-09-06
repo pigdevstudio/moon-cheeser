@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=1]
+[gd_scene load_steps=7 format=1]
 
 [ext_resource path="res://Actors/Astromouse/star_mouse.gd" type="Script" id=1]
 [ext_resource path="res://Actors/Astromouse/starmouse.png" type="Texture" id=2]
 [ext_resource path="res://Actors/Astromouse/mask.png" type="Texture" id=3]
+[ext_resource path="res://take_five_sax.ogg" type="AudioStream" id=4]
 
 [sub_resource type="Animation" id=1]
 
@@ -105,6 +106,17 @@ process_mode = 1
 wait_time = 5.0
 one_shot = true
 autostart = true
+
+[node name="Sax" type="StreamPlayer" parent="."]
+
+stream/stream = ExtResource( 4 )
+stream/play = false
+stream/loop = true
+stream/volume_db = -16.0
+stream/autoplay = true
+stream/paused = false
+stream/loop_restart_time = 7.17
+stream/buffering_ms = 500
 
 [connection signal="finished" from="Sprite/Animator" to="." method="_on_animator_finished"]
 

@@ -86,9 +86,9 @@ tracks/0/keys = {
 }
 
 [node name="Comet" type="KinematicBody2D" groups=[
-"space_body",
-"comet",
 "enemy",
+"comet",
+"space_body",
 ]]
 
 z/z = 2
@@ -106,8 +106,10 @@ direction = 1
 
 material/material = SubResource( 3 )
 transform/scale = Vector2( 0.454877, 0.454877 )
+z/z = 2
 frames = SubResource( 4 )
 animation = "flying"
+frame = 1
 playing = true
 offset = Vector2( 160.398, 0.0223724 )
 
@@ -175,12 +177,6 @@ params/anim_speed_scale = 1.0
 params/anim_initial_pos = 0.0
 color/color_ramp = SubResource( 6 )
 
-[node name="Shape" type="CollisionShape2D" parent="."]
-
-shape = SubResource( 1 )
-trigger = false
-_update_shape_index = 0
-
 [node name="AreaInput" type="Area2D" parent="."]
 
 input/pickable = true
@@ -209,6 +205,12 @@ playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
 autoplay = "glowing"
+
+[node name="Shape" type="CollisionShape2D" parent="."]
+
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = 0
 
 [connection signal="exit_screen" from="Sprite/Visibility" to="." method="_exit_screen"]
 

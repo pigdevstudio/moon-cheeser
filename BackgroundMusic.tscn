@@ -1,13 +1,13 @@
 [gd_scene load_steps=2 format=1]
 
-[ext_resource path="res://take_five_cheeses.ogg" type="AudioStream" id=1]
+[ext_resource path="res://take_five_loop.ogg" type="AudioStream" id=1]
 
 [node name="BackgroundMusic" type="StreamPlayer"]
 
 stream/stream = ExtResource( 1 )
 stream/play = false
 stream/loop = true
-stream/volume_db = 8.0
+stream/volume_db = -4.0
 stream/autoplay = true
 stream/paused = false
 stream/loop_restart_time = 0.0

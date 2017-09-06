@@ -105,15 +105,15 @@ game_state = 0
 
 [node name="Astromouse" parent="." instance=ExtResource( 2 )]
 
-transform/pos = Vector2( 625.203, 212.563 )
+transform/pos = Vector2( 630.645, 212.563 )
 
 [node name="Moon" parent="." instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 640.154, 508.41 )
 
 [node name="Void" type="StaticBody2D" parent="." groups=[
-"enemy",
 "void",
+"enemy",
 ]]
 
 editor/display_folded = true
@@ -164,11 +164,12 @@ autostart = true
 
 [node name="LeftStarSpawner" type="Position2D" parent="."]
 
+editor/display_folded = true
 transform/pos = Vector2( 0, 116.589 )
 script/script = ExtResource( 4 )
 spawn_scene = ExtResource( 6 )
-min_spawn_time = 12.0
-max_spawn_time = 20.0
+min_spawn_time = 8.0
+max_spawn_time = 16.0
 
 [node name="Animator" type="AnimationPlayer" parent="LeftStarSpawner"]
 
@@ -190,11 +191,12 @@ autostart = true
 
 [node name="LeftCometSpawner" type="Position2D" parent="."]
 
+editor/display_folded = true
 transform/pos = Vector2( 0, 90.6803 )
 script/script = ExtResource( 4 )
 spawn_scene = ExtResource( 7 )
-min_spawn_time = 7.0
-max_spawn_time = 10.0
+min_spawn_time = 5.0
+max_spawn_time = 15.0
 
 [node name="Animator" type="AnimationPlayer" parent="LeftCometSpawner"]
 
@@ -220,8 +222,8 @@ editor/display_folded = true
 transform/pos = Vector2( 1278.78, 116.589 )
 script/script = ExtResource( 4 )
 spawn_scene = ExtResource( 6 )
-min_spawn_time = 12.0
-max_spawn_time = 20.0
+min_spawn_time = 8.0
+max_spawn_time = 16.0
 
 [node name="Animator" type="AnimationPlayer" parent="RightStarSpawner"]
 
@@ -243,11 +245,12 @@ autostart = true
 
 [node name="RightCometSpawner" type="Position2D" parent="."]
 
+editor/display_folded = true
 transform/pos = Vector2( 1278.78, 629.21 )
 script/script = ExtResource( 4 )
 spawn_scene = ExtResource( 7 )
 min_spawn_time = 5.0
-max_spawn_time = 7.0
+max_spawn_time = 15.0
 
 [node name="Animator" type="AnimationPlayer" parent="RightCometSpawner"]
 

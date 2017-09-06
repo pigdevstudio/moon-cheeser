@@ -2,6 +2,7 @@ extends Node
 
 var current_score = 0 setget set_score, get_score
 var high_score = 0
+
 signal scored
 func _ready():
 	var f = File.new()
@@ -17,6 +18,7 @@ func _ready():
 func set_score(value):
 	if value > 0:
 		current_score += value
+		
 		if current_score > high_score:
 			high_score = current_score
 			write_highscore()

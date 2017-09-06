@@ -4,7 +4,6 @@
 
 [node name="CraterPlaceholder" type="Position2D"]
 
-transform/pos = Vector2( 640, 360 )
 script/script = ExtResource( 1 )
 
 

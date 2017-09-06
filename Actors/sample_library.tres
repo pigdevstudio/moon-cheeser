@@ -1,9 +1,9 @@
 [gd_resource type="SampleLibrary" load_steps=5 format=1]
 
 [ext_resource path="res://Actors/Comet/4_colliding.wav" type="Sample" id=1]
-[ext_resource path="res://Actors/Astromouse/2_falling.wav" type="Sample" id=2]
-[ext_resource path="res://Actors/Astromouse/1_jump.wav" type="Sample" id=3]
-[ext_resource path="res://Actors/Astromouse/3_landing.wav" type="Sample" id=4]
+[ext_resource path="res://Actors/Astromouse/3_landing.wav" type="Sample" id=2]
+[ext_resource path="res://Actors/Astromouse/2_falling.wav" type="Sample" id=3]
+[ext_resource path="res://Actors/Astromouse/1_jump.wav" type="Sample" id=4]
 
 [resource]
 
@@ -13,19 +13,19 @@ samples/colliding = {
 "priority": 0,
 "sample": ExtResource( 1 )
 }
-samples/falling = {
+samples/damage = {
 "db": 0.0,
 "pitch": 1.0,
 "priority": 0,
 "sample": ExtResource( 2 )
 }
-samples/jumping = {
+samples/falling = {
 "db": 0.0,
 "pitch": 1.0,
 "priority": 0,
 "sample": ExtResource( 3 )
 }
-samples/landing = {
+samples/jumping = {
 "db": 0.0,
 "pitch": 1.0,
 "priority": 0,

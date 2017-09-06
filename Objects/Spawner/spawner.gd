@@ -6,18 +6,27 @@ export (float) var max_spawn_time = 2.0
 
 func _ready():
 	randomize()
-#	get_node("Timer").start()
-	get_node("Timer").set_wait_time(rand_range(min_spawn_time, max_spawn_time))
+	get_node("Timer").set_wait_time(floor(rand_range(min_spawn_time, max_spawn_time)))
+	if acheesements.already_played == true:
+		get_node("Timer").set_autostart(false)
+		get_node("Timer").start()
 func _spawn():
-	if get_parent().game_state == 0:
+	if get_parent().has_method("set_game_state"):
+		if get_parent().game_state == 0:
+			var spawn = spawn_scene.instance()
+			spawn.set_transform(get_transform())
+			
+			var pos_direction = get_viewport().get_rect().size.x /2
+			if get_pos().x > pos_direction and spawn.has_method("apply_route"):
+				spawn.direction = -1
+			get_parent().add_child(spawn)
+			get_node("Timer").set_wait_time(rand_range(min_spawn_time, max_spawn_time))
+			get_node("Timer").start()
+		else:
+			get_node("Timer").start()
+	else:
 		var spawn = spawn_scene.instance()
 		spawn.set_transform(get_transform())
-		
-		var pos_direction = get_viewport().get_rect().size.x /2
-		if get_pos().x > pos_direction and spawn.has_method("apply_route"):
-			spawn.direction = -1
 		get_parent().add_child(spawn)
 		get_node("Timer").set_wait_time(rand_range(min_spawn_time, max_spawn_time))
 		get_node("Timer").start()
-	else:
-		pass

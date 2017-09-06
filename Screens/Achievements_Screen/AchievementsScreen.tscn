@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=1]
+[gd_scene load_steps=24 format=1]
 
 [ext_resource path="res://Screens/Abstract Screen.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Screens/Achievements_Screen/dialog_handler.gd" type="Script" id=2]
@@ -12,9 +12,9 @@
 [ext_resource path="res://Screens/Achievements_Screen/madness.png" type="Texture" id=10]
 [ext_resource path="res://Screens/Achievements_Screen/starmouse.png" type="Texture" id=11]
 [ext_resource path="res://Screens/Achievements_Screen/gravity.png" type="Texture" id=12]
-[ext_resource path="res://Screens/Achievements_Screen/skins_handler.gd" type="Script" id=13]
-[ext_resource path="res://Screens/Achievements_Screen/cheese_star.png" type="Texture" id=14]
-[ext_resource path="res://Levels/star_back.png" type="Texture" id=15]
+[ext_resource path="res://Levels/star_back.png" type="Texture" id=13]
+[ext_resource path="res://Screens/popuptheme.tres" type="Theme" id=14]
+[ext_resource path="res://Screens/GaroaHackerClubeBold.otf" type="DynamicFontData" id=15]
 
 [sub_resource type="GDScript" id=1]
 
@@ -50,10 +50,65 @@ tracks/1/keys = {
 "values": [ 0.0, 360.0 ]
 }
 
+[sub_resource type="DynamicFont" id=3]
+
+font/size = 16
+font/use_mipmaps = true
+font/use_filter = true
+font/font = ExtResource( 15 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+
+content_margin/left = -1.0
+content_margin/right = -1.0
+content_margin/top = -1.0
+content_margin/bottom = -1.0
+bg_color = Color( 0.211765, 0.294118, 0.623529, 0.176471 )
+light_color = Color( 0.212402, 0.296211, 0.625, 0.180314 )
+dark_color = Color( 0.8, 0.8, 0.8, 1 )
+border_size = 0
+border_blend = true
+draw_bg = true
+
+[sub_resource type="StyleBoxFlat" id=5]
+
+content_margin/left = -1.0
+content_margin/right = -1.0
+content_margin/top = -1.0
+content_margin/bottom = -1.0
+bg_color = Color( 0.0128305, 0.0100403, 0.367188, 0.087451 )
+light_color = Color( 0.8, 0.8, 0.8, 1 )
+dark_color = Color( 0.8, 0.8, 0.8, 1 )
+border_size = 0
+border_blend = true
+draw_bg = true
+
+[sub_resource type="StyleBoxEmpty" id=6]
+
+content_margin/left = -1.0
+content_margin/right = -1.0
+content_margin/top = -1.0
+content_margin/bottom = -1.0
+
+[sub_resource type="StyleBoxEmpty" id=7]
+
+content_margin/left = -1.0
+content_margin/right = -1.0
+content_margin/top = -1.0
+content_margin/bottom = -1.0
+
+[sub_resource type="StyleBoxEmpty" id=8]
+
+content_margin/left = -1.0
+content_margin/right = -1.0
+content_margin/top = -1.0
+content_margin/bottom = -1.0
+
 [node name="AchievementsScreen" instance=ExtResource( 1 )]
 
 [node name="ScreenMargin" type="MarginContainer" parent="."]
 
+editor/display_folded = true
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
@@ -67,7 +122,6 @@ custom_constants/margin_top = 25
 custom_constants/margin_left = 25
 custom_constants/margin_bottom = 25
 script/script = ExtResource( 2 )
-resolution = 3
 
 [node name="ScreenPortions" type="VBoxContainer" parent="ScreenMargin"]
 
@@ -125,7 +179,7 @@ margin/bottom = 670.0
 tab_align = 1
 tabs_visible = true
 
-[node name="Achievements" type="GridContainer" parent="ScreenMargin/ScreenPortions/CenterPortion"]
+[node name="Acheesements" type="GridContainer" parent="ScreenMargin/ScreenPortions/CenterPortion"]
 
 anchor/right = 1
 anchor/bottom = 1
@@ -140,41 +194,41 @@ margin/bottom = 0.0
 custom_constants/vseparation = 45
 columns = 4
 
-[node name="FirstStep" parent="ScreenMargin/ScreenPortions/CenterPortion/Achievements" instance=ExtResource( 3 )]
+[node name="FirstStep" parent="ScreenMargin/ScreenPortions/CenterPortion/Acheesements" instance=ExtResource( 3 )]
 
 margin/right = 304.0
 margin/bottom = 255.0
 textures/normal = ExtResource( 5 )
 
-[node name="Astromouse" parent="ScreenMargin/ScreenPortions/CenterPortion/Achievements" instance=ExtResource( 3 )]
+[node name="Astromouse" parent="ScreenMargin/ScreenPortions/CenterPortion/Acheesements" instance=ExtResource( 3 )]
 
 margin/left = 308.0
 margin/right = 612.0
 margin/bottom = 255.0
 textures/normal = ExtResource( 6 )
 
-[node name="Fullmoon" parent="ScreenMargin/ScreenPortions/CenterPortion/Achievements" instance=ExtResource( 3 )]
+[node name="Fullmoon" parent="ScreenMargin/ScreenPortions/CenterPortion/Acheesements" instance=ExtResource( 3 )]
 
 margin/left = 616.0
 margin/right = 920.0
 margin/bottom = 255.0
 textures/normal = ExtResource( 7 )
 
-[node name="Void" parent="ScreenMargin/ScreenPortions/CenterPortion/Achievements" instance=ExtResource( 3 )]
+[node name="Void" parent="ScreenMargin/ScreenPortions/CenterPortion/Acheesements" instance=ExtResource( 3 )]
 
 margin/left = 924.0
 margin/right = 1228.0
 margin/bottom = 255.0
 textures/normal = ExtResource( 8 )
 
-[node name="Supernova" parent="ScreenMargin/ScreenPortions/CenterPortion/Achievements" instance=ExtResource( 3 )]
+[node name="Supernova" parent="ScreenMargin/ScreenPortions/CenterPortion/Acheesements" instance=ExtResource( 3 )]
 
 margin/top = 300.0
 margin/right = 304.0
 margin/bottom = 555.0
 textures/normal = ExtResource( 9 )
 
-[node name="Madness" parent="ScreenMargin/ScreenPortions/CenterPortion/Achievements" instance=ExtResource( 3 )]
+[node name="Madness" parent="ScreenMargin/ScreenPortions/CenterPortion/Acheesements" instance=ExtResource( 3 )]
 
 margin/left = 308.0
 margin/top = 300.0
@@ -182,7 +236,7 @@ margin/right = 612.0
 margin/bottom = 555.0
 textures/normal = ExtResource( 10 )
 
-[node name="Starmouse" parent="ScreenMargin/ScreenPortions/CenterPortion/Achievements" instance=ExtResource( 3 )]
+[node name="Starmouse" parent="ScreenMargin/ScreenPortions/CenterPortion/Acheesements" instance=ExtResource( 3 )]
 
 margin/left = 616.0
 margin/top = 300.0
@@ -190,111 +244,13 @@ margin/right = 920.0
 margin/bottom = 555.0
 textures/normal = ExtResource( 11 )
 
-[node name="GravityMaster" parent="ScreenMargin/ScreenPortions/CenterPortion/Achievements" instance=ExtResource( 3 )]
+[node name="GravityMaster" parent="ScreenMargin/ScreenPortions/CenterPortion/Acheesements" instance=ExtResource( 3 )]
 
 margin/left = 924.0
 margin/top = 300.0
 margin/right = 1228.0
 margin/bottom = 555.0
 textures/normal = ExtResource( 12 )
-
-[node name="Skins" type="GridContainer" parent="ScreenMargin/ScreenPortions/CenterPortion"]
-
-visibility/visible = false
-anchor/right = 1
-anchor/bottom = 1
-focus/ignore_mouse = false
-focus/stop_mouse = false
-size_flags/horizontal = 3
-size_flags/vertical = 3
-margin/left = 4.0
-margin/top = 32.0
-margin/right = 4.0
-margin/bottom = 4.0
-columns = 4
-script/script = ExtResource( 13 )
-
-[node name="Skins#1" parent="ScreenMargin/ScreenPortions/CenterPortion/Skins" instance=ExtResource( 3 )]
-
-visibility/visible = false
-margin/right = 304.0
-margin/bottom = 275.0
-textures/normal = ExtResource( 14 )
-
-[node name="Skins#2" parent="ScreenMargin/ScreenPortions/CenterPortion/Skins" instance=ExtResource( 3 )]
-
-visibility/visible = false
-margin/left = 308.0
-margin/right = 612.0
-margin/bottom = 275.0
-textures/normal = ExtResource( 14 )
-
-[node name="Skins#3" parent="ScreenMargin/ScreenPortions/CenterPortion/Skins" instance=ExtResource( 3 )]
-
-visibility/visible = false
-margin/left = 616.0
-margin/right = 920.0
-margin/bottom = 275.0
-textures/normal = ExtResource( 14 )
-
-[node name="Skins#4" parent="ScreenMargin/ScreenPortions/CenterPortion/Skins" instance=ExtResource( 3 )]
-
-visibility/visible = false
-margin/left = 924.0
-margin/right = 1228.0
-margin/bottom = 275.0
-textures/normal = ExtResource( 14 )
-
-[node name="Skins#5" parent="ScreenMargin/ScreenPortions/CenterPortion/Skins" instance=ExtResource( 3 )]
-
-visibility/visible = false
-margin/top = 279.0
-margin/right = 304.0
-margin/bottom = 554.0
-textures/normal = ExtResource( 14 )
-
-[node name="Skins#6" parent="ScreenMargin/ScreenPortions/CenterPortion/Skins" instance=ExtResource( 3 )]
-
-visibility/visible = false
-margin/left = 308.0
-margin/top = 279.0
-margin/right = 612.0
-margin/bottom = 554.0
-textures/normal = ExtResource( 14 )
-
-[node name="Skins#7" parent="ScreenMargin/ScreenPortions/CenterPortion/Skins" instance=ExtResource( 3 )]
-
-visibility/visible = false
-margin/left = 616.0
-margin/top = 279.0
-margin/right = 920.0
-margin/bottom = 554.0
-textures/normal = ExtResource( 14 )
-
-[node name="Skins#8" parent="ScreenMargin/ScreenPortions/CenterPortion/Skins" instance=ExtResource( 3 )]
-
-visibility/visible = false
-margin/left = 924.0
-margin/top = 279.0
-margin/right = 1228.0
-margin/bottom = 554.0
-textures/normal = ExtResource( 14 )
-
-[node name="Dialog" type="AcceptDialog" parent="ScreenMargin"]
-
-visibility/visible = false
-focus/ignore_mouse = false
-focus/stop_mouse = true
-size_flags/horizontal = 0
-size_flags/vertical = 0
-margin/left = 418.0
-margin/top = 329.0
-margin/right = 862.0
-margin/bottom = 391.0
-popup/exclusive = true
-window/title = "AchievementName"
-dialog/text = "THIS ACHIEVEMENT IS OBTAINED BY ACHIEVING SOMETHING"
-dialog/hide_on_ok = true
 
 [node name="Background" type="CanvasLayer" parent="."]
 
@@ -316,7 +272,7 @@ scale = Vector2( 1, 1 )
 editor/display_folded = true
 transform/pos = Vector2( 383.626, 378.185 )
 transform/scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 15 )
+texture = ExtResource( 13 )
 script/script = SubResource( 1 )
 
 [node name="Animator" type="AnimationPlayer" parent="Background/Stars/Star"]
@@ -335,7 +291,7 @@ autoplay = "shine"
 editor/display_folded = true
 transform/pos = Vector2( 321.956, 430.275 )
 transform/scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 15 )
+texture = ExtResource( 13 )
 script/script = SubResource( 1 )
 
 [node name="Animator" type="AnimationPlayer" parent="Background/Stars/Star#1"]
@@ -354,7 +310,7 @@ autoplay = "shine"
 editor/display_folded = true
 transform/pos = Vector2( 311.179, 365.013 )
 transform/scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 15 )
+texture = ExtResource( 13 )
 script/script = SubResource( 1 )
 
 [node name="Animator" type="AnimationPlayer" parent="Background/Stars/Star#2"]
@@ -373,7 +329,7 @@ autoplay = "shine"
 editor/display_folded = true
 transform/pos = Vector2( 779.577, 390.283 )
 transform/scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 15 )
+texture = ExtResource( 13 )
 script/script = SubResource( 1 )
 
 [node name="Animator" type="AnimationPlayer" parent="Background/Stars/Star#3"]
@@ -392,7 +348,7 @@ autoplay = "shine"
 editor/display_folded = true
 transform/pos = Vector2( 722.72, 292.812 )
 transform/scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 15 )
+texture = ExtResource( 13 )
 script/script = SubResource( 1 )
 
 [node name="Animator" type="AnimationPlayer" parent="Background/Stars/Star#4"]
@@ -411,7 +367,7 @@ autoplay = "shine"
 editor/display_folded = true
 transform/pos = Vector2( 830.117, 289.202 )
 transform/scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 15 )
+texture = ExtResource( 13 )
 script/script = SubResource( 1 )
 
 [node name="Animator" type="AnimationPlayer" parent="Background/Stars/Star#5"]
@@ -430,7 +386,7 @@ autoplay = "shine"
 editor/display_folded = true
 transform/pos = Vector2( 986.25, 371.33 )
 transform/scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 15 )
+texture = ExtResource( 13 )
 script/script = SubResource( 1 )
 
 [node name="Animator" type="AnimationPlayer" parent="Background/Stars/Star#6"]
@@ -449,7 +405,7 @@ autoplay = "shine"
 editor/display_folded = true
 transform/pos = Vector2( 1062.06, 494.07 )
 transform/scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 15 )
+texture = ExtResource( 13 )
 script/script = SubResource( 1 )
 
 [node name="Animator" type="AnimationPlayer" parent="Background/Stars/Star#7"]
@@ -468,7 +424,7 @@ autoplay = "shine"
 editor/display_folded = true
 transform/pos = Vector2( 791.31, 587.028 )
 transform/scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 15 )
+texture = ExtResource( 13 )
 script/script = SubResource( 1 )
 
 [node name="Animator" type="AnimationPlayer" parent="Background/Stars/Star#8"]
@@ -487,7 +443,7 @@ autoplay = "shine"
 editor/display_folded = true
 transform/pos = Vector2( 320.204, 706.158 )
 transform/scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 15 )
+texture = ExtResource( 13 )
 script/script = SubResource( 1 )
 
 [node name="Animator" type="AnimationPlayer" parent="Background/Stars/Star#9"]
@@ -506,7 +462,7 @@ autoplay = "shine"
 editor/display_folded = true
 transform/pos = Vector2( 1062.06, 695.328 )
 transform/scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 15 )
+texture = ExtResource( 13 )
 script/script = SubResource( 1 )
 
 [node name="Animator" type="AnimationPlayer" parent="Background/Stars/Star#10"]
@@ -525,7 +481,7 @@ autoplay = "shine"
 editor/display_folded = true
 transform/pos = Vector2( 1165.61, 89.0507 )
 transform/scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 15 )
+texture = ExtResource( 13 )
 script/script = SubResource( 1 )
 
 [node name="Animator" type="AnimationPlayer" parent="Background/Stars/Star#11"]
@@ -544,7 +500,7 @@ autoplay = "shine"
 editor/display_folded = true
 transform/pos = Vector2( 1199.02, 134.146 )
 transform/scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 15 )
+texture = ExtResource( 13 )
 script/script = SubResource( 1 )
 
 [node name="Animator" type="AnimationPlayer" parent="Background/Stars/Star#12"]
@@ -563,7 +519,7 @@ autoplay = "shine"
 editor/display_folded = true
 transform/pos = Vector2( 1120.52, 129.135 )
 transform/scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 15 )
+texture = ExtResource( 13 )
 script/script = SubResource( 1 )
 
 [node name="Animator" type="AnimationPlayer" parent="Background/Stars/Star#13"]
@@ -582,7 +538,7 @@ autoplay = "shine"
 editor/display_folded = true
 transform/pos = Vector2( 1162.27, 152.518 )
 transform/scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 15 )
+texture = ExtResource( 13 )
 script/script = SubResource( 1 )
 
 [node name="Animator" type="AnimationPlayer" parent="Background/Stars/Star#14"]
@@ -601,7 +557,7 @@ autoplay = "shine"
 editor/display_folded = true
 transform/pos = Vector2( 1142.23, 212.644 )
 transform/scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 15 )
+texture = ExtResource( 13 )
 script/script = SubResource( 1 )
 
 [node name="Animator" type="AnimationPlayer" parent="Background/Stars/Star#15"]
@@ -620,7 +576,7 @@ autoplay = "shine"
 editor/display_folded = true
 transform/pos = Vector2( 280.414, 152.518 )
 transform/scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 15 )
+texture = ExtResource( 13 )
 script/script = SubResource( 1 )
 
 [node name="Animator" type="AnimationPlayer" parent="Background/Stars/Star#16"]
@@ -639,7 +595,7 @@ autoplay = "shine"
 editor/display_folded = true
 transform/pos = Vector2( 352.232, 132.476 )
 transform/scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 15 )
+texture = ExtResource( 13 )
 script/script = SubResource( 1 )
 
 [node name="Animator" type="AnimationPlayer" parent="Background/Stars/Star#17"]
@@ -658,7 +614,7 @@ autoplay = "shine"
 editor/display_folded = true
 transform/pos = Vector2( 429.06, 109.093 )
 transform/scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 15 )
+texture = ExtResource( 13 )
 script/script = SubResource( 1 )
 
 [node name="Animator" type="AnimationPlayer" parent="Background/Stars/Star#18"]
@@ -677,7 +633,7 @@ autoplay = "shine"
 editor/display_folded = true
 transform/pos = Vector2( 100.034, 483.215 )
 transform/scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 15 )
+texture = ExtResource( 13 )
 script/script = SubResource( 1 )
 
 [node name="Animator" type="AnimationPlayer" parent="Background/Stars/Star#19"]
@@ -696,7 +652,7 @@ autoplay = "shine"
 editor/display_folded = true
 transform/pos = Vector2( 171.852, 473.193 )
 transform/scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 15 )
+texture = ExtResource( 13 )
 script/script = SubResource( 1 )
 
 [node name="Animator" type="AnimationPlayer" parent="Background/Stars/Star#20"]
@@ -715,7 +671,7 @@ autoplay = "shine"
 editor/display_folded = true
 transform/pos = Vector2( 213.606, 524.969 )
 transform/scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 15 )
+texture = ExtResource( 13 )
 script/script = SubResource( 1 )
 
 [node name="Animator" type="AnimationPlayer" parent="Background/Stars/Star#21"]
@@ -734,7 +690,7 @@ autoplay = "shine"
 editor/display_folded = true
 transform/pos = Vector2( 158.49, 588.436 )
 transform/scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 15 )
+texture = ExtResource( 13 )
 script/script = SubResource( 1 )
 
 [node name="Animator" type="AnimationPlayer" parent="Background/Stars/Star#22"]
@@ -753,7 +709,7 @@ autoplay = "shine"
 editor/display_folded = true
 transform/pos = Vector2( 69.9703, 563.383 )
 transform/scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 15 )
+texture = ExtResource( 13 )
 script/script = SubResource( 1 )
 
 [node name="Animator" type="AnimationPlayer" parent="Background/Stars/Star#23"]
@@ -772,7 +728,7 @@ autoplay = "shine"
 editor/display_folded = true
 transform/pos = Vector2( 86.6721, 683.637 )
 transform/scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 15 )
+texture = ExtResource( 13 )
 script/script = SubResource( 1 )
 
 [node name="Animator" type="AnimationPlayer" parent="Background/Stars/Star#24"]
@@ -791,7 +747,7 @@ autoplay = "shine"
 editor/display_folded = true
 transform/pos = Vector2( 93.3528, 817.252 )
 transform/scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 15 )
+texture = ExtResource( 13 )
 script/script = SubResource( 1 )
 
 [node name="Animator" type="AnimationPlayer" parent="Background/Stars/Star#25"]
@@ -810,7 +766,7 @@ autoplay = "shine"
 editor/display_folded = true
 transform/pos = Vector2( 248.68, 954.207 )
 transform/scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 15 )
+texture = ExtResource( 13 )
 script/script = SubResource( 1 )
 
 [node name="Animator" type="AnimationPlayer" parent="Background/Stars/Star#26"]
@@ -829,7 +785,7 @@ autoplay = "shine"
 editor/display_folded = true
 transform/pos = Vector2( 88.3423, 247.718 )
 transform/scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 15 )
+texture = ExtResource( 13 )
 script/script = SubResource( 1 )
 
 [node name="Animator" type="AnimationPlayer" parent="Background/Stars/Star#27"]
@@ -848,7 +804,7 @@ autoplay = "shine"
 editor/display_folded = true
 transform/pos = Vector2( 978.551, 99.0719 )
 transform/scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 15 )
+texture = ExtResource( 13 )
 script/script = SubResource( 1 )
 
 [node name="Animator" type="AnimationPlayer" parent="Background/Stars/Star#28"]
@@ -867,7 +823,7 @@ autoplay = "shine"
 editor/display_folded = true
 transform/pos = Vector2( 749.736, 84.0402 )
 transform/scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 15 )
+texture = ExtResource( 13 )
 script/script = SubResource( 1 )
 
 [node name="Animator" type="AnimationPlayer" parent="Background/Stars/Star#29"]
@@ -886,7 +842,7 @@ autoplay = "shine"
 editor/display_folded = true
 transform/pos = Vector2( 875, 17.2328 )
 transform/scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 15 )
+texture = ExtResource( 13 )
 script/script = SubResource( 1 )
 
 [node name="Animator" type="AnimationPlayer" parent="Background/Stars/Star#30"]
@@ -905,7 +861,7 @@ autoplay = "shine"
 editor/display_folded = true
 transform/pos = Vector2( 1138.56, 614.789 )
 transform/scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 15 )
+texture = ExtResource( 13 )
 script/script = SubResource( 1 )
 
 [node name="Animator" type="AnimationPlayer" parent="Background/Stars/Star#31"]
@@ -924,7 +880,7 @@ autoplay = "shine"
 editor/display_folded = true
 transform/pos = Vector2( 1220.36, 578.436 )
 transform/scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 15 )
+texture = ExtResource( 13 )
 script/script = SubResource( 1 )
 
 [node name="Animator" type="AnimationPlayer" parent="Background/Stars/Star#32"]
@@ -943,7 +899,7 @@ autoplay = "shine"
 editor/display_folded = true
 transform/pos = Vector2( 1222.63, 321.691 )
 transform/scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 15 )
+texture = ExtResource( 13 )
 script/script = SubResource( 1 )
 
 [node name="Animator" type="AnimationPlayer" parent="Background/Stars/Star#33"]
@@ -957,22 +913,99 @@ playback/speed = 1.0
 blend_times = [  ]
 autoplay = "shine"
 
+[node name="Panel" type="Panel" parent="."]
+
+visibility/visible = false
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+theme/theme = ExtResource( 14 )
+margin/left = 301.0
+margin/top = 284.0
+margin/right = 974.0
+margin/bottom = 557.0
+
+[node name="Title" type="Label" parent="Panel"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 3
+size_flags/vertical = 3
+margin/left = -2.0
+margin/top = 12.0
+margin/right = 674.0
+margin/bottom = 35.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "ACHIEVEMENT UNLOCKED"
+align = 1
+valign = 1
+clip_text = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Label" type="Label" parent="Panel"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 3
+size_flags/vertical = 3
+margin/left = -2.0
+margin/top = 21.0
+margin/right = 671.0
+margin/bottom = 232.0
+custom_colors/font_color = Color( 1, 0.901961, 0.501961, 1 )
+text = "ACHIEVEMENT UNLOCKED"
+align = 1
+valign = 1
+autowrap = true
+clip_text = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Button" type="Button" parent="Panel"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 253.0
+margin/top = 200.0
+margin/right = 427.0
+margin/bottom = 251.0
+custom_styles/hover = SubResource( 4 )
+custom_styles/pressed = SubResource( 5 )
+custom_styles/focus = SubResource( 6 )
+custom_styles/disabled = SubResource( 7 )
+custom_styles/normal = SubResource( 8 )
+toggle_mode = false
+click_on_press = true
+enabled_focus_mode = 2
+shortcut = null
+text = "OK"
+flat = true
+
 [connection signal="released" from="ScreenMargin/ScreenPortions/TopPortion/Back" to="." method="change_to_next_scene"]
 
-[connection signal="released" from="ScreenMargin/ScreenPortions/CenterPortion/Achievements/FirstStep" to="ScreenMargin" method="call_popup" binds= [ "firststep" ]]
+[connection signal="released" from="ScreenMargin/ScreenPortions/CenterPortion/Acheesements/FirstStep" to="ScreenMargin" method="call_popup" binds= [ "firststep" ]]
 
-[connection signal="released" from="ScreenMargin/ScreenPortions/CenterPortion/Achievements/Astromouse" to="ScreenMargin" method="call_popup" binds= [ "mooncheeser" ]]
+[connection signal="released" from="ScreenMargin/ScreenPortions/CenterPortion/Acheesements/Astromouse" to="ScreenMargin" method="call_popup" binds= [ "mooncheeser" ]]
 
-[connection signal="released" from="ScreenMargin/ScreenPortions/CenterPortion/Achievements/Fullmoon" to="ScreenMargin" method="call_popup" binds= [ "fullmoon" ]]
+[connection signal="released" from="ScreenMargin/ScreenPortions/CenterPortion/Acheesements/Fullmoon" to="ScreenMargin" method="call_popup" binds= [ "fullmoon" ]]
 
-[connection signal="released" from="ScreenMargin/ScreenPortions/CenterPortion/Achievements/Void" to="ScreenMargin" method="call_popup" binds= [ "void" ]]
+[connection signal="released" from="ScreenMargin/ScreenPortions/CenterPortion/Acheesements/Void" to="ScreenMargin" method="call_popup" binds= [ "void" ]]
 
-[connection signal="released" from="ScreenMargin/ScreenPortions/CenterPortion/Achievements/Supernova" to="ScreenMargin" method="call_popup" binds= [ "supernova" ]]
+[connection signal="released" from="ScreenMargin/ScreenPortions/CenterPortion/Acheesements/Supernova" to="ScreenMargin" method="call_popup" binds= [ "supernova" ]]
 
-[connection signal="released" from="ScreenMargin/ScreenPortions/CenterPortion/Achievements/Madness" to="ScreenMargin" method="call_popup" binds= [ "madness" ]]
+[connection signal="released" from="ScreenMargin/ScreenPortions/CenterPortion/Acheesements/Madness" to="ScreenMargin" method="call_popup" binds= [ "madness" ]]
 
-[connection signal="released" from="ScreenMargin/ScreenPortions/CenterPortion/Achievements/Starmouse" to="ScreenMargin" method="call_popup" binds= [ "starmouse" ]]
+[connection signal="released" from="ScreenMargin/ScreenPortions/CenterPortion/Acheesements/Starmouse" to="ScreenMargin" method="call_popup" binds= [ "starmouse" ]]
 
-[connection signal="released" from="ScreenMargin/ScreenPortions/CenterPortion/Achievements/GravityMaster" to="ScreenMargin" method="call_popup" binds= [ "gravity" ]]
+[connection signal="released" from="ScreenMargin/ScreenPortions/CenterPortion/Acheesements/GravityMaster" to="ScreenMargin" method="call_popup" binds= [ "gravity" ]]
+
+[connection signal="released" from="Panel/Button" to="Panel" method="hide"]
 
 

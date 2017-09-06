@@ -4,7 +4,7 @@
 [ext_resource path="res://Actors/Astromouse/Astromouse.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Actors/Moon/Moon.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Objects/Spawner/spawner.gd" type="Script" id=4]
-[ext_resource path="res://Actors/Planet/Planet.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Actors/Blackhole/black_hole.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Actors/Star/Star.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Actors/Comet/Comet.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Levels/background.tscn" type="PackedScene" id=8]
@@ -105,23 +105,21 @@ game_state = 0
 
 [node name="Astromouse" parent="." instance=ExtResource( 2 )]
 
-transform/pos = Vector2( 621.044, 332.583 )
-jump_force = 500.0
+transform/pos = Vector2( 630.645, 212.563 )
 
 [node name="Moon" parent="." instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 627.427, 615.963 )
-z/z = 0
+transform/pos = Vector2( 640.154, 508.41 )
 
 [node name="Void" type="StaticBody2D" parent="." groups=[
-"enemy",
 "void",
+"enemy",
 ]]
 
 editor/display_folded = true
 input/pickable = true
 shapes/0/shape = SubResource( 1 )
-shapes/0/transform = Matrix32( 1, 0, 0, 1, 616, 978.882 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 640, 978.882 )
 shapes/0/trigger = true
 collision/layers = 1
 collision/mask = 1
@@ -132,21 +130,21 @@ bounce = 0.0
 
 [node name="Shape" type="CollisionShape2D" parent="Void"]
 
-transform/pos = Vector2( 616, 978.882 )
+transform/pos = Vector2( 640, 978.882 )
 shape = SubResource( 1 )
 trigger = true
 _update_shape_index = 0
 
-[node name="PlanetSpawner" type="Position2D" parent="."]
+[node name="BlackholeSpawner" type="Position2D" parent="."]
 
 editor/display_folded = true
 transform/pos = Vector2( 991.207, -42.245 )
 script/script = ExtResource( 4 )
 spawn_scene = ExtResource( 5 )
-min_spawn_time = 60.0
-max_spawn_time = 90.0
+min_spawn_time = 30.0
+max_spawn_time = 45.0
 
-[node name="Animator" type="AnimationPlayer" parent="PlanetSpawner"]
+[node name="Animator" type="AnimationPlayer" parent="BlackholeSpawner"]
 
 playback/process_mode = 1
 playback/default_blend_time = 0.0
@@ -157,10 +155,10 @@ playback/speed = 1.0
 blend_times = [  ]
 autoplay = "PlanetAnim"
 
-[node name="Timer" type="Timer" parent="PlanetSpawner"]
+[node name="Timer" type="Timer" parent="BlackholeSpawner"]
 
 process_mode = 1
-wait_time = 60.0
+wait_time = 30.0
 one_shot = false
 autostart = true
 
@@ -170,8 +168,8 @@ editor/display_folded = true
 transform/pos = Vector2( 0, 116.589 )
 script/script = ExtResource( 4 )
 spawn_scene = ExtResource( 6 )
-min_spawn_time = 12.0
-max_spawn_time = 20.0
+min_spawn_time = 8.0
+max_spawn_time = 16.0
 
 [node name="Animator" type="AnimationPlayer" parent="LeftStarSpawner"]
 
@@ -187,7 +185,7 @@ autoplay = "LeftStarSpawn"
 [node name="Timer" type="Timer" parent="LeftStarSpawner"]
 
 process_mode = 1
-wait_time = 25.0
+wait_time = 8.0
 one_shot = false
 autostart = true
 
@@ -197,8 +195,8 @@ editor/display_folded = true
 transform/pos = Vector2( 0, 90.6803 )
 script/script = ExtResource( 4 )
 spawn_scene = ExtResource( 7 )
-min_spawn_time = 7.0
-max_spawn_time = 10.0
+min_spawn_time = 5.0
+max_spawn_time = 15.0
 
 [node name="Animator" type="AnimationPlayer" parent="LeftCometSpawner"]
 
@@ -214,7 +212,7 @@ autoplay = "LeftCometSpawner"
 [node name="Timer" type="Timer" parent="LeftCometSpawner"]
 
 process_mode = 1
-wait_time = 20.0
+wait_time = 10.0
 one_shot = false
 autostart = true
 
@@ -224,8 +222,8 @@ editor/display_folded = true
 transform/pos = Vector2( 1278.78, 116.589 )
 script/script = ExtResource( 4 )
 spawn_scene = ExtResource( 6 )
-min_spawn_time = 12.0
-max_spawn_time = 20.0
+min_spawn_time = 8.0
+max_spawn_time = 16.0
 
 [node name="Animator" type="AnimationPlayer" parent="RightStarSpawner"]
 
@@ -241,18 +239,18 @@ autoplay = "RightStarSpawner"
 [node name="Timer" type="Timer" parent="RightStarSpawner"]
 
 process_mode = 1
-wait_time = 35.0
+wait_time = 12.0
 one_shot = false
 autostart = true
 
 [node name="RightCometSpawner" type="Position2D" parent="."]
 
 editor/display_folded = true
-transform/pos = Vector2( 1278.78, 75.8753 )
+transform/pos = Vector2( 1278.78, 629.21 )
 script/script = ExtResource( 4 )
 spawn_scene = ExtResource( 7 )
 min_spawn_time = 5.0
-max_spawn_time = 7.0
+max_spawn_time = 15.0
 
 [node name="Animator" type="AnimationPlayer" parent="RightCometSpawner"]
 
@@ -268,13 +266,15 @@ autoplay = "RightCometSpawner"
 [node name="Timer" type="Timer" parent="RightCometSpawner"]
 
 process_mode = 1
-wait_time = 6.0
+wait_time = 3.1
 one_shot = false
 autostart = true
 
 [node name="Background" parent="." instance=ExtResource( 8 )]
 
-[connection signal="timeout" from="PlanetSpawner/Timer" to="PlanetSpawner" method="_spawn"]
+layer = -2
+
+[connection signal="timeout" from="BlackholeSpawner/Timer" to="BlackholeSpawner" method="_spawn"]
 
 [connection signal="timeout" from="LeftStarSpawner/Timer" to="LeftStarSpawner" method="_spawn"]
 

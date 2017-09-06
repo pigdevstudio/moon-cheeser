@@ -1,5 +1,5 @@
-extends "res://GUI/ScreenMargin/screen_margin.gd"
-
+extends Control
+onready var popup = get_parent().get_node("Panel")
 func _ready():
 	acheesements.read_achievements()
 	skins.read_skins()
@@ -9,6 +9,6 @@ func call_popup(achievement):
 	var description = acheesements.dict[achievement].description
 	var accomplished = acheesements.dict[achievement].accomplished
 	var total = acheesements.dict[achievement].total
-	get_node("Dialog").set_title(title)
-	get_node("Dialog").set_text("%s, you already accomplished: %s / %s" % [description, accomplished, total])
-	get_node("Dialog").popup_centered()
+	popup.get_node("Title").set_text(title)
+	popup.get_node("Label").set_text("%s, you already accomplished: %s / %s" % [description, accomplished, total])
+	popup.show()

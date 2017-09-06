@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=1]
+[gd_scene load_steps=7 format=1]
 
 [ext_resource path="res://Levels/star_back.png" type="Texture" id=1]
 [ext_resource path="res://Objects/Planets/earth.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Objects/Planets/plinton.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Objects/Planets/satheri.tscn" type="PackedScene" id=4]
 
 [sub_resource type="GDScript" id=1]
 
@@ -38,17 +39,22 @@ tracks/1/keys = {
 "values": [ 0.0, 360.0 ]
 }
 
-[node name="Background" type="CanvasLayer"]
+[node name="Background" type="ParallaxBackground"]
 
 layer = 1
 offset = Vector2( 0, 0 )
 rotation = 0.0
 scale = Vector2( 1, 1 )
+scroll/offset = Vector2( 0, 0 )
+scroll/base_offset = Vector2( 0, 0 )
+scroll/base_scale = Vector2( 1, 1 )
+scroll/limit_begin = Vector2( 0, 0 )
+scroll/limit_end = Vector2( 0, 0 )
+scroll/ignore_camera_zoom = false
 
 [node name="Stars" type="CanvasLayer" parent="."]
 
-editor/display_folded = true
-layer = -3
+layer = -5
 offset = Vector2( 0, 0 )
 rotation = 0.0
 scale = Vector2( 1, 1 )
@@ -100,25 +106,6 @@ texture = ExtResource( 1 )
 script/script = SubResource( 1 )
 
 [node name="Animator" type="AnimationPlayer" parent="Stars/Star#2"]
-
-playback/process_mode = 1
-playback/default_blend_time = 0.0
-root/root = NodePath("..")
-anims/shine = SubResource( 2 )
-playback/active = true
-playback/speed = 1.0
-blend_times = [  ]
-autoplay = "shine"
-
-[node name="Star#3" type="Sprite" parent="Stars"]
-
-editor/display_folded = true
-transform/pos = Vector2( 779.577, 390.283 )
-transform/scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 1 )
-script/script = SubResource( 1 )
-
-[node name="Animator" type="AnimationPlayer" parent="Stars/Star#3"]
 
 playback/process_mode = 1
 playback/default_blend_time = 0.0
@@ -699,13 +686,13 @@ playback/speed = 1.0
 blend_times = [  ]
 autoplay = "shine"
 
-[node name="Planets" type="CanvasLayer" parent="."]
+[node name="Planets" type="ParallaxLayer" parent="."]
 
 editor/display_folded = true
-layer = -3
-offset = Vector2( 0, 0 )
-rotation = 0.0
-scale = Vector2( 1, 1 )
+transform/rot = -0.136007
+motion/scale = Vector2( 1, 1 )
+motion/offset = Vector2( 0, 0 )
+motion/mirroring = Vector2( 0, 0 )
 
 [node name="Earth" parent="Planets" instance=ExtResource( 2 )]
 
@@ -715,12 +702,19 @@ transform/rot = 20.7617
 
 [node name="Plinthon" parent="Planets" instance=ExtResource( 3 )]
 
+editor/display_folded = true
 transform/pos = Vector2( 1068.06, 494.138 )
 z/z = 0
 
 [node name="sky" parent="Planets/Plinthon"]
 
 editor/display_folded = true
+
+[node name="satheri" parent="Planets" instance=ExtResource( 4 )]
+
+visibility/visible = false
+transform/pos = Vector2( 159.748, 99.7531 )
+transform/scale = Vector2( 2.51148, 2.51148 )
 
 
 [editable path="Planets/Plinthon"]

@@ -1,7 +1,0 @@
-[gd_resource type="CircleShape2D" format=1]
-
-[resource]
-
-custom_solver_bias = 0.0
-radius = 68.5652
-

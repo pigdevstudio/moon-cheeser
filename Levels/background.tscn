@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=1]
+[gd_scene load_steps=9 format=1]
 
 [ext_resource path="res://Levels/star_back.png" type="Texture" id=1]
-[ext_resource path="res://Objects/Planets/earth.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Objects/Planets/plinton.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Objects/Planets/satheri.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Levels/starboy_crux.png" type="Texture" id=2]
+[ext_resource path="res://Objects/Planets/earth.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Objects/Planets/plinton.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Objects/Planets/satheri.tscn" type="PackedScene" id=5]
 
 [sub_resource type="GDScript" id=1]
 
@@ -37,6 +38,23 @@ tracks/1/keys = {
 "transitions": FloatArray( 1, 1 ),
 "update": 0,
 "values": [ 0.0, 360.0 ]
+}
+
+[sub_resource type="Animation" id=3]
+
+resource/name = "fade"
+length = 0.5
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:visibility/opacity")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = {
+"times": FloatArray( 0, 0.5 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
 }
 
 [node name="Background" type="ParallaxBackground"]
@@ -252,7 +270,7 @@ autoplay = "shine"
 [node name="Star#11" type="Sprite" parent="Stars"]
 
 editor/display_folded = true
-transform/pos = Vector2( 1165.61, 89.0507 )
+transform/pos = Vector2( 1168.6, 84.2608 )
 transform/scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 1 )
 script/script = SubResource( 1 )
@@ -271,7 +289,7 @@ autoplay = "shine"
 [node name="Star#12" type="Sprite" parent="Stars"]
 
 editor/display_folded = true
-transform/pos = Vector2( 1199.02, 134.146 )
+transform/pos = Vector2( 1198.42, 129.955 )
 transform/scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 1 )
 script/script = SubResource( 1 )
@@ -290,7 +308,7 @@ autoplay = "shine"
 [node name="Star#13" type="Sprite" parent="Stars"]
 
 editor/display_folded = true
-transform/pos = Vector2( 1120.52, 129.135 )
+transform/pos = Vector2( 1119.32, 114.167 )
 transform/scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 1 )
 script/script = SubResource( 1 )
@@ -309,7 +327,7 @@ autoplay = "shine"
 [node name="Star#14" type="Sprite" parent="Stars"]
 
 editor/display_folded = true
-transform/pos = Vector2( 1162.27, 152.518 )
+transform/pos = Vector2( 1158.68, 147.728 )
 transform/scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 1 )
 script/script = SubResource( 1 )
@@ -328,7 +346,7 @@ autoplay = "shine"
 [node name="Star#15" type="Sprite" parent="Stars"]
 
 editor/display_folded = true
-transform/pos = Vector2( 1142.23, 212.644 )
+transform/pos = Vector2( 1136.24, 234.199 )
 transform/scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 1 )
 script/script = SubResource( 1 )
@@ -686,6 +704,28 @@ playback/speed = 1.0
 blend_times = [  ]
 autoplay = "shine"
 
+[node name="Crux" type="Sprite" parent="Stars" groups=[
+"crux",
+]]
+
+visibility/opacity = 0.0
+transform/pos = Vector2( 1151.57, 159.319 )
+transform/rot = -11.4987
+transform/scale = Vector2( 0.786583, 0.786583 )
+z/z = -1
+texture = ExtResource( 2 )
+
+[node name="Animator" type="AnimationPlayer" parent="Stars/Crux"]
+
+playback/process_mode = 1
+playback/default_blend_time = 0.0
+root/root = NodePath("..")
+anims/fade = SubResource( 3 )
+playback/active = true
+playback/speed = 1.0
+blend_times = [  ]
+autoplay = ""
+
 [node name="Planets" type="ParallaxLayer" parent="."]
 
 editor/display_folded = true
@@ -694,13 +734,13 @@ motion/scale = Vector2( 1, 1 )
 motion/offset = Vector2( 0, 0 )
 motion/mirroring = Vector2( 0, 0 )
 
-[node name="Earth" parent="Planets" instance=ExtResource( 2 )]
+[node name="Earth" parent="Planets" instance=ExtResource( 3 )]
 
 editor/display_folded = true
 transform/pos = Vector2( 142.115, 130.886 )
 transform/rot = 20.7617
 
-[node name="Plinthon" parent="Planets" instance=ExtResource( 3 )]
+[node name="Plinthon" parent="Planets" instance=ExtResource( 4 )]
 
 editor/display_folded = true
 transform/pos = Vector2( 1068.06, 494.138 )
@@ -710,7 +750,7 @@ z/z = 0
 
 editor/display_folded = true
 
-[node name="satheri" parent="Planets" instance=ExtResource( 4 )]
+[node name="satheri" parent="Planets" instance=ExtResource( 5 )]
 
 visibility/visible = false
 transform/pos = Vector2( 159.748, 99.7531 )

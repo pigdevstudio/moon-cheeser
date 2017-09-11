@@ -12,6 +12,8 @@ func _ready():
 	moon.show_gravity()
 	acheesements.modify_achievement("starmouse", 1)
 	get_node("Sprite").set_texture(load(skins.starmouse_skin))
+	if acheesements.dict["starmouse"].accomplished >= acheesements.dict["starmouse"].total:
+		get_tree().get_nodes_in_group("crux")[0].get_node("Animator").play("fade")
 	set_fixed_process(true)
 	
 func _fixed_process(delta):
@@ -36,13 +38,15 @@ func steer(target_pos):
 
 func _on_timeout():
 	get_node("Sprite/Animator").play("blink")
-
+	
 func _on_body_enter( body ):
 	if body.is_in_group("cheese"):
 		body.increase_score()
 
 
 func _on_animator_finished():
+	if acheesements.dict["starmouse"].accomplished >= acheesements.dict["starmouse"].total:
+		get_tree().get_nodes_in_group("crux")[0].get_node("Animator").play_backwards("fade")
 	if get_parent().get_game_state() == 0:
 		moon.hide_gravity()
 	else:

@@ -6,6 +6,8 @@ export (float) var pulse_interval = 2.0
 onready var moon = get_parent().find_node("Moon")
 var can_pulse = true
 func _ready():
+	if acheesements.dict["void"].accomplished >= acheesements.dict["void"].total:
+		get_node("Drum").play(bgm.get_pos())
 	if get_parent().has_method("set_game_state"):
 		get_parent().set_game_state(1)
 	if moon != null:

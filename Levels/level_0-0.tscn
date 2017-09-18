@@ -4,10 +4,10 @@
 [ext_resource path="res://Actors/Astromouse/Astromouse.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Actors/Moon/Moon.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Objects/Spawner/spawner.gd" type="Script" id=4]
-[ext_resource path="res://Actors/Blackhole/black_hole.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Actors/Blackhole/Blackhole.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Actors/Star/Star.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Actors/Comet/Comet.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Levels/background.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Levels/Background.tscn" type="PackedScene" id=8]
 
 [sub_resource type="LineShape2D" id=1]
 
@@ -29,7 +29,7 @@ tracks/0/keys = {
 "times": FloatArray( 0, 4 ),
 "transitions": FloatArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( -62.921, -90.6803 ), Vector2( 1304.69, -90.6803 ) ]
+"values": [ Vector2( -62.921, -90.6803 ), Vector2( 1304.69, 0 ) ]
 }
 
 [sub_resource type="Animation" id=3]
@@ -105,15 +105,15 @@ game_state = 0
 
 [node name="Astromouse" parent="." instance=ExtResource( 2 )]
 
-transform/pos = Vector2( 630.645, 212.563 )
+transform/pos = Vector2( 637.603, 250.977 )
 
 [node name="Moon" parent="." instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 640.154, 508.41 )
 
 [node name="Void" type="StaticBody2D" parent="." groups=[
-"void",
 "enemy",
+"void",
 ]]
 
 editor/display_folded = true
@@ -137,8 +137,7 @@ _update_shape_index = 0
 
 [node name="BlackholeSpawner" type="Position2D" parent="."]
 
-editor/display_folded = true
-transform/pos = Vector2( 991.207, -42.245 )
+transform/pos = Vector2( 1304.69, 0 )
 script/script = ExtResource( 4 )
 spawn_scene = ExtResource( 5 )
 min_spawn_time = 30.0

@@ -1,0 +1,99 @@
+[gd_scene load_steps=5 format=1]
+
+[ext_resource path="res://Actors/abstract_space_body.gd" type="Script" id=1]
+[ext_resource path="res://Actors/particle.tex" type="Texture" id=2]
+
+[sub_resource type="CircleShape2D" id=2]
+
+custom_solver_bias = 0.0
+radius = 34.8751
+
+[sub_resource type="CircleShape2D" id=1]
+
+custom_solver_bias = 0.0
+radius = 69.0086
+
+[node name="SpaceBody" type="KinematicBody2D" groups=[
+"space_body",
+]]
+
+input/pickable = false
+shapes/0/shape = SubResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+collision/margin = 0.08
+script/script = ExtResource( 1 )
+direction = 1
+
+[node name="Sprite" type="AnimatedSprite" parent="."]
+
+animation = "default"
+
+[node name="Tail" type="Particles2D" parent="Sprite"]
+
+visibility/behind_parent = true
+transform/pos = Vector2( 109.529, 0 )
+config/amount = 5
+config/lifetime = 1.0
+config/process_mode = 1
+config/half_extents = Vector2( 50, 60 )
+config/local_space = false
+config/texture = ExtResource( 2 )
+params/direction = 90.0
+params/spread = 50.0
+params/linear_velocity = 20.0
+params/spin_velocity = 0.0
+params/orbit_velocity = 0.0
+params/gravity_direction = 0.0
+params/gravity_strength = 0.0
+params/radial_accel = 0.0
+params/tangential_accel = 0.0
+params/damping = 0.0
+params/initial_angle = 0.0
+params/initial_size = 0.7
+params/final_size = 1.0
+params/hue_variation = 0.0
+params/anim_speed_scale = 1.0
+params/anim_initial_pos = 0.0
+randomness/spread = 0.4
+randomness/linear_velocity = 0.46
+randomness/gravity_direction = 0.2
+
+[node name="Visibility" type="VisibilityNotifier2D" parent="Sprite"]
+
+transform/pos = Vector2( 73.8245, 0.0223724 )
+transform/scale = Vector2( 6.56864, 5.08701 )
+rect = Rect2( -10, -10, 20, 20 )
+
+[node name="AreaInput" type="Area2D" parent="."]
+
+input/pickable = true
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+
+[node name="Shape" type="CollisionShape2D" parent="AreaInput"]
+
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = 0
+
+[node name="Shape" type="CollisionShape2D" parent="."]
+
+shape = SubResource( 2 )
+trigger = false
+_update_shape_index = 0
+
+[connection signal="exit_screen" from="Sprite/Visibility" to="." method="queue_free"]
+
+[connection signal="mouse_enter" from="AreaInput" to="." method="_set_mouse_on" binds= [ true ]]
+
+[connection signal="mouse_exit" from="AreaInput" to="." method="_set_mouse_on" binds= [ false ]]
+
+

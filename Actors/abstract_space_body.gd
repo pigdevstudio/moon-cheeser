@@ -28,10 +28,6 @@ func _fixed_process(delta):
 func _set_mouse_on(is_on):
 	moon.is_mouse_on = !is_on
 	is_mouse_on = is_on
-	
-func _exit_screen():
-	get_node("Animator").stop()
-	queue_free()
 
 func apply_route():
 	if Input.is_mouse_button_pressed(BUTTON_LEFT) and not already_pressed and is_mouse_on:
@@ -42,7 +38,6 @@ func apply_route():
 	elif not Input.is_mouse_button_pressed(BUTTON_LEFT) and already_pressed:
 		moon.is_mouse_on = true
 		if not already_slide and is_sliding:
-			get_node("Animator").seek(0.5, true)
 			current_pos = get_global_mouse_pos()
 			slide( -1 * sign((initial_pos - current_pos).y))
 	return(velocity)
@@ -69,8 +64,7 @@ func _handle_collision(collider):
 				_kill_player(collider)
 			queue_free()
 		elif collider.is_in_group("star") and self.is_in_group("star"):
-			if route_already_changed:
-				acheesements.modify_achievement("supernova", 1)
+			acheesements.modify_achievement("supernova", 1)
 			collider.free()
 			spawn_placeholder(3, get_collision_pos())
 			queue_free()
@@ -91,9 +85,9 @@ func slide(normal):
 	var point = get_pos() + (Vector2(-velocity.normalized().x, velocity.normalized().y) * (100 * normal))
 	rotate(get_angle_to(point))
 	var angle = get_angle_to(get_pos() - velocity)
-	get_node("Sprite/Outer").set_param(Particles2D.PARAM_INITIAL_ANGLE, rad2deg(angle) + 90)
+	get_node("Sprite/Tail").set_param(Particles2D.PARAM_INITIAL_ANGLE, rad2deg(angle) + 90)
 	if is_in_group("comet"):
-		get_node("Sprite/Inner").set_param(Particles2D.PARAM_INITIAL_ANGLE, rad2deg(angle) + 90)
+		get_node("Sprite/Core").set_param(Particles2D.PARAM_INITIAL_ANGLE, rad2deg(angle) + 90)
 	already_slide = true
 	
 func spawn_placeholder(type, position):

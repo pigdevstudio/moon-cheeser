@@ -108,7 +108,6 @@ content_margin/bottom = -1.0
 
 [node name="ScreenMargin" type="MarginContainer" parent="."]
 
-editor/display_folded = true
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2

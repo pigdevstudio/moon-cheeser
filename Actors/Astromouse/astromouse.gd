@@ -9,6 +9,8 @@ var jump_normal = Vector2(0, -1)
 onready var default_gravity_scale = get_gravity_scale()
 
 func _ready():
+	if acheesements.dict["mooncheeser"].accomplished >= acheesements.dict["mooncheeser"].total:
+		get_node("Sprite").set_texture(load("res://Actors/Astromouse/true_astro_spritesheet.png"))
 	invulnerable = true
 	get_node("Invulnerability").start()
 	set_fixed_process(true)
@@ -23,7 +25,7 @@ func jump():
 		apply_impulse(Vector2(0,0), jump_force * jump_normal)
 		get_node("Sprite").set_frame(2)
 		get_node("Animator").stop()
-		get_node("SFX").play("jumping")
+		get_node("SFX").emit_signal("is_playing", "jumping")
 	can_jump = false
 
 func _body_enter( body ):
@@ -47,7 +49,9 @@ func _body_enter( body ):
 			emit_signal("died")
 		
 	elif body.is_in_group("cheese"):
+		get_node("SFX").emit_signal("is_playing", "pickup")
 		body.increase_score()
+		
 		
 func is_falling():
 	if get_parent().get_game_state() == 0:

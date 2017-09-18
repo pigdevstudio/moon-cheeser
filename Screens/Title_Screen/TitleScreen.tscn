@@ -9,8 +9,6 @@
 [ext_resource path="res://Screens/Title_Screen/moon.png" type="Texture" id=7]
 [ext_resource path="res://Screens/Title_Screen/play_button.png" type="Texture" id=8]
 
-
-
 [sub_resource type="GDScript" id=1]
 
 script/source = "extends MarginContainer

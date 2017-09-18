@@ -4,9 +4,7 @@
 [ext_resource path="res://Screens/Play_Screen/play_screen.gd" type="Script" id=2]
 [ext_resource path="res://Levels/Level_0-0.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Screens/GaroaHackerClubeBold.otf" type="DynamicFontData" id=4]
-[ext_resource path="res://GUI/helper.tscn" type="PackedScene" id=5]
-
-
+[ext_resource path="res://GUI/Helper.tscn" type="PackedScene" id=5]
 
 [sub_resource type="Animation" id=1]
 
@@ -42,8 +40,13 @@ transform/pos = Vector2( 0, 1.36035 )
 
 [node name="Astromouse" parent="Level_0-0"]
 
-transform/pos = Vector2( 625.203, 309.149 )
+editor/display_folded = true
+transform/pos = Vector2( 640.77, 309.149 )
 z/z = 1
+
+[node name="Moon" parent="Level_0-0"]
+
+editor/display_folded = true
 
 [node name="LeftStarSpawner" parent="Level_0-0"]
 
@@ -66,7 +69,6 @@ editor/display_folded = true
 [node name="Fade" type="ColorFrame" parent="."]
 
 process/pause_mode = 2
-editor/display_folded = true
 visibility/blend_mode = 3
 focus/ignore_mouse = false
 focus/stop_mouse = true

@@ -5,19 +5,19 @@
 [ext_resource path="res://Actors/Comet/sprite_animation.tres" type="SpriteFrames" id=3]
 [ext_resource path="res://Actors/particle.tex" type="Texture" id=4]
 
-[sub_resource type="ColorRamp" id=4]
+[sub_resource type="ColorRamp" id=1]
 
 offsets = FloatArray( 0.495833, 0.995833 )
 colors = ColorArray( 0.266667, 0, 0.333333, 1, 0.266667, 0, 0.333333, 0 )
 
-[sub_resource type="ColorRamp" id=5]
+[sub_resource type="ColorRamp" id=2]
 
 offsets = FloatArray( 0.495833, 0.970833, 1 )
 colors = ColorArray( 1, 0.4, 0.333333, 1, 1, 0.4, 0.333333, 0.0578512, 1, 0.4, 0.333333, 0 )
 
-[node name="SpaceBody" groups=[
-"comet",
+[node name="Comet" groups=[
 "enemy",
+"comet",
 ] instance=ExtResource( 1 )]
 
 script/script = ExtResource( 2 )
@@ -26,6 +26,7 @@ script/script = ExtResource( 2 )
 
 transform/pos = Vector2( 0.207428, -0.385406 )
 transform/scale = Vector2( 0.454877, 0.454877 )
+z/z = 1
 frames = ExtResource( 3 )
 animation = "flying"
 playing = true
@@ -34,7 +35,7 @@ offset = Vector2( 160.398, 0.847276 )
 [node name="Tail" parent="Sprite"]
 
 transform/pos = Vector2( 429.047, 0.847276 )
-color/color_ramp = SubResource( 4 )
+color/color_ramp = SubResource( 1 )
 
 [node name="Visibility" parent="Sprite"]
 
@@ -66,6 +67,6 @@ params/final_size = 1.0
 params/hue_variation = 0.0
 params/anim_speed_scale = 1.0
 params/anim_initial_pos = 0.0
-color/color_ramp = SubResource( 5 )
+color/color_ramp = SubResource( 2 )
 
 

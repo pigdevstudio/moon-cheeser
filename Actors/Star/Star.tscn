@@ -9,17 +9,18 @@
 offsets = FloatArray( 0.3625, 1 )
 colors = ColorArray( 0.352941, 0.172549, 0.627451, 1, 0.352941, 0.172549, 0.627451, 0 )
 
-[node name="SpaceBody" groups=[
+[node name="Star" groups=[
 "star",
 ] instance=ExtResource( 1 )]
 
+z/z = 1
 script/script = ExtResource( 2 )
 
 [node name="Sprite" parent="."]
 
 transform/scale = Vector2( 0.412247, 0.412247 )
 frames = ExtResource( 3 )
-frame = 2
+frame = 1
 playing = true
 offset = Vector2( 161.029, 0 )
 

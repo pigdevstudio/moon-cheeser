@@ -64,8 +64,7 @@ func _handle_collision(collider):
 				_kill_player(collider)
 			queue_free()
 		elif collider.is_in_group("star") and self.is_in_group("star"):
-			if route_already_changed:
-				acheesements.modify_achievement("supernova", 1)
+			acheesements.modify_achievement("supernova", 1)
 			collider.free()
 			spawn_placeholder(3, get_collision_pos())
 			queue_free()

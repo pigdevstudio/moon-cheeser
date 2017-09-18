@@ -8,12 +8,14 @@ var already_pressed = false
 onready var target = get_viewport().get_mouse_pos()
 onready var moon = get_tree().get_nodes_in_group("moon")[0]
 func _ready():
-	get_node("Sax").play(bgm.get_pos())
 	moon.show_gravity()
 	acheesements.modify_achievement("starmouse", 1)
-	get_node("Sprite").set_texture(load(skins.starmouse_skin))
 	if acheesements.dict["starmouse"].accomplished >= acheesements.dict["starmouse"].total:
+		get_node("Sax").play(bgm.get_pos())
 		get_tree().get_nodes_in_group("crux")[0].get_node("Animator").play("fade")
+	if acheesements.dict["mooncheeser"].accomplished >= acheesements.dict["mooncheeser"].total:
+		get_node("Sprite").set_texture(load("res://Actors/Astromouse/true_starmouse.png"))
+		get_node("Sprite/Mask").set_pos(Vector2(0,5))
 	set_fixed_process(true)
 	
 func _fixed_process(delta):
@@ -41,6 +43,7 @@ func _on_timeout():
 	
 func _on_body_enter( body ):
 	if body.is_in_group("cheese"):
+		get_node("SFX").emit_signal("is_playing", "pickup")
 		body.increase_score()
 
 

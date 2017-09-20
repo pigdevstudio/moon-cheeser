@@ -40,7 +40,6 @@ transform/pos = Vector2( 0, 1.36035 )
 
 [node name="Astromouse" parent="Level_0-0"]
 
-editor/display_folded = true
 transform/pos = Vector2( 640.77, 309.149 )
 z/z = 1
 

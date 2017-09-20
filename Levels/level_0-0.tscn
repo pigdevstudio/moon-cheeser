@@ -284,3 +284,4 @@ layer = -2
 [connection signal="timeout" from="RightCometSpawner/Timer" to="RightCometSpawner" method="_spawn"]
 
 
+[editable path="Astromouse"]

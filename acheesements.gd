@@ -35,7 +35,6 @@ func write_achievements():
 		file.open("user://achievements.json", file.WRITE)
 		file.store_string(dict.to_json())
 		file.close()
-	skins.write_skins()
 
 func modify_achievement(achievement, value):
 	if value == 0:

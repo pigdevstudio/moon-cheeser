@@ -2,7 +2,6 @@ extends Control
 onready var popup = get_parent().get_node("Panel")
 func _ready():
 	acheesements.read_achievements()
-	skins.read_skins()
 
 func call_popup(achievement):
 	var title = acheesements.dict[achievement].name

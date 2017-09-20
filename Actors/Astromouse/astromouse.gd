@@ -4,15 +4,13 @@ signal died
 signal finished_sfx
 export (float) var jump_force = 300
 var can_jump = true
-var invulnerable = false
+var invulnerable = true
 var jump_normal = Vector2(0, -1)
 onready var default_gravity_scale = get_gravity_scale()
 
 func _ready():
 	if acheesements.dict["mooncheeser"].accomplished >= acheesements.dict["mooncheeser"].total:
 		get_node("Sprite").set_texture(load("res://Actors/Astromouse/true_astro_spritesheet.png"))
-	invulnerable = true
-	get_node("Invulnerability").start()
 	set_fixed_process(true)
 	connect("died", get_parent().get_parent(), "change_to_next_scene", ["res://Screens/Score_Screen/ScoreScreen.tscn"])
 		
@@ -52,7 +50,6 @@ func _body_enter( body ):
 		get_node("SFX").emit_signal("is_playing", "pickup")
 		body.increase_score()
 		
-		
 func is_falling():
 	if get_parent().get_game_state() == 0:
 		var normal = (get_node("../Moon").get_pos() - get_pos()).normalized()
@@ -67,5 +64,5 @@ func is_falling():
 		else:
 			return(false)
 
-func _on_invulnerability_timeout():
+func _invulnerability():
 	invulnerable = false

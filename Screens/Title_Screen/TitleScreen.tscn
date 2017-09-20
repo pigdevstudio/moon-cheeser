@@ -35,7 +35,6 @@ script/script = ExtResource( 2 )
 
 [node name="ScreenMargin" type="MarginContainer" parent="."]
 
-editor/display_folded = true
 anchor/left = 3
 anchor/top = 3
 anchor/right = 3
@@ -66,7 +65,6 @@ visibility/visible = false
 
 [node name="ScreenPortions" type="HBoxContainer" parent="ScreenMargin"]
 
-editor/display_folded = true
 focus/ignore_mouse = false
 focus/stop_mouse = false
 size_flags/horizontal = 2

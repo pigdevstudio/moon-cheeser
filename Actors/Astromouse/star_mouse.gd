@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 export (float) var max_speed = 600
 export (float) var  max_force = 0.06
-export (float) var slowing_radius = 100
+export (float) var arriving_radius = 100
 var velocity = Vector2()
 var already_pressed = false
 onready var target = get_viewport().get_mouse_pos()
@@ -30,8 +30,8 @@ func _fixed_process(delta):
 func steer(target_pos):
 	var desired_velocity = target_pos - get_pos()
 	var distance = desired_velocity.length()
-	if distance < slowing_radius:
-		desired_velocity = desired_velocity.normalized() * max_speed * (distance / slowing_radius)
+	if distance < arriving_radius:
+		desired_velocity = desired_velocity.normalized() * max_speed * (distance / arriving_radius)
 	else:
 		desired_velocity = desired_velocity.normalized() * max_speed
 	var steer = desired_velocity - velocity

@@ -1,6 +1,4 @@
-[gd_scene load_steps=3 format=1]
-
-[ext_resource path="res://icon.png" type="Texture" id=1]
+[gd_scene load_steps=2 format=1]
 
 [sub_resource type="Animation" id=1]
 
@@ -9,25 +7,22 @@ length = 1.0
 loop = false
 step = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath(".:visibility/opacity")
+tracks/0/path = NodePath("ColorFrame:visibility/opacity")
 tracks/0/interp = 1
 tracks/0/imported = false
 tracks/0/keys = {
 "times": FloatArray( 0, 1 ),
-"transitions": FloatArray( 4, 1 ),
+"transitions": FloatArray( 1, 1 ),
 "update": 0,
 "values": [ 0.0, 1.0 ]
 }
 
-[node name="Transition" type="Sprite"]
+[node name="Transition" type="CanvasLayer"]
 
-visibility/opacity = 0.0
-transform/pos = Vector2( -162.378, -95.769 )
-transform/scale = Vector2( 25.0618, 14.7812 )
-z/z = 10
-texture = ExtResource( 1 )
-centered = false
-modulate = Color( 0, 0, 0, 1 )
+layer = 10
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
 
 [node name="Animator" type="AnimationPlayer" parent="."]
 
@@ -39,5 +34,19 @@ playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
 autoplay = ""
+
+[node name="ColorFrame" type="ColorFrame" parent="."]
+
+focus/ignore_mouse = true
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 1280.0
+margin/bottom = 720.0
+color = Color( 0, 0, 0, 1 )
+
+[connection signal="enter_tree" from="." to="Animator" method="play_backwards" binds= [ "fade" ]]
 
 

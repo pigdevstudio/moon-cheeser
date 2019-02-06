@@ -1,0 +1,88 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Screens/Abstract Screen.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Screens/Credits_Screen/screen_rect.gd" type="Script" id=2]
+[ext_resource path="res://Screens/ShaderButton.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Screens/Credits_Screen/pig_normal.png" type="Texture" id=4]
+[ext_resource path="res://Screens/GaroaHackerClubeBold.otf" type="DynamicFontData" id=5]
+[ext_resource path="res://Screens/Score_Screen/back_normal.png" type="Texture" id=6]
+
+[sub_resource type="GDScript" id=1]
+
+script/source = "extends \"res://Screens/abstract_screen.gd\"
+
+func _on_Back_released():
+	change_to_next_scene(\"res://Screens/Title_Screen/TitleScreen.tscn\")
+	score_handler.set_score(0)
+
+func _on_Pigdev_button_up():
+	OS.shell_open(\"https://pigdev.itch.io\")
+"
+
+[sub_resource type="DynamicFont" id=2]
+
+size = 30
+font_data = ExtResource( 5 )
+
+[node name="CreditsScreen" instance=ExtResource( 1 )]
+script = SubResource( 1 )
+
+[node name="ScreenMargin" type="MarginContainer" parent="." index="0"]
+margin_right = 1280.0
+margin_bottom = 720.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 25
+custom_constants/margin_top = 25
+custom_constants/margin_left = 25
+custom_constants/margin_bottom = 25
+script = ExtResource( 2 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScreenMargin" index="0"]
+margin_left = 25.0
+margin_top = 25.0
+margin_right = 1255.0
+margin_bottom = 695.0
+mouse_filter = 0
+
+[node name="Pigdev" parent="ScreenMargin/VBoxContainer" index="0" instance=ExtResource( 3 )]
+margin_right = 1230.0
+margin_bottom = 193.0
+texture_normal = ExtResource( 4 )
+expand = true
+stretch_mode = 5
+
+[node name="TopPortion" type="Label" parent="ScreenMargin/VBoxContainer" index="1"]
+margin_top = 197.0
+margin_right = 1230.0
+margin_bottom = 670.0
+mouse_filter = 1
+size_flags_horizontal = 3
+size_flags_vertical = 0
+custom_fonts/font = SubResource( 2 )
+text = "Graphics & Animations: Henrique Campos
+Game Design: Henrique Campos
+Programming: Henrique Campos
+Music: Take Five by Paul Desmond (Public Domain)
+Font: Tony de Marco & Diego Maldonado
+
+Special Thanks to:
+Arthur \"Baby\" Alberto
+Jonathan \"Arkye\" Moraes
+Luan \"Almir\" Lemes
+Rebeca \"Kaleva\" Araújo
+William Tumeo
+My Friends & Family
+Godot Engine Community <3"
+align = 1
+valign = 1
+
+[node name="Back" parent="." index="1" instance=ExtResource( 3 )]
+margin_left = 25.0
+margin_top = 25.0
+margin_right = 157.0
+margin_bottom = 97.0
+texture_normal = ExtResource( 6 )
+
+[connection signal="button_up" from="ScreenMargin/VBoxContainer/Pigdev" to="." method="_on_Pigdev_button_up"]
+[connection signal="pressed" from="Back" to="." method="change_to_next_scene"]

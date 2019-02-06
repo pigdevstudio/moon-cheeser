@@ -1,0 +1,71 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Actors/SpaceBody.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Actors/Comet/comet.gd" type="Script" id=2]
+[ext_resource path="res://Actors/Comet/sprite_animation.tres" type="SpriteFrames" id=3]
+[ext_resource path="res://Actors/Star/particles.png" type="Texture" id=4]
+
+
+[sub_resource type="Gradient" id=1]
+
+offsets = PoolRealArray( 0.495833, 0.995833 )
+colors = PoolColorArray( 0.266667, 0, 0.333333, 1, 0.266667, 0, 0.333333, 0 )
+
+[sub_resource type="Gradient" id=2]
+
+offsets = PoolRealArray( 0.495833, 0.970833, 1 )
+colors = PoolColorArray( 1, 0.4, 0.333333, 1, 1, 0.4, 0.333333, 0.0578512, 1, 0.4, 0.333333, 0 )
+
+[node name="Comet" instance=ExtResource( 1 ) groups=[
+"enemy",
+"comet",
+]]
+
+script = ExtResource( 2 )
+
+[node name="Sprite" parent="."]
+
+position = Vector2( 0.207428, -0.385406 )
+scale = Vector2( 0.454877, 0.454877 )
+z_index = 1
+frames = ExtResource( 3 )
+animation = "flying"
+playing = true
+offset = Vector2( 160.398, 0.847276 )
+
+[node name="Tail" parent="Sprite"]
+
+position = Vector2( 429.047, 0.847276 )
+color/color_ramp = SubResource( 1 )
+
+[node name="Visibility" parent="Sprite"]
+
+position = Vector2( 352.012, 0.869649 )
+scale = Vector2( 8.32255, 7.81426 )
+
+[node name="Core" type="Particles2D" parent="Sprite"]
+
+position = Vector2( 177.837, 0.402944 )
+amount = 4
+lifetime = 1.0
+config/process_mode = 1
+config/half_extents = Vector2( 30, 60 )
+local_coords = false
+texture = ExtResource( 4 )
+params/direction = 90.0
+params/spread = 50.0
+params/linear_velocity = 20.0
+params/spin_velocity = 0.0
+params/orbit_velocity = 0.0
+params/gravity_direction = 0.0
+params/gravity_strength = 0.0
+params/radial_accel = 0.0
+params/tangential_accel = 0.0
+params/damping = 0.0
+params/initial_angle = 0.0
+params/initial_size = 0.7
+params/final_size = 1.0
+params/hue_variation = 0.0
+params/anim_speed_scale = 1.0
+params/anim_initial_pos = 0.0
+color/color_ramp = SubResource( 2 )

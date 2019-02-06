@@ -6,8 +6,9 @@
 [ext_resource path="res://Screens/GaroaHackerClubeBold.otf" type="DynamicFontData" id=4]
 [ext_resource path="res://Screens/ShaderButton.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Screens/Score_Screen/retry_normal.png" type="Texture" id=6]
-[ext_resource path="res://Levels/Background.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Levels/background.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Screens/Score_Screen/back_normal.png" type="Texture" id=8]
+
 
 
 

@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Actors/SpaceBody.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Actors/Star/star.gd" type="Script" id=2]
+[ext_resource path="res://Actors/Star/sprite_animation.tres" type="SpriteFrames" id=3]
+
+[sub_resource type="Gradient" id=1]
+
+offsets = PoolRealArray( 0.3625, 1 )
+colors = PoolColorArray( 0.352941, 0.172549, 0.627451, 1, 0.352941, 0.172549, 0.627451, 0 )
+
+[node name="Star" instance=ExtResource( 1 ) groups=[
+"star",
+]]
+
+z_index = 1
+script = ExtResource( 2 )
+
+[node name="Sprite" parent="."]
+
+scale = Vector2( 0.412247, 0.412247 )
+frames = ExtResource( 3 )
+frame = 1
+playing = true
+offset = Vector2( 161.029, 0 )
+
+[node name="Tail" parent="Sprite"]
+
+position = Vector2( 386.344, 0 )
+color/color_ramp = SubResource( 1 )

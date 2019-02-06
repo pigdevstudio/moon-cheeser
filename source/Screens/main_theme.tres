@@ -1,41 +1,41 @@
-[gd_resource type="Theme" load_steps=7 format=1]
+[gd_resource type="Theme" load_steps=6 format=2]
 
 [ext_resource path="res://Screens/GaroaHackerClubeBold.otf" type="DynamicFontData" id=1]
 
 [sub_resource type="DynamicFont" id=1]
 
-font/size = 30
-font/use_mipmaps = true
-font/use_filter = true
-font/font = ExtResource( 1 )
+size = 30
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 1 )
 
 [sub_resource type="StyleBoxEmpty" id=2]
 
-content_margin/left = -1.0
-content_margin/right = -1.0
-content_margin/top = -1.0
-content_margin/bottom = -1.0
+content_margin_left = -1.0
+content_margin_right = -1.0
+content_margin_top = -1.0
+content_margin_bottom = -1.0
 
 [sub_resource type="StyleBoxEmpty" id=3]
 
-content_margin/left = 25.0
-content_margin/right = 25.0
-content_margin/top = 0.0
-content_margin/bottom = 0.0
+content_margin_left = 25.0
+content_margin_right = 25.0
+content_margin_top = 0.0
+content_margin_bottom = 0.0
 
 [sub_resource type="StyleBoxEmpty" id=4]
 
-content_margin/left = 25.0
-content_margin/right = 25.0
-content_margin/top = -1.0
-content_margin/bottom = -1.0
+content_margin_left = 25.0
+content_margin_right = 25.0
+content_margin_top = -1.0
+content_margin_bottom = -1.0
 
 [sub_resource type="DynamicFont" id=5]
 
-font/size = 16
-font/use_mipmaps = true
-font/use_filter = false
-font/font = ExtResource( 1 )
+size = 16
+use_mipmaps = true
+use_filter = false
+font_data = ExtResource( 1 )
 
 [resource]
 
@@ -57,4 +57,3 @@ TabContainer/icons/menu_hilite = null
 TabContainer/styles/panel = SubResource( 2 )
 TabContainer/styles/tab_bg = SubResource( 3 )
 TabContainer/styles/tab_fg = SubResource( 4 )
-

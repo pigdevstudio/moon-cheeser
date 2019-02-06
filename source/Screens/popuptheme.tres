@@ -1,20 +1,20 @@
-[gd_resource type="Theme" load_steps=4 format=1]
+[gd_resource type="Theme" load_steps=3 format=2]
 
 [ext_resource path="res://Screens/GaroaHackerClubeBold.otf" type="DynamicFontData" id=1]
 
 [sub_resource type="DynamicFont" id=1]
 
-font/size = 22
-font/use_mipmaps = true
-font/use_filter = true
-font/font = ExtResource( 1 )
+size = 22
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=2]
 
-font/size = 20
-font/use_mipmaps = true
-font/use_filter = true
-font/font = ExtResource( 1 )
+size = 20
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 1 )
 
 [resource]
 
@@ -34,4 +34,3 @@ WindowDialog/fonts/title_font = SubResource( 2 )
 WindowDialog/icons/close = null
 WindowDialog/icons/close_hilite = null
 WindowDialog/styles/panel = null
-

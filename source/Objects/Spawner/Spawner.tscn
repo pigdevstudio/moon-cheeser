@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=1]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Objects/Spawner/spawner.gd" type="Script" id=1]
 
@@ -18,38 +18,39 @@ func _renamed():
 
 [node name="Spawner" type="Position2D"]
 
-script/script = ExtResource( 1 )
+script = ExtResource( 1 )
 spawn_scene = null
 min_spawn_time = 1.0
 max_spawn_time = 2.0
 
 [node name="Animator" type="AnimationPlayer" parent="."]
 
-playback/process_mode = 1
-playback/default_blend_time = 0.0
-root/root = NodePath("..")
-playback/active = true
-playback/speed = 1.0
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+root_node = NodePath("..")
+playback_active = true
+playback_speed = 1.0
 blend_times = [  ]
 autoplay = ""
 
 [node name="Label" type="Label" parent="."]
 
-visibility/visible = false
-rect/scale = Vector2( 2, 2 )
+visible = false
+rect_scale = Vector2( 2, 2 )
 focus/ignore_mouse = true
 focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 0
-margin/left = 0.0
-margin/top = 0.0
-margin/right = 40.0
-margin/bottom = 14.0
+size_flags_horizontal = 1
+size_flags_vertical = 0
+margin_left = 0.0
+margin_top = 0.0
+margin_right = 40.0
+margin_bottom = 14.0
 text = "Spawner"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-script/script = SubResource( 1 )
+script = SubResource( 1 )
+mouse_filter = 1
 
 [node name="Timer" type="Timer" parent="."]
 
@@ -58,8 +59,6 @@ wait_time = 1.0
 one_shot = false
 autostart = true
 
-[connection signal="renamed" from="." to="Label" method="_renamed"]
+[connection signal="renamed" from="." to="Label" method="_renamed" binds=[  ]]
 
-[connection signal="timeout" from="Timer" to="." method="_spawn"]
-
-
+[connection signal="timeout" from="Timer" to="." method="_spawn" binds=[  ]]

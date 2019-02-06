@@ -28,12 +28,12 @@ onready var moon = get_parent().find_node("Moon")
 var can_pulse = true
 func _ready():
 	if acheesements.dict["void"].accomplished >= acheesements.dict["void"].total:
-		get_node("Drum").play(bgm.get_pos())
+		get_node("Drum").play(bgm.get_position())
 	if get_parent().has_method("set_game_state"):
 		get_parent().set_game_state(1)
 	if moon != null:
 		_move_away(moon, self)
-		if moon.get_node("Gravity/Sprite").get_opacity() <= 0.0:
+		if moon.get_node("Gravity/Sprite").modulate.a <= 0.0:
 			moon.show_gravity()
 		yield(tween, "tween_complete")
 	pulse()
@@ -57,9 +57,9 @@ func _move_away(from, to):
 	if from != null and to != null:
 		if from == self:
 			easing = tween.EASE_IN
-		var direction = (from.get_pos() - to.get_pos()).normalized()
-		var spawn_offset = get_pos() + Vector2(100, 100) * direction
-		tween.interpolate_property(self, "transform/pos", get_pos(),
+		var direction = (from.get_position() - to.get_position()).normalized()
+		var spawn_offset = get_position() + Vector2(100, 100) * direction
+		tween.interpolate_property(self, "transform/pos", get_position(),
 		spawn_offset, 3.0, tween.TRANS_BACK, easing)
 		tween.start()
 
@@ -91,4 +91,5 @@ func _increase_gravity():
 func _on_collision_enter( coll ):
 	if coll.is_in_group("cheese"):
 		coll.queue_free()
+
 

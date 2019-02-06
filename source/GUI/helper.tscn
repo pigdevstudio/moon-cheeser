@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=1]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://GUI/helper.gd" type="Script" id=1]
-[ext_resource path="res://GUI/helper.tex" type="Texture" id=2]
+[ext_resource path="res://GUI/helper.png" type="Texture" id=2]
 [ext_resource path="res://GUI/slide_help.png" type="Texture" id=3]
+
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -13,50 +14,50 @@ extents = Vector2( 10, 556.238 )
 "helper",
 ]]
 
-process/pause_mode = 2
-transform/scale = Vector2( 0.849606, 0.849606 )
-z/z = 5
-script/script = ExtResource( 1 )
+pause_mode = 2
+scale = Vector2( 0.849606, 0.849606 )
+z_index = 5
+script = ExtResource( 1 )
 group = null
 achievement = null
 
 [node name="Hand" type="Sprite" parent="."]
 
-transform/pos = Vector2( 81.2141, 236.58 )
+position = Vector2( 81.2141, 236.58 )
 texture = ExtResource( 2 )
 centered = false
 offset = Vector2( -94.4919, -244.655 )
-region = true
+region_enabled = true
 region_rect = Rect2( 0, 12, 192, 247 )
 
 [node name="Button" type="Sprite" parent="Hand"]
 
-visibility/visible = false
-visibility/behind_parent = true
-transform/pos = Vector2( -77.6831, -227.164 )
-transform/scale = Vector2( 2.15164, 2.15164 )
+visible = false
+show_behind_parent = true
+position = Vector2( -77.6831, -227.164 )
+scale = Vector2( 2.15164, 2.15164 )
 texture = ExtResource( 3 )
 
 [node name="Arm" type="Sprite" parent="."]
 
-transform/pos = Vector2( 81.2141, 183.614 )
+position = Vector2( 81.2141, 183.614 )
 texture = ExtResource( 2 )
 centered = false
-region = true
+region_enabled = true
 region_rect = Rect2( 203, 0, 53, 356 )
 
 [node name="Tween" type="Tween" parent="."]
 
-playback/process_mode = 1
+playback_process_mode = 1
 playback/active = false
-playback/repeat = false
-playback/speed = 1.0
+playback_speed = false
+playback_speed = 1.0
 
 [node name="Trigger" type="Area2D" parent="."]
 
-input/pickable = true
+input_pickable = true
 shapes/0/shape = SubResource( 1 )
-shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -69,6 +70,4 @@ shape = SubResource( 1 )
 trigger = true
 _update_shape_index = 0
 
-[connection signal="body_enter" from="Trigger" to="." method="_on_collision_enter"]
-
-
+[connection signal="body_entered" from="Trigger" to="." method="_on_collision_enter" binds=[  ]]

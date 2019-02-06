@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=1]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Actors/Moon/moon.gd" type="Script" id=1]
 [ext_resource path="res://Screens/Title_Screen/moon.png" type="Texture" id=2]
@@ -23,23 +23,23 @@ radius = 284.256
 "moon",
 ]]
 
-z/z = -2
-input/pickable = false
+z_index = -2
+input_pickable = false
 shapes/0/shape = SubResource( 1 )
-shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
-collision/layers = 1
-collision/mask = 1
+collision_layer = 1
+collision_mask = 1
 constant_linear_velocity = Vector2( 0, 0 )
 constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
-script/script = ExtResource( 1 )
+script = ExtResource( 1 )
 gravity_strength = 200
 
 [node name="Sprite" type="Sprite" parent="."]
 
-transform/scale = Vector2( 0.710831, 0.710831 )
+scale = Vector2( 0.710831, 0.710831 )
 texture = ExtResource( 2 )
 
 [node name="Shape" type="CollisionShape2D" parent="."]
@@ -50,10 +50,10 @@ _update_shape_index = 0
 
 [node name="Input" type="Area2D" parent="."]
 
-z/z = -1
-input/pickable = true
+z_index = -1
+input_pickable = true
 shapes/0/shape = SubResource( 2 )
-shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 gravity_point = true
 gravity_vec = Vector2( 0, 0 )
@@ -70,16 +70,16 @@ _update_shape_index = 0
 
 [node name="Tween" type="Tween" parent="."]
 
-playback/process_mode = 1
+playback_process_mode = 1
 playback/active = false
-playback/repeat = false
-playback/speed = 1.0
+playback_speed = false
+playback_speed = 1.0
 
 [node name="Gravity" type="Area2D" parent="."]
 
-input/pickable = true
+input_pickable = true
 shapes/0/shape = SubResource( 3 )
-shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 space_override = 3
 gravity_point = true
@@ -98,13 +98,11 @@ _update_shape_index = 0
 
 [node name="Sprite" type="Sprite" parent="Gravity"]
 
-visibility/opacity = 0.0
-transform/scale = Vector2( 1.09526, 1.09526 )
-z/z = -1
+modulate = Color( 1, 1, 1, 0 )
+scale = Vector2( 1.09526, 1.09526 )
+z_index = -1
 texture = ExtResource( 3 )
 
-[connection signal="mouse_enter" from="Input" to="." method="_mouse_enter" binds= [ true ]]
+[connection signal="mouse_entered" from="Input" to="." method="_mouse_enter" binds=[ true ]]
 
-[connection signal="mouse_exit" from="Input" to="." method="_mouse_enter" binds= [ false ]]
-
-
+[connection signal="mouse_exited" from="Input" to="." method="_mouse_enter" binds=[ false ]]

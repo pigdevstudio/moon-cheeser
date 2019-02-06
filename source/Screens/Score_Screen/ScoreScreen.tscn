@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=1]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Screens/main_theme.tres" type="Theme" id=1]
 [ext_resource path="res://Screens/Score_Screen/score_screen.gd" type="Script" id=2]
@@ -9,186 +9,126 @@
 [ext_resource path="res://Levels/background.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Screens/Score_Screen/back_normal.png" type="Texture" id=8]
 
-
-
-
 [sub_resource type="DynamicFont" id=1]
 
-font/size = 80
-font/use_mipmaps = false
-font/use_filter = false
-font/font = ExtResource( 4 )
+size = 80
+font_data = ExtResource( 4 )
 
 [node name="Score Screen" type="Control"]
-
-anchor/left = 3
-anchor/top = 3
-anchor/right = 3
-anchor/bottom = 3
-focus/ignore_mouse = false
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 2
-theme/theme = ExtResource( 1 )
-margin/left = 640.0
-margin/top = 360.0
-margin/right = 600.0
-margin/bottom = 320.0
-script/script = ExtResource( 2 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -640.0
+margin_top = -360.0
+margin_right = -600.0
+margin_bottom = -320.0
+theme = ExtResource( 1 )
+script = ExtResource( 2 )
 
 [node name="ScreenMargin" type="MarginContainer" parent="."]
-
-anchor/left = 3
-anchor/top = 3
-anchor/right = 3
-anchor/bottom = 3
-focus/ignore_mouse = false
-focus/stop_mouse = true
-size_flags/horizontal = 3
-size_flags/vertical = 3
-margin/left = 20.0
-margin/top = 20.0
-margin/right = -1260.0
-margin/bottom = -700.0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -20.0
+margin_top = -20.0
+margin_right = 1260.0
+margin_bottom = 700.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 custom_constants/margin_right = 25
 custom_constants/margin_top = 25
 custom_constants/margin_left = 25
 custom_constants/margin_bottom = 25
-script/script = ExtResource( 3 )
+script = ExtResource( 3 )
 
 [node name="ScreenPortions" type="VBoxContainer" parent="ScreenMargin"]
-
-focus/ignore_mouse = false
-focus/stop_mouse = false
-size_flags/horizontal = 2
-size_flags/vertical = 2
-margin/left = 25.0
-margin/top = 25.0
-margin/right = 1255.0
-margin/bottom = 695.0
-alignment = 0
+margin_left = 25.0
+margin_top = 25.0
+margin_right = 1255.0
+margin_bottom = 695.0
+mouse_filter = 0
 
 [node name="TopPortion" type="VBoxContainer" parent="ScreenMargin/ScreenPortions"]
-
 editor/display_folded = true
-focus/ignore_mouse = false
-focus/stop_mouse = false
-size_flags/horizontal = 2
-size_flags/vertical = 3
-margin/left = 0.0
-margin/top = 0.0
-margin/right = 1230.0
-margin/bottom = 333.0
-alignment = 0
+margin_right = 1230.0
+margin_bottom = 333.0
+mouse_filter = 0
+size_flags_vertical = 3
 
 [node name="Score" type="Label" parent="ScreenMargin/ScreenPortions/TopPortion"]
-
-focus/ignore_mouse = true
-focus/stop_mouse = true
-size_flags/horizontal = 3
-size_flags/vertical = 3
-margin/left = 0.0
-margin/top = 0.0
-margin/right = 1230.0
-margin/bottom = 164.0
+margin_right = 1230.0
+margin_bottom = 164.0
+mouse_filter = 1
+size_flags_horizontal = 3
+size_flags_vertical = 3
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 1, 0.901961, 0.501961, 1 )
 text = "Score:"
 align = 1
 valign = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
 
 [node name="Highscore" type="Label" parent="ScreenMargin/ScreenPortions/TopPortion"]
-
-focus/ignore_mouse = true
-focus/stop_mouse = true
-size_flags/horizontal = 3
-size_flags/vertical = 3
-margin/left = 0.0
-margin/top = 168.0
-margin/right = 1230.0
-margin/bottom = 333.0
+margin_top = 168.0
+margin_right = 1230.0
+margin_bottom = 333.0
+mouse_filter = 1
+size_flags_horizontal = 3
+size_flags_vertical = 3
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 1, 0.901961, 0.501961, 1 )
 text = "Highscore:"
 align = 1
 valign = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
 
 [node name="BottomPortion" type="VBoxContainer" parent="ScreenMargin/ScreenPortions"]
-
-focus/ignore_mouse = false
-focus/stop_mouse = false
-size_flags/horizontal = 2
-size_flags/vertical = 3
-margin/left = 0.0
-margin/top = 337.0
-margin/right = 1230.0
-margin/bottom = 670.0
+margin_top = 337.0
+margin_right = 1230.0
+margin_bottom = 670.0
+mouse_filter = 0
+size_flags_vertical = 3
 custom_constants/separation = -95
-alignment = 0
 
-[node name="ReferenceFrame" type="ReferenceFrame" parent="ScreenMargin/ScreenPortions/BottomPortion"]
-
-focus/ignore_mouse = false
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 3
-margin/left = 0.0
-margin/top = 0.0
-margin/right = 1230.0
-margin/bottom = 174.0
+[node name="ReferenceFrame" type="ReferenceRect" parent="ScreenMargin/ScreenPortions/BottomPortion"]
+margin_right = 1230.0
+margin_bottom = 174.0
+size_flags_vertical = 3
 
 [node name="Retry" parent="ScreenMargin/ScreenPortions/BottomPortion" instance=ExtResource( 5 )]
+margin_top = 79.0
+margin_right = 1230.0
+margin_bottom = 253.0
+size_flags_horizontal = 1
+texture_normal = ExtResource( 6 )
+expand = true
+stretch_mode = 5
 
-size_flags/horizontal = 2
-margin/top = 79.0
-margin/right = 1230.0
-margin/bottom = 253.0
-textures/normal = ExtResource( 6 )
-
-[node name="ReferenceFrame1" type="ReferenceFrame" parent="ScreenMargin/ScreenPortions/BottomPortion"]
-
-focus/ignore_mouse = false
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 3
-margin/left = 0.0
-margin/top = 158.0
-margin/right = 1230.0
-margin/bottom = 333.0
+[node name="ReferenceFrame1" type="ReferenceRect" parent="ScreenMargin/ScreenPortions/BottomPortion"]
+margin_top = 158.0
+margin_right = 1230.0
+margin_bottom = 333.0
+size_flags_vertical = 3
 
 [node name="Background" parent="." instance=ExtResource( 7 )]
-
 editor/display_folded = true
 
-[node name="Stars" parent="Background"]
-
+[node name="Stars" parent="Background" index="0"]
 editor/display_folded = true
 
-[node name="Planets" parent="Background"]
-
-visibility/visible = false
+[node name="Planets" parent="Background" index="1"]
+visible = false
 
 [node name="Back" parent="." instance=ExtResource( 5 )]
+margin_left = 25.0
+margin_top = 25.0
+margin_right = 157.0
+margin_bottom = 97.0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture_normal = ExtResource( 8 )
 
-size_flags/horizontal = 2
-size_flags/vertical = 2
-margin/left = 25.0
-margin/top = 25.0
-margin/right = 157.0
-margin/bottom = 97.0
-textures/normal = ExtResource( 8 )
-
-[connection signal="pressed" from="ScreenMargin/ScreenPortions/BottomPortion/Retry" to="." method="_on_Retry_pressed"]
-
-[connection signal="released" from="ScreenMargin/ScreenPortions/BottomPortion/Retry" to="." method="_on_Retry_released"]
-
-[connection signal="released" from="Back" to="." method="_on_Back_released"]
-
+[connection signal="button_up" from="ScreenMargin/ScreenPortions/BottomPortion/Retry" to="." method="_on_Retry_button_up"]
+[connection signal="pressed" from="Back" to="." method="change_to_next_scene"]
 
 [editable path="Background"]

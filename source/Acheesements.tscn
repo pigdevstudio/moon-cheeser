@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=1]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://acheesements.gd" type="Script" id=1]
 [ext_resource path="res://Screens/popuptheme.tres" type="Theme" id=2]
@@ -6,123 +6,78 @@
 
 [sub_resource type="DynamicFont" id=1]
 
-font/size = 16
-font/use_mipmaps = true
-font/use_filter = true
-font/font = ExtResource( 3 )
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 3 )
 
 [node name="Acheesements" type="CanvasLayer"]
-
 layer = 10
-offset = Vector2( 0, 0 )
-rotation = 0.0
-scale = Vector2( 1, 1 )
-script/script = ExtResource( 1 )
+script = ExtResource( 1 )
 file_path = "res://Screens/Achievements_Screen/achievements.json"
 
 [node name="Popup" type="WindowDialog" parent="."]
-
-visibility/visible = false
-focus/ignore_mouse = false
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 2
-theme/theme = ExtResource( 2 )
-margin/left = 471.0
-margin/top = -408.0
-margin/right = 858.0
-margin/bottom = -303.0
-popup/exclusive = false
-window/title = "ACHEESEMENT UNLOCKED"
+margin_left = 471.0
+margin_top = -408.0
+margin_right = 858.0
+margin_bottom = -303.0
+theme = ExtResource( 2 )
+window_title = "ACHEESEMENT UNLOCKED"
 
 [node name="Label" type="Label" parent="Popup"]
-
-focus/ignore_mouse = true
-focus/stop_mouse = true
-size_flags/horizontal = 3
-size_flags/vertical = 3
-margin/left = 0.0
-margin/top = 0.0
-margin/right = 387.0
-margin/bottom = 102.0
+margin_right = 387.0
+margin_bottom = 102.0
+mouse_filter = 1
+size_flags_horizontal = 3
+size_flags_vertical = 3
 text = "ACHIEVEMENT UNLOCKED"
 align = 1
 valign = 1
 autowrap = true
 clip_text = true
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
 
 [node name="Timer" type="Timer" parent="."]
-
-process_mode = 1
 wait_time = 2.0
 one_shot = true
-autostart = false
 
 [node name="Tween" type="Tween" parent="."]
 
-playback/process_mode = 1
-playback/active = false
-playback/repeat = false
-playback/speed = 1.0
-
 [node name="Panel" type="Panel" parent="."]
-
-visibility/visible = false
-focus/ignore_mouse = false
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 2
-theme/theme = ExtResource( 2 )
-margin/left = 473.0
-margin/top = 25.0
-margin/right = 857.0
-margin/bottom = 147.0
+visible = false
+margin_left = 473.0
+margin_top = 25.0
+margin_right = 857.0
+margin_bottom = 147.0
+theme = ExtResource( 2 )
 
 [node name="Title" type="Label" parent="Panel"]
-
-focus/ignore_mouse = true
-focus/stop_mouse = true
-size_flags/horizontal = 3
-size_flags/vertical = 3
-margin/left = -2.0
-margin/top = 12.0
-margin/right = 385.0
-margin/bottom = 35.0
+margin_left = -2.0
+margin_top = 12.0
+margin_right = 385.0
+margin_bottom = 35.0
+mouse_filter = 1
+size_flags_horizontal = 3
+size_flags_vertical = 3
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "ACHIEVEMENT UNLOCKED"
 align = 1
 valign = 1
 clip_text = true
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
 
 [node name="Label" type="Label" parent="Panel"]
-
-focus/ignore_mouse = true
-focus/stop_mouse = true
-size_flags/horizontal = 3
-size_flags/vertical = 3
-margin/left = -2.0
-margin/top = 21.0
-margin/right = 385.0
-margin/bottom = 123.0
+margin_left = -2.0
+margin_top = 21.0
+margin_right = 385.0
+margin_bottom = 123.0
+mouse_filter = 1
+size_flags_horizontal = 3
+size_flags_vertical = 3
 custom_colors/font_color = Color( 1, 0.901961, 0.501961, 1 )
 text = "ACHIEVEMENT UNLOCKED"
 align = 1
 valign = 1
 autowrap = true
 clip_text = true
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
 
 [connection signal="popup_hide" from="Popup" to="." method="_on_hide"]
-
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
-
-

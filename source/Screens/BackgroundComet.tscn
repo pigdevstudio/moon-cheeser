@@ -1,9 +1,8 @@
-[gd_scene load_steps=8 format=1]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Actors/Comet/comet_01.png" type="Texture" id=1]
 [ext_resource path="res://Actors/Comet/comet_02.png" type="Texture" id=2]
 [ext_resource path="res://Actors/Comet/comet_03.png" type="Texture" id=3]
-[ext_resource path="res://Actors/particle.tex" type="Texture" id=4]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -14,111 +13,28 @@ animations = [ {
 "speed": 8.0
 } ]
 
-[sub_resource type="ColorRamp" id=2]
+[sub_resource type="CircleShape2D" id=2]
 
-offsets = FloatArray( 0.495833, 0.995833 )
-colors = ColorArray( 0.266667, 0, 0.333333, 1, 0.266667, 0, 0.333333, 0 )
-
-[sub_resource type="ColorRamp" id=3]
-
-offsets = FloatArray( 0.495833, 0.970833, 1 )
-colors = ColorArray( 1, 0.4, 0.333333, 1, 1, 0.4, 0.333333, 0.0578512, 1, 0.4, 0.333333, 0 )
 
 [node name="Comet" type="RigidBody2D"]
-
-input/pickable = false
-collision/layers = 1
-collision/mask = 1
-mode = 0
-mass = 1.0
-friction = 1.0
-bounce = 0.0
 gravity_scale = 0.0
-custom_integrator = false
-continuous_cd = 0
-contacts_reported = 0
-contact_monitor = false
-sleeping = false
-can_sleep = true
-velocity/linear = Vector2( -300, 0 )
-velocity/angular = 0.0
-damp_override/linear = 0.0
-damp_override/angular = -1.0
+linear_velocity = Vector2( -300, 0 )
+linear_damp = 0.0
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
-
-transform/rot = 0.129821
-transform/scale = Vector2( 0.454877, 0.454877 )
+rotation = -0.0022658
+scale = Vector2( 0.454877, 0.454877 )
 frames = SubResource( 1 )
 animation = "flying"
 frame = 2
 playing = true
 offset = Vector2( 160.398, 0.0223724 )
 
-[node name="Outer" type="Particles2D" parent="Sprite"]
-
-visibility/behind_parent = true
-transform/pos = Vector2( 390.705, 0.885263 )
-config/amount = 5
-config/lifetime = 1.0
-config/process_mode = 1
-config/half_extents = Vector2( 50, 60 )
-config/local_space = false
-config/texture = ExtResource( 4 )
-params/direction = 90.0
-params/spread = 50.0
-params/linear_velocity = 20.0
-params/spin_velocity = 0.0
-params/orbit_velocity = 0.0
-params/gravity_direction = 0.0
-params/gravity_strength = 0.0
-params/radial_accel = 0.0
-params/tangential_accel = 0.0
-params/damping = 0.0
-params/initial_angle = 0.0
-params/initial_size = 0.7
-params/final_size = 1.0
-params/hue_variation = 0.0
-params/anim_speed_scale = 1.0
-params/anim_initial_pos = 0.0
-randomness/spread = 0.4
-randomness/linear_velocity = 0.46
-randomness/gravity_direction = 0.2
-color/color_ramp = SubResource( 2 )
-
-[node name="Inner" type="Particles2D" parent="Sprite"]
-
-transform/pos = Vector2( 177.837, 0.402944 )
-config/amount = 4
-config/lifetime = 1.0
-config/process_mode = 1
-config/half_extents = Vector2( 30, 60 )
-config/local_space = false
-config/texture = ExtResource( 4 )
-params/direction = 90.0
-params/spread = 50.0
-params/linear_velocity = 20.0
-params/spin_velocity = 0.0
-params/orbit_velocity = 0.0
-params/gravity_direction = 0.0
-params/gravity_strength = 0.0
-params/radial_accel = 0.0
-params/tangential_accel = 0.0
-params/damping = 0.0
-params/initial_angle = 0.0
-params/initial_size = 0.7
-params/final_size = 1.0
-params/hue_variation = 0.0
-params/anim_speed_scale = 1.0
-params/anim_initial_pos = 0.0
-color/color_ramp = SubResource( 3 )
-
 [node name="Visibility" type="VisibilityNotifier2D" parent="Sprite"]
+position = Vector2( 159.086, 7.37106 )
+scale = Vector2( 25.0902, 8.03955 )
 
-transform/pos = Vector2( 159.086, 7.37106 )
-transform/scale = Vector2( 25.0902, 8.03955 )
-rect = Rect2( -10, -10, 20, 20 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 2 )
 
-[connection signal="exit_screen" from="Sprite/Visibility" to="." method="queue_free"]
-
-
+[connection signal="screen_exited" from="Sprite/Visibility" to="." method="queue_free"]

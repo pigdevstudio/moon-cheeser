@@ -25,10 +25,12 @@ var is_mouse_on = false
 var is_field_on = false
 var already_pressed = false
 onready var gravity = get_node("Gravity/Sprite")
-onready var scale = gravity.get_scale()
-onready var fixed_process = set_fixed_process(true)
+onready var fixed_process = set_physics_process(true)
 
-func _fixed_process(delta):
+func _ready():
+	scale = gravity.get_scale()
+	
+func _physics_process(delta):
 	get_node("Sprite").rotate( deg2rad(90) * delta)
 	_astromouse_interact()
 
@@ -71,10 +73,10 @@ func _pulse():
 	var t = get_node("Tween")
 	show_gravity()
 	if not t.is_active() and get_parent().get_game_state() == 1:
-		t.interpolate_property(gravity, "transform/scale", scale, scale * 1.2, 0.5, t.TRANS_BACK, t.EASE_OUT)
+		t.interpolate_property(gravity, "scale", scale, scale * 1.2, 0.5, t.TRANS_BACK, t.EASE_OUT)
 		t.start()
 		yield(t, "tween_complete")
-		t.interpolate_property(gravity, "transform/scale", gravity.get_scale(), scale, 0.5, t.TRANS_BACK, t.EASE_OUT)
+		t.interpolate_property(gravity, "scale", gravity.get_scale(), scale, 0.5, t.TRANS_BACK, t.EASE_OUT)
 		t.start()
 		yield(t, "tween_complete")
 		t.set_active(false)
@@ -83,7 +85,10 @@ func show_gravity():
 	var t = get_node("Tween")
 	if is_field_on == false and not t.is_active():
 		is_field_on = true
-		t.interpolate_property(gravity, "visibility/opacity", 0.0, 1.0, 1.0, t.TRANS_EXPO, t.EASE_OUT)
+		var initial_color = modulate
+		var transparent = modulate
+		transparent.a = 0.0
+		t.interpolate_property(gravity, "modulate", transparent, initial_color, 1.0, t.TRANS_EXPO, t.EASE_OUT)
 		t.start()
 		yield(t, "tween_complete")
 		t.set_active(false)
@@ -92,7 +97,10 @@ func hide_gravity():
 	var t = get_node("Tween")
 	if is_field_on == true and not t.is_active():
 		is_field_on = false
-		t.interpolate_property(gravity, "visibility/opacity", 1.0, 0.0, 1.0, t.TRANS_EXPO, t.EASE_OUT)
+		var initial_color = modulate
+		var transparent = modulate
+		transparent.a = 0.0
+		t.interpolate_property(gravity, "modulate", initial_color, transparent, 1.0, t.TRANS_EXPO, t.EASE_OUT)
 		t.start()
 		yield(t, "tween_complete")
 		t.set_active(false)

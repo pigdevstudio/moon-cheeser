@@ -37,8 +37,8 @@ func _spawn():
 			var spawn = spawn_scene.instance()
 			spawn.set_transform(get_transform())
 			
-			var pos_direction = get_viewport().get_rect().size.x /2
-			if get_pos().x > pos_direction and spawn.has_method("apply_route"):
+			var pos_direction = get_viewport().size.x /2
+			if get_position().x > pos_direction and spawn.has_method("apply_route"):
 				spawn.direction = -1
 			get_parent().add_child(spawn)
 			get_node("Timer").set_wait_time(rand_range(min_spawn_time, max_spawn_time))

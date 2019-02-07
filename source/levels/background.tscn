@@ -1,0 +1,472 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://levels/star_back.png" type="Texture" id=1]
+[ext_resource path="res://levels/starboy_crux.png" type="Texture" id=2]
+[ext_resource path="res://objects/Planets/earth.tscn" type="PackedScene" id=3]
+[ext_resource path="res://objects/Planets/plinton.tscn" type="PackedScene" id=4]
+[ext_resource path="res://objects/Planets/satheri.tscn" type="PackedScene" id=5]
+
+
+
+[sub_resource type="GDScript" id=1]
+
+script/source = "extends Node
+
+func _ready():
+	get_node(\"Animator\").playback_speed = rand_range(0.5,2.0)
+"
+
+[sub_resource type="Animation" id=2]
+
+resource_name = "shine"
+length = 3.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.5, 0.5 ), Vector2( 0.1, 0.1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, -360.0 ]
+}
+
+[sub_resource type="Animation" id=3]
+
+resource_name = "fade"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+
+[node name="Background" type="ParallaxBackground"]
+layer = 1
+
+[node name="Stars" type="CanvasLayer" parent="."]
+layer = -5
+
+[node name="Star" type="Sprite" parent="Stars"]
+editor/display_folded = true
+position = Vector2( 383.626, 378.185 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+script = SubResource( 1 )
+
+[node name="Animator" type="AnimationPlayer" parent="Stars/Star"]
+autoplay = "shine"
+anims/shine = SubResource( 2 )
+
+[node name="Star#1" type="Sprite" parent="Stars"]
+editor/display_folded = true
+position = Vector2( 321.956, 430.275 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+script = SubResource( 1 )
+
+[node name="Animator" type="AnimationPlayer" parent="Stars/Star#1"]
+autoplay = "shine"
+anims/shine = SubResource( 2 )
+
+[node name="Star#2" type="Sprite" parent="Stars"]
+editor/display_folded = true
+position = Vector2( 311.179, 365.013 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+script = SubResource( 1 )
+
+[node name="Animator" type="AnimationPlayer" parent="Stars/Star#2"]
+autoplay = "shine"
+anims/shine = SubResource( 2 )
+
+[node name="Star#4" type="Sprite" parent="Stars"]
+editor/display_folded = true
+position = Vector2( 722.72, 292.812 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+script = SubResource( 1 )
+
+[node name="Animator" type="AnimationPlayer" parent="Stars/Star#4"]
+autoplay = "shine"
+anims/shine = SubResource( 2 )
+
+[node name="Star#5" type="Sprite" parent="Stars"]
+editor/display_folded = true
+position = Vector2( 830.117, 289.202 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+script = SubResource( 1 )
+
+[node name="Animator" type="AnimationPlayer" parent="Stars/Star#5"]
+autoplay = "shine"
+anims/shine = SubResource( 2 )
+
+[node name="Star#6" type="Sprite" parent="Stars"]
+editor/display_folded = true
+position = Vector2( 986.25, 371.33 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+script = SubResource( 1 )
+
+[node name="Animator" type="AnimationPlayer" parent="Stars/Star#6"]
+autoplay = "shine"
+anims/shine = SubResource( 2 )
+
+[node name="Star#7" type="Sprite" parent="Stars"]
+editor/display_folded = true
+position = Vector2( 1062.06, 494.07 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+script = SubResource( 1 )
+
+[node name="Animator" type="AnimationPlayer" parent="Stars/Star#7"]
+autoplay = "shine"
+anims/shine = SubResource( 2 )
+
+[node name="Star#8" type="Sprite" parent="Stars"]
+editor/display_folded = true
+position = Vector2( 791.31, 587.028 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+script = SubResource( 1 )
+
+[node name="Animator" type="AnimationPlayer" parent="Stars/Star#8"]
+autoplay = "shine"
+anims/shine = SubResource( 2 )
+
+[node name="Star#9" type="Sprite" parent="Stars"]
+editor/display_folded = true
+position = Vector2( 320.204, 706.158 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+script = SubResource( 1 )
+
+[node name="Animator" type="AnimationPlayer" parent="Stars/Star#9"]
+autoplay = "shine"
+anims/shine = SubResource( 2 )
+
+[node name="Star#10" type="Sprite" parent="Stars"]
+editor/display_folded = true
+position = Vector2( 1062.06, 695.328 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+script = SubResource( 1 )
+
+[node name="Animator" type="AnimationPlayer" parent="Stars/Star#10"]
+autoplay = "shine"
+anims/shine = SubResource( 2 )
+
+[node name="Star#11" type="Sprite" parent="Stars"]
+editor/display_folded = true
+position = Vector2( 1168.6, 84.2608 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+script = SubResource( 1 )
+
+[node name="Animator" type="AnimationPlayer" parent="Stars/Star#11"]
+autoplay = "shine"
+anims/shine = SubResource( 2 )
+
+[node name="Star#12" type="Sprite" parent="Stars"]
+editor/display_folded = true
+position = Vector2( 1198.42, 129.955 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+script = SubResource( 1 )
+
+[node name="Animator" type="AnimationPlayer" parent="Stars/Star#12"]
+autoplay = "shine"
+anims/shine = SubResource( 2 )
+
+[node name="Star#13" type="Sprite" parent="Stars"]
+editor/display_folded = true
+position = Vector2( 1119.32, 114.167 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+script = SubResource( 1 )
+
+[node name="Animator" type="AnimationPlayer" parent="Stars/Star#13"]
+autoplay = "shine"
+anims/shine = SubResource( 2 )
+
+[node name="Star#14" type="Sprite" parent="Stars"]
+editor/display_folded = true
+position = Vector2( 1158.68, 147.728 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+script = SubResource( 1 )
+
+[node name="Animator" type="AnimationPlayer" parent="Stars/Star#14"]
+autoplay = "shine"
+anims/shine = SubResource( 2 )
+
+[node name="Star#15" type="Sprite" parent="Stars"]
+editor/display_folded = true
+position = Vector2( 1136.24, 234.199 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+script = SubResource( 1 )
+
+[node name="Animator" type="AnimationPlayer" parent="Stars/Star#15"]
+autoplay = "shine"
+anims/shine = SubResource( 2 )
+
+[node name="Star#16" type="Sprite" parent="Stars"]
+editor/display_folded = true
+position = Vector2( 280.414, 152.518 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+script = SubResource( 1 )
+
+[node name="Animator" type="AnimationPlayer" parent="Stars/Star#16"]
+autoplay = "shine"
+anims/shine = SubResource( 2 )
+
+[node name="Star#17" type="Sprite" parent="Stars"]
+editor/display_folded = true
+position = Vector2( 352.232, 132.476 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+script = SubResource( 1 )
+
+[node name="Animator" type="AnimationPlayer" parent="Stars/Star#17"]
+autoplay = "shine"
+anims/shine = SubResource( 2 )
+
+[node name="Star#18" type="Sprite" parent="Stars"]
+editor/display_folded = true
+position = Vector2( 429.06, 109.093 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+script = SubResource( 1 )
+
+[node name="Animator" type="AnimationPlayer" parent="Stars/Star#18"]
+autoplay = "shine"
+anims/shine = SubResource( 2 )
+
+[node name="Star#19" type="Sprite" parent="Stars"]
+editor/display_folded = true
+position = Vector2( 100.034, 483.215 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+script = SubResource( 1 )
+
+[node name="Animator" type="AnimationPlayer" parent="Stars/Star#19"]
+autoplay = "shine"
+anims/shine = SubResource( 2 )
+
+[node name="Star#20" type="Sprite" parent="Stars"]
+editor/display_folded = true
+position = Vector2( 171.852, 473.193 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+script = SubResource( 1 )
+
+[node name="Animator" type="AnimationPlayer" parent="Stars/Star#20"]
+autoplay = "shine"
+anims/shine = SubResource( 2 )
+
+[node name="Star#21" type="Sprite" parent="Stars"]
+editor/display_folded = true
+position = Vector2( 213.606, 524.969 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+script = SubResource( 1 )
+
+[node name="Animator" type="AnimationPlayer" parent="Stars/Star#21"]
+autoplay = "shine"
+anims/shine = SubResource( 2 )
+
+[node name="Star#22" type="Sprite" parent="Stars"]
+editor/display_folded = true
+position = Vector2( 158.49, 588.436 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+script = SubResource( 1 )
+
+[node name="Animator" type="AnimationPlayer" parent="Stars/Star#22"]
+autoplay = "shine"
+anims/shine = SubResource( 2 )
+
+[node name="Star#23" type="Sprite" parent="Stars"]
+editor/display_folded = true
+position = Vector2( 69.9703, 563.383 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+script = SubResource( 1 )
+
+[node name="Animator" type="AnimationPlayer" parent="Stars/Star#23"]
+autoplay = "shine"
+anims/shine = SubResource( 2 )
+
+[node name="Star#24" type="Sprite" parent="Stars"]
+editor/display_folded = true
+position = Vector2( 86.6721, 683.637 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+script = SubResource( 1 )
+
+[node name="Animator" type="AnimationPlayer" parent="Stars/Star#24"]
+autoplay = "shine"
+anims/shine = SubResource( 2 )
+
+[node name="Star#25" type="Sprite" parent="Stars"]
+editor/display_folded = true
+position = Vector2( 93.3528, 817.252 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+script = SubResource( 1 )
+
+[node name="Animator" type="AnimationPlayer" parent="Stars/Star#25"]
+autoplay = "shine"
+anims/shine = SubResource( 2 )
+
+[node name="Star#26" type="Sprite" parent="Stars"]
+editor/display_folded = true
+position = Vector2( 248.68, 954.207 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+script = SubResource( 1 )
+
+[node name="Animator" type="AnimationPlayer" parent="Stars/Star#26"]
+autoplay = "shine"
+anims/shine = SubResource( 2 )
+
+[node name="Star#27" type="Sprite" parent="Stars"]
+editor/display_folded = true
+position = Vector2( 88.3423, 247.718 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+script = SubResource( 1 )
+
+[node name="Animator" type="AnimationPlayer" parent="Stars/Star#27"]
+autoplay = "shine"
+anims/shine = SubResource( 2 )
+
+[node name="Star#28" type="Sprite" parent="Stars"]
+editor/display_folded = true
+position = Vector2( 978.551, 99.0719 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+script = SubResource( 1 )
+
+[node name="Animator" type="AnimationPlayer" parent="Stars/Star#28"]
+autoplay = "shine"
+anims/shine = SubResource( 2 )
+
+[node name="Star#29" type="Sprite" parent="Stars"]
+editor/display_folded = true
+position = Vector2( 749.736, 84.0402 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+script = SubResource( 1 )
+
+[node name="Animator" type="AnimationPlayer" parent="Stars/Star#29"]
+autoplay = "shine"
+anims/shine = SubResource( 2 )
+
+[node name="Star#30" type="Sprite" parent="Stars"]
+editor/display_folded = true
+position = Vector2( 875, 17.2328 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+script = SubResource( 1 )
+
+[node name="Animator" type="AnimationPlayer" parent="Stars/Star#30"]
+autoplay = "shine"
+anims/shine = SubResource( 2 )
+
+[node name="Star#31" type="Sprite" parent="Stars"]
+editor/display_folded = true
+position = Vector2( 1138.56, 614.789 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+script = SubResource( 1 )
+
+[node name="Animator" type="AnimationPlayer" parent="Stars/Star#31"]
+autoplay = "shine"
+anims/shine = SubResource( 2 )
+
+[node name="Star#32" type="Sprite" parent="Stars"]
+editor/display_folded = true
+position = Vector2( 1220.36, 578.436 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+script = SubResource( 1 )
+
+[node name="Animator" type="AnimationPlayer" parent="Stars/Star#32"]
+autoplay = "shine"
+anims/shine = SubResource( 2 )
+
+[node name="Star#33" type="Sprite" parent="Stars"]
+editor/display_folded = true
+position = Vector2( 1222.63, 321.691 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+script = SubResource( 1 )
+
+[node name="Animator" type="AnimationPlayer" parent="Stars/Star#33"]
+autoplay = "shine"
+anims/shine = SubResource( 2 )
+
+[node name="Crux" type="Sprite" parent="Stars" groups=[
+"crux",
+]]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 1151.57, 159.319 )
+rotation = 0.20069
+scale = Vector2( 0.786583, 0.786583 )
+z_index = -1
+texture = ExtResource( 2 )
+
+[node name="Animator" type="AnimationPlayer" parent="Stars/Crux"]
+anims/fade = SubResource( 3 )
+
+[node name="Planets" type="ParallaxLayer" parent="."]
+rotation = 0.00237377
+
+[node name="Earth" parent="Planets" instance=ExtResource( 3 )]
+editor/display_folded = true
+position = Vector2( 142.115, 130.886 )
+rotation = -0.36236
+
+[node name="Plinthon" parent="Planets" instance=ExtResource( 4 )]
+editor/display_folded = true
+position = Vector2( 1068.06, 494.138 )
+rotation = -0.0132345
+z_index = 0
+
+[node name="sky" parent="Planets/Plinthon" index="2"]
+editor/display_folded = true
+
+[node name="satheri" parent="Planets" instance=ExtResource( 5 )]
+visible = false
+position = Vector2( 159.748, 99.7531 )
+rotation = 0.164319
+scale = Vector2( 2.51148, 2.51148 )
+
+
+[editable path="Planets/Plinthon"]

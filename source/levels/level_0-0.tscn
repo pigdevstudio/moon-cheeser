@@ -1,0 +1,203 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://levels/level_0-0.gd" type="Script" id=1]
+[ext_resource path="res://actors/Astromouse/Astromouse.tscn" type="PackedScene" id=2]
+[ext_resource path="res://actors/Moon/Moon.tscn" type="PackedScene" id=3]
+[ext_resource path="res://objects/Spawner/spawner.gd" type="Script" id=4]
+[ext_resource path="res://actors/Blackhole/Blackhole.tscn" type="PackedScene" id=5]
+[ext_resource path="res://actors/Star/Star.tscn" type="PackedScene" id=6]
+[ext_resource path="res://actors/Comet/Comet.tscn" type="PackedScene" id=7]
+[ext_resource path="res://levels/background.tscn" type="PackedScene" id=8]
+
+[sub_resource type="LineShape2D" id=1]
+
+d = 138.454
+
+[sub_resource type="Animation" id=2]
+
+resource_name = "PlanetAnim"
+length = 8.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -62.921, -90.6803 ), Vector2( 1304.69, 0 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+
+length = 8.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 116.589 ), Vector2( 0, 431.194 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+
+length = 4.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 90.6803 ), Vector2( 0, 579.243 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+
+length = 8.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1278.78, 116.589 ), Vector2( 1278.78, 429.343 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+
+length = 4.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1278.78, 629.21 ), Vector2( 1278.78, 75.8753 ) ]
+}
+
+[node name="Level_0-0" type="Node2D" groups=[
+"level",
+]]
+script = ExtResource( 1 )
+
+[node name="Astromouse" parent="." instance=ExtResource( 2 )]
+position = Vector2( 637.603, 250.977 )
+
+[node name="Moon" parent="." instance=ExtResource( 3 )]
+position = Vector2( 640.154, 508.41 )
+
+[node name="Void" type="StaticBody2D" parent="." groups=[
+"void",
+"enemy",
+]]
+editor/display_folded = true
+input_pickable = true
+
+[node name="Shape" type="CollisionShape2D" parent="Void"]
+position = Vector2( 640, 978.882 )
+shape = SubResource( 1 )
+
+[node name="BlackholeSpawner" type="Position2D" parent="."]
+position = Vector2( 1304.69, 0 )
+script = ExtResource( 4 )
+spawn_scene = ExtResource( 5 )
+min_spawn_time = 30.0
+max_spawn_time = 45.0
+
+[node name="Animator" type="AnimationPlayer" parent="BlackholeSpawner"]
+autoplay = "PlanetAnim"
+anims/PlanetAnim = SubResource( 2 )
+
+[node name="Timer" type="Timer" parent="BlackholeSpawner"]
+wait_time = 30.0
+
+[node name="LeftStarSpawner" type="Position2D" parent="."]
+position = Vector2( 0, 116.589 )
+script = ExtResource( 4 )
+spawn_scene = ExtResource( 6 )
+min_spawn_time = 8.0
+max_spawn_time = 16.0
+
+[node name="Animator" type="AnimationPlayer" parent="LeftStarSpawner"]
+autoplay = "LeftStarSpawn"
+anims/LeftStarSpawn = SubResource( 3 )
+
+[node name="Timer" type="Timer" parent="LeftStarSpawner"]
+wait_time = 8.0
+
+[node name="LeftCometSpawner" type="Position2D" parent="."]
+position = Vector2( 0, 90.6803 )
+script = ExtResource( 4 )
+spawn_scene = ExtResource( 7 )
+min_spawn_time = 5.0
+max_spawn_time = 15.0
+
+[node name="Animator" type="AnimationPlayer" parent="LeftCometSpawner"]
+autoplay = "LeftCometSpawner"
+anims/LeftCometSpawner = SubResource( 4 )
+
+[node name="Timer" type="Timer" parent="LeftCometSpawner"]
+wait_time = 10.0
+
+[node name="RightStarSpawner" type="Position2D" parent="."]
+position = Vector2( 1278.78, 116.589 )
+script = ExtResource( 4 )
+spawn_scene = ExtResource( 6 )
+min_spawn_time = 8.0
+max_spawn_time = 16.0
+
+[node name="Animator" type="AnimationPlayer" parent="RightStarSpawner"]
+autoplay = "RightStarSpawner"
+anims/RightStarSpawner = SubResource( 5 )
+
+[node name="Timer" type="Timer" parent="RightStarSpawner"]
+wait_time = 12.0
+
+[node name="RightCometSpawner" type="Position2D" parent="."]
+position = Vector2( 1278.78, 629.21 )
+script = ExtResource( 4 )
+spawn_scene = ExtResource( 7 )
+min_spawn_time = 5.0
+max_spawn_time = 15.0
+
+[node name="Animator" type="AnimationPlayer" parent="RightCometSpawner"]
+autoplay = "RightCometSpawner"
+anims/RightCometSpawner = SubResource( 6 )
+
+[node name="Timer" type="Timer" parent="RightCometSpawner"]
+wait_time = 3.1
+
+[node name="Background" parent="." instance=ExtResource( 8 )]
+layer = -2
+
+[connection signal="timeout" from="BlackholeSpawner/Timer" to="BlackholeSpawner" method="_spawn"]
+[connection signal="timeout" from="LeftStarSpawner/Timer" to="LeftStarSpawner" method="_spawn"]
+[connection signal="timeout" from="LeftCometSpawner/Timer" to="LeftCometSpawner" method="_spawn"]
+[connection signal="timeout" from="RightStarSpawner/Timer" to="RightStarSpawner" method="_spawn"]
+[connection signal="timeout" from="RightCometSpawner/Timer" to="RightCometSpawner" method="_spawn"]
+
+[editable path="Astromouse"]

@@ -1,0 +1,15 @@
+[gd_resource type="SpriteFrames" load_steps=1 format=2]
+
+[ext_resource path="res://actors/Comet/comet_01.png" type="Texture" id=1]
+[ext_resource path="res://actors/Comet/comet_02.png" type="Texture" id=2]
+[ext_resource path="res://actors/Comet/comet_03.png" type="Texture" id=3]
+
+
+[resource]
+
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "flying",
+"speed": 8.0
+} ]

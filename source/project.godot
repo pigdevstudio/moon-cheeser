@@ -16,7 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Moon Cheeser"
-run/main_scene="res://Screens/Title_Screen/TitleScreen.tscn"
+run/main_scene="res://screens/Title_Screen/TitleScreen.tscn"
 config/icon="res://moon_cheeser_icon.png"
 
 [autoload]
@@ -24,7 +24,7 @@ config/icon="res://moon_cheeser_icon.png"
 acheesements="*res://Acheesements.tscn"
 bgm="*res://BackgroundMusic.tscn"
 score_handler="*res://ScoreHandler.tscn"
-transition="*res://Screens/Transition.tscn"
+transition="*res://screens/Transition.tscn"
 
 [display]
 

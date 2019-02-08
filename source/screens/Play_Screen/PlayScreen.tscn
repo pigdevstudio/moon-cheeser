@@ -37,7 +37,7 @@ script = ExtResource( 2 )
 position = Vector2( 0, 1.36035 )
 
 [node name="Astromouse" parent="Level_0-0" index="0"]
-position = Vector2( 702.77, 298.482 )
+position = Vector2( 642.02, 350.232 )
 z_index = 1
 
 [node name="Moon" parent="Level_0-0" index="1"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://levels/level_0-0.gd" type="Script" id=1]
 [ext_resource path="res://actors/Astromouse/Astromouse.tscn" type="PackedScene" id=2]
@@ -8,10 +8,6 @@
 [ext_resource path="res://actors/Star/Star.tscn" type="PackedScene" id=6]
 [ext_resource path="res://actors/Comet/Comet.tscn" type="PackedScene" id=7]
 [ext_resource path="res://levels/background.tscn" type="PackedScene" id=8]
-
-[sub_resource type="LineShape2D" id=1]
-
-d = 138.454
 
 [sub_resource type="Animation" id=2]
 
@@ -105,23 +101,14 @@ tracks/0/keys = {
 script = ExtResource( 1 )
 
 [node name="Astromouse" parent="." instance=ExtResource( 2 )]
-position = Vector2( 637.603, 250.977 )
+editor/display_folded = true
+position = Vector2( 628.103, 241.727 )
 
 [node name="Moon" parent="." instance=ExtResource( 3 )]
-position = Vector2( 640.154, 508.41 )
-
-[node name="Void" type="StaticBody2D" parent="." groups=[
-"void",
-"enemy",
-]]
-editor/display_folded = true
-input_pickable = true
-
-[node name="Shape" type="CollisionShape2D" parent="Void"]
-position = Vector2( 640, 978.882 )
-shape = SubResource( 1 )
+position = Vector2( 644.654, 485.91 )
 
 [node name="BlackholeSpawner" type="Position2D" parent="."]
+editor/display_folded = true
 position = Vector2( 1304.69, 0 )
 script = ExtResource( 4 )
 spawn_scene = ExtResource( 5 )
@@ -136,6 +123,7 @@ anims/PlanetAnim = SubResource( 2 )
 wait_time = 30.0
 
 [node name="LeftStarSpawner" type="Position2D" parent="."]
+editor/display_folded = true
 position = Vector2( 0, 116.589 )
 script = ExtResource( 4 )
 spawn_scene = ExtResource( 6 )
@@ -150,6 +138,7 @@ anims/LeftStarSpawn = SubResource( 3 )
 wait_time = 8.0
 
 [node name="LeftCometSpawner" type="Position2D" parent="."]
+editor/display_folded = true
 position = Vector2( 0, 90.6803 )
 script = ExtResource( 4 )
 spawn_scene = ExtResource( 7 )
@@ -164,6 +153,7 @@ anims/LeftCometSpawner = SubResource( 4 )
 wait_time = 10.0
 
 [node name="RightStarSpawner" type="Position2D" parent="."]
+editor/display_folded = true
 position = Vector2( 1278.78, 116.589 )
 script = ExtResource( 4 )
 spawn_scene = ExtResource( 6 )
@@ -178,6 +168,7 @@ anims/RightStarSpawner = SubResource( 5 )
 wait_time = 12.0
 
 [node name="RightCometSpawner" type="Position2D" parent="."]
+editor/display_folded = true
 position = Vector2( 1278.78, 629.21 )
 script = ExtResource( 4 )
 spawn_scene = ExtResource( 7 )

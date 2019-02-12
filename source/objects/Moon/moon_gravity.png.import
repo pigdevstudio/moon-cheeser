@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/moon_gravity.png-7fb551202318d13c9239548bf7eb03a3.stex"
+path="res://.import/moon_gravity.png-2d7a210ab8b24e0df700b999524c9771.stex"
 
 [deps]
 
-source_file="res://actors/Moon/moon_gravity.png"
-dest_files=[ "res://.import/moon_gravity.png-7fb551202318d13c9239548bf7eb03a3.stex" ]
+source_file="res://objects/Moon/moon_gravity.png"
+dest_files=[ "res://.import/moon_gravity.png-2d7a210ab8b24e0df700b999524c9771.stex" ]
 
 [params]
 

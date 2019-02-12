@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/comet_02.png-af6e42951dada7ec5dcd6eeec2c0e815.stex"
+path="res://.import/particles.png-a58dcf6f76ee818eea64934258a04c47.stex"
 
 [deps]
 
-source_file="res://actors/Comet/comet_02.png"
-dest_files=[ "res://.import/comet_02.png-af6e42951dada7ec5dcd6eeec2c0e815.stex" ]
+source_file="res://objects/Star/particles.png"
+dest_files=[ "res://.import/particles.png-a58dcf6f76ee818eea64934258a04c47.stex" ]
 
 [params]
 

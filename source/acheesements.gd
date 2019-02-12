@@ -68,25 +68,25 @@ func modify_achievement(achievement, value):
 
 func _show_popup():
 	popup.show()
-	tween.interpolate_property(popup, "rect/pos", popup.get_position(), popup.get_position() + Vector2(0, 100),
+	tween.interpolate_property(popup, "rect_position", popup.get_position(), popup.get_position() + Vector2(0, 100),
 	0.5, tween.TRANS_BACK, tween.EASE_OUT)
 	tween.start()
 	timer.start()
 	
 func _hide_popup():
-	tween.interpolate_property(popup, "rect/pos", popup.get_position(), popup.get_position() - Vector2(0, 100),
+	tween.interpolate_property(popup, "rect_position", popup.get_position(), popup.get_position() - Vector2(0, 100),
 	0.5, tween.TRANS_BACK, tween.EASE_IN)
 	tween.start()
-	yield(tween, "tween_complete")
+	yield(tween, "tween_completed")
 	popup.hide()
 
 func _on_Timer_timeout():
 	_hide_popup()
 
 func _on_hide():
-	tween.interpolate_property(popup, "rect/pos", popup.get_position(), popup.get_position() - Vector2(0, 100),
+	tween.interpolate_property(popup, "rect_position", popup.get_position(), popup.get_position() - Vector2(0, 100),
 	0.5, tween.TRANS_BACK, tween.EASE_IN)
 	tween.start()
-	yield(tween, "tween_complete")
+	yield(tween, "tween_completed")
 	popup.hide()
 

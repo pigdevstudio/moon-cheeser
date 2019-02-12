@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/star_002.png-bac5caa68e05bc42635257df98671c9a.stex"
+path="res://.import/black_hole.png-7239a965475aa65761311adc6bbdcde4.stex"
 
 [deps]
 
-source_file="res://actors/Star/star_002.png"
-dest_files=[ "res://.import/star_002.png-bac5caa68e05bc42635257df98671c9a.stex" ]
+source_file="res://objects/Blackhole/black_hole.png"
+dest_files=[ "res://.import/black_hole.png-7239a965475aa65761311adc6bbdcde4.stex" ]
 
 [params]
 

@@ -1,9 +1,10 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://actors/Moon/Moon.gd" type="Script" id=1]
+[ext_resource path="res://objects/Moon/Moon.gd" type="Script" id=1]
 [ext_resource path="res://screens/Title_Screen/moon.png" type="Texture" id=2]
-[ext_resource path="res://actors/Moon/moon_gravity.png" type="Texture" id=3]
+[ext_resource path="res://objects/Moon/moon_gravity.png" type="Texture" id=3]
 [ext_resource path="res://actors/Astromouse/physics/Gravity.tscn" type="PackedScene" id=4]
+
 
 [sub_resource type="CircleShape2D" id=1]
 

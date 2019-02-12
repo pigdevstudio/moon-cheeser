@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/4_colliding.wav-eafdde41deb0063c464b426baf1c3af0.sample"
+path="res://.import/4_colliding.wav-f612c5a3168b31b1692028865b0a25fa.sample"
 
 [deps]
 
-source_file="res://actors/Comet/4_colliding.wav"
-dest_files=[ "res://.import/4_colliding.wav-eafdde41deb0063c464b426baf1c3af0.sample" ]
+source_file="res://objects/Comet/4_colliding.wav"
+dest_files=[ "res://.import/4_colliding.wav-f612c5a3168b31b1692028865b0a25fa.sample" ]
 
 [params]
 

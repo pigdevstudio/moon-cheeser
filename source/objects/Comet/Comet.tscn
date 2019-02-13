@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://objects/Comet/Comet.gd" type="Script" id=1]
+[ext_resource path="res://objects/Comet/SpaceFlyingBody.gd" type="Script" id=1]
 [ext_resource path="res://objects/Comet/sprite_animation.tres" type="SpriteFrames" id=2]
 [ext_resource path="res://objects/Star/particles.png" type="Texture" id=3]
 [ext_resource path="res://objects/DragArea.tscn" type="PackedScene" id=4]
@@ -10,9 +10,9 @@
 radius = 35.2124
 
 [node name="Comet" type="KinematicBody2D" groups=[
-"space_body",
-"comet",
 "enemy",
+"comet",
+"space_body",
 ]]
 position = Vector2( 794.459, 324.654 )
 script = ExtResource( 1 )
@@ -27,7 +27,7 @@ scale = Vector2( 0.454877, 0.454877 )
 z_index = 1
 frames = ExtResource( 2 )
 animation = "flying"
-frame = 3
+frame = 1
 playing = true
 offset = Vector2( 160.398, 0.847276 )
 
@@ -52,6 +52,8 @@ texture = ExtResource( 3 )
 
 [node name="DragArea" parent="." instance=ExtResource( 4 )]
 
+[connection signal="collided" from="." to="." method="_on_collided"]
 [connection signal="screen_exited" from="Sprite/Visibility" to="." method="queue_free"]
 [connection signal="dragged" from="DragArea" to="." method="fly"]
+[connection signal="dragged" from="DragArea" to="." method="_on_DragArea_dragged"]
 [connection signal="dragging" from="DragArea" to="." method="stop"]

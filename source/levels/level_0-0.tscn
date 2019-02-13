@@ -13,21 +13,24 @@
 script = ExtResource( 1 )
 
 [node name="Astromouse" parent="." instance=ExtResource( 2 )]
+editor/display_folded = true
 position = Vector2( 90.3524, 378.977 )
 
 [node name="Sprite" parent="Astromouse" index="0"]
 position = Vector2( 2.25, -2.25 )
 
 [node name="Moon" parent="." instance=ExtResource( 3 )]
+editor/display_folded = true
 position = Vector2( 644.654, 485.91 )
 
 [node name="Background" parent="." instance=ExtResource( 4 )]
 layer = -2
 
-[node name="ComeSpawner" parent="." instance=ExtResource( 5 )]
+[node name="FlyingBodySpawner" parent="." instance=ExtResource( 5 )]
+position = Vector2( 0, 136.5 )
 spawnling = ExtResource( 6 )
-min_spawn_time = 5.0
-max_spawn_time = 10.0
 
 
 [editable path="Astromouse"]
+
+[editable path="Moon"]

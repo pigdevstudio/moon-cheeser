@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://actors/starmouse/StarMouse.gd" type="Script" id=1]
+[ext_resource path="res://actors/Astromouse/starmouse.png" type="Texture" id=2]
+[ext_resource path="res://actors/starmouse/Seek.gd" type="Script" id=3]
+[ext_resource path="res://actors/starmouse/MouseSpotter.gd" type="Script" id=4]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 50.7316
+
+[node name="StarMouse" type="Node2D"]
+script = ExtResource( 1 )
+speed = 800.0
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+
+[node name="Duration" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
+[node name="SteeringSeek" type="Node2D" parent="."]
+script = ExtResource( 3 )
+mass = 40.0
+
+[node name="PickupArea" type="Area2D" parent="." groups=[
+"player",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PickupArea"]
+shape = SubResource( 1 )
+
+[node name="MouseSpotter" type="Node2D" parent="."]
+script = ExtResource( 4 )
+
+[connection signal="timeout" from="Duration" to="." method="queue_free"]
+[connection signal="mouse_found" from="MouseSpotter" to="." method="seek"]
+[connection signal="mouse_lost" from="MouseSpotter" to="." method="stop"]
+[connection signal="mouse_moved" from="MouseSpotter" to="." method="seek"]

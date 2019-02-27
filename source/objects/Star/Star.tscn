@@ -1,18 +1,48 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://objects/SpaceKinematicBody.tscn" type="PackedScene" id=1]
+[ext_resource path="res://objects/space_flying_bodies/star/sprite_animation.tres" type="SpriteFrames" id=1]
+[ext_resource path="res://objects/space_flying_bodies/star/particles.png" type="Texture" id=2]
 
-[node name="Star" groups=[
+[sub_resource type="CircleShape2D" id=1]
+
+radius = 69.0086
+
+[sub_resource type="CircleShape2D" id=2]
+
+radius = 34.8751
+
+[node name="Star" type="KinematicBody2D" groups=[
 "star",
-] instance=ExtResource( 1 )]
+"space_body",
+]]
 z_index = 1
 
-[node name="Sprite" parent="." index="0"]
+[node name="Sprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 0.412247, 0.412247 )
+frames = ExtResource( 1 )
 frame = 2
 playing = true
 offset = Vector2( 161.029, 0 )
 
-[node name="Tail" parent="Sprite" index="0"]
+[node name="Tail" type="Particles2D" parent="Sprite"]
+show_behind_parent = true
 position = Vector2( 386.344, 0 )
+amount = 5
+local_coords = false
+texture = ExtResource( 2 )
 
+[node name="Visibility" type="VisibilityNotifier2D" parent="Sprite"]
+position = Vector2( 73.8245, 0.0223724 )
+scale = Vector2( 6.56864, 5.08701 )
+
+[node name="AreaInput" type="Area2D" parent="."]
+
+[node name="Shape" type="CollisionShape2D" parent="AreaInput"]
+shape = SubResource( 1 )
+
+[node name="Shape" type="CollisionShape2D" parent="."]
+shape = SubResource( 2 )
+
+[connection signal="screen_exited" from="Sprite/Visibility" to="." method="queue_free"]
+[connection signal="mouse_entered" from="AreaInput" to="." method="_set_mouse_on" binds= [ true ]]
+[connection signal="mouse_exited" from="AreaInput" to="." method="_set_mouse_on" binds= [ false ]]

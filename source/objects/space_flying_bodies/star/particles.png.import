@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/star_003.png-aa6d06b3146071269cae58f64f8a55e9.stex"
+path="res://.import/particles.png-1c0507914567bd027bae743c37ab9ea7.stex"
 
 [deps]
 
-source_file="res://objects/Star/star_003.png"
-dest_files=[ "res://.import/star_003.png-aa6d06b3146071269cae58f64f8a55e9.stex" ]
+source_file="res://objects/space_flying_bodies/star/particles.png"
+dest_files=[ "res://.import/particles.png-1c0507914567bd027bae743c37ab9ea7.stex" ]
 
 [params]
 

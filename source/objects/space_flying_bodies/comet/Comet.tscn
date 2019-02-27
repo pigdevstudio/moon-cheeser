@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://objects/space_flying_bodies/SpaceFlyingBody.tscn" type="PackedScene" id=1]
+[ext_resource path="res://objects/space_flying_bodies/comet/sprite_animation.tres" type="SpriteFrames" id=2]
+[ext_resource path="res://objects/Spawner/CheeseSpawner.tscn" type="PackedScene" id=3]
+
+[node name="Comet" instance=ExtResource( 1 )]
+
+[node name="Sprite" parent="." index="1"]
+frames = ExtResource( 2 )
+frame = 1
+
+[node name="CheeseSpawner" parent="." index="3" instance=ExtResource( 3 )]
+min_cheeses = 1
+max_cheeses = 3
+spread = 360.0
+min_radius = 20.0
+max_radius = 50.0
+

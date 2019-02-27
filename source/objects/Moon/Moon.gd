@@ -1,21 +1,7 @@
-extends Node2D
-
-var astromouse setget set_astromouse
+extends "res://objects/GravityBody.gd"
 
 func _ready():
-	set_physics_process(false)
-
-
-func _physics_process(delta):
-	var normal = (global_position - astromouse.global_position).normalized()
-	$Gravity.direction = normal
-	$Gravity.apply(astromouse)
-
-
-func set_astromouse(new_astromouse):
-	astromouse = new_astromouse
-	astromouse.connect("tree_exited", self, "set_physics_process", [false])
-	set_physics_process(true)
+	set_process_unhandled_input(false)
 
 
 func spawn_cheeses(collision):
@@ -27,3 +13,7 @@ func spawn_cheeses(collision):
 	spawner.rotation = normal.angle() + deg2rad(90 - $Pivot.rotation_degrees)
 	spawner.spawn()
 
+
+func _unhandled_input(event):
+	if event.is_action_pressed("jump"):
+		pulse()

@@ -3,29 +3,12 @@
 [ext_resource path="res://objects/Moon/Moon.gd" type="Script" id=1]
 [ext_resource path="res://objects/Moon/moon_gravity.png" type="Texture" id=2]
 [ext_resource path="res://screens/Title_Screen/moon.png" type="Texture" id=3]
-[ext_resource path="res://actors/Astromouse/physics/Gravity.tscn" type="PackedScene" id=4]
+[ext_resource path="res://objects/spin_animation.tres" type="Animation" id=4]
+[ext_resource path="res://actors/Astromouse/physics/Gravity.tscn" type="PackedScene" id=5]
 
 [sub_resource type="CircleShape2D" id=1]
 
 radius = 176.038
-
-[sub_resource type="Animation" id=2]
-
-resource_name = "spin"
-length = 4.0
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath(":rotation_degrees")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 4 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ 360.0, 0.0 ]
-}
 
 [node name="Moon" type="StaticBody2D" groups=[
 "moon",
@@ -37,7 +20,6 @@ script = ExtResource( 1 )
 rotation = 6.28319
 
 [node name="Atmosphere" type="Sprite" parent="Pivot"]
-visible = false
 texture = ExtResource( 2 )
 
 [node name="Crust" type="Sprite" parent="Pivot"]
@@ -52,7 +34,7 @@ shape = SubResource( 1 )
 [node name="Animator" type="AnimationPlayer" parent="."]
 root_node = NodePath("../Pivot")
 autoplay = "spin"
-anims/spin = SubResource( 2 )
+anims/spin = ExtResource( 4 )
 
-[node name="Gravity" parent="." instance=ExtResource( 4 )]
+[node name="Gravity" parent="." instance=ExtResource( 5 )]
 

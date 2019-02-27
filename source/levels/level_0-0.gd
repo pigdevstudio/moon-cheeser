@@ -1,6 +1,6 @@
 extends Node
 
 func _ready():
-	$Moon.astromouse = $Astromouse
+#	$Moon.astromouse = $Astromouse
 	randomize()
 

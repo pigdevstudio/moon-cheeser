@@ -31,13 +31,10 @@ transition="*res://screens/Transition.tscn"
 window/size/width=1280
 window/size/height=720
 window/handheld/orientation="sensor_landscape"
+window/stretch/mode="viewport"
 window/stretch/aspect="keep"
 driver/name="GLES2"
 window/handheld/emulate_touchscreen=true
-
-[editor_plugins]
-
-enabled=PoolStringArray( "code_color_pick", "drag_n_drop" )
 
 [image_loader]
 

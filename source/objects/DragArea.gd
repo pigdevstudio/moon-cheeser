@@ -15,7 +15,6 @@ func _unhandled_input(event):
 		direction = (get_global_mouse_position() - global_position).normalized()
 		emit_signal("dragged", direction)
 		set_process_unhandled_input(false)
-		get_tree().set_input_as_handled()
 
 
 func _on_mouse_exited():
@@ -30,8 +29,6 @@ func _on_input_event(viewport, event, shape_idx):
 	if event.is_action_pressed("click"):
 		is_dragging = true
 		emit_signal("dragging")
-		get_tree().set_input_as_handled()
 		
 	elif event.is_action_released("click"):
 		emit_signal("dragged", direction)
-		get_tree().set_input_as_handled()

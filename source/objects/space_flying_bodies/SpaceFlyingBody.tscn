@@ -1,11 +1,20 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://objects/space_flying_bodies/SpaceFlyingBody.gd" type="Script" id=1]
-[ext_resource path="res://objects/space_flying_bodies/star/particles.png" type="Texture" id=2]
+[ext_resource path="res://actors/particle.png" type="Texture" id=2]
 [ext_resource path="res://objects/DragArea.tscn" type="PackedScene" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 35.2124
+
+[sub_resource type="Curve" id=2]
+min_value = 1.0
+max_value = 1.5
+_data = [ Vector2( 0.254996, 1 ), 0.0, 3.41493, 0, 0, Vector2( 0.993856, 1.27572 ), 0.373164, 0.0, 1, 0 ]
+
+[sub_resource type="Gradient" id=3]
+offsets = PoolRealArray( 0.402703, 1 )
+colors = PoolColorArray( 1, 1, 1, 1, 1, 1, 1, 0 )
 
 [node name="SpaceFlyingBody" type="KinematicBody2D"]
 script = ExtResource( 1 )
@@ -23,23 +32,37 @@ playing = true
 offset = Vector2( 160.398, 0.847276 )
 
 [node name="Tail" type="CPUParticles2D" parent="Sprite"]
-visible = false
 show_behind_parent = true
 position = Vector2( 429.047, 0.847276 )
 amount = 5
 local_coords = false
 texture = ExtResource( 2 )
+spread = 60.0
+gravity = Vector2( 0, 0 )
+initial_velocity = 150.0
+initial_velocity_random = 0.42
+linear_accel = 8.0
+scale_amount_random = 1.0
+scale_amount_curve = SubResource( 2 )
+color_ramp = SubResource( 3 )
 
 [node name="Visibility" type="VisibilityNotifier2D" parent="Sprite"]
 position = Vector2( 172.974, 0.869649 )
 scale = Vector2( 26.2264, 7.81426 )
 
 [node name="Core" type="CPUParticles2D" parent="Sprite"]
-visible = false
 position = Vector2( 177.837, 0.402944 )
 amount = 4
 local_coords = false
 texture = ExtResource( 2 )
+spread = 60.0
+gravity = Vector2( 0, 0 )
+initial_velocity = 150.0
+initial_velocity_random = 0.42
+linear_accel = 8.0
+scale_amount_random = 1.0
+scale_amount_curve = SubResource( 2 )
+color_ramp = SubResource( 3 )
 
 [node name="DragArea" parent="." instance=ExtResource( 3 )]
 

@@ -4,6 +4,8 @@ func _on_collided(collision):
 	var collider = collision.collider
 	if collider.has_method("spawn_cheeses"):
 		collider.spawn_cheeses(collision)
+	if collider.has_method("spawn_crater"):
+		collider.spawn_crater(collision)
 	queue_free()
 
 

@@ -14,6 +14,15 @@ func spawn_cheeses(collision):
 	spawner.spawn()
 
 
+func spawn_crater(collision):
+	var crater = load("res://objects/Crater/Crater.tscn").instance()
+	var pos = collision.position
+	var normal = collision.normal
+	$Pivot.add_child(crater)
+	crater.position = $Pivot.to_local(pos)
+	crater.rotation = normal.angle() + deg2rad(90 - $Pivot.rotation_degrees)
+
+
 func _unhandled_input(event):
 	if event.is_action_pressed("jump"):
 		pulse()

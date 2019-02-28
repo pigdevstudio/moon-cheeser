@@ -1,14 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://objects/Crater/crater.gd" type="Script" id=1]
+[ext_resource path="res://objects/Crater/Crater.gd" type="Script" id=1]
 [ext_resource path="res://objects/Crater/crater.png" type="Texture" id=2]
+[ext_resource path="res://actors/particle.png" type="Texture" id=3]
 
-[sub_resource type="RectangleShape2D" id=1]
-
-extents = Vector2( 33.3517, 14.5641 )
-
-[sub_resource type="Animation" id=2]
-
+[sub_resource type="Animation" id=1]
 resource_name = "shine"
 length = 2.0
 loop = true
@@ -25,11 +21,14 @@ tracks/0/keys = {
 "values": [ Color( 1, 0.296875, 0.296875, 1 ), Color( 1, 0.296875, 0.296875, 0.224039 ) ]
 }
 
-[node name="Crater" type="StaticBody2D" groups=[
+[sub_resource type="Gradient" id=2]
+offsets = PoolRealArray( 0, 0.140541, 0.451351, 0.675676, 0.821622, 0.97027 )
+colors = PoolColorArray( 1, 1, 1, 1, 1, 0.883879, 0.113281, 1, 1, 0.619057, 0.310923, 1, 1, 0.078125, 0.249265, 1, 0.206722, 0.190572, 0.190572, 1, 0.298039, 0.290196, 0.290196, 0.054902 )
+
+[node name="Crater" type="Node2D" groups=[
 "crater",
 "enemy",
 ]]
-input_pickable = true
 script = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
@@ -37,24 +36,36 @@ position = Vector2( 0, -12.1292 )
 scale = Vector2( 0.349339, 0.431663 )
 texture = ExtResource( 2 )
 
-[node name="Shape" type="CollisionShape2D" parent="."]
-position = Vector2( 0, -9.94785 )
-z_index = 2
-shape = SubResource( 1 )
-
-[node name="Timer" type="Timer" parent="."]
+[node name="Duration" type="Timer" parent="."]
 one_shot = true
 
 [node name="Animator" type="AnimationPlayer" parent="."]
-anims/shine = SubResource( 2 )
+anims/shine = SubResource( 1 )
 
 [node name="Tween" type="Tween" parent="."]
 
-[node name="Particles" type="Particles2D" parent="."]
+[node name="Particles" type="CPUParticles2D" parent="."]
 position = Vector2( 0, -12.1292 )
-amount = 10
-lifetime = 0.7
-explosiveness = 0.6
-texture = ExtResource( 2 )
+rotation = -1.5708
+emitting = false
+amount = 16
+lifetime = 0.75
+one_shot = true
+explosiveness = 0.85
+randomness = 0.7
+texture = ExtResource( 3 )
+emission_shape = 2
+emission_rect_extents = Vector2( 0, 30 )
+spread = 10.0
+gravity = Vector2( 98, 0 )
+initial_velocity = 300.0
+color_ramp = SubResource( 2 )
 
-[connection signal="timeout" from="Timer" to="." method="_on_timeout"]
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PoolVector2Array( -44, 4, -32, -20, 34, -20, 45, 4 )
+disabled = true
+
+[connection signal="timeout" from="Duration" to="." method="_on_timeout"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]

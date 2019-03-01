@@ -29,5 +29,6 @@ position = Vector2( 643.501, 267 )
 [node name="Astromouse" parent="." instance=ExtResource( 7 )]
 position = Vector2( 645.001, 268.5 )
 
+[connection signal="spawned" from="AstromouseSpawner" to="." method="set_astromouse"]
 
 [editable path="Moon"]

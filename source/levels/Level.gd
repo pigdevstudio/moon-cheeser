@@ -2,16 +2,17 @@ extends Node
 
 const Starmouse = preload("res://actors/starmouse/StarMouse.gd")
 
+var astromouse = null setget set_astromouse
+
 func _ready():
-	$Moon.astromouse = $Astromouse
+	self.astromouse = $Astromouse
 	randomize()
 
 
 func instance_astromouse(spawn_position):
 	var spawner = $AstromouseSpawner
-	
 	spawner.position = spawn_position
-	$Moon.astromouse = spawner.spawn()
+	spawner.spawn()
 
 
 func add_child(node, legible_unique_name = false):
@@ -22,3 +23,9 @@ func add_child(node, legible_unique_name = false):
 
 func _on_Starmouse_tree_exiting(starmouse):
 	instance_astromouse(starmouse.position)
+
+
+func set_astromouse(new_astromouse):
+	astromouse = new_astromouse
+	$Moon.astromouse = astromouse
+

@@ -8,4 +8,5 @@ func spawn():
 	instance.fly(flying_direction)
 	instance.global_position = global_position
 	get_parent().add_child(instance)
+	emit_signal("spawned", instance)
 	reset_timer()

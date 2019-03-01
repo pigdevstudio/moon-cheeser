@@ -32,4 +32,7 @@ color_ramp = SubResource( 2 )
 
 [node name="CheeseSpawner" parent="." index="4" instance=ExtResource( 5 )]
 max_cheeses = 4
+spread = 180.0
+min_radius = 35.0
+max_radius = 50.0
 

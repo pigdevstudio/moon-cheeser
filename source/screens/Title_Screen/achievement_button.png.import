@@ -3,6 +3,9 @@
 importer="texture"
 type="StreamTexture"
 path="res://.import/achievement_button.png-ef26bd78abc49d27fabada5700a6ae52.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 

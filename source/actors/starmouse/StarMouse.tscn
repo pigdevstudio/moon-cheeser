@@ -19,6 +19,7 @@ texture = ExtResource( 2 )
 [node name="Duration" type="Timer" parent="."]
 wait_time = 5.0
 one_shot = true
+autostart = true
 
 [node name="SteeringSeek" type="Node2D" parent="."]
 script = ExtResource( 3 )

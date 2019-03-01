@@ -1,0 +1,33 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://levels/Level.gd" type="Script" id=1]
+[ext_resource path="res://objects/Moon/Moon.tscn" type="PackedScene" id=2]
+[ext_resource path="res://levels/background.tscn" type="PackedScene" id=3]
+[ext_resource path="res://objects/Spawner/FlyingBodySpawner.tscn" type="PackedScene" id=4]
+[ext_resource path="res://objects/space_flying_bodies/star/Star.tscn" type="PackedScene" id=5]
+[ext_resource path="res://objects/Spawner/AstromouseSpawner.tscn" type="PackedScene" id=6]
+[ext_resource path="res://actors/Astromouse/Astromouse.tscn" type="PackedScene" id=7]
+
+[node name="MoonLevel" type="Node2D" groups=[
+"level",
+]]
+script = ExtResource( 1 )
+
+[node name="Moon" parent="." instance=ExtResource( 2 )]
+position = Vector2( 644.654, 485.91 )
+
+[node name="Background" parent="." instance=ExtResource( 3 )]
+layer = -2
+
+[node name="FlyingBodySpawner" parent="." instance=ExtResource( 4 )]
+position = Vector2( 0, 136.5 )
+spawnling = ExtResource( 5 )
+
+[node name="AstromouseSpawner" parent="." instance=ExtResource( 6 )]
+position = Vector2( 643.501, 267 )
+
+[node name="Astromouse" parent="." instance=ExtResource( 7 )]
+position = Vector2( 645.001, 268.5 )
+
+
+[editable path="Moon"]

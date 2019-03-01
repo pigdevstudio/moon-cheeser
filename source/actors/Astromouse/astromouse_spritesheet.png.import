@@ -3,6 +3,9 @@
 importer="texture"
 type="StreamTexture"
 path="res://.import/astromouse_spritesheet.png-ef3e1902edf14e32f419d7e37e89f34e.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 

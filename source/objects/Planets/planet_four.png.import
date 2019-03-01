@@ -3,6 +3,9 @@
 importer="texture"
 type="StreamTexture"
 path="res://.import/planet_four.png-c646b174c85bd63017583a407ce25fef.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 

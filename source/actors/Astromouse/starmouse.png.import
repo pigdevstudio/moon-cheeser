@@ -3,6 +3,9 @@
 importer="texture"
 type="StreamTexture"
 path="res://.import/starmouse.png-c6197111f3d04e8e44d1ec4bdb8e5726.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 

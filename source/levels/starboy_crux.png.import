@@ -3,6 +3,9 @@
 importer="texture"
 type="StreamTexture"
 path="res://.import/starboy_crux.png-7071ac46211e93e0502f37f283bbec3c.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 

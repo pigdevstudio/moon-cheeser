@@ -3,6 +3,9 @@
 importer="texture"
 type="StreamTexture"
 path="res://.import/moon.png-30f50768ddf132a49d14bf47905fa826.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 

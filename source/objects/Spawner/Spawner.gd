@@ -8,6 +8,7 @@ func _ready():
 
 func spawn():
 	var instance = spawnling.instance()
-	instance.global_position = global_rotation
+	instance.global_position = global_position
 	
 	get_parent().add_child(instance)
+	return instance

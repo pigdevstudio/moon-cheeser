@@ -1,0 +1,74 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[  ]
+_global_script_class_icons={
+
+}
+
+[application]
+
+config/name="Moon Cheeser"
+run/main_scene="res://screens/Title_Screen/TitleScreen.tscn"
+config/icon="res://moon_cheeser_icon.png"
+
+[autoload]
+
+acheesements="*res://Acheesements.tscn"
+bgm="*res://BackgroundMusic.tscn"
+Score="*res://Score.tscn"
+transition="*res://screens/Transition.tscn"
+
+[display]
+
+window/size/width=1280
+window/size/height=720
+window/handheld/orientation="sensor_landscape"
+window/stretch/mode="viewport"
+window/stretch/aspect="keep"
+driver/name="GLES2"
+window/handheld/emulate_touchscreen=true
+
+[image_loader]
+
+filter=true
+gen_mipmaps=true
+
+[importer_defaults]
+
+texture={
+"flags/filter": true,
+"flags/mipmaps": true
+}
+
+[input]
+
+click={
+"deadzone": 0.5,
+"events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":1,"pressed":false,"doubleclick":false,"script":null)
+ ]
+}
+jump={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":32,"unicode":0,"echo":false,"script":null)
+ ]
+}
+
+[locale]
+
+translation_remaps={
+"res://Screens/Achievements_Screen/achievements.json": [ "res://Screens/Achievements_Screen/conquistas.json:pt_BR" ]
+}
+translations=[  ]
+
+[rendering]
+
+quality/driver/driver_name="GLES2"
+environment/default_clear_color=Color( 0, 0.0666667, 0.168627, 1 )

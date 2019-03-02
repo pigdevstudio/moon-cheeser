@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://objects/space_flying_bodies/comet/comet_01.png" type="Texture" id=1]
+[ext_resource path="res://objects/space_flying_bodies/comet/comet_02.png" type="Texture" id=2]
+[ext_resource path="res://objects/space_flying_bodies/comet/comet_03.png" type="Texture" id=3]
+
+
+
+
+[sub_resource type="SpriteFrames" id=1]
+
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "flying",
+"speed": 8.0
+} ]
+
+[sub_resource type="CircleShape2D" id=2]
+
+
+[node name="Comet" type="RigidBody2D"]
+gravity_scale = 0.0
+linear_velocity = Vector2( -300, 0 )
+linear_damp = 0.0
+
+[node name="Sprite" type="AnimatedSprite" parent="."]
+rotation = -0.0022658
+scale = Vector2( 0.454877, 0.454877 )
+frames = SubResource( 1 )
+animation = "flying"
+frame = 2
+playing = true
+offset = Vector2( 160.398, 0.0223724 )
+
+[node name="Visibility" type="VisibilityNotifier2D" parent="Sprite"]
+position = Vector2( 159.086, 7.37106 )
+scale = Vector2( 25.0902, 8.03955 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 2 )
+
+[connection signal="screen_exited" from="Sprite/Visibility" to="." method="queue_free"]

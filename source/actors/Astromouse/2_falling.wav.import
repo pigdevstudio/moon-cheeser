@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/2_falling.wav-fafdca1e543256555f222e3b50ee0e14.sample"
+
+[deps]
+
+source_file="res://actors/Astromouse/2_falling.wav"
+dest_files=[ "res://.import/2_falling.wav-fafdca1e543256555f222e3b50ee0e14.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

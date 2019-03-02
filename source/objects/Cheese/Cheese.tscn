@@ -1,0 +1,48 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://objects/Cheese/Cheese.gd" type="Script" id=1]
+[ext_resource path="res://objects/Cheese/cheese.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 18.6669, 17.9998 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "pulsing"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Pivot/Sprite:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( -1.68179, 1 ),
+"update": 0,
+"values": [ Vector2( 0.147222, 0.147222 ), Vector2( 0.200615, 0.200615 ) ]
+}
+
+[node name="Cheese" type="Area2D" groups=[
+"cheese",
+]]
+z_index = -1
+script = ExtResource( 1 )
+score = 35
+
+[node name="Shape" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="Animator" type="AnimationPlayer" parent="."]
+autoplay = "pulsing"
+anims/pulsing = SubResource( 2 )
+
+[node name="Pivot" type="Position2D" parent="."]
+scale = Vector2( 1.44, 1.44 )
+
+[node name="Sprite" type="Sprite" parent="Pivot"]
+scale = Vector2( 0.1687, 0.1687 )
+texture = ExtResource( 2 )
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

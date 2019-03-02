@@ -1,7 +1,10 @@
 extends "res://objects/SpaceKinematicBody.gd"
 
+signal died
+
 func _ready():
 	$Actions.kinematic_actor = self
+
 
 func _on_Astromouse_collided(collision):
 	var collider = collision.collider
@@ -13,10 +16,11 @@ func _on_Astromouse_collided(collision):
 		$AnimatedSprite.play("Run")
 
 func die():
-	$Shape.disabled = true
-	$PickupArea/CollisionShape2D.disabled = true
+	$Shape.call_deferred("set_disabled", true)
+	$PickupArea/CollisionShape2D.call_deferred("set_disabled", true)
 	$SFX.play("Damage")
 	yield($SFX, "finished")
+	emit_signal("died")
 	queue_free()
 
 

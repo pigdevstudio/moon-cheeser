@@ -12,12 +12,14 @@ func _ready():
 	randomize()
 
 func _set_astromouse(new_astromouse):
+	if not new_astromouse:
+		return
 	astromouse = new_astromouse
-	astromouse.connect("tree_exited", self, "_on_Astromouse_tree_exited")
+	astromouse.connect("died", self, "_on_Astromouse_died")
 	$Moon.astromouse = astromouse
 
-func _on_Astromouse_tree_exited():
-	emit_signal("game_over")
+func _on_Astromouse_died():
+ 	emit_signal("game_over")
 
 func _on_Starmouse_tree_exiting(starmouse):
 	instance_astromouse(starmouse.position)
@@ -29,8 +31,8 @@ func instance_astromouse(spawn_position):
 
 func add_child(node, legible_unique_name = false):
 	if node is Starmouse:
+		astromouse.queue_free()
 		node.connect("tree_exiting", self, "_on_Starmouse_tree_exiting", [node])
 	elif node is SpaceActor:
 		_set_astromouse(node)
 	return .add_child(node, legible_unique_name)
-

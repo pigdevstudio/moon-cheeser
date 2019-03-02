@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://levels/Level.gd" type="Script" id=1]
 [ext_resource path="res://objects/Moon/Moon.tscn" type="PackedScene" id=2]
@@ -14,7 +14,7 @@ resource_name = "slide_vertically"
 length = 4.0
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath(".:position")
+tracks/0/path = NodePath("RightCometSpawner:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -23,58 +23,43 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 2 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0, 211.5 ), Vector2( 0, 615.001 ) ]
+"values": [ Vector2( 1280, 210.598 ), Vector2( 1280, 623.553 ) ]
 }
-
-[sub_resource type="Animation" id=2]
-resource_name = "slide_vertically"
-length = 4.0
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
+tracks/1/type = "value"
+tracks/1/path = NodePath("LeftStarSpawner:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
 "times": PoolRealArray( 0, 2 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0, 211.5 ), Vector2( 0, 615.001 ) ]
+"values": [ Vector2( 0, 211.5 ), Vector2( 0, 624.455 ) ]
 }
-
-[sub_resource type="Animation" id=3]
-resource_name = "slide_vertically"
-length = 4.0
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
+tracks/2/type = "value"
+tracks/2/path = NodePath("LeftCometSpawner:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
 "times": PoolRealArray( 0, 2 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0, 211.5 ), Vector2( 0, 615.001 ) ]
+"values": [ Vector2( 0, 211.5 ), Vector2( 0, 624.455 ) ]
 }
-
-[sub_resource type="Animation" id=4]
-resource_name = "slide_vertically"
-length = 4.0
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
+tracks/3/type = "value"
+tracks/3/path = NodePath("RightStarSpawner:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
 "times": PoolRealArray( 0, 2 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0, 211.5 ), Vector2( 0, 615.001 ) ]
+"values": [ Vector2( 1279.18, 211.5 ), Vector2( 1279.18, 624.455 ) ]
 }
 
 [node name="MoonLevel" type="Node2D" groups=[
@@ -90,53 +75,41 @@ position = Vector2( 644.654, 485.91 )
 layer = -2
 
 [node name="LeftStarSpawner" parent="." instance=ExtResource( 4 )]
-position = Vector2( 0, 615.001 )
+position = Vector2( 0, 211.5 )
 spawnling = ExtResource( 5 )
 min_spawn_time = 4.0
 max_spawn_time = 10.0
-
-[node name="SpawnerAnimator" type="AnimationPlayer" parent="LeftStarSpawner"]
-autoplay = "slide_vertically"
-playback_speed = 0.3
-anims/slide_vertically = SubResource( 1 )
 
 [node name="LeftCometSpawner" parent="." instance=ExtResource( 4 )]
-position = Vector2( 0, 615.001 )
+position = Vector2( 0, 211.5 )
 spawnling = ExtResource( 6 )
 min_spawn_time = 4.0
 max_spawn_time = 10.0
 
-[node name="SpawnerAnimator" type="AnimationPlayer" parent="LeftCometSpawner"]
-playback_speed = 0.3
-anims/slide_vertically = SubResource( 2 )
-
 [node name="RightStarSpawner" parent="." instance=ExtResource( 4 )]
-position = Vector2( 1280, 615.001 )
+position = Vector2( 1279.18, 211.5 )
 spawnling = ExtResource( 5 )
 min_spawn_time = 4.0
 max_spawn_time = 10.0
 flying_direction = Vector2( -1, 0 )
 
-[node name="SpawnerAnimator" type="AnimationPlayer" parent="RightStarSpawner"]
-playback_speed = 0.3
-anims/slide_vertically = SubResource( 3 )
-
 [node name="RightCometSpawner" parent="." instance=ExtResource( 4 )]
-position = Vector2( 1280, 615.001 )
+position = Vector2( 1280, 210.598 )
 spawnling = ExtResource( 6 )
 min_spawn_time = 4.0
 max_spawn_time = 10.0
 flying_direction = Vector2( -1, 0 )
-
-[node name="SpawnerAnimator" type="AnimationPlayer" parent="RightCometSpawner"]
-playback_speed = 0.3
-anims/slide_vertically = SubResource( 4 )
 
 [node name="AstromouseSpawner" parent="." instance=ExtResource( 7 )]
 position = Vector2( 643.501, 267 )
 
+[node name="SpawnerAnimator" type="AnimationPlayer" parent="."]
+autoplay = "slide_vertically"
+playback_speed = 0.3
+anims/slide_vertically = SubResource( 1 )
+
 [node name="Astromouse" parent="." instance=ExtResource( 8 )]
-position = Vector2( 645.001, 268.5 )
+position = Vector2( 646.311, 255.348 )
 
 
 [editable path="Moon"]

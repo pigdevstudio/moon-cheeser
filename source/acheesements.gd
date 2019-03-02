@@ -32,7 +32,6 @@ onready var tween = get_node("Tween")
 
 func _ready():
 	var t = Translation.new()
-	print(file_path)
 	read_achievements()
 
 func read_achievements():

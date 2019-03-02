@@ -13,8 +13,8 @@ func surge(offset_distance):
 	t.start()
 
 
-func _on_area_entered(body):
-	if body.is_in_group("player"):
+func _on_area_entered(area):
+	if area.is_in_group("player"):
 		emit_signal("scored", score)
 		queue_free()
 

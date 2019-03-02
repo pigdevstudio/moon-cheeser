@@ -9,10 +9,7 @@
 [ext_resource path="res://levels/background.tscn" type="PackedScene" id=7]
 [ext_resource path="res://screens/Score_Screen/back_normal.png" type="Texture" id=8]
 
-
-
 [sub_resource type="DynamicFont" id=1]
-
 size = 80
 font_data = ExtResource( 4 )
 

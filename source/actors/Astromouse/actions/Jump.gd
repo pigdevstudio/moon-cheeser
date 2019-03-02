@@ -1,5 +1,7 @@
 extends Node
 
+signal executed
+
 export (float) var height = 300.0
 export (PackedScene) var strategy
 
@@ -10,6 +12,7 @@ func _ready():
 func apply(kinematic_actor):
 	var direction = strategy.get_direction(kinematic_actor)
 	kinematic_actor.velocity = direction * height
+	emit_signal("executed")
 
 func reset():
 	pass

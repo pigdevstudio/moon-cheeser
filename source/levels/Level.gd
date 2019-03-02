@@ -1,5 +1,7 @@
 extends Node
 
+signal game_over
+
 const Starmouse = preload("res://actors/starmouse/StarMouse.gd")
 const SpaceActor = preload("res://actors/Astromouse/SpaceActor.gd")
 
@@ -11,7 +13,11 @@ func _ready():
 
 func _set_astromouse(new_astromouse):
 	astromouse = new_astromouse
+	astromouse.connect("tree_exited", self, "_on_Astromouse_tree_exited")
 	$Moon.astromouse = astromouse
+
+func _on_Astromouse_tree_exited():
+	emit_signal("game_over")
 
 func _on_Starmouse_tree_exiting(starmouse):
 	instance_astromouse(starmouse.position)

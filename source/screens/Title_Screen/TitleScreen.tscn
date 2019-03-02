@@ -140,10 +140,10 @@ margin_right = 408.0
 margin_bottom = 670.0
 size_flags_vertical = 3
 
-[connection signal="pressed" from="ScreenMargin/ScreenPortions/LeftPortion/Achievements" to="." method="_on_Achievements_pressed"]
 [connection signal="pressed" from="ScreenMargin/ScreenPortions/LeftPortion/Achievements" to="." method="change_to_next_scene" binds= [ "res://screens/Achievements_Screen/AchievementsScreen.tscn" ]]
-[connection signal="pressed" from="ScreenMargin/ScreenPortions/CenterPortion/Credits" to="." method="_on_Credits_pressed"]
+[connection signal="pressed" from="ScreenMargin/ScreenPortions/LeftPortion/Achievements" to="." method="_on_Achievements_pressed"]
 [connection signal="pressed" from="ScreenMargin/ScreenPortions/CenterPortion/Credits" to="." method="change_to_next_scene" binds= [ "res://screens/Credits_Screen/CreditsScreen.tscn" ]]
+[connection signal="pressed" from="ScreenMargin/ScreenPortions/CenterPortion/Credits" to="." method="_on_Credits_pressed"]
 [connection signal="pressed" from="ScreenMargin/ScreenPortions/RightPortion/Play" to="." method="change_to_next_scene" binds= [ "res://screens/Play_Screen/PlayScreen.tscn" ]]
 
 [editable path="ScreenMargin/Background"]

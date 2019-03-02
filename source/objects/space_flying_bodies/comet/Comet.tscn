@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://objects/space_flying_bodies/SpaceFlyingBody.tscn" type="PackedScene" id=1]
-[ext_resource path="res://objects/space_flying_bodies/comet/sprite_animation.tres" type="SpriteFrames" id=2]
-[ext_resource path="res://objects/Spawner/CheeseSpawner.tscn" type="PackedScene" id=3]
+[ext_resource path="res://objects/space_flying_bodies/comet/Comet.gd" type="Script" id=2]
+[ext_resource path="res://objects/space_flying_bodies/comet/sprite_animation.tres" type="SpriteFrames" id=3]
+[ext_resource path="res://objects/Spawner/CheeseSpawner.tscn" type="PackedScene" id=4]
 
 [sub_resource type="Gradient" id=1]
 offsets = PoolRealArray( 0.47027, 1 )
@@ -13,9 +14,10 @@ offsets = PoolRealArray( 0.402703, 1 )
 colors = PoolColorArray( 1, 0.4, 0.333333, 1, 1, 0.4, 0.333333, 0 )
 
 [node name="Comet" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
 
 [node name="Sprite" parent="." index="1"]
-frames = ExtResource( 2 )
+frames = ExtResource( 3 )
 frame = 3
 
 [node name="Tail" parent="Sprite" index="0"]
@@ -24,7 +26,7 @@ color_ramp = SubResource( 1 )
 [node name="Core" parent="Sprite" index="2"]
 color_ramp = SubResource( 2 )
 
-[node name="CheeseSpawner" parent="." index="3" instance=ExtResource( 3 )]
+[node name="CheeseSpawner" parent="." index="3" instance=ExtResource( 4 )]
 min_cheeses = 1
 max_cheeses = 3
 spread = 360.0

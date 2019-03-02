@@ -8,4 +8,22 @@ func _on_Astromouse_collided(collision):
 	var angle = get_angle_to(collider.global_position)
 	angle -= deg2rad(90)
 	rotate(angle)
-	$Actions/Jump.reset()
+	if collision.collider.is_in_group("moon"):
+		$Actions/Jump.reset()
+		$AnimatedSprite.play("Run")
+
+func die():
+	$Shape.disabled = true
+	$PickupArea/CollisionShape2D.disabled = true
+	$SFX.play("Damage")
+	yield($SFX, "finished")
+	queue_free()
+
+
+func _on_Jump_executed():
+	$AnimatedSprite.play("Jump")
+	$AnimatedSprite.frame = 0
+	$SFX.play("Jump")
+	yield($AnimatedSprite, "animation_finished")
+	$AnimatedSprite.play("Fall")
+

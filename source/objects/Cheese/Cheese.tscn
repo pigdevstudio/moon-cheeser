@@ -4,11 +4,9 @@
 [ext_resource path="res://objects/Cheese/cheese.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-
 extents = Vector2( 18.6669, 17.9998 )
 
 [sub_resource type="Animation" id=2]
-
 resource_name = "pulsing"
 loop = true
 tracks/0/type = "value"
@@ -29,6 +27,7 @@ tracks/0/keys = {
 ]]
 z_index = -1
 script = ExtResource( 1 )
+score = 35
 
 [node name="Shape" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )

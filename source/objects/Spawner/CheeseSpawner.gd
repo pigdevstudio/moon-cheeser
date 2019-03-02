@@ -14,7 +14,7 @@ func spawn():
 		add_child(cheese)
 		cheese.rotation_degrees = rand_range(-spread, spread)
 		cheese.surge(rand_range(min_radius, max_radius))
-		cheese.connect("scored", score_handler, "add_score")
+		cheese.connect("scored", Score, "add_score")
 		cheese.connect("tree_exited", self, "_on_cheese_tree_exited")
 
 func set_spread(value):

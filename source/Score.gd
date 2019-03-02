@@ -1,9 +1,10 @@
 extends Node
 
+signal scored
+
 var current_score = 0 setget set_score, get_score
 var high_score = 0
 
-signal scored
 func _ready():
 	var f = File.new()
 	if f.file_exists("user://highscore"):
@@ -24,7 +25,6 @@ func set_score(value):
 	
 func add_score(amount):
 	self.current_score += amount
-	print(current_score)
 
 func get_score():
 	return(current_score)

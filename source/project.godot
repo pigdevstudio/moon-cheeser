@@ -23,7 +23,7 @@ config/icon="res://moon_cheeser_icon.png"
 
 acheesements="*res://Acheesements.tscn"
 bgm="*res://BackgroundMusic.tscn"
-score_handler="*res://ScoreHandler.tscn"
+Score="*res://Score.tscn"
 transition="*res://screens/Transition.tscn"
 
 [display]

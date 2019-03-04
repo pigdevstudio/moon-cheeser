@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://levels/Level.gd" type="Script" id=1]
 [ext_resource path="res://objects/Moon/Moon.tscn" type="PackedScene" id=2]
@@ -7,10 +7,11 @@
 [ext_resource path="res://objects/space_flying_bodies/star/Star.tscn" type="PackedScene" id=5]
 [ext_resource path="res://objects/space_flying_bodies/comet/Comet.tscn" type="PackedScene" id=6]
 [ext_resource path="res://objects/Spawner/AstromouseSpawner.tscn" type="PackedScene" id=7]
-[ext_resource path="res://actors/Astromouse/Astromouse.tscn" type="PackedScene" id=8]
+[ext_resource path="res://objects/Spawner/BlackholeSpawner.tscn" type="PackedScene" id=8]
+[ext_resource path="res://actors/Astromouse/Astromouse.tscn" type="PackedScene" id=9]
 
 [sub_resource type="Animation" id=1]
-resource_name = "slide_vertically"
+resource_name = "slide"
 length = 4.0
 loop = true
 tracks/0/type = "value"
@@ -61,6 +62,18 @@ tracks/3/keys = {
 "update": 0,
 "values": [ Vector2( 1279.18, 211.5 ), Vector2( 1279.18, 624.455 ) ]
 }
+tracks/4/type = "value"
+tracks/4/path = NodePath("BlackholeSpawner:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 1280.53, 0 ) ]
+}
 
 [node name="MoonLevel" type="Node2D" groups=[
 "level",
@@ -74,26 +87,34 @@ position = Vector2( 644.654, 485.91 )
 [node name="Background" parent="." instance=ExtResource( 3 )]
 layer = -2
 
-[node name="LeftStarSpawner" parent="." instance=ExtResource( 4 )]
+[node name="LeftStarSpawner" parent="." groups=[
+"flyingbody_spawner",
+] instance=ExtResource( 4 )]
 position = Vector2( 0, 211.5 )
 spawnling = ExtResource( 5 )
 min_spawn_time = 4.0
 max_spawn_time = 10.0
 
-[node name="LeftCometSpawner" parent="." instance=ExtResource( 4 )]
+[node name="LeftCometSpawner" parent="." groups=[
+"flyingbody_spawner",
+] instance=ExtResource( 4 )]
 position = Vector2( 0, 211.5 )
 spawnling = ExtResource( 6 )
 min_spawn_time = 4.0
 max_spawn_time = 10.0
 
-[node name="RightStarSpawner" parent="." instance=ExtResource( 4 )]
+[node name="RightStarSpawner" parent="." groups=[
+"flyingbody_spawner",
+] instance=ExtResource( 4 )]
 position = Vector2( 1279.18, 211.5 )
 spawnling = ExtResource( 5 )
 min_spawn_time = 4.0
 max_spawn_time = 10.0
 flying_direction = Vector2( -1, 0 )
 
-[node name="RightCometSpawner" parent="." instance=ExtResource( 4 )]
+[node name="RightCometSpawner" parent="." groups=[
+"flyingbody_spawner",
+] instance=ExtResource( 4 )]
 position = Vector2( 1280, 210.598 )
 spawnling = ExtResource( 6 )
 min_spawn_time = 4.0
@@ -103,12 +124,16 @@ flying_direction = Vector2( -1, 0 )
 [node name="AstromouseSpawner" parent="." instance=ExtResource( 7 )]
 position = Vector2( 643.501, 267 )
 
-[node name="SpawnerAnimator" type="AnimationPlayer" parent="."]
-autoplay = "slide_vertically"
-playback_speed = 0.3
-anims/slide_vertically = SubResource( 1 )
+[node name="BlackholeSpawner" parent="." instance=ExtResource( 8 )]
+min_spawn_time = 3.0
+max_spawn_time = 5.0
 
-[node name="Astromouse" parent="." instance=ExtResource( 8 )]
+[node name="SpawnerAnimator" type="AnimationPlayer" parent="."]
+autoplay = "slide"
+playback_speed = 0.3
+anims/slide = SubResource( 1 )
+
+[node name="Astromouse" parent="." instance=ExtResource( 9 )]
 position = Vector2( 646.311, 255.348 )
 
 

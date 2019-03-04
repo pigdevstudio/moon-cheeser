@@ -11,3 +11,7 @@ func reset_timer():
 	
 	timer.wait_time = rand_range(min_spawn_time, max_spawn_time)
 	timer.start()
+
+func stop():
+	var timer = $Timer
+	timer.stop()

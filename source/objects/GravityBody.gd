@@ -20,7 +20,6 @@ func set_astromouse(new_astromouse):
 
 func set_gravity_enabled(enabled):
 	set_physics_process(enabled)
-	set_process_unhandled_input(enabled)
 
 
 func pulse():

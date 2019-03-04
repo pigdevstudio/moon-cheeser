@@ -7,7 +7,6 @@
 [ext_resource path="res://actors/Astromouse/physics/Gravity.tscn" type="PackedScene" id=5]
 
 [sub_resource type="CircleShape2D" id=1]
-
 radius = 176.038
 
 [node name="Moon" type="StaticBody2D" groups=[

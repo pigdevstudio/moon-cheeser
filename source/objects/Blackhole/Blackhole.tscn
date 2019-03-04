@@ -7,23 +7,20 @@
 [ext_resource path="res://levels/star_back.png" type="Texture" id=5]
 [ext_resource path="res://actors/Astromouse/physics/Gravity.tscn" type="PackedScene" id=6]
 
-[sub_resource type="Curve" id=3]
-
+[sub_resource type="Curve" id=1]
 min_value = -360.0
 max_value = 360.0
 _data = [ Vector2( 0, -61.4832 ), 0.0, 0.0, 0, 0, Vector2( 1, 65.2368 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="Curve" id=4]
+[sub_resource type="Curve" id=2]
 
-
-[sub_resource type="CircleShape2D" id=1]
-
+[sub_resource type="CircleShape2D" id=3]
 radius = 55.0369
 
 [node name="BlackHole" type="Node2D" groups=[
-"void",
-"black_hole",
 "enemy",
+"black_hole",
+"void",
 ]]
 z_index = -3
 script = ExtResource( 1 )
@@ -53,20 +50,28 @@ initial_velocity = 60.0
 initial_velocity_random = 1.0
 angular_velocity = 8.0
 angular_velocity_random = 1.0
-angular_velocity_curve = SubResource( 3 )
+angular_velocity_curve = SubResource( 1 )
 tangential_accel = 16.0
 scale_amount = 0.3
 scale_amount_random = 0.5
-scale_amount_curve = SubResource( 4 )
+scale_amount_curve = SubResource( 2 )
 
 [node name="Gravity" parent="." instance=ExtResource( 6 )]
 
 [node name="PulseInterval" type="Timer" parent="."]
+wait_time = 2.0
 autostart = true
 
 [node name="Singularity" type="Area2D" parent="."]
 
 [node name="Shape" type="CollisionShape2D" parent="Singularity"]
-shape = SubResource( 1 )
+shape = SubResource( 3 )
 
+[node name="Duration" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="PulseInterval" to="." method="pulse"]
 [connection signal="body_entered" from="Singularity" to="." method="_on_Singularity_body_entered"]
+[connection signal="timeout" from="Duration" to="." method="queue_free"]

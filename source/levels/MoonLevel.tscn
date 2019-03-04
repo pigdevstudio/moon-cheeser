@@ -125,8 +125,6 @@ flying_direction = Vector2( -1, 0 )
 position = Vector2( 643.501, 267 )
 
 [node name="BlackholeSpawner" parent="." instance=ExtResource( 8 )]
-min_spawn_time = 3.0
-max_spawn_time = 5.0
 
 [node name="SpawnerAnimator" type="AnimationPlayer" parent="."]
 autoplay = "slide"

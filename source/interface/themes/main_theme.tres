@@ -1,0 +1,45 @@
+[gd_resource type="Theme" load_steps=7 format=2]
+
+[ext_resource path="res://interface/fonts/garoa_hacker_16.tres" type="DynamicFont" id=1]
+
+[sub_resource type="DynamicFontData" id=6]
+font_path = "res://screens/GaroaHackerClubeBold.otf"
+
+[sub_resource type="DynamicFont" id=1]
+size = 30
+use_mipmaps = true
+use_filter = true
+font_data = SubResource( 6 )
+
+[sub_resource type="StyleBoxEmpty" id=2]
+
+[sub_resource type="StyleBoxEmpty" id=3]
+content_margin_left = 25.0
+content_margin_right = 25.0
+content_margin_top = 0.0
+content_margin_bottom = 0.0
+
+[sub_resource type="StyleBoxEmpty" id=4]
+content_margin_left = 25.0
+content_margin_right = 25.0
+
+[resource]
+default_font = ExtResource( 1 )
+TabContainer/colors/font_color_bg = Color( 0.596078, 0.458824, 0.188235, 1 )
+TabContainer/colors/font_color_fg = Color( 1, 0.901961, 0.501961, 1 )
+TabContainer/constants/hseparation = 4
+TabContainer/constants/label_valign_bg = 2
+TabContainer/constants/label_valign_fg = 0
+TabContainer/constants/side_margin = 8
+TabContainer/constants/top_margin = 24
+TabContainer/fonts/font = SubResource( 1 )
+TabContainer/icons/decrement = null
+TabContainer/icons/decrement_hilite = null
+TabContainer/icons/increment = null
+TabContainer/icons/increment_hilite = null
+TabContainer/icons/menu = null
+TabContainer/icons/menu_hilite = null
+TabContainer/styles/panel = SubResource( 2 )
+TabContainer/styles/tab_bg = SubResource( 3 )
+TabContainer/styles/tab_fg = SubResource( 4 )
+

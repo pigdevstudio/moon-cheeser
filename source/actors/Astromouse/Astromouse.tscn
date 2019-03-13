@@ -1,9 +1,9 @@
 [gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://actors/Astromouse/Astromouse.gd" type="Script" id=1]
-[ext_resource path="res://actors/Astromouse/sprites/walk_01.png" type="Texture" id=2]
-[ext_resource path="res://actors/Astromouse/sprites/jump_02.png" type="Texture" id=3]
-[ext_resource path="res://actors/Astromouse/sprites/jump_01.png" type="Texture" id=4]
+[ext_resource path="res://actors/Astromouse/sprites/jump_01.png" type="Texture" id=2]
+[ext_resource path="res://actors/Astromouse/sprites/walk_01.png" type="Texture" id=3]
+[ext_resource path="res://actors/Astromouse/sprites/jump_02.png" type="Texture" id=4]
 [ext_resource path="res://actors/Astromouse/sprites/walk_03.png" type="Texture" id=5]
 [ext_resource path="res://actors/Astromouse/sprites/walk_04.png" type="Texture" id=6]
 [ext_resource path="res://actors/Astromouse/Actions.gd" type="Script" id=7]
@@ -19,15 +19,15 @@
 animations = [ {
 "frames": [ ExtResource( 2 ), ExtResource( 3 ) ],
 "loop": false,
-"name": "Fall",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 4 ), ExtResource( 2 ) ],
-"loop": false,
 "name": "Jump",
 "speed": 4.0
 }, {
-"frames": [ ExtResource( 2 ), ExtResource( 5 ), ExtResource( 6 ) ],
+"frames": [ ExtResource( 3 ), ExtResource( 4 ) ],
+"loop": false,
+"name": "Fall",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ), ExtResource( 5 ), ExtResource( 6 ) ],
 "loop": true,
 "name": "Run",
 "speed": 7.0
@@ -43,7 +43,7 @@ height = 90.0004
 [node name="Astromouse" type="KinematicBody2D" groups=[
 "player",
 ]]
-z_index = 3
+z_index = 1
 script = ExtResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]

@@ -23,7 +23,6 @@ extends Node
 
 var dict = {}
 export (String, FILE) var file_path
-var file = File.new()
 var text
 var already_played = false
 onready var popup = get_node("Panel")
@@ -35,6 +34,7 @@ func _ready():
 	read_achievements()
 
 func read_achievements():
+	var file = File.new()
 	if file.file_exists("user://achievements.json"):
 		file.open("user://achievements.json", file.READ)
 		text = file.get_as_text()
@@ -50,6 +50,7 @@ func read_achievements():
 		file.close()
 
 func write_achievements():
+	var file = File.new()
 	if file.file_exists("user://achievements.json"):
 		file.open("user://achievements.json", file.WRITE)
 		file.store_string(to_json(dict))

@@ -2,7 +2,7 @@
 
 [ext_resource path="res://levels/Level.gd" type="Script" id=1]
 [ext_resource path="res://objects/Moon/Moon.tscn" type="PackedScene" id=2]
-[ext_resource path="res://levels/background.tscn" type="PackedScene" id=3]
+[ext_resource path="res://levels/Background.tscn" type="PackedScene" id=3]
 [ext_resource path="res://objects/Spawner/FlyingBodySpawner.tscn" type="PackedScene" id=4]
 [ext_resource path="res://objects/space_flying_bodies/star/Star.tscn" type="PackedScene" id=5]
 [ext_resource path="res://objects/space_flying_bodies/comet/Comet.tscn" type="PackedScene" id=6]
@@ -15,7 +15,7 @@ resource_name = "slide"
 length = 4.0
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("RightCometSpawner:position")
+tracks/0/path = NodePath("../Level/RightCometSpawner:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -27,7 +27,7 @@ tracks/0/keys = {
 "values": [ Vector2( 1280, 210.598 ), Vector2( 1280, 623.553 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("LeftStarSpawner:position")
+tracks/1/path = NodePath("../Level/LeftStarSpawner:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -39,7 +39,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 211.5 ), Vector2( 0, 624.455 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("LeftCometSpawner:position")
+tracks/2/path = NodePath("../Level/LeftCometSpawner:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -51,7 +51,7 @@ tracks/2/keys = {
 "values": [ Vector2( 0, 211.5 ), Vector2( 0, 624.455 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("RightStarSpawner:position")
+tracks/3/path = NodePath("../Level/RightStarSpawner:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -63,7 +63,7 @@ tracks/3/keys = {
 "values": [ Vector2( 1279.18, 211.5 ), Vector2( 1279.18, 624.455 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("BlackholeSpawner:position")
+tracks/4/path = NodePath("../Level/BlackholeSpawner:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -85,7 +85,7 @@ editor/display_folded = true
 position = Vector2( 644.654, 485.91 )
 
 [node name="Background" parent="." instance=ExtResource( 3 )]
-layer = -2
+z_index = -2
 
 [node name="LeftStarSpawner" parent="." groups=[
 "flyingbody_spawner",

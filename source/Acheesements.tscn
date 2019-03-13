@@ -1,12 +1,10 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://acheesements.gd" type="Script" id=1]
-[ext_resource path="res://screens/popuptheme.tres" type="Theme" id=2]
-[ext_resource path="res://screens/GaroaHackerClubeBold.otf" type="DynamicFontData" id=3]
-
+[ext_resource path="res://interface/themes/popuptheme.tres" type="Theme" id=2]
+[ext_resource path="res://interface/fonts/GaroaHackerClubeBold.otf" type="DynamicFontData" id=3]
 
 [sub_resource type="DynamicFont" id=1]
-
 use_mipmaps = true
 use_filter = true
 font_data = ExtResource( 3 )
@@ -14,7 +12,7 @@ font_data = ExtResource( 3 )
 [node name="Acheesements" type="CanvasLayer"]
 layer = 10
 script = ExtResource( 1 )
-file_path = "res://Screens/Achievements_Screen/achievements.json"
+file_path = "res://screens/achievements_screen/achievements.json"
 
 [node name="Popup" type="WindowDialog" parent="."]
 margin_left = 471.0

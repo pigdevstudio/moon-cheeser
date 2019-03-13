@@ -8,15 +8,20 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "Node",
+"class": "Utils",
+"language": "GDScript",
+"path": "res://utils.gd"
+} ]
 _global_script_class_icons={
-
+"Utils": ""
 }
 
 [application]
 
 config/name="Moon Cheeser"
-run/main_scene="res://screens/Title_Screen/TitleScreen.tscn"
+run/main_scene="res://MoonCheeser.tscn"
 config/icon="res://moon_cheeser_icon.png"
 
 [autoload]
@@ -24,7 +29,6 @@ config/icon="res://moon_cheeser_icon.png"
 acheesements="*res://Acheesements.tscn"
 bgm="*res://BackgroundMusic.tscn"
 Score="*res://Score.tscn"
-transition="*res://screens/Transition.tscn"
 
 [display]
 
@@ -35,6 +39,10 @@ window/stretch/mode="viewport"
 window/stretch/aspect="keep"
 driver/name="GLES2"
 window/handheld/emulate_touchscreen=true
+
+[editor_plugins]
+
+enabled=PoolStringArray( "batch_rename" )
 
 [image_loader]
 

@@ -1,0 +1,654 @@
+[gd_scene load_steps=25 format=2]
+
+[ext_resource path="res://screens/Screen.tscn" type="PackedScene" id=1]
+[ext_resource path="res://levels/star_back.png" type="Texture" id=2]
+[ext_resource path="res://interface/ShaderButton.tscn" type="PackedScene" id=3]
+[ext_resource path="res://screens/score_screen/back_normal.png" type="Texture" id=4]
+[ext_resource path="res://interface/fonts/GaroaHackerClubeBold.otf" type="DynamicFontData" id=5]
+[ext_resource path="res://screens/achievements_screen/trueastro.png" type="Texture" id=6]
+[ext_resource path="res://screens/achievements_screen/supernova.png" type="Texture" id=7]
+[ext_resource path="res://screens/achievements_screen/firststep.png" type="Texture" id=8]
+[ext_resource path="res://screens/achievements_screen/madness.png" type="Texture" id=9]
+[ext_resource path="res://screens/achievements_screen/gravity.png" type="Texture" id=10]
+[ext_resource path="res://screens/achievements_screen/starmouse.png" type="Texture" id=11]
+[ext_resource path="res://screens/achievements_screen/void.png" type="Texture" id=12]
+[ext_resource path="res://screens/achievements_screen/fullmoon.png" type="Texture" id=13]
+[ext_resource path="res://interface/themes/popuptheme.tres" type="Theme" id=14]
+[ext_resource path="res://screens/achievements_screen/AchievementPanel.gd" type="Script" id=15]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Node
+
+func _ready():
+	get_node(\"Animator\").playback_speed = rand_range(0.5,2.0)
+"
+
+[sub_resource type="Animation" id=2]
+length = 3.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.5, 0.5 ), Vector2( 0.1, 0.1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, -360.0 ]
+}
+
+[sub_resource type="DynamicFont" id=3]
+size = 38
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=4]
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 5 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.211765, 0.294118, 0.623529, 0.176471 )
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.0128305, 0.0100403, 0.367188, 0.087451 )
+border_blend = true
+
+[sub_resource type="StyleBoxEmpty" id=7]
+
+[sub_resource type="StyleBoxEmpty" id=8]
+
+[sub_resource type="StyleBoxEmpty" id=9]
+
+[node name="AchievementsScreen" index="0" instance=ExtResource( 1 )]
+
+[node name="BackgroundStars" type="Node2D" parent="." index="0"]
+editor/display_folded = true
+show_behind_parent = true
+
+[node name="Star" type="Sprite" parent="BackgroundStars" index="0"]
+editor/display_folded = true
+show_behind_parent = true
+position = Vector2( 383.626, 378.185 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+script = SubResource( 1 )
+
+[node name="Animator" type="AnimationPlayer" parent="BackgroundStars/Star" index="0"]
+autoplay = "shine"
+anims/shine = SubResource( 2 )
+
+[node name="Star2" type="Sprite" parent="BackgroundStars" index="1"]
+editor/display_folded = true
+show_behind_parent = true
+position = Vector2( 321.956, 430.275 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+script = SubResource( 1 )
+
+[node name="Animator" type="AnimationPlayer" parent="BackgroundStars/Star2" index="0"]
+autoplay = "shine"
+anims/shine = SubResource( 2 )
+
+[node name="Star3" type="Sprite" parent="BackgroundStars" index="2"]
+editor/display_folded = true
+show_behind_parent = true
+position = Vector2( 311.179, 365.013 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+script = SubResource( 1 )
+
+[node name="Animator" type="AnimationPlayer" parent="BackgroundStars/Star3" index="0"]
+autoplay = "shine"
+anims/shine = SubResource( 2 )
+
+[node name="Star4" type="Sprite" parent="BackgroundStars" index="3"]
+editor/display_folded = true
+show_behind_parent = true
+position = Vector2( 722.72, 292.812 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+script = SubResource( 1 )
+
+[node name="Animator" type="AnimationPlayer" parent="BackgroundStars/Star4" index="0"]
+autoplay = "shine"
+anims/shine = SubResource( 2 )
+
+[node name="Star5" type="Sprite" parent="BackgroundStars" index="4"]
+editor/display_folded = true
+show_behind_parent = true
+position = Vector2( 830.117, 289.202 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+script = SubResource( 1 )
+
+[node name="Animator" type="AnimationPlayer" parent="BackgroundStars/Star5" index="0"]
+autoplay = "shine"
+anims/shine = SubResource( 2 )
+
+[node name="Star6" type="Sprite" parent="BackgroundStars" index="5"]
+editor/display_folded = true
+show_behind_parent = true
+position = Vector2( 986.25, 371.33 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+script = SubResource( 1 )
+
+[node name="Animator" type="AnimationPlayer" parent="BackgroundStars/Star6" index="0"]
+autoplay = "shine"
+anims/shine = SubResource( 2 )
+
+[node name="Star7" type="Sprite" parent="BackgroundStars" index="6"]
+editor/display_folded = true
+show_behind_parent = true
+position = Vector2( 1062.06, 494.07 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+script = SubResource( 1 )
+
+[node name="Animator" type="AnimationPlayer" parent="BackgroundStars/Star7" index="0"]
+autoplay = "shine"
+anims/shine = SubResource( 2 )
+
+[node name="Star8" type="Sprite" parent="BackgroundStars" index="7"]
+editor/display_folded = true
+show_behind_parent = true
+position = Vector2( 791.31, 587.028 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+script = SubResource( 1 )
+
+[node name="Animator" type="AnimationPlayer" parent="BackgroundStars/Star8" index="0"]
+autoplay = "shine"
+anims/shine = SubResource( 2 )
+
+[node name="Star9" type="Sprite" parent="BackgroundStars" index="8"]
+editor/display_folded = true
+show_behind_parent = true
+position = Vector2( 320.204, 706.158 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+script = SubResource( 1 )
+
+[node name="Animator" type="AnimationPlayer" parent="BackgroundStars/Star9" index="0"]
+autoplay = "shine"
+anims/shine = SubResource( 2 )
+
+[node name="Star10" type="Sprite" parent="BackgroundStars" index="9"]
+editor/display_folded = true
+show_behind_parent = true
+position = Vector2( 1062.06, 695.328 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+script = SubResource( 1 )
+
+[node name="Animator" type="AnimationPlayer" parent="BackgroundStars/Star10" index="0"]
+autoplay = "shine"
+anims/shine = SubResource( 2 )
+
+[node name="Star11" type="Sprite" parent="BackgroundStars" index="10"]
+editor/display_folded = true
+show_behind_parent = true
+position = Vector2( 1168.6, 84.2608 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+script = SubResource( 1 )
+
+[node name="Animator" type="AnimationPlayer" parent="BackgroundStars/Star11" index="0"]
+autoplay = "shine"
+anims/shine = SubResource( 2 )
+
+[node name="Star12" type="Sprite" parent="BackgroundStars" index="11"]
+editor/display_folded = true
+show_behind_parent = true
+position = Vector2( 1198.42, 129.955 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+script = SubResource( 1 )
+
+[node name="Animator" type="AnimationPlayer" parent="BackgroundStars/Star12" index="0"]
+autoplay = "shine"
+anims/shine = SubResource( 2 )
+
+[node name="Star13" type="Sprite" parent="BackgroundStars" index="12"]
+editor/display_folded = true
+show_behind_parent = true
+position = Vector2( 1119.32, 114.167 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+script = SubResource( 1 )
+
+[node name="Animator" type="AnimationPlayer" parent="BackgroundStars/Star13" index="0"]
+autoplay = "shine"
+anims/shine = SubResource( 2 )
+
+[node name="Star14" type="Sprite" parent="BackgroundStars" index="13"]
+editor/display_folded = true
+show_behind_parent = true
+position = Vector2( 1158.68, 147.728 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+script = SubResource( 1 )
+
+[node name="Animator" type="AnimationPlayer" parent="BackgroundStars/Star14" index="0"]
+autoplay = "shine"
+anims/shine = SubResource( 2 )
+
+[node name="Star15" type="Sprite" parent="BackgroundStars" index="14"]
+editor/display_folded = true
+show_behind_parent = true
+position = Vector2( 1136.24, 234.199 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+script = SubResource( 1 )
+
+[node name="Animator" type="AnimationPlayer" parent="BackgroundStars/Star15" index="0"]
+autoplay = "shine"
+anims/shine = SubResource( 2 )
+
+[node name="Star16" type="Sprite" parent="BackgroundStars" index="15"]
+editor/display_folded = true
+show_behind_parent = true
+position = Vector2( 280.414, 152.518 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+script = SubResource( 1 )
+
+[node name="Animator" type="AnimationPlayer" parent="BackgroundStars/Star16" index="0"]
+autoplay = "shine"
+anims/shine = SubResource( 2 )
+
+[node name="Star17" type="Sprite" parent="BackgroundStars" index="16"]
+editor/display_folded = true
+show_behind_parent = true
+position = Vector2( 352.232, 132.476 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+script = SubResource( 1 )
+
+[node name="Animator" type="AnimationPlayer" parent="BackgroundStars/Star17" index="0"]
+autoplay = "shine"
+anims/shine = SubResource( 2 )
+
+[node name="Star18" type="Sprite" parent="BackgroundStars" index="17"]
+editor/display_folded = true
+show_behind_parent = true
+position = Vector2( 429.06, 109.093 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+script = SubResource( 1 )
+
+[node name="Animator" type="AnimationPlayer" parent="BackgroundStars/Star18" index="0"]
+autoplay = "shine"
+anims/shine = SubResource( 2 )
+
+[node name="Star19" type="Sprite" parent="BackgroundStars" index="18"]
+editor/display_folded = true
+show_behind_parent = true
+position = Vector2( 100.034, 483.215 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+script = SubResource( 1 )
+
+[node name="Animator" type="AnimationPlayer" parent="BackgroundStars/Star19" index="0"]
+autoplay = "shine"
+anims/shine = SubResource( 2 )
+
+[node name="Star20" type="Sprite" parent="BackgroundStars" index="19"]
+editor/display_folded = true
+show_behind_parent = true
+position = Vector2( 171.852, 473.193 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+script = SubResource( 1 )
+
+[node name="Animator" type="AnimationPlayer" parent="BackgroundStars/Star20" index="0"]
+autoplay = "shine"
+anims/shine = SubResource( 2 )
+
+[node name="Star21" type="Sprite" parent="BackgroundStars" index="20"]
+editor/display_folded = true
+show_behind_parent = true
+position = Vector2( 213.606, 524.969 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+script = SubResource( 1 )
+
+[node name="Animator" type="AnimationPlayer" parent="BackgroundStars/Star21" index="0"]
+autoplay = "shine"
+anims/shine = SubResource( 2 )
+
+[node name="Star22" type="Sprite" parent="BackgroundStars" index="21"]
+editor/display_folded = true
+show_behind_parent = true
+position = Vector2( 158.49, 588.436 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+script = SubResource( 1 )
+
+[node name="Animator" type="AnimationPlayer" parent="BackgroundStars/Star22" index="0"]
+autoplay = "shine"
+anims/shine = SubResource( 2 )
+
+[node name="Star23" type="Sprite" parent="BackgroundStars" index="22"]
+editor/display_folded = true
+show_behind_parent = true
+position = Vector2( 69.9703, 563.383 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+script = SubResource( 1 )
+
+[node name="Animator" type="AnimationPlayer" parent="BackgroundStars/Star23" index="0"]
+autoplay = "shine"
+anims/shine = SubResource( 2 )
+
+[node name="Star24" type="Sprite" parent="BackgroundStars" index="23"]
+editor/display_folded = true
+show_behind_parent = true
+position = Vector2( 86.6721, 683.637 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+script = SubResource( 1 )
+
+[node name="Animator" type="AnimationPlayer" parent="BackgroundStars/Star24" index="0"]
+autoplay = "shine"
+anims/shine = SubResource( 2 )
+
+[node name="Star25" type="Sprite" parent="BackgroundStars" index="24"]
+editor/display_folded = true
+show_behind_parent = true
+position = Vector2( 88.3423, 247.718 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+script = SubResource( 1 )
+
+[node name="Animator" type="AnimationPlayer" parent="BackgroundStars/Star25" index="0"]
+autoplay = "shine"
+anims/shine = SubResource( 2 )
+
+[node name="Star26" type="Sprite" parent="BackgroundStars" index="25"]
+editor/display_folded = true
+show_behind_parent = true
+position = Vector2( 978.551, 99.0719 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+script = SubResource( 1 )
+
+[node name="Animator" type="AnimationPlayer" parent="BackgroundStars/Star26" index="0"]
+autoplay = "shine"
+anims/shine = SubResource( 2 )
+
+[node name="Star27" type="Sprite" parent="BackgroundStars" index="26"]
+editor/display_folded = true
+show_behind_parent = true
+position = Vector2( 749.736, 84.0402 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+script = SubResource( 1 )
+
+[node name="Animator" type="AnimationPlayer" parent="BackgroundStars/Star27" index="0"]
+autoplay = "shine"
+anims/shine = SubResource( 2 )
+
+[node name="Star28" type="Sprite" parent="BackgroundStars" index="27"]
+editor/display_folded = true
+show_behind_parent = true
+position = Vector2( 875, 17.2328 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+script = SubResource( 1 )
+
+[node name="Animator" type="AnimationPlayer" parent="BackgroundStars/Star28" index="0"]
+autoplay = "shine"
+anims/shine = SubResource( 2 )
+
+[node name="Star29" type="Sprite" parent="BackgroundStars" index="28"]
+editor/display_folded = true
+show_behind_parent = true
+position = Vector2( 1138.56, 614.789 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+script = SubResource( 1 )
+
+[node name="Animator" type="AnimationPlayer" parent="BackgroundStars/Star29" index="0"]
+autoplay = "shine"
+anims/shine = SubResource( 2 )
+
+[node name="Star30" type="Sprite" parent="BackgroundStars" index="29"]
+editor/display_folded = true
+show_behind_parent = true
+position = Vector2( 1220.36, 578.436 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+script = SubResource( 1 )
+
+[node name="Animator" type="AnimationPlayer" parent="BackgroundStars/Star30" index="0"]
+autoplay = "shine"
+anims/shine = SubResource( 2 )
+
+[node name="Star31" type="Sprite" parent="BackgroundStars" index="30"]
+editor/display_folded = true
+show_behind_parent = true
+position = Vector2( 1222.63, 321.691 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+script = SubResource( 1 )
+
+[node name="Animator" type="AnimationPlayer" parent="BackgroundStars/Star31" index="0"]
+autoplay = "shine"
+anims/shine = SubResource( 2 )
+
+[node name="ScreenMargin" type="MarginContainer" parent="." index="1"]
+margin_right = 1280.0
+margin_bottom = 720.0
+custom_constants/margin_right = 25
+custom_constants/margin_top = 25
+custom_constants/margin_left = 25
+custom_constants/margin_bottom = 25
+
+[node name="ScreenPortions" type="VBoxContainer" parent="ScreenMargin" index="0"]
+margin_left = 25.0
+margin_top = 25.0
+margin_right = 1255.0
+margin_bottom = 695.0
+mouse_filter = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TopPortion" type="HBoxContainer" parent="ScreenMargin/ScreenPortions" index="0"]
+margin_right = 1230.0
+margin_bottom = 128.0
+rect_min_size = Vector2( 0, 80 )
+mouse_filter = 0
+size_flags_horizontal = 3
+
+[node name="Back" parent="ScreenMargin/ScreenPortions/TopPortion" index="0" instance=ExtResource( 3 )]
+margin_right = 613.0
+margin_bottom = 128.0
+texture_normal = ExtResource( 4 )
+
+[node name="ReferenceFrame" type="ReferenceRect" parent="ScreenMargin/ScreenPortions/TopPortion" index="1"]
+margin_left = 617.0
+margin_right = 1230.0
+margin_bottom = 128.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="ScreenMargin/ScreenPortions" index="1"]
+margin_top = 132.0
+margin_right = 1230.0
+margin_bottom = 171.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 1, 0.901961, 0.501961, 1 )
+text = "Acheesements"
+align = 1
+
+[node name="CenterPortion" type="Control" parent="ScreenMargin/ScreenPortions" index="2"]
+margin_top = 175.0
+margin_right = 1230.0
+margin_bottom = 670.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Acheesements" type="GridContainer" parent="ScreenMargin/ScreenPortions/CenterPortion" index="0"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/vseparation = 32
+custom_constants/hseparation = -66
+columns = 4
+
+[node name="Astromouse" parent="ScreenMargin/ScreenPortions/CenterPortion/Acheesements" index="0" instance=ExtResource( 3 )]
+margin_right = 357.0
+margin_bottom = 231.0
+texture_normal = ExtResource( 6 )
+expand = true
+stretch_mode = 5
+
+[node name="Supernova" parent="ScreenMargin/ScreenPortions/CenterPortion/Acheesements" index="1" instance=ExtResource( 3 )]
+margin_left = 291.0
+margin_right = 648.0
+margin_bottom = 231.0
+texture_normal = ExtResource( 7 )
+expand = true
+stretch_mode = 5
+
+[node name="FirstStep" parent="ScreenMargin/ScreenPortions/CenterPortion/Acheesements" index="2" instance=ExtResource( 3 )]
+margin_left = 582.0
+margin_right = 939.0
+margin_bottom = 231.0
+texture_normal = ExtResource( 8 )
+expand = true
+stretch_mode = 5
+
+[node name="Madness" parent="ScreenMargin/ScreenPortions/CenterPortion/Acheesements" index="3" instance=ExtResource( 3 )]
+margin_left = 873.0
+margin_right = 1230.0
+margin_bottom = 231.0
+texture_normal = ExtResource( 9 )
+expand = true
+stretch_mode = 5
+
+[node name="GravityMaster" parent="ScreenMargin/ScreenPortions/CenterPortion/Acheesements" index="4" instance=ExtResource( 3 )]
+margin_top = 263.0
+margin_right = 357.0
+margin_bottom = 494.0
+texture_normal = ExtResource( 10 )
+expand = true
+stretch_mode = 5
+
+[node name="Starmouse" parent="ScreenMargin/ScreenPortions/CenterPortion/Acheesements" index="5" instance=ExtResource( 3 )]
+margin_left = 291.0
+margin_top = 263.0
+margin_right = 648.0
+margin_bottom = 494.0
+texture_normal = ExtResource( 11 )
+expand = true
+stretch_mode = 5
+
+[node name="Void" parent="ScreenMargin/ScreenPortions/CenterPortion/Acheesements" index="6" instance=ExtResource( 3 )]
+margin_left = 582.0
+margin_top = 263.0
+margin_right = 939.0
+margin_bottom = 494.0
+texture_normal = ExtResource( 12 )
+expand = true
+stretch_mode = 5
+
+[node name="Fullmoon" parent="ScreenMargin/ScreenPortions/CenterPortion/Acheesements" index="7" instance=ExtResource( 3 )]
+margin_left = 873.0
+margin_top = 263.0
+margin_right = 1230.0
+margin_bottom = 494.0
+texture_normal = ExtResource( 13 )
+expand = true
+stretch_mode = 5
+
+[node name="Panel" type="Panel" parent="." index="2"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -370.0
+margin_top = -86.798
+margin_right = 321.0
+margin_bottom = 172.202
+rect_pivot_offset = Vector2( 152.5, 55 )
+theme = ExtResource( 14 )
+script = ExtResource( 15 )
+
+[node name="Title" type="Label" parent="Panel" index="0"]
+margin_left = -2.0
+margin_top = 12.0
+margin_right = 674.0
+margin_bottom = 35.0
+mouse_filter = 1
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "achievement unlocked"
+align = 1
+valign = 1
+clip_text = true
+
+[node name="Description" type="Label" parent="Panel" index="1"]
+margin_left = -2.0
+margin_top = 21.0
+margin_right = 671.0
+margin_bottom = 232.0
+mouse_filter = 1
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color = Color( 1, 0.901961, 0.501961, 1 )
+text = "achievement unlocked"
+align = 1
+valign = 1
+autowrap = true
+clip_text = true
+
+[node name="Button" type="Button" parent="Panel" index="2"]
+margin_left = 253.0
+margin_top = 200.0
+margin_right = 427.0
+margin_bottom = 251.0
+custom_styles/hover = SubResource( 5 )
+custom_styles/pressed = SubResource( 6 )
+custom_styles/focus = SubResource( 7 )
+custom_styles/disabled = SubResource( 8 )
+custom_styles/normal = SubResource( 9 )
+action_mode = 0
+text = "OK"
+flat = true
+
+[node name="Fade" parent="." index="3"]
+visible = false
+
+[connection signal="button_up" from="ScreenMargin/ScreenPortions/CenterPortion/Acheesements/Astromouse" to="Panel" method="display" binds= [ "mooncheeser" ]]
+[connection signal="button_up" from="ScreenMargin/ScreenPortions/CenterPortion/Acheesements/Supernova" to="Panel" method="display" binds= [ "supernova" ]]
+[connection signal="button_up" from="ScreenMargin/ScreenPortions/CenterPortion/Acheesements/FirstStep" to="Panel" method="display" binds= [ "firststep" ]]
+[connection signal="button_up" from="ScreenMargin/ScreenPortions/CenterPortion/Acheesements/Madness" to="Panel" method="display" binds= [ "madness" ]]
+[connection signal="button_up" from="ScreenMargin/ScreenPortions/CenterPortion/Acheesements/GravityMaster" to="Panel" method="display" binds= [ "gravity" ]]
+[connection signal="button_up" from="ScreenMargin/ScreenPortions/CenterPortion/Acheesements/Starmouse" to="Panel" method="display" binds= [ "starmouse" ]]
+[connection signal="button_up" from="ScreenMargin/ScreenPortions/CenterPortion/Acheesements/Void" to="Panel" method="display" binds= [ "void" ]]
+[connection signal="button_up" from="ScreenMargin/ScreenPortions/CenterPortion/Acheesements/Fullmoon" to="Panel" method="display" binds= [ "fullmoon" ]]
+[connection signal="button_up" from="Panel/Button" to="Panel" method="hide"]

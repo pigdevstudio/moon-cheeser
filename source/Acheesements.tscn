@@ -14,26 +14,6 @@ layer = 10
 script = ExtResource( 1 )
 file_path = "res://screens/achievements_screen/achievements.json"
 
-[node name="Popup" type="WindowDialog" parent="."]
-margin_left = 471.0
-margin_top = -408.0
-margin_right = 858.0
-margin_bottom = -303.0
-theme = ExtResource( 2 )
-window_title = "ACHEESEMENT UNLOCKED"
-
-[node name="Label" type="Label" parent="Popup"]
-margin_right = 387.0
-margin_bottom = 102.0
-mouse_filter = 1
-size_flags_horizontal = 3
-size_flags_vertical = 3
-text = "ACHIEVEMENT UNLOCKED"
-align = 1
-valign = 1
-autowrap = true
-clip_text = true
-
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0
 one_shot = true
@@ -78,5 +58,4 @@ valign = 1
 autowrap = true
 clip_text = true
 
-[connection signal="popup_hide" from="Popup" to="." method="_on_hide"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

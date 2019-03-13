@@ -25,7 +25,6 @@ func get_action_node():
 	return $Actions
 
 func die():
-	return
 	$Shape.call_deferred("set_disabled", true)
 	$PickupArea/CollisionShape2D.call_deferred("set_disabled", true)
 	$SFX.play("Damage")

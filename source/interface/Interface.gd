@@ -18,7 +18,7 @@ func change_screen(new_screen = next_screen):
 	
 	current_screen.fade_out()
 	yield(current_screen, "faded")
-	remove_child(current_screen)
+	current_screen.queue_free()
 	
 	new_screen = new_screen.instance()
 	add_child(new_screen)
@@ -41,6 +41,8 @@ func _on_Screen_button_up(button):
 			screen_path = PLAY_SCREEN_PATH
 		"Back":
 			screen_path = TITLE_SCREEN_PATH
-			
+	
+	if not screen_path:
+		return
 	next_screen = load(screen_path)
 	change_screen()

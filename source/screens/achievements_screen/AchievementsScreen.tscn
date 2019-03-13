@@ -13,8 +13,9 @@
 [ext_resource path="res://screens/achievements_screen/starmouse.png" type="Texture" id=11]
 [ext_resource path="res://screens/achievements_screen/void.png" type="Texture" id=12]
 [ext_resource path="res://screens/achievements_screen/fullmoon.png" type="Texture" id=13]
-[ext_resource path="res://interface/themes/popuptheme.tres" type="Theme" id=14]
-[ext_resource path="res://screens/achievements_screen/AchievementPanel.gd" type="Script" id=15]
+[ext_resource path="res://screens/achievements_screen/AchievementPanel.gd" type="Script" id=14]
+[ext_resource path="res://interface/fonts/garoa_hacker_32_purple_outline.tres" type="DynamicFont" id=15]
+[ext_resource path="res://interface/fonts/garoa_hacker_32.tres" type="DynamicFont" id=16]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends Node
@@ -53,11 +54,6 @@ tracks/1/keys = {
 
 [sub_resource type="DynamicFont" id=3]
 size = 38
-use_mipmaps = true
-use_filter = true
-font_data = ExtResource( 5 )
-
-[sub_resource type="DynamicFont" id=4]
 use_mipmaps = true
 use_filter = true
 font_data = ExtResource( 5 )
@@ -463,6 +459,7 @@ custom_constants/margin_left = 25
 custom_constants/margin_bottom = 25
 
 [node name="ScreenPortions" type="VBoxContainer" parent="ScreenMargin" index="0"]
+editor/display_folded = true
 margin_left = 25.0
 margin_top = 25.0
 margin_right = 1255.0
@@ -593,51 +590,60 @@ margin_top = -86.798
 margin_right = 321.0
 margin_bottom = 172.202
 rect_pivot_offset = Vector2( 152.5, 55 )
-theme = ExtResource( 14 )
-script = ExtResource( 15 )
+script = ExtResource( 14 )
 
-[node name="Title" type="Label" parent="Panel" index="0"]
-margin_left = -2.0
-margin_top = 12.0
-margin_right = 674.0
-margin_bottom = 35.0
+[node name="MarginContainer" type="MarginContainer" parent="Panel" index="0"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 15
+custom_constants/margin_top = 30
+custom_constants/margin_left = 15
+custom_constants/margin_bottom = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer" index="0"]
+margin_left = 15.0
+margin_top = 30.0
+margin_right = 676.0
+margin_bottom = 244.0
+
+[node name="Title" type="Label" parent="Panel/MarginContainer/VBoxContainer" index="0"]
+margin_right = 661.0
+margin_bottom = 32.0
 mouse_filter = 1
 size_flags_horizontal = 3
-size_flags_vertical = 3
-custom_fonts/font = SubResource( 4 )
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 15 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "achievement unlocked"
 align = 1
 valign = 1
-clip_text = true
 
-[node name="Description" type="Label" parent="Panel" index="1"]
-margin_left = -2.0
-margin_top = 21.0
-margin_right = 671.0
-margin_bottom = 232.0
+[node name="Description" type="Label" parent="Panel/MarginContainer/VBoxContainer" index="1"]
+margin_top = 36.0
+margin_right = 661.0
+margin_bottom = 178.0
 mouse_filter = 1
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_colors/font_color = Color( 1, 0.901961, 0.501961, 1 )
 text = "achievement unlocked"
 align = 1
 valign = 1
 autowrap = true
 clip_text = true
 
-[node name="Button" type="Button" parent="Panel" index="2"]
-margin_left = 253.0
-margin_top = 200.0
-margin_right = 427.0
-margin_bottom = 251.0
+[node name="Button" type="Button" parent="Panel/MarginContainer/VBoxContainer" index="2"]
+margin_top = 182.0
+margin_right = 661.0
+margin_bottom = 214.0
+rect_min_size = Vector2( 0, 32 )
 custom_styles/hover = SubResource( 5 )
 custom_styles/pressed = SubResource( 6 )
 custom_styles/focus = SubResource( 7 )
 custom_styles/disabled = SubResource( 8 )
 custom_styles/normal = SubResource( 9 )
+custom_fonts/font = ExtResource( 16 )
 action_mode = 0
-text = "OK"
+text = "ok"
 flat = true
 
 [node name="Fade" parent="." index="3"]
@@ -651,4 +657,4 @@ visible = false
 [connection signal="button_up" from="ScreenMargin/ScreenPortions/CenterPortion/Acheesements/Starmouse" to="Panel" method="display" binds= [ "starmouse" ]]
 [connection signal="button_up" from="ScreenMargin/ScreenPortions/CenterPortion/Acheesements/Void" to="Panel" method="display" binds= [ "void" ]]
 [connection signal="button_up" from="ScreenMargin/ScreenPortions/CenterPortion/Acheesements/Fullmoon" to="Panel" method="display" binds= [ "fullmoon" ]]
-[connection signal="button_up" from="Panel/Button" to="Panel" method="hide"]
+[connection signal="button_up" from="Panel/MarginContainer/VBoxContainer/Button" to="Panel" method="hide"]

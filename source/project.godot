@@ -26,9 +26,9 @@ config/icon="res://moon_cheeser_icon.png"
 
 [autoload]
 
-acheesements="*res://Acheesements.tscn"
-bgm="*res://BackgroundMusic.tscn"
+BGM="*res://BackgroundMusic.tscn"
 Score="*res://Score.tscn"
+Achievements="*res://meta/achievements/AchievementsDict.tscn"
 
 [display]
 

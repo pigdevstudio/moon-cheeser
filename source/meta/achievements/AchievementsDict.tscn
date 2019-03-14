@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://meta/achievements/AchievementsDict.gd" type="Script" id=1]
+
+[node name="AchievementsDict" type="Node"]
+script = ExtResource( 1 )
+FILE_PATH = "res://meta/achievements/achievements.json"
+

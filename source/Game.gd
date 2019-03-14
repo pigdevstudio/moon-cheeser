@@ -6,11 +6,13 @@ Controls game's flow
 
 onready var _interface = $Interface
 
+func _ready():
+	Achievements.connect("achievement_completed", self, "_on_Achievements_achievement_completed")
+
 func _on_Level_game_over(level):
 	var score_screen = load("res://screens/score_screen/ScoreScreen.tscn")
 	_interface.change_screen(score_screen)
 	level.queue_free()
-
 
 func _on_Interface_screen_changed(new_screen):
 	match new_screen.name:
@@ -24,3 +26,10 @@ func _on_Interface_screen_changed(new_screen):
 			
 			new_screen.set_score(score)
 			new_screen.set_highscore(highscore)
+
+func _on_Achievements_achievement_completed(achievement_name):
+	var panel = $Achievements/SlidingPanel
+	
+	panel.description = Achievements.get_description(achievement_name)
+	panel.title = Achievements.get_title(achievement_name)
+	panel.show()

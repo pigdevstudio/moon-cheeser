@@ -646,6 +646,9 @@ action_mode = 0
 text = "ok"
 flat = true
 
+[node name="Fade" parent="." index="3"]
+visible = false
+
 [connection signal="button_up" from="ScreenMargin/ScreenPortions/CenterPortion/Acheesements/Astromouse" to="Panel" method="display" binds= [ "mooncheeser" ]]
 [connection signal="button_up" from="ScreenMargin/ScreenPortions/CenterPortion/Acheesements/Supernova" to="Panel" method="display" binds= [ "supernova" ]]
 [connection signal="button_up" from="ScreenMargin/ScreenPortions/CenterPortion/Acheesements/FirstStep" to="Panel" method="display" binds= [ "firststep" ]]

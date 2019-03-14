@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Game.gd" type="Script" id=1]
 [ext_resource path="res://interface/Interface.gd" type="Script" id=2]
 [ext_resource path="res://screens/title_screen/TitleScreen.tscn" type="PackedScene" id=3]
+[ext_resource path="res://interface/SlidingPanel.tscn" type="PackedScene" id=4]
 
 [node name="MoonCheeser" type="Node"]
 script = ExtResource( 1 )
@@ -11,6 +12,11 @@ script = ExtResource( 1 )
 script = ExtResource( 2 )
 
 [node name="TitleScreen" parent="Interface" instance=ExtResource( 3 )]
+
+[node name="Achievements" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="SlidingPanel" parent="Achievements" instance=ExtResource( 4 )]
 
 [connection signal="screen_changed" from="Interface" to="." method="_on_Interface_screen_changed"]
 [connection signal="button_up" from="Interface/TitleScreen" to="Interface" method="_on_Screen_button_up"]

@@ -15,6 +15,8 @@ func _ready():
 	
 func change_screen(new_screen = next_screen):
 	var current_screen = get_child(0)
+	if current_screen.is_fading():
+		return
 	
 	current_screen.fade_out()
 	yield(current_screen, "faded")

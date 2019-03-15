@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://meta/achievements/Panel.gd" type="Script" id=1]
+[ext_resource path="res://meta/achievements/SlidingPanel.gd" type="Script" id=1]
 [ext_resource path="res://interface/fonts/garoa_hacker_16.tres" type="DynamicFont" id=2]
 [ext_resource path="res://interface/fonts/garoa_hacker_24_purple_outline.tres" type="DynamicFont" id=3]
 

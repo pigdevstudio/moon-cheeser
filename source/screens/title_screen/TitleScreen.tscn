@@ -18,7 +18,7 @@ func _process(delta):
 #	set_size(OS.get_window_size())
 	pass"
 
-[node name="TitleScreen" index="0" instance=ExtResource( 1 )]
+[node name="TitleScreen" instance=ExtResource( 1 )]
 
 [node name="ScreenMargin" type="MarginContainer" parent="." index="0"]
 anchor_right = 1.0

@@ -12,7 +12,7 @@ func _ready():
 
 func read_achievements():
 	var file = File.new()
-	if file.file_exists(FILE_PATH):
+	if file.file_exists(USER_PATH):
 		file.open(USER_PATH, file.READ)
 		var text = file.get_as_text()
 		_dict = parse_json(text)

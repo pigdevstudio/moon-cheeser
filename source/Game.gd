@@ -8,6 +8,7 @@ onready var _interface = $Interface
 
 func _ready():
 	Achievements.connect("achievement_completed", self, "_on_Achievements_achievement_completed")
+	Achievements.set_achievement_progress("fullmoon", 1)
 
 func _on_Level_game_over(level):
 	var score_screen = load("res://screens/score_screen/ScoreScreen.tscn")
@@ -26,10 +27,12 @@ func _on_Interface_screen_changed(new_screen):
 			
 			new_screen.set_score(score)
 			new_screen.set_highscore(highscore)
+			Achievements.write_achievements()
 
 func _on_Achievements_achievement_completed(achievement_name):
 	var panel = $Achievements/SlidingPanel
 	
 	panel.description = Achievements.get_description(achievement_name)
 	panel.title = Achievements.get_title(achievement_name)
+	Achievements.write_achievements()
 	panel.show()

@@ -22,16 +22,13 @@ func read_achievements():
 		var text = file.get_as_text()
 		_dict = parse_json(text)
 		file.close()
-		file.open(USER_PATH, file.WRITE)
 		write_achievements()
-		file.close()
 
 func write_achievements():
 	var file = File.new()
-	if file.file_exists("user://achievements.json"):
-		file.open("user://achievements.json", file.WRITE)
-		file.store_string(to_json(_dict))
-		file.close()
+	file.open(USER_PATH, file.WRITE)
+	file.store_string(to_json(_dict))
+	file.close()
 		
 func set_achievement_progress(achievement_name, new_value):
 	var achievement = get_achievement(achievement_name)
@@ -40,7 +37,10 @@ func set_achievement_progress(achievement_name, new_value):
 	if not is_complete:
 		achievement["accomplished"] = new_value
 		_dict[achievement_name] = achievement
-		is_achievement_complete(achievement_name)
+		is_complete = is_achievement_complete(achievement_name)
+		if is_complete:
+			write_achievements()
+			emit_signal("achievement_completed", achievement_name)
 
 func get_achievement(achievement_name):
 	return _dict[achievement_name]
@@ -71,7 +71,4 @@ func is_achievement_complete(achievement_name):
 	var goal = get_goal(achievement_name)
 	
 	var is_complete = progress >= goal
-	if is_complete:
-		emit_signal("achievement_completed", achievement_name)
-	
 	return is_complete

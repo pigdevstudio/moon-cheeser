@@ -69,7 +69,7 @@ color_ramp = SubResource( 3 )
 
 [connection signal="collided" from="." to="." method="_on_collided"]
 [connection signal="screen_exited" from="Sprite/Visibility" to="." method="queue_free"]
-[connection signal="dragged" from="DragArea" to="." method="_on_DragArea_dragged"]
 [connection signal="dragged" from="DragArea" to="." method="fly"]
+[connection signal="dragged" from="DragArea" to="." method="_on_DragArea_dragged"]
 [connection signal="dragging" from="DragArea" to="." method="stop"]
 [connection signal="dragging" from="DragArea" to="Shape" method="set_disabled" binds= [ true ]]

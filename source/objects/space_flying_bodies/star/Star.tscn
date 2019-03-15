@@ -22,7 +22,6 @@ script = ExtResource( 2 )
 
 [node name="Sprite" parent="." index="1"]
 frames = ExtResource( 3 )
-frame = 1
 
 [node name="Tail" parent="Sprite" index="0"]
 position = Vector2( 329.011, 0.84753 )

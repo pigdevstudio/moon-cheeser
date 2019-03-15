@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://objects/space_flying_bodies/SpaceFlyingBody.tscn" type="PackedScene" id=1]
 [ext_resource path="res://objects/space_flying_bodies/comet/Comet.gd" type="Script" id=2]
 [ext_resource path="res://objects/space_flying_bodies/comet/sprite_animation.tres" type="SpriteFrames" id=3]
 [ext_resource path="res://objects/Spawner/CheeseSpawner.tscn" type="PackedScene" id=4]
+[ext_resource path="res://meta/achievements/FirstStepsAchievement.tscn" type="PackedScene" id=5]
 
 [sub_resource type="Gradient" id=1]
 offsets = PoolRealArray( 0.47027, 1 )
@@ -18,7 +19,7 @@ script = ExtResource( 2 )
 
 [node name="Sprite" parent="." index="1"]
 frames = ExtResource( 3 )
-frame = 2
+frame = 1
 
 [node name="Tail" parent="Sprite" index="0"]
 color_ramp = SubResource( 1 )
@@ -33,3 +34,6 @@ spread = 360.0
 min_radius = 20.0
 max_radius = 50.0
 
+[node name="FirstStepsAchievement" parent="." index="4" instance=ExtResource( 5 )]
+
+[connection signal="collided" from="." to="FirstStepsAchievement" method="_on_Comet_collided"]

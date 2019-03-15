@@ -8,8 +8,8 @@ onready var _interface = $Interface
 
 func _ready():
 	Achievements.connect("achievement_completed", self, "_on_Achievements_achievement_completed")
-	Achievements.set_achievement_progress("fullmoon", 1)
-
+	$FullmoonAchievement.check_achievement()
+	
 func _on_Level_game_over(level):
 	var score_screen = load("res://screens/score_screen/ScoreScreen.tscn")
 	_interface.change_screen(score_screen)

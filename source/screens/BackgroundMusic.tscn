@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://take_five_loop.ogg" type="AudioStream" id=1]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends AudioStreamPlayer
+
+export (Resource) var pitch_effect
+"
+
+[node name="BackgroundMusic" type="AudioStreamPlayer"]
+stream = ExtResource( 1 )
+script = SubResource( 1 )
+

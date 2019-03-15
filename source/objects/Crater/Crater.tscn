@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://objects/Crater/Crater.gd" type="Script" id=1]
 [ext_resource path="res://objects/Crater/crater.png" type="Texture" id=2]
 [ext_resource path="res://actors/particle.png" type="Texture" id=3]
+[ext_resource path="res://meta/achievements/MineSweeperAchievement.tscn" type="PackedScene" id=4]
 
 [sub_resource type="Animation" id=1]
 resource_name = "shine"
@@ -26,8 +27,8 @@ offsets = PoolRealArray( 0, 0.140541, 0.451351, 0.675676, 0.821622, 0.97027 )
 colors = PoolColorArray( 1, 1, 1, 1, 1, 0.883879, 0.113281, 1, 1, 0.619057, 0.310923, 1, 1, 0.078125, 0.249265, 1, 0.206722, 0.190572, 0.190572, 1, 0.298039, 0.290196, 0.290196, 0.054902 )
 
 [node name="Crater" type="Node2D" groups=[
-"crater",
 "enemy",
+"crater",
 ]]
 script = ExtResource( 1 )
 
@@ -67,5 +68,8 @@ color_ramp = SubResource( 2 )
 polygon = PoolVector2Array( -44, 4, -32, -20, 34, -20, 45, 4 )
 disabled = true
 
+[node name="MineSweeperAchievement" parent="." instance=ExtResource( 4 )]
+
+[connection signal="ready" from="." to="MineSweeperAchievement" method="_on_Crater_ready"]
 [connection signal="timeout" from="Duration" to="." method="_on_timeout"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]

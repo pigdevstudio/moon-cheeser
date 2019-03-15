@@ -24,3 +24,7 @@ func fade_out():
 	_fade.fade_out()
 	yield(_fade, "finished")
 	emit_signal("faded")
+
+func is_fading():
+	var animator = _fade.animator
+	return animator.is_playing()

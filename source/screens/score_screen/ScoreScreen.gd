@@ -1,7 +1,7 @@
 extends "res://screens/Screen.gd"
 
-onready var _score_label = $MarginContainer/VBoxContainer/Score
-onready var _highscore_label = $MarginContainer/VBoxContainer/Highscore
+onready var _score_label = $MarginContainer/VBoxContainer/HBoxConttainer/Labels/Score
+onready var _highscore_label = $MarginContainer/VBoxContainer/HBoxConttainer/Labels/Highscore
 
 func set_score(score):
 	_score_label.text = "score: %s"%score

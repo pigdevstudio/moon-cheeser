@@ -65,7 +65,7 @@ tracks/1/keys = {
 [node name="ScoreScreen" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 
-[node name="Background" type="Node2D" parent="." index="0" instance=ExtResource( 3 )]
+[node name="Background" parent="." index="0" instance=ExtResource( 3 )]
 z_index = -2
 
 [node name="Crux" type="Sprite" parent="Background" index="0" groups=[
@@ -478,11 +478,8 @@ position = Vector2( 1066.88, 496.672 )
 rotation = -0.0108607
 scale = Vector2( 1.49659, 1.49659 )
 
-[node name="Satheri" type="Node2D" parent="Background/Planets" index="2" instance=ExtResource( 6 )]
+[node name="Satheri" parent="Background/Planets" index="2" instance=ExtResource( 6 )]
 position = Vector2( 1067.29, 488.627 )
-rotation = 0.164319
-scale = Vector2( 2.24719, 2.24719 )
-z_index = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="." index="1"]
 anchor_right = 1.0
@@ -570,9 +567,6 @@ margin_top = 25.0
 margin_right = 157.0
 margin_bottom = 97.0
 texture_normal = ExtResource( 10 )
-
-[node name="Fade" parent="." index="3"]
-visible = false
 
 
 [editable path="Background"]

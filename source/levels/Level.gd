@@ -9,7 +9,7 @@ const Blackhole = preload("res://objects/Blackhole/Blackhole.gd")
 var astromouse = null setget set_astromouse
 
 func _ready():
-	self.astromouse = $Astromouse
+	set_astromouse($Astromouse)
 	get_tree().connect("node_added", self, "_on_SceneTree_node_added")
 	randomize()
 
@@ -17,6 +17,8 @@ func _ready():
 func set_astromouse(new_astromouse):
 	if not new_astromouse:
 		return
+	if not new_astromouse is Astromouse:
+		return 
 	astromouse = new_astromouse
 	astromouse.connect("died", self, "_on_Astromouse_died")
 	$Moon.astromouse = astromouse
@@ -48,6 +50,7 @@ func _on_Blackhole_tree_entered(blackhole):
 	$Moon.set_process_unhandled_input(true)
 	get_tree().call_group("flyingbody_spawner", "stop")
 	get_tree().call_group("flying_body", "queue_free")
+	get_tree().call_group("crater", "queue_free")
 
 
 func _on_Blackhole_tree_exited():

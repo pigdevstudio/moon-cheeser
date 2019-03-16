@@ -12,4 +12,3 @@ script = ExtResource( 1 )
 shape = SubResource( 1 )
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
-[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

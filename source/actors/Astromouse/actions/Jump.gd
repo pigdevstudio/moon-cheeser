@@ -16,3 +16,6 @@ func apply(kinematic_actor):
 
 func reset():
 	pass
+	
+func stop(kinematic_actor):
+	kinematic_actor.velocity = Vector2(0, 0)

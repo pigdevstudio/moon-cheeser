@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://objects/space_flying_bodies/SpaceFlyingBody.gd" type="Script" id=1]
 [ext_resource path="res://actors/particle.png" type="Texture" id=2]
 [ext_resource path="res://objects/DragArea.tscn" type="PackedScene" id=3]
+[ext_resource path="res://objects/space_flying_bodies/comet/colliding.wav" type="AudioStream" id=4]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 35.2124
@@ -67,9 +68,12 @@ color_ramp = SubResource( 3 )
 
 [node name="DragArea" parent="." instance=ExtResource( 3 )]
 
+[node name="CollidingSFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 4 )
+
 [connection signal="collided" from="." to="." method="_on_collided"]
 [connection signal="screen_exited" from="Sprite/Visibility" to="." method="queue_free"]
 [connection signal="dragged" from="DragArea" to="." method="fly"]
 [connection signal="dragged" from="DragArea" to="." method="_on_DragArea_dragged"]
-[connection signal="dragging" from="DragArea" to="." method="stop"]
 [connection signal="dragging" from="DragArea" to="Shape" method="set_disabled" binds= [ true ]]
+[connection signal="dragging" from="DragArea" to="." method="stop"]

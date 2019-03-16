@@ -11,7 +11,11 @@ func _ready():
 
 
 func _unhandled_input(event):
-	if event.is_action_released("click"):
+	if not event is InputEventMouseButton:
+		return
+		
+	var is_left_click = event.button_index == 1
+	if  is_left_click and not event.is_pressed():
 		direction = (get_global_mouse_position() - global_position).normalized()
 		emit_signal("dragged", direction)
 		set_process_unhandled_input(false)
@@ -26,9 +30,16 @@ func _on_input_event(viewport, event, shape_idx):
 	if viewport.is_input_handled():
 		return
 	
-	if event.is_action_pressed("click"):
+	if not event is InputEventMouseButton:
+		return
+	
+	var is_left_click = event.button_index == 1
+	if not is_left_click:
+		return
+	
+	if event.is_pressed():
 		is_dragging = true
+		set_process_unhandled_input(true)
 		emit_signal("dragging")
-		
-	elif event.is_action_released("click"):
+	else:
 		emit_signal("dragged", direction)

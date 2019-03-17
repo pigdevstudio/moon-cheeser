@@ -31,7 +31,7 @@ func write_achievements():
 	file.close()
 		
 func set_achievement_progress(achievement_name, new_value):
-	var achievement = get_achievement(achievement_name)
+	var achievement = _get_achievement(achievement_name)
 	var is_complete = is_achievement_complete(achievement_name)
 	
 	if not is_complete:
@@ -42,31 +42,31 @@ func set_achievement_progress(achievement_name, new_value):
 			write_achievements()
 			emit_signal("achievement_completed", achievement_name)
 
-func get_achievement(achievement_name):
+func _get_achievement(achievement_name):
 	return _dict[achievement_name]
 
 func get_goal(achievement_name):
-	var achievement = get_achievement(achievement_name)
+	var achievement = _get_achievement(achievement_name)
 	var goal = achievement["total"]
 	return goal
 
 func get_progress(achievement_name):
-	var achievement = get_achievement(achievement_name)
+	var achievement = _get_achievement(achievement_name)
 	var progress = achievement["accomplished"]
 	return progress
 
 func get_description(achievement_name):
-	var achievement = get_achievement(achievement_name)
+	var achievement = _get_achievement(achievement_name)
 	var description = achievement["description"]
 	return description
 	
 func get_title(achievement_name):
-	var achievement = get_achievement(achievement_name)
+	var achievement = _get_achievement(achievement_name)
 	var title = achievement["name"]
 	return title
 	
 func is_achievement_complete(achievement_name):
-	var achievement = get_achievement(achievement_name)
+	var achievement = _get_achievement(achievement_name)
 	var progress = get_progress(achievement_name)
 	var goal = get_goal(achievement_name)
 	

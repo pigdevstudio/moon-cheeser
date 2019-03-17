@@ -8,14 +8,9 @@
 
 config_version=4
 
-_global_script_classes=[ {
-"base": "Node",
-"class": "Utils",
-"language": "GDScript",
-"path": "res://utils.gd"
-} ]
+_global_script_classes=[  ]
 _global_script_class_icons={
-"Utils": ""
+
 }
 
 [application]
@@ -29,6 +24,11 @@ config/icon="res://moon_cheeser_icon.png"
 BGM="*res://screens/BackgroundMusic.tscn"
 Score="*res://meta/Score.tscn"
 Achievements="*res://meta/achievements/AchievementsDictionary.tscn"
+
+[debug]
+
+gdscript/warnings/enable=false
+gdscript/completion/autocomplete_setters_and_getters=true
 
 [display]
 

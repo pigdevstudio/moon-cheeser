@@ -1,0 +1,10 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://objects/spawners/Spawner.tscn" type="PackedScene" id=1]
+[ext_resource path="res://objects/spawners/CheeseSpawner.gd" type="Script" id=2]
+[ext_resource path="res://objects/cheese/Cheese.tscn" type="PackedScene" id=3]
+
+[node name="CheeseSpawner" index="0" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+spawnling = ExtResource( 3 )
+

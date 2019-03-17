@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://objects/spawners/TimedSpawner.tscn" type="PackedScene" id=1]
+[ext_resource path="res://objects/blackhole/Blackhole.tscn" type="PackedScene" id=2]
+
+
+
+[node name="BlackholeSpawner" index="0" instance=ExtResource( 1 )]
+spawnling = ExtResource( 2 )
+min_spawn_time = 30.0
+max_spawn_time = 45.0
+
+[connection signal="timeout" from="Timer" to="." method="reset_timer"]

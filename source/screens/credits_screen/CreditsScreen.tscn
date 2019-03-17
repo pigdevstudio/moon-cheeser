@@ -2,12 +2,13 @@
 
 [ext_resource path="res://screens/Screen.tscn" type="PackedScene" id=1]
 [ext_resource path="res://levels/Background.tscn" type="PackedScene" id=2]
-[ext_resource path="res://objects/Planets/Satheri.tscn" type="PackedScene" id=3]
+[ext_resource path="res://objects/planets/Satheri.tscn" type="PackedScene" id=3]
 [ext_resource path="res://screens/credits_screen/screen_rect.gd" type="Script" id=4]
 [ext_resource path="res://interface/ShaderButton.tscn" type="PackedScene" id=5]
 [ext_resource path="res://screens/score_screen/back_normal.png" type="Texture" id=6]
 [ext_resource path="res://screens/credits_screen/logo.png" type="Texture" id=7]
 [ext_resource path="res://interface/fonts/garoa_hacker_32_purple_outline.tres" type="DynamicFont" id=8]
+
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends \"res://interface/shader_button.gd\"

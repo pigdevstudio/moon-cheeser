@@ -1,6 +1,0 @@
-[gd_scene format=2]
-
-[node name="SFX" type="AudioStreamPlayer2D"]
-autoplay = true
-
-[connection signal="finished" from="." to="." method="queue_free"]

@@ -1,9 +1,11 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://actors/starmouse/StarMouse.gd" type="Script" id=1]
-[ext_resource path="res://actors/Astromouse/starmouse.png" type="Texture" id=2]
+[ext_resource path="res://actors/starmouse/starmouse.png" type="Texture" id=2]
 [ext_resource path="res://actors/starmouse/Seek.gd" type="Script" id=3]
 [ext_resource path="res://actors/starmouse/MouseSpotter.gd" type="Script" id=4]
+
+
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 50.7316

@@ -1,14 +1,14 @@
 [gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://levels/Level.gd" type="Script" id=1]
-[ext_resource path="res://objects/Moon/Moon.tscn" type="PackedScene" id=2]
+[ext_resource path="res://objects/moon/Moon.tscn" type="PackedScene" id=2]
 [ext_resource path="res://levels/Background.tscn" type="PackedScene" id=3]
-[ext_resource path="res://objects/Spawner/FlyingBodySpawner.tscn" type="PackedScene" id=4]
+[ext_resource path="res://objects/spawners/FlyingBodySpawner.tscn" type="PackedScene" id=4]
 [ext_resource path="res://objects/space_flying_bodies/star/Star.tscn" type="PackedScene" id=5]
 [ext_resource path="res://objects/space_flying_bodies/comet/Comet.tscn" type="PackedScene" id=6]
-[ext_resource path="res://objects/Spawner/AstromouseSpawner.tscn" type="PackedScene" id=7]
-[ext_resource path="res://objects/Spawner/BlackholeSpawner.tscn" type="PackedScene" id=8]
-[ext_resource path="res://actors/Astromouse/Astromouse.tscn" type="PackedScene" id=9]
+[ext_resource path="res://objects/spawners/AstromouseSpawner.tscn" type="PackedScene" id=7]
+[ext_resource path="res://objects/spawners/BlackholeSpawner.tscn" type="PackedScene" id=8]
+[ext_resource path="res://actors/astromouse/Astromouse.tscn" type="PackedScene" id=9]
 
 [sub_resource type="Animation" id=1]
 resource_name = "slide"
@@ -80,6 +80,11 @@ tracks/4/keys = {
 ]]
 script = ExtResource( 1 )
 
+[node name="SpawnerAnimator" type="AnimationPlayer" parent="."]
+autoplay = "slide"
+playback_speed = 0.3
+anims/slide = SubResource( 1 )
+
 [node name="Moon" parent="." instance=ExtResource( 2 )]
 editor/display_folded = true
 position = Vector2( 644.654, 485.91 )
@@ -125,11 +130,6 @@ flying_direction = Vector2( -1, 0 )
 position = Vector2( 643.501, 267 )
 
 [node name="BlackholeSpawner" parent="." instance=ExtResource( 8 )]
-
-[node name="SpawnerAnimator" type="AnimationPlayer" parent="."]
-autoplay = "slide"
-playback_speed = 0.3
-anims/slide = SubResource( 1 )
 
 [node name="Astromouse" parent="." instance=ExtResource( 9 )]
 position = Vector2( 646.311, 255.348 )

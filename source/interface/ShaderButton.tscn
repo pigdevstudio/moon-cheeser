@@ -1,6 +1,7 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://interface/shader_button.gd" type="Script" id=1]
+[ext_resource path="res://interface/ShaderButton.gd" type="Script" id=1]
+
 
 [node name="ShaderButton" type="TextureButton" groups=[
 "screen_button",

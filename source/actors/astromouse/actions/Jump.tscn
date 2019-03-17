@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://actors/astromouse/actions/Jump.gd" type="Script" id=1]
+[ext_resource path="res://actors/astromouse/actions/strategies/JumpReflected.tscn" type="PackedScene" id=2]
+
+
+[node name="Jump" type="Node"]
+script = ExtResource( 1 )
+strategy = ExtResource( 2 )
+

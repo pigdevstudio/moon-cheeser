@@ -1,4 +1,4 @@
-extends "res://objects/GravityBody.gd"
+extends "res://objects/gravity_bodies/GravityBody.gd"
 
 func _ready():
 	set_process_unhandled_input(false)

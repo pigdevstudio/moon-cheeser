@@ -4,7 +4,7 @@ signal game_over
 
 const Starmouse = preload("res://actors/starmouse/StarMouse.gd")
 const Astromouse = preload("res://actors/astromouse/Astromouse.gd")
-const Blackhole = preload("res://objects/blackhole/Blackhole.gd")
+const Blackhole = preload("res://objects/gravity_bodies/blackhole/Blackhole.gd")
 
 var astromouse = null setget set_astromouse
 

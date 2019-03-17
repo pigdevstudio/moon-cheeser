@@ -1,12 +1,14 @@
 [gd_scene load_steps=11 format=2]
 
-[ext_resource path="res://objects/blackhole/Blackhole.gd" type="Script" id=1]
-[ext_resource path="res://objects/blackhole/black_hole.png" type="Texture" id=2]
-[ext_resource path="res://objects/PulseTween.gd" type="Script" id=3]
-[ext_resource path="res://objects/spin_animation.tres" type="Animation" id=4]
+[ext_resource path="res://objects/gravity_bodies/blackhole/Blackhole.gd" type="Script" id=1]
+[ext_resource path="res://objects/gravity_bodies/blackhole/black_hole.png" type="Texture" id=2]
+[ext_resource path="res://objects/gravity_bodies/PulseTween.gd" type="Script" id=3]
+[ext_resource path="res://objects/gravity_bodies/spin_animation.tres" type="Animation" id=4]
 [ext_resource path="res://take_five_drum.ogg" type="AudioStream" id=5]
 [ext_resource path="res://levels/star_back.png" type="Texture" id=6]
-[ext_resource path="res://actors/astromouse/physics/Gravity.tscn" type="PackedScene" id=7]
+[ext_resource path="res://objects/Gravity.tscn" type="PackedScene" id=7]
+
+
 
 
 

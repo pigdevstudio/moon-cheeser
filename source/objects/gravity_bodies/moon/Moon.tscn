@@ -1,11 +1,13 @@
 [gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://objects/moon/Moon.gd" type="Script" id=1]
-[ext_resource path="res://objects/moon/moon_gravity.png" type="Texture" id=2]
+[ext_resource path="res://objects/gravity_bodies/moon/Moon.gd" type="Script" id=1]
+[ext_resource path="res://objects/gravity_bodies/moon/moon_gravity.png" type="Texture" id=2]
 [ext_resource path="res://screens/title_screen/moon.png" type="Texture" id=3]
-[ext_resource path="res://objects/PulseTween.gd" type="Script" id=4]
-[ext_resource path="res://objects/spin_animation.tres" type="Animation" id=5]
-[ext_resource path="res://actors/astromouse/physics/Gravity.tscn" type="PackedScene" id=6]
+[ext_resource path="res://objects/gravity_bodies/PulseTween.gd" type="Script" id=4]
+[ext_resource path="res://objects/gravity_bodies/spin_animation.tres" type="Animation" id=5]
+[ext_resource path="res://objects/Gravity.tscn" type="PackedScene" id=6]
+
+
 
 
 

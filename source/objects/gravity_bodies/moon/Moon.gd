@@ -6,10 +6,10 @@ func _ready():
 
 func spawn_cheeses(collision):
 	var spawner = load("res://objects/spawners/CheeseSpawner.tscn").instance()
-	var pos = collision.position
+	var collision_position = collision.position
 	var normal = collision.normal
 	$Pivot.add_child(spawner)
-	spawner.position = $Pivot.to_local(pos)
+	spawner.position = $Pivot.to_local(collision_position)
 	spawner.rotation = normal.angle() + deg2rad(90 - $Pivot.rotation_degrees)
 	spawner.spawn()
 

@@ -9,7 +9,7 @@ export (float) var flying_speed = 300.0
 func _on_collided(collision):
 	var collider = collision.collider
 	if collider.has_method("spawn_cheeses"):
-		collider.spawn_cheeses(collision.position)
+		collider.spawn_cheeses(collision)
 	if collider.has_method("spawn_crater"):
 		collider.spawn_crater(collision)
 	queue_free()
@@ -23,10 +23,10 @@ func fly(direction):
 		velocity = flying_speed * direction
 		rotation = direction.angle()
 
-func spawn_cheeses(spawn_position):
+func spawn_cheeses(collision):
 	var spawner = get_node("CheeseSpawner").duplicate()
 	get_parent().add_child(spawner)
-	spawner.position = spawn_position
+	spawner.position = collision.position
 	spawner.spawn()
 	queue_free()
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/moon_gravity.png-f47954d15af587edd2421ec17c45d038.stex"
+path="res://.import/black_hole.png-0ebd9e3f59b158664ec637f3244269c3.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://objects/moon/moon_gravity.png"
-dest_files=[ "res://.import/moon_gravity.png-f47954d15af587edd2421ec17c45d038.stex" ]
+source_file="res://objects/gravity_bodies/blackhole/black_hole.png"
+dest_files=[ "res://.import/black_hole.png-0ebd9e3f59b158664ec637f3244269c3.stex" ]
 
 [params]
 

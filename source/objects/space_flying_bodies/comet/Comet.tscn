@@ -7,7 +7,6 @@
 [ext_resource path="res://objects/space_flying_bodies/comet/colliding.wav" type="AudioStream" id=5]
 [ext_resource path="res://objects/space_flying_bodies/comet/KillingArea.gd" type="Script" id=6]
 
-
 [sub_resource type="Gradient" id=1]
 offsets = PoolRealArray( 0.402703, 1 )
 colors = PoolColorArray( 0.266667, 0, 0.333333, 1, 0.266667, 0, 0.333333, 0 )
@@ -23,7 +22,7 @@ radius = 44.3321
 
 [node name="Sprite" parent="." index="1"]
 frames = ExtResource( 2 )
-frame = 1
+frame = 3
 
 [node name="Tail" parent="Sprite" index="0"]
 color_ramp = SubResource( 1 )

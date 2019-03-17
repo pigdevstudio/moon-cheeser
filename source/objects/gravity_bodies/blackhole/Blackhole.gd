@@ -1,4 +1,4 @@
-extends "res://objects/GravityBody.gd"
+extends "res://objects/gravity_bodies/GravityBody.gd"
 
 func _on_Singularity_body_entered(body):
 	if body.has_method("die"):

@@ -1,6 +1,6 @@
 extends "res://actors/astromouse/actions/strategies/JumpStrategy.gd"
 
-func get_direction(kinematic_actor):
+func get_direction(space_space_kinematic_body):
 	var direction = Vector2(0, -1)
-	direction = direction.rotated(kinematic_actor.rotation)
+	direction = direction.rotated(space_space_kinematic_body.rotation)
 	return direction

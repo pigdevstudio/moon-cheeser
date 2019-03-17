@@ -9,13 +9,13 @@ func _ready():
 	strategy = strategy.instance()
 	add_child(strategy)
 
-func apply(kinematic_actor):
-	var direction = strategy.get_direction(kinematic_actor)
-	kinematic_actor.velocity = direction * height
+func apply(space_space_kinematic_body):
+	var direction = strategy.get_direction(space_space_kinematic_body)
+	space_space_kinematic_body.velocity = direction * height
 	emit_signal("executed")
 
 func reset():
 	pass
 	
-func stop(kinematic_actor):
-	kinematic_actor.velocity = Vector2(0, 0)
+func stop(space_space_kinematic_body):
+	space_space_kinematic_body.velocity = Vector2(0, 0)

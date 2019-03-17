@@ -3,7 +3,7 @@ extends "res://objects/SpaceKinematicBody.gd"
 signal died
 
 func _ready():
-	$Actions.kinematic_actor = self
+	$Actions.space_space_kinematic_body = self
 
 func _on_collided(collision):
 	var collider = collision.collider

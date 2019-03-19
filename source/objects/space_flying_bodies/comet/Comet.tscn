@@ -22,7 +22,7 @@ radius = 44.3321
 
 [node name="Sprite" parent="." index="1"]
 frames = ExtResource( 2 )
-frame = 3
+frame = 2
 
 [node name="Tail" parent="Sprite" index="0"]
 color_ramp = SubResource( 1 )
@@ -51,5 +51,7 @@ script = ExtResource( 6 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KillingArea" index="0"]
 shape = SubResource( 3 )
 
+[connection signal="dragging" from="DragArea" to="FirstStepsAchievement" method="_on_DragArea_dragging"]
 [connection signal="body_entered" from="KillingArea" to="KillingArea" method="_on_body_entered"]
+[connection signal="body_entered" from="KillingArea" to="FirstStepsAchievement" method="_on_KillingArea_body_entered"]
 [connection signal="body_killed" from="KillingArea" to="." method="queue_free"]

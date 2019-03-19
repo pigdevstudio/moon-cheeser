@@ -111,8 +111,5 @@ margin_right = 157.0
 margin_bottom = 97.0
 texture_normal = ExtResource( 7 )
 
-[node name="Fade" parent="." index="3"]
-visible = false
-
 
 [editable path="Background"]

@@ -1,116 +1,103 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://objects/gravity_bodies/blackhole/black_hole.png" type="Texture" id=1]
-[ext_resource path="res://levels/star_back.png" type="Texture" id=2]
-[ext_resource path="res://objects/space_flying_bodies/star/particles.png" type="Texture" id=3]
+[ext_resource path="res://objects/supernova/Supernova.gd" type="Script" id=1]
+[ext_resource path="res://objects/gravity_bodies/blackhole/black_hole.png" type="Texture" id=2]
+[ext_resource path="res://levels/star_back.png" type="Texture" id=3]
 
-
-
-
-
-
-
-
-[sub_resource type="GDScript" id=1]
-
-script/source = "#MIT License
-#
-#Copyright (c) 2017 Pigdev Studio
-#
-#Permission is hereby granted, free of charge, to any person obtaining a copy
-#of this software and associated documentation files (the \"Software\"), to deal
-#in the Software without restriction, including without limitation the rights
-#to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-#copies of the Software, and to permit persons to whom the Software is
-#furnished to do so, subject to the following conditions:
-#
-#The above copyright notice and this permission notice shall be included in all
-#copies or substantial portions of the Software.
-#
-#THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-#IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-#FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-#AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-#LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-#OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-#SOFTWARE.
-extends Node2D
-
-onready var t = get_node(\"Tween\")
-func _ready():
-	yield(get_node(\"Animator\"), \"animation_finished\")
-	queue_free()"
-
-[sub_resource type="Animation" id=2]
-
+[sub_resource type="Animation" id=1]
 resource_name = "spin"
 length = 1.5
 tracks/0/type = "value"
-tracks/0/path = NodePath("Particles/Attractor:gravity")
+tracks/0/path = NodePath("Sprite:rotation_degrees")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5 ),
-"transitions": PoolRealArray( 7.72749, 1 ),
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 0.25, 0.25 ),
 "update": 0,
-"values": [ 10.0, -20.0 ]
+"values": [ 0.0, -360.0 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Sprite:rotation_degrees")
+tracks/1/path = NodePath("Sprite:scale")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.9 ),
-"transitions": PoolRealArray( 0.25, 0.25 ),
-"update": 0,
-"values": [ 0.0, -360.0 ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("Sprite:modulate:a")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0.5, 0.7 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ 1.0, 0.0 ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("Sprite:scale")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
 "times": PoolRealArray( 0.2, 0.5, 0.8 ),
 "transitions": PoolRealArray( 0.25, 0.25, 1 ),
 "update": 0,
 "values": [ Vector2( 1, 1 ), Vector2( 1.2, 1.2 ), Vector2( 1e-05, 1e-05 ) ]
 }
+tracks/2/type = "value"
+tracks/2/path = NodePath("Sprite:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.5, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("CPUParticles2D:emitting")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
 
-[node name="super_nova" type="Node2D"]
+[sub_resource type="Curve" id=2]
+min_value = -360.0
+max_value = 360.0
+_data = [ Vector2( 0, -216.087 ), 0.0, 0.0, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="Gradient" id=3]
+offsets = PoolRealArray( 0.572864, 1 )
+colors = PoolColorArray( 1, 1, 1, 1, 1, 1, 1, 0 )
+
+[node name="Supernova" type="Node2D"]
 position = Vector2( 219.386, 131.848 )
 scale = Vector2( 0.3, 0.3 )
-script = SubResource( 1 )
+script = ExtResource( 1 )
 
 [node name="Animator" type="AnimationPlayer" parent="."]
 autoplay = "spin"
-anims/spin = SubResource( 2 )
+anims/spin = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
-texture = ExtResource( 1 )
+texture = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="Sprite"]
 scale = Vector2( 1.87875, 1.87875 )
-texture = ExtResource( 2 )
-
-[node name="Particles" type="Particles2D" parent="."]
-amount = 36
 texture = ExtResource( 3 )
 
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+z_index = -1
+emitting = false
+amount = 16
+one_shot = true
+explosiveness = 0.5
+randomness = 0.75
+texture = ExtResource( 3 )
+emission_shape = 1
+emission_sphere_radius = 32.0
+spread = 180.0
+gravity = Vector2( 0, 0 )
+initial_velocity = 360.0
+initial_velocity_random = 1.0
+angle = -60.0
+angle_random = 1.0
+angle_curve = SubResource( 2 )
+color_ramp = SubResource( 3 )
+
+[connection signal="animation_finished" from="Animator" to="." method="_on_Animator_animation_finished"]

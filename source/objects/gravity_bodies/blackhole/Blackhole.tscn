@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://objects/gravity_bodies/blackhole/Blackhole.gd" type="Script" id=1]
 [ext_resource path="res://objects/gravity_bodies/blackhole/black_hole.png" type="Texture" id=2]
@@ -7,10 +7,7 @@
 [ext_resource path="res://take_five_drum.ogg" type="AudioStream" id=5]
 [ext_resource path="res://levels/star_back.png" type="Texture" id=6]
 [ext_resource path="res://objects/Gravity.tscn" type="PackedScene" id=7]
-
-
-
-
+[ext_resource path="res://objects/space_flying_bodies/comet/KillingArea.gd" type="Script" id=8]
 
 [sub_resource type="Curve" id=1]
 min_value = -360.0
@@ -20,12 +17,12 @@ _data = [ Vector2( 0, -61.4832 ), 0.0, 0.0, 0, 0, Vector2( 1, 65.2368 ), 0.0, 0.
 [sub_resource type="Curve" id=2]
 
 [sub_resource type="CircleShape2D" id=3]
-radius = 55.0369
+radius = 55.2268
 
 [node name="BlackHole" type="Node2D" groups=[
-"enemy",
 "void",
 "black_hole",
+"enemy",
 ]]
 z_index = -3
 script = ExtResource( 1 )
@@ -69,17 +66,18 @@ scale_amount_curve = SubResource( 2 )
 wait_time = 2.0
 autostart = true
 
-[node name="Singularity" type="Area2D" parent="."]
-
-[node name="Shape" type="CollisionShape2D" parent="Singularity"]
-shape = SubResource( 3 )
-
 [node name="Duration" type="Timer" parent="."]
 wait_time = 10.0
 one_shot = true
 autostart = true
 
+[node name="KillingArea" type="Area2D" parent="."]
+script = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillingArea"]
+shape = SubResource( 3 )
+
 [connection signal="timeout" from="PulseInterval" to="Tween" method="pulse"]
 [connection signal="timeout" from="PulseInterval" to="." method="pulse"]
-[connection signal="body_entered" from="Singularity" to="." method="_on_Singularity_body_entered"]
 [connection signal="timeout" from="Duration" to="." method="queue_free"]
+[connection signal="body_entered" from="KillingArea" to="KillingArea" method="_on_body_entered"]

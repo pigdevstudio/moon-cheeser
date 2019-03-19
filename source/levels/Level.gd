@@ -1,11 +1,6 @@
 extends Node
 
 signal game_over
-
-const Starmouse = preload("res://actors/starmouse/StarMouse.gd")
-const Astromouse = preload("res://actors/astromouse/Astromouse.gd")
-const Blackhole = preload("res://objects/gravity_bodies/blackhole/Blackhole.gd")
-
 var astromouse = null setget set_astromouse
 
 func _ready():
@@ -15,6 +10,8 @@ func _ready():
 
 func set_astromouse(new_astromouse):
 	astromouse = new_astromouse
+	if not has_node("Astromouse"):
+		return
 	astromouse.become_invincible()
 	astromouse.connect("died", self, "_on_Astromouse_died")
 	$Moon.astromouse = astromouse
@@ -37,6 +34,8 @@ func _on_SceneTree_node_added(node):
 func _on_Blackhole_tree_entered(blackhole):
 	blackhole.connect("tree_exited", self, "_on_Blackhole_tree_exited")
 	blackhole.astromouse = astromouse
+	var astromouse_actions = astromouse.get_action_node()
+	astromouse_actions.set_process_unhandled_input(false)
 	$Moon.set_physics_process(false)
 	$Moon.set_process_unhandled_input(true)
 	get_tree().call_group("flyingbody_spawner", "stop")
@@ -48,6 +47,8 @@ func _on_Blackhole_tree_exited():
 		get_tree().call_group("flyingbody_spawner", "reset_timer")
 		$Moon.set_physics_process(true)
 		$Moon.set_process_unhandled_input(false)
+		var astromouse_actions = astromouse.get_action_node()
+		astromouse_actions.set_process_unhandled_input(true)
 
 func instance_astromouse(spawn_position):
 	var spawner = $AstromouseSpawner
@@ -55,9 +56,9 @@ func instance_astromouse(spawn_position):
 	spawner.spawn()
 
 func treat_new_node(node):
-	if node is Starmouse:
+	if node.has_node("SteeringSeek") and node.has_node("PickupArea"):
 		_on_Starmouse_tree_entered(node)
 	elif node.has_node("Actions"):
 		set_astromouse(node)
-	elif node is Blackhole:
+	elif node.has_node("Gravity") and node.has_node("KillingArea"):
 		_on_Blackhole_tree_entered(node)

@@ -1,7 +1,8 @@
 extends Node2D
 
 onready var particles = $Sprites/Particles
-onready var character = $Sprites/AstromouseCharacter
+onready var character = $Sprites/Pivot/AstromouseCharacter
+onready var pivot = $Sprites/Pivot
 
 export (float) var speed = 300.0
 var _direction = Vector2(0, 0)

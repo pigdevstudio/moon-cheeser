@@ -42,7 +42,7 @@ window/handheld/emulate_touchscreen=true
 
 [editor_plugins]
 
-enabled=PoolStringArray( "batch_rename" )
+enabled=PoolStringArray(  )
 
 [image_loader]
 

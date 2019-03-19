@@ -10,7 +10,6 @@
 [ext_resource path="res://objects/spawners/BlackholeSpawner.tscn" type="PackedScene" id=8]
 [ext_resource path="res://actors/astromouse/Astromouse.tscn" type="PackedScene" id=9]
 
-
 [sub_resource type="Animation" id=1]
 resource_name = "slide"
 length = 4.0
@@ -76,7 +75,7 @@ tracks/4/keys = {
 "values": [ Vector2( 0, 0 ), Vector2( 1280.53, 0 ) ]
 }
 
-[node name="MoonLevel" type="Node2D" groups=[
+[node name="Level" type="Node2D" groups=[
 "level",
 ]]
 script = ExtResource( 1 )
@@ -90,13 +89,16 @@ anims/slide = SubResource( 1 )
 editor/display_folded = true
 position = Vector2( 644.654, 485.91 )
 
+[node name="Tween" parent="Moon" index="2"]
+root_node = NodePath("../../../Level/Moon/Pivot/Atmosphere")
+
 [node name="Background" parent="." instance=ExtResource( 3 )]
 z_index = -2
 
 [node name="LeftStarSpawner" parent="." groups=[
 "flyingbody_spawner",
 ] instance=ExtResource( 4 )]
-position = Vector2( 0, 211.5 )
+position = Vector2( 0, 535.795 )
 spawnling = ExtResource( 5 )
 min_spawn_time = 4.0
 max_spawn_time = 10.0
@@ -104,7 +106,7 @@ max_spawn_time = 10.0
 [node name="LeftCometSpawner" parent="." groups=[
 "flyingbody_spawner",
 ] instance=ExtResource( 4 )]
-position = Vector2( 0, 211.5 )
+position = Vector2( 0, 535.795 )
 spawnling = ExtResource( 6 )
 min_spawn_time = 4.0
 max_spawn_time = 10.0
@@ -112,7 +114,7 @@ max_spawn_time = 10.0
 [node name="RightStarSpawner" parent="." groups=[
 "flyingbody_spawner",
 ] instance=ExtResource( 4 )]
-position = Vector2( 1279.18, 211.5 )
+position = Vector2( 1279.18, 535.795 )
 spawnling = ExtResource( 5 )
 min_spawn_time = 4.0
 max_spawn_time = 10.0
@@ -121,7 +123,7 @@ flying_direction = Vector2( -1, 0 )
 [node name="RightCometSpawner" parent="." groups=[
 "flyingbody_spawner",
 ] instance=ExtResource( 4 )]
-position = Vector2( 1280, 210.598 )
+position = Vector2( 1280, 534.893 )
 spawnling = ExtResource( 6 )
 min_spawn_time = 4.0
 max_spawn_time = 10.0
@@ -131,6 +133,7 @@ flying_direction = Vector2( -1, 0 )
 position = Vector2( 643.501, 267 )
 
 [node name="BlackholeSpawner" parent="." instance=ExtResource( 8 )]
+position = Vector2( 1005.61, 0 )
 
 [node name="Astromouse" parent="." instance=ExtResource( 9 )]
 position = Vector2( 646.311, 255.348 )

@@ -22,6 +22,8 @@ func fly(direction):
 	if direction.length() > 0:
 		velocity = flying_speed * direction
 		rotation = direction.angle()
+		$Sprite/Core.angle = -rotation_degrees
+		$Sprite/Tail.angle = -rotation_degrees
 
 func spawn_cheeses(collision):
 	var spawner = get_node("CheeseSpawner").duplicate()

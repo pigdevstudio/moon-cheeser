@@ -8,7 +8,6 @@ func _ready():
 
 func _physics_process(delta):
 	var normal = (global_position - astromouse.global_position).normalized()
-	_gravity.direction = normal
 	_gravity.apply(astromouse)
 
 func set_astromouse(new_astromouse):
@@ -22,7 +21,5 @@ func set_gravity_enabled(enabled):
 func pulse():
 	var current_strength = _gravity.acceleration
 	_gravity.acceleration *= 10
-	var normal = (global_position - astromouse.global_position).normalized()
-	_gravity.direction = normal
 	_gravity.apply(astromouse)
 	_gravity.acceleration = current_strength

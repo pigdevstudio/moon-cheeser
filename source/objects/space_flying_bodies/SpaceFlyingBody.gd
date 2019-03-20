@@ -10,9 +10,10 @@ func _on_collided(collision):
 	var collider = collision.collider
 	if collider.has_method("spawn_cheeses"):
 		collider.spawn_cheeses(collision)
+		explode()
 	if collider.has_method("spawn_crater"):
 		collider.spawn_crater(collision)
-	queue_free()
+		explode()
 
 func _on_DragArea_dragged(direction):
 	$Shape.disabled = false
@@ -30,11 +31,11 @@ func spawn_cheeses(collision):
 	get_parent().add_child(spawner)
 	spawner.position = collision.position
 	spawner.spawn()
-	queue_free()
+	explode()
 
-func queue_free():
+func explode():
 	$Shape.disabled = true
 	hide()
 	$CollidingSFX.play()
 	yield($CollidingSFX, "finished")
-	.queue_free()
+	queue_free()

@@ -63,6 +63,7 @@ scale_amount_curve = SubResource( 2 )
 color_ramp = SubResource( 3 )
 
 [node name="Pivot" type="Position2D" parent="Sprites"]
+rotation = 1.5708
 
 [node name="AstromouseCharacter" parent="Sprites/Pivot" instance=ExtResource( 6 )]
 position = Vector2( -14.6667, 64.8889 )

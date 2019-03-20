@@ -14,8 +14,19 @@ func _ready():
 func _physics_process(delta):
 	_velocity += $SteeringSeek.steer(_velocity, _direction * speed)
 	translate(_velocity * delta)
-	particles.rotation = -_velocity.angle()
+	particles.rotation = -_direction.angle()
 	particles.emitting = _velocity.length() > 100
+	
+	var direction_angle = _velocity.angle() + (PI * 0.5)
+	if _direction.length() <= 0:
+		pivot.rotation = lerp(pivot.rotation, 0.0, 0.05)
+	else:
+		pivot.rotation = direction_angle
+	
+	if direction_angle > 0 and direction_angle < 2.5:
+		pivot.scale.x = 1
+	else:
+		pivot.scale.x = -1
 
 func seek(target_pos):
 	_direction = (target_pos - global_position).normalized()

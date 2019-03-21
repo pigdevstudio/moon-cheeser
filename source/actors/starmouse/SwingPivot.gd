@@ -9,7 +9,6 @@ export (float, 1.0) var dampling = 0.02
 
 var movement_velocity = Vector2(0, 0)
 var is_swinging = false
-var _quadrant = 1
 
 func swing():
 	is_swinging = true
@@ -21,7 +20,6 @@ func swing():
 
 func rest():
 	is_swinging = false
-	calculate_angle_quadrant()
 	damp_to_rest_angle()
 
 func damp_to_rest_angle():
@@ -39,8 +37,8 @@ func flip_horizontally():
 
 func get_rest_angle_degrees():
 	var rest_angle = 0.0
-	
-	match _quadrant:
+	var quadrant = get_angle_quadrant()
+	match quadrant:
 		1:
 			rest_angle = 0.0
 		2:
@@ -51,11 +49,10 @@ func get_rest_angle_degrees():
 			rest_angle = 360.0
 	return rest_angle
 
-func calculate_angle_quadrant():
+func get_angle_quadrant():
 	var angle_quadrant = 1
 	
 	var angle = rotation_degrees - angle_offset_degrees
 	
 	angle_quadrant = int(ceil(angle / 90))
-	_quadrant = angle_quadrant
 	return angle_quadrant

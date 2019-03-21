@@ -1,11 +1,12 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://actors/starmouse/StarMouse.gd" type="Script" id=1]
 [ext_resource path="res://actors/starmouse/Seek.gd" type="Script" id=2]
 [ext_resource path="res://actors/starmouse/MouseSpotter.gd" type="Script" id=3]
 [ext_resource path="res://actors/starmouse/star.png" type="Texture" id=4]
 [ext_resource path="res://objects/space_flying_bodies/star/particles.png" type="Texture" id=5]
-[ext_resource path="res://actors/astromouse/sprites/AstromouseCharacter.tscn" type="PackedScene" id=6]
+[ext_resource path="res://actors/starmouse/Pivot.gd" type="Script" id=6]
+[ext_resource path="res://actors/astromouse/sprites/AstromouseCharacter.tscn" type="PackedScene" id=7]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 50.7316
@@ -25,15 +26,14 @@ speed = 800.0
 [node name="Duration" type="Timer" parent="."]
 wait_time = 5.0
 one_shot = true
-autostart = true
 
 [node name="SteeringSeek" type="Node2D" parent="."]
 script = ExtResource( 2 )
 mass = 40.0
 
-[node name="PickupArea" type="Area2D" parent="." groups=[
-"player",
-]]
+[node name="PickupArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PickupArea"]
 shape = SubResource( 1 )
@@ -63,9 +63,9 @@ scale_amount_curve = SubResource( 2 )
 color_ramp = SubResource( 3 )
 
 [node name="Pivot" type="Position2D" parent="Sprites"]
-rotation = 1.5708
+script = ExtResource( 6 )
 
-[node name="AstromouseCharacter" parent="Sprites/Pivot" instance=ExtResource( 6 )]
+[node name="AstromouseCharacter" parent="Sprites/Pivot" instance=ExtResource( 7 )]
 position = Vector2( -14.6667, 64.8889 )
 
 [connection signal="timeout" from="Duration" to="." method="queue_free"]

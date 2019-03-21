@@ -1,11 +1,11 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://objects/cheese/Cheese.gd" type="Script" id=1]
 [ext_resource path="res://objects/cheese/cheese.png" type="Texture" id=2]
-
+[ext_resource path="res://objects/cheese/pickup.wav" type="AudioStream" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 18.6669, 17.9998 )
+extents = Vector2( 16.3334, 16.6667 )
 
 [sub_resource type="Animation" id=2]
 resource_name = "pulsing"
@@ -23,10 +23,10 @@ tracks/0/keys = {
 "values": [ Vector2( 0.147222, 0.147222 ), Vector2( 0.200615, 0.200615 ) ]
 }
 
-[node name="Cheese" type="Area2D" groups=[
-"cheese",
-]]
+[node name="Cheese" type="Area2D"]
 z_index = -1
+collision_layer = 0
+collision_mask = 2
 script = ExtResource( 1 )
 score = 35
 
@@ -45,5 +45,8 @@ scale = Vector2( 1.44, 1.44 )
 [node name="Sprite" type="Sprite" parent="Pivot"]
 scale = Vector2( 0.1687, 0.1687 )
 texture = ExtResource( 2 )
+
+[node name="PickupSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 3 )
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]

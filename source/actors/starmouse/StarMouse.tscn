@@ -5,7 +5,7 @@
 [ext_resource path="res://actors/starmouse/MouseSpotter.gd" type="Script" id=3]
 [ext_resource path="res://actors/starmouse/star.png" type="Texture" id=4]
 [ext_resource path="res://objects/space_flying_bodies/star/particles.png" type="Texture" id=5]
-[ext_resource path="res://actors/starmouse/Pivot.gd" type="Script" id=6]
+[ext_resource path="res://actors/starmouse/SwingPivot.tscn" type="PackedScene" id=6]
 [ext_resource path="res://actors/astromouse/sprites/AstromouseCharacter.tscn" type="PackedScene" id=7]
 
 [sub_resource type="CircleShape2D" id=1]
@@ -62,10 +62,9 @@ scale_amount_random = 1.0
 scale_amount_curve = SubResource( 2 )
 color_ramp = SubResource( 3 )
 
-[node name="Pivot" type="Position2D" parent="Sprites"]
-script = ExtResource( 6 )
+[node name="SwingPivot" parent="Sprites" instance=ExtResource( 6 )]
 
-[node name="AstromouseCharacter" parent="Sprites/Pivot" instance=ExtResource( 7 )]
+[node name="AstromouseCharacter" parent="Sprites/SwingPivot" instance=ExtResource( 7 )]
 position = Vector2( -14.6667, 64.8889 )
 
 [connection signal="timeout" from="Duration" to="." method="queue_free"]

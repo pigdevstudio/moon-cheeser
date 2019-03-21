@@ -17,9 +17,10 @@ func _physics_process(delta):
 	
 	particles.rotation = -_direction.angle()
 	particles.emitting = _velocity.length() > 100
+	pivot.movement_velocity = _velocity
 	
 	if _direction:
-		pivot.swing(_velocity)
+		pivot.swing()
 	else:
 		pivot.damp_to_rest_angle()
 
@@ -27,4 +28,5 @@ func seek(target_pos):
 	_direction = (target_pos - global_position).normalized()
 
 func stop():
+	pivot.calculate_angle_quadrant()
 	_direction = Vector2(0, 0)

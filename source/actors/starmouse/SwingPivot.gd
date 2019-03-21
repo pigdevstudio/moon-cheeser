@@ -7,7 +7,10 @@ Swing following a movement direction to give an inertia aspect
 export (float) var angle_offset_degrees = 90
 export (float, 1.0) var dampling = 0.02
 
-func swing(movement_velocity):
+var movement_velocity = Vector2(0, 0)
+var _quadrant = 1
+
+func swing():
 	var movement_angle_degrees = rad2deg(movement_velocity.angle())
 	
 	var target_angle_degrees = movement_angle_degrees + angle_offset_degrees
@@ -19,18 +22,31 @@ func damp_to_rest_angle():
 	rotation_degrees = lerp(rotation_degrees, rest_angle_degrees, dampling)
 
 func flip_horizontally():
-	var min_angle_degrees = -50
-	var max_angle_degrees = 150
-	
-	var flip = rotation_degrees >= -min_angle_degrees
-	flip = flip and rotation_degrees <= max_angle_degrees
-	if flip:
-		scale.x = 1
-	else:
+	var is_flipped = movement_velocity.x < 0
+	if is_flipped:
 		scale.x = -1
+	else:
+		scale.x = 1
 
 func get_rest_angle_degrees():
-	var target_angle = 360.0
-	if rotation_degrees > -180 and rotation_degrees <= 180:
-		target_angle = 0.0
-	return target_angle
+	var rest_angle = 0.0
+	
+	match _quadrant:
+		1:
+			rest_angle = 0.0
+		2:
+			rest_angle = 360.0
+		3:
+			rest_angle = 0.0
+		4:
+			rest_angle = 360.0
+	return rest_angle
+
+func calculate_angle_quadrant():
+	var angle_quadrant = 1
+	
+	var angle = rotation_degrees - angle_offset_degrees
+	
+	angle_quadrant = int(ceil(angle / 90))
+	_quadrant = angle_quadrant
+	return angle_quadrant

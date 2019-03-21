@@ -37,16 +37,11 @@ func flip_horizontally():
 
 func get_rest_angle_degrees():
 	var rest_angle = 0.0
+	
 	var quadrant = get_angle_quadrant()
-	match quadrant:
-		1:
-			rest_angle = 0.0
-		2:
-			rest_angle = 360.0
-		3:
-			rest_angle = 0.0
-		4:
-			rest_angle = 360.0
+	if quadrant == 2 or quadrant == 4:
+		rest_angle = 360.0
+	
 	return rest_angle
 
 func get_angle_quadrant():

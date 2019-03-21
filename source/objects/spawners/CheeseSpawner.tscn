@@ -4,7 +4,9 @@
 [ext_resource path="res://objects/spawners/CheeseSpawner.gd" type="Script" id=2]
 [ext_resource path="res://objects/cheese/Cheese.tscn" type="PackedScene" id=3]
 
-[node name="CheeseSpawner" index="0" instance=ExtResource( 1 )]
+[node name="CheeseSpawner" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 spawnling = ExtResource( 3 )
+
+[node name="Tween" type="Tween" parent="." index="0"]
 

@@ -4,13 +4,12 @@ extends Position2D
 Swing following a movement direction to give an inertia aspect
 """
 
-export (float) var movement_threshold = 800.0
+export (float) var angle_offset_degrees = 90
 export (float, 1.0) var dampling = 0.02
 
 func swing(movement_velocity):
 	var movement_angle_degrees = rad2deg(movement_velocity.angle())
 	
-	var angle_offset_degrees = 90
 	var target_angle_degrees = movement_angle_degrees + angle_offset_degrees
 	rotation_degrees = target_angle_degrees
 	flip_horizontally()

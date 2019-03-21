@@ -3,7 +3,6 @@
 [ext_resource path="res://objects/spawners/TimedSpawner.tscn" type="PackedScene" id=1]
 [ext_resource path="res://objects/spawners/FlyingBodySpawner.gd" type="Script" id=2]
 
-
 [node name="FlyingBodySpawner" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 

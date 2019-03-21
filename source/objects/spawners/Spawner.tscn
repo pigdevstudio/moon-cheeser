@@ -2,7 +2,6 @@
 
 [ext_resource path="res://objects/spawners/Spawner.gd" type="Script" id=1]
 
-
 [node name="Spawner" type="Position2D"]
 script = ExtResource( 1 )
 

@@ -1,14 +1,15 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://objects/supernova/Supernova.gd" type="Script" id=1]
 [ext_resource path="res://objects/gravity_bodies/blackhole/black_hole.png" type="Texture" id=2]
 [ext_resource path="res://levels/star_back.png" type="Texture" id=3]
+[ext_resource path="res://meta/achievements/SupernovaAchievement.tscn" type="PackedScene" id=4]
 
 [sub_resource type="Animation" id=1]
 resource_name = "spin"
 length = 1.5
 tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:rotation_degrees")
+tracks/0/path = NodePath("Blackhole:rotation_degrees")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -20,7 +21,7 @@ tracks/0/keys = {
 "values": [ 0.0, -360.0 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Sprite:scale")
+tracks/1/path = NodePath("Blackhole:scale")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -32,7 +33,7 @@ tracks/1/keys = {
 "values": [ Vector2( 1, 1 ), Vector2( 1.2, 1.2 ), Vector2( 1e-05, 1e-05 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Sprite:modulate")
+tracks/2/path = NodePath("Blackhole:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -66,18 +67,20 @@ offsets = PoolRealArray( 0.572864, 1 )
 colors = PoolColorArray( 1, 1, 1, 1, 1, 1, 1, 0 )
 
 [node name="Supernova" type="Node2D"]
-position = Vector2( 219.386, 131.848 )
 scale = Vector2( 0.3, 0.3 )
 script = ExtResource( 1 )
+pulling_group = "cheese"
 
-[node name="Animator" type="AnimationPlayer" parent="."]
+[node name="Animator" type="AnimationPlayer" parent="." groups=[
+"supernova",
+]]
 autoplay = "spin"
 anims/spin = SubResource( 1 )
 
-[node name="Sprite" type="Sprite" parent="."]
+[node name="Blackhole" type="Sprite" parent="."]
 texture = ExtResource( 2 )
 
-[node name="Sprite" type="Sprite" parent="Sprite"]
+[node name="Star" type="Sprite" parent="Blackhole"]
 scale = Vector2( 1.87875, 1.87875 )
 texture = ExtResource( 3 )
 
@@ -99,5 +102,9 @@ angle = -60.0
 angle_random = 1.0
 angle_curve = SubResource( 2 )
 color_ramp = SubResource( 3 )
+
+[node name="Gravity" type="Tween" parent="."]
+
+[node name="SupernovaAchievement" parent="." instance=ExtResource( 4 )]
 
 [connection signal="animation_finished" from="Animator" to="." method="_on_Animator_animation_finished"]

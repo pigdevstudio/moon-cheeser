@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://levels/Level.gd" type="Script" id=1]
 [ext_resource path="res://objects/gravity_bodies/moon/Moon.tscn" type="PackedScene" id=2]
@@ -8,7 +8,8 @@
 [ext_resource path="res://objects/space_flying_bodies/comet/Comet.tscn" type="PackedScene" id=6]
 [ext_resource path="res://objects/spawners/AstromouseSpawner.tscn" type="PackedScene" id=7]
 [ext_resource path="res://objects/spawners/BlackholeSpawner.tscn" type="PackedScene" id=8]
-[ext_resource path="res://actors/astromouse/Astromouse.tscn" type="PackedScene" id=9]
+[ext_resource path="res://objects/spawners/SupernovaSpawner.tscn" type="PackedScene" id=9]
+[ext_resource path="res://actors/astromouse/Astromouse.tscn" type="PackedScene" id=10]
 
 [sub_resource type="Animation" id=1]
 resource_name = "slide"
@@ -135,8 +136,10 @@ position = Vector2( 643.501, 267 )
 [node name="BlackholeSpawner" parent="." instance=ExtResource( 8 )]
 position = Vector2( 1005.61, 0 )
 
-[node name="Astromouse" parent="." instance=ExtResource( 9 )]
-position = Vector2( 646.311, 255.348 )
+[node name="SupernovaSpawner" parent="." instance=ExtResource( 9 )]
+
+[node name="Astromouse" parent="." instance=ExtResource( 10 )]
+position = Vector2( 380.311, 491.348 )
 
 
 [editable path="Moon"]

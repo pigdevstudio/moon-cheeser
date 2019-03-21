@@ -8,18 +8,27 @@ export (float) var angle_offset_degrees = 90
 export (float, 1.0) var dampling = 0.02
 
 var movement_velocity = Vector2(0, 0)
+var is_swinging = false
 var _quadrant = 1
 
 func swing():
+	is_swinging = true
 	var movement_angle_degrees = rad2deg(movement_velocity.angle())
 	
 	var target_angle_degrees = movement_angle_degrees + angle_offset_degrees
 	rotation_degrees = target_angle_degrees
 	flip_horizontally()
 
+func rest():
+	is_swinging = false
+	calculate_angle_quadrant()
+	damp_to_rest_angle()
+
 func damp_to_rest_angle():
 	var rest_angle_degrees = get_rest_angle_degrees()
-	rotation_degrees = lerp(rotation_degrees, rest_angle_degrees, dampling)
+	while not is_swinging:
+		rotation_degrees = lerp(rotation_degrees, rest_angle_degrees, dampling)
+		yield(get_tree(), "physics_frame")
 
 func flip_horizontally():
 	var is_flipped = movement_velocity.x < 0

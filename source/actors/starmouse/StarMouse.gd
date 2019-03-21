@@ -21,12 +21,10 @@ func _physics_process(delta):
 	
 	if _direction:
 		pivot.swing()
-	else:
-		pivot.damp_to_rest_angle()
 
 func seek(target_pos):
 	_direction = (target_pos - global_position).normalized()
 
 func stop():
-	pivot.calculate_angle_quadrant()
+	pivot.rest()
 	_direction = Vector2(0, 0)

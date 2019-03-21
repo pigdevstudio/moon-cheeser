@@ -1,6 +1,6 @@
 [gd_scene load_steps=14 format=2]
 
-[ext_resource path="res://objects/gravity_bodies/blackhole/Blackhole.gd" type="Script" id=1]
+[ext_resource path="res://objects/gravity_bodies/GravityBody.gd" type="Script" id=1]
 [ext_resource path="res://objects/gravity_bodies/blackhole/black_hole.png" type="Texture" id=2]
 [ext_resource path="res://objects/gravity_bodies/PulseTween.gd" type="Script" id=3]
 [ext_resource path="res://objects/gravity_bodies/spin_animation.tres" type="Animation" id=4]
@@ -23,8 +23,8 @@ radius = 55.2268
 
 [node name="BlackHole" type="Node2D" groups=[
 "enemy",
-"black_hole",
 "void",
+"black_hole",
 ]]
 z_index = -3
 script = ExtResource( 1 )
@@ -84,8 +84,8 @@ shape = SubResource( 3 )
 [node name="VoidTrigger" parent="." instance=ExtResource( 10 )]
 
 [connection signal="tree_exiting" from="." to="GravityBattleAchievement" method="_on_BlackHole_tree_exiting"]
-[connection signal="timeout" from="PulseInterval" to="Tween" method="pulse"]
 [connection signal="timeout" from="PulseInterval" to="." method="pulse"]
+[connection signal="timeout" from="PulseInterval" to="Tween" method="pulse"]
 [connection signal="timeout" from="Duration" to="." method="queue_free"]
 [connection signal="body_entered" from="KillingArea" to="KillingArea" method="_on_body_entered"]
 [connection signal="body_killed" from="KillingArea" to="VoidTrigger" method="_on_KillingArea_body_killed"]

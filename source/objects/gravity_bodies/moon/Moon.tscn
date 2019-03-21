@@ -7,16 +7,13 @@
 [ext_resource path="res://objects/gravity_bodies/spin_animation.tres" type="Animation" id=5]
 [ext_resource path="res://objects/Gravity.tscn" type="PackedScene" id=6]
 
-
-
-
-
 [sub_resource type="CircleShape2D" id=1]
 radius = 176.038
 
 [node name="Moon" type="StaticBody2D" groups=[
 "moon",
 ]]
+z_index = -1
 script = ExtResource( 1 )
 
 [node name="Pivot" type="Position2D" parent="."]

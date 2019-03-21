@@ -24,6 +24,7 @@ func _on_Interface_screen_changed(new_screen):
 		"ScoreScreen":
 			var score = Score.current_score
 			var highscore = Score.high_score
+			Score.set_score(0)
 			
 			new_screen.set_score(score)
 			new_screen.set_highscore(highscore)

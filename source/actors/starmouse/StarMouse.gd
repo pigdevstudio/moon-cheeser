@@ -12,15 +12,19 @@ func _ready():
 	character.play("grab_star")
 
 func _physics_process(delta):
+	move()
+	if _direction:
+		pivot.swing()
+
+func move():
+	var delta = get_physics_process_delta_time()
 	_velocity += $SteeringSeek.steer(_velocity, _direction * speed)
-	translate(_velocity * delta)
 	
 	particles.rotation = -_direction.angle()
 	particles.emitting = _velocity.length() > 100
 	pivot.movement_velocity = _velocity
 	
-	if _direction:
-		pivot.swing()
+	translate(_velocity * delta)
 
 func seek(target_pos):
 	_direction = (target_pos - global_position).normalized()

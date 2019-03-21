@@ -20,12 +20,14 @@ offsets = PoolRealArray( 0.397297, 1 )
 colors = PoolColorArray( 0.666667, 0.666667, 1, 1, 0.666667, 0.666667, 1, 0 )
 
 [node name="StarMouse" type="Node2D"]
+z_index = 1
 script = ExtResource( 1 )
 speed = 800.0
 
 [node name="Duration" type="Timer" parent="."]
 wait_time = 5.0
 one_shot = true
+autostart = true
 
 [node name="SteeringSeek" type="Node2D" parent="."]
 script = ExtResource( 2 )

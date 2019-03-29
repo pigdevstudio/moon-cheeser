@@ -139,7 +139,7 @@ position = Vector2( 1005.61, 0 )
 [node name="SupernovaSpawner" parent="." instance=ExtResource( 9 )]
 
 [node name="Astromouse" parent="." instance=ExtResource( 10 )]
-position = Vector2( 380.311, 491.348 )
+position = Vector2( 643.501, 267 )
 
 
 [editable path="Moon"]

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/mouse_body_sprites.png-7ef288112295522dbdd014ac153b5afb.stex"
+path="res://.import/cutout_body.png-46f207a9ae6a62f4179807e4d7823104.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://actors/astromouse/sprites/mouse_body_sprites.png"
-dest_files=[ "res://.import/mouse_body_sprites.png-7ef288112295522dbdd014ac153b5afb.stex" ]
+source_file="res://actors/astromouse/sprites/cutout_body.png"
+dest_files=[ "res://.import/cutout_body.png-46f207a9ae6a62f4179807e4d7823104.stex" ]
 
 [params]
 
@@ -21,7 +21,7 @@ compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
 flags/filter=true
-flags/mipmaps=false
+flags/mipmaps=true
 flags/anisotropic=false
 flags/srgb=2
 process/fix_alpha_border=true

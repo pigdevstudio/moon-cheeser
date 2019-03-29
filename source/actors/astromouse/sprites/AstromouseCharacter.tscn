@@ -1,8 +1,7 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://actors/astromouse/sprites/AstromouseCharacter.gd" type="Script" id=1]
-[ext_resource path="res://actors/astromouse/sprites/mouse_body_sprites.png" type="Texture" id=2]
-[ext_resource path="res://actors/astromouse/sprites/mouse_face_sprites.png" type="Texture" id=3]
+[ext_resource path="res://actors/astromouse/sprites/cutout_body.png" type="Texture" id=2]
 
 [sub_resource type="Animation" id=1]
 resource_name = "SETUP"
@@ -577,7 +576,7 @@ tracks/14/keys = {
 "values": [ Vector2( 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=11]
+[sub_resource type="Animation" id=4]
 resource_name = "grab_star"
 tracks/0/type = "value"
 tracks/0/path = NodePath("body:position")
@@ -796,7 +795,7 @@ tracks/17/keys = {
 "values": [ 51.5935 ]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=5]
 length = 0.5
 loop = true
 step = 0.05
@@ -981,8 +980,7 @@ tracks/14/keys = {
 "values": [ Vector2( 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=5]
-resource_name = "jump"
+[sub_resource type="Animation" id=6]
 tracks/0/type = "value"
 tracks/0/path = NodePath("body/arm_r:position")
 tracks/0/interp = 1
@@ -1164,8 +1162,7 @@ tracks/14/keys = {
 "values": [ Vector2( 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=6]
-resource_name = "run_fall"
+[sub_resource type="Animation" id=7]
 length = 0.2
 tracks/0/type = "value"
 tracks/0/path = NodePath("body/arm_r:position")
@@ -1336,8 +1333,7 @@ tracks/13/keys = {
 "values": [ 99.4488 ]
 }
 
-[sub_resource type="Animation" id=7]
-resource_name = "run_jump"
+[sub_resource type="Animation" id=8]
 length = 0.2
 tracks/0/type = "value"
 tracks/0/path = NodePath("body/arm_r:position")
@@ -1508,7 +1504,7 @@ tracks/13/keys = {
 "values": [ 59.559 ]
 }
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=9]
 length = 0.4
 loop = true
 step = 0.05
@@ -1681,7 +1677,7 @@ tracks/13/keys = {
 "values": [ 59.559, -22.7994 ]
 }
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=10]
 length = 0.4
 loop = true
 step = 0.05
@@ -1866,7 +1862,7 @@ tracks/14/keys = {
 "values": [ Vector2( 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=10]
+[sub_resource type="Animation" id=11]
 tracks/0/type = "value"
 tracks/0/path = NodePath("body/arm_r:position")
 tracks/0/interp = 1
@@ -2049,6 +2045,7 @@ tracks/14/keys = {
 }
 
 [node name="AstromouseCharacter" type="Position2D"]
+scale = Vector2( 1.25, 1.25 )
 script = ExtResource( 1 )
 
 [node name="animator" type="AnimationPlayer" parent="."]
@@ -2059,91 +2056,89 @@ playback_speed = 0.7
 anims/SETUP = SubResource( 1 )
 anims/dash = SubResource( 2 )
 anims/fall = SubResource( 3 )
-anims/grab_star = SubResource( 11 )
-anims/idle = SubResource( 4 )
-anims/jump = SubResource( 5 )
-anims/run_fall = SubResource( 6 )
-anims/run_jump = SubResource( 7 )
-anims/running = SubResource( 8 )
-anims/walk = SubResource( 9 )
-anims/wall = SubResource( 10 )
+anims/grab_star = SubResource( 4 )
+anims/idle = SubResource( 5 )
+anims/jump = SubResource( 6 )
+anims/run_fall = SubResource( 7 )
+anims/run_jump = SubResource( 8 )
+anims/running = SubResource( 9 )
+anims/walk = SubResource( 10 )
+anims/wall = SubResource( 11 )
 
 [node name="sprites" type="Node2D" parent="."]
 
 [node name="body" type="Sprite" parent="sprites"]
 position = Vector2( 3.66667, -17.6667 )
-rotation = -0.341701
 texture = ExtResource( 2 )
 offset = Vector2( 0.0592504, -7.2841 )
 region_enabled = true
-region_rect = Rect2( 1, 96, 26, 31 )
+region_rect = Rect2( 76, 4, 25, 30 )
 
 [node name="head" type="Sprite" parent="sprites/body"]
 position = Vector2( -0.999999, -16.3333 )
-rotation = -0.196236
-texture = ExtResource( 3 )
-offset = Vector2( -0.35627, -21.9514 )
+texture = ExtResource( 2 )
+offset = Vector2( -0.356, -20.537 )
 region_enabled = true
-region_rect = Rect2( 1, 19, 52, 44 )
+region_rect = Rect2( 4, 64, 50, 43 )
 region_filter_clip = true
 
 [node name="helmet" type="Sprite" parent="sprites/body/head"]
 position = Vector2( 0.326941, -23.8358 )
-texture = ExtResource( 3 )
+texture = ExtResource( 2 )
+offset = Vector2( 0, -0.899 )
 region_enabled = true
-region_rect = Rect2( 64, 72, 54, 56 )
+region_rect = Rect2( 4, 4, 54, 54 )
 
 [node name="arm_l" type="Sprite" parent="sprites/body"]
 position = Vector2( 6.66666, -18.3333 )
-rotation = -2.32146
+rotation = -0.393416
 z_index = -1
 texture = ExtResource( 2 )
 offset = Vector2( -0.113655, 9.28639 )
 region_enabled = true
-region_rect = Rect2( 193, 172, 8, 20 )
+region_rect = Rect2( 104, 41, 8, 19 )
 
 [node name="arm_r" type="Sprite" parent="sprites/body"]
 show_behind_parent = true
 position = Vector2( -9.5, -16.3333 )
-rotation = 0.900477
+rotation = 0.482662
+z_index = 1
 texture = ExtResource( 2 )
 offset = Vector2( 0.434902, 8.9376 )
 region_enabled = true
-region_rect = Rect2( 129, 172, 8, 20 )
+region_rect = Rect2( 92, 41, 8, 19 )
 
 [node name="tail" type="Sprite" parent="sprites/body"]
 show_behind_parent = true
 position = Vector2( -7.66667, 3.83337 )
-rotation = -0.985363
 z_index = -1
 texture = ExtResource( 2 )
 offset = Vector2( -18.1807, -15.8838 )
 region_enabled = true
-region_rect = Rect2( 128, 93, 35, 35 )
+region_rect = Rect2( 68, 88, 33, 34 )
 
 [node name="jetpack" type="Sprite" parent="sprites/body"]
 self_modulate = Color( 0.886275, 0.886275, 0.886275, 1 )
 position = Vector2( -12.9408, -3.62288 )
 z_index = -1
 texture = ExtResource( 2 )
+offset = Vector2( 0, -1.05 )
 region_enabled = true
-region_rect = Rect2( 192, 29, 19, 35 )
+region_rect = Rect2( 72, 40, 16, 28 )
 
 [node name="leg_l" type="Sprite" parent="sprites"]
 position = Vector2( 8.83333, -18 )
-rotation = -0.310613
 z_index = -1
 texture = ExtResource( 2 )
 offset = Vector2( 0.166667, 8.66673 )
 region_enabled = true
-region_rect = Rect2( 65, 236, 8, 20 )
+region_rect = Rect2( 104, 64, 8, 19 )
 
 [node name="leg_r" type="Sprite" parent="sprites"]
 position = Vector2( -2.66667, -18.6667 )
-rotation = 0.134831
 z_index = -1
 texture = ExtResource( 2 )
 offset = Vector2( 0.333337, 9.33333 )
 region_enabled = true
-region_rect = Rect2( 1, 236, 8, 20 )
+region_rect = Rect2( 92, 64, 8, 19 )
 

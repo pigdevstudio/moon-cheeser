@@ -30,7 +30,6 @@ colors = PoolColorArray( 1, 1, 1, 1, 1, 0.883879, 0.113281, 1, 1, 0.619057, 0.31
 "crater",
 "enemy",
 ]]
-z_index = 5
 script = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]

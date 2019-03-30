@@ -42,8 +42,8 @@ tracks/0/keys = {
 }
 
 [sub_resource type="CapsuleShape2D" id=4]
-radius = 28.5554
-height = 42.0004
+radius = 33.1054
+height = 47.0407
 
 [node name="Astromouse" type="KinematicBody2D" groups=[
 "player",
@@ -76,7 +76,7 @@ collision_layer = 2
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PickupArea"]
-position = Vector2( 12.4444, -8.22223 )
+position = Vector2( 12.4444, -13.3684 )
 rotation = 1.57079
 shape = SubResource( 4 )
 

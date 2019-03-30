@@ -89,6 +89,7 @@ anims/slide = SubResource( 1 )
 [node name="Moon" parent="." instance=ExtResource( 2 )]
 editor/display_folded = true
 position = Vector2( 644.654, 485.91 )
+astromouse_path = NodePath("../Astromouse")
 
 [node name="Tween" parent="Moon" index="2"]
 root_node = NodePath("../../../Level/Moon/Pivot/Atmosphere")

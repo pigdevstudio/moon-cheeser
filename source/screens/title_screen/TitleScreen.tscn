@@ -1,12 +1,13 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://screens/Screen.tscn" type="PackedScene" id=1]
 [ext_resource path="res://levels/Background.tscn" type="PackedScene" id=2]
 [ext_resource path="res://interface/ShaderButton.tscn" type="PackedScene" id=3]
 [ext_resource path="res://screens/title_screen/achievement_button.png" type="Texture" id=4]
-[ext_resource path="res://screens/title_screen/tittle.png" type="Texture" id=5]
+[ext_resource path="res://screens/title_screen/title.png" type="Texture" id=5]
 [ext_resource path="res://screens/title_screen/moon.png" type="Texture" id=6]
-[ext_resource path="res://screens/title_screen/play_button.png" type="Texture" id=7]
+[ext_resource path="res://actors/astromouse/sprites/AstromouseCharacter.tscn" type="PackedScene" id=7]
+[ext_resource path="res://screens/title_screen/play_button.png" type="Texture" id=8]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends MarginContainer
@@ -76,18 +77,18 @@ margin_bottom = 670.0
 mouse_filter = 0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_constants/separation = -38
+custom_constants/separation = -20
 alignment = 1
 
 [node name="Credits" parent="ScreenMargin/ScreenPortions/CenterPortion" index="0" instance=ExtResource( 3 )]
 margin_right = 407.0
-margin_bottom = 354.0
+margin_bottom = 345.0
 texture_normal = ExtResource( 5 )
 expand = true
-stretch_mode = 5
+stretch_mode = 3
 
 [node name="Moon" type="TextureButton" parent="ScreenMargin/ScreenPortions/CenterPortion" index="1"]
-margin_top = 316.0
+margin_top = 325.0
 margin_right = 407.0
 margin_bottom = 670.0
 mouse_filter = 1
@@ -96,6 +97,41 @@ size_flags_vertical = 3
 texture_normal = ExtResource( 6 )
 expand = true
 stretch_mode = 5
+
+[node name="AstromouseCharacter" parent="ScreenMargin/ScreenPortions/CenterPortion" index="2" instance=ExtResource( 7 )]
+position = Vector2( 249.641, 245.345 )
+scale = Vector2( 2, 2 )
+
+[node name="animator" parent="ScreenMargin/ScreenPortions/CenterPortion/AstromouseCharacter" index="0"]
+autoplay = "grab_star"
+
+[node name="body" parent="ScreenMargin/ScreenPortions/CenterPortion/AstromouseCharacter/sprites" index="0"]
+rotation = -0.341701
+z_index = -1
+
+[node name="head" parent="ScreenMargin/ScreenPortions/CenterPortion/AstromouseCharacter/sprites/body" index="0"]
+position = Vector2( -0.999999, -16.3333 )
+rotation = -0.196236
+z_index = 1
+
+[node name="arm_l" parent="ScreenMargin/ScreenPortions/CenterPortion/AstromouseCharacter/sprites/body" index="1"]
+position = Vector2( 6.66666, -18.3333 )
+rotation = -2.32146
+
+[node name="arm_r" parent="ScreenMargin/ScreenPortions/CenterPortion/AstromouseCharacter/sprites/body" index="2"]
+position = Vector2( -9.5, -16.3333 )
+rotation = 0.900476
+
+[node name="tail" parent="ScreenMargin/ScreenPortions/CenterPortion/AstromouseCharacter/sprites/body" index="3"]
+rotation = -0.985362
+
+[node name="leg_l" parent="ScreenMargin/ScreenPortions/CenterPortion/AstromouseCharacter/sprites" index="1"]
+position = Vector2( 8.83333, -18 )
+rotation = -0.310613
+
+[node name="leg_r" parent="ScreenMargin/ScreenPortions/CenterPortion/AstromouseCharacter/sprites" index="2"]
+position = Vector2( -2.66667, -18.6667 )
+rotation = 0.134831
 
 [node name="RightPortion" type="VBoxContainer" parent="ScreenMargin/ScreenPortions" index="2"]
 margin_left = 822.0
@@ -114,7 +150,7 @@ size_flags_vertical = 3
 margin_top = 244.0
 margin_right = 408.0
 margin_bottom = 424.0
-texture_normal = ExtResource( 7 )
+texture_normal = ExtResource( 8 )
 expand = true
 stretch_mode = 3
 
@@ -124,3 +160,5 @@ margin_right = 408.0
 margin_bottom = 670.0
 size_flags_vertical = 3
 
+
+[editable path="ScreenMargin/ScreenPortions/CenterPortion/AstromouseCharacter"]

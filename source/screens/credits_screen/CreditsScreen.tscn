@@ -1,17 +1,15 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://screens/Screen.tscn" type="PackedScene" id=1]
 [ext_resource path="res://levels/Background.tscn" type="PackedScene" id=2]
 [ext_resource path="res://objects/planets/Satheri.tscn" type="PackedScene" id=3]
-[ext_resource path="res://screens/credits_screen/screen_rect.gd" type="Script" id=4]
-[ext_resource path="res://interface/ShaderButton.tscn" type="PackedScene" id=5]
-[ext_resource path="res://screens/score_screen/back_normal.png" type="Texture" id=6]
-[ext_resource path="res://screens/credits_screen/logo.png" type="Texture" id=7]
-[ext_resource path="res://interface/fonts/garoa_hacker_32_purple_outline.tres" type="DynamicFont" id=8]
-
+[ext_resource path="res://interface/ShaderButton.tscn" type="PackedScene" id=4]
+[ext_resource path="res://screens/score_screen/back_normal.png" type="Texture" id=5]
+[ext_resource path="res://screens/credits_screen/logo.png" type="Texture" id=6]
+[ext_resource path="res://interface/fonts/garoa_hacker_32_purple_outline.tres" type="DynamicFont" id=7]
 
 [sub_resource type="GDScript" id=1]
-script/source = "extends \"res://interface/shader_button.gd\"
+script/source = "extends \"res://interface/ShaderButton.gd\"
 
 func _on_button_up():
 	OS.shell_open(\"https://pigdev.itch.io\")
@@ -43,7 +41,6 @@ custom_constants/margin_right = 25
 custom_constants/margin_top = 25
 custom_constants/margin_left = 25
 custom_constants/margin_bottom = 25
-script = ExtResource( 4 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ScreenMargin" index="0"]
 margin_left = 25.0
@@ -57,16 +54,16 @@ custom_constants/separation = 40
 margin_right = 1230.0
 margin_bottom = 128.0
 
-[node name="Back" parent="ScreenMargin/VBoxContainer/HBoxContainer" index="0" instance=ExtResource( 5 )]
+[node name="Back" parent="ScreenMargin/VBoxContainer/HBoxContainer" index="0" instance=ExtResource( 4 )]
 margin_right = 407.0
 margin_bottom = 128.0
-texture_normal = ExtResource( 6 )
+texture_normal = ExtResource( 5 )
 
-[node name="Pigdev" parent="ScreenMargin/VBoxContainer/HBoxContainer" index="1" instance=ExtResource( 5 )]
+[node name="Pigdev" parent="ScreenMargin/VBoxContainer/HBoxContainer" index="1" instance=ExtResource( 4 )]
 margin_left = 411.0
 margin_right = 818.0
 margin_bottom = 128.0
-texture_normal = ExtResource( 7 )
+texture_normal = ExtResource( 6 )
 expand = true
 stretch_mode = 5
 script = SubResource( 1 )
@@ -84,7 +81,7 @@ margin_bottom = 655.0
 mouse_filter = 1
 size_flags_horizontal = 3
 size_flags_vertical = 0
-custom_fonts/font = ExtResource( 8 )
+custom_fonts/font = ExtResource( 7 )
 text = "graphics & animations: henrique campos
 game design: henrique campos
 programming: henrique campos

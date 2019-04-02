@@ -1,11 +1,12 @@
 extends Panel
 
-export (float) var slide_distance = 200.0
 onready var tween = $Tween
 onready var timer = $IdleTime
 
 onready var title = $MarginContainer/VBoxContainer/Title setget set_title, get_title
 onready var description = $MarginContainer/VBoxContainer/Description setget set_description, get_description
+
+export (float) var slide_distance = 200.0
 
 func _ready():
 	slide_distance += rect_size.y

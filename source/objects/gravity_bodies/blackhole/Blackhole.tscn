@@ -1,30 +1,21 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://objects/gravity_bodies/GravityBody.gd" type="Script" id=1]
 [ext_resource path="res://objects/gravity_bodies/blackhole/black_hole.png" type="Texture" id=2]
 [ext_resource path="res://objects/gravity_bodies/PulseTween.gd" type="Script" id=3]
 [ext_resource path="res://objects/gravity_bodies/spin_animation.tres" type="Animation" id=4]
-[ext_resource path="res://take_five_drum.ogg" type="AudioStream" id=5]
-[ext_resource path="res://levels/star_back.png" type="Texture" id=6]
-[ext_resource path="res://objects/Gravity.tscn" type="PackedScene" id=7]
-[ext_resource path="res://objects/space_flying_bodies/comet/KillingArea.gd" type="Script" id=8]
-[ext_resource path="res://meta/achievements/GravityBattleAchievement.tscn" type="PackedScene" id=9]
-[ext_resource path="res://meta/achievements/VoidAchievement.tscn" type="PackedScene" id=10]
+[ext_resource path="res://objects/Gravity.tscn" type="PackedScene" id=5]
+[ext_resource path="res://objects/space_flying_bodies/comet/KillingArea.gd" type="Script" id=6]
+[ext_resource path="res://meta/achievements/GravityBattleAchievement.tscn" type="PackedScene" id=7]
+[ext_resource path="res://meta/achievements/VoidAchievement.tscn" type="PackedScene" id=8]
 
-[sub_resource type="Curve" id=1]
-min_value = -360.0
-max_value = 360.0
-_data = [ Vector2( 0, -61.4832 ), 0.0, 0.0, 0, 0, Vector2( 1, 65.2368 ), 0.0, 0.0, 0, 0 ]
-
-[sub_resource type="Curve" id=2]
-
-[sub_resource type="CircleShape2D" id=3]
+[sub_resource type="CircleShape2D" id=1]
 radius = 55.2268
 
 [node name="BlackHole" type="Node2D" groups=[
 "enemy",
-"void",
 "black_hole",
+"void",
 ]]
 z_index = -3
 script = ExtResource( 1 )
@@ -44,25 +35,7 @@ autoplay = "spin_animation"
 playback_speed = 3.0
 anims/spin_animation = ExtResource( 4 )
 
-[node name="Drum" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 5 )
-volume_db = -4.0
-
-[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
-texture = ExtResource( 6 )
-spread = 180.0
-gravity = Vector2( 0, 0 )
-initial_velocity = 60.0
-initial_velocity_random = 1.0
-angular_velocity = 8.0
-angular_velocity_random = 1.0
-angular_velocity_curve = SubResource( 1 )
-tangential_accel = 16.0
-scale_amount = 0.3
-scale_amount_random = 0.5
-scale_amount_curve = SubResource( 2 )
-
-[node name="Gravity" parent="." instance=ExtResource( 7 )]
+[node name="Gravity" parent="." instance=ExtResource( 5 )]
 
 [node name="PulseInterval" type="Timer" parent="."]
 wait_time = 2.0
@@ -74,14 +47,14 @@ one_shot = true
 autostart = true
 
 [node name="KillingArea" type="Area2D" parent="."]
-script = ExtResource( 8 )
+script = ExtResource( 6 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KillingArea"]
-shape = SubResource( 3 )
+shape = SubResource( 1 )
 
-[node name="GravityBattleAchievement" parent="." instance=ExtResource( 9 )]
+[node name="GravityBattleAchievement" parent="." instance=ExtResource( 7 )]
 
-[node name="VoidTrigger" parent="." instance=ExtResource( 10 )]
+[node name="VoidTrigger" parent="." instance=ExtResource( 8 )]
 
 [connection signal="tree_exiting" from="." to="GravityBattleAchievement" method="_on_BlackHole_tree_exiting"]
 [connection signal="timeout" from="PulseInterval" to="." method="pulse"]

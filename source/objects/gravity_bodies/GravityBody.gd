@@ -28,6 +28,9 @@ func set_gravity_enabled(enabled):
 	set_physics_process(enabled)
 
 func pulse():
+	if not astromouse:
+		return
+	
 	var current_strength = _gravity.acceleration
 	_gravity.acceleration *= 10
 	_gravity.apply(astromouse)

@@ -3,6 +3,8 @@ extends Area2D
 signal dragging()
 signal dragged(direction)
 
+const MOUSE_HOLD = preload("res://interface/hand_hold.png")
+const MOUSE_POINT = preload("res://interface/hand_point.png")
 var direction = Vector2()
 var is_dragging = false
 
@@ -20,8 +22,10 @@ func _unhandled_input(event):
 		set_process_unhandled_input(false)
 
 func _on_mouse_exited():
-	if is_dragging:
-		set_process_unhandled_input(true)
+	Input.set_custom_mouse_cursor(MOUSE_POINT, Input.CURSOR_ARROW)
+
+func _on_mouse_entered():
+	Input.set_custom_mouse_cursor(MOUSE_HOLD, Input.CURSOR_ARROW)
 
 func _on_input_event(viewport, event, shape_idx):
 	if viewport.is_input_handled():

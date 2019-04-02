@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Pads.ogg-b877942460c60bed3abc1444e6d2a6d0.oggstr"
+
+[deps]
+
+source_file="res://screens/background_music/Pads.ogg"
+dest_files=[ "res://.import/Pads.ogg-b877942460c60bed3abc1444e6d2a6d0.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

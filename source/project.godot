@@ -21,7 +21,7 @@ config/icon="res://moon_cheeser_icon.png"
 
 [autoload]
 
-BGM="*res://screens/BackgroundMusic.tscn"
+BGM="*res://screens/background_music/BackgroundMusic.tscn"
 Score="*res://meta/Score.tscn"
 Achievements="*res://meta/achievements/AchievementsDictionary.tscn"
 
@@ -35,6 +35,7 @@ gdscript/completion/autocomplete_setters_and_getters=true
 window/size/width=1280
 window/size/height=720
 window/handheld/orientation="sensor_landscape"
+mouse_cursor/custom_image="res://interface/hand_point.png"
 window/stretch/mode="viewport"
 window/stretch/aspect="keep"
 driver/name="GLES2"

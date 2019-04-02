@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://actors/starmouse/StarMouse.gd" type="Script" id=1]
 [ext_resource path="res://actors/starmouse/Seek.gd" type="Script" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://objects/space_flying_bodies/star/particles.png" type="Texture" id=5]
 [ext_resource path="res://actors/starmouse/SwingPivot.tscn" type="PackedScene" id=6]
 [ext_resource path="res://actors/astromouse/sprites/AstromouseCharacter.tscn" type="PackedScene" id=7]
+[ext_resource path="res://meta/achievements/AchievementTrigger.tscn" type="PackedScene" id=8]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 50.7316
@@ -69,6 +70,10 @@ color_ramp = SubResource( 3 )
 [node name="AstromouseCharacter" parent="Sprites/SwingPivot" instance=ExtResource( 7 )]
 position = Vector2( -14.6667, 64.8889 )
 
+[node name="StarmouseAchievement" parent="." instance=ExtResource( 8 )]
+achievement_name = "starmouse"
+
+[connection signal="ready" from="." to="StarmouseAchievement" method="increase_achievement_progress"]
 [connection signal="timeout" from="Duration" to="." method="queue_free"]
 [connection signal="mouse_found" from="MouseSpotter" to="." method="seek"]
 [connection signal="mouse_lost" from="MouseSpotter" to="." method="stop"]

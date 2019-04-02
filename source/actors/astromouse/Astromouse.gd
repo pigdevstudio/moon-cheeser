@@ -3,7 +3,8 @@ extends "res://objects/SpaceKinematicBody.gd"
 signal died
 
 onready var character = $AstromouseCharacter
-const FALL_SPEED = 50
+const FALL_SPEED = 25.0
+
 func _ready():
 	$Actions.space_kinematic_body = self
 	
@@ -12,6 +13,8 @@ func _physics_process(delta):
 	
 	if relative_velocity.y > FALL_SPEED:
 		character.play("run_fall")
+	elif relative_velocity.y < -FALL_SPEED:
+		character.play("run_jump")
 
 func _on_collided(collision):
 	var collider = collision.collider
@@ -35,6 +38,7 @@ func become_invincible():
 func die():
 	if $Invincible.time_left > 0.0:
 		return
+	character.hide()
 	$Shape.call_deferred("set_disabled", true)
 	$PickupArea/CollisionShape2D.call_deferred("set_disabled", true)
 	$SFX.play("Damage")

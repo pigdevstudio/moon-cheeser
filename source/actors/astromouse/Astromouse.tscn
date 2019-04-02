@@ -85,15 +85,19 @@ script = ExtResource( 5 )
 
 [node name="Damage" type="AudioStreamPlayer2D" parent="SFX"]
 stream = ExtResource( 6 )
+bus = "Reverb"
 
-[node name="Finished" type="AudioStreamPlayer2D" parent="SFX"]
+[node name="Void" type="AudioStreamPlayer2D" parent="SFX"]
 stream = ExtResource( 7 )
+bus = "Reverb"
 
 [node name="Jump" type="AudioStreamPlayer2D" parent="SFX"]
 stream = ExtResource( 8 )
+bus = "SFX"
 
 [node name="Pickup" type="AudioStreamPlayer2D" parent="SFX"]
 stream = ExtResource( 9 )
+bus = "SFX"
 
 [node name="AstromouseAchievement" parent="." instance=ExtResource( 10 )]
 

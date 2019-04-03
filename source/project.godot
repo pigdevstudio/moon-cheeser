@@ -17,7 +17,7 @@ _global_script_class_icons={
 
 config/name="Moon Cheeser"
 run/main_scene="res://MoonCheeser.tscn"
-config/icon="res://moon_cheeser_icon.png"
+config/icon="res://icon.png"
 
 [autoload]
 
@@ -80,4 +80,5 @@ translations=[  ]
 [rendering]
 
 quality/driver/driver_name="GLES2"
+vram_compression/import_etc=true
 environment/default_clear_color=Color( 0, 0.0666667, 0.168627, 1 )

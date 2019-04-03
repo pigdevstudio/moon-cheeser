@@ -13,8 +13,8 @@
 radius = 55.2268
 
 [node name="BlackHole" type="Node2D" groups=[
-"enemy",
 "black_hole",
+"enemy",
 "void",
 ]]
 z_index = -3

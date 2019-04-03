@@ -74,9 +74,9 @@ func instance_astromouse(spawn_position):
 	spawner.spawn()
 
 func treat_new_node(node):
-	if node.has_node("SteeringSeek") and node.has_node("PickupArea"):
+	if node.is_in_group("starmouse"):
 		_on_Starmouse_tree_entered(node)
-	elif node.has_node("Actions"):
+	elif node.is_in_group("astromouse"):
 		_on_Astromouse_tree_entered(node)
-	elif node.has_node("Gravity") and node.has_node("KillingArea"):
+	elif node.is_in_group("black_hole"):
 		_on_Blackhole_tree_entered(node)

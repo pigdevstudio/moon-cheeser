@@ -20,7 +20,9 @@ _data = [ Vector2( 0.254996, 1 ), 0.0, 3.41493, 0, 0, Vector2( 0.993856, 1.27572
 offsets = PoolRealArray( 0.397297, 1 )
 colors = PoolColorArray( 0.666667, 0.666667, 1, 1, 0.666667, 0.666667, 1, 0 )
 
-[node name="StarMouse" type="Node2D"]
+[node name="StarMouse" type="Node2D" groups=[
+"starmouse",
+]]
 z_index = 1
 script = ExtResource( 1 )
 speed = 800.0

@@ -46,6 +46,7 @@ radius = 33.1054
 height = 47.0407
 
 [node name="Astromouse" type="KinematicBody2D" groups=[
+"astromouse",
 "player",
 ]]
 z_index = 1

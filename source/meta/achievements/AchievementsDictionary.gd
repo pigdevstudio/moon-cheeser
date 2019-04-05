@@ -26,10 +26,10 @@ func read_achievements():
 
 func write_achievements():
 	var file = File.new()
-	file.open(USER_PATH, file.WRITE)
+	file.open(USER_PATH, file.WRITE_READ)
 	file.store_string(to_json(_dict))
 	file.close()
-		
+
 func set_achievement_progress(achievement_name, new_value):
 	var achievement = _get_achievement(achievement_name)
 	var is_complete = is_achievement_complete(achievement_name)

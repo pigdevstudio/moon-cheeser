@@ -2,19 +2,12 @@ extends Node
 
 signal scored
 
+const USER_PATH = "user://highscore"
 var current_score = 0 setget set_score, get_score
 var high_score = 0
 
 func _ready():
-	var f = File.new()
-	if f.file_exists("user://highscore"):
-		f.open("user://highscore", f.READ)
-		high_score = f.get_var()
-		f.close()
-	else:
-		f.open("user://highscore", f.WRITE)
-		f.store_var(high_score)
-		f.close()
+	read_highscore()
 
 func set_score(value):
 	current_score = value
@@ -30,16 +23,20 @@ func get_score():
 	return(current_score)
 	
 func write_highscore():
-	var f = File.new()
-	if f.file_exists("user://highscore"):
-		f.open("user://highscore", f.WRITE)
-		f.store_var(high_score)
-		f.close()
+	var file = File.new()
+	if file.file_exists(USER_PATH):
+		file.open(USER_PATH, file.WRITE)
+	else:
+		file.open(USER_PATH, file.WRITE_READ)
+	file.store_var(high_score)
+	file.close()
 
 func read_highscore():
-	var f = File.new()
-	if f.file_exists("user://highscore"):
-		f.open("user://highscore", f.READ)
-		high_score = f.get_var()
-		f.close()
+	var file = File.new()
+	if file.file_exists(USER_PATH):
+		file.open(USER_PATH, file.READ)
+		high_score = file.get_var()
+		file.close()
+	else:
+		write_highscore()
 	return(high_score)

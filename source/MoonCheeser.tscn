@@ -20,6 +20,5 @@ layer = 2
 [node name="SlidingPanel" parent="Achievements" instance=ExtResource( 4 )]
 
 [node name="FullmoonAchievement" parent="." instance=ExtResource( 5 )]
-
 [connection signal="screen_changed" from="Interface" to="." method="_on_Interface_screen_changed"]
 [connection signal="button_up" from="Interface/TitleScreen" to="Interface" method="_on_Screen_button_up"]

@@ -1,0 +1,115 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://objects/space_flying_bodies/InverseEndCapLine2D.tscn" type="PackedScene" id=1]
+
+[sub_resource type="Animation" id=1]
+resource_name = "idle"
+loop = true
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Tail:points")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ PoolVector2Array( -12, 0, -180, 0 ), PoolVector2Array( -12, 0, -196, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Tail3:points")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.6 ),
+"transitions": PoolRealArray( 2, 2 ),
+"update": 0,
+"values": [ PoolVector2Array( 0, 0, -192, 0 ), PoolVector2Array( 0, 0, -172, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Tail5:points")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( -2, 1 ),
+"update": 0,
+"values": [ PoolVector2Array( 0, 0, -172, 0 ), PoolVector2Array( 0, 0, -184, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Tail2:points")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( -1.46409, 1 ),
+"update": 0,
+"values": [ PoolVector2Array( 0, 0, -144, 0 ), PoolVector2Array( 0, 0, -168, 0 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Tail4:points")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( -2.82843, 1 ),
+"update": 0,
+"values": [ PoolVector2Array( 0, 0, -152, 0 ), PoolVector2Array( 0, 0, -168, 0 ) ]
+}
+
+[node name="Star" type="Node2D"]
+__meta__ = {
+"_edit_horizontal_guides_": [  ]
+}
+
+[node name="Core" type="Polygon2D" parent="."]
+color = Color( 0.666667, 0.666667, 1, 1 )
+polygon = PoolVector2Array( 0, -40, -8, -8, -40, 0, -8, 8, 0, 40, 8, 8, 40, 0, 8, -8 )
+
+[node name="Tail" type="Line2D" parent="."]
+show_behind_parent = true
+position = Vector2( 12, -32 )
+points = PoolVector2Array( -12, 0, -193.398, 0 )
+width = 16.0
+default_color = Color( 0.352941, 0.172549, 0.627451, 1 )
+texture_mode = 315425952
+end_cap_mode = 2
+
+[node name="Tail2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 0, -16 )
+points = PoolVector2Array( 0, 0, -160.747, 0 )
+
+[node name="Tail3" type="Line2D" parent="."]
+show_behind_parent = true
+points = PoolVector2Array( 0, 0, -173.226, 0 )
+width = 16.0
+default_color = Color( 0.352941, 0.172549, 0.627451, 1 )
+texture_mode = 469464608
+end_cap_mode = 2
+
+[node name="Tail4" parent="." instance=ExtResource( 1 )]
+position = Vector2( 0, 16 )
+points = PoolVector2Array( 0, 0, -165.398, 0 )
+
+[node name="Tail5" type="Line2D" parent="."]
+show_behind_parent = true
+position = Vector2( 0, 32 )
+points = PoolVector2Array( 0, 0, -180.374, 0 )
+width = 16.0
+default_color = Color( 0.352941, 0.172549, 0.627451, 1 )
+texture_mode = 315425952
+end_cap_mode = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "idle"
+anims/idle = SubResource( 1 )

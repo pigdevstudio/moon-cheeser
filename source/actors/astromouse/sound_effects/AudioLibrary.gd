@@ -1,7 +1,7 @@
 extends Node
 
 """
-An audio library that wraps AudioSamplePlayers as and provide an easy
+An audio library that wraps AudioSamplePlayers and provides an easy
 interface method to play them.
 """
 
@@ -11,7 +11,7 @@ func _ready():
 	randomize()
 
 """
-Empty strings create a default NodePath which points to the node itself
+Empty strings create a default NodePath which points to the nodeshots I itself
 so to avoid stackoverflows I use a dummy_node_path that ideally points
 to an non existent child, therefore calling a random one by default
 """

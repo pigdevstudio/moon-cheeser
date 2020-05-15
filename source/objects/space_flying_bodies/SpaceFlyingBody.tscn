@@ -10,7 +10,7 @@ radius = 35.2124
 
 [sub_resource type="Curve" id=2]
 max_value = 1.5
-_data = [ Vector2( 0.254996, 1 ), 0.0, 3.41493, 0, 0, Vector2( 0.993856, 1.27572 ), 0.373164, 0.0, 1, 0 ]
+_data = [ Vector2( 0, 0.736364 ), 0.0, 2.11622, 0, 0, Vector2( 0.993856, 1.27572 ), -0.287657, 0.0, 0, 0 ]
 
 [sub_resource type="Gradient" id=3]
 offsets = PoolRealArray( 0.402703, 1 )
@@ -25,56 +25,49 @@ script = ExtResource( 1 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
-position = Vector2( 0.207428, -0.385406 )
-rotation = -3.14159
-scale = Vector2( 0.454877, 0.454877 )
-z_index = 1
-animation = "flying"
 playing = true
-offset = Vector2( 160.398, 0.847276 )
-
-[node name="Tail" type="CPUParticles2D" parent="Sprite"]
-show_behind_parent = true
-position = Vector2( 429.047, 0.847276 )
-amount = 5
-local_coords = false
-texture = ExtResource( 2 )
-spread = 60.0
-gravity = Vector2( 0, 0 )
-initial_velocity = 150.0
-initial_velocity_random = 0.42
-linear_accel = 8.0
-scale_amount_random = 1.0
-scale_amount_curve = SubResource( 2 )
-color_ramp = SubResource( 3 )
-
-[node name="Visibility" type="VisibilityNotifier2D" parent="Sprite"]
-position = Vector2( 172.974, 0.869649 )
-scale = Vector2( 26.2264, 7.81426 )
-
-[node name="Core" type="CPUParticles2D" parent="Sprite"]
-position = Vector2( 177.837, 0.402944 )
-amount = 4
-local_coords = false
-texture = ExtResource( 2 )
-spread = 60.0
-gravity = Vector2( 0, 0 )
-initial_velocity = 150.0
-initial_velocity_random = 0.42
-linear_accel = 8.0
-scale_amount_random = 1.0
-scale_amount_curve = SubResource( 2 )
-color_ramp = SubResource( 3 )
-
-[node name="DragArea" parent="." instance=ExtResource( 3 )]
 
 [node name="CollidingSFX" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 4 )
 bus = "SFX"
 
+[node name="Tail" type="CPUParticles2D" parent="."]
+amount = 5
+local_coords = false
+texture = ExtResource( 2 )
+direction = Vector2( -1, 0 )
+spread = 25.0
+gravity = Vector2( 0, 0 )
+initial_velocity = 150.0
+initial_velocity_random = 0.42
+linear_accel = 8.0
+scale_amount = 0.5
+scale_amount_random = 1.0
+scale_amount_curve = SubResource( 2 )
+color_ramp = SubResource( 3 )
+
+[node name="Core" type="CPUParticles2D" parent="."]
+amount = 4
+local_coords = false
+texture = ExtResource( 2 )
+direction = Vector2( -1, 0 )
+spread = 50.0
+gravity = Vector2( 0, 0 )
+initial_velocity = 150.0
+initial_velocity_random = 0.42
+linear_accel = 8.0
+scale_amount = 0.5
+scale_amount_random = 1.0
+scale_amount_curve = SubResource( 2 )
+color_ramp = SubResource( 3 )
+
+[node name="Visibility" type="VisibilityNotifier2D" parent="."]
+scale = Vector2( 4.8, 4.8 )
+
+[node name="DragArea" parent="." instance=ExtResource( 3 )]
 [connection signal="collided" from="." to="." method="_on_collided"]
-[connection signal="screen_exited" from="Sprite/Visibility" to="." method="queue_free"]
-[connection signal="dragged" from="DragArea" to="." method="_on_DragArea_dragged"]
+[connection signal="screen_exited" from="Visibility" to="." method="queue_free"]
 [connection signal="dragged" from="DragArea" to="." method="fly"]
+[connection signal="dragged" from="DragArea" to="." method="_on_DragArea_dragged"]
 [connection signal="dragging" from="DragArea" to="." method="stop"]
 [connection signal="dragging" from="DragArea" to="Shape" method="set_disabled" binds= [ true ]]

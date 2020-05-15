@@ -25,7 +25,7 @@ func _on_Astromouse_tree_exited():
 	has_astromouse = false
 
 func _on_Astromouse_died():
- 	emit_signal("game_over")
+	emit_signal("game_over")
 
 func _on_Starmouse_tree_entered(starmouse):
 	if Achievements.is_achievement_complete("starmouse"):

@@ -13,6 +13,8 @@ script = ExtResource( 1 )
 script = ExtResource( 2 )
 
 [node name="TitleScreen" parent="Interface" instance=ExtResource( 3 )]
+margin_left = 1.0
+margin_right = 1.0
 
 [node name="Achievements" type="CanvasLayer" parent="."]
 layer = 2
@@ -20,6 +22,5 @@ layer = 2
 [node name="SlidingPanel" parent="Achievements" instance=ExtResource( 4 )]
 
 [node name="FullmoonAchievement" parent="." instance=ExtResource( 5 )]
-
 [connection signal="screen_changed" from="Interface" to="." method="_on_Interface_screen_changed"]
 [connection signal="button_up" from="Interface/TitleScreen" to="Interface" method="_on_Screen_button_up"]

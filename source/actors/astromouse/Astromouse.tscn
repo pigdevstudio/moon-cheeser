@@ -104,7 +104,6 @@ bus = "SFX"
 
 [node name="AstromouseCharacter" parent="." instance=ExtResource( 11 )]
 position = Vector2( -0.888885, 24.8889 )
-
 [connection signal="collided" from="." to="." method="_on_collided"]
 [connection signal="timeout" from="Invincible" to="Invincible/Animator" method="stop" binds= [ true ]]
 [connection signal="executed" from="Actions/Jump" to="." method="_on_Jump_executed"]

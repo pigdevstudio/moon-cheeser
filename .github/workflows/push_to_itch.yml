@@ -1,0 +1,40 @@
+name: Push to Itch
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  godot:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        platform: [android, linux, win32, win64, osx]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Configure
+        env:
+          PLATFORM: ${{ matrix.platform }}
+        run: |
+          if [ "$PLATFORM" = "win32" ] || [ "$PLATFORM" = "win64" ]; then
+            echo "::set-env name=EXPORT_SUFFIX::.exe"
+          fi
+      - name: Build Godot Project
+        uses: josephbmanley/build-godot-action@v1.4.0
+        id: godot_build
+        with:
+          name: Moon Cheeser - ${{ env.EXPORT_SUFFIX }}
+          preset: ${{ matrix.platform }}
+          package: 'true'
+          projectDir: source
+          debugMode: 'false'
+      - name: Push to Itch
+        uses: josephbmanley/butler-publish-itchio-action@v1.0.1
+        env:
+          CHANNEL: ${{ matrix.platform }}
+          ITCH_GAME: example
+          ITCH_USER: josephbmanley
+          PACKAGE: ${{ github.workspace }}/${{ steps.godot_build.outputs.build }}
+          BUTLER_CREDENTIALS: ${{ secrets.BUTLER_CREDENTIALS }}

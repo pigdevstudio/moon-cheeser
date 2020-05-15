@@ -3,7 +3,7 @@
 [ext_resource path="res://interface/fonts/garoa_hacker_16.tres" type="DynamicFont" id=1]
 
 [sub_resource type="DynamicFontData" id=1]
-font_path = "res://screens/GaroaHackerClubeBold.otf"
+font_path = "res://interface/fonts/GaroaHackerClubeBold.otf"
 
 [sub_resource type="DynamicFont" id=2]
 size = 30

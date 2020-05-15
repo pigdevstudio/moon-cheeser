@@ -37,8 +37,8 @@ window/size/width=1280
 window/size/height=720
 window/handheld/orientation="sensor_landscape"
 mouse_cursor/custom_image="res://interface/hand_point.png"
-window/stretch/mode="viewport"
-window/stretch/aspect="keep"
+window/stretch/mode="2d"
+window/stretch/aspect="keep_width"
 driver/name="GLES2"
 window/handheld/emulate_touchscreen=true
 

@@ -25,11 +25,9 @@ jobs:
         uses: josephbmanley/build-godot-action@v1.4.0
         id: godot_build
         with:
-          name: Moon Cheeser - ${{ env.EXPORT_SUFFIX }}
+          name: moon-cheeser- ${{ env.EXPORT_SUFFIX }}
           preset: ${{ matrix.platform }}
-          package: 'true'
           projectDir: source
-          debugMode: 'false'
       - name: Push to Itch
         uses: josephbmanley/butler-publish-itchio-action@v1.0.1
         env:

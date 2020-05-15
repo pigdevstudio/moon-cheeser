@@ -21,6 +21,7 @@ jobs:
           if [ "$PLATFORM" = "win32" ] || [ "$PLATFORM" = "win64" ]; then
             echo "::set-env name=EXPORT_SUFFIX::.exe"
           fi
+          echo "Trigger build!"
       - name: Build Godot Project
         uses: josephbmanley/build-godot-action@v1.4.0
         id: godot_build

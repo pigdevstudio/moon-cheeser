@@ -36,4 +36,4 @@ jobs:
           ITCH_GAME: moon-cheeser
           ITCH_USER: pigdev
           PACKAGE: ${{ github.workspace }}/${{ steps.godot_build.outputs.build }}
-          BUTLER_CREDENTIALS: ${{ secrets.BUTLER_CREDENTIALS }}
+          BUTLER_CREDENTIALS: ${{ secrets.BUTLER_API_KEY }}

@@ -2,8 +2,10 @@ name: Push to Itch
 
 on:
   push:
-    branches:
-      - master
+    branches:    
+      - pipeline/*
+    tags:
+      - v*.*.*
 
 jobs:
   godot:
@@ -17,10 +19,12 @@ jobs:
       - name: Configure
         env:
           PLATFORM: ${{ matrix.platform }}
+          GITHUB_REF: ${{ github.head_ref }}
         run: |
           if [ "$PLATFORM" = "win32" ] || [ "$PLATFORM" = "win64" ]; then
             echo "::set-env name=EXPORT_SUFFIX::.exe"
           fi
+          echo ${GITHUB_REF##*/} > VERSION.txt
           echo "Trigger build!"
       - name: Build Godot Project
         uses: josephbmanley/build-godot-action@v1.4.0
@@ -37,3 +41,4 @@ jobs:
           ITCH_USER: pigdev
           PACKAGE: ${{ github.workspace }}/${{ steps.godot_build.outputs.build }}
           BUTLER_CREDENTIALS: ${{ secrets.BUTLER_CREDENTIALS }}
+          VERSION_FILE: VERSION.txt

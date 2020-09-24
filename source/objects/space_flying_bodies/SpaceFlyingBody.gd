@@ -15,16 +15,17 @@ func _on_collided(collision):
 		collider.spawn_crater(collision)
 		explode()
 
+
 func _on_DragArea_dragged(direction):
 	$Shape.disabled = false
 	$DragArea/Shape.disabled = true
+
 
 func fly(direction):
 	if direction.length() > 0:
 		velocity = flying_speed * direction
 		rotation = direction.angle()
-		$Core.direction = Vector2.RIGHT.rotated(rotation)
-		$Tail.direction = Vector2.RIGHT.rotated(rotation)
+
 
 func spawn_cheeses(collision):
 	var spawner = get_node("CheeseSpawner").duplicate()
@@ -32,6 +33,7 @@ func spawn_cheeses(collision):
 	spawner.position = collision.position
 	spawner.spawn()
 	explode()
+
 
 func explode():
 	$Shape.disabled = true

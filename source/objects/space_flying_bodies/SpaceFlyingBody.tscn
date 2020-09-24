@@ -35,8 +35,11 @@ bus = "SFX"
 amount = 5
 local_coords = false
 texture = ExtResource( 2 )
+emission_shape = 1
+emission_sphere_radius = 32.0
+flag_align_y = true
 direction = Vector2( -1, 0 )
-spread = 25.0
+spread = 15.0
 gravity = Vector2( 0, 0 )
 initial_velocity = 150.0
 initial_velocity_random = 0.42
@@ -50,8 +53,11 @@ color_ramp = SubResource( 3 )
 amount = 4
 local_coords = false
 texture = ExtResource( 2 )
+emission_shape = 1
+emission_sphere_radius = 32.0
+flag_align_y = true
 direction = Vector2( -1, 0 )
-spread = 50.0
+spread = 10.0
 gravity = Vector2( 0, 0 )
 initial_velocity = 150.0
 initial_velocity_random = 0.42
@@ -67,7 +73,7 @@ scale = Vector2( 4.8, 4.8 )
 [node name="DragArea" parent="." instance=ExtResource( 3 )]
 [connection signal="collided" from="." to="." method="_on_collided"]
 [connection signal="screen_exited" from="Visibility" to="." method="queue_free"]
-[connection signal="dragged" from="DragArea" to="." method="fly"]
 [connection signal="dragged" from="DragArea" to="." method="_on_DragArea_dragged"]
-[connection signal="dragging" from="DragArea" to="." method="stop"]
+[connection signal="dragged" from="DragArea" to="." method="fly"]
 [connection signal="dragging" from="DragArea" to="Shape" method="set_disabled" binds= [ true ]]
+[connection signal="dragging" from="DragArea" to="." method="stop"]

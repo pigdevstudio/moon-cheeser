@@ -87,7 +87,6 @@ playback_speed = 0.3
 anims/slide = SubResource( 1 )
 
 [node name="Moon" parent="." instance=ExtResource( 2 )]
-editor/display_folded = true
 position = Vector2( 644.654, 485.91 )
 astromouse_path = NodePath("../Astromouse")
 
@@ -95,7 +94,6 @@ astromouse_path = NodePath("../Astromouse")
 root_node = NodePath("../../../Level/Moon/Pivot/Atmosphere")
 
 [node name="Background" parent="." instance=ExtResource( 3 )]
-z_index = -2
 
 [node name="LeftStarSpawner" parent="." groups=[
 "flyingbody_spawner",
@@ -141,6 +139,5 @@ position = Vector2( 1005.61, 0 )
 
 [node name="Astromouse" parent="." instance=ExtResource( 10 )]
 position = Vector2( 643.501, 267 )
-
 
 [editable path="Moon"]

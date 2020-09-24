@@ -1,4 +1,4 @@
-extends Node2D
+extends CanvasLayer
 
 func show_crux():
 	$Crux/Animator.play("fade")

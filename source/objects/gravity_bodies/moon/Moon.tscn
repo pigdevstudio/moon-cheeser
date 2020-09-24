@@ -39,4 +39,3 @@ autoplay = "spin"
 anims/spin = ExtResource( 5 )
 
 [node name="Gravity" parent="." instance=ExtResource( 6 )]
-

@@ -1,4 +1,6 @@
 
+releases/
+assets/
 # Godot-specific ignores
 .import/
 

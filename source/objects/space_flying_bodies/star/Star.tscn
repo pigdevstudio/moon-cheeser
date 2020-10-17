@@ -6,14 +6,14 @@
 [ext_resource path="res://objects/space_flying_bodies/star/StarmousePickupArea.gd" type="Script" id=4]
 [ext_resource path="res://objects/spawners/StarmouseSpawner.tscn" type="PackedScene" id=5]
 
-[sub_resource type="CircleShape2D" id=1]
+[sub_resource type="CircleShape2D" id=7]
 radius = 44.3321
 
-[sub_resource type="Gradient" id=2]
+[sub_resource type="Gradient" id=8]
 offsets = PoolRealArray( 0.402703, 1 )
 colors = PoolColorArray( 0.352941, 0.172549, 0.627451, 1, 0, 0, 0, 0 )
 
-[sub_resource type="Gradient" id=3]
+[sub_resource type="Gradient" id=6]
 offsets = PoolRealArray( 0.402703, 1 )
 colors = PoolColorArray( 0.666667, 0.666667, 1, 1, 0.666667, 0.666667, 1, 0 )
 
@@ -25,7 +25,7 @@ colors = PoolColorArray( 0.666667, 0.666667, 1, 1, 0.666667, 0.666667, 1, 0 )
 scale = Vector2( 0.5, 0.5 )
 frames = ExtResource( 2 )
 animation = "flying"
-frame = 2
+frame = 1
 offset = Vector2( -160, 0 )
 
 [node name="CheeseSpawner" parent="." index="3" instance=ExtResource( 3 )]
@@ -38,7 +38,7 @@ max_radius = 50.0
 script = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StarmousePickupArea" index="0"]
-shape = SubResource( 1 )
+shape = SubResource( 7 )
 
 [node name="StarmouseSpawner" parent="StarmousePickupArea" index="1" instance=ExtResource( 5 )]
 
@@ -46,11 +46,11 @@ shape = SubResource( 1 )
 position = Vector2( -144, 0 )
 emission_shape = 2
 emission_rect_extents = Vector2( 1, 40 )
-color_ramp = SubResource( 2 )
+color_ramp = SubResource( 8 )
 
 [node name="Core" parent="." index="6"]
 emission_shape = 2
 emission_rect_extents = Vector2( 1, 40 )
-color_ramp = SubResource( 3 )
+color_ramp = SubResource( 6 )
 [connection signal="body_entered" from="StarmousePickupArea" to="StarmousePickupArea" method="_on_body_entered"]
 [connection signal="player_entered" from="StarmousePickupArea" to="." method="queue_free"]

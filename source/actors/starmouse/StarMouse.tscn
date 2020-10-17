@@ -9,14 +9,14 @@
 [ext_resource path="res://actors/astromouse/sprites/AstromouseCharacter.tscn" type="PackedScene" id=7]
 [ext_resource path="res://meta/achievements/AchievementTrigger.tscn" type="PackedScene" id=8]
 
-[sub_resource type="CircleShape2D" id=1]
+[sub_resource type="CircleShape2D" id=3]
 radius = 50.7316
 
-[sub_resource type="Curve" id=2]
+[sub_resource type="Curve" id=4]
 max_value = 1.5
 _data = [ Vector2( 0.254996, 1 ), 0.0, 3.41493, 0, 0, Vector2( 0.993856, 1.27572 ), 0.373164, 0.0, 1, 0 ]
 
-[sub_resource type="Gradient" id=3]
+[sub_resource type="Gradient" id=5]
 offsets = PoolRealArray( 0.397297, 1 )
 colors = PoolColorArray( 0.666667, 0.666667, 1, 1, 0.666667, 0.666667, 1, 0 )
 
@@ -41,7 +41,7 @@ collision_layer = 2
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PickupArea"]
-shape = SubResource( 1 )
+shape = SubResource( 3 )
 
 [node name="MouseSpotter" type="Node2D" parent="."]
 script = ExtResource( 3 )
@@ -64,8 +64,8 @@ initial_velocity = 150.0
 initial_velocity_random = 0.42
 linear_accel = 8.0
 scale_amount_random = 1.0
-scale_amount_curve = SubResource( 2 )
-color_ramp = SubResource( 3 )
+scale_amount_curve = SubResource( 4 )
+color_ramp = SubResource( 5 )
 
 [node name="SwingPivot" parent="Sprites" instance=ExtResource( 6 )]
 
@@ -74,7 +74,6 @@ position = Vector2( -14.6667, 64.8889 )
 
 [node name="StarmouseAchievement" parent="." instance=ExtResource( 8 )]
 achievement_name = "starmouse"
-
 [connection signal="ready" from="." to="StarmouseAchievement" method="increase_achievement_progress"]
 [connection signal="timeout" from="Duration" to="." method="queue_free"]
 [connection signal="mouse_found" from="MouseSpotter" to="." method="seek"]

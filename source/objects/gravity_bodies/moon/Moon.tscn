@@ -1,11 +1,10 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://objects/gravity_bodies/moon/Moon.gd" type="Script" id=1]
 [ext_resource path="res://objects/gravity_bodies/moon/moon_gravity.png" type="Texture" id=2]
 [ext_resource path="res://screens/title_screen/moon.png" type="Texture" id=3]
 [ext_resource path="res://objects/gravity_bodies/PulseTween.gd" type="Script" id=4]
 [ext_resource path="res://objects/gravity_bodies/spin_animation.tres" type="Animation" id=5]
-[ext_resource path="res://objects/Gravity.tscn" type="PackedScene" id=6]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 176.038
@@ -37,5 +36,3 @@ root_node = NodePath("../Pivot/Atmosphere")
 root_node = NodePath("../Pivot")
 autoplay = "spin"
 anims/spin = ExtResource( 5 )
-
-[node name="Gravity" parent="." instance=ExtResource( 6 )]

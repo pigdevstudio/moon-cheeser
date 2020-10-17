@@ -1,47 +1,34 @@
-extends "res://objects/SpaceKinematicBody.gd"
+extends KinematicBody2D
 
-signal died
+export var velocity = Vector2.ZERO
+export var snap_vector = Vector2.DOWN * 32
+export var up_direction = Vector2.UP
 
-onready var character = $AstromouseCharacter
-const FALL_SPEED = 25.0
+onready var jump = $Jump
+onready var anim_tree = $AnimationTree
 
 func _ready():
-	$Actions.space_kinematic_body = self
-	
+	jump.actor = self
+
+
 func _physics_process(delta):
-	var relative_velocity = velocity.rotated(rotation)
-	
-	if relative_velocity.y > FALL_SPEED:
-		character.play("run_fall")
-	elif relative_velocity.y < -FALL_SPEED:
-		character.play("run_jump")
+	move_and_slide_with_snap(velocity, snap_vector, up_direction, true, 1)
+	if get_slide_count() > 0:
+		var collision = get_slide_collision(0)
+		up_direction = collision.get_normal()
+		snap_vector = collision.get_normal().rotated(deg2rad(180)) * 32
+		rotation = up_direction.angle() + deg2rad(90)
+		anim_tree.set_condition("landed", true)
 
-func _on_collided(collision):
-	var collider = collision.collider
-	var angle = get_angle_to(collider.global_position)
-	angle -= deg2rad(90)
-	rotate(angle)
-	if collision.collider.is_in_group("moon"):
-		$Actions/Jump.reset()
-		character.play("running")
 
-func _on_Jump_executed():
-	character.play("run_jump")
-	$SFX.play("Jump")
-
-func get_action_node():
-	return $Actions
-
-func become_invincible():
-	$Invincible.start()
-
-func die():
-	if $Invincible.time_left > 0.0:
+func _unhandled_input(event):
+	if not event.is_action("jump"):
 		return
-	character.hide()
-	$Shape.call_deferred("set_disabled", true)
-	$PickupArea/CollisionShape2D.call_deferred("set_disabled", true)
-	$SFX.play("Damage")
-	yield($SFX, "finished")
-	emit_signal("died")
-	queue_free()
+	if event.is_pressed():
+		jump.execute()
+	else:
+		jump.cancel()
+
+
+func _on_Jump_executed() -> void:
+	anim_tree.set_condition("jumping", true)

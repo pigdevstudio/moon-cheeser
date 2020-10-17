@@ -12,9 +12,11 @@ func _ready():
 	set_physics_process(false)
 	set_astromouse(get_node(astromouse_path))
 
+
 func _physics_process(delta):
 	var normal = (global_position - astromouse.global_position).normalized()
 	_gravity.apply(astromouse)
+
 
 func set_astromouse(new_astromouse):
 	if not new_astromouse is Astromouse:

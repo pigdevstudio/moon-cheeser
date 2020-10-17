@@ -1,4 +1,8 @@
-extends "res://objects/gravity_bodies/GravityBody.gd"
+extends StaticBody2D
+
+export var gravity_strength := 400.0
+
+var astromouse
 
 func _ready():
 	set_process_unhandled_input(false)
@@ -21,9 +25,3 @@ func spawn_crater(collision):
 	$Pivot.add_child(crater)
 	crater.position = $Pivot.to_local(pos)
 	crater.rotation = normal.angle() + deg2rad(90 - $Pivot.rotation_degrees)
-
-
-func _unhandled_input(event):
-	if event.is_action_pressed("jump"):
-		pulse()
-		$Tween.pulse()

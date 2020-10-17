@@ -136,7 +136,6 @@ anims/shine = SubResource( 3 )
 [node name="StarboyCrux" type="Sprite" parent="SouthCross"]
 modulate = Color( 1, 1, 1, 0 )
 show_behind_parent = true
-scale = Vector2( 1, 1 )
 texture = ExtResource( 2 )
 
 [node name="Stars" type="Node2D" parent="."]

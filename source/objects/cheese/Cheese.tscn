@@ -50,5 +50,5 @@ texture = ExtResource( 2 )
 
 [node name="PickupSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 3 )
-
+volume_db = -16.0
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]

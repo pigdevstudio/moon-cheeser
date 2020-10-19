@@ -19,6 +19,8 @@ func _physics_process(delta):
 		snap_vector = collision.get_normal().rotated(deg2rad(180)) * 32
 		rotation = up_direction.angle() + deg2rad(90)
 		anim_tree.set_condition("landed", true)
+	if velocity.rotated(rotation).y < 0.0:
+		anim_tree.set_condition("falling", true)
 
 
 func _unhandled_input(event):

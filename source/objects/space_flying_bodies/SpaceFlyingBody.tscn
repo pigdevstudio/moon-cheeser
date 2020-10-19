@@ -19,6 +19,7 @@ colors = PoolColorArray( 1, 1, 1, 1, 1, 1, 1, 0 )
 [node name="SpaceFlyingBody" type="KinematicBody2D" groups=[
 "flying_body",
 ]]
+collision_layer = 0
 script = ExtResource( 1 )
 
 [node name="Shape" type="CollisionShape2D" parent="."]
@@ -76,5 +77,5 @@ scale = Vector2( 4.8, 4.8 )
 [connection signal="screen_exited" from="Visibility" to="." method="queue_free"]
 [connection signal="dragged" from="DragArea" to="." method="fly"]
 [connection signal="dragged" from="DragArea" to="." method="_on_DragArea_dragged"]
-[connection signal="dragging" from="DragArea" to="Shape" method="set_disabled" binds= [ true ]]
 [connection signal="dragging" from="DragArea" to="." method="stop"]
+[connection signal="dragging" from="DragArea" to="Shape" method="set_disabled" binds= [ true ]]

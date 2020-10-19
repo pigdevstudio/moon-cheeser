@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://actors/astromouse/Astromouse.gd" type="Script" id=1]
 [ext_resource path="res://actors/astromouse/actions/Jump.tscn" type="PackedScene" id=2]
@@ -20,53 +20,56 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 32, 24 )
 
-[sub_resource type="CapsuleShape2D" id=4]
+[sub_resource type="CapsuleShape2D" id=2]
 radius = 33.1054
 height = 47.0407
 
-[sub_resource type="AnimationNodeAnimation" id=5]
+[sub_resource type="AnimationNodeAnimation" id=3]
 animation = "SETUP"
 
-[sub_resource type="AnimationNodeAnimation" id=13]
+[sub_resource type="AnimationNodeAnimation" id=4]
 animation = "run_jump"
 
-[sub_resource type="AnimationNodeAnimation" id=6]
+[sub_resource type="AnimationNodeAnimation" id=5]
 animation = "run_fall"
 
-[sub_resource type="AnimationNodeAnimation" id=10]
+[sub_resource type="AnimationNodeAnimation" id=6]
 animation = "running"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=7]
 auto_advance = true
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=11]
+[sub_resource type="AnimationNodeStateMachineTransition" id=8]
 advance_condition = "landed"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=14]
+[sub_resource type="AnimationNodeStateMachineTransition" id=9]
 advance_condition = "jumping"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=15]
+[sub_resource type="AnimationNodeStateMachineTransition" id=10]
 advance_condition = "jumping"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=16]
+[sub_resource type="AnimationNodeStateMachineTransition" id=11]
 advance_condition = "falling"
 
-[sub_resource type="AnimationNodeStateMachine" id=8]
-states/SETUP/node = SubResource( 5 )
+[sub_resource type="AnimationNodeStateMachineTransition" id=12]
+advance_condition = "landed"
+
+[sub_resource type="AnimationNodeStateMachine" id=13]
+states/SETUP/node = SubResource( 3 )
 states/SETUP/position = Vector2( 344, 97 )
-states/jump/node = SubResource( 13 )
+states/jump/node = SubResource( 4 )
 states/jump/position = Vector2( 852, 97 )
-states/run_fall/node = SubResource( 6 )
+states/run_fall/node = SubResource( 5 )
 states/run_fall/position = Vector2( 604, 97 )
-states/running/node = SubResource( 10 )
-states/running/position = Vector2( 852, 207 )
-transitions = [ "SETUP", "run_fall", SubResource( 7 ), "run_fall", "running", SubResource( 11 ), "run_fall", "jump", SubResource( 14 ), "running", "jump", SubResource( 15 ), "jump", "run_fall", SubResource( 16 ) ]
+states/running/node = SubResource( 6 )
+states/running/position = Vector2( 735, 248 )
+transitions = [ "SETUP", "run_fall", SubResource( 7 ), "run_fall", "running", SubResource( 8 ), "run_fall", "jump", SubResource( 9 ), "running", "jump", SubResource( 10 ), "jump", "run_fall", SubResource( 11 ), "jump", "running", SubResource( 12 ) ]
 start_node = "SETUP"
 graph_offset = Vector2( 23, -63 )
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=9]
+[sub_resource type="AnimationNodeStateMachinePlayback" id=14]
 
-[sub_resource type="GDScript" id=12]
+[sub_resource type="GDScript" id=15]
 script/source = "extends AnimationTree
 
 
@@ -76,6 +79,7 @@ func set_condition(condition, value):
 
 [node name="Astromouse" type="KinematicBody2D"]
 z_index = 1
+collision_layer = 0
 script = ExtResource( 1 )
 
 [node name="Jump" parent="." instance=ExtResource( 2 )]
@@ -87,7 +91,6 @@ shape = SubResource( 1 )
 [node name="Animator" type="AnimationPlayer" parent="."]
 root_node = NodePath("../Character/sprites")
 playback_default_blend_time = 0.08
-playback_speed = 0.7
 anims/SETUP = ExtResource( 13 )
 anims/dash = ExtResource( 11 )
 anims/fall = ExtResource( 14 )
@@ -197,18 +200,18 @@ collision_mask = 0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PickupArea"]
 position = Vector2( 0, -32 )
 rotation = 1.57079
-shape = SubResource( 4 )
+shape = SubResource( 2 )
 
 [node name="AstromouseAchievement" parent="." instance=ExtResource( 10 )]
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
-tree_root = SubResource( 8 )
+tree_root = SubResource( 13 )
 anim_player = NodePath("../Animator")
 active = true
-parameters/playback = SubResource( 9 )
+parameters/playback = SubResource( 14 )
 parameters/conditions/falling = false
 parameters/conditions/jumping = false
 parameters/conditions/landed = false
-script = SubResource( 12 )
+script = SubResource( 15 )
 [connection signal="executed" from="Jump" to="." method="_on_Jump_executed"]
 [connection signal="area_entered" from="PickupArea" to="AstromouseAchievement" method="_on_PickupArea_area_entered"]

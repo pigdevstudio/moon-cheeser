@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://actors/astromouse/sprites/AstromouseCharacter.gd" type="Script" id=1]
 [ext_resource path="res://actors/astromouse/sprites/cutout_body.png" type="Texture" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://actors/astromouse/Animations/RunJump.tres" type="Animation" id=11]
 [ext_resource path="res://actors/astromouse/Animations/Run.tres" type="Animation" id=12]
 [ext_resource path="res://actors/astromouse/Animations/Walk.tres" type="Animation" id=13]
+[ext_resource path="res://actors/astromouse/Animations/Float.tres" type="Animation" id=14]
 
 [node name="AstromouseCharacter" type="Position2D"]
 scale = Vector2( 1.25, 1.25 )
@@ -26,6 +27,7 @@ playback_speed = 0.7
 anims/SETUP = ExtResource( 4 )
 anims/dash = ExtResource( 3 )
 anims/fall = ExtResource( 5 )
+anims/float = ExtResource( 14 )
 anims/grab_star = ExtResource( 6 )
 anims/idle = ExtResource( 7 )
 anims/jump = ExtResource( 9 )
@@ -39,15 +41,15 @@ anims/wall = ExtResource( 8 )
 
 [node name="body" type="Sprite" parent="sprites"]
 position = Vector2( 3.66667, -17.6667 )
-rotation = 1.48184
+rotation = 0.300874
 texture = ExtResource( 2 )
 offset = Vector2( 0.0592504, -7.2841 )
 region_enabled = true
 region_rect = Rect2( 76, 4, 25, 30 )
 
 [node name="head" type="Sprite" parent="sprites/body"]
-position = Vector2( 3.30797, -25.2358 )
-rotation = -1.6665
+position = Vector2( -0.999999, -16.3333 )
+rotation = -0.235237
 texture = ExtResource( 2 )
 offset = Vector2( -0.356, -20.537 )
 region_enabled = true
@@ -62,8 +64,8 @@ region_enabled = true
 region_rect = Rect2( 4, 4, 54, 54 )
 
 [node name="arm_l" type="Sprite" parent="sprites/body"]
-position = Vector2( -0.692625, -20.2447 )
-rotation = -2.36365
+position = Vector2( 6.2329, -15.2321 )
+rotation = -2.02806
 z_index = -1
 texture = ExtResource( 2 )
 offset = Vector2( -0.113655, 9.28639 )
@@ -72,8 +74,8 @@ region_rect = Rect2( 104, 41, 8, 19 )
 
 [node name="arm_r" type="Sprite" parent="sprites/body"]
 show_behind_parent = true
-position = Vector2( 2.02585, -13.2973 )
-rotation = -2.27092
+position = Vector2( -9.03908, -13.1607 )
+rotation = 1.69684
 z_index = 1
 texture = ExtResource( 2 )
 offset = Vector2( 0.434902, 8.9376 )
@@ -83,7 +85,7 @@ region_rect = Rect2( 92, 41, 8, 19 )
 [node name="tail" type="Sprite" parent="sprites/body"]
 show_behind_parent = true
 position = Vector2( -7.66667, 3.83337 )
-rotation = -1.83715
+rotation = 0.148449
 z_index = -1
 texture = ExtResource( 2 )
 offset = Vector2( -18.1807, -15.8838 )
@@ -100,8 +102,8 @@ region_enabled = true
 region_rect = Rect2( 72, 40, 16, 28 )
 
 [node name="leg_l" type="Sprite" parent="sprites"]
-position = Vector2( 4.58333, -15.5 )
-rotation = 0.92334
+position = Vector2( 8.83333, -18 )
+rotation = -0.327745
 z_index = -1
 texture = ExtResource( 2 )
 offset = Vector2( 0.166667, 8.66673 )
@@ -109,8 +111,8 @@ region_enabled = true
 region_rect = Rect2( 104, 64, 8, 19 )
 
 [node name="leg_r" type="Sprite" parent="sprites"]
-position = Vector2( 0.58333, -20.6667 )
-rotation = 1.0395
+position = Vector2( -0.5, -18.6667 )
+rotation = 0.773357
 z_index = -1
 texture = ExtResource( 2 )
 offset = Vector2( 0.333337, 9.33333 )

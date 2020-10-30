@@ -32,6 +32,8 @@ func reset():
 
 
 func cancel():
-	if actor.velocity.rotated(actor.rotation).y < 0.0:
+	if actor.is_on_floor():
 		return
-	actor.velocity = Vector2(0, 0)
+	var dot = actor.velocity.normalized().dot(actor.up_direction)
+	if dot > 0:
+		actor.velocity = Vector2(0, 0)

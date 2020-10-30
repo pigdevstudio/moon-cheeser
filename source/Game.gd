@@ -5,9 +5,12 @@ Controls game's flow
 """
 
 onready var _interface = $Interface
+onready var _fade = $Fade/ScreenFade
 
 func _ready():
+	_fade.fade_in()
 	Achievements.connect("achievement_completed", self, "_on_Achievements_achievement_completed")
+	Score.connect("scored", self, "_on_Score_scored")
 	$FullmoonAchievement.check_achievement()
 
 
@@ -40,3 +43,10 @@ func _on_Achievements_achievement_completed(achievement_name):
 	panel.title = Achievements.get_title(achievement_name)
 	Achievements.write_achievements()
 	panel.show()
+
+
+func _on_Score_scored():
+	if Score.current_score >= 1000:
+		_fade.fade_out()
+		yield(_fade, "finished")
+		get_tree().change_scene("res://levels/Cinematics/CometCinematic.tscn")

@@ -3,7 +3,12 @@ extends Node
 
 export (String, FILE, "*.tscn") var next_scene
 
-func _unhandled_key_input(event: InputEventKey) -> void:
+
+func _ready():
+	BGM.stop()
+
+
+func _unhandled_key_input(event):
 	if event.get_scancode() == KEY_SPACE:
 		$AnimationPlayer.play("Collision")
 

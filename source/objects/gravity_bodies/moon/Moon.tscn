@@ -1,11 +1,9 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://objects/gravity_bodies/moon/Moon.gd" type="Script" id=1]
 [ext_resource path="res://objects/gravity_bodies/moon/moon_gravity.png" type="Texture" id=2]
 [ext_resource path="res://screens/title_screen/moon.png" type="Texture" id=3]
 [ext_resource path="res://objects/gravity_bodies/PulseTween.gd" type="Script" id=4]
-[ext_resource path="res://objects/spawners/CheeseSpawner.gd" type="Script" id=5]
-[ext_resource path="res://objects/cheese/Cheese.tscn" type="PackedScene" id=6]
 [ext_resource path="res://objects/spawners/CheeseSpawner.tscn" type="PackedScene" id=7]
 [ext_resource path="res://objects/spawners/Spawner2D.tscn" type="PackedScene" id=8]
 [ext_resource path="res://objects/crater/Crater.tscn" type="PackedScene" id=9]
@@ -58,6 +56,6 @@ script = ExtResource( 4 )
 autoplay = "spin"
 anims/spin = SubResource( 2 )
 
-[node name="CheeseSpawner" type="Position2D" parent="." instance=ExtResource( 7 )]
-script = ExtResource( 5 )
-spawn_scene = ExtResource( 6 )
+[node name="CheeseSpawner" parent="." instance=ExtResource( 7 )]
+min_cheeses = 4
+max_cheeses = 10

@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://objects/comet/sparkle.png" type="Texture" id=1]
 [ext_resource path="res://objects/comet/asteroid-great.svg" type="Texture" id=2]
@@ -160,12 +160,6 @@ scale_random = 0.48
 color_ramp = SubResource( 20 )
 
 [sub_resource type="CircleShape2D" id=22]
-radius = 260.768
-
-[sub_resource type="RectangleShape2D" id=23]
-extents = Vector2( 248, 736 )
-
-[sub_resource type="CircleShape2D" id=24]
 radius = 256.002
 
 [node name="Comet" instance=ExtResource( 4 )]
@@ -224,52 +218,21 @@ material = SubResource( 18 )
 scale = Vector2( 2.41494, 2.41494 )
 texture = ExtResource( 2 )
 
-[node name="Health" parent="." index="2" groups=[
-"enemy",
-"enemy_health",
-]]
-
-[node name="Particles2D" parent="." index="4"]
+[node name="Particles2D" parent="." index="3"]
 amount = 80
 lifetime = 4.0
 explosiveness = 1.0
 process_material = SubResource( 21 )
 
-[node name="HitBox2D" parent="." index="5"]
-team = 0
-
-[node name="CollisionShape2D" parent="HitBox2D" index="0"]
-shape = SubResource( 22 )
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="HitBox2D" index="1"]
-position = Vector2( 8, 728 )
-shape = SubResource( 23 )
-
-[node name="HurtBox" parent="." index="6"]
-team = 0
-
-[node name="CollisionShape2D" parent="HurtBox" index="0"]
-shape = SubResource( 22 )
-
-[node name="DestructionArea" parent="." index="7"]
+[node name="DestructionArea" parent="." index="4"]
 monitoring = false
 
 [node name="CollisionShape2D" parent="DestructionArea" index="0"]
-shape = SubResource( 24 )
+shape = SubResource( 22 )
 disabled = true
 
-[node name="VisibilityNotifier2D" parent="." index="8"]
+[node name="VisibilityNotifier2D" parent="." index="5"]
 scale = Vector2( 26.4, 26.4 )
 
-[node name="SFX" parent="." index="9"]
+[node name="SFX" parent="." index="6"]
 pitch_scale = 0.2
-
-[node name="ScoreLabelSpawner2D" parent="." index="10"]
-spawn_scene = null
-
-[node name="DamageLabelSpawner2D" parent="." index="11"]
-spawn_scene = null
-
-[editable path="HitBox2D"]
-
-[editable path="HurtBox"]

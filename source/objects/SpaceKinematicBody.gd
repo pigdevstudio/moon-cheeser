@@ -5,14 +5,17 @@ signal collided(collision)
 export var direction = Vector2.RIGHT setget set_direction
 export (float) var speed = 300.0
 
-onready var velocity = direction * speed
-
 var _collision
+
+onready var velocity = direction * speed
+onready var _animator = $AnimationPlayer
+
 
 func _physics_process(delta):
 	_collision = move_and_collide(velocity * delta)
 	if _collision:
-		stop()
+		set_physics_process(false)
+		_animator.play("explode")
 		emit_signal("collided", _collision)
 
 

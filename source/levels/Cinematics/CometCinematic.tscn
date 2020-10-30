@@ -40,7 +40,7 @@
 
 [sub_resource type="Animation" id=1]
 resource_name = "Collision"
-length = 16.5
+length = 17.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("InterfaceLayer/Interface/ColorRect:color")
 tracks/0/interp = 1
@@ -48,10 +48,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.9, 2.5, 3, 4, 15.5, 16.5 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.5, 1.3, 1.4, 3, 3.5, 4.5, 16, 17 ),
+"transitions": PoolRealArray( 1, 1, 0, 1, 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ) ]
+"values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("WorldLayer/World/Background/Comet:visible")
@@ -60,10 +60,10 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 2.5 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.5, 3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
-"values": [ true, false ]
+"values": [ true, true, false ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("WorldLayer/World/Moon:visible")
@@ -72,10 +72,10 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 2.5 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.5, 3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
-"values": [ true, false ]
+"values": [ true, true, false ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("WorldLayer/World/CometPath/PathFollow2D:unit_offset")
@@ -84,10 +84,10 @@ tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0, 2.5 ),
-"transitions": PoolRealArray( 0.5, 1 ),
+"times": PoolRealArray( 0, 0.5, 3 ),
+"transitions": PoolRealArray( 0.5, 0.5, 1 ),
 "update": 0,
-"values": [ 0.0, 1.0 ]
+"values": [ 0.0, 0.0, 1.0 ]
 }
 tracks/4/type = "value"
 tracks/4/path = NodePath("WorldLayer/World/Background/Comet:scale")
@@ -96,10 +96,10 @@ tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 0, 2.5 ),
-"transitions": PoolRealArray( 0.5, 1 ),
+"times": PoolRealArray( 0, 0.5, 3 ),
+"transitions": PoolRealArray( 0.5, 0.5, 1 ),
 "update": 0,
-"values": [ Vector2( 0.2, 0.2 ), Vector2( 1, 1 ) ]
+"values": [ Vector2( 0.2, 0.2 ), Vector2( 0.2, 0.2 ), Vector2( 1, 1 ) ]
 }
 tracks/5/type = "animation"
 tracks/5/path = NodePath("WorldLayer/World/AstromouseCharacter/animator")
@@ -109,7 +109,7 @@ tracks/5/imported = false
 tracks/5/enabled = true
 tracks/5/keys = {
 "clips": PoolStringArray( "running", "run_jump", "run_fall", "float" ),
-"times": PoolRealArray( 0, 1.8, 2.5, 2.7 )
+"times": PoolRealArray( 0, 2.3, 3, 3.2 )
 }
 tracks/6/type = "value"
 tracks/6/path = NodePath("WorldLayer/World/AstromouseCharacter:position")
@@ -118,10 +118,10 @@ tracks/6/loop_wrap = true
 tracks/6/imported = false
 tracks/6/enabled = true
 tracks/6/keys = {
-"times": PoolRealArray( 0, 1.8, 2.6, 2.7, 12.6 ),
-"transitions": PoolRealArray( 1, 1, 0, -2, 1 ),
+"times": PoolRealArray( 0, 0.5, 2.3, 3.1, 3.2, 13.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 0, -2, 1 ),
 "update": 0,
-"values": [ Vector2( 640, 304 ), Vector2( 640, 304 ), Vector2( 640, 176 ), Vector2( 640, -728 ), Vector2( 640, 504 ) ]
+"values": [ Vector2( 640, 304 ), Vector2( 640, 304 ), Vector2( 640, 304 ), Vector2( 640, 176 ), Vector2( 640, -728 ), Vector2( 640, 504 ) ]
 }
 tracks/7/type = "value"
 tracks/7/path = NodePath("WorldLayer/World/AstromouseCharacter:rotation_degrees")
@@ -130,10 +130,10 @@ tracks/7/loop_wrap = true
 tracks/7/imported = false
 tracks/7/enabled = true
 tracks/7/keys = {
-"times": PoolRealArray( 0, 2.6 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.5, 3.1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ 0.0, 0.0 ]
+"values": [ 0.0, 0.0, 0.0 ]
 }
 tracks/8/type = "value"
 tracks/8/path = NodePath("WorldLayer/World/Star:position")
@@ -142,10 +142,10 @@ tracks/8/loop_wrap = true
 tracks/8/imported = false
 tracks/8/enabled = true
 tracks/8/keys = {
-"times": PoolRealArray( 0, 9, 12.6 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.5, 9.5, 13.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( -64, 448 ), Vector2( -64, 448 ), Vector2( 648, 448 ) ]
+"values": [ Vector2( -64, 448 ), Vector2( -64, 448 ), Vector2( -64, 448 ), Vector2( 648, 448 ) ]
 }
 tracks/9/type = "value"
 tracks/9/path = NodePath("WorldLayer/World/Star:visible")
@@ -154,10 +154,10 @@ tracks/9/loop_wrap = true
 tracks/9/imported = false
 tracks/9/enabled = true
 tracks/9/keys = {
-"times": PoolRealArray( 0, 12.6 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.5, 13.1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
-"values": [ true, false ]
+"values": [ true, true, false ]
 }
 tracks/10/type = "value"
 tracks/10/path = NodePath("WorldLayer/World/AstromouseCharacter:visible")
@@ -166,10 +166,10 @@ tracks/10/loop_wrap = true
 tracks/10/imported = false
 tracks/10/enabled = true
 tracks/10/keys = {
-"times": PoolRealArray( 0, 12.6 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.5, 13.1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
-"values": [ true, false ]
+"values": [ true, true, false ]
 }
 tracks/11/type = "value"
 tracks/11/path = NodePath("WorldLayer/World/StarMouse:visible")
@@ -178,10 +178,10 @@ tracks/11/loop_wrap = true
 tracks/11/imported = false
 tracks/11/enabled = true
 tracks/11/keys = {
-"times": PoolRealArray( 0, 12.6 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.5, 13.1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
-"values": [ false, true ]
+"values": [ false, false, true ]
 }
 tracks/12/type = "value"
 tracks/12/path = NodePath("WorldLayer/World/StarmousePath/PathFollow2D:unit_offset")
@@ -190,10 +190,10 @@ tracks/12/loop_wrap = true
 tracks/12/imported = false
 tracks/12/enabled = true
 tracks/12/keys = {
-"times": PoolRealArray( 0, 12.6, 15.8 ),
-"transitions": PoolRealArray( 1, 4, 1 ),
+"times": PoolRealArray( 0, 0.5, 13.1, 16.3 ),
+"transitions": PoolRealArray( 1, 1, 4, 1 ),
 "update": 0,
-"values": [ 0.0, 0.0, 1.0 ]
+"values": [ 0.0, 0.0, 0.0, 1.0 ]
 }
 tracks/13/type = "value"
 tracks/13/path = NodePath("WorldLayer/World/StarMouse/Pivot:rotation_degrees")
@@ -202,7 +202,7 @@ tracks/13/loop_wrap = true
 tracks/13/imported = false
 tracks/13/enabled = true
 tracks/13/keys = {
-"times": PoolRealArray( 12.6, 14.9, 15.8 ),
+"times": PoolRealArray( 13.1, 15.4, 16.3 ),
 "transitions": PoolRealArray( 2, 0.5, 1 ),
 "update": 0,
 "values": [ 0.0, 150.0, 90.0 ]
@@ -214,10 +214,10 @@ tracks/14/loop_wrap = true
 tracks/14/imported = false
 tracks/14/enabled = true
 tracks/14/keys = {
-"times": PoolRealArray( 0, 4.5, 11 ),
-"transitions": PoolRealArray( 0.5, -4, 1 ),
+"times": PoolRealArray( 0, 0.5, 5, 11.5 ),
+"transitions": PoolRealArray( 0.5, 0.5, -4, 1 ),
 "update": 0,
-"values": [ Vector2( 640, 360 ), Vector2( 640, 360 ), Vector2( 640, -4320 ) ]
+"values": [ Vector2( 640, 360 ), Vector2( 640, 360 ), Vector2( 640, 360 ), Vector2( 640, -4320 ) ]
 }
 tracks/15/type = "method"
 tracks/15/path = NodePath("WorldLayer/World/Background/ParallaxLayer/Cheeses/CheeseSpawner")
@@ -226,7 +226,7 @@ tracks/15/loop_wrap = true
 tracks/15/imported = false
 tracks/15/enabled = true
 tracks/15/keys = {
-"times": PoolRealArray( 2.5 ),
+"times": PoolRealArray( 3 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
@@ -240,7 +240,7 @@ tracks/16/loop_wrap = true
 tracks/16/imported = false
 tracks/16/enabled = true
 tracks/16/keys = {
-"times": PoolRealArray( 16.5 ),
+"times": PoolRealArray( 17 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
@@ -254,10 +254,10 @@ tracks/17/loop_wrap = true
 tracks/17/imported = false
 tracks/17/enabled = true
 tracks/17/keys = {
-"times": PoolRealArray( 0, 2.5, 4.5 ),
-"transitions": PoolRealArray( 2, -2, 1 ),
+"times": PoolRealArray( 0, 0.5, 3, 5 ),
+"transitions": PoolRealArray( 2, 2, -2, 1 ),
 "update": 0,
-"values": [ 0.0, 30.0, 0.0 ]
+"values": [ 0.0, 0.0, 30.0, 0.0 ]
 }
 tracks/18/type = "method"
 tracks/18/path = NodePath("WorldLayer/ShakingCamera2D")
@@ -266,7 +266,7 @@ tracks/18/loop_wrap = true
 tracks/18/imported = false
 tracks/18/enabled = true
 tracks/18/keys = {
-"times": PoolRealArray( 0, 4.5 ),
+"times": PoolRealArray( 0.5, 5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "values": [ {
 "args": [  ],
@@ -302,7 +302,7 @@ tracks/20/keys = {
 "start_offset": 0.0,
 "stream": ExtResource( 33 )
 } ],
-"times": PoolRealArray( 2.5 )
+"times": PoolRealArray( 3 )
 }
 tracks/21/type = "value"
 tracks/21/path = NodePath("AudioStreamPlayer2D:volume_db")
@@ -311,10 +311,10 @@ tracks/21/loop_wrap = true
 tracks/21/imported = false
 tracks/21/enabled = true
 tracks/21/keys = {
-"times": PoolRealArray( 0, 7.7 ),
-"transitions": PoolRealArray( 2, 1 ),
+"times": PoolRealArray( 0, 0.5, 8.2 ),
+"transitions": PoolRealArray( 2, 2, 1 ),
 "update": 0,
-"values": [ -16.0, -64.0 ]
+"values": [ -16.0, -16.0, -64.0 ]
 }
 tracks/22/type = "value"
 tracks/22/path = NodePath("AudioStreamPlayer2D2:volume_db")
@@ -323,10 +323,10 @@ tracks/22/loop_wrap = true
 tracks/22/imported = false
 tracks/22/enabled = true
 tracks/22/keys = {
-"times": PoolRealArray( 0, 7.7, 15.5, 16.5 ),
-"transitions": PoolRealArray( 2, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.5, 8.2, 16, 17 ),
+"transitions": PoolRealArray( 2, 2, 1, 1, 1 ),
 "update": 0,
-"values": [ -64.0, -16.0, -16.0, -64.0 ]
+"values": [ -64.0, -64.0, -16.0, -16.0, -64.0 ]
 }
 tracks/23/type = "value"
 tracks/23/path = NodePath("WorldLayer/World/Background/Comet/AudioStreamPlayer2D3:playing")
@@ -335,10 +335,10 @@ tracks/23/loop_wrap = true
 tracks/23/imported = false
 tracks/23/enabled = true
 tracks/23/keys = {
-"times": PoolRealArray( 0, 2.5 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.5, 3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
-"values": [ true, false ]
+"values": [ false, true, false ]
 }
 tracks/24/type = "value"
 tracks/24/path = NodePath("WorldLayer/World/Background/Comet/AudioStreamPlayer2D3:pitch_scale")
@@ -347,10 +347,10 @@ tracks/24/loop_wrap = true
 tracks/24/imported = false
 tracks/24/enabled = true
 tracks/24/keys = {
-"times": PoolRealArray( 0, 2.5 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.5, 3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ 0.2, 0.5 ]
+"values": [ 0.2, 0.2, 0.5 ]
 }
 tracks/25/type = "value"
 tracks/25/path = NodePath("WorldLayer/World/Moon/AudioStreamPlayer2D:playing")
@@ -359,10 +359,10 @@ tracks/25/loop_wrap = true
 tracks/25/imported = false
 tracks/25/enabled = true
 tracks/25/keys = {
-"times": PoolRealArray( 2.5 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ true ]
+"values": [ false, true ]
 }
 tracks/26/type = "value"
 tracks/26/path = NodePath("WorldLayer/World/StarMouse/AudioStreamPlayer2D:playing")
@@ -371,10 +371,10 @@ tracks/26/loop_wrap = true
 tracks/26/imported = false
 tracks/26/enabled = true
 tracks/26/keys = {
-"times": PoolRealArray( 13.6 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 14.1 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ true ]
+"values": [ false, true ]
 }
 tracks/27/type = "value"
 tracks/27/path = NodePath("WorldLayer/World/StarMouse/AudioStreamPlayer2D:pitch_scale")
@@ -383,7 +383,7 @@ tracks/27/loop_wrap = true
 tracks/27/imported = false
 tracks/27/enabled = true
 tracks/27/keys = {
-"times": PoolRealArray( 13.6, 16 ),
+"times": PoolRealArray( 14.1, 16.5 ),
 "transitions": PoolRealArray( 2, 1 ),
 "update": 0,
 "values": [ 0.8, 1.5 ]
@@ -3076,6 +3076,7 @@ __meta__ = {
 next_scene = "res://levels/AsteroidDodging.tscn"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Collision"
 anims/Collision = SubResource( 1 )
 anims/SETUP = SubResource( 2 )
 
@@ -3593,7 +3594,7 @@ scale_amount_curve = SubResource( 54 )
 color_ramp = SubResource( 55 )
 
 [node name="Pivot" type="Position2D" parent="WorldLayer/World/StarMouse"]
-rotation = 1.43025
+rotation = 1.97958
 
 [node name="AstromouseCharacter" type="Position2D" parent="WorldLayer/World/StarMouse/Pivot"]
 position = Vector2( -16, 72 )
@@ -3701,7 +3702,7 @@ region_rect = Rect2( 92, 64, 8, 19 )
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="WorldLayer/World/StarMouse"]
 stream = ExtResource( 35 )
 volume_db = -8.0
-pitch_scale = 1.24242
+pitch_scale = 0.921528
 bus = "Reverb"
 
 [node name="ShakingCamera2D" parent="WorldLayer" instance=ExtResource( 31 )]
@@ -3722,7 +3723,7 @@ __meta__ = {
 [node name="ColorRect" type="ColorRect" parent="InterfaceLayer/Interface"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 1, 1, 1, 0 )
+color = Color( 0, 0, 0, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

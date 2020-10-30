@@ -20,3 +20,11 @@ func _on_StarMouse_finished():
 func _on_AsteroidDetectionArea2D_area_entered(area):
 	starmouse.queue_free()
 	animator.play("Dead")
+
+
+func _on_ShaderButton_pressed():
+	OS.shell_open("https://itch.io/s/37948/moon-cheeser-blue-moon-update")
+
+
+func _on_LinkButton_pressed():
+	OS.shell_open("https://pigdev.studio/moon-cheeser")

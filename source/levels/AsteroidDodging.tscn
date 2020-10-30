@@ -1,17 +1,18 @@
-[gd_scene load_steps=36 format=2]
+[gd_scene load_steps=42 format=2]
 
 [ext_resource path="res://levels/star_back.png" type="Texture" id=1]
 [ext_resource path="res://actors/astromouse/sprites/AstromouseCharacter.gd" type="Script" id=2]
 [ext_resource path="res://actors/starmouse/StarMouse.tscn" type="PackedScene" id=3]
 [ext_resource path="res://objects/spawners/Spawner2D.tscn" type="PackedScene" id=4]
 [ext_resource path="res://actors/astromouse/sprites/cutout_body.png" type="Texture" id=5]
-[ext_resource path="res://objects/spawners/Spawner2D.gd" type="Script" id=6]
 [ext_resource path="res://objects/comet/Asteroid.tscn" type="PackedScene" id=7]
 [ext_resource path="res://levels/AsteroidDodging.gd" type="Script" id=8]
 [ext_resource path="res://levels/promo.png" type="Texture" id=9]
 [ext_resource path="res://levels/03.faster-pace.ogg" type="AudioStream" id=10]
+[ext_resource path="res://levels/itch Badge.svg" type="Texture" id=11]
 [ext_resource path="res://objects/cheese/FlyingCheese.tscn" type="PackedScene" id=12]
 [ext_resource path="res://objects/spawners/RandomTimer.tscn" type="PackedScene" id=13]
+[ext_resource path="res://interface/ShaderButton.tscn" type="PackedScene" id=14]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends ParallaxBackground
@@ -29,7 +30,7 @@ _data = [ Vector2( 0, 1 ), 0.0, 359.0, 0, 1, Vector2( 1, 360 ), 359.0, 0.0, 1, 0
 [sub_resource type="Curve" id=3]
 _data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.488506, 0.988636 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=4]
 resource_name = "SETUP"
 tracks/0/type = "value"
 tracks/0/path = NodePath("body/arm_r:position")
@@ -236,7 +237,7 @@ tracks/16/keys = {
 "values": [ Vector2( 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=5]
 tracks/0/type = "value"
 tracks/0/path = NodePath("body/arm_r:position")
 tracks/0/interp = 1
@@ -418,7 +419,7 @@ tracks/14/keys = {
 "values": [ Vector2( 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=10]
+[sub_resource type="Animation" id=6]
 length = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("body/arm_r:position")
@@ -601,7 +602,7 @@ tracks/14/keys = {
 "values": [ Vector2( 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=11]
+[sub_resource type="Animation" id=7]
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("body/arm_r:position")
@@ -784,7 +785,7 @@ tracks/14/keys = {
 "values": [ Vector2( 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=12]
+[sub_resource type="Animation" id=8]
 tracks/0/type = "value"
 tracks/0/path = NodePath("body:position")
 tracks/0/interp = 1
@@ -1002,7 +1003,7 @@ tracks/17/keys = {
 "values": [ 51.5935 ]
 }
 
-[sub_resource type="Animation" id=13]
+[sub_resource type="Animation" id=9]
 length = 0.5
 loop = true
 step = 0.05
@@ -1187,7 +1188,7 @@ tracks/14/keys = {
 "values": [ Vector2( 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=14]
+[sub_resource type="Animation" id=10]
 length = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("body/arm_r:position")
@@ -1370,7 +1371,7 @@ tracks/14/keys = {
 "values": [ Vector2( 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=15]
+[sub_resource type="Animation" id=11]
 length = 0.2
 tracks/0/type = "value"
 tracks/0/path = NodePath("body/arm_r:position")
@@ -1565,7 +1566,7 @@ tracks/15/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="Animation" id=16]
+[sub_resource type="Animation" id=12]
 length = 0.2
 tracks/0/type = "value"
 tracks/0/path = NodePath("body/arm_r:position")
@@ -1760,7 +1761,7 @@ tracks/15/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="Animation" id=17]
+[sub_resource type="Animation" id=13]
 length = 0.4
 loop = true
 step = 0.05
@@ -1957,7 +1958,7 @@ tracks/15/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="Animation" id=18]
+[sub_resource type="Animation" id=14]
 length = 0.4
 loop = true
 step = 0.05
@@ -2142,7 +2143,7 @@ tracks/14/keys = {
 "values": [ Vector2( 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=19]
+[sub_resource type="Animation" id=15]
 tracks/0/type = "value"
 tracks/0/path = NodePath("body/arm_r:position")
 tracks/0/interp = 1
@@ -2324,7 +2325,7 @@ tracks/14/keys = {
 "values": [ Vector2( -1, 1 ) ]
 }
 
-[sub_resource type="GDScript" id=24]
+[sub_resource type="GDScript" id=16]
 script/source = "extends Timer
 
 
@@ -2348,7 +2349,7 @@ func _on_RandomTimer_timeout():
 		start(-1)
 "
 
-[sub_resource type="Animation" id=25]
+[sub_resource type="Animation" id=17]
 resource_name = "idle"
 length = 4.0
 loop = true
@@ -2365,7 +2366,7 @@ tracks/0/keys = {
 "values": [ Vector2( 0, 128 ), Vector2( 0, 640 ) ]
 }
 
-[sub_resource type="Animation" id=27]
+[sub_resource type="Animation" id=18]
 resource_name = "idle"
 length = 4.0
 loop = true
@@ -2382,7 +2383,7 @@ tracks/0/keys = {
 "values": [ Vector2( 0, 128 ), Vector2( 0, 640 ) ]
 }
 
-[sub_resource type="Animation" id=26]
+[sub_resource type="Animation" id=19]
 resource_name = "idle"
 length = 4.0
 loop = true
@@ -2537,6 +2538,18 @@ tracks/9/keys = {
 "method": "start"
 } ]
 }
+tracks/10/type = "value"
+tracks/10/path = NodePath("Starmouse/AsteroidDetectionArea2D/CollisionShape2D:disabled")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 
 [sub_resource type="Animation" id=22]
 length = 10.0
@@ -2612,6 +2625,60 @@ tracks/5/keys = {
 "update": 0,
 "values": [ -16.0, -64.0 ]
 }
+tracks/6/type = "method"
+tracks/6/path = NodePath("AsteroidSpawner/Spawner/RandomTimer")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "stop"
+} ]
+}
+tracks/7/type = "method"
+tracks/7/path = NodePath("CheeseSpawner/Spawner/RandomTimer")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "stop"
+} ]
+}
+tracks/8/type = "method"
+tracks/8/path = NodePath("CheeseSpawner2/Spawner/RandomTimer")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "stop"
+} ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Starmouse/AsteroidDetectionArea2D/CollisionShape2D:disabled")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
 
 [sub_resource type="Animation" id=23]
 tracks/0/type = "value"
@@ -2640,6 +2707,26 @@ tracks/1/keys = {
 "method": "restart"
 } ]
 }
+
+[sub_resource type="StyleBoxFlat" id=24]
+bg_color = Color( 0.988235, 0.988235, 0.988235, 0.270588 )
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxEmpty" id=25]
+
+[sub_resource type="StyleBoxEmpty" id=26]
+
+[sub_resource type="StyleBoxEmpty" id=27]
+
+[sub_resource type="StyleBoxFlat" id=28]
+bg_color = Color( 1, 1, 1, 0.0980392 )
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
 
 [node name="Level" type="Node2D"]
 script = ExtResource( 8 )
@@ -2702,18 +2789,18 @@ root_node = NodePath("../sprites")
 autoplay = "float"
 playback_default_blend_time = 0.08
 playback_speed = 0.7
-anims/SETUP = SubResource( 8 )
-anims/dash = SubResource( 9 )
-anims/fall = SubResource( 10 )
-anims/float = SubResource( 11 )
-anims/grab_star = SubResource( 12 )
-anims/idle = SubResource( 13 )
-anims/jump = SubResource( 14 )
-anims/run_fall = SubResource( 15 )
-anims/run_jump = SubResource( 16 )
-anims/running = SubResource( 17 )
-anims/walk = SubResource( 18 )
-anims/wall = SubResource( 19 )
+anims/SETUP = SubResource( 4 )
+anims/dash = SubResource( 5 )
+anims/fall = SubResource( 6 )
+anims/float = SubResource( 7 )
+anims/grab_star = SubResource( 8 )
+anims/idle = SubResource( 9 )
+anims/jump = SubResource( 10 )
+anims/run_fall = SubResource( 11 )
+anims/run_jump = SubResource( 12 )
+anims/running = SubResource( 13 )
+anims/walk = SubResource( 14 )
+anims/wall = SubResource( 15 )
 
 [node name="sprites" type="Node2D" parent="AstromouseCharacter"]
 
@@ -2800,19 +2887,16 @@ region_rect = Rect2( 92, 64, 8, 19 )
 [node name="AsteroidSpawner" type="Node2D" parent="."]
 position = Vector2( 1536, 0 )
 
-[node name="Spawner" type="Position2D" parent="AsteroidSpawner" instance=ExtResource( 4 )]
+[node name="Spawner" parent="AsteroidSpawner" instance=ExtResource( 4 )]
 position = Vector2( 0, 128 )
-script = ExtResource( 6 )
 spawn_scene = ExtResource( 7 )
 
-[node name="RandomTimer" type="Timer" parent="AsteroidSpawner/Spawner" instance=ExtResource( 13 )]
-script = SubResource( 24 )
-min_wait_time = 0.5
-max_wait_time = 1.0
+[node name="RandomTimer" parent="AsteroidSpawner/Spawner" instance=ExtResource( 13 )]
+script = SubResource( 16 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="AsteroidSpawner/Spawner"]
 autoplay = "idle"
-anims/idle = SubResource( 25 )
+anims/idle = SubResource( 17 )
 
 [node name="CheeseSpawner" type="Node2D" parent="."]
 position = Vector2( 1536, 0 )
@@ -2822,14 +2906,14 @@ position = Vector2( 0, 640 )
 spawn_scene = ExtResource( 12 )
 
 [node name="RandomTimer" parent="CheeseSpawner/Spawner" instance=ExtResource( 13 )]
-script = SubResource( 24 )
+script = SubResource( 16 )
 min_wait_time = 2.0
 max_wait_time = 3.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CheeseSpawner/Spawner"]
 autoplay = "idle"
 playback_speed = -1.0
-anims/idle = SubResource( 27 )
+anims/idle = SubResource( 18 )
 
 [node name="CheeseSpawner2" type="Node2D" parent="."]
 position = Vector2( 1536, 0 )
@@ -2839,13 +2923,13 @@ position = Vector2( 0, 128 )
 spawn_scene = ExtResource( 12 )
 
 [node name="RandomTimer" parent="CheeseSpawner2/Spawner" instance=ExtResource( 13 )]
-script = SubResource( 24 )
+script = SubResource( 16 )
 min_wait_time = 2.0
 max_wait_time = 3.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CheeseSpawner2/Spawner"]
 autoplay = "idle"
-anims/idle = SubResource( 26 )
+anims/idle = SubResource( 19 )
 
 [node name="Starmouse" parent="." instance=ExtResource( 3 )]
 position = Vector2( -200, 360 )
@@ -2877,9 +2961,43 @@ layer = 2
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = -1.0
-margin_bottom = -1.0
 texture = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ShaderButton" parent="InterfaceLayer/TextureRect" instance=ExtResource( 14 )]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -149.0
+margin_top = 68.0
+margin_right = 150.0
+margin_bottom = 160.0
+texture_normal = ExtResource( 11 )
+expand = true
+stretch_mode = 5
+
+[node name="ShaderButton2" type="Button" parent="InterfaceLayer/TextureRect" groups=[
+"screen_button",
+]]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -608.0
+margin_top = 304.0
+margin_right = -288.0
+margin_bottom = 344.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/hover = SubResource( 24 )
+custom_styles/pressed = SubResource( 25 )
+custom_styles/focus = SubResource( 26 )
+custom_styles/disabled = SubResource( 27 )
+custom_styles/normal = SubResource( 28 )
+action_mode = 0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -2887,7 +3005,6 @@ __meta__ = {
 [node name="ColorRect" type="ColorRect" parent="InterfaceLayer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-mouse_filter = 2
 color = Color( 0, 0, 0, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -2895,10 +3012,12 @@ __meta__ = {
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 10 )
-volume_db = -16.0
+volume_db = -64.0
 autoplay = true
 [connection signal="timeout" from="AsteroidSpawner/Spawner/RandomTimer" to="AsteroidSpawner/Spawner" method="spawn"]
 [connection signal="timeout" from="CheeseSpawner/Spawner/RandomTimer" to="CheeseSpawner/Spawner" method="spawn"]
 [connection signal="timeout" from="CheeseSpawner2/Spawner/RandomTimer" to="CheeseSpawner2/Spawner" method="spawn"]
 [connection signal="finished" from="Starmouse" to="." method="_on_StarMouse_finished"]
 [connection signal="area_entered" from="Starmouse/AsteroidDetectionArea2D" to="." method="_on_AsteroidDetectionArea2D_area_entered"]
+[connection signal="pressed" from="InterfaceLayer/TextureRect/ShaderButton" to="." method="_on_ShaderButton_pressed"]
+[connection signal="pressed" from="InterfaceLayer/TextureRect/ShaderButton2" to="." method="_on_LinkButton_pressed"]

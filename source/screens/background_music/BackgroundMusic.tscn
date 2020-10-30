@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://screens/background_music/BackgroundMusic.gd" type="Script" id=1]
 [ext_resource path="res://screens/background_music/Bass.ogg" type="AudioStream" id=2]
 [ext_resource path="res://screens/background_music/Drums.ogg" type="AudioStream" id=3]
 [ext_resource path="res://screens/background_music/Pads.ogg" type="AudioStream" id=4]
 [ext_resource path="res://screens/background_music/Harmony.ogg" type="AudioStream" id=5]
+[ext_resource path="res://levels/01.slow-pace.ogg" type="AudioStream" id=6]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Harmony"
@@ -37,7 +38,11 @@ tracks/0/keys = {
 "values": [ -40.0, 0.0 ]
 }
 
-[node name="BackgroundMusic" type="Node"]
+[node name="BackgroundMusic" type="AudioStreamPlayer"]
+stream = ExtResource( 6 )
+volume_db = -16.0
+autoplay = true
+bus = "BGM"
 script = ExtResource( 1 )
 
 [node name="Bass" type="AudioStreamPlayer" parent="."]

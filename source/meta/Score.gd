@@ -9,19 +9,23 @@ var high_score = 0
 func _ready():
 	read_highscore()
 
+
 func set_score(value):
 	current_score = value
 	if current_score > high_score:
 		high_score = current_score
 		write_highscore()
 	emit_signal("scored")
-	
+
+
 func add_score(amount):
 	self.current_score += amount
 
+
 func get_score():
 	return(current_score)
-	
+
+
 func write_highscore():
 	var file = File.new()
 	if file.file_exists(USER_PATH):
@@ -30,6 +34,7 @@ func write_highscore():
 		file.open(USER_PATH, file.WRITE_READ)
 	file.store_var(high_score)
 	file.close()
+
 
 func read_highscore():
 	var file = File.new()

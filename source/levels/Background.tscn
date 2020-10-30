@@ -71,6 +71,7 @@ script = ExtResource( 1 )
 [node name="SouthCross" type="Node2D" parent="." groups=[
 "crux",
 ]]
+modulate = Color( 1.2, 1.2, 1.2, 1 )
 position = Vector2( 1151.57, 159.319 )
 rotation = 0.20069
 scale = Vector2( 0.786583, 0.786583 )
@@ -139,6 +140,7 @@ show_behind_parent = true
 texture = ExtResource( 2 )
 
 [node name="Stars" type="Node2D" parent="."]
+modulate = Color( 1.2, 1.2, 1.2, 1 )
 
 [node name="StarfieldParticles2D" type="CPUParticles2D" parent="Stars"]
 position = Vector2( 640, 360 )
@@ -154,6 +156,7 @@ scale_amount = 0.5
 scale_amount_curve = SubResource( 5 )
 
 [node name="ThreeMaries" type="Node2D" parent="."]
+modulate = Color( 1.2, 1.2, 1.2, 1 )
 
 [node name="Star" type="Sprite" parent="ThreeMaries"]
 show_behind_parent = true

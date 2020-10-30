@@ -12,18 +12,22 @@ func _ready():
 	for button in buttons:
 		button.connect("button_up", self, "_on_button_up", [button])
 
+
 func _on_button_up(button):
 	emit_signal("button_up", button)
+
 
 func fade_in():
 	_fade.fade_in()
 	yield(_fade, "finished")
 	emit_signal("faded")
 
+
 func fade_out():
 	_fade.fade_out()
 	yield(_fade, "finished")
 	emit_signal("faded")
+
 
 func is_fading():
 	var animator = _fade.animator

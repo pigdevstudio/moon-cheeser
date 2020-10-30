@@ -1,4 +1,4 @@
-extends "res://objects/spawners/Spawner.gd"
+extends "Spawner2D.gd"
 
 """
 Spread a random amount of cheeses 
@@ -11,28 +11,40 @@ export (float) var spread = 10 setget set_spread
 export (float) var min_radius = 50
 export (float) var max_radius = 200
 
-func spawn():
-	var cheeses = clamp(randi()%max_cheeses, min_cheeses, max_cheeses)
-	for i in cheeses:
-		var cheese = spawnling.instance()
-		add_child(cheese)
-		cheese.rotation_degrees = rand_range(-spread, spread)
-		cheese.connect("scored", Score, "add_score")
-		cheese.connect("tree_exited", self, "_on_cheese_tree_exited")
-		surge(cheese, rand_range(min_radius, max_radius))
+export var trans_curve = Tween.TRANS_BACK
+export var ease_type = Tween.EASE_OUT
+export var tween_duration = 0.5
 
-func surge(cheese, offset_distance):
-	var tween = $Tween
-	var offset = offset_distance * Vector2(0, -1).rotated(cheese.rotation)
+onready var _tween = $Tween
+
+
+func spawn():
+	var cheeses = randi()%max_cheeses + min_cheeses
+	cheeses = min(cheeses, min_cheeses)
 	
-	tween.interpolate_property(cheese, "position", cheese.position, 
-			cheese.position + offset, 0.5, tween.TRANS_BACK, tween.EASE_OUT)
-	tween.start()
+	var cheese
+	for i in cheeses:
+		cheese = spawn_scene.instance()
+		add_child(cheese)
+		cheese.global_position = global_position
+		cheese.connect("tree_exited", self, "_on_Cheese_tree_exited")
+		surge(cheese)
+	_tween.start()
+	return cheese
+
+
+func surge(cheese):
+	var _distance  = rand_range(min_radius, max_radius)
+	var _spread = deg2rad(rand_range(-spread, spread))
+	var offset = _distance * Vector2(0, -1).rotated(_spread)
+	_tween.interpolate_property(cheese, "position", cheese.position, 
+			cheese.position + offset, tween_duration, trans_curve, ease_type)
+
 
 func set_spread(value):
 	spread = clamp(value, 0, 180)
 
-func _on_cheese_tree_exited():
-	if get_child_count() - 2 > 0:
-		return
-	queue_free() 
+
+func _on_Cheese_tree_exited():
+	if get_child_count() < 1:
+		queue_free()

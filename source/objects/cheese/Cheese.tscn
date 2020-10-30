@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://objects/cheese/Cheese.gd" type="Script" id=1]
 [ext_resource path="res://objects/cheese/cheese.png" type="Texture" id=2]
@@ -7,8 +7,100 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 16.3334, 16.6667 )
 
+[sub_resource type="Animation" id=4]
+resource_name = "SETUP"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Pivot/Sprite:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Shape:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("SFX:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
 [sub_resource type="Animation" id=2]
-resource_name = "pulsing"
+resource_name = "picked"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("SFX:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Shape:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Pivot/Sprite:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/3/type = "method"
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0.2 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "queue_free"
+} ]
+}
+
+[sub_resource type="Animation" id=3]
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Pivot/Sprite:scale")
@@ -38,17 +130,20 @@ shape = SubResource( 1 )
 [node name="Tween" type="Tween" parent="."]
 
 [node name="Animator" type="AnimationPlayer" parent="."]
-autoplay = "pulsing"
-anims/pulsing = SubResource( 2 )
+autoplay = "SETUP"
+anims/SETUP = SubResource( 4 )
+anims/picked = SubResource( 2 )
+anims/pulsing = SubResource( 3 )
 
 [node name="Pivot" type="Position2D" parent="."]
 scale = Vector2( 1.44, 1.44 )
 
 [node name="Sprite" type="Sprite" parent="Pivot"]
-scale = Vector2( 0.1687, 0.1687 )
+scale = Vector2( 0.165565, 0.165565 )
 texture = ExtResource( 2 )
 
-[node name="PickupSound" type="AudioStreamPlayer2D" parent="."]
+[node name="SFX" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 3 )
 volume_db = -16.0
+bus = "SFX"
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]

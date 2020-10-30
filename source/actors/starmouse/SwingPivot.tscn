@@ -4,5 +4,5 @@
 
 [node name="SwingPivot" type="Position2D"]
 script = ExtResource( 1 )
-movement_threshold = 500.0
 
+[node name="Tween" type="Tween" parent="."]

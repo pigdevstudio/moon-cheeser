@@ -33,7 +33,6 @@ custom_constants/margin_bottom = 25
 script = SubResource( 1 )
 
 [node name="Background" parent="ScreenMargin" index="0" instance=ExtResource( 2 )]
-z_index = -1
 
 [node name="ScreenPortions" type="HBoxContainer" parent="ScreenMargin" index="1"]
 margin_left = 25.0
@@ -59,13 +58,13 @@ size_flags_vertical = 3
 [node name="Achievements" parent="ScreenMargin/ScreenPortions/LeftPortion" index="1" instance=ExtResource( 3 )]
 margin_top = 244.0
 margin_right = 407.0
-margin_bottom = 424.0
+margin_bottom = 425.0
 texture_normal = ExtResource( 4 )
 expand = true
 stretch_mode = 3
 
 [node name="BotConstraint" type="Control" parent="ScreenMargin/ScreenPortions/LeftPortion" index="2"]
-margin_top = 488.0
+margin_top = 489.0
 margin_right = 407.0
 margin_bottom = 670.0
 size_flags_vertical = 3
@@ -110,7 +109,6 @@ rotation = -0.341701
 z_index = -1
 
 [node name="head" parent="ScreenMargin/ScreenPortions/CenterPortion/AstromouseCharacter/sprites/body" index="0"]
-position = Vector2( -0.999999, -16.3333 )
 rotation = -0.196236
 z_index = 1
 
@@ -126,7 +124,6 @@ rotation = 0.900476
 rotation = -0.985362
 
 [node name="leg_l" parent="ScreenMargin/ScreenPortions/CenterPortion/AstromouseCharacter/sprites" index="1"]
-position = Vector2( 8.83333, -18 )
 rotation = -0.310613
 z_index = -2
 
@@ -150,16 +147,15 @@ size_flags_vertical = 3
 [node name="Play" parent="ScreenMargin/ScreenPortions/RightPortion" index="1" instance=ExtResource( 3 )]
 margin_top = 244.0
 margin_right = 408.0
-margin_bottom = 424.0
+margin_bottom = 425.0
 texture_normal = ExtResource( 8 )
 expand = true
 stretch_mode = 3
 
 [node name="BotConstraint" type="Control" parent="ScreenMargin/ScreenPortions/RightPortion" index="2"]
-margin_top = 488.0
+margin_top = 489.0
 margin_right = 408.0
 margin_bottom = 670.0
 size_flags_vertical = 3
-
 
 [editable path="ScreenMargin/ScreenPortions/CenterPortion/AstromouseCharacter"]

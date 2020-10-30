@@ -26,4 +26,3 @@ custom_colors/font_color = Color( 1, 0.901961, 0.501961, 1 )
 text = "Score: 0"
 align = 1
 script = ExtResource( 3 )
-

@@ -1,115 +1,55 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://screens/Screen.tscn" type="PackedScene" id=1]
+[ext_resource path="res://interface/FadeRect.tscn" type="PackedScene" id=1]
 [ext_resource path="res://screens/score_screen/ScoreScreen.gd" type="Script" id=2]
 [ext_resource path="res://levels/Background.tscn" type="PackedScene" id=3]
 [ext_resource path="res://interface/fonts/garoa_hacker_76.tres" type="DynamicFont" id=4]
 [ext_resource path="res://interface/ShaderButton.tscn" type="PackedScene" id=5]
-[ext_resource path="res://screens/score_screen/retry_normal.png" type="Texture" id=6]
-[ext_resource path="res://screens/score_screen/back_normal.png" type="Texture" id=7]
+[ext_resource path="res://interface/RetryButton.svg" type="Texture" id=7]
 
-[node name="ScoreScreen" instance=ExtResource( 1 )]
-script = ExtResource( 2 )
-
-[node name="Background" parent="." index="0" instance=ExtResource( 3 )]
-editor/display_folded = true
-z_index = -1
-
-[node name="Stars" parent="Background" index="1"]
-z_index = -1
-
-[node name="Earth" parent="Background/Planets" index="0"]
-position = Vector2( 116.963, 313.877 )
-
-[node name="Plinthon" parent="Background/Planets" index="1"]
-position = Vector2( 1024.13, 496.672 )
-
-[node name="MarginContainer" type="MarginContainer" parent="." index="1"]
+[node name="ScoreScreen" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-custom_constants/margin_right = 25
-custom_constants/margin_top = 128
-custom_constants/margin_left = 25
-custom_constants/margin_bottom = 128
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+game_scene_path = "res://Game.tscn"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" index="0"]
-margin_left = 25.0
+[node name="ScoreLabel" type="Label" parent="."]
+anchor_right = 1.0
 margin_top = 128.0
-margin_right = 1255.0
-margin_bottom = 592.0
-mouse_filter = 0
-size_flags_vertical = 3
-
-[node name="HBoxConttainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" index="0"]
-margin_right = 1230.0
-margin_bottom = 156.0
-
-[node name="LeftPadding" type="ReferenceRect" parent="MarginContainer/VBoxContainer/HBoxConttainer" index="0"]
-margin_right = 407.0
-margin_bottom = 156.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="Labels" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxConttainer" index="1"]
-margin_left = 411.0
-margin_right = 818.0
-margin_bottom = 156.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="Score" type="Label" parent="MarginContainer/VBoxContainer/HBoxConttainer/Labels" index="0"]
-margin_right = 407.0
-margin_bottom = 76.0
-mouse_filter = 1
-size_flags_horizontal = 3
-size_flags_vertical = 1
+margin_bottom = 204.0
 custom_fonts/font = ExtResource( 4 )
-custom_colors/font_color = Color( 1, 0.901961, 0.501961, 1 )
-text = "Score:"
-valign = 1
+text = "Your score:"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="Highscore" type="Label" parent="MarginContainer/VBoxContainer/HBoxConttainer/Labels" index="1"]
-margin_top = 80.0
-margin_right = 407.0
-margin_bottom = 156.0
-mouse_filter = 1
-size_flags_horizontal = 3
-size_flags_vertical = 1
+[node name="HighScoreLabel" type="Label" parent="."]
+anchor_right = 1.0
+margin_top = 368.0
+margin_bottom = 444.0
 custom_fonts/font = ExtResource( 4 )
-custom_colors/font_color = Color( 1, 0.901961, 0.501961, 1 )
-text = "Highscore:"
-valign = 1
+text = "Your score:"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="RightPadding" type="ReferenceRect" parent="MarginContainer/VBoxContainer/HBoxConttainer" index="2"]
-margin_left = 822.0
-margin_right = 1230.0
-margin_bottom = 156.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="ReferenceRect" type="ReferenceRect" parent="MarginContainer/VBoxContainer" index="1"]
-margin_top = 160.0
-margin_right = 1230.0
-margin_bottom = 280.0
-size_flags_vertical = 3
-
-[node name="Retry" parent="MarginContainer/VBoxContainer" index="2" instance=ExtResource( 5 )]
-margin_top = 284.0
-margin_right = 1230.0
-margin_bottom = 464.0
-rect_min_size = Vector2( 0, 180 )
-texture_normal = ExtResource( 6 )
-expand = true
-stretch_mode = 5
-
-[node name="Back" parent="." index="2" instance=ExtResource( 5 )]
-margin_left = 25.0
-margin_top = 25.0
-margin_right = 157.0
-margin_bottom = 97.0
+[node name="RetryButton" parent="." instance=ExtResource( 5 )]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -63.5
+margin_top = -200.0
+margin_right = 63.5
+margin_bottom = -73.0
 texture_normal = ExtResource( 7 )
 
+[node name="FadeRect" parent="." instance=ExtResource( 1 )]
 
-[editable path="Background"]
+[node name="Background" parent="." instance=ExtResource( 3 )]
+[connection signal="pressed" from="RetryButton" to="." method="_on_RetryButton_pressed"]

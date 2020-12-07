@@ -1,9 +1,9 @@
-[gd_scene load_steps=93 format=2]
+[gd_scene load_steps=92 format=2]
 
 [ext_resource path="res://actors/astromouse/sprites/AstromouseCharacter.gd" type="Script" id=1]
-[ext_resource path="res://objects/planets/plinton.tscn" type="PackedScene" id=2]
+[ext_resource path="res://objects/planets/planets.svg" type="Texture" id=2]
 [ext_resource path="res://objects/comet/damage-shader-animation.tres" type="Animation" id=3]
-[ext_resource path="res://screens/title_screen/moon.png" type="Texture" id=4]
+[ext_resource path="res://objects/gravity_bodies/moon/moon.svg" type="Texture" id=4]
 [ext_resource path="res://objects/gravity_bodies/moon/moon_gravity.png" type="Texture" id=5]
 [ext_resource path="res://actors/starmouse/star.png" type="Texture" id=6]
 [ext_resource path="res://actors/astromouse/Animations/Dash.tres" type="Animation" id=7]
@@ -25,7 +25,6 @@
 [ext_resource path="res://objects/comet/puff.png" type="Texture" id=23]
 [ext_resource path="res://objects/space_flying_bodies/star/sprite_animation.tres" type="SpriteFrames" id=24]
 [ext_resource path="res://objects/comet/asteroid-great.svg" type="Texture" id=25]
-[ext_resource path="res://objects/planets/earth.tscn" type="PackedScene" id=26]
 [ext_resource path="res://levels/starboy_crux.png" type="Texture" id=27]
 [ext_resource path="res://levels/star_back.png" type="Texture" id=28]
 [ext_resource path="res://objects/spawners/CheeseSpawner.tscn" type="PackedScene" id=29]
@@ -3094,7 +3093,7 @@ position = Vector2( -64, 448 )
 scale = Vector2( 0.5, 0.5 )
 frames = ExtResource( 24 )
 animation = "flying"
-frame = 2
+frame = 1
 playing = true
 offset = Vector2( -160, 0 )
 
@@ -3272,7 +3271,6 @@ position = Vector2( 648, 488 )
 z_index = -1
 
 [node name="Pivot" type="Position2D" parent="WorldLayer/World/Moon"]
-rotation = 2.35619
 
 [node name="Atmosphere" type="Sprite" parent="WorldLayer/World/Moon/Pivot"]
 texture = ExtResource( 5 )
@@ -3376,14 +3374,20 @@ motion_scale = Vector2( 1, 0.5 )
 [node name="Planets" type="Node2D" parent="WorldLayer/World/Background/ParallaxLayer"]
 z_index = -5
 
-[node name="Earth" parent="WorldLayer/World/Background/ParallaxLayer/Planets" instance=ExtResource( 26 )]
-position = Vector2( 140, 115.072 )
-rotation = -0.359986
+[node name="Sprite" type="Sprite" parent="WorldLayer/World/Background/ParallaxLayer/Planets"]
+position = Vector2( 176, -176 )
+rotation = -0.238229
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 16, 22, 256, 256 )
 
-[node name="Plinthon" parent="WorldLayer/World/Background/ParallaxLayer/Planets" instance=ExtResource( 2 )]
-position = Vector2( 1066.88, 496.672 )
-rotation = -0.0108607
-z_index = 0
+[node name="Sprite2" type="Sprite" parent="WorldLayer/World/Background/ParallaxLayer/Planets"]
+position = Vector2( 1144, 520 )
+rotation = 0.232593
+scale = Vector2( 0.804539, 0.804539 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 756, 25, 256, 256 )
 
 [node name="Cheeses" type="Node2D" parent="WorldLayer/World/Background/ParallaxLayer"]
 position = Vector2( 0, -40 )

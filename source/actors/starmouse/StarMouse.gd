@@ -9,7 +9,6 @@ export var duration = 5.0
 var _direction = Vector2(0, 0)
 var _velocity = Vector2(0, 0)
 
-onready var particles = $Sprites/Particles
 onready var character = $Sprites/SwingPivot/AstromouseCharacter
 onready var pivot = $Sprites/SwingPivot
 onready var animator = $AnimationPlayer
@@ -30,9 +29,6 @@ func _physics_process(delta):
 func move():
 	var delta = get_physics_process_delta_time()
 	steer()
-	
-	particles.rotation = -_direction.angle()
-	particles.emitting = _velocity.length() > 100
 	pivot.movement_velocity = _velocity
 	
 	translate(_velocity * delta)

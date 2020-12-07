@@ -1,7 +1,7 @@
 extends Control
 
-onready var description = $MarginContainer/VBoxContainer/Description setget set_description, get_description
-onready var title = $MarginContainer/VBoxContainer/Title setget set_title, get_title
+onready var description = $Description setget set_description, get_description
+onready var title = $Title setget set_title, get_title
 
 func _ready():
 	Achievements.read_achievements()
@@ -20,9 +20,11 @@ func display(achievement):
 	set_description(description_text)
 	show()
 
+
 func set_title(new_title):
 	title.text = new_title.to_lower()
-	
+
+
 func get_title():
 	return title.text
 

@@ -1,13 +1,13 @@
 [gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://objects/cheese/Cheese.gd" type="Script" id=1]
-[ext_resource path="res://objects/cheese/cheese.png" type="Texture" id=2]
+[ext_resource path="res://objects/cheese/cheese.svg" type="Texture" id=2]
 [ext_resource path="res://objects/cheese/pickup.wav" type="AudioStream" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 16.3334, 16.6667 )
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=5]
 resource_name = "SETUP"
 tracks/0/type = "value"
 tracks/0/path = NodePath("Pivot/Sprite:visible")
@@ -46,8 +46,7 @@ tracks/2/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="Animation" id=2]
-resource_name = "picked"
+[sub_resource type="Animation" id=6]
 length = 0.2
 tracks/0/type = "value"
 tracks/0/path = NodePath("SFX:playing")
@@ -100,19 +99,19 @@ tracks/3/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=4]
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("Pivot/Sprite:scale")
+tracks/0/path = NodePath("Pivot:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0, 0.5 ),
-"transitions": PoolRealArray( -1.68179, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0.147222, 0.147222 ), Vector2( 0.200615, 0.200615 ) ]
+"values": [ Vector2( 1, 1 ), Vector2( 1.2, 1.2 ) ]
 }
 
 [node name="Cheese" type="Area2D" groups=[
@@ -122,7 +121,7 @@ z_index = 1
 collision_layer = 0
 collision_mask = 2
 script = ExtResource( 1 )
-score = 35
+score = 15
 
 [node name="Shape" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
@@ -131,15 +130,15 @@ shape = SubResource( 1 )
 
 [node name="Animator" type="AnimationPlayer" parent="."]
 autoplay = "SETUP"
-anims/SETUP = SubResource( 4 )
-anims/picked = SubResource( 2 )
-anims/pulsing = SubResource( 3 )
+anims/SETUP = SubResource( 5 )
+anims/picked = SubResource( 6 )
+anims/pulsing = SubResource( 4 )
 
 [node name="Pivot" type="Position2D" parent="."]
-scale = Vector2( 1.44, 1.44 )
+scale = Vector2( 1.16518, 1.16518 )
 
 [node name="Sprite" type="Sprite" parent="Pivot"]
-scale = Vector2( 0.165565, 0.165565 )
+scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 2 )
 
 [node name="SFX" type="AudioStreamPlayer2D" parent="."]

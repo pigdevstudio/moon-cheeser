@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="128"
+   height="24"
+   viewBox="0 0 33.866666 6.3500001"
+   version="1.1"
+   id="svg1221"
+   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)"
+   sodipodi:docname="spacebar.svg"
+   inkscape:export-filename="/home/henrique/Documents/Pigdev/Studio/Moon Cheeser/Repository/releases/assets-pack/graphics/blackhole/blackhole.png"
+   inkscape:export-xdpi="192.00002"
+   inkscape:export-ydpi="192.00002">
+  <defs
+     id="defs1215">
+    <inkscape:path-effect
+       effect="powerstroke"
+       id="path-effect1147"
+       is_visible="true"
+       offset_points="0.039158264,-0.1170313 | 2.5515264,-10.238634 | 4.8904272,-0.4278191"
+       sort_points="true"
+       interpolator_type="CubicBezierFit"
+       interpolator_beta="0.2"
+       start_linecap_type="butt"
+       linejoin_type="extrp_arc"
+       miter_limit="4"
+       end_linecap_type="butt"
+       lpeversion="0"
+       scale_width="1" />
+    <inkscape:path-effect
+       end_linecap_type="butt"
+       miter_limit="4"
+       linejoin_type="extrp_arc"
+       start_linecap_type="butt"
+       interpolator_beta="0.2"
+       interpolator_type="CubicBezierFit"
+       sort_points="true"
+       offset_points="0.039158264,-0.1170313 | 2.5515264,-10.238634 | 4.8904272,-0.4278191"
+       is_visible="true"
+       id="path-effect1151"
+       effect="powerstroke"
+       lpeversion="0"
+       scale_width="1" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#3d3d3d"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="3.9782585"
+     inkscape:cx="114.09204"
+     inkscape:cy="-17.265687"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     units="px"
+     inkscape:snap-page="true"
+     inkscape:snap-bbox="true"
+     inkscape:bbox-nodes="true"
+     inkscape:window-width="1920"
+     inkscape:window-height="1022"
+     inkscape:window-x="0"
+     inkscape:window-y="30"
+     inkscape:window-maximized="1"
+     inkscape:document-rotation="0"
+     inkscape:snap-global="false" />
+  <metadata
+     id="metadata1218">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-7.4863646,-245.65211)">
+    <g
+       id="g850"
+       transform="matrix(0.61077355,0,0,0.61427716,2.9138911,104.68171)">
+      <path
+         id="path843"
+         style="fill:#cccccc;stroke:none;stroke-width:0.999999px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         sodipodi:type="inkscape:offset"
+         inkscape:radius="2.0722637"
+         inkscape:original="M 34.150391 2.9160156 L 30.367188 11.074219 L 30.367188 37.841797 L 235.79297 37.841797 L 235.79297 11.074219 L 232.00977 2.9160156 L 34.150391 2.9160156 z "
+         d="m 34.150391,0.84375 a 2.0724709,2.0724709 0 0 0 -1.88086,1.2011719 l -3.783203,8.1582031 a 2.0724709,2.0724709 0 0 0 -0.191406,0.871094 v 26.767578 a 2.0724709,2.0724709 0 0 0 2.072266,2.072265 H 235.79297 a 2.0724709,2.0724709 0 0 0 2.07226,-2.072265 V 11.074219 a 2.0724709,2.0724709 0 0 0 -0.1914,-0.871094 L 233.89062,2.0449219 A 2.0724709,2.0724709 0 0 0 232.00977,0.84375 Z"
+         transform="matrix(0.26458333,0,0,0.26458333,0,229.26665)" />
+      <rect
+         style="fill:#ffffff;stroke:none;stroke-width:1.54279;stroke-linecap:round"
+         id="rect839"
+         width="52.350082"
+         height="7.0820804"
+         x="9.0358143"
+         y="229.50882" />
+    </g>
+  </g>
+</svg>

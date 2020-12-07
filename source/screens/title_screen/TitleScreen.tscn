@@ -1,161 +1,127 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
-[ext_resource path="res://screens/Screen.tscn" type="PackedScene" id=1]
+[ext_resource path="res://interface/themes/main_theme.tres" type="Theme" id=1]
 [ext_resource path="res://levels/Background.tscn" type="PackedScene" id=2]
 [ext_resource path="res://interface/ShaderButton.tscn" type="PackedScene" id=3]
-[ext_resource path="res://screens/title_screen/achievement_button.png" type="Texture" id=4]
-[ext_resource path="res://screens/title_screen/title.png" type="Texture" id=5]
-[ext_resource path="res://screens/title_screen/moon.png" type="Texture" id=6]
-[ext_resource path="res://actors/astromouse/sprites/AstromouseCharacter.tscn" type="PackedScene" id=7]
-[ext_resource path="res://screens/title_screen/play_button.png" type="Texture" id=8]
+[ext_resource path="res://interface/AchievementsButton.svg" type="Texture" id=4]
+[ext_resource path="res://interface/PlayButton.svg" type="Texture" id=5]
+[ext_resource path="res://objects/gravity_bodies/moon/moon.svg" type="Texture" id=6]
+[ext_resource path="res://objects/gravity_bodies/moon/gravity-field.svg" type="Texture" id=7]
+[ext_resource path="res://screens/title_screen/TitleScreen.gd" type="Script" id=8]
+[ext_resource path="res://interface/FadeRect.tscn" type="PackedScene" id=9]
 
-[sub_resource type="GDScript" id=1]
-script/source = "extends MarginContainer
+[sub_resource type="ViewportTexture" id=1]
+flags = 5
+viewport_path = NodePath("Viewport")
 
-func _ready():
-	set_process(false)
-	
-func _process(delta):
-#	set_size(OS.get_window_size())
-	pass"
+[sub_resource type="Animation" id=2]
+length = 8.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 360.0, 0.0 ]
+}
 
-[node name="TitleScreen" instance=ExtResource( 1 )]
-
-[node name="ScreenMargin" type="MarginContainer" parent="." index="0"]
+[node name="TitleScreen" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-custom_constants/margin_right = 25
-custom_constants/margin_top = 25
-custom_constants/margin_left = 25
-custom_constants/margin_bottom = 25
-script = SubResource( 1 )
+mouse_filter = 2
+theme = ExtResource( 1 )
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+game_scene = "res://Game.tscn"
+achievements_scene = "res://screens/achievements_screen/AchievementsScreen.tscn"
 
-[node name="Background" parent="ScreenMargin" index="0" instance=ExtResource( 2 )]
+[node name="Viewport" type="Viewport" parent="."]
+size = Vector2( 1280, 720 )
+transparent_bg = true
+usage = 0
+render_target_v_flip = true
+render_target_update_mode = 3
 
-[node name="ScreenPortions" type="HBoxContainer" parent="ScreenMargin" index="1"]
-margin_left = 25.0
-margin_top = 25.0
-margin_right = 1255.0
-margin_bottom = 695.0
-mouse_filter = 0
+[node name="Background" parent="Viewport" instance=ExtResource( 2 )]
 
-[node name="LeftPortion" type="VBoxContainer" parent="ScreenMargin/ScreenPortions" index="0"]
-margin_right = 407.0
-margin_bottom = 670.0
-mouse_filter = 0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-custom_constants/separation = 64
-alignment = 1
-
-[node name="TopConstraint" type="Control" parent="ScreenMargin/ScreenPortions/LeftPortion" index="0"]
-margin_right = 407.0
-margin_bottom = 180.0
-size_flags_vertical = 3
-
-[node name="Achievements" parent="ScreenMargin/ScreenPortions/LeftPortion" index="1" instance=ExtResource( 3 )]
-margin_top = 244.0
-margin_right = 407.0
-margin_bottom = 425.0
-texture_normal = ExtResource( 4 )
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = SubResource( 1 )
 expand = true
-stretch_mode = 3
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="BotConstraint" type="Control" parent="ScreenMargin/ScreenPortions/LeftPortion" index="2"]
-margin_top = 489.0
-margin_right = 407.0
-margin_bottom = 670.0
-size_flags_vertical = 3
-
-[node name="CenterPortion" type="VBoxContainer" parent="ScreenMargin/ScreenPortions" index="1"]
-margin_left = 411.0
-margin_right = 818.0
-margin_bottom = 670.0
-mouse_filter = 0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-custom_constants/separation = -20
-alignment = 1
-
-[node name="Credits" parent="ScreenMargin/ScreenPortions/CenterPortion" index="0" instance=ExtResource( 3 )]
-margin_right = 407.0
-margin_bottom = 345.0
+[node name="PlayButton" parent="." instance=ExtResource( 3 )]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -256.0
+margin_top = -63.5
+margin_right = -129.0
+margin_bottom = 63.5
 texture_normal = ExtResource( 5 )
-expand = true
-stretch_mode = 3
 
-[node name="Moon" type="TextureButton" parent="ScreenMargin/ScreenPortions/CenterPortion" index="1"]
-margin_top = 325.0
-margin_right = 407.0
-margin_bottom = 670.0
-mouse_filter = 1
+[node name="AchievementsButton" parent="." instance=ExtResource( 3 )]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 128.0
+margin_top = -63.5
+margin_right = 263.0
+margin_bottom = 63.5
+texture_normal = ExtResource( 4 )
+
+[node name="Moon" type="TextureRect" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -184.0
+margin_top = -32.0
+margin_right = 184.0
+margin_bottom = 336.0
+rect_rotation = 360.0
+rect_pivot_offset = Vector2( 184, 184 )
+mouse_filter = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-texture_normal = ExtResource( 6 )
+texture = ExtResource( 6 )
 expand = true
-stretch_mode = 5
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="AstromouseCharacter" parent="ScreenMargin/ScreenPortions/CenterPortion" index="2" instance=ExtResource( 7 )]
-position = Vector2( 249.641, 245.345 )
-scale = Vector2( 2, 2 )
+[node name="TextureRect" type="TextureRect" parent="Moon"]
+show_behind_parent = true
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -288.0
+margin_top = -288.0
+margin_right = 288.0
+margin_bottom = 288.0
+rect_pivot_offset = Vector2( 288, 288 )
+texture = ExtResource( 7 )
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="animator" parent="ScreenMargin/ScreenPortions/CenterPortion/AstromouseCharacter" index="0"]
-autoplay = "grab_star"
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Moon"]
+autoplay = "Spin"
+anims/Spin = SubResource( 2 )
 
-[node name="body" parent="ScreenMargin/ScreenPortions/CenterPortion/AstromouseCharacter/sprites" index="0"]
-rotation = -0.341701
-z_index = -1
-
-[node name="head" parent="ScreenMargin/ScreenPortions/CenterPortion/AstromouseCharacter/sprites/body" index="0"]
-rotation = -0.196236
-z_index = 1
-
-[node name="arm_l" parent="ScreenMargin/ScreenPortions/CenterPortion/AstromouseCharacter/sprites/body" index="1"]
-position = Vector2( 6.66666, -18.3333 )
-rotation = -2.32146
-
-[node name="arm_r" parent="ScreenMargin/ScreenPortions/CenterPortion/AstromouseCharacter/sprites/body" index="2"]
-position = Vector2( -9.5, -16.3333 )
-rotation = 0.900476
-
-[node name="tail" parent="ScreenMargin/ScreenPortions/CenterPortion/AstromouseCharacter/sprites/body" index="3"]
-rotation = -0.985362
-
-[node name="leg_l" parent="ScreenMargin/ScreenPortions/CenterPortion/AstromouseCharacter/sprites" index="1"]
-rotation = -0.310613
-z_index = -2
-
-[node name="leg_r" parent="ScreenMargin/ScreenPortions/CenterPortion/AstromouseCharacter/sprites" index="2"]
-position = Vector2( -2.66667, -18.6667 )
-rotation = 0.134831
-
-[node name="RightPortion" type="VBoxContainer" parent="ScreenMargin/ScreenPortions" index="2"]
-margin_left = 822.0
-margin_right = 1230.0
-margin_bottom = 670.0
-mouse_filter = 0
-size_flags_horizontal = 3
-custom_constants/separation = 64
-
-[node name="TopConstraint" type="Control" parent="ScreenMargin/ScreenPortions/RightPortion" index="0"]
-margin_right = 408.0
-margin_bottom = 180.0
-size_flags_vertical = 3
-
-[node name="Play" parent="ScreenMargin/ScreenPortions/RightPortion" index="1" instance=ExtResource( 3 )]
-margin_top = 244.0
-margin_right = 408.0
-margin_bottom = 425.0
-texture_normal = ExtResource( 8 )
-expand = true
-stretch_mode = 3
-
-[node name="BotConstraint" type="Control" parent="ScreenMargin/ScreenPortions/RightPortion" index="2"]
-margin_top = 489.0
-margin_right = 408.0
-margin_bottom = 670.0
-size_flags_vertical = 3
-
-[editable path="ScreenMargin/ScreenPortions/CenterPortion/AstromouseCharacter"]
+[node name="FadeRect" parent="." instance=ExtResource( 9 )]
+[connection signal="pressed" from="PlayButton" to="." method="_on_PlayButton_pressed"]
+[connection signal="pressed" from="AchievementsButton" to="." method="_on_AchievementsButton_pressed"]

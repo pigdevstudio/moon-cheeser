@@ -12,12 +12,11 @@ export (PackedScene) var next_screen = preload(TITLE_SCREEN_PATH)
 func _ready():
 	var current_screen = get_child(0)
 	current_screen.fade_in()
-	
+
+
 func change_screen(new_screen = next_screen):
 	var current_screen = get_child(0)
-	if current_screen.is_fading():
-		return
-	
+
 	current_screen.fade_out()
 	yield(current_screen, "faded")
 	current_screen.queue_free()
@@ -28,7 +27,8 @@ func change_screen(new_screen = next_screen):
 	new_screen.connect("button_up", self, "_on_Screen_button_up")
 	
 	emit_signal("screen_changed", new_screen)
-	
+
+
 func _on_Screen_button_up(button):
 	var screen_path = ""
 	

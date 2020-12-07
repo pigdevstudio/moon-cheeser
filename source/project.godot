@@ -33,7 +33,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Moon Cheeser"
-run/main_scene="res://MoonCheeser.tscn"
+run/main_scene="res://screens/title_screen/TitleScreen.tscn"
 config/icon="res://icon.png"
 
 [autoload]
@@ -41,7 +41,6 @@ config/icon="res://icon.png"
 BGM="*res://screens/background_music/BackgroundMusic.tscn"
 Score="*res://meta/Score.tscn"
 Achievements="*res://meta/achievements/AchievementsDictionary.tscn"
-Globals="*res://Globals.tscn"
 
 [debug]
 
@@ -54,7 +53,6 @@ window/size/width=1280
 window/size/height=720
 window/size/fullscreen=true
 window/handheld/orientation="sensor_landscape"
-mouse_cursor/custom_image="res://interface/hand_point.png"
 window/stretch/mode="2d"
 window/stretch/aspect="keep_width"
 driver/name="GLES2"

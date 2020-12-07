@@ -1,13 +1,13 @@
 extends Node2D
 
-signal game_over
+signal astromouse_died
 
 var _starmouse
 var _blackhole
 
 onready var _astromouse = $Astromouse
 onready var _moon = $Moon
-onready var _jump_input_area = $Moon/JumpArea2D
+onready var _jump_input_area = $JumpArea2D
 onready var _blackhole_timer = $BlackholeSpawner/RandomTimer
 onready var _starmouse_spawner = $StarmouseSpawner
 onready var _supernova_spawner = $SupernovaSpawner
@@ -43,7 +43,10 @@ func _on_JumpArea2D_input_event(viewport, event, shape_idx):
 	if not event.is_action("click"):
 		return
 	if event.is_pressed():
-		_astromouse.jump.execute()
+		if _blackhole:
+			_moon.pull()
+		else:
+			_astromouse.jump.execute()
 	else:
 		_astromouse.jump.cancel()
 
@@ -51,7 +54,7 @@ func _on_JumpArea2D_input_event(viewport, event, shape_idx):
 func _on_Astromouse_died():
 	_jump_input_area.set_pickable(false)
 	set_physics_process(false)
-	emit_signal("game_over")
+	emit_signal("astromouse_died")
 
 
 func _on_Astromouse_tree_exited():
@@ -63,6 +66,7 @@ func _on_BlackholeSpawner_spawned(spawn):
 	_blackhole = spawn
 	_blackhole.connect("finished", self, "_on_Blackhole_finished")
 	_blackhole.connect("event_horizon_entered", self, "_on_Astromouse_died")
+	
 	if not _astromouse.is_inside_tree():
 		return
 	_setup_blackhole()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://actors/starmouse/StarMouse.gd" type="Script" id=1]
 [ext_resource path="res://actors/starmouse/MouseSpotter.gd" type="Script" id=3]
@@ -16,15 +16,40 @@ _data = {
 "points": PoolVector2Array( 0, 118, 0, -118, 0, 0, 42.5, -30.5, -20, -4, 40, -24, 0, 0, 0, 0, 32, -40 )
 }
 
-[sub_resource type="Curve" id=3]
-max_value = 1.5
-_data = [ Vector2( 0.254996, 1 ), 0.0, 3.41493, 0, 0, Vector2( 0.993856, 1.27572 ), 0.373164, 0.0, 1, 0 ]
-
-[sub_resource type="Gradient" id=4]
-offsets = PoolRealArray( 0.397297, 1 )
+[sub_resource type="Gradient" id=3]
+offsets = PoolRealArray( 0.807407, 1 )
 colors = PoolColorArray( 0.666667, 0.666667, 1, 1, 0.666667, 0.666667, 1, 0 )
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="GradientTexture" id=4]
+gradient = SubResource( 3 )
+
+[sub_resource type="Curve" id=5]
+min_value = -1.0
+_data = [ Vector2( 0, 0.109091 ), 0.0, 0.0, 0, 0, Vector2( 1, -0.181818 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=6]
+curve = SubResource( 5 )
+
+[sub_resource type="Curve" id=7]
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=8]
+curve = SubResource( 7 )
+
+[sub_resource type="ParticlesMaterial" id=9]
+emission_shape = 1
+emission_sphere_radius = 32.0
+flag_disable_z = true
+gravity = Vector3( 0, 0, 0 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+radial_accel = -200.0
+scale_curve = SubResource( 8 )
+color_ramp = SubResource( 4 )
+hue_variation_random = 1.0
+hue_variation_curve = SubResource( 6 )
+
+[sub_resource type="Animation" id=10]
 length = 2.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprites/Path2D/PathFollow2D/Star:visible")
@@ -180,20 +205,20 @@ use_parent_material = true
 scale = Vector2( 0.8, 0.8 )
 texture = ExtResource( 4 )
 
-[node name="Particles" type="CPUParticles2D" parent="Sprites"]
-position = Vector2( 0, 28 )
-z_index = -3
-local_coords = false
-draw_order = 1
+[node name="Particles2D2" type="Particles2D" parent="Sprites/Path2D/PathFollow2D/Star"]
+modulate = Color( 1.1, 1.1, 1.1, 1 )
+show_behind_parent = true
+scale = Vector2( 1.6, 1.6 )
+amount = 16
+process_material = SubResource( 9 )
 texture = ExtResource( 5 )
-spread = 60.0
-gravity = Vector2( 0, 0 )
-initial_velocity = 150.0
-initial_velocity_random = 0.42
-linear_accel = 8.0
-scale_amount_random = 1.0
-scale_amount_curve = SubResource( 3 )
-color_ramp = SubResource( 4 )
+
+[node name="Particles2D" type="Particles2D" parent="Sprites/Path2D/PathFollow2D/Star"]
+modulate = Color( 1.1, 1.1, 1.1, 1 )
+amount = 64
+local_coords = false
+process_material = SubResource( 9 )
+texture = ExtResource( 5 )
 
 [node name="SwingPivot" parent="Sprites" instance=ExtResource( 6 )]
 use_parent_material = true
@@ -206,8 +231,8 @@ position = Vector2( -14.6667, 64.8889 )
 achievement_name = "starmouse"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/Disappear = SubResource( 5 )
-[connection signal="ready" from="." to="StarmouseAchievement" method="increase_achievement_progress"]
+anims/Disappear = SubResource( 10 )
+[connection signal="ready" from="." to="StarmouseAchievement" method="increase_progress"]
 [connection signal="timeout" from="Duration" to="." method="_on_Duration_timeout"]
 [connection signal="mouse_found" from="MouseSpotter" to="." method="seek"]
 [connection signal="mouse_lost" from="MouseSpotter" to="." method="stop"]

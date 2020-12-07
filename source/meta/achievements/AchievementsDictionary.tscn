@@ -5,4 +5,3 @@
 [node name="AchievementsDict" type="Node"]
 script = ExtResource( 1 )
 FILE_PATH = "res://meta/achievements/achievements.json"
-

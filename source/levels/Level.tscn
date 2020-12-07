@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://levels/Background.tscn" type="PackedScene" id=1]
 [ext_resource path="res://objects/spawners/Spawner2D.tscn" type="PackedScene" id=2]
@@ -12,6 +12,10 @@
 [ext_resource path="res://actors/starmouse/StarMouse.tscn" type="PackedScene" id=10]
 [ext_resource path="res://objects/supernova/Supernova.tscn" type="PackedScene" id=11]
 [ext_resource path="res://objects/space_flying_bodies/comet/Comet.tscn" type="PackedScene" id=12]
+[ext_resource path="res://levels/Tutorial/hand.svg" type="Texture" id=13]
+[ext_resource path="res://levels/Tutorial.gd" type="Script" id=14]
+[ext_resource path="res://meta/achievements/TutorialAchievement.tscn" type="PackedScene" id=15]
+[ext_resource path="res://objects/planets/planets.svg" type="Texture" id=16]
 
 [sub_resource type="Environment" id=1]
 background_mode = 4
@@ -105,6 +109,240 @@ tracks/0/keys = {
 "values": [ Vector2( 0, 128 ), Vector2( 0, 640 ) ]
 }
 
+[sub_resource type="SegmentShape2D" id=8]
+b = Vector2( 0, 720 )
+
+[sub_resource type="Animation" id=9]
+resource_name = "Comet"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("GodHandLeft/Sprite:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4, 0.5 ),
+"transitions": PoolRealArray( 0.5, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 20.0, 15.0 ]
+}
+
+[sub_resource type="Animation" id=10]
+resource_name = "Finished"
+length = 0.5
+tracks/0/type = "method"
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "queue_free"
+} ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath("../LeftStarSpawnPoint/Spawner/RandomTimer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ -1 ],
+"method": "start"
+} ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath("../LeftCometSpawnPoint/Spawner/RandomTimer")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ -1 ],
+"method": "start"
+} ]
+}
+tracks/3/type = "method"
+tracks/3/path = NodePath("../RightStarSpawnPoint/Spawner/RandomTimer")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ -1 ],
+"method": "start"
+} ]
+}
+tracks/4/type = "method"
+tracks/4/path = NodePath("../RighCometSpawnPoint/Spawner/RandomTimer")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ -1 ],
+"method": "start"
+} ]
+}
+
+[sub_resource type="Animation" id=11]
+resource_name = "Overlay"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("BlackBarTop:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 0.5, 1 ),
+"update": 0,
+"values": [ Vector2( 0, -64 ), Vector2( 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("BlackBarDown:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 0.5, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 720 ), Vector2( 0, 656 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Overlay:color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 0.498039 ) ]
+}
+
+[sub_resource type="Animation" id=12]
+tracks/0/type = "value"
+tracks/0/path = NodePath("BlackBarTop:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, -64 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("BlackBarDown:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 720 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Overlay:color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("../RighCometSpawnPoint/Spawner/RandomTimer:autostart")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("../RightStarSpawnPoint/Spawner/RandomTimer:autostart")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("../LeftCometSpawnPoint/Spawner/RandomTimer:autostart")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("../LeftStarSpawnPoint/Spawner/RandomTimer:autostart")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=13]
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("GodHandRight/Sprite:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4, 0.5 ),
+"transitions": PoolRealArray( 0.5, 1, 1 ),
+"update": 0,
+"values": [ 0.0, -20.0, -15.0 ]
+}
+
 [node name="Level" type="Node2D" groups=[
 "level",
 ]]
@@ -118,15 +356,31 @@ environment = SubResource( 1 )
 
 [node name="Background" parent="." instance=ExtResource( 1 )]
 
-[node name="Moon" parent="." instance=ExtResource( 5 )]
-position = Vector2( 648, 488 )
+[node name="Sprite" type="Sprite" parent="Background"]
+position = Vector2( 96, 56 )
+rotation = -0.238229
+texture = ExtResource( 16 )
+region_enabled = true
+region_rect = Rect2( 16, 22, 256, 256 )
 
-[node name="JumpArea2D" type="Area2D" parent="Moon"]
+[node name="Sprite2" type="Sprite" parent="Background"]
+position = Vector2( 1184, 632 )
+rotation = 0.232593
+scale = Vector2( 0.804539, 0.804539 )
+texture = ExtResource( 16 )
+region_enabled = true
+region_rect = Rect2( 756, 25, 256, 256 )
+
+[node name="JumpArea2D" type="Area2D" parent="."]
+position = Vector2( 648, 488 )
 monitoring = false
 monitorable = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Moon/JumpArea2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="JumpArea2D"]
 shape = SubResource( 2 )
+
+[node name="Moon" parent="." instance=ExtResource( 5 )]
+position = Vector2( 648, 488 )
 
 [node name="BlackholeSpawner" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1280, 0 )
@@ -150,9 +404,8 @@ position = Vector2( 0, 128 )
 spawn_scene = ExtResource( 6 )
 
 [node name="RandomTimer" parent="LeftStarSpawnPoint/Spawner" instance=ExtResource( 3 )]
-autostart = true
 min_wait_time = 2.0
-max_wait_time = 10.0
+max_wait_time = 16.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="LeftStarSpawnPoint/Spawner"]
 autoplay = "idle"
@@ -166,9 +419,8 @@ position = Vector2( 0, 128 )
 spawn_scene = ExtResource( 12 )
 
 [node name="RandomTimer" parent="LeftCometSpawnPoint/Spawner" instance=ExtResource( 3 )]
-autostart = true
 min_wait_time = 2.0
-max_wait_time = 10.0
+max_wait_time = 16.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="LeftCometSpawnPoint/Spawner"]
 autoplay = "idle"
@@ -182,9 +434,8 @@ position = Vector2( 0, 128 )
 spawn_scene = ExtResource( 6 )
 
 [node name="RandomTimer" parent="RightStarSpawnPoint/Spawner" instance=ExtResource( 3 )]
-autostart = true
 min_wait_time = 2.0
-max_wait_time = 10.0
+max_wait_time = 16.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="RightStarSpawnPoint/Spawner"]
 autoplay = "idle"
@@ -198,9 +449,8 @@ position = Vector2( 0, 128 )
 spawn_scene = ExtResource( 12 )
 
 [node name="RandomTimer" parent="RighCometSpawnPoint/Spawner" instance=ExtResource( 3 )]
-autostart = true
 min_wait_time = 2.0
-max_wait_time = 10.0
+max_wait_time = 16.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="RighCometSpawnPoint/Spawner"]
 autoplay = "idle"
@@ -221,7 +471,84 @@ spawn_scene = ExtResource( 10 )
 
 [node name="SupernovaSpawner" parent="." instance=ExtResource( 2 )]
 spawn_scene = ExtResource( 11 )
-[connection signal="input_event" from="Moon/JumpArea2D" to="." method="_on_JumpArea2D_input_event"]
+
+[node name="Tutorial" type="Node2D" parent="."]
+pause_mode = 2
+script = ExtResource( 14 )
+astromouse_path = NodePath("../Astromouse")
+moon_path = NodePath("../Moon")
+
+[node name="StarArea2D" type="Area2D" parent="Tutorial"]
+position = Vector2( 912, 0 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tutorial/StarArea2D"]
+shape = SubResource( 8 )
+
+[node name="CometArea2D" type="Area2D" parent="Tutorial"]
+position = Vector2( 384, 0 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tutorial/CometArea2D"]
+shape = SubResource( 8 )
+
+[node name="BlackBarTop" type="Polygon2D" parent="Tutorial"]
+position = Vector2( 0, -64 )
+color = Color( 0, 0, 0, 1 )
+polygon = PoolVector2Array( 0, 0, 0, 64, 1280, 64, 1280, 0 )
+
+[node name="BlackBarDown" type="Polygon2D" parent="Tutorial"]
+position = Vector2( 0, 720 )
+color = Color( 0, 0, 0, 1 )
+polygon = PoolVector2Array( 0, 0, 0, 64, 1280, 64, 1280, 0 )
+
+[node name="Overlay" type="Polygon2D" parent="Tutorial"]
+position = Vector2( 0, 656 )
+color = Color( 0, 0, 0, 0 )
+polygon = PoolVector2Array( 0, -656, 0, 64, 1280, 64, 1280, -656 )
+
+[node name="Comet" parent="Tutorial" instance=ExtResource( 12 )]
+pause_mode = 1
+position = Vector2( -184, 240 )
+
+[node name="Star" parent="Tutorial" instance=ExtResource( 6 )]
+pause_mode = 1
+position = Vector2( 1928, 144 )
+rotation = 3.14159
+
+[node name="GodHandRight" type="Node2D" parent="Tutorial"]
+position = Vector2( 1088, 832 )
+
+[node name="Sprite" type="Sprite" parent="Tutorial/GodHandRight"]
+position = Vector2( 56, 216 )
+texture = ExtResource( 13 )
+centered = false
+offset = Vector2( -104, -216 )
+region_enabled = true
+region_rect = Rect2( 6, 6, 182, 207 )
+
+[node name="GodHandLeft" type="Node2D" parent="Tutorial"]
+position = Vector2( 192, 832 )
+
+[node name="Sprite" type="Sprite" parent="Tutorial/GodHandLeft"]
+position = Vector2( -24, 216 )
+texture = ExtResource( 13 )
+centered = false
+offset = Vector2( -104, -216 )
+flip_h = true
+region_enabled = true
+region_rect = Rect2( 6, 6, 182, 207 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Tutorial"]
+autoplay = "SETUP"
+anims/Comet = SubResource( 9 )
+anims/Finished = SubResource( 10 )
+anims/Overlay = SubResource( 11 )
+anims/SETUP = SubResource( 12 )
+anims/Star = SubResource( 13 )
+
+[node name="Tween" type="Tween" parent="Tutorial"]
+
+[node name="TutorialAchievement" parent="Tutorial" instance=ExtResource( 15 )]
+[connection signal="input_event" from="JumpArea2D" to="." method="_on_JumpArea2D_input_event"]
 [connection signal="spawned" from="BlackholeSpawner" to="." method="_on_BlackholeSpawner_spawned"]
 [connection signal="timeout" from="BlackholeSpawner/RandomTimer" to="BlackholeSpawner" method="spawn"]
 [connection signal="spawned" from="LeftStarSpawnPoint/Spawner" to="." method="_on_LeftStarSpawner_spawned"]
@@ -233,3 +560,7 @@ spawn_scene = ExtResource( 11 )
 [connection signal="spawned" from="RighCometSpawnPoint/Spawner" to="." method="_on_RightCometSpawner_spawned"]
 [connection signal="timeout" from="RighCometSpawnPoint/Spawner/RandomTimer" to="RighCometSpawnPoint/Spawner" method="spawn"]
 [connection signal="spawned" from="StarmouseSpawner" to="." method="_on_StarmouseSpawner_spawned"]
+[connection signal="body_entered" from="Tutorial/StarArea2D" to="Tutorial" method="_on_StarArea2D_body_entered"]
+[connection signal="body_entered" from="Tutorial/CometArea2D" to="Tutorial" method="_on_CometArea2D_body_entered"]
+[connection signal="collided" from="Tutorial/Comet" to="." method="_on_Comet_collided"]
+[connection signal="collided" from="Tutorial/Star" to="." method="_on_Star_collided"]

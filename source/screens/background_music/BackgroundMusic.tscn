@@ -41,7 +41,6 @@ tracks/0/keys = {
 [node name="BackgroundMusic" type="AudioStreamPlayer"]
 stream = ExtResource( 6 )
 volume_db = -16.0
-autoplay = true
 bus = "BGM"
 script = ExtResource( 1 )
 

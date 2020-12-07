@@ -6,4 +6,3 @@
 [node name="FirstStepsAchievement" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 achievement_name = "firststep"
-

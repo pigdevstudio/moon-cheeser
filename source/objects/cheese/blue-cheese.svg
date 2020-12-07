@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="64"
+   height="64"
+   viewBox="0 0 16.933333 16.933334"
+   version="1.1"
+   id="svg3583"
+   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)"
+   sodipodi:docname="blue-cheese.svg">
+  <defs
+     id="defs3577" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.39913908"
+     inkscape:cx="-132.06309"
+     inkscape:cy="-230.75558"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     units="px"
+     inkscape:snap-page="true"
+     inkscape:snap-nodes="false"
+     inkscape:snap-bbox="true"
+     inkscape:bbox-nodes="true"
+     inkscape:window-width="1920"
+     inkscape:window-height="1022"
+     inkscape:window-x="0"
+     inkscape:window-y="30"
+     inkscape:window-maximized="1"
+     inkscape:document-rotation="0" />
+  <metadata
+     id="metadata3580">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-280.06665)">
+    <path
+       inkscape:connector-curvature="0"
+       style="fill:#dbdaeb;fill-opacity:1;stroke:none;stroke-width:1.18289;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 3.7785434,280.06666 c -0.2374294,0 -0.4691881,0.0227 -0.6942539,0.0642 a 1.5080853,1.5080853 0 0 1 0.2610671,0.84235 v 0.003 A 1.5080853,1.5080853 0 0 1 1.8380985,282.48439 1.5080853,1.5080853 0 0 1 0.58728595,281.8174 C 0.21570986,282.40291 -5.4291921e-7,283.09774 -5.4291921e-7,283.8452 v 8.19405 A 2.327444,2.327444 0 0 1 0.50203398,291.98057 2.327444,2.327444 0 0 1 2.8333881,294.30291 v 0.005 a 2.327444,2.327444 0 0 1 -1.1955953,2.03055 c 0.6078108,0.41723 1.34465,0.66122 2.1407506,0.66122 h 9.3762416 c 2.093343,0 3.778544,-1.6852 3.778544,-3.77855 v -1.80714 a 1.5080853,1.5080853 0 0 1 -1.309494,-1.49155 1.5080853,1.5080853 0 0 1 1.309494,-1.49478 v -4.58277 c 0,-2.09334 -1.685201,-3.77854 -3.778544,-3.77854 z"
+       id="rect17812"
+       inkscape:export-filename="C:\Users\Henrique\Desktop\Drawing\Rendered\cheese.png"
+       inkscape:export-xdpi="160.94742"
+       inkscape:export-ydpi="160.94742" />
+    <path
+       sodipodi:end="6.2809862"
+       sodipodi:start="0"
+       sodipodi:ry="2.3274441"
+       sodipodi:rx="2.3274441"
+       sodipodi:cy="294.08621"
+       sodipodi:cx="10.577126"
+       sodipodi:type="arc"
+       id="path17814"
+       style="fill:#3d6e70;fill-opacity:1;stroke:none;stroke-width:1.18289;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       inkscape:export-filename="C:\Users\Henrique\Desktop\Drawing\Rendered\cheese.png"
+       inkscape:export-xdpi="160.94742"
+       inkscape:export-ydpi="160.94742"
+       sodipodi:arc-type="slice"
+       d="m 12.90457,294.08621 a 2.3274441,2.3274441 0 0 1 -2.326165,2.32745 2.3274441,2.3274441 0 0 1 -2.3287221,-2.32489 2.3274441,2.3274441 0 0 1 2.3236041,-2.33 2.3274441,2.3274441 0 0 1 2.331277,2.32232 l -2.327438,0.005 z" />
+    <path
+       style="fill:#3d6e70;fill-opacity:1;stroke:none;stroke-width:1.18289;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="path17818"
+       sodipodi:type="arc"
+       sodipodi:cx="5.934092"
+       sodipodi:cy="286.71198"
+       sodipodi:rx="1.5080853"
+       sodipodi:ry="1.5080853"
+       sodipodi:start="0"
+       sodipodi:end="6.2809862"
+       inkscape:export-filename="C:\Users\Henrique\Desktop\Drawing\Rendered\cheese.png"
+       inkscape:export-xdpi="160.94742"
+       inkscape:export-ydpi="160.94742"
+       sodipodi:arc-type="slice"
+       d="m 7.4421773,286.71198 a 1.5080853,1.5080853 0 0 1 -1.5072561,1.50808 1.5080853,1.5080853 0 0 1 -1.5089135,-1.50643 1.5080853,1.5080853 0 0 1 1.505597,-1.50974 1.5080853,1.5080853 0 0 1 1.5105689,1.50477 l -1.5080816,0.003 z" />
+    <path
+       sodipodi:end="6.2809862"
+       sodipodi:start="0"
+       sodipodi:ry="1.5080853"
+       sodipodi:rx="1.5080853"
+       sodipodi:cy="285.07327"
+       sodipodi:cx="12.215842"
+       sodipodi:type="arc"
+       id="path17820"
+       style="fill:#3d6e70;fill-opacity:1;stroke:none;stroke-width:1.18289;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       inkscape:export-filename="C:\Users\Henrique\Desktop\Drawing\Rendered\cheese.png"
+       inkscape:export-xdpi="160.94742"
+       inkscape:export-ydpi="160.94742"
+       sodipodi:arc-type="slice"
+       d="m 13.723927,285.07327 a 1.5080853,1.5080853 0 0 1 -1.507256,1.50809 1.5080853,1.5080853 0 0 1 -1.508913,-1.50643 1.5080853,1.5080853 0 0 1 1.505597,-1.50974 1.5080853,1.5080853 0 0 1 1.510569,1.50477 l -1.508082,0.003 z" />
+  </g>
+</svg>

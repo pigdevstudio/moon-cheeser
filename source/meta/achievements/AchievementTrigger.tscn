@@ -4,4 +4,3 @@
 
 [node name="AchievementTrigger" type="Node"]
 script = ExtResource( 1 )
-

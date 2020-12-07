@@ -4,7 +4,7 @@ func check_achievement():
 	var day_difference = calculate_day_difference()
 	
 	if is_full_moon(day_difference):
-		increase_achievement_progress()
+		increase_progress()
 	
 func calculate_day_difference():
 	var date = OS.get_date()

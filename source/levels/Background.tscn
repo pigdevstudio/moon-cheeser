@@ -1,10 +1,8 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://levels/Background.gd" type="Script" id=1]
 [ext_resource path="res://levels/starboy_crux.png" type="Texture" id=2]
 [ext_resource path="res://levels/star_back.png" type="Texture" id=3]
-[ext_resource path="res://objects/planets/earth.tscn" type="PackedScene" id=4]
-[ext_resource path="res://objects/planets/plinton.tscn" type="PackedScene" id=5]
 
 [sub_resource type="Animation" id=1]
 resource_name = "fade"
@@ -192,15 +190,3 @@ script = SubResource( 2 )
 [node name="Animator" type="AnimationPlayer" parent="ThreeMaries/Star3"]
 autoplay = "shine"
 anims/shine = SubResource( 3 )
-
-[node name="Planets" type="Node2D" parent="."]
-z_index = 1
-
-[node name="Earth" parent="Planets" instance=ExtResource( 4 )]
-position = Vector2( 140, 115.072 )
-rotation = -0.359986
-
-[node name="Plinthon" parent="Planets" instance=ExtResource( 5 )]
-position = Vector2( 1066.88, 496.672 )
-rotation = -0.0108607
-z_index = 0

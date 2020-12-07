@@ -16,7 +16,7 @@ onready var _crater_spawner = $Sprite/CraterSpawner
 func _ready():
 	set_process_input(false)
 	set_physics_process(false)
-	_tween.sprite = $Sprite/Atmosphere
+	_tween.sprite = $Sprite/GravityField
 
 
 func _physics_process(delta):
@@ -31,10 +31,14 @@ func _physics_process(delta):
 
 func _input(event):
 	if event.is_action_pressed("jump"):
-		_tween.pulse()
-		pull_strength += 0.5
-		pull_strength = min(pull_strength, MAX_PULL)
+		pull()
 
+
+func pull():
+	
+	_tween.pulse()
+	pull_strength += 0.5
+	pull_strength = min(pull_strength, MAX_PULL)
 
 func spawn_crater(collision):
 	var crater = _crater_spawner.spawn()

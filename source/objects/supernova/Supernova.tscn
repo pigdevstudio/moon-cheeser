@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://objects/supernova/Supernova.gd" type="Script" id=1]
-[ext_resource path="res://objects/gravity_bodies/blackhole/black_hole.png" type="Texture" id=2]
+[ext_resource path="res://objects/gravity_bodies/blackhole/blackhole.svg" type="Texture" id=2]
 [ext_resource path="res://levels/star_back.png" type="Texture" id=3]
 [ext_resource path="res://meta/achievements/SupernovaAchievement.tscn" type="PackedScene" id=4]
 
@@ -15,10 +15,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 1.5 ),
+"times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 0.25, 0.25 ),
 "update": 0,
-"values": [ 0.0, -360.0 ]
+"values": [ 720.0, 0.0 ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Blackhole:scale")
@@ -33,28 +33,16 @@ tracks/1/keys = {
 "values": [ Vector2( 1, 1 ), Vector2( 1.2, 1.2 ), Vector2( 1e-05, 1e-05 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Blackhole:modulate")
+tracks/2/path = NodePath("CPUParticles2D:emitting")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 0.5, 0.7 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("CPUParticles2D:emitting")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0.5, 0.7 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ true ]
+"values": [ true, false ]
 }
 
 [sub_resource type="Curve" id=2]
@@ -78,11 +66,8 @@ autoplay = "spin"
 anims/spin = SubResource( 1 )
 
 [node name="Blackhole" type="Sprite" parent="."]
+scale = Vector2( 1e-05, 1e-05 )
 texture = ExtResource( 2 )
-
-[node name="Star" type="Sprite" parent="Blackhole"]
-scale = Vector2( 1.87875, 1.87875 )
-texture = ExtResource( 3 )
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
 z_index = -1
@@ -106,5 +91,4 @@ color_ramp = SubResource( 3 )
 [node name="Gravity" type="Tween" parent="."]
 
 [node name="SupernovaAchievement" parent="." instance=ExtResource( 4 )]
-
 [connection signal="animation_finished" from="Animator" to="." method="_on_Animator_animation_finished"]

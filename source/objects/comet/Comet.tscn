@@ -1,121 +1,32 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://objects/comet/sparkle.png" type="Texture" id=1]
 [ext_resource path="res://objects/comet/asteroid-great.svg" type="Texture" id=2]
 [ext_resource path="res://objects/comet/puff.png" type="Texture" id=3]
 [ext_resource path="res://objects/comet/Asteroid.tscn" type="PackedScene" id=4]
 
+[sub_resource type="Curve" id=1]
+_data = [ Vector2( 0, 1 ), 0.0, -0.520455, 0, 1, Vector2( 1, 0.479545 ), -0.520455, 0.0, 1, 0 ]
+
 [sub_resource type="Gradient" id=2]
 offsets = PoolRealArray( 0, 0.231527, 0.458128, 0.729064, 1 )
 colors = PoolColorArray( 1, 1, 1, 1, 1, 0.788235, 0.309804, 1, 0.980392, 0.419608, 0.211765, 1, 0.831373, 0.219608, 0.219608, 1, 0.831373, 0.219608, 0.219608, 0 )
 
-[sub_resource type="GradientTexture" id=3]
-gradient = SubResource( 2 )
+[sub_resource type="Curve" id=3]
+_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.483222, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="Curve" id=4]
-_data = [ Vector2( 0, 1 ), 0.0, -0.520455, 0, 1, Vector2( 1, 0.479545 ), -0.520455, 0.0, 1, 0 ]
-
-[sub_resource type="CurveTexture" id=5]
-curve = SubResource( 4 )
-
-[sub_resource type="ParticlesMaterial" id=6]
-emission_shape = 1
-emission_sphere_radius = 200.0
-flag_disable_z = true
-direction = Vector3( 0, 1, 0 )
-spread = 15.0
-gravity = Vector3( 0, 0, 0 )
-initial_velocity = 2500.0
-angular_velocity = 200.0
-angular_velocity_random = 0.3
-orbit_velocity = 0.0
-orbit_velocity_random = 0.0
-radial_accel = -2000.0
-angle = 200.0
-angle_random = 0.5
-scale = 2.0
-scale_curve = SubResource( 5 )
-color_ramp = SubResource( 3 )
-
-[sub_resource type="Gradient" id=7]
+[sub_resource type="Gradient" id=4]
 offsets = PoolRealArray( 0, 0.130909, 0.345455, 0.607273, 1 )
 colors = PoolColorArray( 1, 1, 1, 1, 1, 0.648972, 0.164062, 1, 1, 0.475624, 0.136719, 1, 0.888672, 0.17704, 0.17704, 1, 0.203922, 0.203922, 0.203922, 1 )
 
-[sub_resource type="GradientTexture" id=8]
-gradient = SubResource( 7 )
+[sub_resource type="Curve" id=5]
+_data = [ Vector2( 0, 0.355682 ), 0.0, 1.4, 0, 0, Vector2( 0.713483, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.182955 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="Curve" id=9]
-_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.483222, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
-
-[sub_resource type="CurveTexture" id=10]
-curve = SubResource( 9 )
-
-[sub_resource type="ParticlesMaterial" id=11]
-lifetime_randomness = 0.6
-emission_shape = 1
-emission_sphere_radius = 256.0
-flag_disable_z = true
-spread = 180.0
-gravity = Vector3( 0, 0, 0 )
-orbit_velocity = 0.0
-orbit_velocity_random = 0.0
-scale_random = 0.3
-scale_curve = SubResource( 10 )
-color_ramp = SubResource( 8 )
-
-[sub_resource type="Gradient" id=12]
+[sub_resource type="Gradient" id=6]
 offsets = PoolRealArray( 0, 0.133005, 0.458128, 0.729064, 1 )
 colors = PoolColorArray( 0.796875, 0.796875, 0.796875, 1, 1, 0.788235, 0.309804, 1, 0.980392, 0.419608, 0.211765, 1, 0.682353, 0.207843, 0.207843, 1, 0.682353, 0.207843, 0.207843, 0.00392157 )
 
-[sub_resource type="GradientTexture" id=13]
-gradient = SubResource( 12 )
-
-[sub_resource type="Curve" id=14]
-_data = [ Vector2( 0, 0.355682 ), 0.0, 1.4, 0, 0, Vector2( 0.713483, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.182955 ), 0.0, 0.0, 0, 0 ]
-
-[sub_resource type="CurveTexture" id=15]
-curve = SubResource( 14 )
-
-[sub_resource type="ParticlesMaterial" id=16]
-lifetime_randomness = 1.0
-emission_shape = 1
-emission_sphere_radius = 256.0
-flag_disable_z = true
-direction = Vector3( 0, 1, 0 )
-spread = 0.0
-gravity = Vector3( 0, 0, 0 )
-initial_velocity = 1000.0
-initial_velocity_random = 0.5
-angular_velocity = 200.0
-angular_velocity_random = 0.5
-orbit_velocity = 0.0
-orbit_velocity_random = 0.0
-radial_accel = -100.0
-damping = 100.0
-damping_random = 0.85
-angle = 200.0
-angle_random = 0.5
-scale = 3.0
-scale_random = 0.2
-scale_curve = SubResource( 15 )
-color_ramp = SubResource( 13 )
-
-[sub_resource type="ParticlesMaterial" id=17]
-lifetime_randomness = 0.6
-emission_shape = 1
-emission_sphere_radius = 256.0
-flag_disable_z = true
-direction = Vector3( -1, 0, 0 )
-spread = 180.0
-gravity = Vector3( 0, 0, 0 )
-orbit_velocity = 0.0
-orbit_velocity_random = 0.2
-radial_accel = -100.0
-scale_random = 0.3
-scale_curve = SubResource( 10 )
-color_ramp = SubResource( 8 )
-
-[sub_resource type="Shader" id=18]
+[sub_resource type="Shader" id=7]
 code = "shader_type canvas_item;
 
 uniform bool damaged = false;
@@ -131,35 +42,12 @@ void fragment(){
 	COLOR = new_color;
 }"
 
-[sub_resource type="ShaderMaterial" id=19]
+[sub_resource type="ShaderMaterial" id=8]
 resource_local_to_scene = true
-shader = SubResource( 18 )
+shader = SubResource( 7 )
 shader_param/damaged = false
 
-[sub_resource type="Gradient" id=20]
-offsets = PoolRealArray( 0.728395, 1 )
-colors = PoolColorArray( 1, 1, 1, 1, 1, 1, 1, 0 )
-
-[sub_resource type="GradientTexture" id=21]
-gradient = SubResource( 20 )
-
-[sub_resource type="ParticlesMaterial" id=22]
-emission_shape = 1
-emission_sphere_radius = 128.0
-flag_disable_z = true
-spread = 180.0
-gravity = Vector3( 0, 0, 0 )
-initial_velocity = 400.0
-orbit_velocity = 0.0
-orbit_velocity_random = 0.0
-linear_accel = 300.0
-damping = 500.0
-damping_random = 0.2
-scale = 0.2
-scale_random = 0.48
-color_ramp = SubResource( 21 )
-
-[sub_resource type="CircleShape2D" id=23]
+[sub_resource type="CircleShape2D" id=9]
 radius = 256.002
 
 [node name="Comet" instance=ExtResource( 4 )]
@@ -170,65 +58,109 @@ direction = Vector2( 0, 0 )
 [node name="FireBallEffect" type="Node2D" parent="." index="0"]
 modulate = Color( 1.1, 1.1, 1.1, 1 )
 
-[node name="FireTrail" type="Particles2D" parent="FireBallEffect" index="0"]
+[node name="FireTrail" type="CPUParticles2D" parent="FireBallEffect" index="0"]
 self_modulate = Color( 1.1, 1.1, 1.1, 1 )
 amount = 32
 lifetime = 0.5
-visibility_rect = Rect2( -512, -300, 1024, 600 )
 local_coords = false
 draw_order = 1
-process_material = SubResource( 6 )
 texture = ExtResource( 3 )
+emission_shape = 1
+emission_sphere_radius = 200.0
+direction = Vector2( 0, 1 )
+spread = 15.0
+gravity = Vector2( 0, 0 )
+initial_velocity = 2500.0
+angular_velocity = 200.0
+angular_velocity_random = 0.3
+radial_accel = -2000.0
+angle = 200.0
+angle_random = 0.5
+scale_amount = 2.0
+scale_amount_curve = SubResource( 1 )
+color_ramp = SubResource( 2 )
 
-[node name="TrailSparkles" type="Particles2D" parent="FireBallEffect" index="1"]
+[node name="TrailSparkles" type="CPUParticles2D" parent="FireBallEffect" index="1"]
 self_modulate = Color( 1.1, 1.1, 1.1, 1 )
 amount = 64
 explosiveness = 0.2
 randomness = 1.0
-visibility_rect = Rect2( -512, -300, 1024, 600 )
+lifetime_randomness = 0.6
 local_coords = false
-process_material = SubResource( 11 )
 texture = ExtResource( 1 )
+emission_shape = 1
+emission_sphere_radius = 256.0
+spread = 180.0
+gravity = Vector2( 0, 0 )
+scale_amount_random = 0.3
+scale_amount_curve = SubResource( 3 )
+color_ramp = SubResource( 4 )
 
-[node name="FireCore" type="Particles2D" parent="FireBallEffect" index="2"]
+[node name="FireCore" type="CPUParticles2D" parent="FireBallEffect" index="2"]
 self_modulate = Color( 1.1, 1.1, 1.1, 1 )
 z_index = 1
 amount = 32
 lifetime = 0.5
 randomness = 1.0
-visibility_rect = Rect2( -512, -300, 1024, 600 )
+lifetime_randomness = 1.0
 local_coords = false
 draw_order = 1
-process_material = SubResource( 16 )
 texture = ExtResource( 3 )
+emission_shape = 1
+emission_sphere_radius = 256.0
+direction = Vector2( 0, 1 )
+spread = 0.0
+gravity = Vector2( 0, 0 )
+initial_velocity = 1000.0
+initial_velocity_random = 0.5
+angular_velocity = 200.0
+angular_velocity_random = 0.5
+radial_accel = -100.0
+damping = 100.0
+damping_random = 0.85
+angle = 200.0
+angle_random = 0.5
+scale_amount = 3.0
+scale_amount_random = 0.2
+scale_amount_curve = SubResource( 5 )
+color_ramp = SubResource( 6 )
 
-[node name="CoreSparkles" type="Particles2D" parent="FireBallEffect" index="3"]
+[node name="CoreSparkles" type="CPUParticles2D" parent="FireBallEffect" index="3"]
 self_modulate = Color( 1.1, 1.1, 1.1, 1 )
 z_index = 1
 amount = 32
 lifetime = 0.5
 randomness = 1.0
-visibility_rect = Rect2( -512, -300, 1024, 600 )
+lifetime_randomness = 0.6
 local_coords = false
-process_material = SubResource( 17 )
 texture = ExtResource( 1 )
+emission_shape = 1
+emission_sphere_radius = 256.0
+direction = Vector2( -1, 0 )
+spread = 180.0
+gravity = Vector2( 0, 0 )
+orbit_velocity_random = 0.2
+radial_accel = -100.0
+scale_amount_random = 0.3
+scale_amount_curve = SubResource( 3 )
+color_ramp = SubResource( 4 )
 
 [node name="Sprite" parent="." index="1"]
-material = SubResource( 19 )
+material = SubResource( 8 )
 scale = Vector2( 2.41494, 2.41494 )
 texture = ExtResource( 2 )
 
 [node name="Particles2D" parent="." index="3"]
+emitting = true
 amount = 80
 lifetime = 4.0
 explosiveness = 1.0
-process_material = SubResource( 22 )
 
 [node name="DestructionArea" parent="." index="4"]
 monitoring = false
 
 [node name="CollisionShape2D" parent="DestructionArea" index="0"]
-shape = SubResource( 23 )
+shape = SubResource( 9 )
 disabled = true
 
 [node name="VisibilityNotifier2D" parent="." index="5"]

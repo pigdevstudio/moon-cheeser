@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://objects/comet/asteroid-small.svg" type="Texture" id=2]
 [ext_resource path="res://objects/comet/Asteroid.gd" type="Script" id=3]
@@ -132,28 +132,10 @@ tracks/1/keys = {
 offsets = PoolRealArray( 0.728395, 1 )
 colors = PoolColorArray( 1, 1, 1, 1, 1, 1, 1, 0 )
 
-[sub_resource type="GradientTexture" id=6]
-gradient = SubResource( 5 )
-
-[sub_resource type="ParticlesMaterial" id=7]
-flag_disable_z = true
-spread = 180.0
-gravity = Vector3( 0, 0, 0 )
-initial_velocity = 400.0
-orbit_velocity = 0.0
-orbit_velocity_random = 0.0
-linear_accel = 300.0
-damping = 1200.0
-damping_random = 0.2
-scale = 0.2
-scale_random = 0.48
-color_ramp = SubResource( 6 )
-
-[sub_resource type="CircleShape2D" id=8]
+[sub_resource type="CircleShape2D" id=6]
 radius = 24.0
 
 [node name="Asteroid" type="Node2D"]
-position = Vector2( 352, 208 )
 script = ExtResource( 3 )
 speed = 500.0
 direction = Vector2( -1, 0 )
@@ -175,20 +157,28 @@ autoplay = "setup"
 anims/explode = SubResource( 3 )
 anims/setup = SubResource( 4 )
 
-[node name="Particles2D" type="Particles2D" parent="."]
+[node name="Particles2D" type="CPUParticles2D" parent="."]
 emitting = false
 amount = 10
 lifetime = 0.5
 explosiveness = 0.9
-process_material = SubResource( 7 )
 texture = ExtResource( 2 )
+spread = 180.0
+gravity = Vector2( 0, 0 )
+initial_velocity = 400.0
+linear_accel = 300.0
+damping = 1200.0
+damping_random = 0.2
+scale_amount = 0.2
+scale_amount_random = 0.48
+color_ramp = SubResource( 5 )
 
 [node name="DestructionArea" type="Area2D" parent="."]
 position = Vector2( 0, -1 )
 collision_mask = 1024
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DestructionArea"]
-shape = SubResource( 8 )
+shape = SubResource( 6 )
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
 scale = Vector2( 2.45, 2.45 )

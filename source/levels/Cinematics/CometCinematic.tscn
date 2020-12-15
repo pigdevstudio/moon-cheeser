@@ -1,4 +1,4 @@
-[gd_scene load_steps=92 format=2]
+[gd_scene load_steps=82 format=2]
 
 [ext_resource path="res://actors/astromouse/sprites/AstromouseCharacter.gd" type="Script" id=1]
 [ext_resource path="res://objects/planets/planets.svg" type="Texture" id=2]
@@ -2584,115 +2584,26 @@ _data = {
 "points": PoolVector2Array( -35.9594, -70.4204, 35.9594, 70.4204, 608, 456, 128.854, -43.4509, -128.854, 43.4509, 512, 672, -134.848, 197.777, 134.848, -197.777, 312, 416, -866.022, -58.434, 866.022, 58.434, 1536, 168 )
 }
 
-[sub_resource type="Gradient" id=19]
+[sub_resource type="Curve" id=56]
+_data = [ Vector2( 0, 1 ), 0.0, -0.520455, 0, 1, Vector2( 1, 0.479545 ), -0.520455, 0.0, 1, 0 ]
+
+[sub_resource type="Gradient" id=57]
 offsets = PoolRealArray( 0, 0.231527, 0.458128, 0.729064, 1 )
 colors = PoolColorArray( 1, 1, 1, 1, 1, 0.788235, 0.309804, 1, 0.980392, 0.419608, 0.211765, 1, 0.831373, 0.219608, 0.219608, 1, 0.831373, 0.219608, 0.219608, 0 )
 
-[sub_resource type="GradientTexture" id=20]
-gradient = SubResource( 19 )
+[sub_resource type="Curve" id=58]
+_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.483222, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="Curve" id=21]
-_data = [ Vector2( 0, 1 ), 0.0, -0.520455, 0, 1, Vector2( 1, 0.479545 ), -0.520455, 0.0, 1, 0 ]
-
-[sub_resource type="CurveTexture" id=22]
-curve = SubResource( 21 )
-
-[sub_resource type="ParticlesMaterial" id=23]
-emission_shape = 1
-emission_sphere_radius = 200.0
-flag_disable_z = true
-direction = Vector3( -1, 0, 0 )
-spread = 15.0
-gravity = Vector3( 0, 0, 0 )
-initial_velocity = 2000.0
-angular_velocity = 200.0
-angular_velocity_random = 0.3
-orbit_velocity = 0.0
-orbit_velocity_random = 0.0
-radial_accel = -2000.0
-angle = 200.0
-angle_random = 0.5
-scale = 2.0
-scale_curve = SubResource( 22 )
-color_ramp = SubResource( 20 )
-
-[sub_resource type="Gradient" id=24]
+[sub_resource type="Gradient" id=59]
 offsets = PoolRealArray( 0, 0.130909, 0.345455, 0.607273, 1 )
 colors = PoolColorArray( 1, 1, 1, 1, 1, 0.648972, 0.164062, 1, 1, 0.475624, 0.136719, 1, 0.888672, 0.17704, 0.17704, 1, 0.203922, 0.203922, 0.203922, 1 )
 
-[sub_resource type="GradientTexture" id=25]
-gradient = SubResource( 24 )
-
-[sub_resource type="Curve" id=26]
-_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.483222, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
-
-[sub_resource type="CurveTexture" id=27]
-curve = SubResource( 26 )
-
-[sub_resource type="ParticlesMaterial" id=28]
-lifetime_randomness = 0.6
-emission_shape = 1
-emission_sphere_radius = 256.0
-flag_disable_z = true
-spread = 180.0
-gravity = Vector3( 0, 0, 0 )
-orbit_velocity = 0.0
-orbit_velocity_random = 0.0
-scale_random = 0.3
-scale_curve = SubResource( 27 )
-color_ramp = SubResource( 25 )
-
-[sub_resource type="Gradient" id=29]
-offsets = PoolRealArray( 0, 0.133005, 0.458128, 0.729064, 1 )
-colors = PoolColorArray( 0.796875, 0.796875, 0.796875, 1, 1, 0.788235, 0.309804, 1, 0.980392, 0.419608, 0.211765, 1, 0.682353, 0.207843, 0.207843, 1, 0.682353, 0.207843, 0.207843, 0.00392157 )
-
-[sub_resource type="GradientTexture" id=30]
-gradient = SubResource( 29 )
-
-[sub_resource type="Curve" id=31]
+[sub_resource type="Curve" id=60]
 _data = [ Vector2( 0, 0.355682 ), 0.0, 1.4, 0, 0, Vector2( 0.713483, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.182955 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=32]
-curve = SubResource( 31 )
-
-[sub_resource type="ParticlesMaterial" id=33]
-lifetime_randomness = 1.0
-emission_shape = 1
-emission_sphere_radius = 256.0
-flag_disable_z = true
-direction = Vector3( -1, 0, 0 )
-spread = 0.0
-gravity = Vector3( 0, 0, 0 )
-initial_velocity = 1200.0
-initial_velocity_random = 0.5
-angular_velocity = 200.0
-angular_velocity_random = 0.5
-orbit_velocity = 0.0
-orbit_velocity_random = 0.0
-radial_accel = -100.0
-damping = 100.0
-damping_random = 0.85
-angle = 200.0
-angle_random = 0.5
-scale = 3.0
-scale_random = 0.2
-scale_curve = SubResource( 32 )
-color_ramp = SubResource( 30 )
-
-[sub_resource type="ParticlesMaterial" id=34]
-lifetime_randomness = 0.6
-emission_shape = 1
-emission_sphere_radius = 256.0
-flag_disable_z = true
-direction = Vector3( -1, 0, 0 )
-spread = 180.0
-gravity = Vector3( 0, 0, 0 )
-orbit_velocity = 0.0
-orbit_velocity_random = 0.2
-radial_accel = -100.0
-scale_random = 0.3
-scale_curve = SubResource( 27 )
-color_ramp = SubResource( 25 )
+[sub_resource type="Gradient" id=61]
+offsets = PoolRealArray( 0, 0.133005, 0.458128, 0.729064, 1 )
+colors = PoolColorArray( 0.796875, 0.796875, 0.796875, 1, 1, 0.788235, 0.309804, 1, 0.980392, 0.419608, 0.211765, 1, 0.682353, 0.207843, 0.207843, 1, 0.682353, 0.207843, 0.207843, 0.00392157 )
 
 [sub_resource type="Shader" id=35]
 code = "shader_type canvas_item;
@@ -3072,7 +2983,7 @@ script = ExtResource( 30 )
 __meta__ = {
 "_edit_horizontal_guides_": [ 160.0 ]
 }
-next_scene = "res://levels/AsteroidDodging.tscn"
+next_level_path = "res://levels/AsteroidDodging.tscn"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "Collision"
@@ -3093,6 +3004,7 @@ position = Vector2( -64, 448 )
 scale = Vector2( 0.5, 0.5 )
 frames = ExtResource( 24 )
 animation = "flying"
+frame = 2
 playing = true
 offset = Vector2( -160, 0 )
 
@@ -3138,7 +3050,7 @@ scale_amount_curve = SubResource( 3 )
 color_ramp = SubResource( 5 )
 
 [node name="AstromouseCharacter" type="Position2D" parent="WorldLayer/World"]
-position = Vector2( 640, -118.514 )
+position = Vector2( 640, 304 )
 scale = Vector2( 1.25, 1.25 )
 script = ExtResource( 1 )
 
@@ -3163,15 +3075,15 @@ anims/wall = SubResource( 16 )
 
 [node name="body" type="Sprite" parent="WorldLayer/World/AstromouseCharacter/sprites"]
 position = Vector2( 3.66667, -17.6667 )
-rotation = 0.300874
+rotation = 1.48184
 texture = ExtResource( 16 )
 offset = Vector2( 0.0592504, -7.2841 )
 region_enabled = true
 region_rect = Rect2( 76, 4, 25, 30 )
 
 [node name="head" type="Sprite" parent="WorldLayer/World/AstromouseCharacter/sprites/body"]
-position = Vector2( -0.999999, -16.3333 )
-rotation = -0.235237
+position = Vector2( 3.30797, -25.2358 )
+rotation = -1.5708
 texture = ExtResource( 16 )
 offset = Vector2( -0.356, -20.537 )
 region_enabled = true
@@ -3186,8 +3098,8 @@ region_enabled = true
 region_rect = Rect2( 4, 4, 54, 54 )
 
 [node name="arm_l" type="Sprite" parent="WorldLayer/World/AstromouseCharacter/sprites/body"]
-position = Vector2( 6.2329, -15.2321 )
-rotation = -1.47588
+position = Vector2( -0.692625, -20.2447 )
+rotation = -2.36365
 z_index = -1
 texture = ExtResource( 16 )
 offset = Vector2( -0.113655, 9.28639 )
@@ -3196,8 +3108,8 @@ region_rect = Rect2( 104, 41, 8, 19 )
 
 [node name="arm_r" type="Sprite" parent="WorldLayer/World/AstromouseCharacter/sprites/body"]
 show_behind_parent = true
-position = Vector2( -9.03908, -13.1607 )
-rotation = 1.0508
+position = Vector2( 2.02585, -13.2973 )
+rotation = -2.27092
 z_index = 1
 texture = ExtResource( 16 )
 offset = Vector2( 0.434902, 8.9376 )
@@ -3207,7 +3119,7 @@ region_rect = Rect2( 92, 41, 8, 19 )
 [node name="tail" type="Sprite" parent="WorldLayer/World/AstromouseCharacter/sprites/body"]
 show_behind_parent = true
 position = Vector2( -7.66667, 3.83337 )
-rotation = 0.148449
+rotation = -1.83715
 z_index = -1
 texture = ExtResource( 16 )
 offset = Vector2( -18.1807, -15.8838 )
@@ -3224,8 +3136,8 @@ region_enabled = true
 region_rect = Rect2( 72, 40, 16, 28 )
 
 [node name="leg_l" type="Sprite" parent="WorldLayer/World/AstromouseCharacter/sprites"]
-position = Vector2( 8.83333, -18 )
-rotation = 0.0566044
+position = Vector2( 4.58333, -15.5 )
+rotation = 0.92334
 z_index = -1
 texture = ExtResource( 16 )
 offset = Vector2( 0.166667, 8.66673 )
@@ -3233,8 +3145,8 @@ region_enabled = true
 region_rect = Rect2( 104, 64, 8, 19 )
 
 [node name="leg_r" type="Sprite" parent="WorldLayer/World/AstromouseCharacter/sprites"]
-position = Vector2( -0.5, -18.6667 )
-rotation = 0.244791
+position = Vector2( 0.58333, -20.6667 )
+rotation = 1.0395
 z_index = -1
 texture = ExtResource( 16 )
 offset = Vector2( 0.333337, 9.33333 )
@@ -3245,9 +3157,8 @@ region_rect = Rect2( 92, 64, 8, 19 )
 curve = SubResource( 17 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="WorldLayer/World/CometPath"]
-position = Vector2( 808, 352 )
-rotation = 3.04769
-offset = 653.41
+position = Vector2( 1120, -16 )
+rotation = 0.84589
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="WorldLayer/World/CometPath/PathFollow2D"]
 remote_path = NodePath("../../../Background/Comet")
@@ -3267,7 +3178,6 @@ update_scale = false
 [node name="Moon" type="Node2D" parent="WorldLayer/World" groups=[
 "moon",
 ]]
-visible = false
 position = Vector2( 648, 488 )
 z_index = -1
 
@@ -3294,56 +3204,100 @@ bus = "Reverb"
 layer = -1
 
 [node name="Comet" type="Node2D" parent="WorldLayer/World/Background"]
-visible = false
-position = Vector2( 808, 352 )
-rotation = 3.04769
+position = Vector2( 1120, -16 )
+rotation = 0.84589
+scale = Vector2( 0.2, 0.2 )
 z_index = 1
 
 [node name="FireBallEffect" type="Node2D" parent="WorldLayer/World/Background/Comet"]
 modulate = Color( 1.1, 1.1, 1.1, 1 )
 
-[node name="FireTrail" type="Particles2D" parent="WorldLayer/World/Background/Comet/FireBallEffect"]
+[node name="FireTrail" type="CPUParticles2D" parent="WorldLayer/World/Background/Comet/FireBallEffect"]
 self_modulate = Color( 1.1, 1.1, 1.1, 1 )
 amount = 32
 lifetime = 0.5
-visibility_rect = Rect2( -512, -300, 1024, 600 )
 local_coords = false
 draw_order = 1
-process_material = SubResource( 23 )
 texture = ExtResource( 23 )
+emission_shape = 1
+emission_sphere_radius = 200.0
+direction = Vector2( 0, 1 )
+spread = 15.0
+gravity = Vector2( 0, 0 )
+initial_velocity = 2500.0
+angular_velocity = 200.0
+angular_velocity_random = 0.3
+radial_accel = -2000.0
+angle = 200.0
+angle_random = 0.5
+scale_amount = 2.0
+scale_amount_curve = SubResource( 56 )
+color_ramp = SubResource( 57 )
 
-[node name="TrailSparkles" type="Particles2D" parent="WorldLayer/World/Background/Comet/FireBallEffect"]
+[node name="TrailSparkles" type="CPUParticles2D" parent="WorldLayer/World/Background/Comet/FireBallEffect"]
 self_modulate = Color( 1.1, 1.1, 1.1, 1 )
 amount = 64
 explosiveness = 0.2
 randomness = 1.0
-visibility_rect = Rect2( -512, -300, 1024, 600 )
+lifetime_randomness = 0.6
 local_coords = false
-process_material = SubResource( 28 )
 texture = ExtResource( 20 )
+emission_shape = 1
+emission_sphere_radius = 256.0
+spread = 180.0
+gravity = Vector2( 0, 0 )
+scale_amount_random = 0.3
+scale_amount_curve = SubResource( 58 )
+color_ramp = SubResource( 59 )
 
-[node name="FireCore" type="Particles2D" parent="WorldLayer/World/Background/Comet/FireBallEffect"]
+[node name="FireCore" type="CPUParticles2D" parent="WorldLayer/World/Background/Comet/FireBallEffect"]
 self_modulate = Color( 1.1, 1.1, 1.1, 1 )
 z_index = 1
 amount = 32
 lifetime = 0.5
 randomness = 1.0
-visibility_rect = Rect2( -512, -300, 1024, 600 )
+lifetime_randomness = 1.0
 local_coords = false
 draw_order = 1
-process_material = SubResource( 33 )
 texture = ExtResource( 23 )
+emission_shape = 1
+emission_sphere_radius = 256.0
+direction = Vector2( 0, 1 )
+spread = 0.0
+gravity = Vector2( 0, 0 )
+initial_velocity = 1000.0
+initial_velocity_random = 0.5
+angular_velocity = 200.0
+angular_velocity_random = 0.5
+radial_accel = -100.0
+damping = 100.0
+damping_random = 0.85
+angle = 200.0
+angle_random = 0.5
+scale_amount = 3.0
+scale_amount_random = 0.2
+scale_amount_curve = SubResource( 60 )
+color_ramp = SubResource( 61 )
 
-[node name="CoreSparkles" type="Particles2D" parent="WorldLayer/World/Background/Comet/FireBallEffect"]
+[node name="CoreSparkles" type="CPUParticles2D" parent="WorldLayer/World/Background/Comet/FireBallEffect"]
 self_modulate = Color( 1.1, 1.1, 1.1, 1 )
 z_index = 1
 amount = 32
 lifetime = 0.5
 randomness = 1.0
-visibility_rect = Rect2( -512, -300, 1024, 600 )
+lifetime_randomness = 0.6
 local_coords = false
-process_material = SubResource( 34 )
 texture = ExtResource( 20 )
+emission_shape = 1
+emission_sphere_radius = 256.0
+direction = Vector2( -1, 0 )
+spread = 180.0
+gravity = Vector2( 0, 0 )
+orbit_velocity_random = 0.2
+radial_accel = -100.0
+scale_amount_random = 0.3
+scale_amount_curve = SubResource( 58 )
+color_ramp = SubResource( 59 )
 
 [node name="Sprite" type="Sprite" parent="WorldLayer/World/Background/Comet"]
 material = SubResource( 36 )
@@ -3365,7 +3319,7 @@ anims/setup = SubResource( 40 )
 
 [node name="AudioStreamPlayer2D3" type="AudioStreamPlayer2D" parent="WorldLayer/World/Background/Comet"]
 stream = ExtResource( 37 )
-pitch_scale = 0.5
+pitch_scale = 0.2
 bus = "Reverb"
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="WorldLayer/World/Background"]
@@ -3706,7 +3660,7 @@ pitch_scale = 0.921528
 bus = "Reverb"
 
 [node name="ShakingCamera2D" parent="WorldLayer" instance=ExtResource( 31 )]
-position = Vector2( 640, -1637.07 )
+position = Vector2( 640, 360 )
 anchor_mode = 1
 strength = 0.0
 continuous = true
@@ -3724,17 +3678,17 @@ __meta__ = {
 [node name="ColorRect" type="ColorRect" parent="InterfaceLayer/Interface"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 0.684891, 0.684891, 0.684891, 0 )
+color = Color( 0, 0, 0, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 34 )
-volume_db = -63.0542
+volume_db = -16.0
 bus = "BGM"
 
 [node name="AudioStreamPlayer2D2" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 33 )
-volume_db = -16.9458
+volume_db = -64.0
 bus = "BGM"

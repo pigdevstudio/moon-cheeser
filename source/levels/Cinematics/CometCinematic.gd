@@ -1,17 +1,15 @@
 extends Node
 
+signal astromouse_died
+signal finished
 
-export (String, FILE, "*.tscn") var next_scene
+
+export (String, FILE, "*.tscn") var next_level_path
 
 
 func _ready():
 	BGM.stop()
 
 
-func _unhandled_key_input(event):
-	if event.get_scancode() == KEY_SPACE:
-		$AnimationPlayer.play("Collision")
-
-
 func transit():
-	get_tree().change_scene(next_scene)
+	emit_signal("finished")

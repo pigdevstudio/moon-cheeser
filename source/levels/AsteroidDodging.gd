@@ -1,6 +1,9 @@
 extends Node2D
 
-export (String, FILE, "*.tscn") var next_level
+signal astromouse_died
+signal finished
+
+export (String, FILE, "*.tscn") var next_level_path
 
 onready var animator = $AnimationPlayer
 onready var starmouse = $Starmouse
@@ -12,7 +15,7 @@ func _ready():
 
 
 func restart():
-	get_tree().reload_current_scene()
+	emit_signal("astromouse_died")
 
 
 func _on_StarMouse_finished():
@@ -27,8 +30,8 @@ func _on_AsteroidDetectionArea2D_area_entered(area):
 	animator.play("Dead")
 
 
-func change_level(to = next_level):
-	get_tree().change_scene(to)
+func finish_level():
+	emit_signal("finished")
 
 
 func _on_MoonArea2D_body_entered(body):

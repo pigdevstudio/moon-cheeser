@@ -41,6 +41,7 @@ config/icon="res://icon.png"
 BGM="*res://screens/background_music/BackgroundMusic.tscn"
 Score="*res://meta/Score.tscn"
 Achievements="*res://meta/achievements/AchievementsDictionary.tscn"
+PlayerData="*res://meta/PlayerData.tscn"
 
 [debug]
 

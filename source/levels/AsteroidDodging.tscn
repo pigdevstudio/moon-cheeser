@@ -30,7 +30,7 @@ _data = [ Vector2( 0, 1 ), 0.0, 359.0, 0, 1, Vector2( 1, 360 ), 359.0, 0.0, 1, 0
 [sub_resource type="Curve" id=3]
 _data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.488506, 0.988636 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="GDScript" id=16]
+[sub_resource type="GDScript" id=4]
 script/source = "extends Timer
 
 
@@ -54,7 +54,7 @@ func _on_RandomTimer_timeout():
 		start(-1)
 "
 
-[sub_resource type="Animation" id=17]
+[sub_resource type="Animation" id=5]
 resource_name = "idle"
 length = 4.0
 loop = true
@@ -71,7 +71,7 @@ tracks/0/keys = {
 "values": [ Vector2( 0, 128 ), Vector2( 0, 640 ) ]
 }
 
-[sub_resource type="Animation" id=18]
+[sub_resource type="Animation" id=6]
 resource_name = "idle"
 length = 4.0
 loop = true
@@ -88,7 +88,7 @@ tracks/0/keys = {
 "values": [ Vector2( 0, 128 ), Vector2( 0, 640 ) ]
 }
 
-[sub_resource type="Animation" id=19]
+[sub_resource type="Animation" id=7]
 resource_name = "idle"
 length = 4.0
 loop = true
@@ -105,10 +105,10 @@ tracks/0/keys = {
 "values": [ Vector2( 0, 128 ), Vector2( 0, 640 ) ]
 }
 
-[sub_resource type="CircleShape2D" id=20]
+[sub_resource type="CircleShape2D" id=8]
 radius = 24.0
 
-[sub_resource type="Animation" id=21]
+[sub_resource type="Animation" id=9]
 length = 2.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("InterfaceLayer/ColorRect:color")
@@ -244,7 +244,7 @@ tracks/9/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="Animation" id=22]
+[sub_resource type="Animation" id=10]
 length = 6.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("Background:speed")
@@ -337,7 +337,7 @@ tracks/6/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="Animation" id=23]
+[sub_resource type="Animation" id=11]
 tracks/0/type = "value"
 tracks/0/path = NodePath("InterfaceLayer/ColorRect:color")
 tracks/0/interp = 1
@@ -365,7 +365,7 @@ tracks/1/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=31]
+[sub_resource type="Animation" id=12]
 resource_name = "Transit"
 tracks/0/type = "value"
 tracks/0/path = NodePath("InterfaceLayer/ColorRect:color")
@@ -390,7 +390,7 @@ tracks/1/keys = {
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
-"method": "change_level"
+"method": "finish_level"
 } ]
 }
 tracks/2/type = "value"
@@ -406,7 +406,7 @@ tracks/2/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="Animation" id=29]
+[sub_resource type="Animation" id=13]
 resource_name = "smash"
 length = 0.6
 loop = true
@@ -460,11 +460,11 @@ tracks/3/keys = {
 "values": [ Vector2( 1, 1 ), Vector2( 1.2, 1.2 ) ]
 }
 
-[sub_resource type="LineShape2D" id=32]
+[sub_resource type="LineShape2D" id=14]
 
 [node name="Level" type="Node2D"]
 script = ExtResource( 8 )
-next_level = "res://levels/BlueMoon/BlueMoonLevel.tscn"
+next_level_path = "res://levels/BlueMoon/BlueMoonLevel.tscn"
 
 [node name="Background" type="ParallaxBackground" parent="."]
 layer = -3
@@ -521,11 +521,11 @@ position = Vector2( 0, 128 )
 spawn_scene = ExtResource( 7 )
 
 [node name="RandomTimer" parent="AsteroidSpawner/Spawner" instance=ExtResource( 13 )]
-script = SubResource( 16 )
+script = SubResource( 4 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="AsteroidSpawner/Spawner"]
 autoplay = "idle"
-anims/idle = SubResource( 17 )
+anims/idle = SubResource( 5 )
 
 [node name="CheeseSpawner" type="Node2D" parent="."]
 position = Vector2( 1536, 0 )
@@ -535,14 +535,14 @@ position = Vector2( 0, 640 )
 spawn_scene = ExtResource( 12 )
 
 [node name="RandomTimer" parent="CheeseSpawner/Spawner" instance=ExtResource( 13 )]
-script = SubResource( 16 )
+script = SubResource( 4 )
 min_wait_time = 2.0
 max_wait_time = 3.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CheeseSpawner/Spawner"]
 autoplay = "idle"
 playback_speed = -1.0
-anims/idle = SubResource( 18 )
+anims/idle = SubResource( 6 )
 
 [node name="CheeseSpawner2" type="Node2D" parent="."]
 position = Vector2( 1536, 0 )
@@ -552,13 +552,13 @@ position = Vector2( 0, 128 )
 spawn_scene = ExtResource( 12 )
 
 [node name="RandomTimer" parent="CheeseSpawner2/Spawner" instance=ExtResource( 13 )]
-script = SubResource( 16 )
+script = SubResource( 4 )
 min_wait_time = 2.0
 max_wait_time = 3.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CheeseSpawner2/Spawner"]
 autoplay = "idle"
-anims/idle = SubResource( 19 )
+anims/idle = SubResource( 7 )
 
 [node name="Starmouse" parent="." instance=ExtResource( 3 )]
 position = Vector2( -200, 360 )
@@ -575,21 +575,20 @@ collision_layer = 1024
 collision_mask = 1024
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Starmouse/AsteroidDetectionArea2D"]
-shape = SubResource( 20 )
-disabled = true
+shape = SubResource( 8 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "Arriving"
-anims/Arriving = SubResource( 21 )
-anims/Completed = SubResource( 22 )
-anims/Dead = SubResource( 23 )
-anims/Transit = SubResource( 31 )
+anims/Arriving = SubResource( 9 )
+anims/Completed = SubResource( 10 )
+anims/Dead = SubResource( 11 )
+anims/Transit = SubResource( 12 )
 
 [node name="Instruction" type="Node" parent="."]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Instruction"]
 autoplay = "smash"
-anims/smash = SubResource( 29 )
+anims/smash = SubResource( 13 )
 
 [node name="Pivot" type="Node2D" parent="Instruction"]
 visible = false
@@ -630,7 +629,7 @@ layer = 2
 [node name="ColorRect" type="ColorRect" parent="InterfaceLayer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 0, 0, 0, 0 )
+color = Color( 0, 0, 0, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -648,7 +647,7 @@ collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Moon/Area2D"]
 position = Vector2( 0, -123.817 )
-shape = SubResource( 32 )
+shape = SubResource( 14 )
 
 [node name="AstromouseSpawner2D" parent="." instance=ExtResource( 4 )]
 position = Vector2( -214.667, 424 )

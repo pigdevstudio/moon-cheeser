@@ -1,6 +1,9 @@
 extends Node2D
 
 signal astromouse_died
+signal finished
+
+export(String, FILE, "*.tscn") var next_level_path
 
 var _starmouse
 var _blackhole
@@ -12,6 +15,7 @@ onready var _blackhole_timer = $BlackholeSpawner/RandomTimer
 onready var _starmouse_spawner = $StarmouseSpawner
 onready var _supernova_spawner = $SupernovaSpawner
 onready var _cheese_spawner = $CheeseSpawner
+onready var _camera = $ShakingCamera2D
 
 
 func _ready():
@@ -87,6 +91,7 @@ func _on_Star_collided(collision):
 	match collider.name:
 		"Moon":
 			_moon.spawn_crater(collision)
+			_camera.shake()
 		"Astromouse":
 			if not _astromouse.is_inside_tree():
 				return
@@ -117,6 +122,7 @@ func _on_Comet_collided(collision):
 	match collider.name:
 		"Moon":
 			_moon.spawn_crater(collision)
+			_camera.shake()
 		"Astromouse":
 			_astromouse.die()
 	if collider.is_in_group("star") or collider.is_in_group("comet"):
@@ -144,3 +150,7 @@ func _on_LeftStarSpawner_spawned(spawn):
 func _on_LeftCometSpawner_spawned(spawn):
 	spawn.direction.x = 1
 	spawn.connect("collided", self, "_on_Comet_collided")
+
+
+func _on_FinishTimer_timeout():
+	emit_signal("finished")

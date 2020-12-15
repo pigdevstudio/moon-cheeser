@@ -4,20 +4,21 @@
 [ext_resource path="res://objects/comet/Bundle/asteroid-small.svg" type="Texture" id=2]
 [ext_resource path="res://objects/space_flying_bodies/star/particles.png" type="Texture" id=3]
 
-[sub_resource type="Gradient" id=2]
+[sub_resource type="Gradient" id=1]
 offsets = PoolRealArray( 0, 0.231527, 0.458128, 0.729064, 1 )
 colors = PoolColorArray( 1, 1, 1, 1, 1, 0.788235, 0.309804, 1, 0.980392, 0.419608, 0.211765, 1, 0.831373, 0.219608, 0.219608, 1, 0.831373, 0.219608, 0.219608, 0 )
 
-[sub_resource type="GradientTexture" id=3]
-gradient = SubResource( 2 )
+[sub_resource type="GradientTexture" id=2]
+gradient = SubResource( 1 )
 
-[sub_resource type="Curve" id=4]
+[sub_resource type="Curve" id=3]
 _data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=5]
-curve = SubResource( 4 )
+[sub_resource type="CurveTexture" id=4]
+curve = SubResource( 3 )
 
-[sub_resource type="ParticlesMaterial" id=6]
+[sub_resource type="ParticlesMaterial" id=5]
+lifetime_randomness = 1.0
 emission_shape = 1
 emission_sphere_radius = 32.0
 flag_disable_z = true
@@ -25,9 +26,12 @@ gravity = Vector3( 0, 0, 0 )
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 radial_accel = -200.0
-scale_random = 1.0
-scale_curve = SubResource( 5 )
-color_ramp = SubResource( 3 )
+radial_accel_random = 0.55
+scale_random = 0.7
+scale_curve = SubResource( 4 )
+color_ramp = SubResource( 2 )
+hue_variation = 0.02
+hue_variation_random = 0.11
 
 [node name="Comet" groups=[
 "comet",
@@ -46,7 +50,7 @@ scale = Vector2( 0.8, 0.8 )
 amount = 64
 local_coords = false
 draw_order = 1
-process_material = SubResource( 6 )
+process_material = SubResource( 5 )
 texture = ExtResource( 3 )
 
 [node name="Particles2D2" type="Particles2D" parent="Sprite" index="2"]
@@ -56,5 +60,5 @@ scale = Vector2( 0.8, 0.8 )
 amount = 16
 lifetime = 0.5
 draw_order = 1
-process_material = SubResource( 6 )
+process_material = SubResource( 5 )
 texture = ExtResource( 3 )

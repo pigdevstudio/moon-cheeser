@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/jump.wav-6156c9ff537a6267522f6ff58da8564d.sample"
+path="res://.import/falling.wav-4be8304afabb74162338fe0057c436c8.sample"
 
 [deps]
 
-source_file="res://actors/astromouse/sound_effects/jump.wav"
-dest_files=[ "res://.import/jump.wav-6156c9ff537a6267522f6ff58da8564d.sample" ]
+source_file="res://actors/astromouse/sfx/falling.wav"
+dest_files=[ "res://.import/falling.wav-4be8304afabb74162338fe0057c436c8.sample" ]
 
 [params]
 

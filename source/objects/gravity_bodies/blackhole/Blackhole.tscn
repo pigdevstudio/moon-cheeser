@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://objects/gravity_bodies/blackhole/blackhole.svg" type="Texture" id=1]
 [ext_resource path="res://objects/gravity_bodies/blackhole/spacebar.svg" type="Texture" id=2]
@@ -9,10 +9,13 @@
 [ext_resource path="res://meta/achievements/GravityBattleAchievement.tscn" type="PackedScene" id=7]
 [ext_resource path="res://meta/achievements/VoidAchievement.tscn" type="PackedScene" id=8]
 [ext_resource path="res://interface/fonts/garoa_hacker_24_purple_outline.tres" type="DynamicFont" id=9]
-[ext_resource path="res://actors/astromouse/sound_effects/jump.wav" type="AudioStream" id=10]
+[ext_resource path="res://actors/astromouse/sfx/jump.wav" type="AudioStream" id=10]
+[ext_resource path="res://levels/star.svg" type="Texture" id=11]
 
-[sub_resource type="Animation" id=1]
-resource_name = "pulse"
+[sub_resource type="Curve" id=1]
+_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.522988, 0.763636 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="Animation" id=2]
 length = 4.0
 loop = true
 tracks/0/type = "value"
@@ -54,16 +57,15 @@ tracks/2/keys = {
 "values": [ 0.1, 0.1, 0.5 ]
 }
 
-[sub_resource type="CapsuleShape2D" id=2]
+[sub_resource type="CapsuleShape2D" id=3]
 radius = 33.1054
 height = 47.0407
 
-[sub_resource type="CapsuleShape2D" id=3]
+[sub_resource type="CapsuleShape2D" id=4]
 radius = 24.0
 height = 32.0
 
-[sub_resource type="Animation" id=4]
-resource_name = "smash"
+[sub_resource type="Animation" id=5]
 length = 0.6
 loop = true
 step = 0.05
@@ -135,13 +137,28 @@ max_wait_time = 8.0
 rotation = 6.28319
 texture = ExtResource( 1 )
 
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+modulate = Color( 1.2, 1.2, 1.2, 1 )
+texture = ExtResource( 11 )
+emission_shape = 1
+emission_sphere_radius = 128.0
+gravity = Vector2( 0, 0 )
+angular_velocity = 100.0
+radial_accel = -100.0
+radial_accel_random = 0.3
+tangential_accel = 200.0
+tangential_accel_random = 0.3
+scale_amount = 0.5
+scale_amount_random = 0.5
+scale_amount_curve = SubResource( 1 )
+
 [node name="GravityBattleAchievement" parent="." instance=ExtResource( 7 )]
 
 [node name="VoidTrigger" parent="." instance=ExtResource( 8 )]
 
 [node name="Animator" type="AnimationPlayer" parent="."]
 autoplay = "pulse"
-anims/pulse = SubResource( 1 )
+anims/pulse = SubResource( 2 )
 
 [node name="Tween" type="Tween" parent="."]
 
@@ -246,18 +263,18 @@ collision_mask = 0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Astromouse/PickupArea"]
 position = Vector2( 0, -32 )
 rotation = 1.57079
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Astromouse"]
 position = Vector2( 0, -24 )
 rotation = 1.57079
-shape = SubResource( 3 )
+shape = SubResource( 4 )
 
 [node name="Instruction" type="Node" parent="."]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Instruction"]
 autoplay = "smash"
-anims/smash = SubResource( 4 )
+anims/smash = SubResource( 5 )
 
 [node name="Pivot" type="Node2D" parent="Instruction"]
 position = Vector2( 0, -216 )

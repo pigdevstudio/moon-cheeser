@@ -100,5 +100,7 @@ translations=[  ]
 
 [rendering]
 
+quality/driver/driver_name="GLES2"
+quality/driver/fallback_to_gles2=true
 vram_compression/import_etc=true
 environment/default_clear_color=Color( 0, 0.0666667, 0.168627, 1 )

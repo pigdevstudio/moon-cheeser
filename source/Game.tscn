@@ -16,4 +16,3 @@ score_scene_path = "res://screens/score_screen/ScoreScreen.tscn"
 [node name="HUD" parent="InterfaceLayer" instance=ExtResource( 1 )]
 
 [node name="FadeRect" parent="InterfaceLayer" instance=ExtResource( 3 )]
-[connection signal="astromouse_died" from="Level" to="." method="_on_Level_astromouse_died"]

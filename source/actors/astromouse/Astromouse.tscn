@@ -3,8 +3,9 @@
 [ext_resource path="res://actors/astromouse/Astromouse.gd" type="Script" id=1]
 [ext_resource path="res://actors/astromouse/actions/Jump.tscn" type="PackedScene" id=2]
 [ext_resource path="res://actors/astromouse/sprites/AstromouseCharacter.tscn" type="PackedScene" id=3]
-[ext_resource path="res://actors/astromouse/sound_effects/landing.wav" type="AudioStream" id=5]
+[ext_resource path="res://actors/astromouse/sfx/landing.wav" type="AudioStream" id=5]
 [ext_resource path="res://meta/achievements/AstromouseAchievement.tscn" type="PackedScene" id=10]
+
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 32, 24 )

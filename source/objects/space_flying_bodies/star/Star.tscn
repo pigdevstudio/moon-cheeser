@@ -25,6 +25,7 @@ _data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
 curve = SubResource( 5 )
 
 [sub_resource type="ParticlesMaterial" id=7]
+lifetime_randomness = 0.73
 emission_shape = 1
 emission_sphere_radius = 32.0
 flag_disable_z = true
@@ -32,6 +33,7 @@ gravity = Vector3( 0, 0, 0 )
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 radial_accel = -200.0
+radial_accel_random = 0.4
 scale_curve = SubResource( 6 )
 color_ramp = SubResource( 2 )
 hue_variation_random = 1.0

@@ -1,18 +1,27 @@
 [gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://levels/star_back.png" type="Texture" id=1]
-[ext_resource path="res://actors/astromouse/Astromouse.tscn" type="PackedScene" id=2]
-[ext_resource path="res://actors/starmouse/StarMouse.tscn" type="PackedScene" id=3]
-[ext_resource path="res://objects/spawners/Spawner2D.tscn" type="PackedScene" id=4]
-[ext_resource path="res://objects/gravity_bodies/blackhole/spacebar.svg" type="Texture" id=6]
-[ext_resource path="res://objects/comet/Asteroid.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Actors/astromouse/Astromouse.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Actors/starmouse/StarMouse.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Objects/Spawners/Spawner2D.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Objects/Blackhole/spacebar.svg" type="Texture" id=6]
+[ext_resource path="res://levels/Cinematics/comet/Asteroid.tscn" type="PackedScene" id=7]
 [ext_resource path="res://levels/AsteroidDodging.gd" type="Script" id=8]
-[ext_resource path="res://objects/gravity_bodies/moon/BlueMoon.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Objects/Moon/BlueMoon.tscn" type="PackedScene" id=9]
 [ext_resource path="res://levels/03.faster-pace.ogg" type="AudioStream" id=10]
-[ext_resource path="res://objects/cheese/FlyingCheese.tscn" type="PackedScene" id=12]
-[ext_resource path="res://objects/spawners/RandomTimer.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Objects/Cheese/FlyingCheese.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Objects/Spawners/RandomTimer.tscn" type="PackedScene" id=13]
 [ext_resource path="res://levels/Tutorial/hand.svg" type="Texture" id=15]
 [ext_resource path="res://interface/fonts/garoa_hacker_24_purple_outline.tres" type="DynamicFont" id=16]
+
+
+
+
+
+
+
+
+
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends ParallaxBackground

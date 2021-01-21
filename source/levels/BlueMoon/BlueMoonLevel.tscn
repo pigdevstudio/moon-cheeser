@@ -1,19 +1,31 @@
 [gd_scene load_steps=22 format=2]
 
-[ext_resource path="res://objects/space_flying_bodies/star/Star.tscn" type="PackedScene" id=1]
-[ext_resource path="res://objects/spawners/RandomTimer.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Objects/FlyingBodies/Star/Star.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Objects/Spawners/RandomTimer.tscn" type="PackedScene" id=2]
 [ext_resource path="res://levels/ShakingCamera2D.tscn" type="PackedScene" id=3]
-[ext_resource path="res://objects/supernova/Supernova.tscn" type="PackedScene" id=4]
-[ext_resource path="res://objects/gravity_bodies/moon/BlueMoon.tscn" type="PackedScene" id=5]
-[ext_resource path="res://actors/astromouse/Astromouse.tscn" type="PackedScene" id=6]
-[ext_resource path="res://objects/spawners/CheeseSpawner.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Objects/Supernova/Supernova.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Objects/Moon/BlueMoon.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Actors/astromouse/Astromouse.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Objects/Spawners/CheeseSpawner.tscn" type="PackedScene" id=7]
 [ext_resource path="res://levels/Background.tscn" type="PackedScene" id=9]
 [ext_resource path="res://levels/Level.gd" type="Script" id=10]
-[ext_resource path="res://objects/space_flying_bodies/comet/Comet.tscn" type="PackedScene" id=11]
-[ext_resource path="res://objects/gravity_bodies/blackhole/Blackhole.tscn" type="PackedScene" id=12]
-[ext_resource path="res://objects/spawners/Spawner2D.tscn" type="PackedScene" id=13]
-[ext_resource path="res://actors/starmouse/StarMouse.tscn" type="PackedScene" id=14]
-[ext_resource path="res://objects/planets/planets.svg" type="Texture" id=16]
+[ext_resource path="res://Objects/FlyingBodies/Comet/Comet.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Objects/Blackhole/Blackhole.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Objects/Spawners/Spawner2D.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Actors/starmouse/StarMouse.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Objects/Planets/planets.svg" type="Texture" id=16]
+
+
+
+
+
+
+
+
+
+
+
+
 
 [sub_resource type="Environment" id=1]
 background_mode = 4

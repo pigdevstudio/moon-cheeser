@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/landing.wav-421b6c28a196d8811d99ec0fc9cd7a16.sample"
+
+[deps]
+
+source_file="res://Actors/astromouse/sfx/landing.wav"
+dest_files=[ "res://.import/landing.wav-421b6c28a196d8811d99ec0fc9cd7a16.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

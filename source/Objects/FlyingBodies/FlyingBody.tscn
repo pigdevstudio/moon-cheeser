@@ -1,0 +1,147 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Objects/FlyingBodies/FlyingBody.gd" type="Script" id=1]
+[ext_resource path="res://Objects/FlyingBodies/colliding.wav" type="AudioStream" id=3]
+[ext_resource path="res://Objects/FlyingBodies/DragArea.tscn" type="PackedScene" id=4]
+
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 35.2124
+
+[sub_resource type="Animation" id=2]
+resource_name = "Spin"
+length = 4.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 360.0 ]
+}
+
+[sub_resource type="CircleShape2D" id=3]
+radius = 48.0
+
+[sub_resource type="Animation" id=4]
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Shape:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=5]
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Shape:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.4 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "queue_free"
+} ]
+}
+tracks/3/type = "audio"
+tracks/3/path = NodePath("SFX")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 3 )
+} ],
+"times": PoolRealArray( 0 )
+}
+
+[node name="FlyingBody" type="KinematicBody2D" groups=[
+"flying_body",
+]]
+script = ExtResource( 1 )
+
+[node name="Shape" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+disabled = true
+
+[node name="Sprite" type="Sprite" parent="."]
+visible = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite"]
+autoplay = "Spin"
+anims/Spin = SubResource( 2 )
+
+[node name="SFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 3 )
+volume_db = -16.0
+bus = "SFX"
+
+[node name="Visibility" type="VisibilityNotifier2D" parent="."]
+scale = Vector2( 4.8, 4.8 )
+
+[node name="DragArea" parent="." instance=ExtResource( 4 )]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DragArea"]
+shape = SubResource( 3 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "SETUP"
+anims/SETUP = SubResource( 4 )
+anims/explode = SubResource( 5 )
+[connection signal="screen_exited" from="Visibility" to="." method="queue_free"]
+[connection signal="dragged" from="DragArea" to="." method="set_direction"]
+[connection signal="dragging" from="DragArea" to="." method="stop"]

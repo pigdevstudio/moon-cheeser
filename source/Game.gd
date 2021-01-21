@@ -35,7 +35,7 @@ func load_next_level():
 
 
 func _on_Level_astromouse_died():
-	change_scene(score_scene_path)
+	get_tree().change_scene(score_scene_path)
 
 
 func _on_Level_finished():

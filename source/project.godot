@@ -12,21 +12,15 @@ _global_script_classes=[ {
 "base": "Node",
 "class": "ActionResource",
 "language": "GDScript",
-"path": "res://objects/comet/Resource.gd"
-}, {
-"base": "Node",
-"class": "Hit",
-"language": "GDScript",
-"path": "res://objects/hitbox/Hit.gd"
+"path": "res://levels/Cinematics/comet/Resource.gd"
 }, {
 "base": "Area2D",
 "class": "HurtBox2D",
 "language": "GDScript",
-"path": "res://objects/comet/HurtBox.gd"
+"path": "res://levels/Cinematics/comet/HurtBox.gd"
 } ]
 _global_script_class_icons={
 "ActionResource": "",
-"Hit": "",
 "HurtBox2D": ""
 }
 
@@ -104,4 +98,4 @@ quality/driver/driver_name="GLES2"
 quality/driver/fallback_to_gles2=true
 quality/2d/use_pixel_snap=true
 vram_compression/import_etc=true
-environment/default_clear_color=Color( 0, 0.0666667, 0.168627, 1 )
+environment/default_clear_color=Color( 0.196078, 0.160784, 0.278431, 1 )

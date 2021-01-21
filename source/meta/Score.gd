@@ -45,3 +45,7 @@ func read_highscore():
 	else:
 		write_highscore()
 	return(high_score)
+
+
+func reset():
+	current_score = 0

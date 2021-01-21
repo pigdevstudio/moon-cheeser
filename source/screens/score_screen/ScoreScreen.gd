@@ -9,6 +9,7 @@ export(String, FILE, "*.tscn") var game_scene_path
 func _ready():
 	set_score(Score.current_score)
 	set_highscore(Score.high_score)
+	Score.reset()
 
 
 func set_score(score):

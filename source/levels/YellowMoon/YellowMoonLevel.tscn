@@ -1,25 +1,51 @@
 [gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://levels/Tutorial.gd" type="Script" id=1]
-[ext_resource path="res://objects/spawners/RandomTimer.tscn" type="PackedScene" id=2]
-[ext_resource path="res://objects/spawners/CheeseSpawner.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Objects/Spawners/RandomTimer.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Objects/Spawners/CheeseSpawner.tscn" type="PackedScene" id=3]
 [ext_resource path="res://levels/Level.gd" type="Script" id=4]
-[ext_resource path="res://objects/spawners/Spawner2D.tscn" type="PackedScene" id=5]
-[ext_resource path="res://objects/space_flying_bodies/star/Star.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Objects/Spawners/Spawner2D.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Objects/FlyingBodies/Star/Star.tscn" type="PackedScene" id=6]
 [ext_resource path="res://levels/Tutorial/hand.svg" type="Texture" id=7]
-[ext_resource path="res://objects/gravity_bodies/blackhole/Blackhole.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Objects/Blackhole/Blackhole.tscn" type="PackedScene" id=8]
 [ext_resource path="res://levels/Background.tscn" type="PackedScene" id=9]
-[ext_resource path="res://actors/starmouse/StarMouse.tscn" type="PackedScene" id=10]
-[ext_resource path="res://objects/supernova/Supernova.tscn" type="PackedScene" id=11]
-[ext_resource path="res://objects/space_flying_bodies/comet/Comet.tscn" type="PackedScene" id=12]
-[ext_resource path="res://objects/planets/planets.svg" type="Texture" id=13]
-[ext_resource path="res://objects/gravity_bodies/moon/Moon.tscn" type="PackedScene" id=14]
-[ext_resource path="res://actors/astromouse/Astromouse.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Actors/starmouse/StarMouse.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Objects/Supernova/Supernova.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Objects/FlyingBodies/Comet/Comet.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Objects/Planets/planets.svg" type="Texture" id=13]
+[ext_resource path="res://Objects/Moon/Moon.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Actors/astromouse/Astromouse.tscn" type="PackedScene" id=15]
 [ext_resource path="res://meta/achievements/TutorialAchievement.tscn" type="PackedScene" id=16]
 [ext_resource path="res://levels/ShakingCamera2D.tscn" type="PackedScene" id=17]
 
-[sub_resource type="CircleShape2D" id=2]
+
+
+
+
+
+
+
+
+
+[sub_resource type="CircleShape2D" id=1]
 radius = 192.0
+
+[sub_resource type="Animation" id=2]
+resource_name = "idle"
+length = 4.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 1280, 0 ) ]
+}
 
 [sub_resource type="Animation" id=3]
 resource_name = "idle"
@@ -35,7 +61,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 2 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0, 0 ), Vector2( 1280, 0 ) ]
+"values": [ Vector2( 0, 128 ), Vector2( 0, 640 ) ]
 }
 
 [sub_resource type="Animation" id=4]
@@ -56,7 +82,6 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id=5]
-resource_name = "idle"
 length = 4.0
 loop = true
 tracks/0/type = "value"
@@ -88,26 +113,10 @@ tracks/0/keys = {
 "values": [ Vector2( 0, 128 ), Vector2( 0, 640 ) ]
 }
 
-[sub_resource type="Animation" id=7]
-length = 4.0
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 2 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 0, 128 ), Vector2( 0, 640 ) ]
-}
-
-[sub_resource type="SegmentShape2D" id=8]
+[sub_resource type="SegmentShape2D" id=7]
 b = Vector2( 0, 720 )
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=8]
 resource_name = "Comet"
 length = 0.5
 tracks/0/type = "value"
@@ -123,7 +132,7 @@ tracks/0/keys = {
 "values": [ 0.0, 20.0, 15.0 ]
 }
 
-[sub_resource type="Animation" id=10]
+[sub_resource type="Animation" id=9]
 resource_name = "Finished"
 length = 0.5
 tracks/0/type = "method"
@@ -197,7 +206,7 @@ tracks/4/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=11]
+[sub_resource type="Animation" id=10]
 resource_name = "Overlay"
 length = 0.5
 tracks/0/type = "value"
@@ -237,7 +246,7 @@ tracks/2/keys = {
 "values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 0.498039 ) ]
 }
 
-[sub_resource type="Animation" id=12]
+[sub_resource type="Animation" id=11]
 tracks/0/type = "value"
 tracks/0/path = NodePath("BlackBarTop:position")
 tracks/0/interp = 1
@@ -323,7 +332,7 @@ tracks/6/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="Animation" id=13]
+[sub_resource type="Animation" id=12]
 length = 0.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("GodHandRight/Sprite:rotation_degrees")
@@ -343,6 +352,7 @@ tracks/0/keys = {
 ]]
 script = ExtResource( 4 )
 __meta__ = {
+"_edit_horizontal_guides_": [ 264.0 ],
 "_edit_vertical_guides_": [  ]
 }
 next_level_path = "res://levels/Cinematics/CometCinematic.tscn"
@@ -368,7 +378,7 @@ region_rect = Rect2( 756, 25, 256, 256 )
 position = Vector2( 648, 488 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="JumpArea2D"]
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="Moon" parent="." instance=ExtResource( 14 )]
 position = Vector2( 648, 488 )
@@ -385,7 +395,7 @@ max_wait_time = 40.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="BlackholeSpawner"]
 autoplay = "idle"
-anims/idle = SubResource( 3 )
+anims/idle = SubResource( 2 )
 
 [node name="LeftStarSpawnPoint" type="Node2D" parent="."]
 position = Vector2( -256, -8 )
@@ -400,7 +410,7 @@ max_wait_time = 16.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="LeftStarSpawnPoint/Spawner"]
 autoplay = "idle"
-anims/idle = SubResource( 4 )
+anims/idle = SubResource( 3 )
 
 [node name="LeftCometSpawnPoint" type="Node2D" parent="."]
 position = Vector2( -256, -8 )
@@ -415,7 +425,7 @@ max_wait_time = 16.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="LeftCometSpawnPoint/Spawner"]
 autoplay = "idle"
-anims/idle = SubResource( 5 )
+anims/idle = SubResource( 4 )
 
 [node name="RightStarSpawnPoint" type="Node2D" parent="."]
 position = Vector2( 1536, 0 )
@@ -430,7 +440,7 @@ max_wait_time = 16.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="RightStarSpawnPoint/Spawner"]
 autoplay = "idle"
-anims/idle = SubResource( 6 )
+anims/idle = SubResource( 5 )
 
 [node name="RighCometSpawnPoint" type="Node2D" parent="."]
 position = Vector2( 1536, 0 )
@@ -445,7 +455,7 @@ max_wait_time = 16.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="RighCometSpawnPoint/Spawner"]
 autoplay = "idle"
-anims/idle = SubResource( 7 )
+anims/idle = SubResource( 6 )
 
 [node name="CheeseSpawner" parent="." instance=ExtResource( 3 )]
 min_cheeses = 5
@@ -455,7 +465,7 @@ min_radius = 16.0
 max_radius = 64.0
 
 [node name="Astromouse" parent="." instance=ExtResource( 15 )]
-position = Vector2( 640, 184 )
+position = Vector2( 640, 296 )
 
 [node name="StarmouseSpawner" parent="." instance=ExtResource( 5 )]
 spawn_scene = ExtResource( 10 )
@@ -473,13 +483,13 @@ moon_path = NodePath("../Moon")
 position = Vector2( 912, 0 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Tutorial/StarArea2D"]
-shape = SubResource( 8 )
+shape = SubResource( 7 )
 
 [node name="CometArea2D" type="Area2D" parent="Tutorial"]
 position = Vector2( 384, 0 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Tutorial/CometArea2D"]
-shape = SubResource( 8 )
+shape = SubResource( 7 )
 
 [node name="BlackBarTop" type="Polygon2D" parent="Tutorial"]
 position = Vector2( 0, -64 )
@@ -530,11 +540,11 @@ region_rect = Rect2( 6, 6, 182, 207 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Tutorial"]
 autoplay = "SETUP"
-anims/Comet = SubResource( 9 )
-anims/Finished = SubResource( 10 )
-anims/Overlay = SubResource( 11 )
-anims/SETUP = SubResource( 12 )
-anims/Star = SubResource( 13 )
+anims/Comet = SubResource( 8 )
+anims/Finished = SubResource( 9 )
+anims/Overlay = SubResource( 10 )
+anims/SETUP = SubResource( 11 )
+anims/Star = SubResource( 12 )
 
 [node name="Tween" type="Tween" parent="Tutorial"]
 
@@ -546,8 +556,16 @@ anims/Star = SubResource( 13 )
 strength = 5.0
 
 [node name="FinishTimer" type="Timer" parent="."]
+wait_time = 120.0
 one_shot = true
 autostart = true
+
+[node name="Star" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1352, 136 )
+direction = Vector2( -1, 0 )
+
+[node name="Comet" parent="." instance=ExtResource( 12 )]
+position = Vector2( -64, 520 )
 [connection signal="input_event" from="JumpArea2D" to="." method="_on_JumpArea2D_input_event"]
 [connection signal="spawned" from="BlackholeSpawner" to="." method="_on_BlackholeSpawner_spawned"]
 [connection signal="timeout" from="BlackholeSpawner/RandomTimer" to="BlackholeSpawner" method="spawn"]
@@ -565,3 +583,5 @@ autostart = true
 [connection signal="collided" from="Tutorial/Comet" to="." method="_on_Comet_collided"]
 [connection signal="collided" from="Tutorial/Star" to="." method="_on_Star_collided"]
 [connection signal="timeout" from="FinishTimer" to="." method="_on_FinishTimer_timeout"]
+[connection signal="collided" from="Star" to="." method="_on_Star_collided"]
+[connection signal="collided" from="Comet" to="." method="_on_Comet_collided"]

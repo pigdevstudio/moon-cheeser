@@ -18,15 +18,6 @@
 [ext_resource path="res://meta/achievements/TutorialAchievement.tscn" type="PackedScene" id=16]
 [ext_resource path="res://levels/ShakingCamera2D.tscn" type="PackedScene" id=17]
 
-
-
-
-
-
-
-
-
-
 [sub_resource type="CircleShape2D" id=1]
 radius = 192.0
 
@@ -142,7 +133,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0.5 ),
+"times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
@@ -550,6 +541,13 @@ anims/Star = SubResource( 12 )
 
 [node name="TutorialAchievement" parent="Tutorial" instance=ExtResource( 16 )]
 
+[node name="Star2" parent="Tutorial" instance=ExtResource( 6 )]
+position = Vector2( 1352, 136 )
+direction = Vector2( -1, 0 )
+
+[node name="Comet2" parent="Tutorial" instance=ExtResource( 12 )]
+position = Vector2( -64, 520 )
+
 [node name="CometCollisionTimer" type="Timer" parent="."]
 
 [node name="ShakingCamera2D" parent="." instance=ExtResource( 17 )]
@@ -560,12 +558,6 @@ wait_time = 120.0
 one_shot = true
 autostart = true
 
-[node name="Star" parent="." instance=ExtResource( 6 )]
-position = Vector2( 1352, 136 )
-direction = Vector2( -1, 0 )
-
-[node name="Comet" parent="." instance=ExtResource( 12 )]
-position = Vector2( -64, 520 )
 [connection signal="input_event" from="JumpArea2D" to="." method="_on_JumpArea2D_input_event"]
 [connection signal="spawned" from="BlackholeSpawner" to="." method="_on_BlackholeSpawner_spawned"]
 [connection signal="timeout" from="BlackholeSpawner/RandomTimer" to="BlackholeSpawner" method="spawn"]
@@ -582,6 +574,6 @@ position = Vector2( -64, 520 )
 [connection signal="body_entered" from="Tutorial/CometArea2D" to="Tutorial" method="_on_CometArea2D_body_entered"]
 [connection signal="collided" from="Tutorial/Comet" to="." method="_on_Comet_collided"]
 [connection signal="collided" from="Tutorial/Star" to="." method="_on_Star_collided"]
+[connection signal="collided" from="Tutorial/Star2" to="." method="_on_Star_collided"]
+[connection signal="collided" from="Tutorial/Comet2" to="." method="_on_Comet_collided"]
 [connection signal="timeout" from="FinishTimer" to="." method="_on_FinishTimer_timeout"]
-[connection signal="collided" from="Star" to="." method="_on_Star_collided"]
-[connection signal="collided" from="Comet" to="." method="_on_Comet_collided"]

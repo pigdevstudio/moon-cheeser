@@ -396,6 +396,7 @@ anims/dead = SubResource( 22 )
 anims/run_fall = SubResource( 23 )
 anims/run_jump = SubResource( 24 )
 anims/running = SubResource( 25 )
+
 [connection signal="executed" from="Jump" to="." method="_on_Jump_executed"]
 [connection signal="area_entered" from="PickupArea" to="AstromouseAchievement" method="_on_PickupArea_area_entered"]
 [connection signal="area_entered" from="CraterDetectionArea2D" to="." method="_on_CraterDetectionArea2D_area_entered"]

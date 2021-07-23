@@ -15,7 +15,6 @@
 [ext_resource path="res://Actors/astromouse/Animations/Walk.tres" type="Animation" id=13]
 [ext_resource path="res://Actors/astromouse/Animations/Float.tres" type="Animation" id=14]
 
-
 [node name="AstromouseCharacter" type="Position2D"]
 scale = Vector2( 1.25, 1.25 )
 script = ExtResource( 1 )

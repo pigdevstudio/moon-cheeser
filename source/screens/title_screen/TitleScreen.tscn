@@ -139,5 +139,6 @@ __meta__ = {
 }
 
 [node name="FadeRect" parent="." instance=ExtResource( 9 )]
+
 [connection signal="pressed" from="PlayButton" to="." method="_on_PlayButton_pressed"]
 [connection signal="pressed" from="AchievementsButton" to="." method="_on_AchievementsButton_pressed"]

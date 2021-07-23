@@ -79,6 +79,7 @@ func _on_BlackholeSpawner_spawned(spawn):
 func _on_Blackhole_finished(dummy):
 	add_child(_astromouse)
 	_astromouse.global_position = dummy.global_position
+	_astromouse.velocity = Vector2.ZERO
 	_blackhole_timer.start()
 	set_physics_process(true)
 	_moon.set_process_input(false)

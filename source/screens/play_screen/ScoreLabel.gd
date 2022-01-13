@@ -5,5 +5,4 @@ func _ready():
 
 
 func _on_ScoreHandler_scored():
-	var score = str(Score.get_score())
-	text = "Score: %s"%[score]
+	text = "Score: %s" % Score.current_score

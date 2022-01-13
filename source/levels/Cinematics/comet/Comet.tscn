@@ -5,7 +5,6 @@
 [ext_resource path="res://levels/Cinematics/comet/puff.png" type="Texture" id=3]
 [ext_resource path="res://levels/Cinematics/comet/Asteroid.tscn" type="PackedScene" id=4]
 
-
 [sub_resource type="Curve" id=56]
 _data = [ Vector2( 0, 1 ), 0.0, -0.520455, 0, 1, Vector2( 1, 0.479545 ), -0.520455, 0.0, 1, 0 ]
 

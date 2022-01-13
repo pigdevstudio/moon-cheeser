@@ -13,8 +13,10 @@ onready var _hand_left = $GodHandLeft
 onready var _achievement = $TutorialAchievement
 
 func _ready():
-	if Achievements.get_progress(_achievement.achievement_name) > 0:
+	var file = File.new()
+	if file.file_exists("user://highscore"):
 		_animator.play("Finished")
+	file.free()
 
 
 func _on_StarArea2D_body_entered(body):

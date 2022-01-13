@@ -52,4 +52,5 @@ texture_normal = ExtResource( 7 )
 [node name="FadeRect" parent="." instance=ExtResource( 1 )]
 
 [node name="Background" parent="." instance=ExtResource( 3 )]
+
 [connection signal="pressed" from="RetryButton" to="." method="_on_RetryButton_pressed"]

@@ -3,7 +3,7 @@ extends Node
 signal scored
 
 const USER_PATH = "user://highscore"
-var current_score = 0 setget set_score, get_score
+var current_score = 0 setget set_score
 var high_score = 0
 
 func _ready():

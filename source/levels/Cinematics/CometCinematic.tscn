@@ -1,34 +1,34 @@
-[gd_scene load_steps=82 format=2]
+[gd_scene load_steps=90 format=2]
 
-[ext_resource path="res://Actors/astromouse/sprites/AstromouseCharacter.gd" type="Script" id=1]
-[ext_resource path="res://Objects/Planets/planets.svg" type="Texture" id=2]
+[ext_resource path="res://actors/astromouse/sprites/AstromouseCharacter.gd" type="Script" id=1]
+[ext_resource path="res://objects/Planets/planets.svg" type="Texture" id=2]
 [ext_resource path="res://levels/Cinematics/comet/damage-shader-animation.tres" type="Animation" id=3]
-[ext_resource path="res://Objects/Moon/moon.svg" type="Texture" id=4]
-[ext_resource path="res://Objects/Moon/moon_gravity.png" type="Texture" id=5]
-[ext_resource path="res://Actors/starmouse/star.svg" type="Texture" id=6]
-[ext_resource path="res://Actors/astromouse/Animations/Dash.tres" type="Animation" id=7]
-[ext_resource path="res://Actors/astromouse/Animations/SETUP.tres" type="Animation" id=9]
-[ext_resource path="res://Actors/astromouse/Animations/Fall.tres" type="Animation" id=10]
-[ext_resource path="res://Actors/astromouse/Animations/Jump.tres" type="Animation" id=11]
-[ext_resource path="res://Actors/astromouse/Animations/RunFall.tres" type="Animation" id=12]
-[ext_resource path="res://Actors/astromouse/actions/GrabStar.tres" type="Animation" id=13]
-[ext_resource path="res://Actors/astromouse/Animations/Idle.tres" type="Animation" id=14]
-[ext_resource path="res://Actors/astromouse/Animations/Wall.tres" type="Animation" id=15]
-[ext_resource path="res://Actors/astromouse/sprites/cutout_body.png" type="Texture" id=16]
-[ext_resource path="res://Actors/astromouse/Animations/Run.tres" type="Animation" id=17]
-[ext_resource path="res://Actors/astromouse/Animations/Walk.tres" type="Animation" id=18]
-[ext_resource path="res://Actors/astromouse/Animations/RunJump.tres" type="Animation" id=19]
+[ext_resource path="res://objects/Moon/moon.svg" type="Texture" id=4]
+[ext_resource path="res://objects/Moon/moon_gravity.png" type="Texture" id=5]
+[ext_resource path="res://actors/starmouse/star.svg" type="Texture" id=6]
+[ext_resource path="res://actors/astromouse/Animations/Dash.tres" type="Animation" id=7]
+[ext_resource path="res://actors/astromouse/sprites/astromouse.svg" type="Texture" id=8]
+[ext_resource path="res://actors/astromouse/Animations/SETUP.tres" type="Animation" id=9]
+[ext_resource path="res://actors/astromouse/Animations/Fall.tres" type="Animation" id=10]
+[ext_resource path="res://actors/astromouse/Animations/Jump.tres" type="Animation" id=11]
+[ext_resource path="res://actors/astromouse/Animations/RunFall.tres" type="Animation" id=12]
+[ext_resource path="res://actors/astromouse/actions/GrabStar.tres" type="Animation" id=13]
+[ext_resource path="res://actors/astromouse/Animations/Idle.tres" type="Animation" id=14]
+[ext_resource path="res://actors/astromouse/Animations/Wall.tres" type="Animation" id=15]
+[ext_resource path="res://actors/astromouse/Animations/Run.tres" type="Animation" id=17]
+[ext_resource path="res://actors/astromouse/Animations/Walk.tres" type="Animation" id=18]
+[ext_resource path="res://actors/astromouse/Animations/RunJump.tres" type="Animation" id=19]
 [ext_resource path="res://levels/Cinematics/comet/sparkle.png" type="Texture" id=20]
-[ext_resource path="res://Objects/FlyingBodies/particles.png" type="Texture" id=21]
+[ext_resource path="res://objects/FlyingBodies/particles.png" type="Texture" id=21]
 [ext_resource path="res://levels/Cinematics/spin_animation.tres" type="Animation" id=22]
 [ext_resource path="res://levels/Cinematics/comet/puff.png" type="Texture" id=23]
 [ext_resource path="res://levels/Cinematics/comet/asteroid-great.svg" type="Texture" id=25]
 [ext_resource path="res://levels/starboy_crux.png" type="Texture" id=27]
 [ext_resource path="res://levels/star_back.png" type="Texture" id=28]
-[ext_resource path="res://Objects/Spawners/CheeseSpawner.tscn" type="PackedScene" id=29]
+[ext_resource path="res://objects/Spawners/CheeseSpawner.tscn" type="PackedScene" id=29]
 [ext_resource path="res://levels/Cinematics/CometCinematic.gd" type="Script" id=30]
 [ext_resource path="res://levels/ShakingCamera2D.tscn" type="PackedScene" id=31]
-[ext_resource path="res://Actors/astromouse/Animations/Float.tres" type="Animation" id=32]
+[ext_resource path="res://actors/astromouse/Animations/Float.tres" type="Animation" id=32]
 [ext_resource path="res://levels/01.slow-pace.ogg" type="AudioStream" id=33]
 [ext_resource path="res://levels/02.fast-pace.ogg" type="AudioStream" id=34]
 [ext_resource path="res://levels/sfx_sound_depressurizing.wav" type="AudioStream" id=35]
@@ -466,18 +466,44 @@ tracks/0/keys = {
 "values": [ 0.0, 360.0 ]
 }
 
-[sub_resource type="Curve" id=4]
-_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
-
-[sub_resource type="Gradient" id=5]
+[sub_resource type="Gradient" id=8]
 offsets = PoolRealArray( 0.807407, 1 )
 colors = PoolColorArray( 0.666667, 0.666667, 1, 1, 0.666667, 0.666667, 1, 0 )
 
-[sub_resource type="Curve" id=6]
+[sub_resource type="GradientTexture" id=5]
+gradient = SubResource( 8 )
+
+[sub_resource type="Curve" id=48]
 min_value = -1.0
 _data = [ Vector2( 0, 0.109091 ), 0.0, 0.0, 0, 0, Vector2( 1, -0.181818 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="CurveTexture" id=6]
+curve = SubResource( 48 )
+
+[sub_resource type="Curve" id=9]
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=7]
+curve = SubResource( 9 )
+
+[sub_resource type="ParticlesMaterial" id=4]
+lifetime_randomness = 0.73
+emission_shape = 1
+emission_sphere_radius = 32.0
+flag_disable_z = true
+direction = Vector3( -1, 0, 0 )
+spread = 0.0
+gravity = Vector3( 0, 0, 0 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+radial_accel = -200.0
+radial_accel_random = 0.4
+scale_curve = SubResource( 7 )
+color_ramp = SubResource( 5 )
+hue_variation_random = 1.0
+hue_variation_curve = SubResource( 6 )
+
+[sub_resource type="Animation" id=49]
 tracks/0/type = "value"
 tracks/0/path = NodePath("body/arm_r:position")
 tracks/0/interp = 1
@@ -683,7 +709,7 @@ tracks/16/keys = {
 "values": [ Vector2( 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=50]
 tracks/0/type = "value"
 tracks/0/path = NodePath("body/arm_r:position")
 tracks/0/interp = 1
@@ -865,7 +891,7 @@ tracks/14/keys = {
 "values": [ Vector2( 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=51]
 length = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("body/arm_r:position")
@@ -2984,16 +3010,42 @@ glow_enabled = true
 glow_blend_mode = 0
 glow_bicubic_upscale = true
 
-[sub_resource type="Curve" id=45]
-_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
-
-[sub_resource type="Gradient" id=46]
+[sub_resource type="Gradient" id=52]
 offsets = PoolRealArray( 0.807407, 1 )
 colors = PoolColorArray( 0.666667, 0.666667, 1, 1, 0.666667, 0.666667, 1, 0 )
 
-[sub_resource type="Curve" id=47]
+[sub_resource type="GradientTexture" id=53]
+gradient = SubResource( 52 )
+
+[sub_resource type="Curve" id=54]
 min_value = -1.0
 _data = [ Vector2( 0, 0.109091 ), 0.0, 0.0, 0, 0, Vector2( 1, -0.181818 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=55]
+curve = SubResource( 54 )
+
+[sub_resource type="Curve" id=56]
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=57]
+curve = SubResource( 56 )
+
+[sub_resource type="ParticlesMaterial" id=58]
+lifetime_randomness = 0.73
+emission_shape = 1
+emission_sphere_radius = 32.0
+flag_disable_z = true
+direction = Vector3( -1, 0, 0 )
+spread = 0.0
+gravity = Vector3( 0, 0, 0 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+radial_accel = -200.0
+radial_accel_random = 0.4
+scale_curve = SubResource( 57 )
+color_ramp = SubResource( 53 )
+hue_variation_random = 1.0
+hue_variation_curve = SubResource( 55 )
 
 [node name="Cinematic" type="Node"]
 script = ExtResource( 30 )
@@ -3009,9 +3061,7 @@ anims/SETUP = SubResource( 2 )
 
 [node name="WorldLayer" type="CanvasLayer" parent="."]
 
-[node name="World" type="Node2D" parent="WorldLayer" groups=[
-"level",
-]]
+[node name="World" type="Node2D" parent="WorldLayer" groups=["level"]]
 __meta__ = {
 "_edit_vertical_guides_": [  ]
 }
@@ -3027,39 +3077,21 @@ texture = ExtResource( 6 )
 autoplay = "Spin"
 anims/Spin = SubResource( 3 )
 
-[node name="Particles2D" type="CPUParticles2D" parent="WorldLayer/World/Star/Sprite"]
-modulate = Color( 1.1, 1.1, 1.1, 1 )
-scale = Vector2( 1.6, 1.6 )
-amount = 64
-lifetime_randomness = 0.73
-local_coords = false
-texture = ExtResource( 21 )
-emission_shape = 1
-emission_sphere_radius = 32.0
-gravity = Vector2( 0, 0 )
-radial_accel = -200.0
-radial_accel_random = 0.4
-scale_amount_curve = SubResource( 4 )
-color_ramp = SubResource( 5 )
-hue_variation_random = 1.0
-hue_variation_curve = SubResource( 6 )
-
-[node name="Particles2D2" type="CPUParticles2D" parent="WorldLayer/World/Star/Sprite"]
-modulate = Color( 1.1, 1.1, 1.1, 1 )
-show_behind_parent = true
+[node name="Particles2D3" type="Particles2D" parent="WorldLayer/World/Star/Sprite"]
+modulate = Color( 1.3, 1.3, 1.3, 1 )
 scale = Vector2( 1.6, 1.6 )
 amount = 16
-lifetime_randomness = 0.73
+local_coords = false
+process_material = SubResource( 4 )
 texture = ExtResource( 21 )
-emission_shape = 1
-emission_sphere_radius = 32.0
-gravity = Vector2( 0, 0 )
-radial_accel = -200.0
-radial_accel_random = 0.4
-scale_amount_curve = SubResource( 4 )
-color_ramp = SubResource( 5 )
-hue_variation_random = 1.0
-hue_variation_curve = SubResource( 6 )
+
+[node name="Particles2D4" type="Particles2D" parent="WorldLayer/World/Star/Sprite"]
+modulate = Color( 1.3, 1.3, 1.3, 1 )
+scale = Vector2( 1.6, 1.6 )
+amount = 128
+local_coords = false
+process_material = SubResource( 4 )
+texture = ExtResource( 21 )
 
 [node name="AstromouseCharacter" type="Position2D" parent="WorldLayer/World"]
 position = Vector2( 640, 304 )
@@ -3070,9 +3102,9 @@ script = ExtResource( 1 )
 root_node = NodePath("../sprites")
 playback_default_blend_time = 0.08
 playback_speed = 0.7
-anims/SETUP = SubResource( 7 )
-anims/dash = SubResource( 8 )
-anims/fall = SubResource( 9 )
+anims/SETUP = SubResource( 49 )
+anims/dash = SubResource( 50 )
+anims/fall = SubResource( 51 )
 anims/float = ExtResource( 32 )
 anims/grab_star = SubResource( 10 )
 anims/idle = SubResource( 11 )
@@ -3088,7 +3120,7 @@ anims/wall = SubResource( 17 )
 [node name="body" type="Sprite" parent="WorldLayer/World/AstromouseCharacter/sprites"]
 position = Vector2( 3.66667, -17.6667 )
 rotation = 1.48184
-texture = ExtResource( 16 )
+texture = ExtResource( 8 )
 offset = Vector2( 0.0592504, -7.2841 )
 region_enabled = true
 region_rect = Rect2( 76, 4, 25, 30 )
@@ -3096,7 +3128,7 @@ region_rect = Rect2( 76, 4, 25, 30 )
 [node name="head" type="Sprite" parent="WorldLayer/World/AstromouseCharacter/sprites/body"]
 position = Vector2( 3.30797, -25.2358 )
 rotation = -1.5708
-texture = ExtResource( 16 )
+texture = ExtResource( 8 )
 offset = Vector2( -0.356, -20.537 )
 region_enabled = true
 region_rect = Rect2( 4, 64, 50, 43 )
@@ -3104,7 +3136,7 @@ region_filter_clip = true
 
 [node name="helmet" type="Sprite" parent="WorldLayer/World/AstromouseCharacter/sprites/body/head"]
 position = Vector2( 0.326941, -23.8358 )
-texture = ExtResource( 16 )
+texture = ExtResource( 8 )
 offset = Vector2( 0, -0.899 )
 region_enabled = true
 region_rect = Rect2( 4, 4, 54, 54 )
@@ -3113,7 +3145,7 @@ region_rect = Rect2( 4, 4, 54, 54 )
 position = Vector2( -0.692625, -20.2447 )
 rotation = -2.36365
 z_index = -1
-texture = ExtResource( 16 )
+texture = ExtResource( 8 )
 offset = Vector2( -0.113655, 9.28639 )
 region_enabled = true
 region_rect = Rect2( 104, 41, 8, 19 )
@@ -3123,7 +3155,7 @@ show_behind_parent = true
 position = Vector2( 2.02585, -13.2973 )
 rotation = -2.27092
 z_index = 1
-texture = ExtResource( 16 )
+texture = ExtResource( 8 )
 offset = Vector2( 0.434902, 8.9376 )
 region_enabled = true
 region_rect = Rect2( 92, 41, 8, 19 )
@@ -3133,7 +3165,7 @@ show_behind_parent = true
 position = Vector2( -7.66667, 3.83337 )
 rotation = -1.83715
 z_index = -1
-texture = ExtResource( 16 )
+texture = ExtResource( 8 )
 offset = Vector2( -18.1807, -15.8838 )
 region_enabled = true
 region_rect = Rect2( 68, 88, 33, 34 )
@@ -3142,7 +3174,7 @@ region_rect = Rect2( 68, 88, 33, 34 )
 self_modulate = Color( 0.886275, 0.886275, 0.886275, 1 )
 position = Vector2( -12.9408, -3.62288 )
 z_index = -1
-texture = ExtResource( 16 )
+texture = ExtResource( 8 )
 offset = Vector2( 0, -1.05 )
 region_enabled = true
 region_rect = Rect2( 72, 40, 16, 28 )
@@ -3151,7 +3183,7 @@ region_rect = Rect2( 72, 40, 16, 28 )
 position = Vector2( 4.58333, -15.5 )
 rotation = 0.92334
 z_index = -1
-texture = ExtResource( 16 )
+texture = ExtResource( 8 )
 offset = Vector2( 0.166667, 8.66673 )
 region_enabled = true
 region_rect = Rect2( 104, 64, 8, 19 )
@@ -3160,7 +3192,7 @@ region_rect = Rect2( 104, 64, 8, 19 )
 position = Vector2( 0.58333, -20.6667 )
 rotation = 1.0395
 z_index = -1
-texture = ExtResource( 16 )
+texture = ExtResource( 8 )
 offset = Vector2( 0.333337, 9.33333 )
 region_enabled = true
 region_rect = Rect2( 92, 64, 8, 19 )
@@ -3187,9 +3219,7 @@ rotation = 1.10964
 remote_path = NodePath("../../../StarMouse")
 update_scale = false
 
-[node name="Moon" type="Node2D" parent="WorldLayer/World" groups=[
-"moon",
-]]
+[node name="Moon" type="Node2D" parent="WorldLayer/World" groups=["moon"]]
 position = Vector2( 648, 488 )
 z_index = -1
 
@@ -3216,7 +3246,7 @@ bus = "Reverb"
 layer = -1
 
 [node name="Comet" type="Node2D" parent="WorldLayer/World/Background"]
-position = Vector2( 1808, 672 )
+position = Vector2( 1120, -16 )
 rotation = 0.84589
 scale = Vector2( 0.2, 0.2 )
 z_index = 1
@@ -3454,9 +3484,7 @@ script = SubResource( 34 )
 autoplay = "shine"
 anims/shine = SubResource( 37 )
 
-[node name="SouthCross" type="Node2D" parent="WorldLayer/World/Background2/ParallaxLayer3" groups=[
-"crux",
-]]
+[node name="SouthCross" type="Node2D" parent="WorldLayer/World/Background2/ParallaxLayer3" groups=["crux"]]
 modulate = Color( 1.2, 1.2, 1.2, 1 )
 position = Vector2( 1151.57, 159.319 )
 rotation = 0.20069
@@ -3529,9 +3557,7 @@ texture = ExtResource( 27 )
 [node name="WorldEnvironment" type="WorldEnvironment" parent="WorldLayer/World"]
 environment = SubResource( 44 )
 
-[node name="StarMouse" type="Node2D" parent="WorldLayer/World" groups=[
-"starmouse",
-]]
+[node name="StarMouse" type="Node2D" parent="WorldLayer/World" groups=["starmouse"]]
 visible = false
 position = Vector2( 608, 456 )
 rotation = 1.10964
@@ -3544,34 +3570,21 @@ use_parent_material = true
 scale = Vector2( 0.8, 0.8 )
 texture = ExtResource( 6 )
 
-[node name="Particles2D2" type="CPUParticles2D" parent="WorldLayer/World/StarMouse/Sprites/Star"]
-modulate = Color( 1.1, 1.1, 1.1, 1 )
-show_behind_parent = true
+[node name="Particles2D3" type="Particles2D" parent="WorldLayer/World/StarMouse/Sprites/Star"]
+modulate = Color( 1.3, 1.3, 1.3, 1 )
 scale = Vector2( 1.6, 1.6 )
 amount = 16
-texture = ExtResource( 21 )
-emission_shape = 1
-emission_sphere_radius = 32.0
-gravity = Vector2( 0, 0 )
-radial_accel = -200.0
-scale_amount_curve = SubResource( 45 )
-color_ramp = SubResource( 46 )
-hue_variation_random = 1.0
-hue_variation_curve = SubResource( 47 )
-
-[node name="Particles2D" type="CPUParticles2D" parent="WorldLayer/World/StarMouse/Sprites/Star"]
-modulate = Color( 1.1, 1.1, 1.1, 1 )
-amount = 64
 local_coords = false
+process_material = SubResource( 58 )
 texture = ExtResource( 21 )
-emission_shape = 1
-emission_sphere_radius = 32.0
-gravity = Vector2( 0, 0 )
-radial_accel = -200.0
-scale_amount_curve = SubResource( 45 )
-color_ramp = SubResource( 46 )
-hue_variation_random = 1.0
-hue_variation_curve = SubResource( 47 )
+
+[node name="Particles2D4" type="Particles2D" parent="WorldLayer/World/StarMouse/Sprites/Star"]
+modulate = Color( 1.3, 1.3, 1.3, 1 )
+scale = Vector2( 1.6, 1.6 )
+amount = 128
+local_coords = false
+process_material = SubResource( 58 )
+texture = ExtResource( 21 )
 
 [node name="Pivot" type="Position2D" parent="WorldLayer/World/StarMouse"]
 rotation = 1.97958
@@ -3601,14 +3614,14 @@ anims/wall = ExtResource( 15 )
 
 [node name="body" type="Sprite" parent="WorldLayer/World/StarMouse/Pivot/AstromouseCharacter/sprites"]
 position = Vector2( 3.66667, -17.6667 )
-texture = ExtResource( 16 )
+texture = ExtResource( 8 )
 offset = Vector2( 0.0592504, -7.2841 )
 region_enabled = true
 region_rect = Rect2( 76, 4, 25, 30 )
 
 [node name="head" type="Sprite" parent="WorldLayer/World/StarMouse/Pivot/AstromouseCharacter/sprites/body"]
 position = Vector2( -0.999999, -16.3333 )
-texture = ExtResource( 16 )
+texture = ExtResource( 8 )
 offset = Vector2( -0.356, -20.537 )
 region_enabled = true
 region_rect = Rect2( 4, 64, 50, 43 )
@@ -3616,7 +3629,7 @@ region_filter_clip = true
 
 [node name="helmet" type="Sprite" parent="WorldLayer/World/StarMouse/Pivot/AstromouseCharacter/sprites/body/head"]
 position = Vector2( 0.326941, -23.8358 )
-texture = ExtResource( 16 )
+texture = ExtResource( 8 )
 offset = Vector2( 0, -0.899 )
 region_enabled = true
 region_rect = Rect2( 4, 4, 54, 54 )
@@ -3625,7 +3638,7 @@ region_rect = Rect2( 4, 4, 54, 54 )
 position = Vector2( 6.66666, -18.3333 )
 rotation = -0.393416
 z_index = -1
-texture = ExtResource( 16 )
+texture = ExtResource( 8 )
 offset = Vector2( -0.113655, 9.28639 )
 region_enabled = true
 region_rect = Rect2( 104, 41, 8, 19 )
@@ -3635,7 +3648,7 @@ show_behind_parent = true
 position = Vector2( -9.5, -16.3333 )
 rotation = 0.482662
 z_index = 1
-texture = ExtResource( 16 )
+texture = ExtResource( 8 )
 offset = Vector2( 0.434902, 8.9376 )
 region_enabled = true
 region_rect = Rect2( 92, 41, 8, 19 )
@@ -3644,7 +3657,7 @@ region_rect = Rect2( 92, 41, 8, 19 )
 show_behind_parent = true
 position = Vector2( -7.66667, 3.83337 )
 z_index = -1
-texture = ExtResource( 16 )
+texture = ExtResource( 8 )
 offset = Vector2( -18.1807, -15.8838 )
 region_enabled = true
 region_rect = Rect2( 68, 88, 33, 34 )
@@ -3653,7 +3666,7 @@ region_rect = Rect2( 68, 88, 33, 34 )
 self_modulate = Color( 0.886275, 0.886275, 0.886275, 1 )
 position = Vector2( -12.9408, -3.62288 )
 z_index = -1
-texture = ExtResource( 16 )
+texture = ExtResource( 8 )
 offset = Vector2( 0, -1.05 )
 region_enabled = true
 region_rect = Rect2( 72, 40, 16, 28 )
@@ -3661,7 +3674,7 @@ region_rect = Rect2( 72, 40, 16, 28 )
 [node name="leg_l" type="Sprite" parent="WorldLayer/World/StarMouse/Pivot/AstromouseCharacter/sprites"]
 position = Vector2( 8.83333, -18 )
 z_index = -1
-texture = ExtResource( 16 )
+texture = ExtResource( 8 )
 offset = Vector2( 0.166667, 8.66673 )
 region_enabled = true
 region_rect = Rect2( 104, 64, 8, 19 )
@@ -3669,7 +3682,7 @@ region_rect = Rect2( 104, 64, 8, 19 )
 [node name="leg_r" type="Sprite" parent="WorldLayer/World/StarMouse/Pivot/AstromouseCharacter/sprites"]
 position = Vector2( -2.66667, -18.6667 )
 z_index = -1
-texture = ExtResource( 16 )
+texture = ExtResource( 8 )
 offset = Vector2( 0.333337, 9.33333 )
 region_enabled = true
 region_rect = Rect2( 92, 64, 8, 19 )

@@ -10,7 +10,6 @@ var _blackhole
 
 onready var _astromouse = $Astromouse
 onready var _moon = $Moon
-onready var _jump_input_area = $JumpArea2D
 onready var _blackhole_timer = $BlackholeSpawner/RandomTimer
 onready var _starmouse_spawner = $StarmouseSpawner
 onready var _supernova_spawner = $SupernovaSpawner
@@ -43,27 +42,25 @@ func _setup_blackhole():
 	remove_child(_astromouse)
 
 
-func _on_JumpArea2D_input_event(viewport, event, shape_idx):
-	if not event.is_action("click"):
+func _unhandled_input(event):
+	if not event is InputEventMouseButton:
 		return
-	if event.is_pressed():
+	if event.pressed:
 		if _blackhole:
 			_moon.pull()
-		else:
-			_astromouse.jump.execute()
-	else:
-		_astromouse.jump.cancel()
+			get_tree().set_input_as_handled()
 
 
 func _on_Astromouse_died():
-	_jump_input_area.set_pickable(false)
 	set_physics_process(false)
+	set_process_unhandled_input(false)
+	remove_child(_astromouse)
 	emit_signal("astromouse_died")
 
 
 func _on_Astromouse_tree_exited():
-	_jump_input_area.set_pickable(false)
 	set_physics_process(false)
+	set_process_unhandled_input(false)
 
 
 func _on_BlackholeSpawner_spawned(spawn):
@@ -112,6 +109,7 @@ func _on_StarmouseSpawner_spawned(spawn):
 func _on_Starmouse_finished():
 	add_child(_astromouse)
 	set_physics_process(true)
+	set_process_unhandled_input(false)
 	_astromouse.global_position = _starmouse.global_position
 	_astromouse.velocity = Vector2.ZERO
 	_starmouse = null
@@ -155,3 +153,12 @@ func _on_LeftCometSpawner_spawned(spawn):
 
 func _on_FinishTimer_timeout():
 	emit_signal("finished")
+
+
+func _on_MoonPressArea2D_input_event(viewport, event, shape_idx):
+	if not event is InputEventMouseButton:
+		return
+	if event.pressed:
+		if _blackhole:
+			_moon.pull()
+			get_tree().set_input_as_handled()

@@ -1,25 +1,25 @@
 [gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://levels/Tutorial.gd" type="Script" id=1]
-[ext_resource path="res://Objects/Spawners/RandomTimer.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Objects/Spawners/CheeseSpawner.tscn" type="PackedScene" id=3]
+[ext_resource path="res://objects/Spawners/RandomTimer.tscn" type="PackedScene" id=2]
+[ext_resource path="res://objects/Spawners/CheeseSpawner.tscn" type="PackedScene" id=3]
 [ext_resource path="res://levels/Level.gd" type="Script" id=4]
-[ext_resource path="res://Objects/Spawners/Spawner2D.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Objects/FlyingBodies/Star/Star.tscn" type="PackedScene" id=6]
+[ext_resource path="res://objects/Spawners/Spawner2D.tscn" type="PackedScene" id=5]
+[ext_resource path="res://objects/FlyingBodies/Star/Star.tscn" type="PackedScene" id=6]
 [ext_resource path="res://levels/Tutorial/hand.svg" type="Texture" id=7]
-[ext_resource path="res://Objects/Blackhole/Blackhole.tscn" type="PackedScene" id=8]
+[ext_resource path="res://objects/Blackhole/Blackhole.tscn" type="PackedScene" id=8]
 [ext_resource path="res://levels/Background.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Actors/starmouse/StarMouse.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Objects/Supernova/Supernova.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Objects/FlyingBodies/Comet/Comet.tscn" type="PackedScene" id=12]
-[ext_resource path="res://Objects/Planets/planets.svg" type="Texture" id=13]
-[ext_resource path="res://Objects/Moon/Moon.tscn" type="PackedScene" id=14]
-[ext_resource path="res://Actors/astromouse/Astromouse.tscn" type="PackedScene" id=15]
+[ext_resource path="res://actors/starmouse/StarMouse.tscn" type="PackedScene" id=10]
+[ext_resource path="res://objects/Supernova/Supernova.tscn" type="PackedScene" id=11]
+[ext_resource path="res://objects/FlyingBodies/Comet/Comet.tscn" type="PackedScene" id=12]
+[ext_resource path="res://objects/Planets/planets.svg" type="Texture" id=13]
+[ext_resource path="res://objects/Moon/Moon.tscn" type="PackedScene" id=14]
+[ext_resource path="res://actors/astromouse/Astromouse.tscn" type="PackedScene" id=15]
 [ext_resource path="res://meta/achievements/TutorialAchievement.tscn" type="PackedScene" id=16]
 [ext_resource path="res://levels/ShakingCamera2D.tscn" type="PackedScene" id=17]
 
-[sub_resource type="CircleShape2D" id=1]
-radius = 192.0
+[sub_resource type="CircleShape2D" id=13]
+radius = 184.174
 
 [sub_resource type="Animation" id=2]
 resource_name = "idle"
@@ -338,9 +338,7 @@ tracks/0/keys = {
 "values": [ 0.0, -20.0, -15.0 ]
 }
 
-[node name="Level" type="Node2D" groups=[
-"level",
-]]
+[node name="Level" type="Node2D" groups=["level"]]
 script = ExtResource( 4 )
 __meta__ = {
 "_edit_horizontal_guides_": [ 264.0 ],
@@ -365,14 +363,16 @@ texture = ExtResource( 13 )
 region_enabled = true
 region_rect = Rect2( 756, 25, 256, 256 )
 
-[node name="JumpArea2D" type="Area2D" parent="."]
-position = Vector2( 648, 488 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="JumpArea2D"]
-shape = SubResource( 1 )
-
 [node name="Moon" parent="." instance=ExtResource( 14 )]
 position = Vector2( 648, 488 )
+
+[node name="PressArea2D" type="Area2D" parent="Moon"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Moon/PressArea2D"]
+shape = SubResource( 13 )
+
+[node name="Astromouse" parent="." instance=ExtResource( 15 )]
+position = Vector2( 640, 296 )
 
 [node name="BlackholeSpawner" parent="." instance=ExtResource( 5 )]
 position = Vector2( 1280, 0 )
@@ -455,9 +455,6 @@ spread = 180.0
 min_radius = 16.0
 max_radius = 64.0
 
-[node name="Astromouse" parent="." instance=ExtResource( 15 )]
-position = Vector2( 640, 296 )
-
 [node name="StarmouseSpawner" parent="." instance=ExtResource( 5 )]
 spawn_scene = ExtResource( 10 )
 
@@ -501,10 +498,17 @@ polygon = PoolVector2Array( 0, -656, 0, 64, 1280, 64, 1280, -656 )
 pause_mode = 1
 position = Vector2( -184, 240 )
 
+[node name="DragArea" parent="Tutorial/Comet" index="4"]
+input_pickable = false
+
 [node name="Star" parent="Tutorial" instance=ExtResource( 6 )]
 pause_mode = 1
 position = Vector2( 1928, 144 )
 rotation = 3.14159
+direction = Vector2( -1, 0 )
+
+[node name="DragArea" parent="Tutorial/Star" index="4"]
+input_pickable = false
 
 [node name="GodHandRight" type="Node2D" parent="Tutorial"]
 position = Vector2( 1088, 832 )
@@ -541,13 +545,6 @@ anims/Star = SubResource( 12 )
 
 [node name="TutorialAchievement" parent="Tutorial" instance=ExtResource( 16 )]
 
-[node name="Star2" parent="Tutorial" instance=ExtResource( 6 )]
-position = Vector2( 1352, 136 )
-direction = Vector2( -1, 0 )
-
-[node name="Comet2" parent="Tutorial" instance=ExtResource( 12 )]
-position = Vector2( -64, 520 )
-
 [node name="CometCollisionTimer" type="Timer" parent="."]
 
 [node name="ShakingCamera2D" parent="." instance=ExtResource( 17 )]
@@ -558,7 +555,7 @@ wait_time = 120.0
 one_shot = true
 autostart = true
 
-[connection signal="input_event" from="JumpArea2D" to="." method="_on_JumpArea2D_input_event"]
+[connection signal="input_event" from="Moon/PressArea2D" to="." method="_on_MoonPressArea2D_input_event"]
 [connection signal="spawned" from="BlackholeSpawner" to="." method="_on_BlackholeSpawner_spawned"]
 [connection signal="timeout" from="BlackholeSpawner/RandomTimer" to="BlackholeSpawner" method="spawn"]
 [connection signal="spawned" from="LeftStarSpawnPoint/Spawner" to="." method="_on_LeftStarSpawner_spawned"]
@@ -574,6 +571,7 @@ autostart = true
 [connection signal="body_entered" from="Tutorial/CometArea2D" to="Tutorial" method="_on_CometArea2D_body_entered"]
 [connection signal="collided" from="Tutorial/Comet" to="." method="_on_Comet_collided"]
 [connection signal="collided" from="Tutorial/Star" to="." method="_on_Star_collided"]
-[connection signal="collided" from="Tutorial/Star2" to="." method="_on_Star_collided"]
-[connection signal="collided" from="Tutorial/Comet2" to="." method="_on_Comet_collided"]
 [connection signal="timeout" from="FinishTimer" to="." method="_on_FinishTimer_timeout"]
+
+[editable path="Tutorial/Comet"]
+[editable path="Tutorial/Star"]

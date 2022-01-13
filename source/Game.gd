@@ -35,6 +35,7 @@ func load_next_level():
 
 
 func _on_Level_astromouse_died():
+	yield(_fade.fade_out(), "completed")
 	get_tree().change_scene(score_scene_path)
 
 

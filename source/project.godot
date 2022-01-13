@@ -36,6 +36,7 @@ BGM="*res://screens/background_music/BackgroundMusic.tscn"
 Score="*res://meta/Score.tscn"
 Achievements="*res://meta/achievements/AchievementsDictionary.tscn"
 PlayerData="*res://meta/PlayerData.tscn"
+Skins="*res://meta/Skins.tscn"
 
 [debug]
 
@@ -46,7 +47,7 @@ gdscript/completion/autocomplete_setters_and_getters=true
 
 window/size/width=1280
 window/size/height=720
-window/size/fullscreen=true
+window/size/always_on_top=true
 window/handheld/orientation="sensor_landscape"
 window/stretch/mode="2d"
 window/stretch/aspect="keep_width"
@@ -80,10 +81,11 @@ jump={
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":32,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
  ]
 }
-
-[input_devices]
-
-pointing/emulate_touch_from_mouse=true
+pause={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777217,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
 
 [locale]
 
@@ -94,7 +96,6 @@ translations=[  ]
 
 [rendering]
 
-quality/driver/driver_name="GLES2"
 quality/driver/fallback_to_gles2=true
 2d/snapping/use_gpu_pixel_snap=true
 vram_compression/import_etc=true

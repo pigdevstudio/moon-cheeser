@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/sfx_sound_shutdown1.wav-e508c7937cff0f79305f400cde183360.sample"
+
+[deps]
+
+source_file="res://actors/paradox/sfx_sound_shutdown1.wav"
+dest_files=[ "res://.import/sfx_sound_shutdown1.wav-e508c7937cff0f79305f400cde183360.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

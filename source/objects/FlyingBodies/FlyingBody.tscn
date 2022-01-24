@@ -25,7 +25,7 @@ tracks/0/keys = {
 }
 
 [sub_resource type="CircleShape2D" id=3]
-radius = 48.0
+radius = 72.0
 
 [sub_resource type="Animation" id=4]
 tracks/0/type = "value"
@@ -131,6 +131,7 @@ bus = "SFX"
 scale = Vector2( 4.8, 4.8 )
 
 [node name="DragArea" parent="." instance=ExtResource( 4 )]
+process_priority = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DragArea"]
 shape = SubResource( 3 )

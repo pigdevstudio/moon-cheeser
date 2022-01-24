@@ -1,9 +1,8 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://actors/starmouse/StarMouse.gd" type="Script" id=1]
-[ext_resource path="res://actors/starmouse/star.svg" type="Texture" id=2]
+[ext_resource path="res://actors/starmouse/Star.tscn" type="PackedScene" id=2]
 [ext_resource path="res://actors/starmouse/MouseSpotter.gd" type="Script" id=3]
-[ext_resource path="res://objects/FlyingBodies/particles.png" type="Texture" id=5]
 [ext_resource path="res://actors/starmouse/SwingPivot.tscn" type="PackedScene" id=6]
 [ext_resource path="res://actors/astromouse/sprites/AstromouseCharacter.tscn" type="PackedScene" id=7]
 [ext_resource path="res://meta/achievements/AchievementTrigger.tscn" type="PackedScene" id=8]
@@ -15,43 +14,6 @@ radius = 50.7316
 _data = {
 "points": PoolVector2Array( 0, 118, 0, -118, 0, 0, 42.5, -30.5, -20, -4, 40, -24, 0, 0, 0, 0, 32, -40 )
 }
-
-[sub_resource type="Gradient" id=8]
-offsets = PoolRealArray( 0.807407, 1 )
-colors = PoolColorArray( 0.666667, 0.666667, 1, 1, 0.666667, 0.666667, 1, 0 )
-
-[sub_resource type="GradientTexture" id=5]
-gradient = SubResource( 8 )
-
-[sub_resource type="Curve" id=3]
-min_value = -1.0
-_data = [ Vector2( 0, 0.109091 ), 0.0, 0.0, 0, 0, Vector2( 1, -0.181818 ), 0.0, 0.0, 0, 0 ]
-
-[sub_resource type="CurveTexture" id=6]
-curve = SubResource( 3 )
-
-[sub_resource type="Curve" id=9]
-_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
-
-[sub_resource type="CurveTexture" id=7]
-curve = SubResource( 9 )
-
-[sub_resource type="ParticlesMaterial" id=4]
-lifetime_randomness = 0.73
-emission_shape = 1
-emission_sphere_radius = 32.0
-flag_disable_z = true
-direction = Vector3( -1, 0, 0 )
-spread = 0.0
-gravity = Vector3( 0, 0, 0 )
-orbit_velocity = 0.0
-orbit_velocity_random = 0.0
-radial_accel = -200.0
-radial_accel_random = 0.4
-scale_curve = SubResource( 7 )
-color_ramp = SubResource( 5 )
-hue_variation_random = 1.0
-hue_variation_curve = SubResource( 6 )
 
 [sub_resource type="Animation" id=10]
 length = 2.0
@@ -161,7 +123,7 @@ tracks/7/keys = {
 "values": [ false, true ]
 }
 tracks/8/type = "value"
-tracks/8/path = NodePath("Sprites/SwingPivot/AstromouseCharacter:visible")
+tracks/8/path = NodePath("Sprites/SwingPivot/Character:visible")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/imported = false
@@ -201,31 +163,12 @@ curve = SubResource( 2 )
 rotation = -1.56246
 rotate = false
 
-[node name="Star" type="Sprite" parent="Sprites/Path2D/PathFollow2D"]
-use_parent_material = true
-scale = Vector2( 0.8, 0.8 )
-texture = ExtResource( 2 )
-
-[node name="Particles2D" type="Particles2D" parent="Sprites/Path2D/PathFollow2D/Star"]
-modulate = Color( 1.3, 1.3, 1.3, 1 )
-scale = Vector2( 1.6, 1.6 )
-amount = 128
-local_coords = false
-process_material = SubResource( 4 )
-texture = ExtResource( 5 )
-
-[node name="Particles2D2" type="Particles2D" parent="Sprites/Path2D/PathFollow2D/Star"]
-modulate = Color( 1.3, 1.3, 1.3, 1 )
-scale = Vector2( 1.6, 1.6 )
-amount = 16
-local_coords = false
-process_material = SubResource( 4 )
-texture = ExtResource( 5 )
+[node name="Star" parent="Sprites/Path2D/PathFollow2D" instance=ExtResource( 2 )]
 
 [node name="SwingPivot" parent="Sprites" instance=ExtResource( 6 )]
 use_parent_material = true
 
-[node name="AstromouseCharacter" parent="Sprites/SwingPivot" instance=ExtResource( 7 )]
+[node name="Character" parent="Sprites/SwingPivot" instance=ExtResource( 7 )]
 use_parent_material = true
 position = Vector2( -14.6667, 64.8889 )
 

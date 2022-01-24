@@ -30,7 +30,7 @@ tracks/0/keys = {
 "values": [ 8.5055 ]
 }
 
-[node name="AstromouseCharacter" type="Position2D"]
+[node name="Character" type="Position2D"]
 scale = Vector2( 1.25, 1.25 )
 script = ExtResource( 6 )
 

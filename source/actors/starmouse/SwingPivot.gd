@@ -4,7 +4,7 @@ extends Position2D
 Swing following a movement direction to give an inertia aspect
 """
 
-export (float) var angle_offset_degrees = 90
+export (float) var angle_offset_degrees = 90.0
 export (float, 1.0) var damping = 0.02
 
 var movement_velocity = Vector2(0, 0)

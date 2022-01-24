@@ -16,6 +16,8 @@ onready var dummy = $Astromouse
 
 func _ready():
 	set_physics_process(false)
+	dummy.get_node("Character").swap_skin()
+	dummy.get_node("Character").play("run_fall")
 
 
 func _physics_process(delta):

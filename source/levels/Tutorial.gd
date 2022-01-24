@@ -16,7 +16,6 @@ func _ready():
 	var file = File.new()
 	if file.file_exists("user://highscore"):
 		_animator.play("Finished")
-	file.free()
 
 
 func _on_StarArea2D_body_entered(body):

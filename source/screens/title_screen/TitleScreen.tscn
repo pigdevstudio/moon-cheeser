@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://interface/themes/main_theme.tres" type="Theme" id=1]
 [ext_resource path="res://levels/Background.tscn" type="PackedScene" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://screens/title_screen/TitleScreen.gd" type="Script" id=8]
 [ext_resource path="res://interface/FadeRect.tscn" type="PackedScene" id=9]
 [ext_resource path="res://screens/title_screen/title.png" type="Texture" id=10]
+[ext_resource path="res://interface/SkinsButton.svg" type="Texture" id=11]
 
 [sub_resource type="ViewportTexture" id=1]
 flags = 5
@@ -42,6 +43,7 @@ __meta__ = {
 }
 game_scene = "res://Game.tscn"
 achievements_scene = "res://screens/achievements_screen/AchievementsScreen.tscn"
+skins_scene = "res://screens/skin_screen/SkinSelectScreen.tscn"
 
 [node name="Viewport" type="Viewport" parent="."]
 size = Vector2( 1280, 720 )
@@ -74,6 +76,7 @@ margin_bottom = 63.5
 texture_normal = ExtResource( 5 )
 
 [node name="AchievementsButton" parent="." instance=ExtResource( 3 )]
+visible = false
 anchor_top = 0.5
 anchor_bottom = 0.5
 margin_left = 128.0
@@ -81,6 +84,15 @@ margin_top = -63.5
 margin_right = 263.0
 margin_bottom = 63.5
 texture_normal = ExtResource( 4 )
+
+[node name="SkinsButton" parent="." instance=ExtResource( 3 )]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 128.0
+margin_top = -63.5
+margin_right = 263.0
+margin_bottom = 63.5
+texture_normal = ExtResource( 11 )
 
 [node name="Moon" type="TextureRect" parent="."]
 anchor_left = 0.5
@@ -142,3 +154,4 @@ __meta__ = {
 
 [connection signal="pressed" from="PlayButton" to="." method="_on_PlayButton_pressed"]
 [connection signal="pressed" from="AchievementsButton" to="." method="_on_AchievementsButton_pressed"]
+[connection signal="pressed" from="SkinsButton" to="." method="_on_SkinsButton_pressed"]

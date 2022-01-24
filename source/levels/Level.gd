@@ -99,6 +99,7 @@ func _on_Star_collided(collision):
 	if collider.is_in_group("star") and _supernova_spawner.get_child_count() < 1:
 		_supernova_spawner.global_position = collision.position
 		_supernova_spawner.spawn()
+		_camera.shake()
 
 
 func _on_StarmouseSpawner_spawned(spawn):
@@ -129,6 +130,7 @@ func _on_Comet_collided(collision):
 		add_child(cheese_spawner)
 		cheese_spawner.global_position = collision.position
 		cheese_spawner.spawn()
+		_camera.shake()
 
 
 func _on_RightStarSpawner_spawned(spawn):

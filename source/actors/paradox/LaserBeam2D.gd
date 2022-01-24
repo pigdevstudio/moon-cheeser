@@ -30,8 +30,18 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
-	cast_to = (cast_to + Vector2.RIGHT * cast_speed * delta).clamped(max_length)
 	cast_beam()
+
+
+func _unhandled_input(event):
+	if event is InputEventScreenTouch:
+		self.is_casting = event.pressed
+		cast_to = to_local(event.position)
+	elif event is InputEventMouseButton:
+		self.is_casting = event.pressed
+		cast_to = to_local(event.position)
+	elif event is InputEventMouseMotion:
+		cast_to = to_local(event.position)
 
 
 func set_is_casting(cast: bool) -> void:

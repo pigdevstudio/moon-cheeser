@@ -5,11 +5,11 @@
 [ext_resource path="res://objects/Blackhole/Blackhole.gd" type="Script" id=3]
 [ext_resource path="res://objects/Spawners/RandomTimer.tscn" type="PackedScene" id=4]
 [ext_resource path="res://levels/Tutorial/hand.svg" type="Texture" id=5]
-[ext_resource path="res://actors/astromouse/sprites/astromouse.svg" type="Texture" id=6]
+[ext_resource path="res://actors/astromouse/sprites/AstromouseCharacter.gd" type="Script" id=6]
 [ext_resource path="res://meta/achievements/GravityBattleAchievement.tscn" type="PackedScene" id=7]
 [ext_resource path="res://meta/achievements/VoidAchievement.tscn" type="PackedScene" id=8]
 [ext_resource path="res://interface/fonts/garoa_hacker_24_purple_outline.tres" type="DynamicFont" id=9]
-[ext_resource path="res://actors/astromouse/sfx/jump.wav" type="AudioStream" id=10]
+[ext_resource path="res://actors/astromouse/sprites/AstromouseCharacter.tscn" type="PackedScene" id=10]
 [ext_resource path="res://levels/star.svg" type="Texture" id=11]
 
 [sub_resource type="Curve" id=1]
@@ -163,95 +163,9 @@ anims/pulse = SubResource( 2 )
 visible = false
 position = Vector2( 112, 184 )
 
-[node name="Character" type="Position2D" parent="Astromouse"]
-position = Vector2( -16, 0 )
+[node name="Character" type="Position2D" parent="Astromouse" instance=ExtResource( 10 )]
 scale = Vector2( 1.25, 1.25 )
-
-[node name="sprites" type="Node2D" parent="Astromouse/Character"]
-
-[node name="body" type="Sprite" parent="Astromouse/Character/sprites"]
-position = Vector2( 3.66667, -17.6667 )
-rotation = 1.52163
-texture = ExtResource( 6 )
-offset = Vector2( 0.0592504, -7.2841 )
-region_enabled = true
-region_rect = Rect2( 76, 4, 25, 30 )
-
-[node name="head" type="Sprite" parent="Astromouse/Character/sprites/body"]
-position = Vector2( 3.30797, -25.2358 )
-rotation = -1.22549
-texture = ExtResource( 6 )
-offset = Vector2( -0.356, -20.537 )
-region_enabled = true
-region_rect = Rect2( 4, 64, 50, 43 )
-region_filter_clip = true
-
-[node name="helmet" type="Sprite" parent="Astromouse/Character/sprites/body/head"]
-position = Vector2( 0.326941, -23.8358 )
-texture = ExtResource( 6 )
-offset = Vector2( 0, -0.899 )
-region_enabled = true
-region_rect = Rect2( 4, 4, 54, 54 )
-
-[node name="arm_l" type="Sprite" parent="Astromouse/Character/sprites/body"]
-position = Vector2( -0.692625, -20.2447 )
-rotation = -2.67622
-z_index = -1
-texture = ExtResource( 6 )
-offset = Vector2( -0.113655, 9.28639 )
-region_enabled = true
-region_rect = Rect2( 104, 41, 8, 19 )
-
-[node name="arm_r" type="Sprite" parent="Astromouse/Character/sprites/body"]
-show_behind_parent = true
-position = Vector2( 2.02585, -13.2973 )
-rotation = -2.58419
-z_index = 1
-texture = ExtResource( 6 )
-offset = Vector2( 0.434902, 8.9376 )
-region_enabled = true
-region_rect = Rect2( 92, 41, 8, 19 )
-
-[node name="tail" type="Sprite" parent="Astromouse/Character/sprites/body"]
-show_behind_parent = true
-position = Vector2( -7.66667, 3.83337 )
-rotation = -1.53163
-z_index = -1
-texture = ExtResource( 6 )
-offset = Vector2( -18.1807, -15.8838 )
-region_enabled = true
-region_rect = Rect2( 68, 88, 33, 34 )
-
-[node name="jetpack" type="Sprite" parent="Astromouse/Character/sprites/body"]
-self_modulate = Color( 0.886275, 0.886275, 0.886275, 1 )
-position = Vector2( -12.9408, -3.62288 )
-z_index = -1
-texture = ExtResource( 6 )
-offset = Vector2( 0, -1.05 )
-region_enabled = true
-region_rect = Rect2( 72, 40, 16, 28 )
-
-[node name="leg_l" type="Sprite" parent="Astromouse/Character/sprites"]
-position = Vector2( 4.58333, -15.5 )
-rotation = 1.58895
-z_index = -1
-texture = ExtResource( 6 )
-offset = Vector2( 0.166667, 8.66673 )
-region_enabled = true
-region_rect = Rect2( 104, 64, 8, 19 )
-
-[node name="leg_r" type="Sprite" parent="Astromouse/Character/sprites"]
-position = Vector2( 0.58333, -20.6667 )
-rotation = 1.73571
-z_index = -1
-texture = ExtResource( 6 )
-offset = Vector2( 0.333337, 9.33333 )
-region_enabled = true
-region_rect = Rect2( 92, 64, 8, 19 )
-
-[node name="SFX" type="AudioStreamPlayer2D" parent="Astromouse/Character"]
-stream = ExtResource( 10 )
-bus = "SFX"
+script = ExtResource( 6 )
 
 [node name="PickupArea" type="Area2D" parent="Astromouse"]
 collision_layer = 2

@@ -5,6 +5,7 @@ Controls game's flow
 """
 
 export(String, FILE, "*.tscn") var score_scene_path
+export(String, FILE, "*.tscn") var main_scene_path
 
 onready var _fade = $InterfaceLayer/FadeRect
 
@@ -41,3 +42,7 @@ func _on_Level_astromouse_died():
 
 func _on_Level_finished():
 	load_next_level()
+
+
+func _on_BackButton_pressed():
+	_fade.change_scene(main_scene_path)

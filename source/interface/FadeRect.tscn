@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://interface/FadeRect.gd" type="Script" id=1]
-[ext_resource path="res://interface/transitions/bilinear_gradient.png" type="Texture" id=2]
+[ext_resource path="res://interface/transitions/radial_gradient.png" type="Texture" id=2]
 
 [sub_resource type="Shader" id=6]
 code = "shader_type canvas_item;
@@ -69,7 +69,7 @@ tracks/0/keys = {
 "values": [ 0.0 ]
 }
 
-[node name="FadeRect" type="TextureRect"]
+[node name="SceneTransition" type="TextureRect"]
 material = SubResource( 4 )
 anchor_right = 1.0
 anchor_bottom = 1.0

@@ -18,10 +18,16 @@ _global_script_classes=[ {
 "class": "HurtBox2D",
 "language": "GDScript",
 "path": "res://levels/Cinematics/comet/HurtBox.gd"
+}, {
+"base": "Line2D",
+"class": "Trail2D",
+"language": "GDScript",
+"path": "res://actors/starmouse/Trail2D.gd"
 } ]
 _global_script_class_icons={
 "ActionResource": "",
-"HurtBox2D": ""
+"HurtBox2D": "",
+"Trail2D": ""
 }
 
 [application]
@@ -47,6 +53,7 @@ gdscript/completion/autocomplete_setters_and_getters=true
 
 window/size/width=1280
 window/size/height=720
+window/size/fullscreen=true
 window/size/always_on_top=true
 window/handheld/orientation="sensor_landscape"
 window/stretch/mode="2d"

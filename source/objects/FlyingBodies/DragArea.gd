@@ -30,10 +30,11 @@ func _unhandled_input(event):
 			if event is InputEventMouseButton:
 				direction = global_position.direction_to(get_global_mouse_position())
 				get_tree().set_input_as_handled()
+				pressed = false
 			if event is InputEventScreenTouch:
 				direction = event.position
 				get_tree().set_input_as_handled()
+				pressed = false
 			emit_signal("dragged", direction)
 			set_process_unhandled_input(false)
-			pressed = false
 		

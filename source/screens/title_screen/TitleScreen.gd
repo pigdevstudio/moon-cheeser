@@ -2,6 +2,7 @@ extends Control
 
 export(String, FILE, "*.tscn") var game_scene
 export(String, FILE, "*.tscn") var achievements_scene
+export(String, FILE, "*.tscn") var skins_scene
 
 onready var _fade_rect = $FadeRect
 
@@ -17,3 +18,7 @@ func _on_PlayButton_pressed():
 
 func _on_AchievementsButton_pressed():
 	change_scene(achievements_scene)
+
+
+func _on_SkinsButton_pressed():
+	change_scene(skins_scene)

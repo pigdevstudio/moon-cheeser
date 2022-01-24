@@ -12,6 +12,7 @@ onready var anim_tree = $AnimationTree
 
 func _ready():
 	jump.actor = self
+	$Character.swap_skin()
 
 
 func _physics_process(delta):
@@ -34,7 +35,6 @@ func _unhandled_input(event):
 		else:
 			jump.cancel()
 			get_tree().set_input_as_handled()
-
 
 
 func die():

@@ -30,7 +30,7 @@ tracks/0/keys = {
 "values": [ 8.5055 ]
 }
 
-[node name="AstromouseCharacter" type="Position2D"]
+[node name="Character" type="Position2D"]
 scale = Vector2( 1.25, 1.25 )
 script = ExtResource( 1 )
 
@@ -108,7 +108,7 @@ region_rect = Rect2( 68, 88, 33, 34 )
 
 [node name="jetpack" type="Sprite" parent="sprites/body"]
 self_modulate = Color( 0.886275, 0.886275, 0.886275, 1 )
-position = Vector2( -12.9408, -3.62288 )
+position = Vector2( -9.7408, -3.62288 )
 z_index = -1
 texture = ExtResource( 2 )
 offset = Vector2( 0, -1.05 )

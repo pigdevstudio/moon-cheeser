@@ -1,0 +1,215 @@
+[gd_scene load_steps=24 format=2]
+
+[ext_resource path="res://interface/themes/main_theme.tres" type="Theme" id=1]
+[ext_resource path="res://screens/achievements_screen/AchievementsScreen.gd" type="Script" id=2]
+[ext_resource path="res://interface/ShaderButton.tscn" type="PackedScene" id=3]
+[ext_resource path="res://interface/BackButton.svg" type="Texture" id=4]
+[ext_resource path="res://interface/fonts/GaroaHackerClubeBold.otf" type="DynamicFontData" id=5]
+[ext_resource path="res://screens/achievements_screen/trueastro.png" type="Texture" id=6]
+[ext_resource path="res://screens/achievements_screen/supernova.png" type="Texture" id=7]
+[ext_resource path="res://screens/achievements_screen/firststep.png" type="Texture" id=8]
+[ext_resource path="res://screens/achievements_screen/madness.png" type="Texture" id=9]
+[ext_resource path="res://screens/achievements_screen/gravity.png" type="Texture" id=10]
+[ext_resource path="res://screens/achievements_screen/starmouse.png" type="Texture" id=11]
+[ext_resource path="res://screens/achievements_screen/void.png" type="Texture" id=12]
+[ext_resource path="res://screens/achievements_screen/fullmoon.png" type="Texture" id=13]
+[ext_resource path="res://screens/achievements_screen/AchievementPanel.gd" type="Script" id=14]
+[ext_resource path="res://interface/fonts/garoa_hacker_32_purple_outline.tres" type="DynamicFont" id=15]
+[ext_resource path="res://interface/fonts/garoa_hacker_32.tres" type="DynamicFont" id=16]
+[ext_resource path="res://interface/FadeRect.tscn" type="PackedScene" id=17]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.211765, 0.294118, 0.623529, 0.176471 )
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.0128305, 0.0100403, 0.367188, 0.087451 )
+border_blend = true
+
+[sub_resource type="StyleBoxEmpty" id=3]
+
+[sub_resource type="StyleBoxEmpty" id=4]
+
+[sub_resource type="StyleBoxEmpty" id=5]
+
+[sub_resource type="DynamicFont" id=6]
+size = 38
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 5 )
+
+[node name="AchievementsScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+theme = ExtResource( 1 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+title_scene_path = "res://screens/title_screen/TitleScreen.tscn"
+
+[node name="Acheesements" type="GridContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 280.0
+margin_top = 216.0
+margin_right = -273.0
+margin_bottom = -55.0
+mouse_filter = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/hseparation = 32
+columns = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Astromouse" parent="Acheesements" instance=ExtResource( 3 )]
+margin_right = 157.0
+margin_bottom = 222.0
+texture_normal = ExtResource( 6 )
+expand = true
+
+[node name="Supernova" parent="Acheesements" instance=ExtResource( 3 )]
+margin_left = 189.0
+margin_right = 346.0
+margin_bottom = 222.0
+texture_normal = ExtResource( 7 )
+expand = true
+
+[node name="FirstStep" parent="Acheesements" instance=ExtResource( 3 )]
+margin_left = 378.0
+margin_right = 535.0
+margin_bottom = 222.0
+texture_normal = ExtResource( 8 )
+expand = true
+
+[node name="Madness" parent="Acheesements" instance=ExtResource( 3 )]
+margin_left = 567.0
+margin_right = 724.0
+margin_bottom = 222.0
+texture_normal = ExtResource( 9 )
+expand = true
+
+[node name="GravityMaster" parent="Acheesements" instance=ExtResource( 3 )]
+margin_top = 226.0
+margin_right = 157.0
+margin_bottom = 448.0
+texture_normal = ExtResource( 10 )
+expand = true
+
+[node name="Starmouse" parent="Acheesements" instance=ExtResource( 3 )]
+margin_left = 189.0
+margin_top = 226.0
+margin_right = 346.0
+margin_bottom = 448.0
+texture_normal = ExtResource( 11 )
+expand = true
+
+[node name="Void" parent="Acheesements" instance=ExtResource( 3 )]
+margin_left = 378.0
+margin_top = 226.0
+margin_right = 535.0
+margin_bottom = 448.0
+texture_normal = ExtResource( 12 )
+expand = true
+
+[node name="Fullmoon" parent="Acheesements" instance=ExtResource( 3 )]
+margin_left = 567.0
+margin_top = 226.0
+margin_right = 724.0
+margin_bottom = 448.0
+texture_normal = ExtResource( 13 )
+expand = true
+
+[node name="Panel" type="Panel" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -370.0
+margin_top = -86.798
+margin_right = 321.0
+margin_bottom = 172.202
+rect_pivot_offset = Vector2( 152.5, 55 )
+script = ExtResource( 14 )
+
+[node name="Title" type="Label" parent="Panel"]
+margin_left = 15.0
+margin_top = 30.0
+margin_right = 676.0
+margin_bottom = 62.0
+mouse_filter = 1
+size_flags_horizontal = 3
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 15 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "achievement unlocked"
+align = 1
+valign = 1
+
+[node name="Description" type="Label" parent="Panel"]
+margin_left = 15.0
+margin_top = 66.0
+margin_right = 676.0
+margin_bottom = 208.0
+mouse_filter = 1
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "achievement unlocked"
+align = 1
+valign = 1
+autowrap = true
+clip_text = true
+
+[node name="Button" type="Button" parent="Panel"]
+margin_left = 15.0
+margin_top = 212.0
+margin_right = 676.0
+margin_bottom = 244.0
+rect_min_size = Vector2( 0, 32 )
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/focus = SubResource( 3 )
+custom_styles/disabled = SubResource( 4 )
+custom_styles/normal = SubResource( 5 )
+custom_fonts/font = ExtResource( 16 )
+action_mode = 0
+text = "ok"
+flat = true
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -136.0
+margin_top = 168.0
+margin_right = 136.0
+margin_bottom = 207.0
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 1, 0.901961, 0.501961, 1 )
+text = "Acheesements"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BackButton" parent="." instance=ExtResource( 3 )]
+margin_left = 25.0
+margin_top = 25.0
+margin_right = 168.0
+margin_bottom = 152.0
+texture_normal = ExtResource( 4 )
+
+[node name="FadeRect" parent="." instance=ExtResource( 17 )]
+[connection signal="button_up" from="Acheesements/Astromouse" to="Panel" method="display" binds= [ "mooncheeser" ]]
+[connection signal="button_up" from="Acheesements/Supernova" to="Panel" method="display" binds= [ "supernova" ]]
+[connection signal="button_up" from="Acheesements/FirstStep" to="Panel" method="display" binds= [ "firststep" ]]
+[connection signal="button_up" from="Acheesements/Madness" to="Panel" method="display" binds= [ "madness" ]]
+[connection signal="button_up" from="Acheesements/GravityMaster" to="Panel" method="display" binds= [ "gravity" ]]
+[connection signal="button_up" from="Acheesements/Starmouse" to="Panel" method="display" binds= [ "starmouse" ]]
+[connection signal="button_up" from="Acheesements/Void" to="Panel" method="display" binds= [ "void" ]]
+[connection signal="button_up" from="Acheesements/Fullmoon" to="Panel" method="display" binds= [ "fullmoon" ]]
+[connection signal="button_up" from="Panel/Button" to="Panel" method="hide"]
+[connection signal="pressed" from="BackButton" to="." method="_on_BackButton_pressed"]

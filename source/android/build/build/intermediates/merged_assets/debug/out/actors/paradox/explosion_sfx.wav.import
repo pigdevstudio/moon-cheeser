@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/explosion_sfx.wav-2db6d8727b7f42a9b109db7f8cfa730f.sample"
+
+[deps]
+
+source_file="res://actors/paradox/explosion_sfx.wav"
+dest_files=[ "res://.import/explosion_sfx.wav-2db6d8727b7f42a9b109db7f8cfa730f.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

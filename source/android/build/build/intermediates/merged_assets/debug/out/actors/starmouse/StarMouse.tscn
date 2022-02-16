@@ -1,0 +1,185 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://actors/starmouse/StarMouse.gd" type="Script" id=1]
+[ext_resource path="res://actors/starmouse/Star.tscn" type="PackedScene" id=2]
+[ext_resource path="res://actors/starmouse/MouseSpotter.gd" type="Script" id=3]
+[ext_resource path="res://actors/starmouse/SwingPivot.tscn" type="PackedScene" id=6]
+[ext_resource path="res://actors/astromouse/sprites/AstromouseCharacter.tscn" type="PackedScene" id=7]
+[ext_resource path="res://meta/achievements/AchievementTrigger.tscn" type="PackedScene" id=8]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 50.7316
+
+[sub_resource type="Curve2D" id=2]
+_data = {
+"points": PoolVector2Array( 0, 118, 0, -118, 0, 0, 42.5, -30.5, -20, -4, 40, -24, 0, 0, 0, 0, 32, -40 )
+}
+
+[sub_resource type="Animation" id=10]
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprites/Path2D/PathFollow2D/Star:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.3, 0.5, 0.6, 0.7, 0.8, 0.9, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ true, false, true, false, true, false, true, false, true ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 1, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [ "finished" ],
+"method": "emit_signal"
+}, {
+"args": [  ],
+"method": "queue_free"
+} ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Sprites/Path2D/PathFollow2D:unit_offset")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, 1.0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Sprites/Path2D/PathFollow2D/Star:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.8, 0.8 ), Vector2( 0.8, 0.8 ), Vector2( 1e-05, 1e-05 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Sprites/Path2D/PathFollow2D/Star:rotation_degrees")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 2, 2, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, 540.0 ]
+}
+tracks/5/type = "method"
+tracks/5/path = NodePath("MouseSpotter")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ false ],
+"method": "set_process_unhandled_input"
+} ]
+}
+tracks/6/type = "method"
+tracks/6/path = NodePath(".")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "stop"
+} ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("PickupArea/CollisionShape2D:disabled")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Sprites/SwingPivot/Character:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
+[node name="StarMouse" type="Node2D" groups=["starmouse"]]
+z_index = 1
+script = ExtResource( 1 )
+speed = 800.0
+
+[node name="Duration" type="Timer" parent="."]
+one_shot = true
+
+[node name="PickupArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PickupArea"]
+shape = SubResource( 1 )
+
+[node name="MouseSpotter" type="Node2D" parent="."]
+script = ExtResource( 3 )
+
+[node name="Sprites" type="Node2D" parent="."]
+use_parent_material = true
+
+[node name="Path2D" type="Path2D" parent="Sprites"]
+curve = SubResource( 2 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Sprites/Path2D"]
+rotation = -1.56246
+rotate = false
+
+[node name="Star" parent="Sprites/Path2D/PathFollow2D" instance=ExtResource( 2 )]
+
+[node name="SwingPivot" parent="Sprites" instance=ExtResource( 6 )]
+use_parent_material = true
+
+[node name="Character" parent="Sprites/SwingPivot" instance=ExtResource( 7 )]
+use_parent_material = true
+position = Vector2( -14.6667, 64.8889 )
+
+[node name="StarmouseAchievement" parent="." instance=ExtResource( 8 )]
+achievement_name = "starmouse"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Disappear = SubResource( 10 )
+
+[connection signal="ready" from="." to="StarmouseAchievement" method="increase_progress"]
+[connection signal="timeout" from="Duration" to="." method="_on_Duration_timeout"]
+[connection signal="mouse_found" from="MouseSpotter" to="." method="seek"]
+[connection signal="mouse_lost" from="MouseSpotter" to="." method="stop"]
+[connection signal="mouse_moved" from="MouseSpotter" to="." method="seek"]

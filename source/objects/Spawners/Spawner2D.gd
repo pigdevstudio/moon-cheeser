@@ -2,7 +2,7 @@ extends Position2D
 
 signal spawned(spawn)
 
-export(PackedScene) var spawn_scene
+export(PackedScene) var spawn_scene 
 
 func spawn():
 	var spawn = spawn_scene.instance()

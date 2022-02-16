@@ -1,0 +1,64 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://interface/FadeRect.tscn" type="PackedScene" id=1]
+[ext_resource path="res://screens/score_screen/ScoreScreen.gd" type="Script" id=2]
+[ext_resource path="res://levels/Background.tscn" type="PackedScene" id=3]
+[ext_resource path="res://interface/fonts/garoa_hacker_76.tres" type="DynamicFont" id=4]
+[ext_resource path="res://interface/ShaderButton.tscn" type="PackedScene" id=5]
+[ext_resource path="res://interface/BackButton.svg" type="Texture" id=6]
+[ext_resource path="res://interface/RetryButton.svg" type="Texture" id=7]
+
+[node name="ScoreScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+game_scene_path = "res://Game.tscn"
+main_scene_path = "res://screens/title_screen/TitleScreen.tscn"
+
+[node name="ScoreLabel" type="Label" parent="."]
+anchor_right = 1.0
+margin_top = 128.0
+margin_bottom = 204.0
+custom_fonts/font = ExtResource( 4 )
+text = "Your score:"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HighScoreLabel" type="Label" parent="."]
+anchor_right = 1.0
+margin_top = 368.0
+margin_bottom = 444.0
+custom_fonts/font = ExtResource( 4 )
+text = "Your score:"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RetryButton" parent="." instance=ExtResource( 5 )]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -63.5
+margin_top = -200.0
+margin_right = 63.5
+margin_bottom = -73.0
+texture_normal = ExtResource( 7 )
+
+[node name="BackButton" parent="." instance=ExtResource( 5 )]
+margin_right = 127.0
+margin_bottom = 127.0
+texture_normal = ExtResource( 6 )
+
+[node name="FadeRect" parent="." instance=ExtResource( 1 )]
+
+[node name="Background" parent="." instance=ExtResource( 3 )]
+
+[connection signal="pressed" from="RetryButton" to="." method="_on_RetryButton_pressed"]
+[connection signal="pressed" from="BackButton" to="." method="_on_BackButton_pressed"]

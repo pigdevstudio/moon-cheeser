@@ -43,8 +43,9 @@ allprojects {
 }
 
 dependencies {
+    implementation libraries.supportCoreUtils
     implementation libraries.kotlinStdLib
-    implementation libraries.androidxFragment
+    implementation libraries.v4Support
 
     if (rootProject.findProject(":lib")) {
         implementation project(":lib")
@@ -83,8 +84,6 @@ android {
         sourceCompatibility versions.javaVersion
         targetCompatibility versions.javaVersion
     }
-
-    assetPacks = [":assetPacks:installTime"]
 
     defaultConfig {
         // The default ignore pattern for the 'assets' directory includes hidden files and directories which are used by Godot projects.

@@ -7,7 +7,7 @@
    viewBox="0 0 33.866665 33.866667"
    version="1.1"
    id="svg1307"
-   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
    sodipodi:docname="mouse-naked.svg"
    inkscape:export-filename="/home/henrique/Documents/projects/001 - Moon Cheeser/repo/source/actors/astromouse/sprites/cutout_body.png"
    inkscape:export-xdpi="96.000008"
@@ -125,9 +125,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:zoom="3.959798"
-     inkscape:cx="41.037447"
-     inkscape:cy="61.240498"
+     inkscape:zoom="11.2"
+     inkscape:cx="27.455357"
+     inkscape:cy="90.133928"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="true"
@@ -242,22 +242,6 @@
        inkscape:transform-center-y="1.0312406"
        transform="matrix(0.16955045,0,0,0.16955045,17.448842,249.15671)"
        d="m -45.408615,237.57684 c -0.934432,0 -3.062859,-3.68654 -2.595644,-4.49578 0.467216,-0.80925 4.724071,-0.80925 5.191287,0 0.467216,0.80924 -1.661211,4.49578 -2.595643,4.49578 z" />
-    <path
-       style="color:#000000;fill:#000000;fill-opacity:0;stroke-width:0.12249;stroke-linecap:round;stroke-linejoin:round;-inkscape-stroke:none;paint-order:fill markers stroke"
-       d="m 2.856983,286.92155 h 0.0025 v 1.48941 h -0.0025 z"
-       id="path145036" />
-    <path
-       style="color:#000000;fill:#000000;fill-opacity:0;stroke-width:0.281781;stroke-linecap:round;stroke-linejoin:round;-inkscape-stroke:none;paint-order:fill markers stroke"
-       d="m 3.329984,286.78494 a 0.44506553,0.44506553 0 0 1 -0.441395,0.18784 0.44506553,0.44506553 0 0 1 -0.355555,-0.32202 0.44506553,0.44506553 0 0 1 0.143335,-0.45779"
-       id="path145040" />
-    <path
-       style="color:#000000;fill:#000000;fill-opacity:0;stroke-width:0.12249;stroke-linecap:round;stroke-linejoin:round;-inkscape-stroke:none;paint-order:fill markers stroke"
-       d="m 13.414689,286.48811 h -0.0025 v 1.48941 h 0.0025 z"
-       id="path145046" />
-    <path
-       style="color:#000000;fill:#000000;fill-opacity:0;stroke-width:0.281781;stroke-linecap:round;stroke-linejoin:round;-inkscape-stroke:none;paint-order:fill markers stroke"
-       d="m 12.941688,286.35149 a 0.44506553,0.44506553 0 0 0 0.441395,0.18785 0.44506553,0.44506553 0 0 0 0.355555,-0.32202 0.44506553,0.44506553 0 0 0 -0.143336,-0.45779"
-       id="path145050" />
     <rect
        style="fill:#c2c2d1;fill-opacity:1;stroke:none;stroke-width:0.400568;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.978723;paint-order:normal"
        id="rect144670"
@@ -308,7 +292,7 @@
        y="292.09378"
        ry="0.98629898" />
     <path
-       style="color:#000000;fill:#c2c2d1;stroke-linecap:round;-inkscape-stroke:none;fill-opacity:1"
+       style="color:#000000;fill:#c2c2d1;fill-opacity:1;stroke-linecap:round;-inkscape-stroke:none"
        d="m 18.140625,286.45898 a 0.20022494,0.20022494 0 0 0 -0.138672,0.2461 0.20022494,0.20022494 0 0 0 0.248047,0.13867 c 0.161389,-0.0456 0.321057,-0.0433 0.515625,0.043 0.194568,0.0863 0.423648,0.26465 0.679687,0.58008 0.512079,0.63085 1.121973,1.80432 1.820313,3.77734 0.720992,2.037 2.061198,3.06192 3.212891,3.56055 1.151692,0.49863 2.132812,0.48437 2.132812,0.48437 a 0.20022494,0.20022494 0 0 0 0.197266,-0.20312 0.20022494,0.20022494 0 0 0 -0.203125,-0.19727 c 0,0 -0.892971,0.0138 -1.966797,-0.45117 -1.073826,-0.46492 -2.310745,-1.39734 -2.994141,-3.32813 -0.706047,-1.99479 -1.322995,-3.19764 -1.888672,-3.89453 -0.282838,-0.34844 -0.555293,-0.5724 -0.828125,-0.69336 -0.272831,-0.12095 -0.545791,-0.13073 -0.787109,-0.0625 z"
        id="path870" />
     <rect
@@ -414,22 +398,6 @@
        inkscape:transform-center-y="1.0312406"
        d="m -45.408615,237.57684 c -0.934432,0 -3.062859,-3.68654 -2.595644,-4.49578 0.467216,-0.80925 4.724071,-0.80925 5.191287,0 0.467216,0.80924 -1.661211,4.49578 -2.595643,4.49578 z"
        transform="matrix(0.16955045,0,0,0.16955045,-2.6475436,246.8138)" />
-    <path
-       style="color:#000000;fill:#000000;fill-opacity:0;stroke-width:0.12249;stroke-linecap:round;stroke-linejoin:round;-inkscape-stroke:none;paint-order:fill markers stroke"
-       d="m -17.239403,284.57864 h 0.0025 v 1.48941 h -0.0025 z"
-       id="path114035" />
-    <path
-       style="color:#000000;fill:#000000;fill-opacity:0;stroke-width:0.281781;stroke-linecap:round;stroke-linejoin:round;-inkscape-stroke:none;paint-order:fill markers stroke"
-       d="m -16.766402,284.44203 a 0.44506553,0.44506553 0 0 1 -0.441395,0.18784 0.44506553,0.44506553 0 0 1 -0.355555,-0.32202 0.44506553,0.44506553 0 0 1 0.143335,-0.45779"
-       id="path114041" />
-    <path
-       style="color:#000000;fill:#000000;fill-opacity:0;stroke-width:0.12249;stroke-linecap:round;stroke-linejoin:round;-inkscape-stroke:none;paint-order:fill markers stroke"
-       d="m -6.6816974,284.1452 h -0.00247 v 1.48941 h 0.00247 z"
-       id="path114029" />
-    <path
-       style="color:#000000;fill:#000000;fill-opacity:0;stroke-width:0.281781;stroke-linecap:round;stroke-linejoin:round;-inkscape-stroke:none;paint-order:fill markers stroke"
-       d="m -7.1546983,284.00858 a -0.44506553,0.44506553 0 0 0 0.4413952,0.18785 -0.44506553,0.44506553 0 0 0 0.355555,-0.32202 -0.44506553,0.44506553 0 0 0 -0.1433354,-0.45779"
-       id="path114023" />
     <image
        width="33.714825"
        height="0.93652284"

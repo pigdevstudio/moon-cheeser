@@ -4,7 +4,7 @@
 [ext_resource path="res://screens/score_screen/ScoreScreen.gd" type="Script" id=2]
 [ext_resource path="res://levels/Background.tscn" type="PackedScene" id=3]
 [ext_resource path="res://interface/fonts/garoa_hacker_76.tres" type="DynamicFont" id=4]
-[ext_resource path="res://interface/ShaderButton.tscn" type="PackedScene" id=5]
+[ext_resource path="res://interface/ShadedButton.tscn" type="PackedScene" id=5]
 [ext_resource path="res://interface/BackButton.svg" type="Texture" id=6]
 [ext_resource path="res://interface/RetryButton.svg" type="Texture" id=7]
 

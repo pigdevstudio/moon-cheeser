@@ -8,11 +8,12 @@ export var up_direction = Vector2.UP
 
 onready var jump = $Jump
 onready var anim_tree = $AnimationTree
+onready var skin = $Character
 
 
 func _ready():
 	jump.actor = self
-	$Character.swap_skin()
+	skin.swap_skin()
 
 
 func _physics_process(delta):

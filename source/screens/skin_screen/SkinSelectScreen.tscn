@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=2]
+[gd_scene load_steps=53 format=2]
 
 [ext_resource path="res://actors/astromouse/sprites/AstromouseCharacter.tscn" type="PackedScene" id=1]
 [ext_resource path="res://screens/skin_screen/star.svg" type="Texture" id=2]
@@ -6,7 +6,7 @@
 [ext_resource path="res://levels/Background.tscn" type="PackedScene" id=4]
 [ext_resource path="res://actors/astromouse/sprites/MousePotter.tscn" type="PackedScene" id=5]
 [ext_resource path="res://screens/skin_screen/SkinButton.gd" type="Script" id=6]
-[ext_resource path="res://screens/skin_screen/SkinSelectScreen.gd" type="Script" id=7]
+[ext_resource path="res://actors/astromouse/sprites/ThrottleMouse.tscn" type="PackedScene" id=7]
 [ext_resource path="res://interface/fonts/garoa_hacker_76.tres" type="DynamicFont" id=8]
 [ext_resource path="res://screens/skin_screen/mouse-potter.svg" type="Texture" id=9]
 [ext_resource path="res://actors/astromouse/sprites/SailorMoonMouse.tscn" type="PackedScene" id=10]
@@ -15,7 +15,7 @@
 [ext_resource path="res://interface/fonts/GaroaHackerClubeBold.otf" type="DynamicFontData" id=13]
 [ext_resource path="res://interface/FadeRect.tscn" type="PackedScene" id=14]
 [ext_resource path="res://actors/starmouse/StarMouse.tscn" type="PackedScene" id=15]
-[ext_resource path="res://interface/ShaderButton.tscn" type="PackedScene" id=16]
+[ext_resource path="res://interface/ShadedButton.tscn" type="PackedScene" id=16]
 [ext_resource path="res://interface/BackButton.svg" type="Texture" id=17]
 [ext_resource path="res://screens/skin_screen/flying_broom.svg" type="Texture" id=18]
 [ext_resource path="res://screens/skin_screen/golden-cloud.svg" type="Texture" id=19]
@@ -42,6 +42,13 @@
 [ext_resource path="res://screens/skin_screen/spider-mouse.svg" type="Texture" id=40]
 [ext_resource path="res://actors/astromouse/sprites/IronMouse.tscn" type="PackedScene" id=41]
 [ext_resource path="res://actors/astromouse/sprites/SpiderMouse.tscn" type="PackedScene" id=42]
+[ext_resource path="res://screens/skin_screen/throttle-mouse.svg" type="Texture" id=43]
+[ext_resource path="res://actors/astromouse/sprites/ModoMouse.tscn" type="PackedScene" id=44]
+[ext_resource path="res://screens/skin_screen/modo-mouse.svg" type="Texture" id=45]
+[ext_resource path="res://screens/skin_screen/vinnie-mouse.svg" type="Texture" id=46]
+[ext_resource path="res://actors/astromouse/sprites/VinnieMouse.tscn" type="PackedScene" id=47]
+[ext_resource path="res://screens/skin_screen/SkinHTTPRequest.gd" type="Script" id=48]
+[ext_resource path="res://screens/skin_screen/SkinSelectScreen.gd" type="Script" id=49]
 
 [sub_resource type="DynamicFont" id=7]
 size = 60
@@ -71,7 +78,7 @@ shader_param/smooth_percent = 0.1
 [node name="SkinSelectScreen" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 7 )
+script = ExtResource( 49 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -126,7 +133,7 @@ __meta__ = {
 
 [node name="GridContainer" type="GridContainer" parent="ScrollContainer"]
 margin_right = 524.0
-margin_bottom = 392.0
+margin_bottom = 524.0
 columns = 4
 __meta__ = {
 "_edit_use_anchors_": false
@@ -235,6 +242,35 @@ script = ExtResource( 6 )
 new_skin = ExtResource( 41 )
 type = "astromouse"
 
+[node name="SkinButton12" type="TextureButton" parent="ScrollContainer/GridContainer"]
+margin_left = 396.0
+margin_top = 264.0
+margin_right = 524.0
+margin_bottom = 392.0
+texture_normal = ExtResource( 43 )
+script = ExtResource( 6 )
+new_skin = ExtResource( 7 )
+type = "astromouse"
+
+[node name="SkinButton13" type="TextureButton" parent="ScrollContainer/GridContainer"]
+margin_top = 396.0
+margin_right = 128.0
+margin_bottom = 524.0
+texture_normal = ExtResource( 45 )
+script = ExtResource( 6 )
+new_skin = ExtResource( 44 )
+type = "astromouse"
+
+[node name="SkinButton14" type="TextureButton" parent="ScrollContainer/GridContainer"]
+margin_left = 132.0
+margin_top = 396.0
+margin_right = 260.0
+margin_bottom = 524.0
+texture_normal = ExtResource( 46 )
+script = ExtResource( 6 )
+new_skin = ExtResource( 47 )
+type = "astromouse"
+
 [node name="ScrollContainer2" type="ScrollContainer" parent="."]
 margin_left = 640.0
 margin_top = 320.0
@@ -310,4 +346,8 @@ type = "starmouse"
 material = SubResource( 4 )
 next_scene_path = "res://screens/title_screen/TitleScreen.tscn"
 
-[connection signal="pressed" from="BackButton" to="." method="_on_BackButton_pressed"]
+[node name="SkinHTTPRequest" type="HTTPRequest" parent="."]
+script = ExtResource( 48 )
+
+[connection signal="pressed" from="BackButton" to="FadeRect" method="change_scene"]
+[connection signal="request_completed" from="SkinHTTPRequest" to="SkinHTTPRequest" method="_on_SkinHTTPRequest_request_completed"]

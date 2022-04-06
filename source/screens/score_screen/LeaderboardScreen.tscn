@@ -1,0 +1,129 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://interface/fonts/garoa_hacker_76.tres" type="DynamicFont" id=1]
+[ext_resource path="res://screens/score_screen/LeaderboardScreen.gd" type="Script" id=2]
+[ext_resource path="res://interface/fonts/garoa_hacker_32.tres" type="DynamicFont" id=3]
+[ext_resource path="res://interface/FadeRect.gd" type="Script" id=4]
+[ext_resource path="res://levels/Background.gd" type="Script" id=5]
+[ext_resource path="res://interface/ShadedButton.gd" type="Script" id=6]
+[ext_resource path="res://interface/FadeRect.tscn" type="PackedScene" id=7]
+[ext_resource path="res://interface/transitions/radial_gradient.png" type="Texture" id=8]
+[ext_resource path="res://levels/Background.tscn" type="PackedScene" id=9]
+[ext_resource path="res://interface/ShadedButton.tscn" type="PackedScene" id=10]
+[ext_resource path="res://interface/BackButton.svg" type="Texture" id=11]
+[ext_resource path="res://screens/score_screen/LeaderboardHTTPRequest.gd" type="Script" id=12]
+[ext_resource path="res://screens/score_screen/BoardEntry.tscn" type="PackedScene" id=13]
+
+[sub_resource type="Shader" id=6]
+code = "shader_type canvas_item;
+
+uniform float cutoff: hint_range(0.0, 1.0) = 0.5;
+uniform float smooth_percent : hint_range(0.0, 1.0) = 0.1;
+
+void fragment()
+{
+	float value = texture(TEXTURE, UV).r;
+	float alpha = smoothstep(cutoff, cutoff + smooth_percent, 
+			value * (1.0 - smooth_percent) + smooth_percent);
+	COLOR = vec4(vec3(0.0), alpha);
+}"
+
+[sub_resource type="ShaderMaterial" id=4]
+shader = SubResource( 6 )
+shader_param/cutoff = 0.0
+shader_param/smooth_percent = 0.1
+
+[node name="LeaderboardScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+board_entry_scene = ExtResource( 13 )
+
+[node name="Label" type="Label" parent="."]
+anchor_right = 1.0
+margin_top = 88.0
+margin_bottom = 164.0
+custom_fonts/font = ExtResource( 1 )
+text = "astromouse rank"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScorePanel" type="Panel" parent="."]
+margin_left = 298.0
+margin_top = 220.0
+margin_right = 985.0
+margin_bottom = 697.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="ScorePanel"]
+margin_left = 86.0
+margin_top = 92.0
+margin_right = 598.0
+margin_bottom = 476.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayersList" type="VBoxContainer" parent="ScorePanel/ScrollContainer"]
+margin_right = 512.0
+size_flags_horizontal = 3
+
+[node name="NameLabel" type="Label" parent="ScorePanel"]
+margin_left = 86.0
+margin_top = 44.0
+margin_right = 164.0
+margin_bottom = 76.0
+custom_fonts/font = ExtResource( 3 )
+text = "name"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScoreLabel" type="Label" parent="ScorePanel"]
+margin_left = 509.0
+margin_top = 44.0
+margin_right = 597.0
+margin_bottom = 76.0
+custom_fonts/font = ExtResource( 3 )
+text = "score"
+
+[node name="BackButton" type="TextureButton" parent="." groups=["screen_button"] instance=ExtResource( 10 )]
+margin_left = 24.0
+margin_top = 560.0
+margin_right = 151.0
+margin_bottom = 687.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource( 11 )
+stretch_mode = 5
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FadeRect" type="TextureRect" parent="." instance=ExtResource( 7 )]
+material = SubResource( 4 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+texture = ExtResource( 8 )
+expand = true
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+next_scene_path = "res://Game.tscn"
+
+[node name="Background" type="CanvasLayer" parent="." instance=ExtResource( 9 )]
+layer = -1
+script = ExtResource( 5 )
+
+[node name="LeaderboardHTTPRequest" type="HTTPRequest" parent="."]
+script = ExtResource( 12 )
+
+[connection signal="pressed" from="BackButton" to="." method="_on_BackButton_pressed"]
+[connection signal="request_completed" from="LeaderboardHTTPRequest" to="LeaderboardHTTPRequest" method="_on_request_completed"]

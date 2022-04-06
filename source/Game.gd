@@ -6,6 +6,7 @@ Controls game's flow
 
 export(String, FILE, "*.tscn") var score_scene_path
 export(String, FILE, "*.tscn") var main_scene_path
+export(String, FILE, "*.tscn") var highscore_scene_path
 
 onready var _fade = $InterfaceLayer/FadeRect
 
@@ -14,6 +15,7 @@ var _current_level_path
 
 
 func _ready():
+	Score.reset()
 	setup_level()
 
 
@@ -37,7 +39,10 @@ func load_next_level():
 
 func _on_Level_astromouse_died():
 	yield(_fade.fade_out(), "completed")
-	get_tree().change_scene(score_scene_path)
+	var next_scene = score_scene_path
+	if Score.current_score >= Score.high_score:
+		next_scene = highscore_scene_path
+	get_tree().change_scene(next_scene)
 
 
 func _on_Level_finished():

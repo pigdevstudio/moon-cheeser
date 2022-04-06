@@ -3,7 +3,7 @@
 [ext_resource path="res://screens/play_screen/HUD.tscn" type="PackedScene" id=1]
 [ext_resource path="res://interface/PauseMenu.tscn" type="PackedScene" id=2]
 [ext_resource path="res://interface/FadeRect.tscn" type="PackedScene" id=3]
-[ext_resource path="res://interface/ShaderButton.tscn" type="PackedScene" id=4]
+[ext_resource path="res://interface/ShadedButton.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Game.gd" type="Script" id=5]
 [ext_resource path="res://interface/PauseButton.svg" type="Texture" id=6]
 [ext_resource path="res://interface/BackButton.svg" type="Texture" id=7]
@@ -37,6 +37,7 @@ adjustment_color_correction = SubResource( 18 )
 script = ExtResource( 5 )
 score_scene_path = "res://screens/score_screen/ScoreScreen.tscn"
 main_scene_path = "res://screens/title_screen/TitleScreen.tscn"
+highscore_scene_path = "res://screens/score_screen/HighscoreScreen.tscn"
 
 [node name="InterfaceLayer" type="CanvasLayer" parent="."]
 

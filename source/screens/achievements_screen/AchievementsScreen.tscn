@@ -2,7 +2,7 @@
 
 [ext_resource path="res://interface/themes/main_theme.tres" type="Theme" id=1]
 [ext_resource path="res://screens/achievements_screen/AchievementsScreen.gd" type="Script" id=2]
-[ext_resource path="res://interface/ShaderButton.tscn" type="PackedScene" id=3]
+[ext_resource path="res://interface/ShadedButton.tscn" type="PackedScene" id=3]
 [ext_resource path="res://interface/BackButton.svg" type="Texture" id=4]
 [ext_resource path="res://interface/fonts/GaroaHackerClubeBold.otf" type="DynamicFontData" id=5]
 [ext_resource path="res://screens/achievements_screen/trueastro.png" type="Texture" id=6]

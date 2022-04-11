@@ -9,4 +9,4 @@ func play(animation):
 func swap_skin():
 	for child in get_children():
 		child.queue_free()
-	replace_by(Skins.astromouse.instance())
+	replace_by(Skins.astromouse)

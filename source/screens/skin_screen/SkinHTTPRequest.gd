@@ -18,8 +18,7 @@ func _on_SkinHTTPRequest_request_completed(result, response_code, headers, body)
 		file.store_buffer(body)
 		file.close()
 		var skin = load("user://skin.tscn").instance()
-		get_owner().add_child(skin)
-		skin.position = Vector2(1280 / 2, 720 / 2)
+		Skins.astromouse = skin
 		return
 
 	var response = JSON.parse(body.get_string_from_utf8()).result

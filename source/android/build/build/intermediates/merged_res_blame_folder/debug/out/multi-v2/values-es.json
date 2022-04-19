@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/home/henrique/Documents/Pigdev/Studio/moon-cheeser/repo/source/android/build/build/intermediates/incremental/mergeDebugResources/merged.dir/values-es/values-es.xml",
+            "outputFile": "/home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/build/intermediates/incremental/mergeDebugResources/merged.dir/values-es/values-es.xml",
             "map": [
                 {
                     "source": "/home/henrique/.gradle/caches/transforms-2/files-2.1/0e28db26779229e0d9baff317473479e/jetified-play-services-basement-17.0.0/res/values-es/values.xml",
@@ -18,6 +18,23 @@
                         "startOffsets": "105",
                         "endColumns": "218",
                         "endOffsets": "319"
+                    }
+                },
+                {
+                    "source": "/home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/res/values-es/godot_project_name_string.xml",
+                    "from": {
+                        "startLines": "3",
+                        "startColumns": "1",
+                        "startOffsets": "112",
+                        "endColumns": "63",
+                        "endOffsets": "174"
+                    },
+                    "to": {
+                        "startLines": "3",
+                        "startColumns": "4",
+                        "startOffsets": "324",
+                        "endColumns": "66",
+                        "endOffsets": "386"
                     }
                 },
                 {
@@ -52,23 +69,6 @@
                         "startOffsets": "391,466,597,666,736,824,940",
                         "endColumns": "74,130,68,69,87,115,78",
                         "endOffsets": "461,592,661,731,819,935,1014"
-                    }
-                },
-                {
-                    "source": "/home/henrique/Documents/Pigdev/Studio/moon-cheeser/repo/source/android/build/res/values-es/godot_project_name_string.xml",
-                    "from": {
-                        "startLines": "3",
-                        "startColumns": "1",
-                        "startOffsets": "112",
-                        "endColumns": "63",
-                        "endOffsets": "174"
-                    },
-                    "to": {
-                        "startLines": "3",
-                        "startColumns": "4",
-                        "startOffsets": "324",
-                        "endColumns": "66",
-                        "endOffsets": "386"
                     }
                 }
             ]

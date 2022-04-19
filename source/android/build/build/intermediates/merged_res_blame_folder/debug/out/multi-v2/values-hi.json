@@ -1,25 +1,8 @@
 {
     "logs": [
         {
-            "outputFile": "/home/henrique/Documents/Pigdev/Studio/moon-cheeser/repo/source/android/build/build/intermediates/incremental/mergeDebugResources/merged.dir/values-hi/values-hi.xml",
+            "outputFile": "/home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/build/intermediates/incremental/mergeDebugResources/merged.dir/values-hi/values-hi.xml",
             "map": [
-                {
-                    "source": "/home/henrique/Documents/Pigdev/Studio/moon-cheeser/repo/source/android/build/res/values-hi/godot_project_name_string.xml",
-                    "from": {
-                        "startLines": "3",
-                        "startColumns": "1",
-                        "startOffsets": "112",
-                        "endColumns": "63",
-                        "endOffsets": "174"
-                    },
-                    "to": {
-                        "startLines": "3",
-                        "startColumns": "4",
-                        "startOffsets": "310",
-                        "endColumns": "66",
-                        "endOffsets": "372"
-                    }
-                },
                 {
                     "source": "/home/henrique/.gradle/caches/transforms-2/files-2.1/ee4998e5c44f8791e55e396202e7f092/core-1.0.0/res/values-hi/values-hi.xml",
                     "from": {
@@ -52,6 +35,23 @@
                         "startOffsets": "105",
                         "endColumns": "204",
                         "endOffsets": "305"
+                    }
+                },
+                {
+                    "source": "/home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/res/values-hi/godot_project_name_string.xml",
+                    "from": {
+                        "startLines": "3",
+                        "startColumns": "1",
+                        "startOffsets": "112",
+                        "endColumns": "63",
+                        "endOffsets": "174"
+                    },
+                    "to": {
+                        "startLines": "3",
+                        "startColumns": "4",
+                        "startOffsets": "310",
+                        "endColumns": "66",
+                        "endOffsets": "372"
                     }
                 },
                 {

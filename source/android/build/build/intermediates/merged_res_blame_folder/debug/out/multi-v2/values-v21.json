@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/home/henrique/Documents/Pigdev/Studio/moon-cheeser/repo/source/android/build/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v21/values-v21.xml",
+            "outputFile": "/home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v21/values-v21.xml",
             "map": [
                 {
                     "source": "/home/henrique/.gradle/caches/transforms-2/files-2.1/abb967fabfa19789071bf218fc46fe7d/media-1.0.0/res/values-v21/values-v21.xml",

@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/home/henrique/Documents/Pigdev/Studio/moon-cheeser/repo/source/android/build/build/intermediates/incremental/mergeDebugResources/merged.dir/values-mn/values-mn.xml",
+            "outputFile": "/home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/build/intermediates/incremental/mergeDebugResources/merged.dir/values-mn/values-mn.xml",
             "map": [
                 {
                     "source": "/home/henrique/.gradle/caches/transforms-2/files-2.1/0e28db26779229e0d9baff317473479e/jetified-play-services-basement-17.0.0/res/values-mn/values.xml",

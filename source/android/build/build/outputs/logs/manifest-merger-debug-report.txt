@@ -1,14 +1,14 @@
 -- Merging decision tree log ---
 meta-data#org.godotengine.editor.version
-INJECTED from /home/henrique/Documents/Pigdev/Studio/moon-cheeser/repo/source/android/build/AndroidManifest.xml:34:9-36:53
+INJECTED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:34:9-36:53
 	android:value
-		INJECTED from /home/henrique/Documents/Pigdev/Studio/moon-cheeser/repo/source/android/build/AndroidManifest.xml
+		INJECTED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml
 manifest
-ADDED from /home/henrique/Documents/Pigdev/Studio/moon-cheeser/repo/source/android/build/AndroidManifest.xml:2:1-71:12
-INJECTED from /home/henrique/Documents/Pigdev/Studio/moon-cheeser/repo/source/android/build/AndroidManifest.xml:2:1-71:12
-INJECTED from /home/henrique/Documents/Pigdev/Studio/moon-cheeser/repo/source/android/build/AndroidManifest.xml:2:1-71:12
-INJECTED from /home/henrique/Documents/Pigdev/Studio/moon-cheeser/repo/source/android/build/AndroidManifest.xml:2:1-71:12
-MERGED from /home/henrique/Documents/Pigdev/Studio/moon-cheeser/repo/source/android/build/AndroidManifest.xml:2:1-71:12
+ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:2:1-73:12
+INJECTED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:2:1-73:12
+INJECTED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:2:1-73:12
+INJECTED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:2:1-73:12
+MERGED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:2:1-73:12
 MERGED from [godot-lib.debug.aar] /home/henrique/.gradle/caches/transforms-2/files-2.1/07eb4d87e283bf5e3a01bbcaf6469940/jetified-godot-lib.debug/AndroidManifest.xml:2:1-27:12
 MERGED from [GodotAdMob.5.1.0.release.aar] /home/henrique/.gradle/caches/transforms-2/files-2.1/456aae0d167f0d7c6d5f317d822051df/jetified-GodotAdMob.5.1.0.release/AndroidManifest.xml:2:1-19:12
 MERGED from [androidx.legacy:legacy-support-v4:1.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/80d3c82b96c9cb061171f1c65d4b0269/legacy-support-v4-1.0.0/AndroidManifest.xml:17:1-22:12
@@ -46,54 +46,54 @@ MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /home/henrique/.gradle
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/d3d8c18a79b67d645bddfdd6fffb8703/lifecycle-livedata-core-2.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.arch.core:core-runtime:2.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/f9e8569deeaf180b86f7562a710bfef1/core-runtime-2.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [com.google.android.gms:play-services-ads-base:19.3.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/a0a5c5e1a6fe37fe84cdefecd394d7ac/jetified-play-services-ads-base-19.3.0/AndroidManifest.xml:2:1-9:12
-INJECTED from /home/henrique/Documents/Pigdev/Studio/moon-cheeser/repo/source/android/build/src/debug/AndroidManifest.xml:2:1-28:12
-INJECTED from /home/henrique/Documents/Pigdev/Studio/moon-cheeser/repo/source/android/build/src/debug/AndroidManifest.xml:2:1-28:12
-INJECTED from /home/henrique/Documents/Pigdev/Studio/moon-cheeser/repo/source/android/build/src/debug/AndroidManifest.xml:2:1-28:12
+INJECTED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/src/debug/AndroidManifest.xml:2:1-28:12
+INJECTED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/src/debug/AndroidManifest.xml:2:1-28:12
+INJECTED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/src/debug/AndroidManifest.xml:2:1-28:12
 	package
-		ADDED from /home/henrique/Documents/Pigdev/Studio/moon-cheeser/repo/source/android/build/AndroidManifest.xml:4:5-29
-		INJECTED from /home/henrique/Documents/Pigdev/Studio/moon-cheeser/repo/source/android/build/AndroidManifest.xml
-		ADDED from /home/henrique/Documents/Pigdev/Studio/moon-cheeser/repo/source/android/build/AndroidManifest.xml:4:5-29
-		INJECTED from /home/henrique/Documents/Pigdev/Studio/moon-cheeser/repo/source/android/build/src/debug/AndroidManifest.xml
+		ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:4:5-29
+		INJECTED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml
+		ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:4:5-29
+		INJECTED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/src/debug/AndroidManifest.xml
 	android:versionName
-		ADDED from /home/henrique/Documents/Pigdev/Studio/moon-cheeser/repo/source/android/build/AndroidManifest.xml:6:5-30
-		INJECTED from /home/henrique/Documents/Pigdev/Studio/moon-cheeser/repo/source/android/build/AndroidManifest.xml
-		ADDED from /home/henrique/Documents/Pigdev/Studio/moon-cheeser/repo/source/android/build/AndroidManifest.xml:6:5-30
-		INJECTED from /home/henrique/Documents/Pigdev/Studio/moon-cheeser/repo/source/android/build/src/debug/AndroidManifest.xml
+		ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:6:5-30
+		INJECTED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml
+		ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:6:5-30
+		INJECTED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/src/debug/AndroidManifest.xml
 	xmlns:tools
-		ADDED from /home/henrique/Documents/Pigdev/Studio/moon-cheeser/repo/source/android/build/AndroidManifest.xml:3:5-51
+		ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:3:5-51
 	xmlns:android
-		ADDED from /home/henrique/Documents/Pigdev/Studio/moon-cheeser/repo/source/android/build/AndroidManifest.xml:2:11-69
+		ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:2:11-69
 	android:versionCode
-		ADDED from /home/henrique/Documents/Pigdev/Studio/moon-cheeser/repo/source/android/build/AndroidManifest.xml:5:5-28
-		INJECTED from /home/henrique/Documents/Pigdev/Studio/moon-cheeser/repo/source/android/build/AndroidManifest.xml
-		ADDED from /home/henrique/Documents/Pigdev/Studio/moon-cheeser/repo/source/android/build/AndroidManifest.xml:5:5-28
-		INJECTED from /home/henrique/Documents/Pigdev/Studio/moon-cheeser/repo/source/android/build/src/debug/AndroidManifest.xml
+		ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:5:5-28
+		INJECTED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml
+		ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:5:5-28
+		INJECTED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/src/debug/AndroidManifest.xml
 	android:installLocation
-		ADDED from /home/henrique/Documents/Pigdev/Studio/moon-cheeser/repo/source/android/build/AndroidManifest.xml:7:5-35
-		ADDED from /home/henrique/Documents/Pigdev/Studio/moon-cheeser/repo/source/android/build/AndroidManifest.xml:7:5-35
+		ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:7:5-35
+		ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:7:5-35
 supports-screens
-ADDED from /home/henrique/Documents/Pigdev/Studio/moon-cheeser/repo/source/android/build/AndroidManifest.xml:12:5-16:40
-REJECTED from /home/henrique/Documents/Pigdev/Studio/moon-cheeser/repo/source/android/build/AndroidManifest.xml:12:5-16:40
+ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:12:5-16:40
+REJECTED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:12:5-16:40
 	tools:node
-		ADDED from /home/henrique/Documents/Pigdev/Studio/moon-cheeser/repo/source/android/build/src/debug/AndroidManifest.xml:5:9-29
+		ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/src/debug/AndroidManifest.xml:5:9-29
 	android:largeScreens
-		ADDED from /home/henrique/Documents/Pigdev/Studio/moon-cheeser/repo/source/android/build/AndroidManifest.xml:15:9-36
+		ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:15:9-36
 	android:smallScreens
-		ADDED from /home/henrique/Documents/Pigdev/Studio/moon-cheeser/repo/source/android/build/AndroidManifest.xml:13:9-36
+		ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:13:9-36
 	android:normalScreens
-		ADDED from /home/henrique/Documents/Pigdev/Studio/moon-cheeser/repo/source/android/build/AndroidManifest.xml:14:9-37
+		ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:14:9-37
 	android:xlargeScreens
-		ADDED from /home/henrique/Documents/Pigdev/Studio/moon-cheeser/repo/source/android/build/AndroidManifest.xml:16:9-37
+		ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:16:9-37
 uses-feature#0x00020000
-ADDED from /home/henrique/Documents/Pigdev/Studio/moon-cheeser/repo/source/android/build/AndroidManifest.xml:19:5-21:35
+ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:19:5-21:35
 	android:glEsVersion
-		ADDED from /home/henrique/Documents/Pigdev/Studio/moon-cheeser/repo/source/android/build/AndroidManifest.xml:20:9-41
+		ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:20:9-41
 	android:required
-		ADDED from /home/henrique/Documents/Pigdev/Studio/moon-cheeser/repo/source/android/build/AndroidManifest.xml:21:9-32
+		ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:21:9-32
 application
-ADDED from /home/henrique/Documents/Pigdev/Studio/moon-cheeser/repo/source/android/build/AndroidManifest.xml:31:5-70:19
-MERGED from /home/henrique/Documents/Pigdev/Studio/moon-cheeser/repo/source/android/build/AndroidManifest.xml:31:5-70:19
-MERGED from /home/henrique/Documents/Pigdev/Studio/moon-cheeser/repo/source/android/build/AndroidManifest.xml:31:5-70:19
+ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:31:5-71:19
+MERGED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:31:5-71:19
+MERGED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:31:5-71:19
 MERGED from [godot-lib.debug.aar] /home/henrique/.gradle/caches/transforms-2/files-2.1/07eb4d87e283bf5e3a01bbcaf6469940/jetified-godot-lib.debug/AndroidManifest.xml:17:5-25:19
 MERGED from [godot-lib.debug.aar] /home/henrique/.gradle/caches/transforms-2/files-2.1/07eb4d87e283bf5e3a01bbcaf6469940/jetified-godot-lib.debug/AndroidManifest.xml:17:5-25:19
 MERGED from [GodotAdMob.5.1.0.release.aar] /home/henrique/.gradle/caches/transforms-2/files-2.1/456aae0d167f0d7c6d5f317d822051df/jetified-GodotAdMob.5.1.0.release/AndroidManifest.xml:13:5-17:19
@@ -117,87 +117,87 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] /home/henri
 MERGED from [com.google.android.gms:play-services-ads-base:19.3.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/a0a5c5e1a6fe37fe84cdefecd394d7ac/jetified-play-services-ads-base-19.3.0/AndroidManifest.xml:7:5-20
 MERGED from [com.google.android.gms:play-services-ads-base:19.3.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/a0a5c5e1a6fe37fe84cdefecd394d7ac/jetified-play-services-ads-base-19.3.0/AndroidManifest.xml:7:5-20
 	android:requestLegacyExternalStorage
-		ADDED from /home/henrique/Documents/Pigdev/Studio/moon-cheeser/repo/source/android/build/AndroidManifest.xml:31:136-180
-		REJECTED from /home/henrique/Documents/Pigdev/Studio/moon-cheeser/repo/source/android/build/AndroidManifest.xml:31:136-180
+		ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:31:136-180
+		REJECTED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:31:136-180
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/ee4998e5c44f8791e55e396202e7f092/core-1.0.0/AndroidManifest.xml:22:18-86
 	android:label
-		ADDED from /home/henrique/Documents/Pigdev/Studio/moon-cheeser/repo/source/android/build/AndroidManifest.xml:31:18-67
+		ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:31:18-67
 	tools:ignore
-		ADDED from /home/henrique/Documents/Pigdev/Studio/moon-cheeser/repo/source/android/build/AndroidManifest.xml:31:96-135
+		ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:31:96-135
 	android:icon
-		ADDED from /home/henrique/Documents/Pigdev/Studio/moon-cheeser/repo/source/android/build/AndroidManifest.xml:31:181-208
+		ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:31:181-208
 	android:allowBackup
-		ADDED from /home/henrique/Documents/Pigdev/Studio/moon-cheeser/repo/source/android/build/AndroidManifest.xml:31:68-95
+		ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:31:68-95
 	tools:replace
-		ADDED from /home/henrique/Documents/Pigdev/Studio/moon-cheeser/repo/source/android/build/src/debug/AndroidManifest.xml:20:9-61
+		ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/src/debug/AndroidManifest.xml:20:9-61
 meta-data#xr_mode_metadata_name
-ADDED from /home/henrique/Documents/Pigdev/Studio/moon-cheeser/repo/source/android/build/AndroidManifest.xml:42:9-44:54
-REJECTED from /home/henrique/Documents/Pigdev/Studio/moon-cheeser/repo/source/android/build/AndroidManifest.xml:42:9-44:54
+ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:42:9-44:54
+REJECTED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:42:9-44:54
 	tools:node
-		ADDED from /home/henrique/Documents/Pigdev/Studio/moon-cheeser/repo/source/android/build/src/debug/AndroidManifest.xml:23:20-39
+		ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/src/debug/AndroidManifest.xml:23:20-39
 	android:value
-		ADDED from /home/henrique/Documents/Pigdev/Studio/moon-cheeser/repo/source/android/build/AndroidManifest.xml:44:13-51
+		ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:44:13-51
 	android:name
-		ADDED from /home/henrique/Documents/Pigdev/Studio/moon-cheeser/repo/source/android/build/AndroidManifest.xml:43:13-49
+		ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:43:13-49
 activity#com.godot.game.GodotApp
-ADDED from /home/henrique/Documents/Pigdev/Studio/moon-cheeser/repo/source/android/build/AndroidManifest.xml:46:9-63:20
-MERGED from /home/henrique/Documents/Pigdev/Studio/moon-cheeser/repo/source/android/build/AndroidManifest.xml:46:9-63:20
-MERGED from /home/henrique/Documents/Pigdev/Studio/moon-cheeser/repo/source/android/build/AndroidManifest.xml:46:9-63:20
+ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:46:9-63:20
+MERGED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:46:9-63:20
+MERGED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:46:9-63:20
 	android:screenOrientation
-		ADDED from /home/henrique/Documents/Pigdev/Studio/moon-cheeser/repo/source/android/build/AndroidManifest.xml:51:13-50
-		REJECTED from /home/henrique/Documents/Pigdev/Studio/moon-cheeser/repo/source/android/build/AndroidManifest.xml:51:13-50
+		ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:51:13-50
+		REJECTED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:51:13-50
 	android:label
-		ADDED from /home/henrique/Documents/Pigdev/Studio/moon-cheeser/repo/source/android/build/AndroidManifest.xml:48:13-62
-		ADDED from /home/henrique/Documents/Pigdev/Studio/moon-cheeser/repo/source/android/build/AndroidManifest.xml:48:13-62
+		ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:48:13-62
+		ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:48:13-62
 	android:launchMode
-		ADDED from /home/henrique/Documents/Pigdev/Studio/moon-cheeser/repo/source/android/build/AndroidManifest.xml:50:13-44
-		ADDED from /home/henrique/Documents/Pigdev/Studio/moon-cheeser/repo/source/android/build/AndroidManifest.xml:50:13-44
+		ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:50:13-44
+		ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:50:13-44
 	android:resizeableActivity
-		ADDED from /home/henrique/Documents/Pigdev/Studio/moon-cheeser/repo/source/android/build/AndroidManifest.xml:53:13-47
-		ADDED from /home/henrique/Documents/Pigdev/Studio/moon-cheeser/repo/source/android/build/AndroidManifest.xml:53:13-47
+		ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:53:13-47
+		ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:53:13-47
 	tools:ignore
-		ADDED from /home/henrique/Documents/Pigdev/Studio/moon-cheeser/repo/source/android/build/AndroidManifest.xml:54:13-43
-		ADDED from /home/henrique/Documents/Pigdev/Studio/moon-cheeser/repo/source/android/build/AndroidManifest.xml:54:13-43
+		ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:54:13-43
+		ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:54:13-43
 	android:configChanges
-		ADDED from /home/henrique/Documents/Pigdev/Studio/moon-cheeser/repo/source/android/build/AndroidManifest.xml:52:13-141
-		ADDED from /home/henrique/Documents/Pigdev/Studio/moon-cheeser/repo/source/android/build/AndroidManifest.xml:52:13-141
+		ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:52:13-141
+		ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:52:13-141
 	android:theme
-		ADDED from /home/henrique/Documents/Pigdev/Studio/moon-cheeser/repo/source/android/build/AndroidManifest.xml:49:13-55
-		ADDED from /home/henrique/Documents/Pigdev/Studio/moon-cheeser/repo/source/android/build/AndroidManifest.xml:49:13-55
+		ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:49:13-55
+		ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:49:13-55
 	tools:replace
-		ADDED from /home/henrique/Documents/Pigdev/Studio/moon-cheeser/repo/source/android/build/src/debug/AndroidManifest.xml:24:58-99
+		ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/src/debug/AndroidManifest.xml:24:58-99
 	android:name
-		ADDED from /home/henrique/Documents/Pigdev/Studio/moon-cheeser/repo/source/android/build/AndroidManifest.xml:47:13-37
+		ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:47:13-37
 meta-data#com.oculus.vr.focusaware
-ADDED from /home/henrique/Documents/Pigdev/Studio/moon-cheeser/repo/source/android/build/AndroidManifest.xml:57:13-88
-REJECTED from /home/henrique/Documents/Pigdev/Studio/moon-cheeser/repo/source/android/build/AndroidManifest.xml:57:13-88
+ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:57:13-88
+REJECTED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:57:13-88
 	tools:node
-		ADDED from /home/henrique/Documents/Pigdev/Studio/moon-cheeser/repo/source/android/build/src/debug/AndroidManifest.xml:25:24-43
+		ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/src/debug/AndroidManifest.xml:25:24-43
 	android:value
-		ADDED from /home/henrique/Documents/Pigdev/Studio/moon-cheeser/repo/source/android/build/AndroidManifest.xml:57:64-85
+		ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:57:64-85
 	android:name
-		ADDED from /home/henrique/Documents/Pigdev/Studio/moon-cheeser/repo/source/android/build/AndroidManifest.xml:57:24-63
+		ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:57:24-63
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /home/henrique/Documents/Pigdev/Studio/moon-cheeser/repo/source/android/build/AndroidManifest.xml:59:13-62:29
+ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:59:13-62:29
 action#android.intent.action.MAIN
-ADDED from /home/henrique/Documents/Pigdev/Studio/moon-cheeser/repo/source/android/build/AndroidManifest.xml:60:17-69
+ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:60:17-69
 	android:name
-		ADDED from /home/henrique/Documents/Pigdev/Studio/moon-cheeser/repo/source/android/build/AndroidManifest.xml:60:25-66
+		ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:60:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /home/henrique/Documents/Pigdev/Studio/moon-cheeser/repo/source/android/build/AndroidManifest.xml:61:17-77
+ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:61:17-77
 	android:name
-		ADDED from /home/henrique/Documents/Pigdev/Studio/moon-cheeser/repo/source/android/build/AndroidManifest.xml:61:27-74
+		ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:61:27-74
 meta-data#com.google.android.gms.ads.APPLICATION_ID
-ADDED from /home/henrique/Documents/Pigdev/Studio/moon-cheeser/repo/source/android/build/AndroidManifest.xml:67:9-69:69
+ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:68:9-70:69
 	android:value
-		ADDED from /home/henrique/Documents/Pigdev/Studio/moon-cheeser/repo/source/android/build/AndroidManifest.xml:69:13-67
+		ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:70:13-67
 	android:name
-		ADDED from /home/henrique/Documents/Pigdev/Studio/moon-cheeser/repo/source/android/build/AndroidManifest.xml:68:13-69
+		ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:69:13-69
 uses-sdk
-INJECTED from /home/henrique/Documents/Pigdev/Studio/moon-cheeser/repo/source/android/build/AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from /home/henrique/Documents/Pigdev/Studio/moon-cheeser/repo/source/android/build/AndroidManifest.xml
-INJECTED from /home/henrique/Documents/Pigdev/Studio/moon-cheeser/repo/source/android/build/AndroidManifest.xml
+INJECTED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml
+INJECTED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml
 MERGED from [godot-lib.debug.aar] /home/henrique/.gradle/caches/transforms-2/files-2.1/07eb4d87e283bf5e3a01bbcaf6469940/jetified-godot-lib.debug/AndroidManifest.xml:7:5-9:41
 MERGED from [godot-lib.debug.aar] /home/henrique/.gradle/caches/transforms-2/files-2.1/07eb4d87e283bf5e3a01bbcaf6469940/jetified-godot-lib.debug/AndroidManifest.xml:7:5-9:41
 MERGED from [GodotAdMob.5.1.0.release.aar] /home/henrique/.gradle/caches/transforms-2/files-2.1/456aae0d167f0d7c6d5f317d822051df/jetified-GodotAdMob.5.1.0.release/AndroidManifest.xml:7:5-9:41
@@ -272,26 +272,26 @@ MERGED from [androidx.arch.core:core-runtime:2.0.0] /home/henrique/.gradle/cache
 MERGED from [androidx.arch.core:core-runtime:2.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/f9e8569deeaf180b86f7562a710bfef1/core-runtime-2.0.0/AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-ads-base:19.3.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/a0a5c5e1a6fe37fe84cdefecd394d7ac/jetified-play-services-ads-base-19.3.0/AndroidManifest.xml:5:5-44
 MERGED from [com.google.android.gms:play-services-ads-base:19.3.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/a0a5c5e1a6fe37fe84cdefecd394d7ac/jetified-play-services-ads-base-19.3.0/AndroidManifest.xml:5:5-44
-INJECTED from /home/henrique/Documents/Pigdev/Studio/moon-cheeser/repo/source/android/build/src/debug/AndroidManifest.xml
-INJECTED from /home/henrique/Documents/Pigdev/Studio/moon-cheeser/repo/source/android/build/src/debug/AndroidManifest.xml
+INJECTED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/src/debug/AndroidManifest.xml
+INJECTED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/src/debug/AndroidManifest.xml
 	tools:overrideLibrary
 		ADDED from [com.google.android.gms:play-services-ads:19.3.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/8456cd731caf12df9a95c5c194b6e2d6/jetified-play-services-ads-19.3.0/AndroidManifest.xml:23:9-49
 	android:targetSdkVersion
-		INJECTED from /home/henrique/Documents/Pigdev/Studio/moon-cheeser/repo/source/android/build/AndroidManifest.xml
-		INJECTED from /home/henrique/Documents/Pigdev/Studio/moon-cheeser/repo/source/android/build/src/debug/AndroidManifest.xml
+		INJECTED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml
+		INJECTED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/src/debug/AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from /home/henrique/Documents/Pigdev/Studio/moon-cheeser/repo/source/android/build/AndroidManifest.xml
-		INJECTED from /home/henrique/Documents/Pigdev/Studio/moon-cheeser/repo/source/android/build/src/debug/AndroidManifest.xml
+		INJECTED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml
+		INJECTED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/src/debug/AndroidManifest.xml
 uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from /home/henrique/Documents/Pigdev/Studio/moon-cheeser/repo/source/android/build/src/debug/AndroidManifest.xml:10:5-79
+ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/src/debug/AndroidManifest.xml:10:5-79
 MERGED from [com.google.android.gms:play-services-ads-lite:19.3.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/17789e5b0149eeb89358a8b01376b503/jetified-play-services-ads-lite-19.3.0/AndroidManifest.xml:24:5-79
 MERGED from [com.google.android.gms:play-services-ads-lite:19.3.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/17789e5b0149eeb89358a8b01376b503/jetified-play-services-ads-lite-19.3.0/AndroidManifest.xml:24:5-79
 MERGED from [com.google.android.gms:play-services-measurement-sdk-api:17.1.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/7dda88590bf29e50f2326fbd823526f7/jetified-play-services-measurement-sdk-api-17.1.0/AndroidManifest.xml:24:5-79
 MERGED from [com.google.android.gms:play-services-measurement-sdk-api:17.1.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/7dda88590bf29e50f2326fbd823526f7/jetified-play-services-measurement-sdk-api-17.1.0/AndroidManifest.xml:24:5-79
 	android:name
-		ADDED from /home/henrique/Documents/Pigdev/Studio/moon-cheeser/repo/source/android/build/src/debug/AndroidManifest.xml:10:22-76
+		ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/src/debug/AndroidManifest.xml:10:22-76
 uses-permission#android.permission.INTERNET
-ADDED from /home/henrique/Documents/Pigdev/Studio/moon-cheeser/repo/source/android/build/src/debug/AndroidManifest.xml:11:5-67
+ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/src/debug/AndroidManifest.xml:11:5-67
 MERGED from [GodotAdMob.5.1.0.release.aar] /home/henrique/.gradle/caches/transforms-2/files-2.1/456aae0d167f0d7c6d5f317d822051df/jetified-GodotAdMob.5.1.0.release/AndroidManifest.xml:11:5-67
 MERGED from [GodotAdMob.5.1.0.release.aar] /home/henrique/.gradle/caches/transforms-2/files-2.1/456aae0d167f0d7c6d5f317d822051df/jetified-GodotAdMob.5.1.0.release/AndroidManifest.xml:11:5-67
 MERGED from [com.google.android.gms:play-services-ads-lite:19.3.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/17789e5b0149eeb89358a8b01376b503/jetified-play-services-ads-lite-19.3.0/AndroidManifest.xml:23:5-67
@@ -299,20 +299,20 @@ MERGED from [com.google.android.gms:play-services-ads-lite:19.3.0] /home/henriqu
 MERGED from [com.google.android.gms:play-services-measurement-sdk-api:17.1.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/7dda88590bf29e50f2326fbd823526f7/jetified-play-services-measurement-sdk-api-17.1.0/AndroidManifest.xml:23:5-67
 MERGED from [com.google.android.gms:play-services-measurement-sdk-api:17.1.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/7dda88590bf29e50f2326fbd823526f7/jetified-play-services-measurement-sdk-api-17.1.0/AndroidManifest.xml:23:5-67
 	android:name
-		ADDED from /home/henrique/Documents/Pigdev/Studio/moon-cheeser/repo/source/android/build/src/debug/AndroidManifest.xml:11:22-64
+		ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/src/debug/AndroidManifest.xml:11:22-64
 instrumentation
-ADDED from /home/henrique/Documents/Pigdev/Studio/moon-cheeser/repo/source/android/build/src/debug/AndroidManifest.xml:12:5-17:60
+ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/src/debug/AndroidManifest.xml:12:5-17:60
 REJECTED from [godot-lib.debug.aar] /home/henrique/.gradle/caches/transforms-2/files-2.1/07eb4d87e283bf5e3a01bbcaf6469940/jetified-godot-lib.debug/AndroidManifest.xml:11:5-15:57
 	tools:node
-		ADDED from /home/henrique/Documents/Pigdev/Studio/moon-cheeser/repo/source/android/build/src/debug/AndroidManifest.xml:13:9-29
+		ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/src/debug/AndroidManifest.xml:13:9-29
 	android:label
-		ADDED from /home/henrique/Documents/Pigdev/Studio/moon-cheeser/repo/source/android/build/src/debug/AndroidManifest.xml:16:9-58
+		ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/src/debug/AndroidManifest.xml:16:9-58
 	android:icon
-		ADDED from /home/henrique/Documents/Pigdev/Studio/moon-cheeser/repo/source/android/build/src/debug/AndroidManifest.xml:15:9-36
+		ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/src/debug/AndroidManifest.xml:15:9-36
 	android:targetPackage
-		ADDED from /home/henrique/Documents/Pigdev/Studio/moon-cheeser/repo/source/android/build/src/debug/AndroidManifest.xml:17:9-57
+		ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/src/debug/AndroidManifest.xml:17:9-57
 	android:name
-		ADDED from /home/henrique/Documents/Pigdev/Studio/moon-cheeser/repo/source/android/build/src/debug/AndroidManifest.xml:14:9-45
+		ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/src/debug/AndroidManifest.xml:14:9-45
 meta-data#org.godotengine.library.version
 ADDED from [godot-lib.debug.aar] /home/henrique/.gradle/caches/transforms-2/files-2.1/07eb4d87e283bf5e3a01bbcaf6469940/jetified-godot-lib.debug/AndroidManifest.xml:20:9-22:44
 	android:value

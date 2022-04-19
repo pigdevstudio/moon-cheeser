@@ -7,9 +7,9 @@
    viewBox="0 0 33.866665 33.866667"
    version="1.1"
    id="svg1307"
-   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
    sodipodi:docname="silver-mouse.svg"
-   inkscape:export-filename="/home/henrique/Documents/projects/001 - Moon Cheeser/repo/source/actors/astromouse/sprites/cutout_body.png"
+   inkscape:export-filename="/home/henrique/Pictures/Moon Cheeser database/Silver Mouse.png"
    inkscape:export-xdpi="96.000008"
    inkscape:export-ydpi="96.000008"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
@@ -188,12 +188,12 @@
        inkscape:transform-center-y="-87.835552" />
     <path
        id="path44243"
-       style="fill:#9393a7;stroke-width:5.48145;stroke-linecap:round;stroke-linejoin:round;paint-order:fill markers stroke;fill-opacity:1"
+       style="fill:#9393a7;fill-opacity:1;stroke-width:5.48145;stroke-linecap:round;stroke-linejoin:round;paint-order:fill markers stroke"
        d="m 33.028249,275.65475 c 0.771384,1.33611 -4.657774,5.91479 -12.126372,10.22679 -7.468597,4.31199 -13.5686485,7.72868 -14.9198413,5.38835 -1.3511755,-2.3403 4.6577513,-5.91478 12.1263713,-10.22679 7.46862,-4.31201 14.148475,-6.72444 14.919842,-5.38835 z"
        sodipodi:nodetypes="sszss" />
     <path
        id="rect45282"
-       style="fill:#adadc4;stroke-width:0.919937;stroke-linecap:round;stroke-linejoin:round;paint-order:fill markers stroke;fill-opacity:1"
+       style="fill:#adadc4;fill-opacity:1;stroke-width:0.919937;stroke-linecap:round;stroke-linejoin:round;paint-order:fill markers stroke"
        d="m 7.9677755,288.71023 c 5.3910085,-4.76618 11.9929515,-7.8568 18.5426045,-10.71762 0.278456,-0.12162 0.566406,-0.0722 0.645874,0.11007 0.07946,0.18224 -0.08018,0.42674 -0.357902,0.54836 -6.535735,2.86253 -13.07517,5.91267 -18.3551939,10.59597 -0.2234769,0.19827 -0.5104621,0.24434 -0.6446268,0.0973 -0.1341692,-0.14704 -0.060898,-0.43084 0.1691486,-0.63423 z" />
     <rect
        ry="1.6409149"

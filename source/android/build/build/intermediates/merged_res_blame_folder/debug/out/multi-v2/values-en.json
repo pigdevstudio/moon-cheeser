@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/henrique/Documents/Pigdev/Studio/moon-cheeser/repo/source/android/build/build/intermediates/incremental/mergeDebugResources/merged.dir/values-en/values-en.xml",
+            "outputFile": "/home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/build/intermediates/incremental/mergeDebugResources/merged.dir/values-en/values-en.xml",
             "map": [
                 {
-                    "source": "/home/henrique/Documents/Pigdev/Studio/moon-cheeser/repo/source/android/build/res/values-en/godot_project_name_string.xml",
+                    "source": "/home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/res/values-en/godot_project_name_string.xml",
                     "from": {
                         "startLines": "3",
                         "startColumns": "1",

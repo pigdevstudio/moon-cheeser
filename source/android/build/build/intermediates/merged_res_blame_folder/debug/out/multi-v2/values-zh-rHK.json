@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/home/henrique/Documents/Pigdev/Studio/moon-cheeser/repo/source/android/build/build/intermediates/incremental/mergeDebugResources/merged.dir/values-zh-rHK/values-zh-rHK.xml",
+            "outputFile": "/home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/build/intermediates/incremental/mergeDebugResources/merged.dir/values-zh-rHK/values-zh-rHK.xml",
             "map": [
                 {
                     "source": "/home/henrique/.gradle/caches/transforms-2/files-2.1/8456cd731caf12df9a95c5c194b6e2d6/jetified-play-services-ads-19.3.0/res/values-zh-rHK/values.xml",
@@ -18,23 +18,6 @@
                         "startOffsets": "339,404,481,545,609,677,751",
                         "endColumns": "64,76,63,63,67,73,65",
                         "endOffsets": "399,476,540,604,672,746,812"
-                    }
-                },
-                {
-                    "source": "/home/henrique/Documents/Pigdev/Studio/moon-cheeser/repo/source/android/build/res/values-zh-rHK/godot_project_name_string.xml",
-                    "from": {
-                        "startLines": "3",
-                        "startColumns": "1",
-                        "startOffsets": "112",
-                        "endColumns": "63",
-                        "endOffsets": "174"
-                    },
-                    "to": {
-                        "startLines": "3",
-                        "startColumns": "4",
-                        "startOffsets": "272",
-                        "endColumns": "66",
-                        "endOffsets": "334"
                     }
                 },
                 {
@@ -69,6 +52,23 @@
                         "startOffsets": "105",
                         "endColumns": "166",
                         "endOffsets": "267"
+                    }
+                },
+                {
+                    "source": "/home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/res/values-zh-rHK/godot_project_name_string.xml",
+                    "from": {
+                        "startLines": "3",
+                        "startColumns": "1",
+                        "startOffsets": "112",
+                        "endColumns": "63",
+                        "endOffsets": "174"
+                    },
+                    "to": {
+                        "startLines": "3",
+                        "startColumns": "4",
+                        "startOffsets": "272",
+                        "endColumns": "66",
+                        "endOffsets": "334"
                     }
                 }
             ]

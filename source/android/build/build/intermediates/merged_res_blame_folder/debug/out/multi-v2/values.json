@@ -1,27 +1,8 @@
 {
     "logs": [
         {
-            "outputFile": "/home/henrique/Documents/Pigdev/Studio/moon-cheeser/repo/source/android/build/build/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml",
+            "outputFile": "/home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/build/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml",
             "map": [
-                {
-                    "source": "/home/henrique/Documents/Pigdev/Studio/moon-cheeser/repo/source/android/build/res/values/themes.xml",
-                    "from": {
-                        "startLines": "3,5",
-                        "startColumns": "1,1",
-                        "startOffsets": "53,147",
-                        "endLines": "3,8",
-                        "endColumns": "92,9",
-                        "endOffsets": "144,371"
-                    },
-                    "to": {
-                        "startLines": "103,104",
-                        "startColumns": "4,4",
-                        "startOffsets": "7156,7252",
-                        "endLines": "103,107",
-                        "endColumns": "95,9",
-                        "endOffsets": "7247,7476"
-                    }
-                },
                 {
                     "source": "/home/henrique/.gradle/caches/transforms-2/files-2.1/abb967fabfa19789071bf218fc46fe7d/media-1.0.0/res/values/values.xml",
                     "from": {
@@ -37,6 +18,25 @@
                         "startOffsets": "547,636,765,2521,2574,2627,2680,3271,8489,8665,8787,9049,9244",
                         "endColumns": "88,70,72,52,52,52,52,59,65,121,60,65,66",
                         "endOffsets": "631,702,833,2569,2622,2675,2728,3326,8550,8782,8843,9110,9306"
+                    }
+                },
+                {
+                    "source": "/home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/res/values/themes.xml",
+                    "from": {
+                        "startLines": "3,5",
+                        "startColumns": "1,1",
+                        "startOffsets": "53,147",
+                        "endLines": "3,8",
+                        "endColumns": "92,9",
+                        "endOffsets": "144,371"
+                    },
+                    "to": {
+                        "startLines": "103,104",
+                        "startColumns": "4,4",
+                        "startOffsets": "7156,7252",
+                        "endLines": "103,107",
+                        "endColumns": "95,9",
+                        "endOffsets": "7247,7476"
                     }
                 },
                 {
@@ -131,7 +131,7 @@
                     }
                 },
                 {
-                    "source": "/home/henrique/Documents/Pigdev/Studio/moon-cheeser/repo/source/android/build/res/values/godot_project_name_string.xml",
+                    "source": "/home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/res/values/godot_project_name_string.xml",
                     "from": {
                         "startLines": "3",
                         "startColumns": "1",

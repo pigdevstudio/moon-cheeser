@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/home/henrique/Documents/Pigdev/Studio/moon-cheeser/repo/source/android/build/build/intermediates/incremental/mergeDebugResources/merged.dir/values-vi/values-vi.xml",
+            "outputFile": "/home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/build/intermediates/incremental/mergeDebugResources/merged.dir/values-vi/values-vi.xml",
             "map": [
                 {
                     "source": "/home/henrique/.gradle/caches/transforms-2/files-2.1/ee4998e5c44f8791e55e396202e7f092/core-1.0.0/res/values-vi/values-vi.xml",
@@ -21,6 +21,23 @@
                     }
                 },
                 {
+                    "source": "/home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/res/values-vi/godot_project_name_string.xml",
+                    "from": {
+                        "startLines": "3",
+                        "startColumns": "1",
+                        "startOffsets": "112",
+                        "endColumns": "63",
+                        "endOffsets": "174"
+                    },
+                    "to": {
+                        "startLines": "3",
+                        "startColumns": "4",
+                        "startOffsets": "300",
+                        "endColumns": "66",
+                        "endOffsets": "362"
+                    }
+                },
+                {
                     "source": "/home/henrique/.gradle/caches/transforms-2/files-2.1/0e28db26779229e0d9baff317473479e/jetified-play-services-basement-17.0.0/res/values-vi/values.xml",
                     "from": {
                         "startLines": "4",
@@ -35,23 +52,6 @@
                         "startOffsets": "105",
                         "endColumns": "194",
                         "endOffsets": "295"
-                    }
-                },
-                {
-                    "source": "/home/henrique/Documents/Pigdev/Studio/moon-cheeser/repo/source/android/build/res/values-vi/godot_project_name_string.xml",
-                    "from": {
-                        "startLines": "3",
-                        "startColumns": "1",
-                        "startOffsets": "112",
-                        "endColumns": "63",
-                        "endOffsets": "174"
-                    },
-                    "to": {
-                        "startLines": "3",
-                        "startColumns": "4",
-                        "startOffsets": "300",
-                        "endColumns": "66",
-                        "endOffsets": "362"
                     }
                 },
                 {

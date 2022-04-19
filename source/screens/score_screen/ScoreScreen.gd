@@ -1,11 +1,13 @@
 extends Control
 
+export(String, FILE, "*.tscn") var game_scene_path
+export(String, FILE, "*.tscn") var main_scene_path
+
 onready var _score_label = $ScoreLabel
 onready var _highscore_label = $HighScoreLabel
 onready var _fade = $FadeRect
+onready var _admob = $AdMob
 
-export(String, FILE, "*.tscn") var game_scene_path
-export(String, FILE, "*.tscn") var main_scene_path
 
 func _ready():
 	set_score(Score.current_score)
@@ -21,6 +23,11 @@ func set_highscore(highscore):
 
 
 func _on_RetryButton_pressed():
+	if OS.get_name() == "Android":
+		_admob.load_rewarded_video()
+		yield(_admob, "rewarded_video_loaded")
+		_admob.show_rewarded_video()
+		var reward = yield(_admob, "rewarded")[1]
 	yield(_fade.fade_out(), "completed")
 	get_tree().change_scene(game_scene_path)
 

@@ -1,14 +1,14 @@
 [gd_scene load_steps=14 format=2]
 
-[ext_resource path="res://screens/skin_screen/astromouse.svg" type="Texture" id=3]
+[ext_resource path="res://screens/skin_screen/InventoryHTTPRequest.gd" type="Script" id=1]
+[ext_resource path="res://screens/skin_screen/SkinButton.tscn" type="PackedScene" id=2]
 [ext_resource path="res://levels/Background.tscn" type="PackedScene" id=4]
-[ext_resource path="res://screens/skin_screen/SkinButton.gd" type="Script" id=6]
 [ext_resource path="res://interface/fonts/garoa_hacker_76.tres" type="DynamicFont" id=8]
 [ext_resource path="res://interface/fonts/GaroaHackerClubeBold.otf" type="DynamicFontData" id=13]
 [ext_resource path="res://interface/FadeRect.tscn" type="PackedScene" id=14]
 [ext_resource path="res://interface/ShadedButton.tscn" type="PackedScene" id=16]
 [ext_resource path="res://interface/BackButton.svg" type="Texture" id=17]
-[ext_resource path="res://screens/skin_screen/SkinHTTPRequest.gd" type="Script" id=48]
+[ext_resource path="res://screens/skin_screen/ShopHTTPRequest.gd" type="Script" id=48]
 [ext_resource path="res://screens/skin_screen/SkinSelectScreen.gd" type="Script" id=49]
 
 [sub_resource type="DynamicFont" id=7]
@@ -43,6 +43,7 @@ script = ExtResource( 49 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+skin_button = ExtResource( 2 )
 
 [node name="Background" parent="." instance=ExtResource( 4 )]
 
@@ -57,15 +58,29 @@ custom_fonts/font = ExtResource( 8 )
 text = "choose your skin"
 
 [node name="Label2" type="Label" parent="."]
-visible = false
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -96.0
-margin_top = 256.0
-margin_right = 79.0
-margin_bottom = 332.0
+margin_left = 284.0
+margin_top = 198.0
+margin_right = 416.0
+margin_bottom = 258.0
 custom_fonts/font = SubResource( 7 )
-text = "skins"
+text = "shop"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label4" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -421.0
+margin_top = 198.0
+margin_right = -142.0
+margin_bottom = 258.0
+custom_fonts/font = SubResource( 7 )
+text = "inventory"
+align = 1
 
 [node name="Label3" type="Label" parent="."]
 visible = false
@@ -85,36 +100,52 @@ margin_right = 191.0
 margin_bottom = 191.0
 texture_normal = ExtResource( 17 )
 
-[node name="ScrollContainer" type="ScrollContainer" parent="."]
-margin_left = 424.0
-margin_top = 320.0
-margin_right = 952.0
-margin_bottom = 720.0
+[node name="ShopScrollContainer" type="ScrollContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 88.0
+margin_top = -66.0
+margin_right = 616.0
+margin_bottom = 334.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="GridContainer" type="GridContainer" parent="ScrollContainer"]
-margin_right = 128.0
-margin_bottom = 128.0
+[node name="GridContainer" type="GridContainer" parent="ShopScrollContainer"]
 columns = 4
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="SkinButton" type="TextureButton" parent="ScrollContainer/GridContainer"]
-margin_right = 128.0
-margin_bottom = 128.0
-texture_normal = ExtResource( 3 )
-script = ExtResource( 6 )
+[node name="InventoryScrollContainer" type="ScrollContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -576.0
+margin_top = -66.0
+margin_right = -48.0
+margin_bottom = 334.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GridContainer" type="GridContainer" parent="InventoryScrollContainer"]
+columns = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="FadeRect" parent="." instance=ExtResource( 14 )]
-visible = false
 material = SubResource( 4 )
 next_scene_path = "res://screens/title_screen/TitleScreen.tscn"
 
-[node name="SkinHTTPRequest" type="HTTPRequest" parent="."]
+[node name="ShopHTTPRequest" type="HTTPRequest" parent="."]
 script = ExtResource( 48 )
 
+[node name="InventoryHTTPRequest" type="HTTPRequest" parent="."]
+script = ExtResource( 1 )
+
 [connection signal="pressed" from="BackButton" to="FadeRect" method="change_scene"]
-[connection signal="request_completed" from="SkinHTTPRequest" to="SkinHTTPRequest" method="_on_SkinHTTPRequest_request_completed"]

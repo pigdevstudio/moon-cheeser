@@ -1,47 +1,15 @@
-[gd_scene load_steps=46 format=2]
+[gd_scene load_steps=14 format=2]
 
-[ext_resource path="res://actors/astromouse/sprites/AstromouseCharacter.tscn" type="PackedScene" id=1]
-[ext_resource path="res://screens/skin_screen/star.svg" type="Texture" id=2]
-[ext_resource path="res://screens/skin_screen/astromouse.svg" type="Texture" id=3]
+[ext_resource path="res://screens/skin_screen/InventoryHTTPRequest.gd" type="Script" id=1]
+[ext_resource path="res://screens/skin_screen/SkinButton.tscn" type="PackedScene" id=2]
 [ext_resource path="res://levels/Background.tscn" type="PackedScene" id=4]
-[ext_resource path="res://actors/astromouse/sprites/MousePotter.tscn" type="PackedScene" id=5]
-[ext_resource path="res://screens/skin_screen/SkinButton.gd" type="Script" id=6]
-[ext_resource path="res://screens/skin_screen/SkinSelectScreen.gd" type="Script" id=7]
 [ext_resource path="res://interface/fonts/garoa_hacker_76.tres" type="DynamicFont" id=8]
-[ext_resource path="res://screens/skin_screen/mouse-potter.svg" type="Texture" id=9]
-[ext_resource path="res://actors/astromouse/sprites/SailorMoonMouse.tscn" type="PackedScene" id=10]
-[ext_resource path="res://screens/skin_screen/sailor-moon.svg" type="Texture" id=11]
-[ext_resource path="res://actors/starmouse/Broom.tscn" type="PackedScene" id=12]
 [ext_resource path="res://interface/fonts/GaroaHackerClubeBold.otf" type="DynamicFontData" id=13]
 [ext_resource path="res://interface/FadeRect.tscn" type="PackedScene" id=14]
-[ext_resource path="res://actors/starmouse/StarMouse.tscn" type="PackedScene" id=15]
-[ext_resource path="res://interface/ShaderButton.tscn" type="PackedScene" id=16]
+[ext_resource path="res://interface/ShadedButton.tscn" type="PackedScene" id=16]
 [ext_resource path="res://interface/BackButton.svg" type="Texture" id=17]
-[ext_resource path="res://screens/skin_screen/flying_broom.svg" type="Texture" id=18]
-[ext_resource path="res://screens/skin_screen/golden-cloud.svg" type="Texture" id=19]
-[ext_resource path="res://actors/starmouse/GoldenCloud.tscn" type="PackedScene" id=20]
-[ext_resource path="res://actors/astromouse/sprites/GokuMouse.tscn" type="PackedScene" id=21]
-[ext_resource path="res://screens/skin_screen/goku-mouse.svg" type="Texture" id=22]
-[ext_resource path="res://screens/skin_screen/silver-surfboard.svg" type="Texture" id=23]
-[ext_resource path="res://actors/starmouse/SilverSurfboard.tscn" type="PackedScene" id=24]
-[ext_resource path="res://actors/astromouse/sprites/SilverMouseSurfer.tscn" type="PackedScene" id=25]
-[ext_resource path="res://screens/skin_screen/silver-mouse.svg" type="Texture" id=26]
-[ext_resource path="res://actors/astromouse/sprites/MouseTrek.tscn" type="PackedScene" id=27]
-[ext_resource path="res://screens/skin_screen/mouse-treker.svg" type="Texture" id=28]
-[ext_resource path="res://actors/astromouse/sprites/MouseVader.tscn" type="PackedScene" id=29]
-[ext_resource path="res://screens/skin_screen/mouse-vader.svg" type="Texture" id=30]
-[ext_resource path="res://actors/astromouse/sprites/HamelinMouse.tscn" type="PackedScene" id=31]
-[ext_resource path="res://screens/skin_screen/mouse-hamelin.svg" type="Texture" id=32]
-[ext_resource path="res://screens/skin_screen/mouse-dorime.svg" type="Texture" id=33]
-[ext_resource path="res://actors/astromouse/sprites/DorimeMouse.tscn" type="PackedScene" id=34]
-[ext_resource path="res://actors/starmouse/jew-star.svg" type="Texture" id=35]
-[ext_resource path="res://actors/starmouse/JewStar.tscn" type="PackedScene" id=36]
-[ext_resource path="res://actors/starmouse/DeathStar.tscn" type="PackedScene" id=37]
-[ext_resource path="res://actors/death-star.svg" type="Texture" id=38]
-[ext_resource path="res://screens/skin_screen/iron-mouse.svg" type="Texture" id=39]
-[ext_resource path="res://screens/skin_screen/spider-mouse.svg" type="Texture" id=40]
-[ext_resource path="res://actors/astromouse/sprites/IronMouse.tscn" type="PackedScene" id=41]
-[ext_resource path="res://actors/astromouse/sprites/SpiderMouse.tscn" type="PackedScene" id=42]
+[ext_resource path="res://screens/skin_screen/ShopHTTPRequest.gd" type="Script" id=48]
+[ext_resource path="res://screens/skin_screen/SkinSelectScreen.gd" type="Script" id=49]
 
 [sub_resource type="DynamicFont" id=7]
 size = 60
@@ -71,10 +39,11 @@ shader_param/smooth_percent = 0.1
 [node name="SkinSelectScreen" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 7 )
+script = ExtResource( 49 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+skin_button = ExtResource( 2 )
 
 [node name="Background" parent="." instance=ExtResource( 4 )]
 
@@ -91,14 +60,30 @@ text = "choose your skin"
 [node name="Label2" type="Label" parent="."]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -456.0
-margin_top = 256.0
-margin_right = -281.0
-margin_bottom = 332.0
+margin_left = 284.0
+margin_top = 198.0
+margin_right = 416.0
+margin_bottom = 258.0
 custom_fonts/font = SubResource( 7 )
-text = "mouse"
+text = "shop"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label4" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -421.0
+margin_top = 198.0
+margin_right = -142.0
+margin_bottom = 258.0
+custom_fonts/font = SubResource( 7 )
+text = "inventory"
+align = 1
 
 [node name="Label3" type="Label" parent="."]
+visible = false
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = 152.0
@@ -115,199 +100,52 @@ margin_right = 191.0
 margin_bottom = 191.0
 texture_normal = ExtResource( 17 )
 
-[node name="ScrollContainer" type="ScrollContainer" parent="."]
-margin_left = 64.0
-margin_top = 320.0
-margin_right = 592.0
-margin_bottom = 720.0
+[node name="ShopScrollContainer" type="ScrollContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 88.0
+margin_top = -66.0
+margin_right = 616.0
+margin_bottom = 334.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="GridContainer" type="GridContainer" parent="ScrollContainer"]
-margin_right = 524.0
-margin_bottom = 392.0
+[node name="GridContainer" type="GridContainer" parent="ShopScrollContainer"]
 columns = 4
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="SkinButton" type="TextureButton" parent="ScrollContainer/GridContainer"]
-margin_right = 128.0
-margin_bottom = 128.0
-texture_normal = ExtResource( 3 )
-script = ExtResource( 6 )
-new_skin = ExtResource( 1 )
-type = "astromouse"
-
-[node name="SkinButton3" type="TextureButton" parent="ScrollContainer/GridContainer"]
-margin_left = 132.0
-margin_right = 260.0
-margin_bottom = 128.0
-texture_normal = ExtResource( 11 )
-script = ExtResource( 6 )
-new_skin = ExtResource( 10 )
-type = "astromouse"
-
-[node name="SkinButton4" type="TextureButton" parent="ScrollContainer/GridContainer"]
-margin_left = 264.0
-margin_right = 392.0
-margin_bottom = 128.0
-texture_normal = ExtResource( 22 )
-script = ExtResource( 6 )
-new_skin = ExtResource( 21 )
-type = "astromouse"
-
-[node name="SkinButton5" type="TextureButton" parent="ScrollContainer/GridContainer"]
-margin_left = 396.0
-margin_right = 524.0
-margin_bottom = 128.0
-texture_normal = ExtResource( 26 )
-script = ExtResource( 6 )
-new_skin = ExtResource( 25 )
-type = "astromouse"
-
-[node name="SkinButton6" type="TextureButton" parent="ScrollContainer/GridContainer"]
-margin_top = 132.0
-margin_right = 128.0
-margin_bottom = 260.0
-texture_normal = ExtResource( 28 )
-script = ExtResource( 6 )
-new_skin = ExtResource( 27 )
-type = "astromouse"
-
-[node name="SkinButton2" type="TextureButton" parent="ScrollContainer/GridContainer"]
-margin_left = 132.0
-margin_top = 132.0
-margin_right = 260.0
-margin_bottom = 260.0
-texture_normal = ExtResource( 9 )
-script = ExtResource( 6 )
-new_skin = ExtResource( 5 )
-type = "astromouse"
-
-[node name="SkinButton7" type="TextureButton" parent="ScrollContainer/GridContainer"]
-margin_left = 264.0
-margin_top = 132.0
-margin_right = 392.0
-margin_bottom = 260.0
-texture_normal = ExtResource( 30 )
-script = ExtResource( 6 )
-new_skin = ExtResource( 29 )
-type = "astromouse"
-
-[node name="SkinButton8" type="TextureButton" parent="ScrollContainer/GridContainer"]
-margin_left = 396.0
-margin_top = 132.0
-margin_right = 524.0
-margin_bottom = 260.0
-texture_normal = ExtResource( 32 )
-script = ExtResource( 6 )
-new_skin = ExtResource( 31 )
-type = "astromouse"
-
-[node name="SkinButton9" type="TextureButton" parent="ScrollContainer/GridContainer"]
-margin_top = 264.0
-margin_right = 128.0
-margin_bottom = 392.0
-texture_normal = ExtResource( 33 )
-script = ExtResource( 6 )
-new_skin = ExtResource( 34 )
-type = "astromouse"
-
-[node name="SkinButton10" type="TextureButton" parent="ScrollContainer/GridContainer"]
-margin_left = 132.0
-margin_top = 264.0
-margin_right = 260.0
-margin_bottom = 392.0
-texture_normal = ExtResource( 40 )
-script = ExtResource( 6 )
-new_skin = ExtResource( 42 )
-type = "astromouse"
-
-[node name="SkinButton11" type="TextureButton" parent="ScrollContainer/GridContainer"]
-margin_left = 264.0
-margin_top = 264.0
-margin_right = 392.0
-margin_bottom = 392.0
-texture_normal = ExtResource( 39 )
-script = ExtResource( 6 )
-new_skin = ExtResource( 41 )
-type = "astromouse"
-
-[node name="ScrollContainer2" type="ScrollContainer" parent="."]
-margin_left = 640.0
-margin_top = 320.0
-margin_right = 1176.0
-margin_bottom = 720.0
+[node name="InventoryScrollContainer" type="ScrollContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -576.0
+margin_top = -66.0
+margin_right = -48.0
+margin_bottom = 334.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="GridContainer" type="GridContainer" parent="ScrollContainer2"]
-margin_right = 524.0
-margin_bottom = 260.0
+[node name="GridContainer" type="GridContainer" parent="InventoryScrollContainer"]
 columns = 4
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="SkinButton" type="TextureButton" parent="ScrollContainer2/GridContainer"]
-margin_right = 128.0
-margin_bottom = 128.0
-texture_normal = ExtResource( 2 )
-script = ExtResource( 6 )
-new_skin = ExtResource( 15 )
-type = "starmouse"
-
-[node name="SkinButton2" type="TextureButton" parent="ScrollContainer2/GridContainer"]
-margin_left = 132.0
-margin_right = 260.0
-margin_bottom = 128.0
-texture_normal = ExtResource( 18 )
-script = ExtResource( 6 )
-new_skin = ExtResource( 12 )
-type = "starmouse"
-
-[node name="SkinButton3" type="TextureButton" parent="ScrollContainer2/GridContainer"]
-margin_left = 264.0
-margin_right = 392.0
-margin_bottom = 128.0
-texture_normal = ExtResource( 19 )
-script = ExtResource( 6 )
-new_skin = ExtResource( 20 )
-type = "starmouse"
-
-[node name="SkinButton4" type="TextureButton" parent="ScrollContainer2/GridContainer"]
-margin_left = 396.0
-margin_right = 524.0
-margin_bottom = 128.0
-texture_normal = ExtResource( 23 )
-script = ExtResource( 6 )
-new_skin = ExtResource( 24 )
-type = "starmouse"
-
-[node name="SkinButton5" type="TextureButton" parent="ScrollContainer2/GridContainer"]
-margin_top = 132.0
-margin_right = 128.0
-margin_bottom = 260.0
-texture_normal = ExtResource( 35 )
-script = ExtResource( 6 )
-new_skin = ExtResource( 36 )
-type = "starmouse"
-
-[node name="SkinButton6" type="TextureButton" parent="ScrollContainer2/GridContainer"]
-margin_left = 132.0
-margin_top = 132.0
-margin_right = 260.0
-margin_bottom = 260.0
-texture_normal = ExtResource( 38 )
-script = ExtResource( 6 )
-new_skin = ExtResource( 37 )
-type = "starmouse"
 
 [node name="FadeRect" parent="." instance=ExtResource( 14 )]
 material = SubResource( 4 )
 next_scene_path = "res://screens/title_screen/TitleScreen.tscn"
 
-[connection signal="pressed" from="BackButton" to="." method="_on_BackButton_pressed"]
+[node name="ShopHTTPRequest" type="HTTPRequest" parent="."]
+script = ExtResource( 48 )
+
+[node name="InventoryHTTPRequest" type="HTTPRequest" parent="."]
+script = ExtResource( 1 )
+
+[connection signal="pressed" from="BackButton" to="FadeRect" method="change_scene"]

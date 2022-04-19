@@ -1,8 +1,8 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://interface/themes/main_theme.tres" type="Theme" id=1]
 [ext_resource path="res://levels/Background.tscn" type="PackedScene" id=2]
-[ext_resource path="res://interface/ShaderButton.tscn" type="PackedScene" id=3]
+[ext_resource path="res://interface/ShadedButton.tscn" type="PackedScene" id=3]
 [ext_resource path="res://interface/AchievementsButton.svg" type="Texture" id=4]
 [ext_resource path="res://interface/PlayButton.svg" type="Texture" id=5]
 [ext_resource path="res://objects/Moon/moon.svg" type="Texture" id=6]
@@ -11,6 +11,7 @@
 [ext_resource path="res://interface/FadeRect.tscn" type="PackedScene" id=9]
 [ext_resource path="res://screens/title_screen/title.png" type="Texture" id=10]
 [ext_resource path="res://interface/SkinsButton.svg" type="Texture" id=11]
+[ext_resource path="res://admob-lib/admob.gd" type="Script" id=12]
 
 [sub_resource type="ViewportTexture" id=1]
 flags = 5
@@ -152,6 +153,18 @@ __meta__ = {
 
 [node name="FadeRect" parent="." instance=ExtResource( 9 )]
 
+[node name="AdMob" type="Node" parent="."]
+script = ExtResource( 12 )
+banner_id = "ca-app-pub-3940256099942544/6300978111"
+interstitial_id = "ca-app-pub-3940256099942544/8691691433"
+rewarded_id = "ca-app-pub-3940256099942544/5224354917"
+is_personalized = false
+
+[node name="Timer" type="Timer" parent="AdMob"]
+wait_time = 5.0
+one_shot = true
+
 [connection signal="pressed" from="PlayButton" to="." method="_on_PlayButton_pressed"]
 [connection signal="pressed" from="AchievementsButton" to="." method="_on_AchievementsButton_pressed"]
 [connection signal="pressed" from="SkinsButton" to="." method="_on_SkinsButton_pressed"]
+[connection signal="timeout" from="AdMob/Timer" to="." method="_on_AdMobTimer_timeout"]

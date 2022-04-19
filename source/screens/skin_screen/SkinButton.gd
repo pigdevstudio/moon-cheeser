@@ -1,4 +1,3 @@
 extends ShadedButton
 
-export var skin_id = 0
-
+export var skin_scene_url = ""

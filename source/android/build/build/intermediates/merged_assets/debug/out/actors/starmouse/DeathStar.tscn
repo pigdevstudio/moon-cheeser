@@ -1,9 +1,8 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://actors/starmouse/Star.gd" type="Script" id=1]
 [ext_resource path="res://objects/FlyingBodies/particles.png" type="Texture" id=2]
 [ext_resource path="res://actors/death-star.svg" type="Texture" id=3]
-[ext_resource path="res://actors/starmouse/Trail2D.tscn" type="PackedScene" id=4]
 [ext_resource path="res://actors/starmouse/LaserBeam2D.tscn" type="PackedScene" id=5]
 
 [sub_resource type="GDScript" id=35]
@@ -65,9 +64,6 @@ radial_accel_random = 0.4
 scale_curve = SubResource( 7 )
 color_ramp = SubResource( 28 )
 
-[sub_resource type="Gradient" id=34]
-colors = PoolColorArray( 0.843137, 0.843137, 0.992157, 1, 0.843137, 0.843137, 0.992157, 0 )
-
 [node name="Star" type="Sprite"]
 use_parent_material = true
 script = ExtResource( 1 )
@@ -94,14 +90,6 @@ amount = 16
 local_coords = false
 process_material = SubResource( 23 )
 texture = ExtResource( 2 )
-
-[node name="Trail2D" parent="Sprite" instance=ExtResource( 4 )]
-modulate = Color( 2.7, 2.7, 2.7, 1 )
-show_behind_parent = true
-width = 40.0
-gradient = SubResource( 34 )
-is_emitting = true
-target_path = NodePath("../..")
 
 [node name="LaserBeam2D" parent="Sprite" instance=ExtResource( 5 )]
 position = Vector2( -20.8502, -21.6696 )

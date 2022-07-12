@@ -12,6 +12,7 @@ func _ready():
 
 
 func _on_SubmitButton_pressed():
+	fade_rect.fade_out()
 	http_request.request(
 		"https://api.lootlocker.io/game/leaderboards/moon-cheeser/submit",
 		["Content-Type: application/json", "x-session-token: %s" % LootLocker.token],
@@ -19,4 +20,4 @@ func _on_SubmitButton_pressed():
 		HTTPClient.METHOD_POST,
 		"{\"score\": %s, \"member_id\": \"%s\", \"metadata\": \"%s\"}" % [Score.high_score, LootLocker.player_id, line_edit.text])
 	yield(http_request, "request_completed")
-	fade_rect.change_scene()
+	get_tree().change_scene(fade_rect.next_scene_path)

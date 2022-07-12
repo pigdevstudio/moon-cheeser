@@ -1,4 +1,0 @@
-#Tue Apr 19 15:21:00 BRT 2022
-base.0=/home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/build/intermediates/dex/debug/mergeDexDebug/classes.dex
-renamed.0=classes.dex
-path.0=classes.dex

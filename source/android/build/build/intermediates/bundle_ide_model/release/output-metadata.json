@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "artifactType": {
+    "type": "BUNDLE",
+    "kind": "RegularFile"
+  },
+  "applicationId": "com.madkitchen.mooncheeser",
+  "variantName": "release",
+  "elements": [
+    {
+      "type": "SINGLE",
+      "filters": [],
+      "outputFile": "../../../outputs/bundle/release/build-release.aab"
+    }
+  ]
+}

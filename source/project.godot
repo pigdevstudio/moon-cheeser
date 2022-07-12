@@ -10,19 +10,9 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "Node",
-"class": "ActionResource",
-"language": "GDScript",
-"path": "res://levels/Cinematics/comet/Resource.gd"
-}, {
-"base": "Node",
 "class": "AdMob",
 "language": "GDScript",
 "path": "res://admob-lib/admob.gd"
-}, {
-"base": "Area2D",
-"class": "HurtBox2D",
-"language": "GDScript",
-"path": "res://levels/Cinematics/comet/HurtBox.gd"
 }, {
 "base": "TextureButton",
 "class": "ShadedButton",
@@ -35,11 +25,65 @@ _global_script_classes=[ {
 "path": "res://actors/starmouse/Trail2D.gd"
 } ]
 _global_script_class_icons={
-"ActionResource": "",
 "AdMob": "res://admob-lib/icon.png",
-"HurtBox2D": "",
 "ShadedButton": "",
 "Trail2D": ""
+}
+
+[admob]
+
+config={
+"banner": {
+"position": 1,
+"show_instantly": true,
+"size": "MEDIUM_RECTANGLE",
+"unit_ids": {
+"Android": {
+"standard": "ca-app-pub-3940256099942544/6300978111"
+},
+"iOS": {
+"standard": "ca-app-pub-3940256099942544/2934735716"
+}
+}
+},
+"debug": {
+"is_test_europe_user_consent": false
+},
+"general": {
+"is_enabled": true,
+"is_for_child_directed_treatment": false,
+"max_ad_content_rating": "MA"
+},
+"interstitial": {
+"unit_ids": {
+"Android": {
+"standard": "ca-app-pub-3940256099942544/1033173712"
+},
+"iOS": {
+"standard": "ca-app-pub-3940256099942544/4411468910"
+}
+}
+},
+"rewarded": {
+"unit_ids": {
+"Android": {
+"standard": "ca-app-pub-3940256099942544/5224354917"
+},
+"iOS": {
+"standard": "ca-app-pub-3940256099942544/1712485313"
+}
+}
+},
+"rewarded_interstitial": {
+"unit_ids": {
+"Android": {
+"standard": "ca-app-pub-3940256099942544/5354046379"
+},
+"iOS": {
+"standard": "ca-app-pub-3940256099942544/6978759866"
+}
+}
+}
 }
 
 [application]
@@ -55,6 +99,8 @@ Score="*res://meta/Score.tscn"
 Achievements="*res://meta/achievements/AchievementsDictionary.tscn"
 PlayerData="*res://meta/PlayerData.tscn"
 Skins="*res://meta/Skins.tscn"
+DebugLabel="*res://interface/DebugLabel.tscn"
+NetworkStateLabel="*res://interface/NetworkStateLabel.tscn"
 LootLocker="*res://meta/LootLocker.tscn"
 
 [debug]
@@ -66,7 +112,7 @@ gdscript/completion/autocomplete_setters_and_getters=true
 
 window/size/width=1280
 window/size/height=720
-window/size/always_on_top=true
+window/size/fullscreen=true
 window/handheld/orientation="sensor_landscape"
 window/stretch/mode="2d"
 window/stretch/aspect="keep_width"

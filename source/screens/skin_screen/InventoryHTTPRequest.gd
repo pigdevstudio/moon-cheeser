@@ -2,6 +2,7 @@ extends HTTPRequest
 
 var skins_scenes_url = []
 var skins_images_url = []
+var skins_ids = []
 
 
 func load_player_inventory():
@@ -13,9 +14,11 @@ func load_player_inventory():
 		)
 	var response = yield(self, "request_completed")[3]
 	response = JSON.parse(response.get_string_from_utf8()).result
+	
 	for asset in response['inventory']:
 		skins_scenes_url.append(asset['asset']['files'][0]['url'])
 		skins_images_url.append(asset['asset']['files'][1]['url'])
+		skins_ids.append(asset['asset']['id'])
 
 
 func get_image(image_url):

@@ -1,0 +1,219 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.madkitchen.mooncheeser"
+4    android:installLocation="auto"
+5    android:versionCode="27"
+6    android:versionName="1.0.27" >
+7
+8    <uses-sdk
+9        android:minSdkVersion="21"
+10        android:targetSdkVersion="30" />
+11
+12    <supports-screens
+12-->/home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:12:5-16:40
+13        android:largeScreens="true"
+13-->/home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:15:9-36
+14        android:normalScreens="true"
+14-->/home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:14:9-37
+15        android:smallScreens="true"
+15-->/home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:13:9-36
+16        android:xlargeScreens="true" />
+16-->/home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:16:9-37
+17
+18    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+18-->/home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/src/release/AndroidManifest.xml:10:5-79
+18-->/home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/src/release/AndroidManifest.xml:10:22-76
+19    <uses-permission android:name="android.permission.INTERNET" />
+19-->/home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/src/release/AndroidManifest.xml:11:5-67
+19-->/home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/src/release/AndroidManifest.xml:11:22-64
+20
+21    <instrumentation
+21-->/home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/src/release/AndroidManifest.xml:12:5-17:62
+22        android:name=".GodotInstrumentation"
+22-->/home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/src/release/AndroidManifest.xml:14:9-45
+23        android:icon="@mipmap/icon"
+23-->/home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/src/release/AndroidManifest.xml:15:9-36
+24        android:label="@string/godot_project_name_string"
+24-->/home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/src/release/AndroidManifest.xml:16:9-58
+25        android:targetPackage="com.madkitchen.mooncheeser" />
+25-->/home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/src/release/AndroidManifest.xml:17:9-59
+26    <!-- glEsVersion is modified by the exporter, changing this value here has no effect. -->
+27    <uses-feature
+27-->/home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:19:5-21:35
+28        android:glEsVersion="0x00020000"
+28-->/home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:20:9-41
+29        android:required="true" />
+29-->/home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:21:9-32
+30
+31    <uses-permission android:name="android.permission.WAKE_LOCK" />
+31-->[com.google.android.gms:play-services-measurement-sdk-api:17.1.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/7dda88590bf29e50f2326fbd823526f7/jetified-play-services-measurement-sdk-api-17.1.0/AndroidManifest.xml:25:5-68
+31-->[com.google.android.gms:play-services-measurement-sdk-api:17.1.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/7dda88590bf29e50f2326fbd823526f7/jetified-play-services-measurement-sdk-api-17.1.0/AndroidManifest.xml:25:22-65
+32    <uses-permission android:name="com.android.vending.BILLING" />
+32-->[com.android.billingclient:billing:3.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/756ea1b7c16587e41d29f89ab43c5d4a/jetified-billing-3.0.0/AndroidManifest.xml:10:5-67
+32-->[com.android.billingclient:billing:3.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/756ea1b7c16587e41d29f89ab43c5d4a/jetified-billing-3.0.0/AndroidManifest.xml:10:22-64
+33
+34    <application
+34-->/home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:31:5-76:19
+35        android:allowBackup="false"
+35-->/home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:31:68-95
+36        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+36-->[androidx.core:core:1.2.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/9f2af2327a2ee4df66d476977a324666/core-1.2.0/AndroidManifest.xml:24:18-86
+37        android:icon="@mipmap/icon"
+37-->/home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:31:181-208
+38        android:label="@string/godot_project_name_string"
+38-->/home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:31:18-67
+39        android:requestLegacyExternalStorage="false" >
+39-->/home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:31:136-180
+40        <activity
+40-->/home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:46:9-63:20
+41            android:name="com.godot.game.GodotApp"
+41-->/home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:47:13-37
+42            android:configChanges="orientation|keyboardHidden|screenSize|smallestScreenSize|density|keyboard|navigation|screenLayout|uiMode"
+42-->/home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:52:13-141
+43            android:label="@string/godot_project_name_string"
+43-->/home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:48:13-62
+44            android:launchMode="singleTask"
+44-->/home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:50:13-44
+45            android:resizeableActivity="false"
+45-->/home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:53:13-47
+46            android:screenOrientation="userLandscape"
+46-->/home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:51:13-50
+47            android:theme="@style/GodotAppSplashTheme" >
+47-->/home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:49:13-55
+48            <intent-filter>
+48-->/home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:59:13-62:29
+49                <action android:name="android.intent.action.MAIN" />
+49-->/home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:60:17-69
+49-->/home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:60:25-66
+50
+51                <category android:name="android.intent.category.LAUNCHER" />
+51-->/home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:61:17-77
+51-->/home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:61:27-74
+52            </intent-filter>
+53        </activity>
+54        <!-- Records the version of the Godot editor used for building -->
+55        <meta-data
+56            android:name="org.godotengine.editor.version"
+57            android:value="3.3.3.stable" /> <!-- Custom application XML added by add-ons. -->
+58        <!-- CHUNK_APPLICATION_BEGIN -->
+59        <!-- CHUNK_APPLICATION_END -->
+60        <meta-data
+60-->/home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:68:9-70:69
+61            android:name="com.google.android.gms.ads.APPLICATION_ID"
+61-->/home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:69:13-69
+62            android:value="ca-app-pub-3940256099942544~3347511713" />
+62-->/home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:70:13-67
+63        <meta-data
+63-->/home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:71:9-72:46
+64            android:name="com.google.android.gms.games.APP_ID"
+64-->/home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:71:20-70
+65            android:value="@string/app_id" />
+65-->/home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:72:13-43
+66        <meta-data
+66-->/home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:74:9-75:68
+67            android:name="com.google.android.gms.version"
+67-->/home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:74:20-65
+68            android:value="@integer/google_play_services_version" />
+68-->/home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:75:13-66
+69        <meta-data
+69-->[GodotPlayGamesServices.release.aar] /home/henrique/.gradle/caches/transforms-2/files-2.1/9836ec4e951e5bc000494a2f6bc15710/jetified-GodotPlayGamesServices.release/AndroidManifest.xml:14:9-16:74
+70            android:name="org.godotengine.plugin.v1.GodotPlayGamesServices"
+70-->[GodotPlayGamesServices.release.aar] /home/henrique/.gradle/caches/transforms-2/files-2.1/9836ec4e951e5bc000494a2f6bc15710/jetified-GodotPlayGamesServices.release/AndroidManifest.xml:15:13-76
+71            android:value="io.cgisca.godot.gpgs.PlayGameServicesGodot" />
+71-->[GodotPlayGamesServices.release.aar] /home/henrique/.gradle/caches/transforms-2/files-2.1/9836ec4e951e5bc000494a2f6bc15710/jetified-GodotPlayGamesServices.release/AndroidManifest.xml:16:13-71
+72        <meta-data
+72-->[GodotGooglePlayBilling.1.0.1.release.aar] /home/henrique/.gradle/caches/transforms-2/files-2.1/f1aba1041403d8aae7ede244216ff290/jetified-GodotGooglePlayBilling.1.0.1.release/AndroidManifest.xml:12:9-14:101
+73            android:name="org.godotengine.plugin.v1.GodotGooglePlayBilling"
+73-->[GodotGooglePlayBilling.1.0.1.release.aar] /home/henrique/.gradle/caches/transforms-2/files-2.1/f1aba1041403d8aae7ede244216ff290/jetified-GodotGooglePlayBilling.1.0.1.release/AndroidManifest.xml:13:13-76
+74            android:value="org.godotengine.godot.plugin.googleplaybilling.GodotGooglePlayBilling" />
+74-->[GodotGooglePlayBilling.1.0.1.release.aar] /home/henrique/.gradle/caches/transforms-2/files-2.1/f1aba1041403d8aae7ede244216ff290/jetified-GodotGooglePlayBilling.1.0.1.release/AndroidManifest.xml:14:13-98
+75        <meta-data
+75-->[GodotAdMob.5.1.0.release.aar] /home/henrique/.gradle/caches/transforms-2/files-2.1/456aae0d167f0d7c6d5f317d822051df/jetified-GodotAdMob.5.1.0.release/AndroidManifest.xml:14:9-16:82
+76            android:name="org.godotengine.plugin.v1.GodotAdMob"
+76-->[GodotAdMob.5.1.0.release.aar] /home/henrique/.gradle/caches/transforms-2/files-2.1/456aae0d167f0d7c6d5f317d822051df/jetified-GodotAdMob.5.1.0.release/AndroidManifest.xml:15:13-64
+77            android:value="shinnil.godot.plugin.android.godotadmob.GodotAdMob" /> <!-- Records the version of the Godot library -->
+77-->[GodotAdMob.5.1.0.release.aar] /home/henrique/.gradle/caches/transforms-2/files-2.1/456aae0d167f0d7c6d5f317d822051df/jetified-GodotAdMob.5.1.0.release/AndroidManifest.xml:16:13-79
+78        <meta-data
+78-->[godot-lib.release.aar] /home/henrique/.gradle/caches/transforms-2/files-2.1/0c34d097d652ad56bfc91f68f7d385c1/jetified-godot-lib.release/AndroidManifest.xml:20:9-22:44
+79            android:name="org.godotengine.library.version"
+79-->[godot-lib.release.aar] /home/henrique/.gradle/caches/transforms-2/files-2.1/0c34d097d652ad56bfc91f68f7d385c1/jetified-godot-lib.release/AndroidManifest.xml:21:13-59
+80            android:value="3.3.3.stable" />
+80-->[godot-lib.release.aar] /home/henrique/.gradle/caches/transforms-2/files-2.1/0c34d097d652ad56bfc91f68f7d385c1/jetified-godot-lib.release/AndroidManifest.xml:22:13-41
+81
+82        <service android:name="org.godotengine.godot.GodotDownloaderService" />
+82-->[godot-lib.release.aar] /home/henrique/.gradle/caches/transforms-2/files-2.1/0c34d097d652ad56bfc91f68f7d385c1/jetified-godot-lib.release/AndroidManifest.xml:24:9-80
+82-->[godot-lib.release.aar] /home/henrique/.gradle/caches/transforms-2/files-2.1/0c34d097d652ad56bfc91f68f7d385c1/jetified-godot-lib.release/AndroidManifest.xml:24:18-77
+83
+84        <activity
+84-->[com.google.android.gms:play-services-auth:19.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/247bb1fbfbce1be9b840df309cd1295b/jetified-play-services-auth-19.0.0/AndroidManifest.xml:23:9-27:75
+85            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
+85-->[com.google.android.gms:play-services-auth:19.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/247bb1fbfbce1be9b840df309cd1295b/jetified-play-services-auth-19.0.0/AndroidManifest.xml:24:13-93
+86            android:excludeFromRecents="true"
+86-->[com.google.android.gms:play-services-auth:19.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/247bb1fbfbce1be9b840df309cd1295b/jetified-play-services-auth-19.0.0/AndroidManifest.xml:25:13-46
+87            android:exported="false"
+87-->[com.google.android.gms:play-services-auth:19.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/247bb1fbfbce1be9b840df309cd1295b/jetified-play-services-auth-19.0.0/AndroidManifest.xml:26:13-37
+88            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+88-->[com.google.android.gms:play-services-auth:19.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/247bb1fbfbce1be9b840df309cd1295b/jetified-play-services-auth-19.0.0/AndroidManifest.xml:27:13-72
+89        <!--
+90            Service handling Google Sign-In user revocation. For apps that do not integrate with
+91            Google Sign-In, this service will never be started.
+92        -->
+93        <service
+93-->[com.google.android.gms:play-services-auth:19.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/247bb1fbfbce1be9b840df309cd1295b/jetified-play-services-auth-19.0.0/AndroidManifest.xml:33:9-37:51
+94            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
+94-->[com.google.android.gms:play-services-auth:19.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/247bb1fbfbce1be9b840df309cd1295b/jetified-play-services-auth-19.0.0/AndroidManifest.xml:34:13-89
+95            android:exported="true"
+95-->[com.google.android.gms:play-services-auth:19.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/247bb1fbfbce1be9b840df309cd1295b/jetified-play-services-auth-19.0.0/AndroidManifest.xml:35:13-36
+96            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"
+96-->[com.google.android.gms:play-services-auth:19.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/247bb1fbfbce1be9b840df309cd1295b/jetified-play-services-auth-19.0.0/AndroidManifest.xml:36:13-107
+97            android:visibleToInstantApps="true" />
+97-->[com.google.android.gms:play-services-auth:19.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/247bb1fbfbce1be9b840df309cd1295b/jetified-play-services-auth-19.0.0/AndroidManifest.xml:37:13-48
+98
+99        <activity
+99-->[com.google.android.gms:play-services-base:17.4.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/52d01a2caeef298d3375df58ee77f395/jetified-play-services-base-17.4.0/AndroidManifest.xml:23:9-26:75
+100            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+100-->[com.google.android.gms:play-services-base:17.4.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/52d01a2caeef298d3375df58ee77f395/jetified-play-services-base-17.4.0/AndroidManifest.xml:24:13-79
+101            android:exported="false"
+101-->[com.google.android.gms:play-services-base:17.4.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/52d01a2caeef298d3375df58ee77f395/jetified-play-services-base-17.4.0/AndroidManifest.xml:25:13-37
+102            android:theme="@android:style/Theme.Translucent.NoTitleBar" /> <!-- Include the AdActivity and InAppPurchaseActivity configChanges and themes. -->
+102-->[com.google.android.gms:play-services-base:17.4.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/52d01a2caeef298d3375df58ee77f395/jetified-play-services-base-17.4.0/AndroidManifest.xml:26:13-72
+103        <activity
+103-->[com.google.android.gms:play-services-ads-lite:19.3.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/17789e5b0149eeb89358a8b01376b503/jetified-play-services-ads-lite-19.3.0/AndroidManifest.xml:29:9-33:64
+104            android:name="com.google.android.gms.ads.AdActivity"
+104-->[com.google.android.gms:play-services-ads-lite:19.3.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/17789e5b0149eeb89358a8b01376b503/jetified-play-services-ads-lite-19.3.0/AndroidManifest.xml:30:13-65
+105            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+105-->[com.google.android.gms:play-services-ads-lite:19.3.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/17789e5b0149eeb89358a8b01376b503/jetified-play-services-ads-lite-19.3.0/AndroidManifest.xml:31:13-122
+106            android:exported="false"
+106-->[com.google.android.gms:play-services-ads-lite:19.3.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/17789e5b0149eeb89358a8b01376b503/jetified-play-services-ads-lite-19.3.0/AndroidManifest.xml:32:13-37
+107            android:theme="@android:style/Theme.Translucent" />
+107-->[com.google.android.gms:play-services-ads-lite:19.3.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/17789e5b0149eeb89358a8b01376b503/jetified-play-services-ads-lite-19.3.0/AndroidManifest.xml:33:13-61
+108
+109        <provider
+109-->[com.google.android.gms:play-services-ads-lite:19.3.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/17789e5b0149eeb89358a8b01376b503/jetified-play-services-ads-lite-19.3.0/AndroidManifest.xml:35:9-39:39
+110            android:name="com.google.android.gms.ads.MobileAdsInitProvider"
+110-->[com.google.android.gms:play-services-ads-lite:19.3.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/17789e5b0149eeb89358a8b01376b503/jetified-play-services-ads-lite-19.3.0/AndroidManifest.xml:36:13-76
+111            android:authorities="com.madkitchen.mooncheeser.mobileadsinitprovider"
+111-->[com.google.android.gms:play-services-ads-lite:19.3.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/17789e5b0149eeb89358a8b01376b503/jetified-play-services-ads-lite-19.3.0/AndroidManifest.xml:37:13-73
+112            android:exported="false"
+112-->[com.google.android.gms:play-services-ads-lite:19.3.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/17789e5b0149eeb89358a8b01376b503/jetified-play-services-ads-lite-19.3.0/AndroidManifest.xml:38:13-37
+113            android:initOrder="100" />
+113-->[com.google.android.gms:play-services-ads-lite:19.3.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/17789e5b0149eeb89358a8b01376b503/jetified-play-services-ads-lite-19.3.0/AndroidManifest.xml:39:13-36
+114
+115        <meta-data
+115-->[com.android.billingclient:billing:3.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/756ea1b7c16587e41d29f89ab43c5d4a/jetified-billing-3.0.0/AndroidManifest.xml:13:9-15:37
+116            android:name="com.google.android.play.billingclient.version"
+116-->[com.android.billingclient:billing:3.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/756ea1b7c16587e41d29f89ab43c5d4a/jetified-billing-3.0.0/AndroidManifest.xml:14:13-73
+117            android:value="3.0.0" />
+117-->[com.android.billingclient:billing:3.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/756ea1b7c16587e41d29f89ab43c5d4a/jetified-billing-3.0.0/AndroidManifest.xml:15:13-34
+118
+119        <activity
+119-->[com.android.billingclient:billing:3.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/756ea1b7c16587e41d29f89ab43c5d4a/jetified-billing-3.0.0/AndroidManifest.xml:17:9-20:75
+120            android:name="com.android.billingclient.api.ProxyBillingActivity"
+120-->[com.android.billingclient:billing:3.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/756ea1b7c16587e41d29f89ab43c5d4a/jetified-billing-3.0.0/AndroidManifest.xml:18:13-78
+121            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+121-->[com.android.billingclient:billing:3.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/756ea1b7c16587e41d29f89ab43c5d4a/jetified-billing-3.0.0/AndroidManifest.xml:19:13-96
+122            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+122-->[com.android.billingclient:billing:3.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/756ea1b7c16587e41d29f89ab43c5d4a/jetified-billing-3.0.0/AndroidManifest.xml:20:13-72
+123    </application>
+124
+125</manifest>

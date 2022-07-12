@@ -1,0 +1,470 @@
+-- Merging decision tree log ---
+meta-data#org.godotengine.editor.version
+INJECTED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:34:9-36:53
+	android:value
+		INJECTED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml
+manifest
+ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:2:1-78:12
+INJECTED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:2:1-78:12
+INJECTED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:2:1-78:12
+INJECTED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:2:1-78:12
+MERGED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:2:1-78:12
+MERGED from [GodotPlayGamesServices.release.aar] /home/henrique/.gradle/caches/transforms-2/files-2.1/9836ec4e951e5bc000494a2f6bc15710/jetified-GodotPlayGamesServices.release/AndroidManifest.xml:2:1-19:12
+MERGED from [GodotGooglePlayBilling.1.0.1.release.aar] /home/henrique/.gradle/caches/transforms-2/files-2.1/f1aba1041403d8aae7ede244216ff290/jetified-GodotGooglePlayBilling.1.0.1.release/AndroidManifest.xml:2:1-17:12
+MERGED from [GodotAdMob.5.1.0.release.aar] /home/henrique/.gradle/caches/transforms-2/files-2.1/456aae0d167f0d7c6d5f317d822051df/jetified-GodotAdMob.5.1.0.release/AndroidManifest.xml:2:1-19:12
+MERGED from [godot-lib.release.aar] /home/henrique/.gradle/caches/transforms-2/files-2.1/0c34d097d652ad56bfc91f68f7d385c1/jetified-godot-lib.release/AndroidManifest.xml:2:1-27:12
+MERGED from [androidx.legacy:legacy-support-v4:1.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/80d3c82b96c9cb061171f1c65d4b0269/legacy-support-v4-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [com.google.android.gms:play-services-auth:19.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/247bb1fbfbce1be9b840df309cd1295b/jetified-play-services-auth-19.0.0/AndroidManifest.xml:17:1-40:12
+MERGED from [com.google.android.gms:play-services-games:21.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/685c02da6c63a1bb6cf2624950c0eea3/jetified-play-services-games-21.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.gms:play-services-drive:17.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/63242f149e6b509a33338e11662ab47e/jetified-play-services-drive-17.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.gms:play-services-auth-api-phone:17.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/190c1d2eca44e76716adbe645f0665e2/jetified-play-services-auth-api-phone-17.0.0/AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.android.gms:play-services-auth-base:17.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/3fbcfcb90823db573a253c46e4810a57/jetified-play-services-auth-base-17.0.0/AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.android.gms:play-services-base:17.4.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/52d01a2caeef298d3375df58ee77f395/jetified-play-services-base-17.4.0/AndroidManifest.xml:17:1-29:12
+MERGED from [com.google.android.gms:play-services-ads:19.3.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/8456cd731caf12df9a95c5c194b6e2d6/jetified-play-services-ads-19.3.0/AndroidManifest.xml:17:1-25:12
+MERGED from [com.google.android.gms:play-services-gass:19.3.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/902d4b8c4f1d033241635da9c664fa50/jetified-play-services-gass-19.3.0/AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-ads-identifier:17.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/ed96c926f6ed5d507e5f14bdaeee4878/jetified-play-services-ads-identifier-17.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.gms:play-services-ads-lite:19.3.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/17789e5b0149eeb89358a8b01376b503/jetified-play-services-ads-lite-19.3.0/AndroidManifest.xml:17:1-42:12
+MERGED from [com.google.android.gms:play-services-tasks:17.2.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/105b8901075b370bf24a052f6ea115a9/jetified-play-services-tasks-17.2.0/AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:17.1.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/7dda88590bf29e50f2326fbd823526f7/jetified-play-services-measurement-sdk-api-17.1.0/AndroidManifest.xml:17:1-27:12
+MERGED from [com.google.android.gms:play-services-measurement-base:17.1.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/3c48156a30b413643b9583b0056f97c7/jetified-play-services-measurement-base-17.1.0/AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-basement:17.4.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/86cd7ba0013912c723cb60c98ec3773f/jetified-play-services-basement-17.4.0/AndroidManifest.xml:17:1-28:12
+MERGED from [androidx.fragment:fragment:1.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/ebb0a06d842316e38c99a1fe21b6f2ea/fragment-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.browser:browser:1.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/88df0b6c91d2573e735562b09e10db80/browser-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/b3929b39e19049d23d08dd81b2f5deeb/legacy-support-core-ui-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/b739b0265d6c1e9a5f9daf18860ac24b/legacy-support-core-utils-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.billingclient:billing:3.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/756ea1b7c16587e41d29f89ab43c5d4a/jetified-billing-3.0.0/AndroidManifest.xml:2:1-23:12
+MERGED from [androidx.documentfile:documentfile:1.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/41eed925e6c45f8c4b1ce833fac52f75/documentfile-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/1c74372eb69b9b8e71cf96d7f5acbb43/loader-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/476d58516881ec5d55af756c0f0e09f1/localbroadcastmanager-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.print:print:1.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/f7e00a89488f4ca08e0520c00dd0334a/print-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.media:media:1.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/abb967fabfa19789071bf218fc46fe7d/media-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/071716c8ffa512be7ce0ae8ee4dc3968/viewpager-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/443811b9b3c2e30ec32c4e2b5f7f010b/coordinatorlayout-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/30154f6ab1e04b25a3dc69d9a3a650d2/drawerlayout-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/01fb35d9a5befd2c496677cf0984bd44/slidingpanelayout-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.customview:customview:1.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/9953ade05dc14a070124801df2bd0a63/customview-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/0a17be3294ed0bb151902ff42f70db8d/swiperefreshlayout-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/986bf6e64989deea5d21420e517d5152/asynclayoutinflater-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.core:core:1.2.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/9f2af2327a2ee4df66d476977a324666/core-1.2.0/AndroidManifest.xml:17:1-26:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/888f5b25b297a3aa2185417d0c5f2e55/versionedparcelable-1.1.0/AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/ccdbce079f3fd808ac73e6d7f526edb2/lifecycle-viewmodel-2.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/d6395cfe473b878009feabb793af2246/interpolator-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/04947d34670cd67edfce8a7d8ea5bc25/cursoradapter-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/684ec28b4d47b99702b87e0142b87abc/lifecycle-livedata-2.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/d3d8c18a79b67d645bddfdd6fffb8703/lifecycle-livedata-core-2.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.arch.core:core-runtime:2.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/f9e8569deeaf180b86f7562a710bfef1/core-runtime-2.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/d4abd67dfc5967b3f6b441c094cab635/lifecycle-runtime-2.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [com.google.android.gms:play-services-ads-base:19.3.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/a0a5c5e1a6fe37fe84cdefecd394d7ac/jetified-play-services-ads-base-19.3.0/AndroidManifest.xml:2:1-9:12
+INJECTED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/src/release/AndroidManifest.xml:2:1-28:12
+INJECTED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/src/release/AndroidManifest.xml:2:1-28:12
+INJECTED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/src/release/AndroidManifest.xml:2:1-28:12
+	package
+		ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:4:5-29
+		INJECTED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml
+		ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:4:5-29
+		INJECTED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/src/release/AndroidManifest.xml
+	android:versionName
+		ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:6:5-30
+		INJECTED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml
+		ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:6:5-30
+		INJECTED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/src/release/AndroidManifest.xml
+	xmlns:tools
+		ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:3:5-51
+	xmlns:android
+		ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:2:11-69
+	android:versionCode
+		ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:5:5-28
+		INJECTED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml
+		ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:5:5-28
+		INJECTED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/src/release/AndroidManifest.xml
+	android:installLocation
+		ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:7:5-35
+		ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:7:5-35
+supports-screens
+ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:12:5-16:40
+REJECTED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:12:5-16:40
+	tools:node
+		ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/src/release/AndroidManifest.xml:5:9-29
+	android:largeScreens
+		ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:15:9-36
+	android:smallScreens
+		ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:13:9-36
+	android:normalScreens
+		ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:14:9-37
+	android:xlargeScreens
+		ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:16:9-37
+uses-feature#0x00020000
+ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:19:5-21:35
+	android:glEsVersion
+		ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:20:9-41
+	android:required
+		ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:21:9-32
+application
+ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:31:5-76:19
+MERGED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:31:5-76:19
+MERGED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:31:5-76:19
+MERGED from [GodotPlayGamesServices.release.aar] /home/henrique/.gradle/caches/transforms-2/files-2.1/9836ec4e951e5bc000494a2f6bc15710/jetified-GodotPlayGamesServices.release/AndroidManifest.xml:13:5-17:19
+MERGED from [GodotPlayGamesServices.release.aar] /home/henrique/.gradle/caches/transforms-2/files-2.1/9836ec4e951e5bc000494a2f6bc15710/jetified-GodotPlayGamesServices.release/AndroidManifest.xml:13:5-17:19
+MERGED from [GodotGooglePlayBilling.1.0.1.release.aar] /home/henrique/.gradle/caches/transforms-2/files-2.1/f1aba1041403d8aae7ede244216ff290/jetified-GodotGooglePlayBilling.1.0.1.release/AndroidManifest.xml:11:5-15:19
+MERGED from [GodotGooglePlayBilling.1.0.1.release.aar] /home/henrique/.gradle/caches/transforms-2/files-2.1/f1aba1041403d8aae7ede244216ff290/jetified-GodotGooglePlayBilling.1.0.1.release/AndroidManifest.xml:11:5-15:19
+MERGED from [GodotAdMob.5.1.0.release.aar] /home/henrique/.gradle/caches/transforms-2/files-2.1/456aae0d167f0d7c6d5f317d822051df/jetified-GodotAdMob.5.1.0.release/AndroidManifest.xml:13:5-17:19
+MERGED from [GodotAdMob.5.1.0.release.aar] /home/henrique/.gradle/caches/transforms-2/files-2.1/456aae0d167f0d7c6d5f317d822051df/jetified-GodotAdMob.5.1.0.release/AndroidManifest.xml:13:5-17:19
+MERGED from [godot-lib.release.aar] /home/henrique/.gradle/caches/transforms-2/files-2.1/0c34d097d652ad56bfc91f68f7d385c1/jetified-godot-lib.release/AndroidManifest.xml:17:5-25:19
+MERGED from [godot-lib.release.aar] /home/henrique/.gradle/caches/transforms-2/files-2.1/0c34d097d652ad56bfc91f68f7d385c1/jetified-godot-lib.release/AndroidManifest.xml:17:5-25:19
+MERGED from [com.google.android.gms:play-services-auth:19.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/247bb1fbfbce1be9b840df309cd1295b/jetified-play-services-auth-19.0.0/AndroidManifest.xml:22:5-38:19
+MERGED from [com.google.android.gms:play-services-auth:19.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/247bb1fbfbce1be9b840df309cd1295b/jetified-play-services-auth-19.0.0/AndroidManifest.xml:22:5-38:19
+MERGED from [com.google.android.gms:play-services-games:21.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/685c02da6c63a1bb6cf2624950c0eea3/jetified-play-services-games-21.0.0/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-games:21.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/685c02da6c63a1bb6cf2624950c0eea3/jetified-play-services-games-21.0.0/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-drive:17.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/63242f149e6b509a33338e11662ab47e/jetified-play-services-drive-17.0.0/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-drive:17.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/63242f149e6b509a33338e11662ab47e/jetified-play-services-drive-17.0.0/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-base:17.4.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/52d01a2caeef298d3375df58ee77f395/jetified-play-services-base-17.4.0/AndroidManifest.xml:22:5-27:19
+MERGED from [com.google.android.gms:play-services-base:17.4.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/52d01a2caeef298d3375df58ee77f395/jetified-play-services-base-17.4.0/AndroidManifest.xml:22:5-27:19
+MERGED from [com.google.android.gms:play-services-gass:19.3.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/902d4b8c4f1d033241635da9c664fa50/jetified-play-services-gass-19.3.0/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-gass:19.3.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/902d4b8c4f1d033241635da9c664fa50/jetified-play-services-gass-19.3.0/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-ads-identifier:17.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/ed96c926f6ed5d507e5f14bdaeee4878/jetified-play-services-ads-identifier-17.0.0/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-ads-identifier:17.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/ed96c926f6ed5d507e5f14bdaeee4878/jetified-play-services-ads-identifier-17.0.0/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-ads-lite:19.3.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/17789e5b0149eeb89358a8b01376b503/jetified-play-services-ads-lite-19.3.0/AndroidManifest.xml:26:5-40:19
+MERGED from [com.google.android.gms:play-services-ads-lite:19.3.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/17789e5b0149eeb89358a8b01376b503/jetified-play-services-ads-lite-19.3.0/AndroidManifest.xml:26:5-40:19
+MERGED from [com.google.android.gms:play-services-tasks:17.2.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/105b8901075b370bf24a052f6ea115a9/jetified-play-services-tasks-17.2.0/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-tasks:17.2.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/105b8901075b370bf24a052f6ea115a9/jetified-play-services-tasks-17.2.0/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-measurement-base:17.1.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/3c48156a30b413643b9583b0056f97c7/jetified-play-services-measurement-base-17.1.0/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-measurement-base:17.1.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/3c48156a30b413643b9583b0056f97c7/jetified-play-services-measurement-base-17.1.0/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-basement:17.4.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/86cd7ba0013912c723cb60c98ec3773f/jetified-play-services-basement-17.4.0/AndroidManifest.xml:22:5-26:19
+MERGED from [com.google.android.gms:play-services-basement:17.4.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/86cd7ba0013912c723cb60c98ec3773f/jetified-play-services-basement-17.4.0/AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.billingclient:billing:3.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/756ea1b7c16587e41d29f89ab43c5d4a/jetified-billing-3.0.0/AndroidManifest.xml:12:5-21:19
+MERGED from [com.android.billingclient:billing:3.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/756ea1b7c16587e41d29f89ab43c5d4a/jetified-billing-3.0.0/AndroidManifest.xml:12:5-21:19
+MERGED from [androidx.core:core:1.2.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/9f2af2327a2ee4df66d476977a324666/core-1.2.0/AndroidManifest.xml:24:5-89
+MERGED from [androidx.core:core:1.2.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/9f2af2327a2ee4df66d476977a324666/core-1.2.0/AndroidManifest.xml:24:5-89
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/888f5b25b297a3aa2185417d0c5f2e55/versionedparcelable-1.1.0/AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/888f5b25b297a3aa2185417d0c5f2e55/versionedparcelable-1.1.0/AndroidManifest.xml:24:5-25:19
+MERGED from [com.google.android.gms:play-services-ads-base:19.3.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/a0a5c5e1a6fe37fe84cdefecd394d7ac/jetified-play-services-ads-base-19.3.0/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-ads-base:19.3.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/a0a5c5e1a6fe37fe84cdefecd394d7ac/jetified-play-services-ads-base-19.3.0/AndroidManifest.xml:7:5-20
+	android:requestLegacyExternalStorage
+		ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:31:136-180
+		REJECTED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:31:136-180
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.2.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/9f2af2327a2ee4df66d476977a324666/core-1.2.0/AndroidManifest.xml:24:18-86
+	android:label
+		ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:31:18-67
+	tools:ignore
+		ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:31:96-135
+	android:icon
+		ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:31:181-208
+	android:allowBackup
+		ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:31:68-95
+	tools:replace
+		ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/src/release/AndroidManifest.xml:20:9-61
+meta-data#xr_mode_metadata_name
+ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:42:9-44:54
+REJECTED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:42:9-44:54
+	tools:node
+		ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/src/release/AndroidManifest.xml:23:20-39
+	android:value
+		ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:44:13-51
+	android:name
+		ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:43:13-49
+activity#com.godot.game.GodotApp
+ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:46:9-63:20
+MERGED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:46:9-63:20
+MERGED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:46:9-63:20
+	android:screenOrientation
+		ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:51:13-50
+		REJECTED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:51:13-50
+	android:label
+		ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:48:13-62
+		ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:48:13-62
+	android:launchMode
+		ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:50:13-44
+		ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:50:13-44
+	android:resizeableActivity
+		ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:53:13-47
+		ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:53:13-47
+	tools:ignore
+		ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:54:13-43
+		ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:54:13-43
+	android:configChanges
+		ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:52:13-141
+		ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:52:13-141
+	android:theme
+		ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:49:13-55
+		ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:49:13-55
+	tools:replace
+		ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/src/release/AndroidManifest.xml:24:58-99
+	android:name
+		ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:47:13-37
+meta-data#com.oculus.vr.focusaware
+ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:57:13-88
+REJECTED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:57:13-88
+	tools:node
+		ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/src/release/AndroidManifest.xml:25:24-43
+	android:value
+		ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:57:64-85
+	android:name
+		ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:57:24-63
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:59:13-62:29
+action#android.intent.action.MAIN
+ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:60:17-69
+	android:name
+		ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:60:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:61:17-77
+	android:name
+		ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:61:27-74
+meta-data#com.google.android.gms.ads.APPLICATION_ID
+ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:68:9-70:69
+	android:value
+		ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:70:13-67
+	android:name
+		ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:69:13-69
+meta-data#com.google.android.gms.games.APP_ID
+ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:71:9-72:46
+	android:value
+		ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:72:13-43
+	android:name
+		ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:71:20-70
+meta-data#com.google.android.gms.version
+ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:74:9-75:68
+MERGED from [com.google.android.gms:play-services-basement:17.4.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/86cd7ba0013912c723cb60c98ec3773f/jetified-play-services-basement-17.4.0/AndroidManifest.xml:23:9-25:69
+MERGED from [com.google.android.gms:play-services-basement:17.4.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/86cd7ba0013912c723cb60c98ec3773f/jetified-play-services-basement-17.4.0/AndroidManifest.xml:23:9-25:69
+	android:value
+		ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:75:13-66
+	android:name
+		ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:74:20-65
+uses-sdk
+INJECTED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml
+INJECTED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml
+MERGED from [GodotPlayGamesServices.release.aar] /home/henrique/.gradle/caches/transforms-2/files-2.1/9836ec4e951e5bc000494a2f6bc15710/jetified-GodotPlayGamesServices.release/AndroidManifest.xml:7:5-9:41
+MERGED from [GodotPlayGamesServices.release.aar] /home/henrique/.gradle/caches/transforms-2/files-2.1/9836ec4e951e5bc000494a2f6bc15710/jetified-GodotPlayGamesServices.release/AndroidManifest.xml:7:5-9:41
+MERGED from [GodotGooglePlayBilling.1.0.1.release.aar] /home/henrique/.gradle/caches/transforms-2/files-2.1/f1aba1041403d8aae7ede244216ff290/jetified-GodotGooglePlayBilling.1.0.1.release/AndroidManifest.xml:7:5-9:41
+MERGED from [GodotGooglePlayBilling.1.0.1.release.aar] /home/henrique/.gradle/caches/transforms-2/files-2.1/f1aba1041403d8aae7ede244216ff290/jetified-GodotGooglePlayBilling.1.0.1.release/AndroidManifest.xml:7:5-9:41
+MERGED from [GodotAdMob.5.1.0.release.aar] /home/henrique/.gradle/caches/transforms-2/files-2.1/456aae0d167f0d7c6d5f317d822051df/jetified-GodotAdMob.5.1.0.release/AndroidManifest.xml:7:5-9:41
+MERGED from [GodotAdMob.5.1.0.release.aar] /home/henrique/.gradle/caches/transforms-2/files-2.1/456aae0d167f0d7c6d5f317d822051df/jetified-GodotAdMob.5.1.0.release/AndroidManifest.xml:7:5-9:41
+MERGED from [godot-lib.release.aar] /home/henrique/.gradle/caches/transforms-2/files-2.1/0c34d097d652ad56bfc91f68f7d385c1/jetified-godot-lib.release/AndroidManifest.xml:7:5-9:41
+MERGED from [godot-lib.release.aar] /home/henrique/.gradle/caches/transforms-2/files-2.1/0c34d097d652ad56bfc91f68f7d385c1/jetified-godot-lib.release/AndroidManifest.xml:7:5-9:41
+MERGED from [androidx.legacy:legacy-support-v4:1.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/80d3c82b96c9cb061171f1c65d4b0269/legacy-support-v4-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-v4:1.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/80d3c82b96c9cb061171f1c65d4b0269/legacy-support-v4-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-auth:19.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/247bb1fbfbce1be9b840df309cd1295b/jetified-play-services-auth-19.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-auth:19.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/247bb1fbfbce1be9b840df309cd1295b/jetified-play-services-auth-19.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-games:21.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/685c02da6c63a1bb6cf2624950c0eea3/jetified-play-services-games-21.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-games:21.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/685c02da6c63a1bb6cf2624950c0eea3/jetified-play-services-games-21.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-drive:17.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/63242f149e6b509a33338e11662ab47e/jetified-play-services-drive-17.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-drive:17.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/63242f149e6b509a33338e11662ab47e/jetified-play-services-drive-17.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-auth-api-phone:17.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/190c1d2eca44e76716adbe645f0665e2/jetified-play-services-auth-api-phone-17.0.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-auth-api-phone:17.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/190c1d2eca44e76716adbe645f0665e2/jetified-play-services-auth-api-phone-17.0.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-auth-base:17.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/3fbcfcb90823db573a253c46e4810a57/jetified-play-services-auth-base-17.0.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-auth-base:17.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/3fbcfcb90823db573a253c46e4810a57/jetified-play-services-auth-base-17.0.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-base:17.4.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/52d01a2caeef298d3375df58ee77f395/jetified-play-services-base-17.4.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-base:17.4.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/52d01a2caeef298d3375df58ee77f395/jetified-play-services-base-17.4.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-ads:19.3.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/8456cd731caf12df9a95c5c194b6e2d6/jetified-play-services-ads-19.3.0/AndroidManifest.xml:21:5-23:52
+MERGED from [com.google.android.gms:play-services-ads:19.3.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/8456cd731caf12df9a95c5c194b6e2d6/jetified-play-services-ads-19.3.0/AndroidManifest.xml:21:5-23:52
+MERGED from [com.google.android.gms:play-services-gass:19.3.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/902d4b8c4f1d033241635da9c664fa50/jetified-play-services-gass-19.3.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-gass:19.3.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/902d4b8c4f1d033241635da9c664fa50/jetified-play-services-gass-19.3.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-ads-identifier:17.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/ed96c926f6ed5d507e5f14bdaeee4878/jetified-play-services-ads-identifier-17.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-ads-identifier:17.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/ed96c926f6ed5d507e5f14bdaeee4878/jetified-play-services-ads-identifier-17.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-ads-lite:19.3.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/17789e5b0149eeb89358a8b01376b503/jetified-play-services-ads-lite-19.3.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-ads-lite:19.3.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/17789e5b0149eeb89358a8b01376b503/jetified-play-services-ads-lite-19.3.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-tasks:17.2.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/105b8901075b370bf24a052f6ea115a9/jetified-play-services-tasks-17.2.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-tasks:17.2.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/105b8901075b370bf24a052f6ea115a9/jetified-play-services-tasks-17.2.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:17.1.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/7dda88590bf29e50f2326fbd823526f7/jetified-play-services-measurement-sdk-api-17.1.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:17.1.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/7dda88590bf29e50f2326fbd823526f7/jetified-play-services-measurement-sdk-api-17.1.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement-base:17.1.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/3c48156a30b413643b9583b0056f97c7/jetified-play-services-measurement-base-17.1.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-measurement-base:17.1.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/3c48156a30b413643b9583b0056f97c7/jetified-play-services-measurement-base-17.1.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-basement:17.4.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/86cd7ba0013912c723cb60c98ec3773f/jetified-play-services-basement-17.4.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-basement:17.4.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/86cd7ba0013912c723cb60c98ec3773f/jetified-play-services-basement-17.4.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.fragment:fragment:1.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/ebb0a06d842316e38c99a1fe21b6f2ea/fragment-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.fragment:fragment:1.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/ebb0a06d842316e38c99a1fe21b6f2ea/fragment-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.browser:browser:1.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/88df0b6c91d2573e735562b09e10db80/browser-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.browser:browser:1.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/88df0b6c91d2573e735562b09e10db80/browser-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/b3929b39e19049d23d08dd81b2f5deeb/legacy-support-core-ui-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/b3929b39e19049d23d08dd81b2f5deeb/legacy-support-core-ui-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/b739b0265d6c1e9a5f9daf18860ac24b/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/b739b0265d6c1e9a5f9daf18860ac24b/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.billingclient:billing:3.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/756ea1b7c16587e41d29f89ab43c5d4a/jetified-billing-3.0.0/AndroidManifest.xml:6:5-8:41
+MERGED from [com.android.billingclient:billing:3.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/756ea1b7c16587e41d29f89ab43c5d4a/jetified-billing-3.0.0/AndroidManifest.xml:6:5-8:41
+MERGED from [androidx.documentfile:documentfile:1.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/41eed925e6c45f8c4b1ce833fac52f75/documentfile-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/41eed925e6c45f8c4b1ce833fac52f75/documentfile-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/1c74372eb69b9b8e71cf96d7f5acbb43/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/1c74372eb69b9b8e71cf96d7f5acbb43/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/476d58516881ec5d55af756c0f0e09f1/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/476d58516881ec5d55af756c0f0e09f1/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/f7e00a89488f4ca08e0520c00dd0334a/print-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/f7e00a89488f4ca08e0520c00dd0334a/print-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.media:media:1.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/abb967fabfa19789071bf218fc46fe7d/media-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.media:media:1.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/abb967fabfa19789071bf218fc46fe7d/media-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/071716c8ffa512be7ce0ae8ee4dc3968/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/071716c8ffa512be7ce0ae8ee4dc3968/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/443811b9b3c2e30ec32c4e2b5f7f010b/coordinatorlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/443811b9b3c2e30ec32c4e2b5f7f010b/coordinatorlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/30154f6ab1e04b25a3dc69d9a3a650d2/drawerlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/30154f6ab1e04b25a3dc69d9a3a650d2/drawerlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/01fb35d9a5befd2c496677cf0984bd44/slidingpanelayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/01fb35d9a5befd2c496677cf0984bd44/slidingpanelayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/9953ade05dc14a070124801df2bd0a63/customview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/9953ade05dc14a070124801df2bd0a63/customview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/0a17be3294ed0bb151902ff42f70db8d/swiperefreshlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/0a17be3294ed0bb151902ff42f70db8d/swiperefreshlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/986bf6e64989deea5d21420e517d5152/asynclayoutinflater-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/986bf6e64989deea5d21420e517d5152/asynclayoutinflater-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.2.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/9f2af2327a2ee4df66d476977a324666/core-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.2.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/9f2af2327a2ee4df66d476977a324666/core-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/888f5b25b297a3aa2185417d0c5f2e55/versionedparcelable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/888f5b25b297a3aa2185417d0c5f2e55/versionedparcelable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/ccdbce079f3fd808ac73e6d7f526edb2/lifecycle-viewmodel-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/ccdbce079f3fd808ac73e6d7f526edb2/lifecycle-viewmodel-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/d6395cfe473b878009feabb793af2246/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/d6395cfe473b878009feabb793af2246/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/04947d34670cd67edfce8a7d8ea5bc25/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/04947d34670cd67edfce8a7d8ea5bc25/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/684ec28b4d47b99702b87e0142b87abc/lifecycle-livedata-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/684ec28b4d47b99702b87e0142b87abc/lifecycle-livedata-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/d3d8c18a79b67d645bddfdd6fffb8703/lifecycle-livedata-core-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/d3d8c18a79b67d645bddfdd6fffb8703/lifecycle-livedata-core-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/f9e8569deeaf180b86f7562a710bfef1/core-runtime-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/f9e8569deeaf180b86f7562a710bfef1/core-runtime-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/d4abd67dfc5967b3f6b441c094cab635/lifecycle-runtime-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/d4abd67dfc5967b3f6b441c094cab635/lifecycle-runtime-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-ads-base:19.3.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/a0a5c5e1a6fe37fe84cdefecd394d7ac/jetified-play-services-ads-base-19.3.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-ads-base:19.3.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/a0a5c5e1a6fe37fe84cdefecd394d7ac/jetified-play-services-ads-base-19.3.0/AndroidManifest.xml:5:5-44
+INJECTED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/src/release/AndroidManifest.xml
+INJECTED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/src/release/AndroidManifest.xml
+	tools:overrideLibrary
+		ADDED from [com.google.android.gms:play-services-ads:19.3.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/8456cd731caf12df9a95c5c194b6e2d6/jetified-play-services-ads-19.3.0/AndroidManifest.xml:23:9-49
+	android:targetSdkVersion
+		INJECTED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml
+		INJECTED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/src/release/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml
+		INJECTED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/src/release/AndroidManifest.xml
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/src/release/AndroidManifest.xml:10:5-79
+MERGED from [com.google.android.gms:play-services-ads-lite:19.3.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/17789e5b0149eeb89358a8b01376b503/jetified-play-services-ads-lite-19.3.0/AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.gms:play-services-ads-lite:19.3.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/17789e5b0149eeb89358a8b01376b503/jetified-play-services-ads-lite-19.3.0/AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:17.1.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/7dda88590bf29e50f2326fbd823526f7/jetified-play-services-measurement-sdk-api-17.1.0/AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:17.1.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/7dda88590bf29e50f2326fbd823526f7/jetified-play-services-measurement-sdk-api-17.1.0/AndroidManifest.xml:24:5-79
+	android:name
+		ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/src/release/AndroidManifest.xml:10:22-76
+uses-permission#android.permission.INTERNET
+ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/src/release/AndroidManifest.xml:11:5-67
+MERGED from [GodotPlayGamesServices.release.aar] /home/henrique/.gradle/caches/transforms-2/files-2.1/9836ec4e951e5bc000494a2f6bc15710/jetified-GodotPlayGamesServices.release/AndroidManifest.xml:11:5-67
+MERGED from [GodotPlayGamesServices.release.aar] /home/henrique/.gradle/caches/transforms-2/files-2.1/9836ec4e951e5bc000494a2f6bc15710/jetified-GodotPlayGamesServices.release/AndroidManifest.xml:11:5-67
+MERGED from [GodotAdMob.5.1.0.release.aar] /home/henrique/.gradle/caches/transforms-2/files-2.1/456aae0d167f0d7c6d5f317d822051df/jetified-GodotAdMob.5.1.0.release/AndroidManifest.xml:11:5-67
+MERGED from [GodotAdMob.5.1.0.release.aar] /home/henrique/.gradle/caches/transforms-2/files-2.1/456aae0d167f0d7c6d5f317d822051df/jetified-GodotAdMob.5.1.0.release/AndroidManifest.xml:11:5-67
+MERGED from [com.google.android.gms:play-services-ads-lite:19.3.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/17789e5b0149eeb89358a8b01376b503/jetified-play-services-ads-lite-19.3.0/AndroidManifest.xml:23:5-67
+MERGED from [com.google.android.gms:play-services-ads-lite:19.3.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/17789e5b0149eeb89358a8b01376b503/jetified-play-services-ads-lite-19.3.0/AndroidManifest.xml:23:5-67
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:17.1.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/7dda88590bf29e50f2326fbd823526f7/jetified-play-services-measurement-sdk-api-17.1.0/AndroidManifest.xml:23:5-67
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:17.1.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/7dda88590bf29e50f2326fbd823526f7/jetified-play-services-measurement-sdk-api-17.1.0/AndroidManifest.xml:23:5-67
+	android:name
+		ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/src/release/AndroidManifest.xml:11:22-64
+instrumentation
+ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/src/release/AndroidManifest.xml:12:5-17:62
+REJECTED from [godot-lib.release.aar] /home/henrique/.gradle/caches/transforms-2/files-2.1/0c34d097d652ad56bfc91f68f7d385c1/jetified-godot-lib.release/AndroidManifest.xml:11:5-15:57
+	tools:node
+		ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/src/release/AndroidManifest.xml:13:9-29
+	android:label
+		ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/src/release/AndroidManifest.xml:16:9-58
+	android:icon
+		ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/src/release/AndroidManifest.xml:15:9-36
+	android:targetPackage
+		ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/src/release/AndroidManifest.xml:17:9-59
+	android:name
+		ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/src/release/AndroidManifest.xml:14:9-45
+meta-data#org.godotengine.plugin.v1.GodotPlayGamesServices
+ADDED from [GodotPlayGamesServices.release.aar] /home/henrique/.gradle/caches/transforms-2/files-2.1/9836ec4e951e5bc000494a2f6bc15710/jetified-GodotPlayGamesServices.release/AndroidManifest.xml:14:9-16:74
+	android:value
+		ADDED from [GodotPlayGamesServices.release.aar] /home/henrique/.gradle/caches/transforms-2/files-2.1/9836ec4e951e5bc000494a2f6bc15710/jetified-GodotPlayGamesServices.release/AndroidManifest.xml:16:13-71
+	android:name
+		ADDED from [GodotPlayGamesServices.release.aar] /home/henrique/.gradle/caches/transforms-2/files-2.1/9836ec4e951e5bc000494a2f6bc15710/jetified-GodotPlayGamesServices.release/AndroidManifest.xml:15:13-76
+meta-data#org.godotengine.plugin.v1.GodotGooglePlayBilling
+ADDED from [GodotGooglePlayBilling.1.0.1.release.aar] /home/henrique/.gradle/caches/transforms-2/files-2.1/f1aba1041403d8aae7ede244216ff290/jetified-GodotGooglePlayBilling.1.0.1.release/AndroidManifest.xml:12:9-14:101
+	android:value
+		ADDED from [GodotGooglePlayBilling.1.0.1.release.aar] /home/henrique/.gradle/caches/transforms-2/files-2.1/f1aba1041403d8aae7ede244216ff290/jetified-GodotGooglePlayBilling.1.0.1.release/AndroidManifest.xml:14:13-98
+	android:name
+		ADDED from [GodotGooglePlayBilling.1.0.1.release.aar] /home/henrique/.gradle/caches/transforms-2/files-2.1/f1aba1041403d8aae7ede244216ff290/jetified-GodotGooglePlayBilling.1.0.1.release/AndroidManifest.xml:13:13-76
+meta-data#org.godotengine.plugin.v1.GodotAdMob
+ADDED from [GodotAdMob.5.1.0.release.aar] /home/henrique/.gradle/caches/transforms-2/files-2.1/456aae0d167f0d7c6d5f317d822051df/jetified-GodotAdMob.5.1.0.release/AndroidManifest.xml:14:9-16:82
+	android:value
+		ADDED from [GodotAdMob.5.1.0.release.aar] /home/henrique/.gradle/caches/transforms-2/files-2.1/456aae0d167f0d7c6d5f317d822051df/jetified-GodotAdMob.5.1.0.release/AndroidManifest.xml:16:13-79
+	android:name
+		ADDED from [GodotAdMob.5.1.0.release.aar] /home/henrique/.gradle/caches/transforms-2/files-2.1/456aae0d167f0d7c6d5f317d822051df/jetified-GodotAdMob.5.1.0.release/AndroidManifest.xml:15:13-64
+meta-data#org.godotengine.library.version
+ADDED from [godot-lib.release.aar] /home/henrique/.gradle/caches/transforms-2/files-2.1/0c34d097d652ad56bfc91f68f7d385c1/jetified-godot-lib.release/AndroidManifest.xml:20:9-22:44
+	android:value
+		ADDED from [godot-lib.release.aar] /home/henrique/.gradle/caches/transforms-2/files-2.1/0c34d097d652ad56bfc91f68f7d385c1/jetified-godot-lib.release/AndroidManifest.xml:22:13-41
+	android:name
+		ADDED from [godot-lib.release.aar] /home/henrique/.gradle/caches/transforms-2/files-2.1/0c34d097d652ad56bfc91f68f7d385c1/jetified-godot-lib.release/AndroidManifest.xml:21:13-59
+service#org.godotengine.godot.GodotDownloaderService
+ADDED from [godot-lib.release.aar] /home/henrique/.gradle/caches/transforms-2/files-2.1/0c34d097d652ad56bfc91f68f7d385c1/jetified-godot-lib.release/AndroidManifest.xml:24:9-80
+	android:name
+		ADDED from [godot-lib.release.aar] /home/henrique/.gradle/caches/transforms-2/files-2.1/0c34d097d652ad56bfc91f68f7d385c1/jetified-godot-lib.release/AndroidManifest.xml:24:18-77
+activity#com.google.android.gms.auth.api.signin.internal.SignInHubActivity
+ADDED from [com.google.android.gms:play-services-auth:19.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/247bb1fbfbce1be9b840df309cd1295b/jetified-play-services-auth-19.0.0/AndroidManifest.xml:23:9-27:75
+	android:excludeFromRecents
+		ADDED from [com.google.android.gms:play-services-auth:19.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/247bb1fbfbce1be9b840df309cd1295b/jetified-play-services-auth-19.0.0/AndroidManifest.xml:25:13-46
+	android:exported
+		ADDED from [com.google.android.gms:play-services-auth:19.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/247bb1fbfbce1be9b840df309cd1295b/jetified-play-services-auth-19.0.0/AndroidManifest.xml:26:13-37
+	android:theme
+		ADDED from [com.google.android.gms:play-services-auth:19.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/247bb1fbfbce1be9b840df309cd1295b/jetified-play-services-auth-19.0.0/AndroidManifest.xml:27:13-72
+	android:name
+		ADDED from [com.google.android.gms:play-services-auth:19.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/247bb1fbfbce1be9b840df309cd1295b/jetified-play-services-auth-19.0.0/AndroidManifest.xml:24:13-93
+service#com.google.android.gms.auth.api.signin.RevocationBoundService
+ADDED from [com.google.android.gms:play-services-auth:19.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/247bb1fbfbce1be9b840df309cd1295b/jetified-play-services-auth-19.0.0/AndroidManifest.xml:33:9-37:51
+	android:exported
+		ADDED from [com.google.android.gms:play-services-auth:19.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/247bb1fbfbce1be9b840df309cd1295b/jetified-play-services-auth-19.0.0/AndroidManifest.xml:35:13-36
+	android:visibleToInstantApps
+		ADDED from [com.google.android.gms:play-services-auth:19.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/247bb1fbfbce1be9b840df309cd1295b/jetified-play-services-auth-19.0.0/AndroidManifest.xml:37:13-48
+	android:permission
+		ADDED from [com.google.android.gms:play-services-auth:19.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/247bb1fbfbce1be9b840df309cd1295b/jetified-play-services-auth-19.0.0/AndroidManifest.xml:36:13-107
+	android:name
+		ADDED from [com.google.android.gms:play-services-auth:19.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/247bb1fbfbce1be9b840df309cd1295b/jetified-play-services-auth-19.0.0/AndroidManifest.xml:34:13-89
+activity#com.google.android.gms.common.api.GoogleApiActivity
+ADDED from [com.google.android.gms:play-services-base:17.4.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/52d01a2caeef298d3375df58ee77f395/jetified-play-services-base-17.4.0/AndroidManifest.xml:23:9-26:75
+	android:exported
+		ADDED from [com.google.android.gms:play-services-base:17.4.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/52d01a2caeef298d3375df58ee77f395/jetified-play-services-base-17.4.0/AndroidManifest.xml:25:13-37
+	android:theme
+		ADDED from [com.google.android.gms:play-services-base:17.4.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/52d01a2caeef298d3375df58ee77f395/jetified-play-services-base-17.4.0/AndroidManifest.xml:26:13-72
+	android:name
+		ADDED from [com.google.android.gms:play-services-base:17.4.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/52d01a2caeef298d3375df58ee77f395/jetified-play-services-base-17.4.0/AndroidManifest.xml:24:13-79
+activity#com.google.android.gms.ads.AdActivity
+ADDED from [com.google.android.gms:play-services-ads-lite:19.3.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/17789e5b0149eeb89358a8b01376b503/jetified-play-services-ads-lite-19.3.0/AndroidManifest.xml:29:9-33:64
+	android:exported
+		ADDED from [com.google.android.gms:play-services-ads-lite:19.3.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/17789e5b0149eeb89358a8b01376b503/jetified-play-services-ads-lite-19.3.0/AndroidManifest.xml:32:13-37
+	android:configChanges
+		ADDED from [com.google.android.gms:play-services-ads-lite:19.3.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/17789e5b0149eeb89358a8b01376b503/jetified-play-services-ads-lite-19.3.0/AndroidManifest.xml:31:13-122
+	android:theme
+		ADDED from [com.google.android.gms:play-services-ads-lite:19.3.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/17789e5b0149eeb89358a8b01376b503/jetified-play-services-ads-lite-19.3.0/AndroidManifest.xml:33:13-61
+	android:name
+		ADDED from [com.google.android.gms:play-services-ads-lite:19.3.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/17789e5b0149eeb89358a8b01376b503/jetified-play-services-ads-lite-19.3.0/AndroidManifest.xml:30:13-65
+provider#com.google.android.gms.ads.MobileAdsInitProvider
+ADDED from [com.google.android.gms:play-services-ads-lite:19.3.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/17789e5b0149eeb89358a8b01376b503/jetified-play-services-ads-lite-19.3.0/AndroidManifest.xml:35:9-39:39
+	android:authorities
+		ADDED from [com.google.android.gms:play-services-ads-lite:19.3.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/17789e5b0149eeb89358a8b01376b503/jetified-play-services-ads-lite-19.3.0/AndroidManifest.xml:37:13-73
+	android:exported
+		ADDED from [com.google.android.gms:play-services-ads-lite:19.3.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/17789e5b0149eeb89358a8b01376b503/jetified-play-services-ads-lite-19.3.0/AndroidManifest.xml:38:13-37
+	android:initOrder
+		ADDED from [com.google.android.gms:play-services-ads-lite:19.3.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/17789e5b0149eeb89358a8b01376b503/jetified-play-services-ads-lite-19.3.0/AndroidManifest.xml:39:13-36
+	android:name
+		ADDED from [com.google.android.gms:play-services-ads-lite:19.3.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/17789e5b0149eeb89358a8b01376b503/jetified-play-services-ads-lite-19.3.0/AndroidManifest.xml:36:13-76
+uses-permission#android.permission.WAKE_LOCK
+ADDED from [com.google.android.gms:play-services-measurement-sdk-api:17.1.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/7dda88590bf29e50f2326fbd823526f7/jetified-play-services-measurement-sdk-api-17.1.0/AndroidManifest.xml:25:5-68
+	android:name
+		ADDED from [com.google.android.gms:play-services-measurement-sdk-api:17.1.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/7dda88590bf29e50f2326fbd823526f7/jetified-play-services-measurement-sdk-api-17.1.0/AndroidManifest.xml:25:22-65
+uses-permission#com.android.vending.BILLING
+ADDED from [com.android.billingclient:billing:3.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/756ea1b7c16587e41d29f89ab43c5d4a/jetified-billing-3.0.0/AndroidManifest.xml:10:5-67
+	android:name
+		ADDED from [com.android.billingclient:billing:3.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/756ea1b7c16587e41d29f89ab43c5d4a/jetified-billing-3.0.0/AndroidManifest.xml:10:22-64
+meta-data#com.google.android.play.billingclient.version
+ADDED from [com.android.billingclient:billing:3.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/756ea1b7c16587e41d29f89ab43c5d4a/jetified-billing-3.0.0/AndroidManifest.xml:13:9-15:37
+	android:value
+		ADDED from [com.android.billingclient:billing:3.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/756ea1b7c16587e41d29f89ab43c5d4a/jetified-billing-3.0.0/AndroidManifest.xml:15:13-34
+	android:name
+		ADDED from [com.android.billingclient:billing:3.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/756ea1b7c16587e41d29f89ab43c5d4a/jetified-billing-3.0.0/AndroidManifest.xml:14:13-73
+activity#com.android.billingclient.api.ProxyBillingActivity
+ADDED from [com.android.billingclient:billing:3.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/756ea1b7c16587e41d29f89ab43c5d4a/jetified-billing-3.0.0/AndroidManifest.xml:17:9-20:75
+	android:configChanges
+		ADDED from [com.android.billingclient:billing:3.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/756ea1b7c16587e41d29f89ab43c5d4a/jetified-billing-3.0.0/AndroidManifest.xml:19:13-96
+	android:theme
+		ADDED from [com.android.billingclient:billing:3.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/756ea1b7c16587e41d29f89ab43c5d4a/jetified-billing-3.0.0/AndroidManifest.xml:20:13-72
+	android:name
+		ADDED from [com.android.billingclient:billing:3.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/756ea1b7c16587e41d29f89ab43c5d4a/jetified-billing-3.0.0/AndroidManifest.xml:18:13-78

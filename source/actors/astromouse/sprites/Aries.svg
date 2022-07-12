@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="256"
+   height="256"
+   viewBox="0 0 67.733333 67.733334"
+   version="1.1"
+   id="svg8096"
+   inkscape:version="1.2 (dc2aedaf03, 2022-05-15)"
+   sodipodi:docname="Aries.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview8098"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="0.5946522"
+     inkscape:cx="565.03617"
+     inkscape:cy="409.48306"
+     inkscape:window-width="1920"
+     inkscape:window-height="1022"
+     inkscape:window-x="0"
+     inkscape:window-y="30"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs8093" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-78.321557,-6.7133916)">
+    <g
+       id="Layer 1"
+       transform="matrix(0.01996378,0,0,0.0200439,54.373117,-42.632193)"
+       style="fill:#ffffff;fill-rule:evenodd;image-rendering:optimizeQuality;shape-rendering:geometricPrecision;text-rendering:geometricPrecision">
+      <path
+         class="fil0"
+         d="m 2796,5449 v -134 c 0,-257 -26,-543 -77,-857 -52,-315 -115,-572 -189,-771 -162,-432 -336,-648 -523,-648 -83,0 -151,36 -204,109 -52,73 -78,167 -78,284 0,154 49,313 149,477 h -203 c -98,-177 -147,-343 -147,-497 0,-160 46,-292 138,-398 92,-106 208,-160 347,-160 225,0 415,151 573,454 157,301 256,706 297,1215 h 34 c 34,-498 132,-901 292,-1208 160,-307 354,-461 579,-461 139,0 254,53 346,158 92,104 138,236 138,396 0,155 -49,322 -146,501 h -204 c 99,-177 149,-339 149,-488 0,-119 -26,-215 -77,-289 -52,-73 -120,-110 -205,-110 -181,0 -350,202 -506,604 -80,205 -146,471 -201,798 -54,326 -81,626 -81,899 v 126 z"
+         id="path606"
+         style="fill:#ffffff" />
+    </g>
+  </g>
+</svg>

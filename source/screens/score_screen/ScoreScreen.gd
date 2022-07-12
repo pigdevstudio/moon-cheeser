@@ -23,12 +23,12 @@ func set_highscore(highscore):
 
 
 func _on_RetryButton_pressed():
+	yield(_fade.fade_out(), "completed")
 	if OS.get_name() == "Android":
 		_admob.load_rewarded_video()
 		yield(_admob, "rewarded_video_loaded")
 		_admob.show_rewarded_video()
 		var reward = yield(_admob, "rewarded")[1]
-	yield(_fade.fade_out(), "completed")
 	get_tree().change_scene(game_scene_path)
 
 

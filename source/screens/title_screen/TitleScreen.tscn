@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://interface/themes/main_theme.tres" type="Theme" id=1]
 [ext_resource path="res://levels/Background.tscn" type="PackedScene" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://screens/title_screen/title.png" type="Texture" id=10]
 [ext_resource path="res://interface/SkinsButton.svg" type="Texture" id=11]
 [ext_resource path="res://admob-lib/admob.gd" type="Script" id=12]
+[ext_resource path="res://screens/GooglePlayServices.gd" type="Script" id=13]
 
 [sub_resource type="ViewportTexture" id=1]
 flags = 5
@@ -39,9 +40,6 @@ anchor_bottom = 1.0
 mouse_filter = 2
 theme = ExtResource( 1 )
 script = ExtResource( 8 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 game_scene = "res://Game.tscn"
 achievements_scene = "res://screens/achievements_screen/AchievementsScreen.tscn"
 skins_scene = "res://screens/skin_screen/SkinSelectScreen.tscn"
@@ -147,17 +145,17 @@ margin_right = 311.0
 margin_bottom = 352.0
 texture = ExtResource( 10 )
 expand = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="FadeRect" parent="." instance=ExtResource( 9 )]
 
+[node name="GooglePlayServices" type="Node" parent="."]
+script = ExtResource( 13 )
+
 [node name="AdMob" type="Node" parent="."]
 script = ExtResource( 12 )
-banner_id = "ca-app-pub-3940256099942544/6300978111"
-interstitial_id = "ca-app-pub-3940256099942544/8691691433"
-rewarded_id = "ca-app-pub-3940256099942544/5224354917"
+banner_id = "ca-app-pub-7966737774589643/5198354118"
+interstitial_id = "ca-app-pub-7966737774589643/7848304856"
+rewarded_id = "ca-app-pub-7966737774589643/1651110902"
 is_personalized = false
 
 [node name="Timer" type="Timer" parent="AdMob"]

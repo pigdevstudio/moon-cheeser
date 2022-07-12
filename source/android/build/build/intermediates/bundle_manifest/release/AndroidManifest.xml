@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.madkitchen.mooncheeser"
+    android:installLocation="auto"
+    android:versionCode="27"
+    android:versionName="1.0.27" >
+
+    <uses-sdk
+        android:minSdkVersion="21"
+        android:targetSdkVersion="30" />
+
+    <supports-screens
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:smallScreens="true"
+        android:xlargeScreens="true" />
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <instrumentation
+        android:name=".GodotInstrumentation"
+        android:icon="@mipmap/icon"
+        android:label="@string/godot_project_name_string"
+        android:targetPackage="com.madkitchen.mooncheeser" />
+    <!-- glEsVersion is modified by the exporter, changing this value here has no effect. -->
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="com.android.vending.BILLING" />
+
+    <application
+        android:allowBackup="false"
+        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+        android:icon="@mipmap/icon"
+        android:label="@string/godot_project_name_string"
+        android:requestLegacyExternalStorage="false" >
+        <activity
+            android:name="com.godot.game.GodotApp"
+            android:configChanges="orientation|keyboardHidden|screenSize|smallestScreenSize|density|keyboard|navigation|screenLayout|uiMode"
+            android:label="@string/godot_project_name_string"
+            android:launchMode="singleTask"
+            android:resizeableActivity="false"
+            android:screenOrientation="userLandscape"
+            android:theme="@style/GodotAppSplashTheme" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <!-- Records the version of the Godot editor used for building -->
+        <meta-data
+            android:name="org.godotengine.editor.version"
+            android:value="3.3.3.stable" /> <!-- Custom application XML added by add-ons. -->
+        <!-- CHUNK_APPLICATION_BEGIN -->
+        <!-- CHUNK_APPLICATION_END -->
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-3940256099942544~3347511713" />
+        <meta-data
+            android:name="com.google.android.gms.games.APP_ID"
+            android:value="@string/app_id" />
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <meta-data
+            android:name="org.godotengine.plugin.v1.GodotPlayGamesServices"
+            android:value="io.cgisca.godot.gpgs.PlayGameServicesGodot" />
+        <meta-data
+            android:name="org.godotengine.plugin.v1.GodotGooglePlayBilling"
+            android:value="org.godotengine.godot.plugin.googleplaybilling.GodotGooglePlayBilling" />
+        <meta-data
+            android:name="org.godotengine.plugin.v1.GodotAdMob"
+            android:value="shinnil.godot.plugin.android.godotadmob.GodotAdMob" /> <!-- Records the version of the Godot library -->
+        <meta-data
+            android:name="org.godotengine.library.version"
+            android:value="3.3.3.stable" />
+
+        <service android:name="org.godotengine.godot.GodotDownloaderService" />
+
+        <activity
+            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
+            android:excludeFromRecents="true"
+            android:exported="false"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <!--
+            Service handling Google Sign-In user revocation. For apps that do not integrate with
+            Google Sign-In, this service will never be started.
+        -->
+        <service
+            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
+            android:exported="true"
+            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"
+            android:visibleToInstantApps="true" />
+
+        <activity
+            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+            android:exported="false"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" /> <!-- Include the AdActivity and InAppPurchaseActivity configChanges and themes. -->
+        <activity
+            android:name="com.google.android.gms.ads.AdActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+            android:exported="false"
+            android:theme="@android:style/Theme.Translucent" />
+
+        <provider
+            android:name="com.google.android.gms.ads.MobileAdsInitProvider"
+            android:authorities="com.madkitchen.mooncheeser.mobileadsinitprovider"
+            android:exported="false"
+            android:initOrder="100" />
+
+        <meta-data
+            android:name="com.google.android.play.billingclient.version"
+            android:value="3.0.0" />
+
+        <activity
+            android:name="com.android.billingclient.api.ProxyBillingActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+    </application>
+
+</manifest>

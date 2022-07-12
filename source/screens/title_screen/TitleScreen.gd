@@ -8,11 +8,15 @@ onready var _fade_rect = $FadeRect
 onready var _admob = $AdMob
 
 func _ready():
-	if OS.get_name() == "Android":
-		_admob.load_banner()
-		yield(_admob, "banner_loaded")
-		$AdMob/Timer.start()
-		_admob.show_banner()
+	match OS.get_name():
+		"HTML5", "Windows", "X11":
+			LootLocker.player_id = OS.get_unique_id()
+			LootLocker.authenticate_guest_session()
+		"Android":
+			_admob.load_banner()
+			yield(_admob, "banner_loaded")
+			$AdMob/Timer.start()
+			_admob.show_banner()
 
 
 func change_scene(next_scene_path):
@@ -23,14 +27,16 @@ func change_scene(next_scene_path):
 
 func _on_PlayButton_pressed():
 	change_scene(game_scene)
-
+	_admob.hide_banner()
 
 func _on_AchievementsButton_pressed():
 	change_scene(achievements_scene)
+	_admob.hide_banner()
 
 
 func _on_SkinsButton_pressed():
 	change_scene(skins_scene)
+	_admob.hide_banner()
 
 
 func _on_AdMobTimer_timeout():

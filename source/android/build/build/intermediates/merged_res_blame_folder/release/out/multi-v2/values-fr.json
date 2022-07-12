@@ -1,0 +1,94 @@
+{
+    "logs": [
+        {
+            "outputFile": "/home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-fr/values-fr.xml",
+            "map": [
+                {
+                    "source": "/home/henrique/.gradle/caches/transforms-2/files-2.1/52d01a2caeef298d3375df58ee77f395/jetified-play-services-base-17.4.0/res/values-fr/values.xml",
+                    "from": {
+                        "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
+                        "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
+                        "startOffsets": "245,349,561,689,796,1026,1157,1304,1442,1679,1789,2005,2139,2358,2563,2662,2755",
+                        "endColumns": "103,211,127,106,229,130,146,137,236,109,215,133,218,204,98,92,108",
+                        "endOffsets": "348,560,688,795,1025,1156,1303,1441,1678,1788,2004,2138,2357,2562,2661,2754,2863"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6,7,8,9,11,12,13,14,15,16,17,18,19",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,213,425,557,668,898,1033,1184,1550,1787,1901,2117,2255,2474,2683,2786,2883",
+                        "endColumns": "107,211,131,110,229,134,150,141,236,113,215,137,218,208,102,96,112",
+                        "endOffsets": "208,420,552,663,893,1028,1179,1321,1782,1896,2112,2250,2469,2678,2781,2878,2991"
+                    }
+                },
+                {
+                    "source": "/home/henrique/.gradle/caches/transforms-2/files-2.1/86cd7ba0013912c723cb60c98ec3773f/jetified-play-services-basement-17.4.0/res/values-fr/values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "247",
+                        "endColumns": "223",
+                        "endOffsets": "470"
+                    },
+                    "to": {
+                        "startLines": "10",
+                        "startColumns": "4",
+                        "startOffsets": "1326",
+                        "endColumns": "223",
+                        "endOffsets": "1545"
+                    }
+                },
+                {
+                    "source": "/home/henrique/.gradle/caches/transforms-2/files-2.1/8456cd731caf12df9a95c5c194b6e2d6/jetified-play-services-ads-19.3.0/res/values-fr/values.xml",
+                    "from": {
+                        "startLines": "4,5,6,7,8,9,10",
+                        "startColumns": "0,0,0,0,0,0,0",
+                        "startOffsets": "199,276,401,467,532,618,729",
+                        "endColumns": "76,124,65,64,85,110,69",
+                        "endOffsets": "275,400,466,531,617,728,798"
+                    },
+                    "to": {
+                        "startLines": "21,22,23,24,25,26,27",
+                        "startColumns": "4,4,4,4,4,4,4",
+                        "startOffsets": "3063,3144,3273,3343,3412,3502,3617",
+                        "endColumns": "80,128,69,68,89,114,73",
+                        "endOffsets": "3139,3268,3338,3407,3497,3612,3686"
+                    }
+                },
+                {
+                    "source": "/home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/res/values-fr/godot_project_name_string.xml",
+                    "from": {
+                        "startLines": "3",
+                        "startColumns": "1",
+                        "startOffsets": "112",
+                        "endColumns": "63",
+                        "endOffsets": "174"
+                    },
+                    "to": {
+                        "startLines": "20",
+                        "startColumns": "4",
+                        "startOffsets": "2996",
+                        "endColumns": "66",
+                        "endOffsets": "3058"
+                    }
+                },
+                {
+                    "source": "/home/henrique/.gradle/caches/transforms-2/files-2.1/9f2af2327a2ee4df66d476977a324666/core-1.2.0/res/values-fr/values-fr.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "28",
+                        "startColumns": "4",
+                        "startOffsets": "3691",
+                        "endColumns": "100",
+                        "endOffsets": "3787"
+                    }
+                }
+            ]
+        }
+    ]
+}

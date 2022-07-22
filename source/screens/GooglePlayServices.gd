@@ -2,7 +2,7 @@ extends Node
 
 
 func _ready():
-	if Engine.has_singleton("GodotPlayGamesServices"):
+	if OS.get_name() == "Android" and Engine.has_singleton("GodotPlayGamesServices"):
 		var play_games_services
 		play_games_services = Engine.get_singleton("GodotPlayGamesServices")
 	
@@ -19,8 +19,9 @@ func _ready():
 
 
 func _on_sign_in_success(account_data):
-	LootLocker.player_id = account_data["id"]
-	LootLocker.authenticate_guest_session()
+	if not LootLocker.token:
+		LootLocker.player_id = account_data["id"]
+		LootLocker.authenticate_guest_session()
 
 
 func _on_sign_in_failed(error_code):

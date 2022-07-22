@@ -4,15 +4,16 @@ extends HTTPRequest
 var board
 
 func get_board():
-	request(
-		"https://api.lootlocker.io/game/leaderboards/moon-cheeser/list?count=10",
-		["Content-Type: application/json", "x-session-token: %s" % LootLocker.token],
-		false,
-		HTTPClient.METHOD_GET)
-	yield(self, "request_completed")
+	NetworkStateLabel.show_loading_board()
+	
+	var url = "https://api.lootlocker.io/game/leaderboards/4845/list?count=10"
+	var header = ["Content-Type: application/json", "x-session-token: %s" % LootLocker.token]
+	var method = HTTPClient.METHOD_GET
 
-
-func _on_request_completed(result, response_code, headers, body):
-	var response = JSON.parse(body.get_string_from_utf8()).result
+	request(url, header, false, method)
+	
+	var response = yield(self, "request_completed")[3]
+	response = JSON.parse(response.get_string_from_utf8()).result
+	
 	if "items" in response:
 		board = response["items"]

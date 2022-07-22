@@ -9,7 +9,6 @@ onready var fade_rect = $FadeRect
 
 
 func _ready():
-	NetworkStateLabel.show_loading_board()
 	yield(http_request.get_board(), "completed")
 	for i in http_request.board:
 		var entry = board_entry_scene.instance()

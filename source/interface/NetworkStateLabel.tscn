@@ -6,7 +6,7 @@
 [sub_resource type="Animation" id=1]
 length = 0.001
 
-[sub_resource type="Animation" id=11]
+[sub_resource type="Animation" id=12]
 resource_name = "auth_failed"
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:text")
@@ -38,8 +38,7 @@ tracks/1/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=2]
-resource_name = "authenticating"
+[sub_resource type="Animation" id=13]
 length = 1.2
 loop = true
 tracks/0/type = "value"
@@ -69,7 +68,7 @@ tracks/1/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=14]
 resource_name = "leaderboard_loaded"
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:text")
@@ -98,9 +97,10 @@ tracks/1/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=10]
+[sub_resource type="Animation" id=15]
 resource_name = "loading_leaderboard"
 length = 1.2
+loop = true
 step = 0.3
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:text")
@@ -129,8 +129,7 @@ tracks/1/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=3]
-resource_name = "loading_skins"
+[sub_resource type="Animation" id=16]
 length = 1.2
 loop = true
 tracks/0/type = "value"
@@ -160,8 +159,7 @@ tracks/1/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=4]
-resource_name = "login_success"
+[sub_resource type="Animation" id=17]
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:text")
 tracks/0/interp = 1
@@ -218,8 +216,7 @@ tracks/1/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=7]
-resource_name = "purchasing"
+[sub_resource type="Animation" id=9]
 length = 1.2
 loop = true
 step = 0.3
@@ -250,8 +247,7 @@ tracks/1/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=5]
-resource_name = "skins_loaded"
+[sub_resource type="Animation" id=10]
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:text")
 tracks/0/interp = 1
@@ -279,7 +275,7 @@ tracks/1/keys = {
 } ]
 }
 
-[sub_resource type="StyleBoxFlat" id=6]
+[sub_resource type="StyleBoxFlat" id=11]
 bg_color = Color( 0.278431, 0.231373, 0.470588, 1 )
 border_width_left = 4
 border_width_top = 4
@@ -297,21 +293,24 @@ script = ExtResource( 2 )
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../Label")
 anims/RESET = SubResource( 1 )
-anims/auth_failed = SubResource( 11 )
-anims/authenticating = SubResource( 2 )
-anims/leaderboard_loaded = SubResource( 9 )
-anims/loading_leaderboard = SubResource( 10 )
-anims/loading_skins = SubResource( 3 )
-anims/login_success = SubResource( 4 )
+anims/auth_failed = SubResource( 12 )
+anims/authenticating = SubResource( 13 )
+anims/leaderboard_loaded = SubResource( 14 )
+anims/loading_leaderboard = SubResource( 15 )
+anims/loading_skins = SubResource( 16 )
+anims/login_success = SubResource( 17 )
 anims/purchased = SubResource( 8 )
-anims/purchasing = SubResource( 7 )
-anims/skins_loaded = SubResource( 5 )
+anims/purchasing = SubResource( 9 )
+anims/skins_loaded = SubResource( 10 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
 show_behind_parent = true
 margin_right = 1280.0
 margin_bottom = 720.0
 color = Color( 0, 0, 0, 0.5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Label" type="Label" parent="."]
 anchor_left = 0.5
@@ -322,9 +321,9 @@ margin_left = -232.0
 margin_top = -78.0
 margin_right = 232.0
 margin_bottom = 78.0
+custom_styles/normal = SubResource( 11 )
 custom_fonts/font = ExtResource( 1 )
-custom_styles/normal = SubResource( 6 )
-text = "authentication failed!!"
+text = "authenticating login"
 align = 1
 valign = 1
 __meta__ = {

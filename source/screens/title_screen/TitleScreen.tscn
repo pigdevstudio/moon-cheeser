@@ -40,9 +40,13 @@ anchor_bottom = 1.0
 mouse_filter = 2
 theme = ExtResource( 1 )
 script = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 game_scene = "res://Game.tscn"
 achievements_scene = "res://screens/achievements_screen/AchievementsScreen.tscn"
 skins_scene = "res://screens/skin_screen/SkinSelectScreen.tscn"
+leaderboard_scene = "res://screens/score_screen/LeaderboardScreen.tscn"
 
 [node name="Viewport" type="Viewport" parent="."]
 size = Vector2( 1280, 720 )
@@ -92,6 +96,15 @@ margin_top = -63.5
 margin_right = 263.0
 margin_bottom = 63.5
 texture_normal = ExtResource( 11 )
+
+[node name="LeaderboardButton" parent="." instance=ExtResource( 3 )]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 128.0
+margin_top = 160.0
+margin_right = 263.0
+margin_bottom = 287.0
+texture_normal = ExtResource( 4 )
 
 [node name="Moon" type="TextureRect" parent="."]
 anchor_left = 0.5
@@ -165,4 +178,5 @@ one_shot = true
 [connection signal="pressed" from="PlayButton" to="." method="_on_PlayButton_pressed"]
 [connection signal="pressed" from="AchievementsButton" to="." method="_on_AchievementsButton_pressed"]
 [connection signal="pressed" from="SkinsButton" to="." method="_on_SkinsButton_pressed"]
+[connection signal="pressed" from="LeaderboardButton" to="." method="_on_LeaderboardButton_pressed"]
 [connection signal="timeout" from="AdMob/Timer" to="." method="_on_AdMobTimer_timeout"]

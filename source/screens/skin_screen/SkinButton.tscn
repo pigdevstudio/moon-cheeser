@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://screens/skin_screen/SkinButton.gd" type="Script" id=1]
-[ext_resource path="res://screens/skin_screen/astromouse.svg" type="Texture" id=2]
+[ext_resource path="res://screens/skin_screen/mouse-naked.svg" type="Texture" id=2]
 
 [node name="SkinButton" type="TextureButton"]
 margin_right = 128.0
@@ -11,3 +11,5 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]

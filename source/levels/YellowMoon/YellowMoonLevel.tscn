@@ -18,7 +18,7 @@
 [ext_resource path="res://meta/achievements/TutorialAchievement.tscn" type="PackedScene" id=16]
 [ext_resource path="res://levels/ShakingCamera2D.tscn" type="PackedScene" id=17]
 
-[sub_resource type="CircleShape2D" id=13]
+[sub_resource type="CircleShape2D" id=1]
 radius = 184.174
 
 [sub_resource type="Animation" id=2]
@@ -338,7 +338,9 @@ tracks/0/keys = {
 "values": [ 0.0, -20.0, -15.0 ]
 }
 
-[node name="Level" type="Node2D" groups=["level"]]
+[node name="Level" type="Node2D" groups=[
+"level",
+]]
 script = ExtResource( 4 )
 __meta__ = {
 "_edit_horizontal_guides_": [ 264.0 ],
@@ -369,7 +371,7 @@ position = Vector2( 648, 488 )
 [node name="PressArea2D" type="Area2D" parent="Moon"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Moon/PressArea2D"]
-shape = SubResource( 13 )
+shape = SubResource( 1 )
 
 [node name="Astromouse" parent="." instance=ExtResource( 15 )]
 position = Vector2( 640, 296 )

@@ -29,16 +29,3 @@ func get_image(image_url):
 func get_skin_scene(skin_scene_url):
 	request(skin_scene_url, [skin_scene_url])
 
-
-func purchase(asset_id, purchase_token):
-	NetworkStateLabel.show_purchasing()
-	request(
-		"https://api.lootlocker.io/game/v1/purchase",
-		["Content-Type: application/json", "x-session-token: %s" % LootLocker.token],
-		false,
-		HTTPClient.METHOD_POST,
-		"[{\"asset_id\": %s, \"purchase_token\": \"%s\"}]" % [asset_id, purchase_token]
-		)
-	var response = yield(self, "request_completed")[3]
-	response = JSON.parse(response.get_string_from_utf8()).result
-	NetworkStateLabel.show_purchased()

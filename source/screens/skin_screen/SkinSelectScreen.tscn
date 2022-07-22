@@ -1,16 +1,16 @@
 [gd_scene load_steps=16 format=2]
 
-[ext_resource path="res://screens/skin_screen/InventoryHTTPRequest.gd" type="Script" id=1]
 [ext_resource path="res://screens/skin_screen/SkinButton.tscn" type="PackedScene" id=2]
 [ext_resource path="res://screens/GooglePlayBilling.gd" type="Script" id=3]
 [ext_resource path="res://levels/Background.tscn" type="PackedScene" id=4]
 [ext_resource path="res://screens/skin_screen/scroll_container_theme.tres" type="Theme" id=5]
+[ext_resource path="res://screens/skin_screen/SkinsShopScrollContainer.gd" type="Script" id=6]
+[ext_resource path="res://screens/skin_screen/InventoryScrollContainer.gd" type="Script" id=7]
 [ext_resource path="res://interface/fonts/garoa_hacker_76.tres" type="DynamicFont" id=8]
 [ext_resource path="res://interface/fonts/GaroaHackerClubeBold.otf" type="DynamicFontData" id=13]
 [ext_resource path="res://interface/FadeRect.tscn" type="PackedScene" id=14]
 [ext_resource path="res://interface/ShadedButton.tscn" type="PackedScene" id=16]
 [ext_resource path="res://interface/BackButton.svg" type="Texture" id=17]
-[ext_resource path="res://screens/skin_screen/ShopHTTPRequest.gd" type="Script" id=48]
 [ext_resource path="res://screens/skin_screen/SkinSelectScreen.gd" type="Script" id=49]
 
 [sub_resource type="DynamicFont" id=1]
@@ -102,7 +102,7 @@ margin_right = 191.0
 margin_bottom = 191.0
 texture_normal = ExtResource( 17 )
 
-[node name="ShopScrollContainer" type="ScrollContainer" parent="."]
+[node name="SkinsShopScrollContainer" type="ScrollContainer" parent="."]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -114,11 +114,18 @@ margin_bottom = 334.0
 theme = ExtResource( 5 )
 follow_focus = true
 scroll_horizontal_enabled = false
+script = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+skin_button = ExtResource( 2 )
 
-[node name="GridContainer" type="GridContainer" parent="ShopScrollContainer"]
+[node name="HTTPRequest" type="HTTPRequest" parent="SkinsShopScrollContainer"]
+
+[node name="GooglePlayBilling" type="Node" parent="SkinsShopScrollContainer"]
+script = ExtResource( 3 )
+
+[node name="GridContainer" type="GridContainer" parent="SkinsShopScrollContainer"]
 columns = 4
 __meta__ = {
 "_edit_use_anchors_": false
@@ -136,9 +143,13 @@ margin_bottom = 334.0
 theme = ExtResource( 5 )
 follow_focus = true
 scroll_horizontal_enabled = false
+script = ExtResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+skin_button = ExtResource( 2 )
+
+[node name="HTTPRequest" type="HTTPRequest" parent="InventoryScrollContainer"]
 
 [node name="GridContainer" type="GridContainer" parent="InventoryScrollContainer"]
 columns = 4
@@ -150,13 +161,5 @@ __meta__ = {
 material = SubResource( 3 )
 next_scene_path = "res://screens/title_screen/TitleScreen.tscn"
 
-[node name="ShopHTTPRequest" type="HTTPRequest" parent="."]
-script = ExtResource( 48 )
-
-[node name="InventoryHTTPRequest" type="HTTPRequest" parent="."]
-script = ExtResource( 1 )
-
-[node name="GooglePlayBilling" type="Node" parent="."]
-script = ExtResource( 3 )
-
 [connection signal="pressed" from="BackButton" to="FadeRect" method="change_scene"]
+[connection signal="skin_selected" from="InventoryScrollContainer" to="." method="_on_Inventory_skin_selected"]

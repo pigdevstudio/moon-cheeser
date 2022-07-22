@@ -3,6 +3,7 @@ extends Control
 export(String, FILE, "*.tscn") var game_scene
 export(String, FILE, "*.tscn") var achievements_scene
 export(String, FILE, "*.tscn") var skins_scene
+export(String, FILE, "*.tscn") var leaderboard_scene
 
 onready var _fade_rect = $FadeRect
 onready var _admob = $AdMob
@@ -10,8 +11,9 @@ onready var _admob = $AdMob
 func _ready():
 	match OS.get_name():
 		"HTML5", "Windows", "X11":
-			LootLocker.player_id = OS.get_unique_id()
-			LootLocker.authenticate_guest_session()
+			if not LootLocker.token:
+				LootLocker.player_id = OS.get_unique_id()
+				LootLocker.authenticate_guest_session()
 		"Android":
 			_admob.load_banner()
 			yield(_admob, "banner_loaded")
@@ -36,6 +38,11 @@ func _on_AchievementsButton_pressed():
 
 func _on_SkinsButton_pressed():
 	change_scene(skins_scene)
+	_admob.hide_banner()
+
+
+func _on_LeaderboardButton_pressed():
+	change_scene(leaderboard_scene)
 	_admob.hide_banner()
 
 

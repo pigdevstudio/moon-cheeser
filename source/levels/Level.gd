@@ -48,7 +48,6 @@ func _unhandled_input(event):
 	if event.pressed:
 		if _blackhole:
 			_moon.pull()
-			get_tree().set_input_as_handled()
 
 
 func _on_Astromouse_died():
@@ -163,4 +162,3 @@ func _on_MoonPressArea2D_input_event(viewport, event, shape_idx):
 	if event.pressed:
 		if _blackhole:
 			_moon.pull()
-			get_tree().set_input_as_handled()

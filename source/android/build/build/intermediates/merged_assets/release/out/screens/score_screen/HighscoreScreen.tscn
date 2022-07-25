@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://interface/FadeRect.tscn" type="PackedScene" id=2]
 [ext_resource path="res://interface/fonts/garoa_hacker_76.tres" type="DynamicFont" id=5]
@@ -6,7 +6,7 @@
 [ext_resource path="res://interface/fonts/garoa_hacker_24.tres" type="DynamicFont" id=7]
 [ext_resource path="res://screens/score_screen/HighscoreScreen.gd" type="Script" id=8]
 
-[sub_resource type="StyleBoxFlat" id=7]
+[sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 1, 0.894118, 0.470588, 1 )
 border_width_left = 4
 border_width_top = 4
@@ -18,7 +18,7 @@ corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
-[sub_resource type="StyleBoxFlat" id=8]
+[sub_resource type="StyleBoxFlat" id=2]
 bg_color = Color( 1, 0.91, 0.67, 1 )
 border_width_left = 4
 border_width_top = 4
@@ -30,7 +30,7 @@ corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
-[sub_resource type="StyleBoxFlat" id=9]
+[sub_resource type="StyleBoxFlat" id=3]
 bg_color = Color( 0.7, 0.6258, 0.329, 1 )
 border_width_left = 4
 border_width_top = 4
@@ -41,6 +41,13 @@ corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
+
+[sub_resource type="InputEventAction" id=4]
+action = "ui_accept"
+pressed = true
+
+[sub_resource type="ShortCut" id=5]
+shortcut = SubResource( 4 )
 
 [sub_resource type="Shader" id=6]
 code = "shader_type canvas_item;
@@ -56,7 +63,7 @@ void fragment()
 	COLOR = vec4(vec3(0.0), alpha);
 }"
 
-[sub_resource type="ShaderMaterial" id=4]
+[sub_resource type="ShaderMaterial" id=7]
 shader = SubResource( 6 )
 shader_param/cutoff = 0.0
 shader_param/smooth_percent = 0.1
@@ -100,12 +107,12 @@ margin_left = -178.0
 margin_top = 55.0
 margin_right = 178.0
 margin_bottom = 121.0
+custom_styles/normal = SubResource( 1 )
+custom_fonts/font = ExtResource( 5 )
 custom_colors/clear_button_color_pressed = Color( 0.152941, 0.152941, 0.211765, 1 )
 custom_colors/font_color_selected = Color( 0.588235, 0.258824, 0.32549, 1 )
 custom_colors/font_color = Color( 0.729412, 0.380392, 0.337255, 1 )
 custom_colors/clear_button_color = Color( 0.152941, 0.152941, 0.211765, 1 )
-custom_fonts/font = ExtResource( 5 )
-custom_styles/normal = SubResource( 7 )
 align = 1
 max_length = 10
 placeholder_text = "name"
@@ -123,22 +130,26 @@ anchor_bottom = 1.0
 margin_left = -156.0
 margin_top = 20.0
 margin_bottom = 61.0
-custom_colors/font_color_focus = Color( 0.729412, 0.380392, 0.337255, 1 )
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/normal = SubResource( 1 )
+custom_fonts/font = ExtResource( 7 )
 custom_colors/font_color = Color( 0.729412, 0.380392, 0.337255, 1 )
 custom_colors/font_color_hover = Color( 0.93, 0.58, 0.54, 1 )
 custom_colors/font_color_pressed = Color( 0.53, 0.18, 0.14, 1 )
-custom_fonts/font = ExtResource( 7 )
-custom_styles/hover = SubResource( 8 )
-custom_styles/pressed = SubResource( 9 )
-custom_styles/normal = SubResource( 7 )
+shortcut = SubResource( 5 )
 text = "submit"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="HighscoreHTTPRequest" type="HTTPRequest" parent="."]
 
 [node name="FadeRect" parent="." instance=ExtResource( 2 )]
-material = SubResource( 4 )
+material = SubResource( 7 )
 next_scene_path = "res://screens/score_screen/LeaderboardScreen.tscn"
 
 [node name="Background" parent="." instance=ExtResource( 6 )]
 
+[connection signal="text_entered" from="LineEdit" to="." method="_on_LineEdit_text_entered"]
 [connection signal="pressed" from="LineEdit/SubmitButton" to="." method="_on_SubmitButton_pressed"]

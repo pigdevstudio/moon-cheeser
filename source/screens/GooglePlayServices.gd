@@ -2,7 +2,7 @@ extends Node
 
 
 func _ready():
-	if OS.get_name() == "Android" and Engine.has_singleton("GodotPlayGamesServices"):
+	if Engine.has_singleton("GodotPlayGamesServices"):
 		var play_games_services
 		play_games_services = Engine.get_singleton("GodotPlayGamesServices")
 	

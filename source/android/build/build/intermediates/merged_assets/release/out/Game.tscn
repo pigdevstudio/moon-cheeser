@@ -8,14 +8,14 @@
 [ext_resource path="res://interface/PauseButton.svg" type="Texture" id=6]
 [ext_resource path="res://interface/BackButton.svg" type="Texture" id=7]
 
-[sub_resource type="Gradient" id=17]
+[sub_resource type="Gradient" id=1]
 offsets = PoolRealArray( 0.0758929, 0.366071, 0.879464 )
 colors = PoolColorArray( 0, 0, 0, 1, 0.216766, 0.216766, 0.216766, 1, 1, 0.917969, 0.950653, 1 )
 
-[sub_resource type="GradientTexture" id=18]
-gradient = SubResource( 17 )
+[sub_resource type="GradientTexture" id=2]
+gradient = SubResource( 1 )
 
-[sub_resource type="Environment" id=1]
+[sub_resource type="Environment" id=3]
 background_mode = 4
 auto_exposure_scale = 0.1
 ssao_radius = 18.31
@@ -27,11 +27,10 @@ dof_blur_near_quality = 2
 glow_enabled = true
 glow_levels/1 = true
 glow_levels/2 = true
-glow_intensity = 0.6
 glow_bicubic_upscale = true
 adjustment_contrast = 1.15
 adjustment_saturation = 1.05
-adjustment_color_correction = SubResource( 18 )
+adjustment_color_correction = SubResource( 2 )
 
 [node name="Game" type="Node"]
 script = ExtResource( 5 )
@@ -67,7 +66,7 @@ visible = false
 [node name="FadeRect" parent="InterfaceLayer" instance=ExtResource( 3 )]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource( 1 )
+environment = SubResource( 3 )
 
 [connection signal="pressed" from="InterfaceLayer/HUD/PauseButton" to="InterfaceLayer/PauseMenu" method="_on_Button_pressed"]
 [connection signal="pressed" from="InterfaceLayer/HUD/BackButton" to="." method="_on_BackButton_pressed"]

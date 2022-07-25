@@ -14,6 +14,5 @@ func _ready():
 	NetworkStateLabel.show_skins_loaded()
 
 
-
 func _on_Inventory_skin_selected():
 	fade_rect.change_scene()

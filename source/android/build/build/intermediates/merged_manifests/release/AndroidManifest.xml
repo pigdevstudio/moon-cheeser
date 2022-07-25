@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.madkitchen.mooncheeser"
     android:installLocation="auto"
-    android:versionCode="27"
+    android:versionCode="30"
     android:versionName="1.0.27" >
 
     <uses-sdk

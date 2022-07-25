@@ -49,17 +49,20 @@ skin_button = ExtResource( 2 )
 
 [node name="Background" parent="." instance=ExtResource( 4 )]
 
-[node name="Label" type="Label" parent="."]
+[node name="TopLabel" type="Label" parent="."]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -347.821
-margin_top = 104.0
-margin_right = 267.179
-margin_bottom = 180.0
+margin_left = -280.0
+margin_top = 72.0
+margin_right = 335.0
+margin_bottom = 148.0
 custom_fonts/font = ExtResource( 8 )
 text = "choose your skin"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="Label2" type="Label" parent="."]
+[node name="ShopLabel" type="Label" parent="."]
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = 284.0
@@ -73,27 +76,14 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label4" type="Label" parent="."]
-anchor_left = 0.5
-anchor_right = 0.5
-margin_left = -421.0
+[node name="InventoryLabel" type="Label" parent="."]
+margin_left = 219.0
 margin_top = 198.0
-margin_right = -142.0
+margin_right = 500.0
 margin_bottom = 258.0
 custom_fonts/font = SubResource( 1 )
 text = "inventory"
 align = 1
-
-[node name="Label3" type="Label" parent="."]
-visible = false
-anchor_left = 0.5
-anchor_right = 0.5
-margin_left = 152.0
-margin_top = 256.0
-margin_right = 327.0
-margin_bottom = 332.0
-custom_fonts/font = SubResource( 1 )
-text = "ride"
 
 [node name="BackButton" parent="." instance=ExtResource( 16 )]
 margin_left = 64.0
@@ -158,6 +148,7 @@ __meta__ = {
 }
 
 [node name="FadeRect" parent="." instance=ExtResource( 14 )]
+visible = false
 material = SubResource( 3 )
 next_scene_path = "res://screens/title_screen/TitleScreen.tscn"
 

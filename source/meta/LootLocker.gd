@@ -27,4 +27,3 @@ func authenticate_guest_session():
 		NetworkStateLabel.show_login_successful()
 	else:
 		NetworkStateLabel.show_authentication_failed()
-

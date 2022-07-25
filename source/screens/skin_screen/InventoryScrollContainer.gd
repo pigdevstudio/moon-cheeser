@@ -34,9 +34,18 @@ func create_skin_button(scene_url, image_url):
 
 func _on_SkinButton_pressed(skin_scene_url):
 	http_request.request(skin_scene_url, [skin_scene_url])
+	
 	var body = yield(http_request, "request_completed")[3]
+	
 	var file = File.new()
-	file.open("user://skin.tscn", File.WRITE_READ)
+	if file.file_exists("user://skin.tscn"):
+		var directory = Directory.new()
+		directory.remove("user://skin.tscn")
+	
+	file.open("user://skin.tscn", File.WRITE)
 	file.store_buffer(body)
 	file.close()
+	
+	Skins.astromouse = null
 	Skins.astromouse = load("user://skin.tscn")
+	emit_signal("skin_selected")

@@ -1,7 +1,7 @@
 extends Node
 
 
-func _ready():
+func login():
 	if Engine.has_singleton("GodotPlayGamesServices"):
 		var play_games_services
 		play_games_services = Engine.get_singleton("GodotPlayGamesServices")
@@ -20,9 +20,10 @@ func _ready():
 
 func _on_sign_in_success(account_data):
 	if not LootLocker.token:
-		LootLocker.player_id = account_data["id"]
+		LootLocker.player_id = account_data['id']
 		LootLocker.authenticate_guest_session()
 
 
 func _on_sign_in_failed(error_code):
-	NetworkStateLabel.show_authentication_failed()
+	NetworkStateLabel.show()
+	NetworkStateLabel.text = "login failed. \n error: %s" % error_code

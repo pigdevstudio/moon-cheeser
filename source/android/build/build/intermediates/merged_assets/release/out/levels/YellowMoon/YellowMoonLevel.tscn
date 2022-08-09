@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://levels/Tutorial.gd" type="Script" id=1]
 [ext_resource path="res://objects/Spawners/RandomTimer.tscn" type="PackedScene" id=2]
@@ -17,6 +17,7 @@
 [ext_resource path="res://actors/astromouse/Astromouse.tscn" type="PackedScene" id=15]
 [ext_resource path="res://meta/achievements/TutorialAchievement.tscn" type="PackedScene" id=16]
 [ext_resource path="res://levels/ShakingCamera2D.tscn" type="PackedScene" id=17]
+[ext_resource path="res://levels/YellowMoon/ScoreAchievement.gd" type="Script" id=18]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 184.174
@@ -556,6 +557,11 @@ strength = 5.0
 wait_time = 120.0
 one_shot = true
 autostart = true
+
+[node name="ScoreAchievement" type="Node" parent="."]
+script = ExtResource( 18 )
+
+[node name="HTTPRequest" type="HTTPRequest" parent="ScoreAchievement"]
 
 [connection signal="input_event" from="Moon/PressArea2D" to="." method="_on_MoonPressArea2D_input_event"]
 [connection signal="spawned" from="BlackholeSpawner" to="." method="_on_BlackholeSpawner_spawned"]

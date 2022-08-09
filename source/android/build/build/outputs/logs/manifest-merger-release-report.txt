@@ -4,11 +4,11 @@ INJECTED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/s
 	android:value
 		INJECTED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml
 manifest
-ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:2:1-78:12
-INJECTED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:2:1-78:12
-INJECTED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:2:1-78:12
-INJECTED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:2:1-78:12
-MERGED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:2:1-78:12
+ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:2:1-75:12
+INJECTED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:2:1-75:12
+INJECTED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:2:1-75:12
+INJECTED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:2:1-75:12
+MERGED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:2:1-75:12
 MERGED from [GodotPlayGamesServices.release.aar] /home/henrique/.gradle/caches/transforms-2/files-2.1/9836ec4e951e5bc000494a2f6bc15710/jetified-GodotPlayGamesServices.release/AndroidManifest.xml:2:1-19:12
 MERGED from [GodotGooglePlayBilling.1.0.1.release.aar] /home/henrique/.gradle/caches/transforms-2/files-2.1/f1aba1041403d8aae7ede244216ff290/jetified-GodotGooglePlayBilling.1.0.1.release/AndroidManifest.xml:2:1-17:12
 MERGED from [GodotAdMob.5.1.0.release.aar] /home/henrique/.gradle/caches/transforms-2/files-2.1/456aae0d167f0d7c6d5f317d822051df/jetified-GodotAdMob.5.1.0.release/AndroidManifest.xml:2:1-19:12
@@ -100,9 +100,9 @@ ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/sour
 	android:required
 		ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:21:9-32
 application
-ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:31:5-76:19
-MERGED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:31:5-76:19
-MERGED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:31:5-76:19
+ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:31:5-73:19
+MERGED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:31:5-73:19
+MERGED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:31:5-73:19
 MERGED from [GodotPlayGamesServices.release.aar] /home/henrique/.gradle/caches/transforms-2/files-2.1/9836ec4e951e5bc000494a2f6bc15710/jetified-GodotPlayGamesServices.release/AndroidManifest.xml:13:5-17:19
 MERGED from [GodotPlayGamesServices.release.aar] /home/henrique/.gradle/caches/transforms-2/files-2.1/9836ec4e951e5bc000494a2f6bc15710/jetified-GodotPlayGamesServices.release/AndroidManifest.xml:13:5-17:19
 MERGED from [GodotGooglePlayBilling.1.0.1.release.aar] /home/henrique/.gradle/caches/transforms-2/files-2.1/f1aba1041403d8aae7ede244216ff290/jetified-GodotGooglePlayBilling.1.0.1.release/AndroidManifest.xml:11:5-15:19
@@ -223,14 +223,6 @@ ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/sour
 		ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:72:13-43
 	android:name
 		ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:71:20-70
-meta-data#com.google.android.gms.version
-ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:74:9-75:68
-MERGED from [com.google.android.gms:play-services-basement:17.4.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/86cd7ba0013912c723cb60c98ec3773f/jetified-play-services-basement-17.4.0/AndroidManifest.xml:23:9-25:69
-MERGED from [com.google.android.gms:play-services-basement:17.4.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/86cd7ba0013912c723cb60c98ec3773f/jetified-play-services-basement-17.4.0/AndroidManifest.xml:23:9-25:69
-	android:value
-		ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:75:13-66
-	android:name
-		ADDED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml:74:20-65
 uses-sdk
 INJECTED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /home/henrique/Documents/Pigdev/Projects/games/moon-cheeser/repo/source/android/build/AndroidManifest.xml
@@ -450,6 +442,12 @@ uses-permission#android.permission.WAKE_LOCK
 ADDED from [com.google.android.gms:play-services-measurement-sdk-api:17.1.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/7dda88590bf29e50f2326fbd823526f7/jetified-play-services-measurement-sdk-api-17.1.0/AndroidManifest.xml:25:5-68
 	android:name
 		ADDED from [com.google.android.gms:play-services-measurement-sdk-api:17.1.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/7dda88590bf29e50f2326fbd823526f7/jetified-play-services-measurement-sdk-api-17.1.0/AndroidManifest.xml:25:22-65
+meta-data#com.google.android.gms.version
+ADDED from [com.google.android.gms:play-services-basement:17.4.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/86cd7ba0013912c723cb60c98ec3773f/jetified-play-services-basement-17.4.0/AndroidManifest.xml:23:9-25:69
+	android:value
+		ADDED from [com.google.android.gms:play-services-basement:17.4.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/86cd7ba0013912c723cb60c98ec3773f/jetified-play-services-basement-17.4.0/AndroidManifest.xml:25:13-66
+	android:name
+		ADDED from [com.google.android.gms:play-services-basement:17.4.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/86cd7ba0013912c723cb60c98ec3773f/jetified-play-services-basement-17.4.0/AndroidManifest.xml:24:13-58
 uses-permission#com.android.vending.BILLING
 ADDED from [com.android.billingclient:billing:3.0.0] /home/henrique/.gradle/caches/transforms-2/files-2.1/756ea1b7c16587e41d29f89ab43c5d4a/jetified-billing-3.0.0/AndroidManifest.xml:10:5-67
 	android:name

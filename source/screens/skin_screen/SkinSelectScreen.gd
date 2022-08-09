@@ -16,3 +16,8 @@ func _ready():
 
 func _on_Inventory_skin_selected():
 	fade_rect.change_scene()
+
+
+func _on_SkinsShopScrollContainer_asset_purchased():
+	inventory.clear_skins()
+	inventory.load_skins()

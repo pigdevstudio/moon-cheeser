@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/death-star.svg-d27c10a5eed7f15e0c13dcc5bc83a386.stex"
+path="res://.import/saint-aries.svg-a75791be4735c596aece42931754779f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://actors/death-star.svg"
-dest_files=[ "res://.import/death-star.svg-d27c10a5eed7f15e0c13dcc5bc83a386.stex" ]
+source_file="res://screens/skin_screen/saint-aries.svg"
+dest_files=[ "res://.import/saint-aries.svg-a75791be4735c596aece42931754779f.stex" ]
 
 [params]
 
@@ -28,7 +28,6 @@ process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
 process/invert_color=false
-process/normal_map_invert_y=false
 stream=false
 size_limit=0
 detect_3d=true

@@ -101,6 +101,7 @@ PlayerData="*res://meta/PlayerData.tscn"
 Skins="*res://meta/Skins.tscn"
 DebugLabel="*res://interface/DebugLabel.tscn"
 NetworkStateLabel="*res://interface/NetworkStateLabel.tscn"
+AchievementLabel="*res://interface/AchievementLabel.tscn"
 LootLocker="*res://meta/LootLocker.tscn"
 
 [debug]

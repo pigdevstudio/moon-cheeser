@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/saint-aires.svg-b9db535c405073c867904084c0e2be6a.stex"
+path="res://.import/death-star.svg-4415a536ad9345a7f871c909dca9719d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://screens/skin_screen/saint-aires.svg"
-dest_files=[ "res://.import/saint-aires.svg-b9db535c405073c867904084c0e2be6a.stex" ]
+source_file="res://actors/starmouse/death-star.svg"
+dest_files=[ "res://.import/death-star.svg-4415a536ad9345a7f871c909dca9719d.stex" ]
 
 [params]
 

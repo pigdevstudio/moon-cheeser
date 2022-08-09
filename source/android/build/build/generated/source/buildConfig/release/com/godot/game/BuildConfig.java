@@ -7,6 +7,6 @@ public final class BuildConfig {
   public static final boolean DEBUG = false;
   public static final String APPLICATION_ID = "com.madkitchen.mooncheeser";
   public static final String BUILD_TYPE = "release";
-  public static final int VERSION_CODE = 30;
-  public static final String VERSION_NAME = "1.0.27";
+  public static final int VERSION_CODE = 37;
+  public static final String VERSION_NAME = "1.0.37";
 }

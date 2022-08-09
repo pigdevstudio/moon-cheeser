@@ -1,12 +1,13 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://interface/fonts/garoa_hacker_32.tres" type="DynamicFont" id=1]
 [ext_resource path="res://interface/NetworkStateLabel.gd" type="Script" id=2]
+[ext_resource path="res://interface/fonts/garoa_hacker_24.tres" type="DynamicFont" id=3]
 
 [sub_resource type="Animation" id=1]
 length = 0.001
 
-[sub_resource type="Animation" id=12]
+[sub_resource type="Animation" id=2]
 resource_name = "auth_failed"
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:text")
@@ -38,7 +39,7 @@ tracks/1/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=13]
+[sub_resource type="Animation" id=3]
 length = 1.2
 loop = true
 tracks/0/type = "value"
@@ -68,7 +69,7 @@ tracks/1/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=14]
+[sub_resource type="Animation" id=4]
 resource_name = "leaderboard_loaded"
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:text")
@@ -97,7 +98,7 @@ tracks/1/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=15]
+[sub_resource type="Animation" id=5]
 resource_name = "loading_leaderboard"
 length = 1.2
 loop = true
@@ -129,7 +130,7 @@ tracks/1/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=16]
+[sub_resource type="Animation" id=6]
 length = 1.2
 loop = true
 tracks/0/type = "value"
@@ -159,7 +160,7 @@ tracks/1/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=17]
+[sub_resource type="Animation" id=7]
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:text")
 tracks/0/interp = 1
@@ -287,18 +288,66 @@ corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
 
+[sub_resource type="StyleBoxFlat" id=12]
+bg_color = Color( 0.294118, 0.356863, 0.670588, 1 )
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color( 0.301961, 0.65098, 1, 1 )
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id=13]
+bg_color = Color( 0.278431, 0.231373, 0.470588, 1 )
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color( 0.294118, 0.356863, 0.670588, 1 )
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id=14]
+bg_color = Color( 0.278431, 0.231373, 0.470588, 1 )
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color( 0.301961, 0.65098, 1, 1 )
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id=15]
+bg_color = Color( 0.278431, 0.231373, 0.470588, 1 )
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color( 0.301961, 0.65098, 1, 1 )
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
 [node name="NetworkStateLabel" type="CanvasLayer"]
 script = ExtResource( 2 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../Label")
 anims/RESET = SubResource( 1 )
-anims/auth_failed = SubResource( 12 )
-anims/authenticating = SubResource( 13 )
-anims/leaderboard_loaded = SubResource( 14 )
-anims/loading_leaderboard = SubResource( 15 )
-anims/loading_skins = SubResource( 16 )
-anims/login_success = SubResource( 17 )
+anims/auth_failed = SubResource( 2 )
+anims/authenticating = SubResource( 3 )
+anims/leaderboard_loaded = SubResource( 4 )
+anims/loading_leaderboard = SubResource( 5 )
+anims/loading_skins = SubResource( 6 )
+anims/login_success = SubResource( 7 )
 anims/purchased = SubResource( 8 )
 anims/purchasing = SubResource( 9 )
 anims/skins_loaded = SubResource( 10 )
@@ -329,3 +378,20 @@ valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Button" type="Button" parent="."]
+margin_left = 576.0
+margin_top = 456.0
+margin_right = 712.0
+margin_bottom = 512.0
+custom_styles/hover = SubResource( 12 )
+custom_styles/pressed = SubResource( 13 )
+custom_styles/focus = SubResource( 14 )
+custom_styles/normal = SubResource( 15 )
+custom_fonts/font = ExtResource( 3 )
+text = "close"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

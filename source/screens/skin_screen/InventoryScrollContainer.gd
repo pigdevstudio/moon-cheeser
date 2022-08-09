@@ -20,8 +20,12 @@ func load_skins():
 	for asset in response['inventory']:
 		var scene_url = asset['asset']['files'][0]['url']
 		var image_url = asset['asset']['files'][1]['url']
-		var id = asset['asset']['id']
 		create_skin_button(scene_url, image_url)
+
+
+func clear_skins():
+	for child in grid.get_children():
+		child.queue_free()
 
 
 func create_skin_button(scene_url, image_url):
@@ -35,7 +39,7 @@ func create_skin_button(scene_url, image_url):
 func _on_SkinButton_pressed(skin_scene_url):
 	http_request.request(skin_scene_url, [skin_scene_url])
 	
-	var body = yield(http_request, "request_completed")[3]
+	var response = yield(http_request, "request_completed")[3]
 	
 	var file = File.new()
 	if file.file_exists("user://skin.tscn"):
@@ -43,7 +47,7 @@ func _on_SkinButton_pressed(skin_scene_url):
 		directory.remove("user://skin.tscn")
 	
 	file.open("user://skin.tscn", File.WRITE)
-	file.store_buffer(body)
+	file.store_buffer(response)
 	file.close()
 	
 	Skins.astromouse = null

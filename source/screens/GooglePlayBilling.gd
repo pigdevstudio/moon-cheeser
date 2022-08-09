@@ -5,14 +5,9 @@ signal purchase_token_retrieved(token)
 var payment
 var token
 
-onready var debug_label = Label.new()
-
 func _ready():
-	debug_label.hide()
-	add_child(debug_label)
-	debug_label.rect_global_position = Vector2(1280 / 2, 720 / 2)
-	
-	debug_label.text = "debug label"
+	if not OS.get_name() == "Android":
+		return
 	
 	if Engine.has_singleton("GodotGooglePlayBilling"):
 		payment = Engine.get_singleton("GodotGooglePlayBilling")
@@ -32,11 +27,10 @@ func _ready():
 		
 		payment.startConnection()
 	else:
-		debug_label.text = "singleton not found"
+		NetworkStateLabel.text = "google billing service not found"
 
 
 func _on_connected():
-	debug_label.text = "connected"
 	payment.queryPurchases("inapp")
 
 
@@ -45,50 +39,55 @@ func _on_disconnected():
 
 
 func _on_connect_error(response_id, debug_message):
-	pass
+	NetworkStateLabel.text = "connection failed! \n error: %s" % debug_message
+	NetworkStateLabel.show()
 
 
 func _on_query_purchases_response(query_result):
 	if query_result.status == OK:
 		for purchase in query_result.purchases:
 			if not purchase.is_acknowledged:
-				print("Purchase " + str(purchase.sku) + " has not been acknowledged. Acknowledging...")
 				payment.acknowledgePurchase(purchase.purchase_token)
 
 
 func _on_purchases_updated(purchases):
 	for purchase in purchases:
 		if not purchase.is_acknowledged:
-			DebugLabel.text = "purchase " + str(purchase.sku) + " has not been acknowledged. Acknowledging..."
 			payment.acknowledgePurchase(purchase.purchase_token)
 
 
 func _on_purchase_error(response_id, debug_message):
-	pass
+	NetworkStateLabel.text = "purchase failed! \n error: %s" % debug_message
+	NetworkStateLabel.show()
 
 
 func _on_sku_details_query_completed(SKUs):
-	pass
+	NetworkStateLabel.text = "sku loading completed"
+	NetworkStateLabel.show()
 
 
 func _on_sku_details_query_error(response_id, debug_message, queried_SKUs):
-	pass
+	NetworkStateLabel.text = "sku details failed \n error: %s" % debug_message
+	NetworkStateLabel.show()
 
 
 func _on_purchase_acknowledged(purchase_token):
-	DebugLabel.text = "purchase acknolodged: %s" % purchase_token
+	NetworkStateLabel.text = "purchase acknowledged!"
+	NetworkStateLabel.show()
 	token = purchase_token
 	emit_signal("purchase_token_retrieved", token)
 
 
 func _on_purchase_acknowledgement_error(response_id, debug_message, purchase_token):
-	pass
+	NetworkStateLabel.text = "purchase acknowledgement failed \n error: %s" % debug_message
+	NetworkStateLabel.show()
 
 
 func _on_purchase_consumed(purchase_token):
-	pass
+	NetworkStateLabel.text = "purchase consumed!"
+	NetworkStateLabel.show()
 
 
 func _on_purchase_consumption_error(response_id, debug_message, purchase_token):
-	pass
-
+	NetworkStateLabel.text = "purchase consumption failed \n error: %s" % debug_message
+	NetworkStateLabel.show()

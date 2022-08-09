@@ -7,6 +7,7 @@ export(String, FILE, "*.tscn") var leaderboard_scene
 
 onready var _fade_rect = $FadeRect
 onready var _admob = $AdMob
+onready var _play_services = $GooglePlayServices
 
 func _ready():
 	match OS.get_name():
@@ -15,9 +16,11 @@ func _ready():
 				LootLocker.player_id = OS.get_unique_id()
 				LootLocker.authenticate_guest_session()
 		"Android":
+			_play_services.login()
+			
 			_admob.load_banner()
 			yield(_admob, "banner_loaded")
-			$AdMob/Timer.start()
+			_admob.get_node("Timer").start()
 			_admob.show_banner()
 
 

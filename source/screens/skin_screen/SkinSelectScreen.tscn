@@ -97,7 +97,7 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = 40.0
+margin_left = 16.0
 margin_top = -66.0
 margin_right = 568.0
 margin_bottom = 334.0
@@ -128,7 +128,7 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -576.0
 margin_top = -66.0
-margin_right = -48.0
+margin_right = -24.0
 margin_bottom = 334.0
 theme = ExtResource( 5 )
 follow_focus = true
@@ -148,9 +148,9 @@ __meta__ = {
 }
 
 [node name="FadeRect" parent="." instance=ExtResource( 14 )]
-visible = false
 material = SubResource( 3 )
 next_scene_path = "res://screens/title_screen/TitleScreen.tscn"
 
 [connection signal="pressed" from="BackButton" to="FadeRect" method="change_scene"]
+[connection signal="asset_purchased" from="SkinsShopScrollContainer" to="." method="_on_SkinsShopScrollContainer_asset_purchased"]
 [connection signal="skin_selected" from="InventoryScrollContainer" to="." method="_on_Inventory_skin_selected"]

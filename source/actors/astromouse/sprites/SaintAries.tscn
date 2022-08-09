@@ -760,7 +760,7 @@ tracks/17/keys = {
 "values": [ -41.2282 ]
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=5]
 resource_name = "show"
 length = 2.5
 tracks/0/type = "value"
@@ -800,14 +800,14 @@ tracks/2/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="GDScript" id=7]
+[sub_resource type="GDScript" id=6]
 script/source = "extends Node
 
 func _ready():
 	get_node(\"Animator\").playback_speed = rand_range(0.5, 1.0)
 "
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=7]
 length = 3.0
 loop = true
 tracks/0/type = "value"
@@ -969,55 +969,54 @@ scale = Vector2( 0.4, 0.4 )
 texture = ExtResource( 6 )
 
 [node name="Line2D" type="Line2D" parent="CanvasLayer/Constellation"]
-scale = Vector2( 1, 1 )
 points = PoolVector2Array( -278.799, -32.6972, -126.549, -8.23988, 13.6889, 16.2619, 70.6045, 101.986 )
 width = 2.0
 default_color = Color( 1, 1, 1, 1 )
 
 [node name="Animator" type="AnimationPlayer" parent="CanvasLayer/Constellation"]
 autoplay = "show"
-anims/show = SubResource( 6 )
+anims/show = SubResource( 5 )
 
 [node name="Star11" type="Sprite" parent="CanvasLayer/Constellation"]
 position = Vector2( -279.897, -32.9927 )
 rotation = -2.54715
 scale = Vector2( 0.175687, 0.175687 )
 texture = ExtResource( 5 )
-script = SubResource( 7 )
+script = SubResource( 6 )
 
 [node name="Animator" type="AnimationPlayer" parent="CanvasLayer/Constellation/Star11"]
 autoplay = "shine"
-anims/shine = SubResource( 8 )
+anims/shine = SubResource( 7 )
 
 [node name="Star12" type="Sprite" parent="CanvasLayer/Constellation"]
 position = Vector2( -128.223, -8.06104 )
 rotation = -3.62018
 scale = Vector2( 0.160936, 0.160936 )
 texture = ExtResource( 5 )
-script = SubResource( 7 )
+script = SubResource( 6 )
 
 [node name="Animator" type="AnimationPlayer" parent="CanvasLayer/Constellation/Star12"]
 autoplay = "shine"
-anims/shine = SubResource( 8 )
+anims/shine = SubResource( 7 )
 
 [node name="Star13" type="Sprite" parent="CanvasLayer/Constellation"]
 position = Vector2( 12.9769, 16.4065 )
 rotation = -5.81001
 scale = Vector2( 0.439753, 0.439753 )
 texture = ExtResource( 5 )
-script = SubResource( 7 )
+script = SubResource( 6 )
 
 [node name="Animator" type="AnimationPlayer" parent="CanvasLayer/Constellation/Star13"]
 autoplay = "shine"
-anims/shine = SubResource( 8 )
+anims/shine = SubResource( 7 )
 
 [node name="Star14" type="Sprite" parent="CanvasLayer/Constellation"]
 position = Vector2( 71.1108, 104.478 )
 rotation = -2.48211
 scale = Vector2( 0.183967, 0.183967 )
 texture = ExtResource( 5 )
-script = SubResource( 7 )
+script = SubResource( 6 )
 
 [node name="Animator" type="AnimationPlayer" parent="CanvasLayer/Constellation/Star14"]
 autoplay = "shine"
-anims/shine = SubResource( 8 )
+anims/shine = SubResource( 7 )

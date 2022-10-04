@@ -862,15 +862,15 @@ anims/wall = ExtResource( 11 )
 
 [node name="body" type="Sprite" parent="sprites"]
 position = Vector2( 3.66667, -17.6667 )
-rotation = -0.341701
+rotation = 1.51703
 texture = ExtResource( 14 )
 offset = Vector2( 0.0592504, -7.2841 )
 region_enabled = true
 region_rect = Rect2( 67.5453, 4, 41.0378, 33.1894 )
 
 [node name="shoulder_r" type="Sprite" parent="sprites/body"]
-position = Vector2( -5.97163, -15.6385 )
-rotation = -0.239949
+position = Vector2( 1.23006, -16.1965 )
+rotation = -1.08566
 z_index = 1
 texture = ExtResource( 14 )
 offset = Vector2( 0, -0.899 )
@@ -878,8 +878,8 @@ region_enabled = true
 region_rect = Rect2( 10, 22, 25, 15 )
 
 [node name="shoulder_l" type="Sprite" parent="sprites/body"]
-position = Vector2( 8.71861, -16.3575 )
-rotation = -0.0508611
+position = Vector2( 1.57362, -25.8959 )
+rotation = -0.719568
 z_index = -1
 texture = ExtResource( 14 )
 offset = Vector2( 0, -0.899 )
@@ -887,8 +887,8 @@ region_enabled = true
 region_rect = Rect2( 43, 22, 24, 15 )
 
 [node name="head" type="Sprite" parent="sprites/body"]
-position = Vector2( -0.999999, -16.3333 )
-rotation = -0.196236
+position = Vector2( 4.45915, -19.5303 )
+rotation = -1.06575
 texture = ExtResource( 14 )
 offset = Vector2( 0.466, -26.318 )
 region_enabled = true
@@ -896,8 +896,8 @@ region_rect = Rect2( 4, 54, 53, 53 )
 region_filter_clip = true
 
 [node name="arm_l" type="Sprite" parent="sprites/body"]
-position = Vector2( 6.66666, -18.3333 )
-rotation = -2.32146
+position = Vector2( 0.591212, -20.63 )
+rotation = -1.34021
 z_index = -1
 texture = ExtResource( 14 )
 offset = Vector2( -0.113655, 9.28639 )
@@ -906,8 +906,8 @@ region_rect = Rect2( 102, 41, 12, 19 )
 
 [node name="arm_r" type="Sprite" parent="sprites/body"]
 show_behind_parent = true
-position = Vector2( -9.5, -16.3333 )
-rotation = 0.900476
+position = Vector2( 1.12262, -14.3775 )
+rotation = -1.20853
 z_index = 1
 texture = ExtResource( 14 )
 offset = Vector2( 0.434902, 8.9376 )
@@ -917,10 +917,10 @@ region_rect = Rect2( 90, 41, 11, 19 )
 [node name="tail" type="Sprite" parent="sprites/body"]
 show_behind_parent = true
 position = Vector2( -7.66667, 3.83337 )
-rotation = -0.985362
+rotation = 0.148449
 z_index = -1
 texture = ExtResource( 14 )
-offset = Vector2( -18.1807, -15.8838 )
+offset = Vector2( -14.673, -15.884 )
 region_enabled = true
 region_rect = Rect2( 68, 88, 33, 34 )
 
@@ -934,8 +934,8 @@ region_enabled = true
 region_rect = Rect2( 72, 40, 16, 28 )
 
 [node name="leg_l" type="Sprite" parent="sprites"]
-position = Vector2( 8.83333, -18 )
-rotation = -0.310613
+position = Vector2( 2.59208, -16.4956 )
+rotation = -0.600719
 z_index = -1
 texture = ExtResource( 14 )
 offset = Vector2( 0.166667, 8.66673 )
@@ -943,8 +943,8 @@ region_enabled = true
 region_rect = Rect2( 103, 64, 10, 19 )
 
 [node name="leg_r" type="Sprite" parent="sprites"]
-position = Vector2( -2.66667, -18.6667 )
-rotation = 0.134831
+position = Vector2( -1.65683, -18.1776 )
+rotation = -0.391637
 z_index = -1
 texture = ExtResource( 14 )
 offset = Vector2( 0.333337, 9.33333 )
@@ -954,9 +954,7 @@ region_rect = Rect2( 91, 64, 10, 19 )
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -1
 
-[node name="Constellation" type="Node2D" parent="CanvasLayer" groups=[
-"crux",
-]]
+[node name="Constellation" type="Node2D" parent="CanvasLayer" groups=["crux"]]
 modulate = Color( 1.2, 1.2, 1.2, 1 )
 position = Vector2( 787, 152 )
 rotation = 0.20069

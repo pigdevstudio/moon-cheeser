@@ -2,12 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.madkitchen.mooncheeser"
     android:installLocation="auto"
-    android:versionCode="37"
-    android:versionName="1.0.37" >
+    android:versionCode="47"
+    android:versionName="1.0.47" >
 
     <uses-sdk
         android:minSdkVersion="21"
-        android:targetSdkVersion="30" />
+        android:targetSdkVersion="32" />
 
     <supports-screens
         android:largeScreens="true"
@@ -17,16 +17,17 @@
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
-
-    <instrumentation
-        android:name=".GodotInstrumentation"
-        android:icon="@mipmap/icon"
-        android:label="@string/godot_project_name_string"
-        android:targetPackage="com.madkitchen.mooncheeser" />
     <!-- glEsVersion is modified by the exporter, changing this value here has no effect. -->
     <uses-feature
         android:glEsVersion="0x00020000"
         android:required="true" />
+
+    <meta-data
+        android:name="com.google.android.gms.ads.APPLICATION_ID"
+        android:value="ca-app-pub-3940256099942544~3347511713" />
+    <meta-data
+        android:name="com.google.android.gms.games.APP_ID"
+        android:value="@string/app_id" />
 
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="com.android.vending.BILLING" />
@@ -34,35 +35,37 @@
     <application
         android:allowBackup="false"
         android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+        android:hasFragileUserData="false"
         android:icon="@mipmap/icon"
+        android:isGame="true"
         android:label="@string/godot_project_name_string"
         android:requestLegacyExternalStorage="false" >
         <activity
             android:name="com.godot.game.GodotApp"
             android:configChanges="orientation|keyboardHidden|screenSize|smallestScreenSize|density|keyboard|navigation|screenLayout|uiMode"
+            android:excludeFromRecents="false"
+            android:exported="true"
             android:label="@string/godot_project_name_string"
             android:launchMode="singleTask"
-            android:resizeableActivity="false"
+            android:resizeableActivity="true"
             android:screenOrientation="userLandscape"
             android:theme="@style/GodotAppSplashTheme" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
+
+                <!--
+                Enable access to OpenXR on Oculus mobile devices, no-op on other Android
+                platforms.
+                -->
+                <category android:name="com.oculus.intent.category.VR" />
             </intent-filter>
         </activity>
         <!-- Records the version of the Godot editor used for building -->
         <meta-data
             android:name="org.godotengine.editor.version"
-            android:value="3.3.3.stable" /> <!-- Custom application XML added by add-ons. -->
-        <!-- CHUNK_APPLICATION_BEGIN -->
-        <!-- CHUNK_APPLICATION_END -->
-        <meta-data
-            android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-3940256099942544~3347511713" />
-        <meta-data
-            android:name="com.google.android.gms.games.APP_ID"
-            android:value="@string/app_id" />
+            android:value="3.5.stable" />
         <meta-data
             android:name="org.godotengine.plugin.v1.GodotPlayGamesServices"
             android:value="io.cgisca.godot.gpgs.PlayGameServicesGodot" />
@@ -74,10 +77,15 @@
             android:value="shinnil.godot.plugin.android.godotadmob.GodotAdMob" /> <!-- Records the version of the Godot library -->
         <meta-data
             android:name="org.godotengine.library.version"
-            android:value="3.3.3.stable" />
+            android:value="3.5.0.stable" />
 
         <service android:name="org.godotengine.godot.GodotDownloaderService" />
 
+        <activity
+            android:name="org.godotengine.godot.utils.ProcessPhoenix"
+            android:exported="false"
+            android:process=":phoenix"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
         <activity
             android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
             android:excludeFromRecents="true"

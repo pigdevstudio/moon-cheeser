@@ -14,7 +14,6 @@ func authenticate_guest_session():
 		"player_identifier" : player_id,
 		"development_mode" : true
 		}
-	
 	NetworkStateLabel.show_authentication()
 	
 	request(url, header, false, method, to_json(request_body))

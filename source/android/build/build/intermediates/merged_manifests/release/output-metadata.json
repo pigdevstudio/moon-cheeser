@@ -1,5 +1,5 @@
 {
-  "version": 2,
+  "version": 3,
   "artifactType": {
     "type": "MERGED_MANIFESTS",
     "kind": "Directory"
@@ -10,9 +10,11 @@
     {
       "type": "SINGLE",
       "filters": [],
-      "versionCode": 37,
-      "versionName": "1.0.37",
+      "attributes": [],
+      "versionCode": 47,
+      "versionName": "1.0.47",
       "outputFile": "AndroidManifest.xml"
     }
-  ]
+  ],
+  "elementType": "File"
 }

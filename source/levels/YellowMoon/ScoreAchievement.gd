@@ -18,7 +18,7 @@ func trigger_skin_unlock():
 	var header = ["Content-Type: application/json", "x-session-token: %s" % LootLocker.token]
 	var method = HTTPClient.METHOD_POST
 	var body = {
-		"name": "new_skin_unlocked"
+		"name": "1000_skin_unlock"
 	}
 	http_request.request(url, header, false, method, to_json(body))
 	

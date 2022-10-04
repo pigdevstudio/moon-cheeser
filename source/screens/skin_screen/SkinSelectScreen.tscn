@@ -42,9 +42,6 @@ shader_param/smooth_percent = 0.1
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 49 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 skin_button = ExtResource( 2 )
 
 [node name="Background" parent="." instance=ExtResource( 4 )]

@@ -339,9 +339,7 @@ tracks/0/keys = {
 "values": [ 0.0, -20.0, -15.0 ]
 }
 
-[node name="Level" type="Node2D" groups=[
-"level",
-]]
+[node name="Level" type="Node2D" groups=["level"]]
 script = ExtResource( 4 )
 __meta__ = {
 "_edit_horizontal_guides_": [ 264.0 ],
@@ -457,6 +455,9 @@ max_cheeses = 10
 spread = 180.0
 min_radius = 16.0
 max_radius = 64.0
+trans_curve = 10
+ease_type = 1
+tween_duration = 0.5
 
 [node name="StarmouseSpawner" parent="." instance=ExtResource( 5 )]
 spawn_scene = ExtResource( 10 )

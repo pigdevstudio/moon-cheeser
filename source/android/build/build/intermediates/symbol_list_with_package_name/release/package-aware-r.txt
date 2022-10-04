@@ -1,4 +1,11 @@
 com.godot.game
+anim fragment_fast_out_extra_slow_in
+animator fragment_close_enter
+animator fragment_close_exit
+animator fragment_fade_enter
+animator fragment_fade_exit
+animator fragment_open_enter
+animator fragment_open_exit
 attr adSize
 attr adSizes
 attr adUnitId
@@ -46,10 +53,7 @@ color common_google_signin_btn_text_light_pressed
 color common_google_signin_btn_tint
 color notification_action_color_filter
 color notification_icon_bg_color
-color notification_material_background_media_default_color
-color primary_text_default_material_dark
 color ripple_material_light
-color secondary_text_default_material_dark
 color secondary_text_default_material_light
 dimen browser_actions_context_menu_max_width
 dimen browser_actions_context_menu_min_padding
@@ -75,10 +79,6 @@ dimen notification_small_icon_size_as_large
 dimen notification_subtext_size
 dimen notification_top_pad
 dimen notification_top_pad_large_text
-dimen subtitle_corner_radius
-dimen subtitle_outline_width
-dimen subtitle_shadow_offset
-dimen subtitle_shadow_radius
 dimen text_edit_height
 drawable common_full_open_on_phone
 drawable common_google_signin_btn_icon_dark
@@ -149,7 +149,6 @@ id accessibility_custom_action_6
 id accessibility_custom_action_7
 id accessibility_custom_action_8
 id accessibility_custom_action_9
-id action0
 id action_container
 id action_divider
 id action_image
@@ -171,7 +170,6 @@ id browser_actions_menu_items
 id browser_actions_menu_view
 id buttonRow
 id cancelButton
-id cancel_action
 id center
 id center_horizontal
 id center_vertical
@@ -184,11 +182,11 @@ id dialog_button
 id downloadButton
 id downloaderDashboard
 id end
-id end_padder
 id fill
 id fill_horizontal
 id fill_vertical
 id forever
+id fragment_container_view_tag
 id godot_fragment_container
 id icon
 id icon_group
@@ -199,7 +197,6 @@ id left
 id light
 id line1
 id line3
-id media_actions
 id none
 id normal
 id notificationLayout
@@ -219,10 +216,10 @@ id resumeOverCellular
 id right
 id right_icon
 id right_side
+id special_effects_controller_view_tag
 id standard
 id start
 id statusText
-id status_bar_latest_event_content
 id tag_accessibility_actions
 id tag_accessibility_clickable_spans
 id tag_accessibility_heading
@@ -239,9 +236,12 @@ id time
 id time_remaining
 id title
 id top
+id view_tree_lifecycle_owner
+id view_tree_saved_state_registry_owner
+id view_tree_view_model_store_owner
+id visible_removing_fragment_view_tag
 id wide
 id wifiSettingsButton
-integer cancel_button_image_alpha
 integer google_play_services_version
 integer status_bar_notification_info_maxnum
 layout browser_actions_context_menu_page
@@ -251,17 +251,8 @@ layout downloading_expansion
 layout godot_app_layout
 layout notification_action
 layout notification_action_tombstone
-layout notification_media_action
-layout notification_media_cancel_action
-layout notification_template_big_media
-layout notification_template_big_media_custom
-layout notification_template_big_media_narrow
-layout notification_template_big_media_narrow_custom
 layout notification_template_custom_big
 layout notification_template_icon_group
-layout notification_template_lines_media
-layout notification_template_media
-layout notification_template_media_custom
 layout notification_template_part_chronometer
 layout notification_template_part_time
 layout status_bar_ongoing_event_progress_bar
@@ -338,14 +329,9 @@ style NotificationTextShadow
 style NotificationTitle
 style TextAppearance_Compat_Notification
 style TextAppearance_Compat_Notification_Info
-style TextAppearance_Compat_Notification_Info_Media
 style TextAppearance_Compat_Notification_Line2
-style TextAppearance_Compat_Notification_Line2_Media
-style TextAppearance_Compat_Notification_Media
 style TextAppearance_Compat_Notification_Time
-style TextAppearance_Compat_Notification_Time_Media
 style TextAppearance_Compat_Notification_Title
-style TextAppearance_Compat_Notification_Title_Media
 style Theme_IAPTheme
 style Widget_Compat_NotificationActionContainer
 style Widget_Compat_NotificationActionText
@@ -356,6 +342,8 @@ styleable CoordinatorLayout keylines statusBarBackground
 styleable CoordinatorLayout_Layout android_layout_gravity layout_anchor layout_anchorGravity layout_behavior layout_dodgeInsetEdges layout_insetEdge layout_keyline
 styleable FontFamily fontProviderAuthority fontProviderCerts fontProviderFetchStrategy fontProviderFetchTimeout fontProviderPackage fontProviderQuery
 styleable FontFamilyFont android_font android_fontWeight android_fontStyle android_ttcIndex android_fontVariationSettings font fontStyle fontVariationSettings fontWeight ttcIndex
+styleable Fragment android_name android_id android_tag
+styleable FragmentContainerView android_name android_tag
 styleable GradientColor android_startColor android_endColor android_type android_centerX android_centerY android_gradientRadius android_tileMode android_centerColor android_startX android_startY android_endX android_endY
 styleable GradientColorItem android_color android_offset
 styleable LoadingImageView circleCrop imageAspectRatio imageAspectRatioAdjust
